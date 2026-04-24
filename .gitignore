@@ -39,13 +39,8 @@ models/**
 **/results/**
 **/wandb/**
 
-# ----------------------------------------------------------------------------
-# Nested cloned repositories (avoid git interference at root)
-# If you want to track one of these in the root repo, remove the line.
-# ----------------------------------------------------------------------------
-modules/detection/
-modules/lm/
-modules/stain_removal/
-
-# Safety: never track nested git metadata even if paths are changed
+# Safety: never track nested git metadata (backup copies etc.)
 **/.git/
+
+# Backup of old nested repositories
+.git_backups/

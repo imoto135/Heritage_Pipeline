@@ -1,0 +1,30 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pth
+*.pth.tar
+
+# モデルファイル（サイズが大きいため除外）
+model/
+
+# 入力画像（別途管理）
+徒然草/
+枕草子/
+源氏物語/
+伊勢物語/
+
+# 推論結果
+heritage_result/
+tmp_patch_infer/
+
+# システム
+.DS_Store
+.vscode/
+
+# ログ
+*.log
+*.png
+*.jpg
+
+*.csv
+wandb/

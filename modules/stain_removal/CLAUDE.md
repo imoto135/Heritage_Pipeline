@@ -1,0 +1,3 @@
+データセットはsplit_datasetので実行
+日本語で回答
+仮想環境はdiffusionを使う
