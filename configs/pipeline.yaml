@@ -1,0 +1,24 @@
+detection:
+  yolox:
+    weights: models/detection/yolox_nano.pth
+    conf_thresh: 0.35
+    nms_thresh: 0.45
+    tile_size: 640
+    stride: 320
+  arc:
+    weights: models/detection/arcface_best.pth
+    class_map: modules/detection/trained_class_map.json
+    input_size: 384
+
+restoration:
+  unetpp:
+    weights: models/unet++/experiments/unet++_full_characters/best_model.pth
+    script: modules/restoration/unet++/inference.py
+    image_size: 128
+    batch_size: 8
+  nafnet:
+    mode: withmask
+    config: modules/restoration/nafnet/options/Kuzushiji/gtmask.yml
+    checkpoint: models/nafnet/experiments/Full_NAFNet_Kuzushiji_GTMask_CharbPercep/models/net_g_170000.pth
+    script: modules/restoration/nafnet/infer_withmask.py
+    script_dir: modules/restoration/nafnet

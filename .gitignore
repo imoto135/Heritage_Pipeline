@@ -1,0 +1,51 @@
+# ----------------------------------------------------------------------------
+# Connect_Heritage root ignore rules
+# Purpose:
+# - Keep this root repository lightweight
+# - Avoid interference from nested cloned repositories
+# ----------------------------------------------------------------------------
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Python cache / env
+__pycache__/
+*.py[cod]
+*.so
+.venv/
+venv/
+.env
+
+# Logs / temp
+*.log
+tmp/
+temp/
+
+# Large experiment artifacts
+models/**
+*.pth
+*.pt
+*.ckpt
+*.onnx
+*.engine
+
+# Dataset and generated outputs
+**/data/**
+**/datasets/**
+**/outputs/**
+**/results/**
+**/wandb/**
+
+# ----------------------------------------------------------------------------
+# Nested cloned repositories (avoid git interference at root)
+# If you want to track one of these in the root repo, remove the line.
+# ----------------------------------------------------------------------------
+modules/detection/
+modules/lm/
+modules/stain_removal/
+
+# Safety: never track nested git metadata even if paths are changed
+**/.git/
