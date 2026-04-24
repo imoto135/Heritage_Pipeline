@@ -1,12 +1,12 @@
 detection:
   yolox:
-    weights: models/detection/yolox_nano.pth
+    weights: models/detection/yolo_best.pth
     conf_thresh: 0.35
     nms_thresh: 0.45
     tile_size: 640
     stride: 320
   arc:
-    weights: models/detection/arcface_best.pth
+    weights: models/detection/arc_best.pth
     class_map: modules/detection/trained_class_map.json
     input_size: 384
 

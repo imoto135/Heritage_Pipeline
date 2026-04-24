@@ -1,0 +1,31 @@
+[project]
+name = "connect-heritage"
+version = "0.1.0"
+requires-python = ">=3.10"
+dependencies = [
+    # pipeline本体
+    "pyyaml",
+    # detection (YOLO + ARC)
+    "timm",
+    "opencv-python",
+    "Pillow",
+    "numpy",
+    "loguru",
+    # restoration/unet++
+    "segmentation-models-pytorch",
+    "albumentations",
+    # restoration/nafnet
+    "addict",
+    "scikit-image",
+    "scipy",
+    "tqdm",
+    "wandb",
+    # lm (将来)
+    "pandas",
+]
+
+[project.optional-dependencies]
+dev = ["ipykernel"]
+
+# torch / torchvision は setup_env.sh で --index-url 指定のうえインストール
+# yolox は setup_env.sh で --no-build-isolation 指定のうえGitHubからインストール

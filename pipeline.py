@@ -80,45 +80,81 @@ def crop_characters(image_path: Path, bboxes: list, output_dir: Path) -> list:
 class Detector:
     """
     YOLOXを用いた文字検出ラッパー。
-    yolox パッケージが detection モジュール内に存在する前提で subprocess 呼び出し。
-    実際のモデル重みが利用可能な場合のみ動作する。
+    conv_demo.py の YOLOXWrapper を直接importして使う。
     """
 
     def __init__(self, cfg: dict, base: Path, device: str = "cpu"):
-        self.exp_file = str(resolve_path(base, "modules/detection/nano.py"))
         self.ckpt = str(resolve_path(base, cfg["yolox"]["weights"]))
         self.conf = cfg["yolox"]["conf_thresh"]
         self.nms = cfg["yolox"]["nms_thresh"]
         self.tsize = cfg["yolox"]["tile_size"]
-        self.device = "gpu" if device == "cuda" else "cpu"
+        self.stride = cfg["yolox"]["stride"]
+        self.device = device
         self.detection_dir = str(resolve_path(base, "modules/detection"))
+        self._wrapper = None
+
+    def _load(self):
+        if self._wrapper is not None:
+            return
+        if not Path(self.ckpt).exists():
+            return
+
+        sys.path.insert(0, self.detection_dir)
+        import torch
+        from yolox.exp import get_exp
+        from yolox_detector import Predictor, split_image, merge_outputs
+        from yolox.data.datasets import COCO_CLASSES
+
+        exp_file = str(Path(self.detection_dir) / "nano.py")
+        exp = get_exp(exp_file, None)
+        exp.test_conf = self.conf
+        exp.nmsthre = self.nms
+        exp.test_size = (self.tsize, self.tsize)
+
+        model = exp.get_model()
+        use_gpu = self.device == "cuda" and torch.cuda.is_available()
+        if use_gpu:
+            model.cuda()
+            model.half()
+        model.eval()
+
+        ckpt = torch.load(self.ckpt, map_location="cuda" if use_gpu else "cpu", weights_only=False)
+        model.load_state_dict(ckpt["model"])
+
+        device_str = "gpu" if use_gpu else "cpu"
+        predictor = Predictor(model, exp, COCO_CLASSES, None, None, device_str, use_gpu, False)
+
+        self._wrapper = (predictor, exp, split_image, merge_outputs)
 
     def detect(self, image_path: Path) -> list:
         if not Path(self.ckpt).exists():
             print(f"[警告] YOLOXの重みが見つかりません: {self.ckpt}")
-            print("  → 検出をスキップします。--bbox-json で外部BBoxを指定してください。")
+            print("  → --bbox-json で外部BBoxを指定してください。")
             return []
 
-        script = Path(self.detection_dir) / "yolox_detector.py"
-        result_json = Path(tempfile.mktemp(suffix=".json"))
+        self._load()
+        import cv2, torch
+        predictor, exp, split_image, merge_outputs = self._wrapper
 
-        cmd = [
-            sys.executable, str(script),
-            "image",
-            "--path", str(image_path),
-            "--exp_file", self.exp_file,
-            "--ckpt", self.ckpt,
-            "--conf", str(self.conf),
-            "--nms", str(self.nms),
-            "--tsize", str(self.tsize),
-            "--device", self.device,
-            "--output-json", str(result_json),
-        ]
-        subprocess.run(cmd, check=True, cwd=self.detection_dir)
+        img = cv2.imread(str(image_path))
+        if img is None:
+            raise ValueError(f"画像を読み込めません: {image_path}")
 
-        with open(result_json) as f:
-            bboxes = json.load(f)
-        result_json.unlink(missing_ok=True)
+        tiles, coords = split_image(img, tile_size=self.tsize, stride=self.stride)
+        outputs_list = []
+        for tile in tiles:
+            outputs, _ = predictor.inference(tile)
+            outputs_list.append(outputs[0] if outputs is not None else None)
+
+        merged = merge_outputs(outputs_list, coords, nms_thresh=exp.nmsthre,
+                               original_img_size=img.shape[:2])
+        if merged is None:
+            return []
+
+        bboxes = []
+        for det in merged.cpu().numpy():
+            bboxes.append([float(det[0]), float(det[1]), float(det[2]), float(det[3]),
+                           float(det[4] * det[5])])
         return bboxes
 
 
@@ -263,10 +299,16 @@ class Restorer:
 class CharPipeline:
     def __init__(self, config_path: Path, device: str = "cpu"):
         self.base = Path(__file__).parent.resolve()
-        cfg = load_config(config_path)
-        self.detector = Detector(cfg["detection"], self.base, device)
-        self.recognizer = ArcRecognizer(cfg["detection"], self.base, device)
-        self.restorer = Restorer(cfg["restoration"], self.base, device)
+        self._cfg = load_config(config_path)
+        self._device = device
+        self.detector = Detector(self._cfg["detection"], self.base, device)
+        self.recognizer = ArcRecognizer(self._cfg["detection"], self.base, device)
+        self._restorer = None
+
+    def _get_restorer(self) -> "Restorer":
+        if self._restorer is None:
+            self._restorer = Restorer(self._cfg["restoration"], self.base, self._device)
+        return self._restorer
 
     def run(
         self,
@@ -274,7 +316,7 @@ class CharPipeline:
         output_dir: Path,
         bbox_json: Path = None,
         skip_arc: bool = False,
-        skip_restoration: bool = False,
+        with_restoration: bool = False,
         keep_temp: bool = False,
     ):
         output_dir.mkdir(parents=True, exist_ok=True)
@@ -311,8 +353,8 @@ class CharPipeline:
                 metadata = self.recognizer.recognize_crops(crops_dir, metadata)
 
             # --- 4. 修復 ---
-            if not skip_restoration:
-                self.restorer.restore(crops_dir, masks_dir, restored_dir)
+            if with_restoration:
+                self._get_restorer().restore(crops_dir, masks_dir, restored_dir)
 
                 # 修復済み画像を出力ディレクトリにコピー
                 out_restored = output_dir / "restored"
@@ -368,7 +410,8 @@ def main():
         "--skip-arc", action="store_true", help="ARC文字認識をスキップ"
     )
     parser.add_argument(
-        "--skip-restoration", action="store_true", help="文字修復をスキップ"
+        "--with-restoration", action="store_true",
+        help="文字修復を有効化（UNet++ → NAFNet）。デフォルトはスキップ"
     )
     parser.add_argument(
         "--keep-temp", action="store_true", help="中間ファイルを出力ディレクトリに残す"
@@ -384,7 +427,7 @@ def main():
         output_dir=Path(args.output_dir),
         bbox_json=Path(args.bbox_json) if args.bbox_json else None,
         skip_arc=args.skip_arc,
-        skip_restoration=args.skip_restoration,
+        with_restoration=args.with_restoration,
         keep_temp=args.keep_temp,
     )
 
