@@ -115,14 +115,13 @@ class Detector:
         use_gpu = self.device == "cuda" and torch.cuda.is_available()
         if use_gpu:
             model.cuda()
-            model.half()
         model.eval()
 
         ckpt = torch.load(self.ckpt, map_location="cuda" if use_gpu else "cpu", weights_only=False)
         model.load_state_dict(ckpt["model"])
 
         device_str = "gpu" if use_gpu else "cpu"
-        predictor = Predictor(model, exp, COCO_CLASSES, None, None, device_str, use_gpu, False)
+        predictor = Predictor(model, exp, COCO_CLASSES, None, None, device_str, False, False)
 
         self._wrapper = (predictor, exp, split_image, merge_outputs)
 

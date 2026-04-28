@@ -131,7 +131,8 @@ def merge_outputs(outputs_list, coords_list, nms_thresh=0.3, original_img_size=N
 
         keep_indices = []
         for i, bbox in enumerate(out):
-            x, y = bbox[0], bbox[1]  # 左上 (x1, y1)
+            x = (bbox[0] + bbox[2]) / 2  # center_x
+            y = (bbox[1] + bbox[3]) / 2  # center_y
             if x_min_center <= x <= x_max_center and y_min_center <= y <= y_max_center:
                 keep_indices.append(i)
 
@@ -237,17 +238,24 @@ class Predictor(object):
             logger.info("Infer time: {:.4f}s".format(time.time() - t0))
         return outputs, img_info
 
-    def visual(self, output, img_info, cls_conf=0.35,save_folder=None):
+    def visual(self, output, img_info, cls_conf=0.35, save_folder=None):
         img = img_info["raw_img"]
         if output is None:
             return img
-        output = output.cpu()
+        output = output.cpu().reshape(-1, 7)
         bboxes = output[:, 0:4]
         cls = output[:, 6]
         scores = output[:, 4] * output[:, 5]
-        # vis_res = vis(img, bboxes, scores, cls, cls_conf, self.cls_names)
-        vis_res = vis(img, bboxes, scores, cls, conf=0.5, class_names=self.cls_names, 
-                      save_crops=True, save_dir=save_folder, image_name=None)
+        vis_res = vis(img, bboxes, scores, cls, conf=cls_conf, class_names=self.cls_names)
+        if save_folder is not None:
+            os.makedirs(save_folder, exist_ok=True)
+            for i, bbox in enumerate(bboxes):
+                x1, y1, x2, y2 = map(int, bbox)
+                x1, y1 = max(0, x1), max(0, y1)
+                x2, y2 = min(img.shape[1], x2), min(img.shape[0], y2)
+                crop = img[y1:y2, x1:x2]
+                if crop.size > 0:
+                    cv2.imwrite(os.path.join(save_folder, f"crop_{i:04d}.png"), crop)
         return vis_res
 
 

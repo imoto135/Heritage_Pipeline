@@ -22,9 +22,9 @@ class Exp(MyExp):
         self.enable_mixup = False
 
         # Define yourself dataset path
-        self.data_dir = "./datasets/YOLOV5"
+        self.data_dir = "/home/imoto/Connect_Heritage/datasets/YOLOV5"
         self.train_ann = "instances_train2017.json"
-        self.val_ann = "instances_val2017.json"
+        self.val_ann = "instances_train2017.json"
 
         self.num_classes = 1
 

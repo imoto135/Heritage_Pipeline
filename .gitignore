@@ -35,9 +35,14 @@ models/**
 # Dataset and generated outputs
 **/data/**
 **/datasets/**
+output/
 **/outputs/**
 **/results/**
 **/wandb/**
+
+# YOLOX training outputs and generated annotation files
+YOLOX_outputs/
+instances_train2017.json
 
 # Safety: never track nested git metadata (backup copies etc.)
 **/.git/
@@ -48,3 +53,5 @@ models/**
 *.pdf
 *.png
 *.jpg
+
+*.json
