@@ -3,7 +3,7 @@
 
 学習解像度: 256px
 対応推論スクリプト: scripts/main1.py / scripts/pipeline.py (Stage 2)
-使用GPU: cuda:1
+使用GPU: cuda:0（train_patch.pyと同居、VRAM 48GBに対し実測十分な余裕があるため）
 注意: 推論時は 1024px にリサイズして適用（UNet は畳み込みベースなので異解像度でも動作する）
 
 使い方:
@@ -44,6 +44,11 @@ class Config:
     save_freq  = 50
     grad_clip  = 1.0
 
+    # --- 発散検出（Early Stopping） ---
+    # 過去最小avg_lossを10epoch連続で更新できず、かつ1.5倍を超えて悪化したら停止
+    diverge_patience  = 10
+    diverge_threshold = 1.5
+
     # --- モデル ---
     model_channels      = 64
     num_res_blocks      = 2
@@ -60,7 +65,7 @@ class Config:
     wandb_run_name = 'page-256px'
 
     # --- その他 ---
-    device      = 'cuda:1'
+    device      = 'cuda:0'
     seed        = 42
     num_workers = 4
 

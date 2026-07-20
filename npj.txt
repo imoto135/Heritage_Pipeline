@@ -1,0 +1,193 @@
+ご指示の通り、論文の全文を省略せずにテキスト化しました。図表のキャプション、著者名などの人名（引用部分を含む）、および文字化けや進行の妨げとなる表データ・参考文献リストなどは不要とのことでしたので除外して抽出しています。
+
+※以下の本文は原文（英語）のまま抽出しております。
+
+**Restoration of ancient Japanese manuscripts via the diffusion denoising restoration model and color space-based masking**
+
+**Abstract**
+Ancient Japanese manuscripts are invaluable cultural assets but are often degraded by stains, fading, and bleed-through. We propose a restoration framework integrating the Diffusion Denoising Restoration Model (DDRM) with a two-stage mask generation process combining Automatic Color Equalization (ACE) and Gaussian Mixture Model clustering across multiple color spaces. A key novelty is the use of binarized text masks as guidance signals for DDRM through noise masking, which constrains denoising to character shapes and suppresses background noise. A high-resolution patch-based strategy with feather blending further enables seamless reconstruction of both text and background. Experiments on synthetic degradations of The Pillow Book and real manuscripts such as Tsurezuregusa demonstrate significant improvements over binarization-based DDRM, with an average PSNR gain of 10 dB, SSIM increase of 0.17, and LPIPS reduction from 0.49 to 0.28. The framework enhances textual clarity, preserves red annotations, and offers a scalable solution for AI-driven cultural heritage preservation.
+
+**Introduction**
+From the earliest symbols carved into stone to satellites orbiting the Earth, human civilization has advanced through the accumulation of records and knowledge. Among the most valuable legacies of this progress are historical documents, which preserve the thoughts and expressions of past societies. In particular, ancient manuscripts have served as crucial vessels for transmitting the language, emotions, and ideas of earlier generations. 
+
+Ancient Japanese manuscripts represent highly significant cultural and historical legacies. Their interpretation provides insight into the culture and daily life of the time, while their philosophical and aesthetic values offer new perspectives for the present. For instance, ethical and existential reflections documented in these works resonate with contemporary thought, and their traditional artistic sensibilities inspire modern design and creative practices.
+
+However, centuries of storage have resulted in extensive degradation, including stains, mold, and insect damage, which often obscure the text and further hinder interpretation. Such challenges are not unique to Japan but are shared globally. Examples include ancient inscriptions, Dunhuang murals, and bamboo slips in China, medieval manuscripts in Europe, and cuneiform texts in the Middle East, all of which face similar threats of deterioration and demand restoration. 
+
+A distinctive characteristic of Japanese manuscripts lies in their script. They are written in kuzushiji, a cursive style widely used before the modern era. Until the late Edo period (prior to the 19th century), kuzushiji was the standard writing style. Following the Meiji era, standardized print-based scripts were adopted, and modern Japanese came to be composed of hiragana, katakana, and approximately 3000 kanji characters. A unique challenge of kuzushiji is the wide variation in character shapes depending on the manuscript and scribe. Since many of these forms differ drastically from contemporary orthography, deciphering them is difficult even for specialists, and only a limited number of scholars are capable of accurate interpretation.
+
+In addition to linguistic challenges, these manuscripts suffer from various forms of physical degradation. Deterioration can be broadly classified into three categories. The first is staining, including background stains blending into the paper, stains overlapping characters, and large-scale stains covering entire sections of a page. The second is character loss caused by fading ink or physical damage, which manifests as partial fading or structural disappearance of characters. The third is bleed-through, in which ink from the reverse side or adjacent pages becomes visible, interfering with the text and reducing readability. Each of these forms presents substantial challenges for restoration.
+
+Conventional restoration has relied heavily on manual techniques, requiring interdisciplinary expertise in kuzushiji transcription, history, and philology. Yet manual approaches remain limited in scalability and efficiency, and the continued progression of degradation raises concerns of irreversible loss.
+
+To address these issues, this study proposes a virtual restoration framework for ancient Japanese manuscripts. The approach incorporates masks automatically generated via color-space clustering as guidance for diffusion-based restoration.
+
+The main contributions of this study are as follows:
+* Introduction of an automatic mask generation method using color-space clustering to distinguish text, background, red annotations, and degraded regions.
+* Quantitative evaluation across multiple degradation levels, demonstrating superior performance over baseline methods in PSNR, SSIM, and LPIPS.
+* Validation of the method’s practical utility through application to the historical manuscript Tsurezuregusa, preserving red annotations while enhancing visual clarity.
+
+The remainder of this paper is organized as follows. Section 2 introduces the target manuscripts and reviews conventional and AI-based restoration approaches. Section 3 then describes the proposed diffusion-based restoration framework and presents both quantitative and qualitative evaluations using synthetic and real degradations. Section 4 evaluates the effectiveness and limitations of the proposed method, outlines future directions such as advanced segmentation and tailored evaluation metrics, and concludes by highlighting the academic and cultural significance of AI-driven restoration for digital humanities and cultural heritage preservation.
+
+**Methods**
+**Materials** 
+In this study, we targeted two representative classical Japanese manuscripts: The Pillow Book (Makura no Sōshi) and Tsurezuregusa. The Pillow Book, compiled during the Heian period (late 10th to early 11th century), has been well preserved with minimal degradation, making it suitable for controlled simulation experiments. In contrast, Tsurezuregusa, transcribed in the early Keichō era (1596–1615), exhibits prominent natural deterioration, including stains, ink fading, and bleed-through. Moreover, unlike The Pillow Book, Tsurezuregusa contains both black and red text, providing more complex conditions for restoration methods.
+
+High-resolution scanned images of these manuscripts were obtained from the Center for Open Data in the Humanities (CODH), National Institute of Informatics. Images showing bibliographic information or the physical appearance of the manuscripts were excluded from the analysis and not used in the experiments. Only the main text regions were utilized: from each scanned double-page image, LabelImg was used to crop out individual pages by marking the four corners, producing single-page inputs for restoration. This procedure enabled clustering and evaluation restricted solely to the textual content of the manuscripts.
+
+The traditional physical restoration of ancient manuscripts has historically been based on shared principles across different regions. Surface dirt and mold are removed through dry cleaning techniques, such as the use of soft brushes, smoke sponges, and suction devices, or through wet cleaning using purified water or pH-neutral solutions. Creases and cracks in paper or parchment are corrected by controlled humidification to soften the fibers, followed by flattening and tension drying. Missing portions are repaired with paper or parchment infills, while flaking ink or pigments are consolidated with adhesives or thin resin coatings. In all cases, the principle of reversibility is emphasized, ensuring that interventions can be undone in the future. Preventive conservation is also indispensable, including environmental controls such as stable temperature and humidity, protection from light, and measures against insects and pollutants.
+
+Japanese manuscripts exhibit unique features compared to their Western or Middle Eastern counterparts. They are primarily written on washi (Japanese handmade paper) made from mulberry, mitsumata, or gampi fibers, which is thin yet highly durable. Notably, washi has been recognized by UNESCO as an Intangible Cultural Heritage, highlighting its cultural and historical value. Restoration often employs the same type of washi for reinforcement and infill to maintain material consistency. Distinctive binding formats—such as scrolls (makimono), accordion books (orihon), and stitched booklets (sōshi)—require treatments that preserve the original structure. Furthermore, Japanese manuscripts are frequently written in kuzushiji, a cursive script, and may contain annotations in red ink, decorative pigments, or even gold leaf. These characteristics demand special care: for example, aqueous treatments risk ink bleeding, and fragile decorative layers may require consolidation. In terms of preservation, washi is particularly sensitive to humidity, making strict environmental control and protection against acidic gases, light, and insects especially important.
+
+Despite their effectiveness, traditional physical restoration methods face several limitations. First, specialized expertise is required. Each type of deterioration—whether stains, fading, or structural loss—necessitates different treatments, demanding knowledge in material science, chemistry, history, and philology, as well as advanced technical skills. Second, the cost of restoration is substantial. Manual work requires long hours of labor, specialized tools, and costly conservation materials. As the number of manuscripts increases, both human and financial costs escalate significantly. Third, dependence on preservation environments poses an ongoing challenge. Deterioration factors such as fluctuations in temperature and humidity, exposure to light, airborne pollutants, and biological activity can continue to damage manuscripts even after treatment, often necessitating repeated interventions.
+
+In response to these challenges, digitization initiatives have rapidly advanced in recent decades. Digital archiving reduces physical handling of the original materials, thereby preventing further wear, while also ensuring long-term preservation of information. Moreover, digitized manuscripts can be made openly accessible, allowing researchers and the public worldwide to engage with cultural heritage. UNESCO’s Memory of the World Programme seeks to safeguard documentary heritage and improve accessibility, while European platforms such as Europeana and Archives Portal Europe provide open access to vast collections of digitized cultural materials. Within this international context, the restoration of Japanese manuscripts can be regarded as part of the broader movement in cultural heritage preservation and digital humanities.
+
+Therefore, while digitization is essential for preservation, it remains insufficient on its own. It can only safeguard and disseminate what is already visible, but it cannot recover text or information that has been obscured or lost. To overcome this limitation, recent research increasingly explores advanced image processing and artificial intelligence, opening new avenues for the virtual restoration of degraded manuscripts.
+
+**Recent efforts**
+Recent efforts to preserve ancient texts have focused on digitizing books and storing them in databases. At the Art Research Center (ARC) of Ritsumeikan University, academic knowledge is digitally archived, facilitating both material preservation and interdisciplinary collaboration between the humanities and information science. Optical character recognition (OCR) has also been introduced to extract digital text from ancient manuscripts.
+
+In recent years, machine learning and deep learning techniques have increasingly been applied to cultural heritage preservation. These methods have been used in tasks such as manuscript image restoration, classification, and digital archiving. However, the complex shapes of kuzushiji characters and various types of degradation-such as stains, insect damage, ink fading, and bleed-through-significantly impair OCR accuracy. These challenges remain key obstacles to effective manuscript restoration and digital preservation.
+
+Conventional manuscript restoration methods can be broadly classified into three categories: mask-based methods, image inpainting, and generative models. Mask-based approaches focus on extracting textual regions from manuscript images. Among these, binarization techniques are widely used. Local adaptive thresholding methods, including Otsu’s method, Sauvola, and Niblack, are commonly employed to segment text from the background based on contrast. These techniques are computationally efficient and straightforward to implement. However, they are highly sensitive to uneven backgrounds and degradations such as ink bleed, often resulting in the loss of faint textual information.
+
+To address these limitations, color-space-based mask generation methods have gained increasing attention. For instance, a proposed method converts RGB images into Lab, Luv, and HSV color spaces, followed by principal component analysis (PCA) and Gaussian Mixture Model (GMM)-based unsupervised clustering to segment text and degradation. These techniques require no manual annotations and are adaptable to diverse types of deterioration. In addition, advanced digital restoration approaches incorporate multispectral imaging, 3D surface reconstruction, and statistical image processing, further expanding the toolkit available for cultural heritage preservation.
+
+Generative models for manuscript restoration are often categorized into GAN-based inpainting and diffusion-based generation. GAN-based methods generate high-quality outputs through adversarial training between a generator and a discriminator. In manuscript restoration, GANs have been used to remove noise and restore faint or smudged text. For example, modifying the CycleGAN architecture with tailored loss functions improves the restoration of degraded characters. Other studies have also utilized GANs for text enhancement and background suppression. Nevertheless, GANs can suffer from training instability and mode inconsistency, which may lead to artifacts or content hallucination.
+
+Diffusion-based methods have emerged as robust generative tools that reconstruct images by reversing a gradual noising process. Notable models include Denoising Diffusion Probabilistic Models (DDPM) and Denoising Diffusion Implicit Models (DDIM), which have achieved state-of-the-art results in natural image generation and are increasingly explored for manuscript restoration.
+
+The framework builds upon DDPM and consists of two stages: a forward diffusion process and a reverse denoising process. In the forward diffusion process, a clean image is progressively perturbed by adding Gaussian noise, producing intermediate states. In the reverse diffusion process, a neural network reconstructs the original image by iteratively denoising, optionally conditioned on auxiliary information. This yields a sequence of conditional transitions that refine the sample toward a plausible, clean image.
+
+Denoising Diffusion Restoration Models (DDRM) extend DDPM to linear inverse problems by incorporating a measurement model where a degradation operator and noise are present. Intuitively, this probabilistic formulation describes how the model begins from a noisy image and gradually restores it step by step, guided by the observation, much like refining a blurred photo until it becomes clear again.
+
+**Results**
+**Overview of the proposed method and contributions**
+The proposed framework introduces noise masking, where a binarized text mask is used not as a final output but as a guidance signal for DDRM’s reverse diffusion process. While binarization removes stains and discoloration and highlights text regions, in our approach it constrains the denoising updates to follow character-shaped structures, thereby suppressing irrelevant background noise and degradation artifacts. This ensures that updates are suppressed in degraded regions, while restoration is guided along text contours, enabling natural stroke regeneration.
+
+The effectiveness of noise masking, however, critically depends on the accuracy of the input mask. Conventional binarization methods, which are widely used in manuscript processing, often fail to preserve faint characters and are highly sensitive to luminance variations, leading to the misclassification of heavily stained regions.
+
+To overcome these limitations, we adopt a two-stage mask generation process. First, Automatic Color Equalization (ACE) is applied to the input image to normalize the color distribution and reduce biases caused by illumination or aging. This correction enhances the separability between textual and background regions. Second, feature vectors are constructed by concatenating values from RGB, CIELab, and CIELuv color spaces. After dimensionality reduction via Principal Component Analysis (PCA), a Gaussian Mixture Model (GMM) is employed in a two-stage clustering scheme. As a result, each image is segmented into four classes: background, black text, red text, and real degradation.
+
+The clustering proceeds as follows. In Stage 1, luminance-based features are used for PCA and GMM clustering, yielding three clusters corresponding to background, black text, and degradation. In Stage 2, only the pixels assigned to the degradation class are further analyzed. Color-focused features are employed, emphasizing chromaticity rather than luminance. A subsequent PCA to GMM step separates this subset into red text and real degradation based on a “redness” index. Through this design, black text, red text, and degradation regions can be clearly distinguished.
+
+The resulting masks for black and red text can effectively reduce small-scale noise. However, in the presence of faint or deteriorated strokes, excessive post-processing may cause character fragmentation or rounded edges. For this reason, such operations are treated in a controlled manner, avoiding over-application in order to preserve character fidelity. 
+
+The black text mask obtained from this pipeline is used to guide the noise-masking DDRM inference, thereby preserving fine textual details while selectively restoring degraded regions. For manuscripts containing red annotations (e.g., Tsurezuregusa), the red text is excluded from the denoising process. Instead, after DDRM inference, the refined red text mask is applied to the original image to extract red characters, which are then overlaid onto the restored output. This ensures both textual clarity and chromatic fidelity.
+
+Furthermore, the pipeline has been implemented in a batch-processing framework that can handle multiple input images. For each image, the system automatically outputs the color-corrected version, four-class masks, controlled noise-reduced masks, and statistical summaries such as class-wise area ratios. This design enables efficient processing of large-scale manuscript datasets.
+
+Overall, the proposed method offers three main advantages. (1) ACE compensates for uneven illumination and discoloration, improving clustering stability. (2) Noise masking constrains denoising to character regions, balancing stain suppression with the preservation of faint strokes. (3) The exploitation of color information enables the extraction of class-specific masks, supporting color-aware, type-specific restoration. Consequently, the proposed framework enhances visual clarity, structural fidelity, and chromatic authenticity, providing a robust foundation for the digital restoration of ancient manuscripts.
+
+**Experimental design**
+To evaluate the effectiveness of the proposed method, we conducted a series of experiments using high-resolution scans of classical Japanese manuscripts. These clean images served as ground truth for synthetic degradation.
+
+The restoration model is based on DDRM and was trained on 4829 pages from a humanities-focused manuscript dataset. All images were resized to 128 × 128 pixels for training due to hardware constraints. We used a 3-channel U-Net architecture with 64 feature channels per layer and four residual blocks. To enhance structural understanding, Self-Attention layers were added at spatial resolutions of 16 and 8. Class-conditional training was introduced using manuscript-specific labels to account for class-wise degradation patterns. The model was trained using mean squared error (MSE) loss with a linear beta schedule over 1000 diffusion steps.
+
+Restoration performance was evaluated using standard metrics such as PSNR, SSIM, and LPIPS, and we also measured the change in pixel count within the degradation mask to assess noise removal effectiveness. We compared our method against two baselines: (1) CycleGAN and (2) DDRM guided by a binarization mask generated via Otsu’s method. CycleGAN takes as input a downsampled image generated in the linear RGB space using the LANCZOS resampling algorithm. The restored image is then upsampled using bicubic interpolation, after which high-frequency components extracted from the original high-resolution image are added to enhance fine details. Given its simplicity and longstanding use in manuscript image processing, Otsu’s method provides a robust benchmark for evaluation.
+
+For simulation-based evaluation, we used The Pillow Book, a Heian-era manuscript well-preserved and minimally degraded, making it ideal for controlled experiments. A total of 745 pages were annotated using LabelImg to isolate manuscript regions for clustering and evaluation. Synthetic degradation was introduced mimicking real-world artifacts such as stains, smears, and mold. Degradation severity was divided into four levels for detailed comparison. Color-space clustering segmented each image into three classes: background, black text and pseudo-degradation. The black text masks were extracted and applied to clean manuscript pages to create degraded inputs for restoration.
+
+In DDRM inference, images were resized to 1024 × 1024, and the number of reverse diffusion steps was reduced from 1000 to 20 for efficiency. The reverse process was guided by a conditional degradation mask. The diffusion process employed a linear beta schedule with 1000 total timesteps.
+
+**Algorithm 1. Pseudocode of the pseudo-degradation image generation pipeline**
+Input: I: Input document image;
+ρ: Stain density parameter;
+σ: Stain size parameter;
+α: Roughness parameter;
+λ: Blending intensity;
+Cfixed: Fixed stain color;
+τ: Text detection threshold;
+Output: Istained: Stained image with text preserved; Idegraded: Stained image with text affected
+Text mask extraction:
+Igray ← RGB2Gray(I)
+Mtext ← (Igray < τ) ? 1 : 0;
+Stain mask generation:
+Nblobs ← ⌊ρ × H × W⌋;
+S ← ZeroMatrix(H, W);
+for i = 1 to Nblobs do
+  (x, y) ← RandomPosition(H, W);
+  S[x, y] ← 1;
+end
+Distance transform and Gaussian filtering:
+D ← DistanceTransform(¬S);
+Mdist ← (D < σ) ? 1 : 0;
+Msmooth ← GaussianFilter(Mdist, σ/(2α));
+Mnorm ← Normalize(Msmooth);
+Noise generation and combination:
+N ← RandomNoise(H, W);
+Nsmooth ← GaussianFilter(N, σ/(2α));
+Nnorm ← Normalize(Nsmooth);
+Mblob ← (Mnorm × Nnorm > 0.5) ? 1 : 0;
+Color stain mask creation:
+Mstain ← Mblob ⊗ Cfixed;
+Stain application (text-preserving):
+Mbg ← 1 − Mtext;
+Mblend ← Mbg ⊙ (Mean(Mstain) > 10);
+Istained ← I ⊙ (1 − Mblend × λ) + Mstain ⊙ (Mblend × λ);
+Stain application (text-affecting):
+Marea ← (Mean(Mstain) > 10) ? 1 : 0;
+Idegraded ← I ⊙ (1 − Marea × λ) + Mstain ⊙ (Marea × λ);
+return Istained, Idegraded;
+
+**Application to real historical manuscripts**
+To assess real-world applicability, we applied our method to Tsurezuregusa, a classical manuscript written in the early Keichō era, which exhibits natural degradation such as stains, ink fading, and bleed-through. Unlike The Pillow Book, this manuscript contains both black and red text.
+
+Color-space clustering was applied to produce four masks, including one for red text. The black text mask was used as conditional input to DDRM. To ensure visual consistency across pages with varying background textures, we replaced the backgrounds with a standardized texture extracted from The Pillow Book.
+
+Following restoration, the red text mask was overlaid onto the restored image, achieving both textual clarity and color fidelity-an outcome that is difficult to obtain with traditional binarization-based methods.
+
+**Output and analysis of results**
+To assess the restoration performance, we applied synthetic stains to manuscript images at four intensity levels (0.3, 0.5, 0.7, and 1.0) and compared the proposed clustering-based masking method with a binarization-based baseline. In addition, we conducted a statistical evaluation at a representative intensity level using three metrics-PSNR, SSIM, and LPIPS-reporting the minimum, maximum, average, and variance.
+
+Across all stain intensity levels, the proposed method consistently outperformed the binarization-based DDRM in both PSNR and SSIM, demonstrating improvements in visual quality and structural fidelity. Compared with binarization-based DDRM, PSNR increased by approximately 10 dB, indicating a substantial enhancement in restoration quality. SSIM also improved by about 0.17, confirming superior preservation of structural details.
+
+Compared with CycleGAN, the proposed method achieved an improvement of approximately 2 dB in PSNR and 0.09 in SSIM, indicating better structure-preserving capability than other models as well. LPIPS scores were generally lower for the proposed method, reflecting higher perceptual quality. Overall, these results demonstrate the superior accuracy and robustness of the proposed approach across all evaluation metrics.
+
+At the representative stain intensity level, the proposed method achieved a maximum PSNR of 27.6 and an average of 24.83, markedly outperforming binarization-based DDRM (maximum 18.34, average 13.86) and surpassing CycleGAN in both maximum and average values. Similarly, SSIM values were higher with reduced variance, indicating greater stability and consistency. Regarding LPIPS, the proposed method achieved a minimum score of 0.2498, lower than the baseline’s 0.3711, indicating better perceptual similarity. It also achieved an average LPIPS of 0.2789 with a small variance of 0.0003, confirming both high perceptual fidelity and robustness in restoration. 
+
+At the representative stain level (intensity), the proposed method achieved a maximum PSNR of 27.6 and an average of 24.83, significantly outperforming the baseline (maximum 18.34, average 13.86). SSIM also showed higher maximum and average values with reduced variance, indicating greater stability and consistency. Regarding LPIPS, the proposed method achieved a minimum score of 0.2498-lower than the baseline value of 0.3711-indicating superior perceptual similarity. The method also yielded an average LPIPS of 0.2789 and a variance of 0.0003, demonstrating both high perceptual quality and robustness.
+
+We applied our restoration framework to real historical images of Tsurezuregusa, which exhibit natural degradation such as stains, faded ink, bleed-through, and red text. The proposed method successfully preserves red annotations using an overlay-based strategy, unlike Otsu binarization, which removes all color information. Given that red ink often conveys editorial or semantic significance, preserving these annotations is important for historical integrity. Thus, our method enhances not only readability but also the scholarly utility of the manuscripts.
+
+Background stains and smudges are effectively suppressed using a fixed reference background texture, resulting in visually clean and consistent outputs suitable for digital archiving. However, bleed-through artifacts-caused by ink from the reverse side of the page, remain more prominent than in the binarization result. This indicates a limitation in the current segmentation strategy for handling semi-transparent noise. The method preserves partially faded characters by maintaining essential stroke features. Additionally, lightly written marginalia-often excluded in conventional restoration-are restored, contributing to a more complete reproduction of the manuscript.
+
+However, we also observed the emergence of new artifacts near the top of the page, where the model introduced worm-eaten-like patterns not present in the original. This appears to result from an interaction between the original texture and interpolation during the restoration process. Mitigating such artifacts remains a direction for future improvement.
+
+To address the limitations of page-wise restoration, we further introduce a high-resolution patch-based strategy. Since diffusion models are typically trained on relatively small inputs (e.g., 128 × 128 pixels), directly processing full manuscript pages, which often exceed several thousand pixels in each dimension, leads to memory overflow and degradation in restoration quality. Although the model was trained on 128 × 128-pixel patches due to hardware constraints, inference on larger 1024 × 1024 images remains feasible because the DDRM’s U-Net backbone is a fully convolutional network (FCN). In such architectures, convolutional kernels and upsampling layers are applied locally and uniformly across spatial dimensions, allowing the model to operate independently of input resolution. Moreover, the diffusion process itself is pixel-wise probabilistic and thus not directly constrained by image size. The incorporated self-attention layers-operating at spatial resolutions of 16 and 8-further contribute to scalable contextual modeling across multiple spatial levels. However, when directly applied to large pages, minor inconsistencies such as texture roughness or local discontinuities may occur, as the model was not explicitly trained on large-scale spatial dependencies.
+
+To mitigate these limitations, our approach divides large manuscript images into overlapping patches of 128 × 128 pixels, each of which is independently restored using a diffusion model. To avoid visible seams at patch boundaries, we employ feather blending, where patch contributions are weighted by Gaussian masks that assign higher importance to central regions and gradually diminish toward edges. Moreover, text regions are emphasized by increasing their blending weights, ensuring faithful recovery of strokes.
+
+In addition to text restoration, the high-resolution strategy also enhances the clarity of the background texture, enabling a more faithful reproduction of both characters and page surfaces. The patch-based approach achieves sharper strokes, recovers faint characters, and yields smoother background reconstruction compared to page-wise restoration. Red annotations, which often hold historical significance, are automatically detected and preserved from the original input to avoid undesired alteration. In addition, the system supports resumption from intermediate states, allowing efficient large-scale processing of manuscript collections.
+
+Overall, this high-resolution patch-based restoration achieves three advantages over page-wise inference: (i) improved quality through alignment with training resolution, (ii) reduced memory consumption, and (iii) seamless reconstruction without boundary artifacts. As a result, the proposed framework enables large-scale, high-fidelity restoration of historical manuscripts, thereby enhancing their readability and scholarly value.
+
+**Discussion**
+This section discusses the objectives of the study, the extent to which they were achieved, the limitations of the proposed framework, directions for future work, and broader implications.
+
+The primary aim of this study is to establish a restoration framework for ancient Japanese manuscripts that integrates color-space clustering with a pre-trained diffusion model. Traditional binarization methods often fail to retain faint strokes and inevitably discard valuable chromatic information, such as red annotations. This study addresses these shortcomings by combining color-space segmentation and guided diffusion.
+
+Experimental results have confirmed that the proposed approach consistently outperforms conventional methods, achieving more than a 10 dB improvement in PSNR across all stain intensities. While this indicates improved structural fidelity and reduced pixel-level errors, its significance extends beyond numerical gains. By leveraging color-space distributions, the framework recovers characters that would otherwise vanish under threshold-based binarization. Crucially, the preservation of red annotations provides philological value for textual criticism, while the retention of faint strokes enhances readability for scholars.
+
+At the same time, Several limitations remain. First, the suppression of bleed-through is still insufficient, reflecting a fundamental challenge in distinguishing semi-transparent ink from foreground text during clustering. The term semi-transparent ink refers to the ink that has partially soaked through the thin paper from the reverse side, making it faintly visible on the front. Because the ink is not completely opaque, it appears as a faint shadow on the surface, making it difficult for the algorithm to determine whether it belongs to the front or the back of the manuscript.
+
+Furthermore, in areas where red and black text are close together, mask ambiguity can occur, leading to fragmented or misclassified strokes. We also considered integrating GMM with CNN-based segmentation methods. However, when GMM-generated masks are used as training data, the noise and misclassifications in those masks tend to propagate through the learning process, resulting in unstable classification performance. In degraded historical manuscripts, GMM alone cannot perfectly separate classes, and using its results as supervision may lead to accumulated errors. Moreover, creating high-quality annotated data manually would require considerable time and effort, making it impractical from a resource standpoint.
+
+In addition, transformer-based models generally require large-scale training datasets, which are unavailable in our limited manuscript collection, potentially restricting their effectiveness.
+
+When performing inference on high-resolution full-page images, local discontinuities such as visible seams or inconsistent textures at patch boundaries were sometimes observed. Slight differences in lighting and paper texture between pages also caused variations in color reproduction. These issues likely result from the model’s focus on local information, suggesting insufficient global structural understanding.
+
+Moreover, clustering methods that rely solely on color-space features cannot fully account for physical factors such as the material properties of writing tools or the aging of inks. Addressing these limitations will require context-aware and multimodal segmentation approaches, such as integrating deep learning with spectral information and regional context to achieve more physically accurate restoration.
+
+Future research should explore hybrid segmentation strategies combining deep learning, adaptive clustering, and human-in-the-loop corrections. Incorporating refinement modules-such as DDPM-based enhancement or user-guided feedback, could further improve perceptual quality. Moreover, developing evaluation metrics tailored to historical manuscripts, including readability-based criteria and OCR integration, would enable fairer and more practical assessments.
+
+Another promising direction is the creation of benchmark datasets based on manual annotations of real degraded manuscripts. Such annotations would, in principle, enable more objective comparisons. However, since degradation patterns are inherently non-uniform and boundaries are often ambiguous, comprehensive annotation was impractical within the scope of the present study. As a more feasible alternative, partial annotations in limited regions or expert-assisted labeling could be employed to establish small-scale gold standards. In addition, conducting user studies with historians and calligraphy experts would provide human-centered evaluation of fidelity and readability, complementing quantitative metrics and bridging the gap between algorithmic performance and scholarly usability.
+
+Taken together, this study extends beyond mere performance improvement. It redefines the role of AI in the preservation and interpretation of historical texts. Academically, it demonstrates a novel integration of diffusion models within digital humanities. Practically, it reduces the workload of experts and enables scalable processing of manuscript collections. Societally, it safeguards both textual and chromatic information, contributing to long-term cultural heritage preservation and promoting open accessibility. These implications align with global initiatives in heritage science and emphasize the cultural significance of AI-driven restoration.
+
+**Data availability**
+All data generated or analyzed during this study are included in this article and its supplementary materials. The datasets used for training and evaluation, including Tsurezuregusa and The Pillow Book, were obtained from the ROIS-DS Center for Open Data in the Humanities (CODH) database.
+
+**Code availability** 
+The custom code developed for data processing, color-space clustering, and DDRM-based restoration is not publicly available due to ongoing research and institutional restrictions. However, it can be provided by the corresponding author upon reasonable request for academic research and verification purposes.

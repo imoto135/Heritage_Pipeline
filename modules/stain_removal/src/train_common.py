@@ -105,6 +105,10 @@ def run_training(cfg):
         save_dir, save_name, resume,
         use_wandb, wandb_project, wandb_run_name,
         device, seed, num_workers
+
+    cfg の任意フィールド（発散検出によるEarly Stopping）:
+        diverge_patience  : 過去最小avg_lossをこのepoch数連続で更新できなければ停止（デフォルト: 無効）
+        diverge_threshold : 過去最小avg_lossに対してこの倍率を超えたら「悪化」と判定（デフォルト: 1.5）
     """
     os.makedirs(cfg.save_dir, exist_ok=True)
 
@@ -201,6 +205,11 @@ def run_training(cfg):
         f'バッチサイズ {cfg.batch_size} / 画像サイズ {cfg.image_size}px'
     )
 
+    diverge_patience  = getattr(cfg, 'diverge_patience', None)
+    diverge_threshold = getattr(cfg, 'diverge_threshold', 1.5)
+    best_loss = float('inf')
+    diverge_count = 0
+
     global_step = resume_step
     for epoch in range(start_epoch, cfg.n_epochs + 1):
         model.train()
@@ -260,6 +269,27 @@ def run_training(cfg):
             logger.info(f'チェックポイント保存: {ckpt_path}')
             if use_wandb:
                 wandb.save(ckpt_path)
+
+        # 発散検出（過去最小avg_lossをdiverge_patience epoch連続で更新できず、
+        # かつ閾値を超えて悪化していたら学習を打ち切る）
+        if diverge_patience is not None:
+            if avg_loss < best_loss:
+                best_loss = avg_loss
+                diverge_count = 0
+            elif avg_loss > best_loss * diverge_threshold:
+                diverge_count += 1
+                logger.warning(
+                    f'発散の疑い: avg_loss={avg_loss:.4f} > '
+                    f'best_loss={best_loss:.4f} * {diverge_threshold} '
+                    f'({diverge_count}/{diverge_patience})'
+                )
+                if diverge_count >= diverge_patience:
+                    logger.error(f'発散を検出。epoch {epoch} で学習を停止します。')
+                    if use_wandb:
+                        wandb.log({'diverged': True, 'epoch': epoch}, step=global_step)
+                    break
+            else:
+                diverge_count = 0
 
     # 最終モデル保存（推論スクリプトが load_state_dict で直接読む形式）
     final_path = os.path.join(cfg.save_dir, cfg.save_name)

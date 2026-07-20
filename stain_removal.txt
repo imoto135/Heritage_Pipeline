@@ -1,0 +1,229 @@
+Two-Stage Stains Reduction with Diffusion Models for Ancient Japanese Manuscripts
+Yuya Yoshizu, Hayata Kaneko, Student Member, IEEE, Ryuto Ishibashi, Student Member, IEEE, Lin Meng*, Senior Member, IEEE Graduate School of Science and Engineering Ritsumeikan University, 1-1-1 Nojihigashi, Kusatsu, Shiga, Japan, 525-8577 {ri0120si,ri0099xx,ri0097fx}@ed.ritsumei.ac.jp, menglin@fc.ritsumei.ac.jp
+Mingcong Deng, Fellow, IEEE Department of Electrical and Electronic Engineering, Tokyo University of Agriculture and Technology, 2-24-16 Nakacho, Koganei, Tokyo, Japan 184-8588 deng@cc.tuat.ac.jp
+
+Abstract—Ancient Japanese manuscripts are a valuable cultural heritage that allows us to understand the culture and values of the past.
+However, due to preservation over hundreds of years, stains result in antique manuscripts, and they cause low readability and loss of contents to the manuscripts.
+Considering preserving these assets through virtual restoration, we propose a two-stage stain reduction based on Denoising Diffusion Restoration Models (DDRM).
+The stain reduction proceeds by combining removing background by the binarization and reconstruction of before-processing images by DDRM.
+In addition, the sequential conducting that contains patches of book pages and entire them leads to preserving local information and ensuring consistency across the pages.
+Generation results are qualitatively improved and more realistic than traditional binarization.
+Also, the proposal method is evaluated by two aspects, the stain reduction metrics and preserving characters metrics.
+The evaluation result shows our proposal is more effective and achieves higher restoration quality than conventional binarization.
+
+Index Terms—Diffusion Model, Image restoration, Binarization, Ancient manuscripts, Cultural heritage preservation
+
+**I. INTRODUCTION**
+Ancient Japanese manuscripts which are regarded as invaluable cultural heritage have been preserved for hundreds to thousands of years.
+These manuscripts provide insights into the culture, thoughts, and history of eras, as well as information on the politics and economy of the time.
+Interpreting ancient manuscripts allows us to understand the mindset of people from ancient times.
+However, some ancient manuscripts exhibit damage and stains, often resulting from deterioration over long-term storage.
+The deterioration of these ancient manuscripts has traditionally been restored by hand.
+However, with the rise of image processing, various organizations and researchers are working on restoration using image processing and deep learning–.
+For example, the National Library of Congress converts original manuscripts into digital data for preservation.
+Their efforts promote the integration of computer science and the humanities, facilitating access to research and cultural heritage.
+Many researchers are also applying deep learning and machine learning techniques to protect, organize, and study cultural heritage.
+Particularly with regard to organizing manuscripts, the focus is on improving the accuracy of recognizing ancient scripts, inscriptions, and complex typefaces.
+Advances in deep learning have enabled the development of high-quality, obvious character recognition–.
+Moreover, developing image generation models brings an innovative approach to ancient manuscript restoration.
+Missing texts have been restored using up-to-date image generation models such as Generative Adversarial Networks (GANs) and Diffusion Models.
+However, the number of studies about stain reduction with AI is limited because of the hardness of gathering data and a wide variety of stains such as yellow, sunburned, and bleedthrough.
+Bleedthrough refers to the phenomenon whereby the text on the next page shows through.
+To tackle this problem, we propose two-stage stain removal based on Diffusion Models.
+For stain removal, we combine the binarization for background separation and reconstruction of character elements by Denoising Diffusion Restoration Models (DDRM).
+The binarization is an effective method for stain removal; however, it also affects character parts of the manuscripts.
+Therefore, we propose adopting DDRM to mitigate it by regeneration of characters.
+This stain reduction method proceeds in two stages, the patch stage and the page stage.
+In the patch stage, a page is divided into patches, and patch-wise stain reduction is done for local information reservation of characters.
+Then, in the page stage, these patches are concatenated to make a page, and the uneven color of the background is unified into the same.
+To the best of our knowledge, this study is the first case to remove stains in Japanese ancient manuscripts using Diffusion Models.
+Our proposal shows visually improved manuscripts and clears the stain reduction metrics such as the kurtosis, the brightness variance, and the entropy.
+Besides, the proposal achieved higher image similarity with the ground truth than the binarization.
+The remaining parts of this paper are organized as follows.
+Section II lists the related work that focuses on our introduction.
+Section III introduces the base technique, DDPM and DDRM.
+Section IV presents our proposal, the stain reduction based on DDRM and two-stage restoration.
+Section V shows experimental conditions and results.
+Finally, Section VI and VII give the paper discussion and a brief conclusion.
+
+**II. RELATED WORKS**
+To do a virtual restoration for digitalized cultural heritage (e.g., ancient manuscripts and murals), it is necessary to interpolate information in the damaged areas.
+Therefore, in this section, we introduce interpolation methods using Generative Adversarial Networks (GANs).
+GANs consist of a generator and a discriminator trained adversarially to generate highly realistic images.
+In the context of traditional cultural heritage restoration, the goal is to predict the post-restoration state from the pre-restoration state and perform the restoration based on this prediction.
+In such tasks, it is essential to preserve the original features and style of the artifact while filling in the deteriorated parts.
+GAN-based methods leverage their generative capabilities to learn the characteristics of the original artifact and generate restored images that align with these characteristics.
+The use of GANs in cultural heritage restoration methods is expected to improve the accuracy and realism of the restoration, and it has been adopted in numerous research studies and projects.
+Kaneko et al. have proposed an approach for missing characters by adding the loss obtained from a domain discriminator using adversarial loss to learn the differences between domains.
+Zheng et al. have presented an approach for restoring missing characters by taking two inputs: the missing character image and a sample character image, to guide the restoration process.
+
+**III. BACKGROUND**
+In this section, we introduce the diffusion model (DDPM), and the Denoising Diffusion Restoration Models (DDRM), a type of diffusion model used in this study.
+
+**A. Denoising Diffusion Probabilistic Models (DDPM)**
+DDPM is a type of stochastic diffusion model, that modeling the the process of spreading random noise.
+Fig. 1 shows the overall DDPM.
+DDPM consists of two steps, the diffusion process and the inverse diffusion process.
+The diffusion process diffuses random noise into the input image.
+At each step, the input image is diffused, eventually converging to a standard normal distribution.
+The diffusion of data by noise in the diffusion process is done stochastically, with random transformations at each step.
+In the inverse diffusion process, this stochastic process is learned to model the data generation distribution pθ(x).
+Let’s define the diffusion process q, and assume that the data distribution x0 follows q(x0).
+By adding Gaussian noise at each time t with variance βt in the range (0,1), latent variables x1 to xT are generated from x0.
+q(x1:T |x0) := q(T )(xT |x0) T−1∏ t=0 q(t)(xt|xt+1, x0) (1)
+q(xt|xt−1) := N (xt; √ 1− βtxt−1, βtI) (2)
+Where βt is a hyperparameter controlling the scale of the variance, and N denotes the standard normal distribution.
+In the diffusion process defined in Equation(1), independent Gaussian noise is added.
+Therefore, the noise image xt at any time t is defined as follows, with αt := 1 − βt and ᾱt := ∏t s=0 αs.
+q(xt|x0) = N (xt; √ ᾱtx0, √ 1− αtI) (3)
+xt = √ ᾱtx0 + √ 1− αtϵ (4)
+Equations (3) and (4) allow for fixed-variance noise steps by representing any step t image as a combination of x0 and noise ϵ.
+DDPM is characterized by its stability in learning and high scalability.
+DDPM uses maximum likelihood estimation, optimizing parameters to generate distributions approximating the observed data distribution.
+As a result, stable learning is possible even for complex data.
+
+**B. Denoising Diffusion Restoration Models (DDRM)**
+DDRM is an image restoration method using pre-trained diffusion models such as DDPM, and image generation is conditioned by observed data.
+This involves defining a conditional variational distribution representing the diffusion process given observed data and initial conditions, and deriving the Evidence Lower Bound (ELBO) from it.
+q(x1:T |x0, y) := q(T )(xT |x0, y) T−1∏ t=0 q(t)(xt|xt+1, x0, y) (5)
+Equation (5) represents the conditional variational distribution based on variational inference.
+The distribution derived from this equation approximates the diffusion process given observed data y and initial condition x0.
+This results in the ELBO of the conditioned diffusion model given y.
+q(x1:T |x0, y) and q(t)(xt|xt+1, x0, y) represent the variational distributions at time T and t, respectively.
+Next, the derivation of the ELBO is as follows:
+pθ(x0:T ) = p (T ) θ (xT ) T−1∏ t=0 p (t) θ (xt|xt+1, y) (6)
+Equation (6) considers the prior distribution of the model and uses variational inference to approximate the posterior distribution of unknown x1:T .
+DDRM assumes that the input image contains noise and models the process of removing that noise to recover the original clean data.
+DDRM is a solution to the linear inverse problem, where the general linear inverse problem is defined as follows in Equation (7):
+y = Hx+ z (7)
+Where y is the observed data, x is the clean image after noise removal, H is the known linear degradation matrix, and z is the noise.
+DDRM implements Singular Value Decomposition (SVD) of the matrix H and performs the diffusion and inverse diffusion processes in the spectral space.
+The matrix H is defined as follows in Equation (8) :
+H = UΣV T (8)
+Where U is an orthogonal matrix (U ∈ Rm×m) with column vectors representing the left singular vectors, V is an orthogonal matrix (V ∈ Rn×n) with column vectors representing the right singular vectors, and V T is its transpose.
+Σ is a rectangular diagonal matrix with non-negative singular values arranged in descending order (s1, s2, ...sm).
+Larger singular values contribute more to the image data and are commonly used for dimensionality reduction.
+The inverse diffusion process of DDRM is defined using the pre-trained DDPM as follows:
+q(t) ( x (i) t | xt+1,x0,y ) = N ( x (i) 0 + √ 1− η2σt x (i) t+1−x (i) 0 σt+1 , η2σ2 t ) if si = 0 N ( x (i) 0 + √ 1− η2σt y(i)−x (i) 0 σy/si , η2σ2 t ) if σt < σy si N ( (1− ηb)x (i) 0 + ηby (i), σ2 t − σ2 y s2i η2b ) if σt ≥ σy si (9)
+Here, xθ,t is the prediction of x0 by the neural network model, and xθ, t (i)is the i-th index of the vector xθ, t = V Txθ, tη and ηβ are hyperparametars for variance control.
+When the singular values are zero, the prediction is similar to the denoising of the standard unconditional DDPM.
+When the singular values are non-zero, the prediction includes conditioning on the degraded image y.
+Calculating the SVD of the degradation matrix H requires a large amount of memory.
+Therefore, various pseudo-SVD is introduced for tasks such as denoising, inpainting, and super-resolution.
+In this study, we use pseudo-SVD of inpainting as follows:
+H = IΣP (10)
+where I is the identity matrix, and σ ∈ Rm×nis a rectangular diagonal matrix with si ∈ 0, 1 (s1, s2, ...sm), and P is the permutation matrix for sorting the missing pixels and retained pixels.
+
+**IV. PROPOSAL**
+In this paper, we propose two-stage stain reduction based on DDRM as shown in Fig. 2.
+
+**A. Stain Reduction**
+The general method for stain reduction is the binarization by image processing.
+As for the ancient manuscripts, yellows and sunburned stains are effectively removed by binarization because text are written in black ink.
+However, background, texts sharpness, and color intensity disappear by thresholding the binarization.
+Hence, we propose character reconfiguration after binarizing by leveraging a noise masking.
+Noise masking is a method to guide objects’ shape by masking noise of the reverse process in DDRM.
+The masked noise in the reverse process of DDRM is:
+xmask = ¬Hxθ,t (11)
+where H is the degradation matrix in Equation (8), and xθ,t is the prediction in the reverse process.
+Therefore, when the bimodal images are used as masks, DDRM generates characters-shape images.
+In short, the stain reduction is executed in two steps as bellow: (i) Stains are removed by the thresholding, and binarized images are utilized as masks in DDRM, and (ii) DDRM with the noise masking regenerates real characters from binarized characters.
+
+**B. Two-stage Restoration**
+A challenge in repairing dirt manuscripts is the ratio of characters to a whole page.
+Namely, it is hard to preserve local information of text during the overall restoration.
+Also, processing large-size images requires a great deal of hardware resources, and reducing the size could result in a loss of character information.
+To address this issue, a two-stage restoration process (Fig. 2) is employed in this paper.
+The two-stage restoration consists of a patch stage and a page stage.
+Before restoration, two pre-trained models of DDPM are prepared, which are trained with patches of manuscript images and whole page images.
+The two-stage restoration is as follows:
+Stage 1 (Patch Stage): In the first stage, the manuscript image is divided into patches, and the first stain reduction is performed on each divided image separately.
+The DDRM in stage 1 is trained with randomly cropped images to ensure local information of texts.
+Since image generation by DDRM is individually leveraged each image, each background becomes uneven.
+Stage 2 (Page Stage): In the second stage, restored patches are connected to make a page.
+Since the patches are independently generated, they do not have consistency in the background.
+Then, the second stain reduction for a whole page is proceeded.
+The DDRM in stage 2 is trained with pages of the manuscript.
+By employing this two-stage restoration process, it becomes possible to effectively remove stains from manuscript images while preserving character information.
+
+**C. gamma correction**
+DDRM is effective in reconstructing sharp characters by processing the binarization.
+However, the generated characters tend to be pale.
+It is because the page image is pre-processed and scaled down to 256 × 256 for training.
+Also, the variance of brightness in Table. I denotes that this method is low contrast.
+In this section, gamma correction is adopted to adjust the clearness of characters and enhance the contrast.
+Gamma correction is expressed using the following function, y = xγ (12)
+where γ is a parameter, and γ = 1.5 is used in this experiments.
+By manipulating this value, it is possible to improve the visibility of the generated image.
+
+**V. EVALUATION**
+**A. Experimental Configurations**
+1) Implementation Conditions: Experiments in this paper are conducted on Xeon(R) Gold6342 CPU @ 2.80GHz and a single NVIDIA RTX A6000 GPU.
+The operating system is Ubuntu 22.04.1 LTS, the CUDA version is 11.8, and the GPU acceleration library cuDNN is 8.7.0.
+The PyTorch library is used as the framework for implementing deep learning.
+
+2) Metrics: The quality of stain removal is evaluated by multiple aspects.
+The one is how much stains are reduced from the ground truth.
+This aspect is recognized by the kurtosis of the RGB histograms, the entropy, and the variance of brightness value.
+The other aspect is restoration results should keep the original forms, evaluated by image similarity metrics such as PSNR(Peak Signal to Noise Ratio) and SSIM(Structual SIMilarity).
+We assume that many types of stains tend to decline the kurtosis.
+The equation for kurtosis, which quantifies the peak of a distribution, is as follows:
+Kurtosis = E[(X − E[X])4] / σ4 − 3 (13)
+Since the colors of stains cause randomness, the entropy could be declined by the restoration.
+Also, high brightness variance indicates high contrast, one of the elements of high visibility.
+Simultaneously, the PSNR and SSIM have an important role in evaluating the restoration.
+It is because loss of the original form is deviated from the restoration definition, especially, a problem to avoid for the cultural heritage.
+For ancient manuscripts, preserving characters’ information is the main task as well as stain reduction.
+
+3) Dataset: We use page images from the ”Kuzushi-ji Dataset” shared by the ”Center for Open Data in the Humanities”.
+For the two-stage restoration, we utilize parameters trained with two different DDPM.
+The first set of parameters is trained on 100,240 randomly cropped images of size 64 × 64 pixels from the page images.
+The second set of parameters is trained on 4829-page images.
+Due to resource constraints, the page images are trained at a size of 128 × 128 pixels.
+The images to be restored are from the ”Tsurezuregusa”.
+The ”Tsurezuregusa” was written in the early Keicho era (1596∼).
+Over several hundred years, the colors in the manuscript have faded, and dirt has accumulated, leading to deterioration.
+
+**B. Experimental Results**
+Fig. 3 shows the qualitative comparison of restoration results.
+Here, the background of binarized images (BIN BACK) are produced by applying the pixel values obtained from the input data to the white pixels of the binary image.
+The binarization and our proposal can remove color stains and bleed through.
+In addition, our proposal can generate natural clean background images compared with the binarizaition.
+Comparing generated characters in Fig. 4, the sharpness of texts is lost by the thresholding; however, the sharpness and shading of black ink are recognized in our proposal.
+
+Table I reports the quantitative comparison by stain reduction metrics (i.e., the kurtosis, the variance of brightness, the entropy) and preservation metrics (i.e., PSNR and SSIM).
+Though the PSNR of binarization with background is the highest, the SSIM of the proposal is superior to it.
+Considering both values of PSNR and SSIM, the proposal is the most suitable method for input maintenance.
+For stain reduction, all methods achieve the goals, that is the kurtosis increase, the variance of brightness increase, and the entropy decrease.
+In contrast with the image similarity metrics, we should notice that stain reduction metrics are not the higher the better.
+For example, the kurtosis is extremely increased because its values are gathering only two, and loss of the color intensity of the background and characters.
+This result indicates that the proposal is more effective than the general binarization comprehensively.
+
+An effect of stains is clearly recognized in the RGB histograms in Fig. 5 and the kurtosis for each stain as shown in Table. II.
+In Fig. 5, stains cause noise, which is multiple peaks to histograms compared with the background.
+Then, We can see a reduction of noise and a similar distribution after restoration.
+This result is also seen in Table. II.
+The kurtosis of noisy histograms such as the color stains and bleedthrough are tended to lower than the background.
+Therefore, our proposal improves the values of them closer to the background.
+
+**VI. DISCUSSION**
+DDRM is able to remove stains and backing from old documents, but tends to produce lighter colors.
+This is because as the number of DDRM restorations increases, the generated image becomes closer to the specified background image.
+Therefore, it is necessary to adjust the number of restorations and the degree of textual information added by noise masking.
+Gamma correction, on the other hand, increases the contrast of the generated image and brings it closer to the background of the input image.
+The results of this validation show that PSNR and luminance variance improved by approximately 3.9 and 7.3, respectively, while SSIM and kurtosis decreased slightly.
+Thus, contrast-aware image generation improved the restoration quality.
+
+**VII. CONCLUSIONS**
+In this work, we present the stain reduction method, a combination of binarization, which is traditional image processing, and DDRM, which is the latest image restoration with deep learning, for ancient manuscript restoration.
+Adopting DDRM with noise-masking solves a disadvantage of binarization, that is, loss of the sharpness and color intensity of texts.
+Moreover, the two-stage restoration enables DDRM to preserve local information and ensure the consistency of a whole page.
+This proposal generates a more realistic image as if truly restored.
+This new method achieves higher image similarity metrics and clears the stain reduction metrics compared with the baseline.
+However, a tendency which characters to be pale is a weak point in the current state.
+This point for improvement could also improve the image similarity as denoted in Sec. VI.
+Plus, we should consider that there are no clear criteria for evaluation because it is hard to get a degradation-free ancient manuscript.
+The definition of appropriate evaluation metrics is an important work for this study.
+
+**VIII. ACKNOWLEDGMENTS**
+This work was supported in part by the Art Research Center at Ritsumeikan University, and the authors would like to express their gratitude for their support.

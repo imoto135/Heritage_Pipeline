@@ -43,6 +43,11 @@ class Config:
     save_freq  = 50    # 何エポックごとにチェックポイントを保存するか
     grad_clip  = 1.0
 
+    # --- 発散検出（Early Stopping） ---
+    # 過去最小avg_lossを10epoch連続で更新できず、かつ1.5倍を超えて悪化したら停止
+    diverge_patience  = 10
+    diverge_threshold = 1.5
+
     # --- モデル ---
     model_channels      = 64
     num_res_blocks      = 2

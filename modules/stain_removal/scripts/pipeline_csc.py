@@ -1,27 +1,27 @@
-"""Two-stage manuscript stain reduction pipeline.
+"""Two-stage manuscript stain reduction pipeline（CSCマスク版）。
 
-論文の2ステージ処理を一本のスクリプトで実行する。
+pipeline.py と同じ2ステージ処理だが、入力にCSCマスク済み画像を使う。
 
-  Stage 1 (SR1): 元サイズのまま128pxパッチに分割 → 各パッチにDDRM → フェザーブレンドで結合
-  Stage 2 (SR2): Stage 1の出力をページ全体DDRMで背景を統一  ※model_page.pth が必要
+  Stage 1 (SR1): ACE済み画像 + CSC黒文字マスクでパッチDDRM
+  Stage 2 (SR2): Stage 1出力をページ全体DDRMで背景統一
   ガンマ補正 (γ=1.5) を各ステージ後に適用
   赤テキストを元画像から合成（03_text_red.png があれば）
 
-入力ディレクトリ構造:
-    IMAGE_DIR/<page_id>/
-        00_input.png       # 染みあり原画像（任意サイズ）
-        02_text_black.png  # 黒文字マスク（同サイズ）
-        03_text_red.png    # 赤文字マスク（任意）
+入力ディレクトリ構造 (split_dataset_csc_mask/test/):
+    IMAGE_DIR/<book_id>/<image_stem>/
+        00_input.png       # ACE済み画像
+        02_text_black.png  # CSC黒文字マスク（0=文字）
+        03_text_red.png    # CSC赤文字マスク（0=文字）
 
 使い方:
-    python scripts/pipeline.py
+    cd modules/stain_removal
+    python scripts/pipeline_csc.py
 """
 
 import os
 import sys
 import shutil
 import glob
-import re
 
 import cv2
 import numpy as np
@@ -40,37 +40,29 @@ torch.set_printoptions(sci_mode=False)
 
 # ─── 設定 ─────────────────────────────────────────────────────────────────────
 
-# 入力ディレクトリ（prepare_inference_dir.py で作成したもの）
-IMAGE_DIR     = '../../tmp_work/inf2_input'
+IMAGE_DIR     = '../../data/split_dataset_csc_mask/test'
 
-# 出力ディレクトリ
-STAGE1_OUTPUT = '../../tmp_work/pipeline_test2/stage1'
-STAGE2_OUTPUT = '../../tmp_work/pipeline_test2/stage2'
+STAGE1_OUTPUT = '../../tmp_work/pipeline_csc_result/stage1'
+STAGE2_OUTPUT = '../../tmp_work/pipeline_csc_result/stage2'
+WORK_TMP_DIR  = '../../tmp_work/pipeline_csc_tmp'
 
-# 一時作業ディレクトリ（共有サーバーの /tmp は使わずリポジトリ内に置く）
-WORK_TMP_DIR  = '../../tmp_work/pipeline_tmp'
+PATCH_SIZE    = 128
+OVERLAP       = 64
 
-# パッチ推論設定
-PATCH_SIZE    = 128   # 学習解像度と一致させる
-OVERLAP       = 64    # パッチ間のオーバーラップ幅
+DEVICE        = 'cuda:0'
+MODEL_CHAR    = './experiments/model_char_csc/model_char_csc/ckpt_epoch0450.pth'
+MODEL_PAGE    = './experiments/model_page_csc/model_page_csc/ckpt_epoch0450.pth'
 
-# モデル
-DEVICE        = 'cuda:1'  # cuda:0は学習プロセスが専有中のため空いているcuda:1を使用
-MODEL_CHAR    = './experiments/model_char/model_char/ckpt_epoch0450.pth'   # Stage 1 用（500epoch学習済み、ckpt保存点で最良のepoch450）
-MODEL_PAGE    = './model/model_page.pth'   # Stage 2 用（未学習なら Stage 2 スキップ）
-
-# DDRM パラメータ
 TIMESTEPS      = 20
 SIGMA_0        = 0.05
 ETA            = 0.5
 ETA_B          = 1
-MASK_TIMESTEPS = 50   # この timestep まで noise masking を適用
+MASK_TIMESTEPS = 50
 
-# ガンマ補正
 GAMMA = 1.5
 
 
-# ─── Args / Config クラス（Diffusion クラスが要求する形式） ───────────────────
+# ─── Args / Config ────────────────────────────────────────────────────────────
 
 class _Args:
     seed          = 42
@@ -110,7 +102,7 @@ class _Config:
         rescaled              = True
         num_workers           = 0
         out_of_dist           = True
-        image_size            = PATCH_SIZE   # Stage 1 はパッチサイズ
+        image_size            = PATCH_SIZE
 
     class model:
         type              = 'orig'
@@ -151,7 +143,7 @@ class _Config:
         eps         = 1e-8
 
 
-# ─── パッチ分割・フェザーブレンド（main_high_inference.py より移植） ─────────
+# ─── パッチ分割・フェザーブレンド ─────────────────────────────────────────────
 
 def _make_weight_1d(length, left_ov, right_ov):
     ov = max(left_ov, right_ov, 1)
@@ -183,7 +175,6 @@ def _blend_patch(accum, wacc, patch_rgb, x, y, overlap, H, W, text_mask=None, ma
 
 
 def patch_inference(image_bgr, mask01, runner, patch_size=128, overlap=64):
-    """元サイズのままパッチ分割推論してフェザーブレンドで結合する。"""
     H, W = image_bgr.shape[:2]
     stride = patch_size - overlap
 
@@ -193,7 +184,7 @@ def patch_inference(image_bgr, mask01, runner, patch_size=128, overlap=64):
     coords = [(y, x) for y in range(0, H, stride) for x in range(0, W, stride)]
     total  = len(coords)
 
-    tmp_dir  = os.path.join(WORK_TMP_DIR, 'patch')
+    tmp_dir = os.path.join(WORK_TMP_DIR, 'patch')
     os.makedirs(tmp_dir, exist_ok=True)
 
     for i, (y, x) in enumerate(coords, 1):
@@ -204,7 +195,6 @@ def patch_inference(image_bgr, mask01, runner, patch_size=128, overlap=64):
         patch_bgr  = image_bgr[y:y2, x:x2]
         patch_mask = mask01[y:y2, x:x2]
 
-        # パディング（端のパッチがpatch_sizeより小さい場合）
         if ph != patch_size or pw != patch_size:
             pad_bgr  = np.zeros((patch_size, patch_size, 3), dtype=patch_bgr.dtype)
             pad_mask = np.zeros((patch_size, patch_size),    dtype=patch_mask.dtype)
@@ -212,7 +202,6 @@ def patch_inference(image_bgr, mask01, runner, patch_size=128, overlap=64):
             pad_mask[:ph, :pw] = patch_mask
             patch_bgr, patch_mask = pad_bgr, pad_mask
 
-        # 一時ディレクトリに保存して Diffusion.sample() に渡す
         patch_dir = os.path.join(tmp_dir, 'patchdir')
         os.makedirs(patch_dir, exist_ok=True)
         patch_img_path  = os.path.join(patch_dir, '00_input.png')
@@ -221,14 +210,11 @@ def patch_inference(image_bgr, mask01, runner, patch_size=128, overlap=64):
         Image.fromarray((patch_mask * 255).astype(np.uint8)).save(patch_mask_path)
         shutil.copy(patch_mask_path, os.path.join(patch_dir, 'used_mask_raw.png'))
 
-        # 必要なサブディレクトリを作成
         for sub in ['result', 'y', 'x', 'noisemask', 'backmask', 'cut_image', 'mask_dir', 'cat_dir']:
             os.makedirs(os.path.join(patch_dir, sub), exist_ok=True)
 
-        # Diffusion に渡す back_ground を入力パッチ画像に設定
         runner.args.back_ground = patch_img_path
 
-        # 推論（config の image_size を patch_size に合わせる）
         orig_size = runner.config.data.image_size
         runner.config.data.image_size = patch_size
         try:
@@ -236,7 +222,6 @@ def patch_inference(image_bgr, mask01, runner, patch_size=128, overlap=64):
         finally:
             runner.config.data.image_size = orig_size
 
-        # 結果ファイルを取得（最終タイムステップ）
         results = natsort.natsorted(glob.glob(os.path.join(patch_dir, 'result', '0_t*.png')))
         if not results:
             shutil.rmtree(patch_dir, ignore_errors=True)
@@ -247,29 +232,34 @@ def patch_inference(image_bgr, mask01, runner, patch_size=128, overlap=64):
             shutil.rmtree(patch_dir, ignore_errors=True)
             continue
 
-        # パディングを除去して元のパッチサイズに戻す
         result_bgr = result_bgr[:ph, :pw]
-
         _blend_patch(accum, wacc, result_bgr, x, y, overlap, H, W,
                      text_mask=mask01[y:y2, x:x2])
 
         shutil.rmtree(patch_dir, ignore_errors=True)
 
-    print()  # 改行
+    print()
     return (accum / np.clip(wacc, 1e-6, None)).astype(np.uint8)
 
 
 # ─── Stage 1 ──────────────────────────────────────────────────────────────────
 
-def run_stage1(image_dir, stage1_output):
-    """全ページに対してパッチ分割推論を実行する。"""
-    print('\n=== Stage 1: Patch DDRM ===')
+def run_stage1(image_dir, stage1_output, books=None):
+    print('\n=== Stage 1: Patch DDRM (CSC) ===')
     os.makedirs(stage1_output, exist_ok=True)
 
-    pages = natsort.natsorted(
-        [n for n in os.listdir(image_dir) if os.path.isdir(os.path.join(image_dir, n))]
-    )
-    print(f'対象: {len(pages)} ページ  |  モデル: {MODEL_CHAR}')
+    all_books = sorted(b for b in os.listdir(image_dir) if os.path.isdir(os.path.join(image_dir, b)))
+    if books:
+        all_books = [b for b in all_books if b in books]
+
+    # book/image_stem の2階層を収集
+    page_dirs = natsort.natsorted([
+        os.path.join(image_dir, b, stem)
+        for b in all_books
+        for stem in sorted(os.listdir(os.path.join(image_dir, b)))
+        if os.path.isdir(os.path.join(image_dir, b, stem))
+    ])
+    print(f'対象: {len(page_dirs)} ページ  |  モデル: {MODEL_CHAR}')
 
     if not os.path.exists(MODEL_CHAR):
         raise FileNotFoundError(f'Stage 1 モデルが見つかりません: {MODEL_CHAR}')
@@ -277,44 +267,44 @@ def run_stage1(image_dir, stage1_output):
     args = _Args()
     args.device     = DEVICE
     args.model_type = 'char'
+    args.ckpt       = MODEL_CHAR
     config = _Config()
     runner = Diffusion(args, config)
 
-    for page_id in pages:
-        out_path = os.path.join(stage1_output, page_id + '.png')
-        fin_path = os.path.join(stage1_output, page_id + '_fin.png')
+    for page_dir in page_dirs:
+        stem     = os.path.basename(page_dir)
+        out_path = os.path.join(stage1_output, stem + '.png')
+        fin_path = os.path.join(stage1_output, stem + '_fin.png')
         if os.path.exists(out_path):
-            print(f'  [skip] {page_id}')
+            print(f'  [skip] {stem}')
             continue
 
-        input_path = os.path.join(image_dir, page_id, '00_input.png')
-        mask_path  = os.path.join(image_dir, page_id, '02_text_black.png')
+        input_path = os.path.join(page_dir, '00_input.png')
+        mask_path  = os.path.join(page_dir, '02_text_black.png')
         if not os.path.exists(input_path) or not os.path.exists(mask_path):
-            print(f'  [WARN] ファイルなし: {page_id}')
+            print(f'  [WARN] ファイルなし: {stem}')
             continue
 
-        print(f'  処理中: {page_id}')
+        print(f'  処理中: {stem}')
         img_pil  = Image.open(input_path).convert('RGB')
         mask_pil = Image.open(mask_path).convert('L')
 
-        img_bgr  = np.array(img_pil)[:, :, ::-1].copy()
-        mask01   = (np.array(mask_pil) > 127).astype(np.uint8)
+        img_bgr = np.array(img_pil)[:, :, ::-1].copy()
+        mask01  = (np.array(mask_pil) > 127).astype(np.uint8)
 
         try:
             out_bgr = patch_inference(img_bgr, mask01, runner,
                                       patch_size=PATCH_SIZE, overlap=OVERLAP)
         except Exception as e:
-            print(f'  [ERROR] {page_id}: {e}')
+            print(f'  [ERROR] {stem}: {e}')
             continue
 
-        # RGB に変換してガンマ補正
         out_rgb = out_bgr[:, :, ::-1].copy()
         out_img = apply_gamma_pil(Image.fromarray(out_rgb), gamma=GAMMA)
         out_img.save(out_path)
         print(f'  [保存] {out_path}')
 
-        # 赤テキスト合成
-        red_mask_path = os.path.join(image_dir, page_id, '03_text_red.png')
+        red_mask_path = os.path.join(page_dir, '03_text_red.png')
         if os.path.exists(red_mask_path):
             red_mask = np.array(Image.open(red_mask_path).convert('L')) > 127
             orig_arr = np.array(img_pil)
@@ -328,44 +318,52 @@ def run_stage1(image_dir, stage1_output):
 
 # ─── Stage 2 ──────────────────────────────────────────────────────────────────
 
-def run_stage2(stage1_output, image_dir, stage2_output):
-    """Stage 1 の出力に対してページ全体 DDRM を適用する。"""
-    print('\n=== Stage 2: Page DDRM ===')
+def run_stage2(stage1_output, image_dir, stage2_output, books=None):
+    print('\n=== Stage 2: Page DDRM (CSC) ===')
     os.makedirs(stage2_output, exist_ok=True)
 
     if not os.path.exists(MODEL_PAGE):
         print(f'  [SKIP] Stage 2 モデルが見つかりません: {MODEL_PAGE}')
-        print('  model_page.pth を学習後に再実行してください。')
         return
 
     stage1_files = natsort.natsorted(glob.glob(os.path.join(stage1_output, '*.png')))
-    # _fin.png は除外
     stage1_files = [f for f in stage1_files if not f.endswith('_fin.png')]
+    if books:
+        stage1_files = [f for f in stage1_files if any(os.path.basename(f).startswith(b) for b in books)]
     print(f'対象: {len(stage1_files)} ページ  |  モデル: {MODEL_PAGE}')
 
     args = _Args()
     args.device     = DEVICE
     args.model_type = 'page'
+    args.ckpt       = MODEL_PAGE
     config = _Config()
-    config.data.image_size = 256  # Stage 2 モデルの学習解像度に合わせる
+    config.data.image_size = 256
     runner = Diffusion(args, config)
 
     for stage1_path in stage1_files:
-        page_id = os.path.splitext(os.path.basename(stage1_path))[0]
-        out_path = os.path.join(stage2_output, page_id + '.png')
+        stem     = os.path.splitext(os.path.basename(stage1_path))[0]
+        out_path = os.path.join(stage2_output, stem + '.png')
         if os.path.exists(out_path):
-            print(f'  [skip] {page_id}')
+            print(f'  [skip] {stem}')
             continue
 
-        mask_path = os.path.join(image_dir, page_id, '02_text_black.png')
-        if not os.path.exists(mask_path):
-            print(f'  [WARN] マスクなし: {page_id}')
+        # CSCマスクを book ディレクトリから探す
+        book_id   = '_'.join(stem.split('_')[:1]) if '_' in stem else stem
+        # image_dir/<book>/<stem>/ の構造を探索
+        mask_path = None
+        for book in os.listdir(image_dir):
+            candidate = os.path.join(image_dir, book, stem, '02_text_black.png')
+            if os.path.exists(candidate):
+                mask_path = candidate
+                break
+
+        if mask_path is None:
+            print(f'  [WARN] マスクなし: {stem}')
             continue
 
-        print(f'  処理中: {page_id}')
+        print(f'  処理中: {stem}')
 
-        # Stage 1 出力を一時ディレクトリに配置して sample() に渡す
-        tmp_dir = os.path.join(WORK_TMP_DIR, 'page', page_id)
+        tmp_dir = os.path.join(WORK_TMP_DIR, 'page', stem)
         os.makedirs(tmp_dir, exist_ok=True)
         shutil.copy(stage1_path, os.path.join(tmp_dir, '00_input.png'))
         shutil.copy(mask_path,   os.path.join(tmp_dir, 'used_mask_raw.png'))
@@ -377,13 +375,13 @@ def run_stage2(stage1_output, image_dir, stage2_output):
         try:
             runner.sample(tmp_dir)
         except Exception as e:
-            print(f'  [ERROR] {page_id}: {e}')
+            print(f'  [ERROR] {stem}: {e}')
             shutil.rmtree(tmp_dir, ignore_errors=True)
             continue
 
         results = natsort.natsorted(glob.glob(os.path.join(tmp_dir, 'result', '0_t*.png')))
         if not results:
-            print(f'  [WARN] 結果ファイルなし: {page_id}')
+            print(f'  [WARN] 結果ファイルなし: {stem}')
             shutil.rmtree(tmp_dir, ignore_errors=True)
             continue
 
@@ -392,22 +390,23 @@ def run_stage2(stage1_output, image_dir, stage2_output):
         print(f'  [保存] {out_path}')
 
         # 赤テキスト合成
-        red_mask_path = os.path.join(image_dir, page_id, '03_text_red.png')
-        orig_path     = os.path.join(image_dir, page_id, '00_input.png')
-        if os.path.exists(red_mask_path) and os.path.exists(orig_path):
-            red_mask = np.array(Image.open(red_mask_path).convert('L')) > 127
-            orig_arr = np.array(Image.open(orig_path).convert('RGB'))
-            out_arr  = np.array(out_img)
-            # マスクと出力サイズが違う場合はリサイズ
-            if red_mask.shape != out_arr.shape[:2]:
-                red_mask = np.array(Image.fromarray(red_mask.astype(np.uint8) * 255)
-                                    .resize((out_arr.shape[1], out_arr.shape[0]), Image.LANCZOS)) > 127
-                orig_arr = np.array(Image.fromarray(orig_arr)
-                                    .resize((out_arr.shape[1], out_arr.shape[0]), Image.LANCZOS))
-            out_arr[red_mask] = orig_arr[red_mask]
-            fin_path = os.path.join(stage2_output, page_id + '_fin.png')
-            Image.fromarray(out_arr).save(fin_path)
-            print(f'  [保存] {fin_path}')
+        for book in os.listdir(image_dir):
+            red_candidate = os.path.join(image_dir, book, stem, '03_text_red.png')
+            orig_candidate = os.path.join(image_dir, book, stem, '00_input.png')
+            if os.path.exists(red_candidate) and os.path.exists(orig_candidate):
+                red_mask = np.array(Image.open(red_candidate).convert('L')) > 127
+                orig_arr = np.array(Image.open(orig_candidate).convert('RGB'))
+                out_arr  = np.array(out_img)
+                if red_mask.shape != out_arr.shape[:2]:
+                    red_mask = np.array(Image.fromarray(red_mask.astype(np.uint8) * 255)
+                                        .resize((out_arr.shape[1], out_arr.shape[0]), Image.LANCZOS)) > 127
+                    orig_arr = np.array(Image.fromarray(orig_arr)
+                                        .resize((out_arr.shape[1], out_arr.shape[0]), Image.LANCZOS))
+                out_arr[red_mask] = orig_arr[red_mask]
+                fin_path = os.path.join(stage2_output, stem + '_fin.png')
+                Image.fromarray(out_arr).save(fin_path)
+                print(f'  [保存] {fin_path}')
+                break
 
         shutil.rmtree(tmp_dir, ignore_errors=True)
 
@@ -415,12 +414,21 @@ def run_stage2(stage1_output, image_dir, stage2_output):
 # ─── メイン ───────────────────────────────────────────────────────────────────
 
 def main():
+    import argparse
+    parser = argparse.ArgumentParser()
+    parser.add_argument('--book', nargs='+', default=None, help='処理する冊ID（省略時は全冊）')
+    args = parser.parse_args()
+
+    books = args.book
+
     print(f'入力: {IMAGE_DIR}')
     print(f'Stage 1 出力: {STAGE1_OUTPUT}')
     print(f'Stage 2 出力: {STAGE2_OUTPUT}')
+    if books:
+        print(f'対象冊: {books}')
 
-    run_stage1(IMAGE_DIR, STAGE1_OUTPUT)
-    run_stage2(STAGE1_OUTPUT, IMAGE_DIR, STAGE2_OUTPUT)
+    run_stage1(IMAGE_DIR, STAGE1_OUTPUT, books=books)
+    run_stage2(STAGE1_OUTPUT, IMAGE_DIR, STAGE2_OUTPUT, books=books)
 
     print('\n=== 完了 ===')
 
