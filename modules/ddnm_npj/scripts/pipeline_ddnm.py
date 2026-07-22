@@ -173,7 +173,9 @@ def infer_patch(patch_bgr: np.ndarray, mask01: np.ndarray,
                 mask_timesteps: int = 50,
                 final_correction: bool = True,
                 missing_pull: float = 0.0,
-                full_kept: bool = False) -> np.ndarray:
+                full_kept: bool = False,
+                text_dark_value: int = 30,
+                deg_mask01: np.ndarray = None) -> np.ndarray:
     """
     DDNM で1パッチを修復する。
 
@@ -197,6 +199,13 @@ def infer_patch(patch_bgr: np.ndarray, mask01: np.ndarray,
                       range-space correctionが全画素をbg_patch_bgr(=汚れをinpaintで
                       埋めたクリーンな参照)へ強くピン留めする。DDRMのkept(背景)が
                       y_0に強収束してきれいになるのと同じ原理を汚れ領域にも適用する。
+        deg_mask01: 文字マスク(mask01)とは別に、劣化(裏写り・シミ)を明示的に
+                      missing側へ追加するマスク。use_shape_guidance=True時、
+                      文字は text_dark_value（黒）へ、劣化はその場所を周囲の
+                      背景色でinpaintした色へ、それぞれ別方向にソフトブレンドする
+                      （事前にy_0を作り込まなくても、1回のパスで劣化を背景色へ
+                      引き寄せられる。前処理(v15等)で消しきれず残った裏写りの
+                      追加対策として使う）。
 
     Returns:
         修復済みBGRパッチ (patch_size, patch_size, 3)
@@ -217,12 +226,17 @@ def infer_patch(patch_bgr: np.ndarray, mask01: np.ndarray,
         bg_fill[mask01 == 1] = 255  # 文字を白で埋める
         y_0 = to_tensor(Image.fromarray(bg_fill)).unsqueeze(0).to(device)
 
+    # 文字マスクと劣化マスク(あれば)を合わせたものをmissing側とする
+    combined_mask01 = mask01
+    if deg_mask01 is not None:
+        combined_mask01 = ((mask01 == 1) | (deg_mask01 == 1)).astype(np.uint8)
+
     if full_kept:
         # 全ピクセルkept化: missing_indicesを空にする
         missing = torch.tensor([], dtype=torch.long, device=device)
     else:
-        # missing_indices: 文字ピクセル(mask01==1) → pixel-major フラットインデックス
-        mask_flat = torch.from_numpy(mask01).reshape(-1).float()
+        # missing_indices: 文字+劣化ピクセル(combined_mask01==1) → pixel-major フラットインデックス
+        mask_flat = torch.from_numpy(combined_mask01).reshape(-1).float()
         missing_pix = torch.nonzero(mask_flat == 1).long().reshape(-1)
         missing_r = missing_pix * 3
         missing_g = missing_r + 1
@@ -236,19 +250,37 @@ def infer_patch(patch_bgr: np.ndarray, mask01: np.ndarray,
 
     x = torch.randn(1, 3, patch_size, patch_size, device=device)
 
-    # 形状ガイダンス用マスク: 背景=1 文字=0（DDRMと同方向）
+    # 形状ガイダンス用マスク: 背景=1 文字=0（DDRMと同方向）。劣化マスクは文字の
+    # 「形」ではないのでガイダンスには含めない（mask01のみ使用）
     guidance_mask = None
     if use_shape_guidance:
         m = torch.from_numpy((1 - mask01).astype(np.float32))
         guidance_mask = m.reshape(1, 1, patch_size, patch_size).repeat(1, 3, 1, 1).to(device)
 
-    # missing_pull用: missing領域をinpaintで周辺色から滑らかに埋めたローカル背景マップ
+    # missing_pull用のpull_target構築。
+    # 汚れ除去(use_shape_guidance=False, missing=劣化)では、周囲の背景色に向けて
+    # inpaintで滑らかに埋めた色をpull_targetにする（汚れを背景に馴染ませる方向）。
+    # 文字再生成(use_shape_guidance=True, missing=文字)では逆に、DDNMのrange-space
+    # correctionがmissing側(文字)を全く補正しないために x0予測が薄いグレーに
+    # 留まりがちな問題を補うため、pull_targetを暗色(墨色)にして missing側を
+    # 濃い方向へソフトブレンドする（DDRMのmissing側再ノイズ化+補正項に相当する効果）。
+    # deg_mask01がある場合は、文字=暗色・劣化=周囲から埋めた背景色、という
+    # 画素ごとに異なるpull_targetを合成する（1回のパスで両方向を同時に扱う）。
     pull_target = None
     if missing_pull > 0 and not full_kept:
-        pull_bgr = cv2.inpaint(patch_bgr, (mask01 * 255).astype(np.uint8),
-                              inpaintRadius=15, flags=cv2.INPAINT_TELEA)
-        pull_rgb = cv2.cvtColor(pull_bgr, cv2.COLOR_BGR2RGB)
-        pull_target = to_tensor(Image.fromarray(pull_rgb)).unsqueeze(0).to(device)
+        if use_shape_guidance:
+            dark_rgb = np.full_like(patch_bgr, text_dark_value)
+            if deg_mask01 is not None and deg_mask01.any():
+                deg_fill = cv2.inpaint(patch_bgr, (deg_mask01 * 255).astype(np.uint8),
+                                       inpaintRadius=15, flags=cv2.INPAINT_TELEA)
+                dark_rgb = dark_rgb.copy()
+                dark_rgb[deg_mask01 == 1] = deg_fill[deg_mask01 == 1]
+            pull_target = to_tensor(Image.fromarray(cv2.cvtColor(dark_rgb, cv2.COLOR_BGR2RGB))).unsqueeze(0).to(device)
+        else:
+            pull_bgr = cv2.inpaint(patch_bgr, (mask01 * 255).astype(np.uint8),
+                                  inpaintRadius=15, flags=cv2.INPAINT_TELEA)
+            pull_rgb = cv2.cvtColor(pull_bgr, cv2.COLOR_BGR2RGB)
+            pull_target = to_tensor(Image.fromarray(pull_rgb)).unsqueeze(0).to(device)
 
     betas_dev = betas.to(device)
     xs, _ = ddnm_steps(x, seq, model, betas_dev, H_funcs, y_0, sigma_0, device,
@@ -275,11 +307,15 @@ def infer_page(image_bgr: np.ndarray,
                mask_timesteps: int = 50,
                final_correction: bool = True,
                missing_pull: float = 0.0,
-               full_kept: bool = False) -> np.ndarray:
+               full_kept: bool = False,
+               text_dark_value: int = 30,
+               deg_mask01: np.ndarray = None) -> np.ndarray:
     """
     fixed_bg_patch: (patch_size, patch_size, 3)。指定時は全パッチで同じ背景参照を使う
                     （ddrm_npj本家と同じ: isemonogatariをパッチサイズにリサイズしたもの）
     full_kept: infer_patchに転送。Trueならmissing_indicesを空にして全画素をkept化する。
+    deg_mask01: infer_patchに転送。劣化(裏写り)をmissing側へ追加し、周囲の背景色へ
+                ソフトブレンドする（詳細はinfer_patchのdocstring参照）。
     """
     H, W = image_bgr.shape[:2]
 
@@ -304,6 +340,7 @@ def infer_page(image_bgr: np.ndarray,
 
         patch_bgr  = image_bgr[y:y2, x:x2]
         patch_mask = mask01[y:y2, x:x2]
+        patch_deg_mask = deg_mask01[y:y2, x:x2] if deg_mask01 is not None else None
 
         bg_patch = None
         if fixed_bg_patch is not None:
@@ -323,13 +360,20 @@ def infer_page(image_bgr: np.ndarray,
                 pad_bg[:ph, :pw] = bg_patch
                 bg_patch = pad_bg
 
+            if patch_deg_mask is not None:
+                pad_deg = np.zeros((patch_size, patch_size), dtype=np.uint8)
+                pad_deg[:ph, :pw] = patch_deg_mask
+                patch_deg_mask = pad_deg
+
         res = infer_patch(patch_bgr, patch_mask, model, betas, device,
                           patch_size, bg_patch, timesteps, sigma_0, eta,
                           use_shape_guidance=use_shape_guidance,
                           mask_timesteps=mask_timesteps,
                           final_correction=final_correction,
                           missing_pull=missing_pull,
-                          full_kept=full_kept)
+                          full_kept=full_kept,
+                          text_dark_value=text_dark_value,
+                          deg_mask01=patch_deg_mask)
         res = res[:ph, :pw]
 
         w2d = _make_weight_2d(ph, pw, y, y+ph, x, x+pw, H, W, overlap)
@@ -473,6 +517,14 @@ def run_ddrm_style_mode(args, model, betas):
                     tb = cv2.imread(tb_path, cv2.IMREAD_GRAYSCALE)
                     hsv_in = cv2.cvtColor(img_bgr, cv2.COLOR_BGR2HSV)
                     mask01 = ((tb < 127) & (hsv_in[:, :, 1] <= 150)).astype(np.uint8)
+                    if args.text_mask_dilate > 0:
+                        # CSCの黒文字マスクはかすれた薄い先端・縁を取りこぼすことがあり、
+                        # そこが「背景」扱いされて自己参照背景に引き込まれ消えてしまう
+                        # （掠れの原因）。数px膨張させて薄い縁を巻き込む
+                        k = cv2.getStructuringElement(
+                            cv2.MORPH_ELLIPSE,
+                            (args.text_mask_dilate*2+1, args.text_mask_dilate*2+1))
+                        mask01 = cv2.dilate(mask01, k)
                     logger.info(f'  CSC文字マスク使用: 文字割合={100*mask01.mean():.1f}%')
                 if os.path.exists(bg_path):
                     bg_mask01 = (cv2.imread(bg_path, cv2.IMREAD_GRAYSCALE) > 127).astype(np.uint8)
@@ -480,6 +532,24 @@ def run_ddrm_style_mode(args, model, betas):
                 otsu_thresh = compute_page_otsu(img_bgr)
                 mask01 = load_mask(img_bgr, otsu_thresh=otsu_thresh)
                 logger.info(f'  Otsu閾値={otsu_thresh}, 文字割合={100*mask01.mean():.1f}%')
+
+        page_deg_mask01 = None
+        if args.deg_pull and args.mask_dir:
+            deg_path2 = os.path.join(args.mask_dir, stem, '04_degradation.png')
+            if os.path.exists(deg_path2):
+                deg2 = cv2.imread(deg_path2, cv2.IMREAD_GRAYSCALE)
+                deg01_2 = (deg2 > 127).astype(np.uint8)
+                # 裏写りは細かいスペックル状に断片化しているため、まずクロージングで
+                # ひとかたまりにまとめてから膨張する（verify_text_bleedthrough.pyの
+                # extract_ghost_regionsと同じ考え方）
+                k_close = cv2.getStructuringElement(cv2.MORPH_ELLIPSE, (9, 9))
+                deg01_2 = cv2.morphologyEx(deg01_2, cv2.MORPH_CLOSE, k_close)
+                if args.deg_dilate > 0:
+                    k_deg = cv2.getStructuringElement(
+                        cv2.MORPH_ELLIPSE, (args.deg_dilate*2+1, args.deg_dilate*2+1))
+                    deg01_2 = cv2.dilate(deg01_2, k_deg)
+                page_deg_mask01 = deg01_2
+                logger.info(f'  劣化pull対象: {100*page_deg_mask01.mean():.2f}%')
 
         # 背景参照を決定
         # degradation_only: kept=文字+背景の両方を入力からそのままピン留めしたいので、
@@ -595,11 +665,27 @@ def run_ddrm_style_mode(args, model, betas):
                                 mask_timesteps=args.mask_timesteps,
                                 final_correction=not args.no_final_correction,
                                 missing_pull=args.missing_pull,
-                                full_kept=args.full_kept)
+                                full_kept=args.full_kept,
+                                text_dark_value=args.text_dark_value,
+                                deg_mask01=page_deg_mask01)
 
         # 赤印章を入力から合成（拡散過程に含めず後からオーバーレイ。npj論文の設計）
+        # 彩度>150の厳格な閾値だけだと、CSCの赤文字マスクが捉えている縁の薄い
+        # 朱肉部分(彩度がやや低い)が保護対象から漏れ、そこがkept(背景)として
+        # 自己参照背景に引き込まれ掠れる。CSC赤マスク(03_text_red.png)があれば
+        # 和集合で保護範囲を広げる
         hsv = cv2.cvtColor(img_bgr, cv2.COLOR_BGR2HSV)
         red_keep = hsv[:, :, 1] > 150
+        if args.mask_dir:
+            tr_path = os.path.join(args.mask_dir, stem, '03_text_red.png')
+            if os.path.exists(tr_path):
+                red_keep = red_keep | (cv2.imread(tr_path, cv2.IMREAD_GRAYSCALE) < 127)
+        if args.text_mask_dilate > 0:
+            # 朱肉の縁の薄い部分も同様に取りこぼされ掠れるため、同じ量だけ膨張
+            k = cv2.getStructuringElement(
+                cv2.MORPH_ELLIPSE,
+                (args.text_mask_dilate*2+1, args.text_mask_dilate*2+1))
+            red_keep = cv2.dilate(red_keep.astype(np.uint8), k) > 0
         result[red_keep] = img_bgr[red_keep]
 
         cv2.imwrite(out_path, result)
@@ -630,8 +716,25 @@ def main():
     parser.add_argument('--mask_timesteps', type=int, default=50,
                         help='形状ガイダンス(xt*mask)を適用するtの下限')
     parser.add_argument('--missing_pull', type=float, default=0.0,
-                        help='missing側(汚れ)のx0予測を周辺背景色にソフトブレンドする強さ(0〜1)。'
-                             '0だと汚れが別の色に置換されるだけで消えきらない')
+                        help='missing側のx0予測をソフトブレンドする強さ(0〜1)。'
+                             '--use_shape_guidance時(文字再生成)はtext_dark_valueへ'
+                             '濃くする方向、それ以外(汚れ除去)は周辺背景色へ薄める方向。'
+                             '0だと汚れが別の色に置換されるだけで消えきらない/文字が薄いまま')
+    parser.add_argument('--text_dark_value', type=int, default=30,
+                        help='--ddrm_style(文字再生成)時、missing_pullが文字を'
+                             '収束させる先の暗さ(0=黒〜255)。デフォルト30は濃い墨相当')
+    parser.add_argument('--text_mask_dilate', type=int, default=0,
+                        help='--ddrm_style時、黒文字マスク・赤印章保護領域を'
+                             'この半径(px)だけ膨張させる。0で無効。'
+                             'かすれた薄い先端・縁が背景扱いされて消える対策')
+    parser.add_argument('--deg_pull', action='store_true',
+                        help='--ddrm_style(文字再生成)時、劣化マスク(04_degradation.png)'
+                             'をmissing側に明示的に追加し、周囲の背景色へmissing_pullで'
+                             'ソフトブレンドする。前処理(v15等)で消しきれず残った'
+                             '裏写り・シミへの追加対策。missing_pull>0の時のみ有効')
+    parser.add_argument('--deg_dilate', type=int, default=5,
+                        help='--deg_pull時、劣化マスクをクロージングでまとめた後に'
+                             '膨張させる半径(px)')
     parser.add_argument('--enhance', action='store_true',
                         help='full_kept時に修復を強調: 背景をフラットフィールド補正で'
                              'bg_targetの明るさに統一し、文字をtext_gainで濃くする')
