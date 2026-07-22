@@ -1,7 +1,8 @@
 """
 擬似劣化ベンチマーク生成（修士論文 Algorithm 2 の実装）。
 
-1. テストsplitのCSC v2マスクから劣化率最小のクリーンページを自動選定（GT）
+1. テストsplitのCSC v2マスクから劣化率最小のクリーンページを自動選定（GT）。
+   --book省略時はテストsplit全冊（11冊）を横断して選定する
 2. Algorithm 2で擬似シミを付与（text-preserving版 I_stained を使用）
 3. 劣化画像に ACE + CSC v2 を適用してマスク生成（復元手法への入力）
 
@@ -14,8 +15,12 @@
 
 使い方:
     cd /home/imoto/Heritage_Pipeline
+    # 全冊横断で50ページ選定
     conda run -n diffusion python scripts/benchmark/generate_pseudo_degradation.py \
-        --n_pages 10 --intensity 1.0
+        --n_pages 50 --intensity 1.0
+    # 特定の1冊だけに限定する場合
+    conda run -n diffusion python scripts/benchmark/generate_pseudo_degradation.py \
+        --n_pages 10 --book 200010454 --intensity 1.0
 """
 
 import argparse
@@ -36,25 +41,36 @@ SPLIT_TEST  = os.path.join(REPO_ROOT, 'data', 'split_dataset', 'test')
 OUT_BASE    = os.path.join(REPO_ROOT, 'tmp_work', 'benchmark')
 
 
-def select_clean_pages(n_pages: int, book: str = '200010454'):
-    """CSC v2マスクの劣化クラス割合が最小のページを選ぶ（GT用クリーンページ）。"""
+def select_clean_pages(n_pages: int, book: str = None):
+    """
+    CSC v2マスクの劣化クラス割合が最小のページを選ぶ（GT用クリーンページ）。
+    book未指定時はテストsplit全冊を横断して選ぶ（サンプル数を増やすため）。
+
+    Returns: [(book, stem), ...] 劣化割合が小さい順にn_pages件
+    """
     scores = []
-    for d in sorted(glob.glob(os.path.join(CSC_MASK_V2, book, '*'))):
-        stem = os.path.basename(d)
-        deg_p = os.path.join(d, '04_degradation.png')
-        tb_p  = os.path.join(d, '02_text_black.png')
-        if not (os.path.exists(deg_p) and os.path.exists(tb_p)):
-            continue
-        deg = cv2.imread(deg_p, cv2.IMREAD_GRAYSCALE)
-        tb  = cv2.imread(tb_p,  cv2.IMREAD_GRAYSCALE)
-        deg_ratio = (deg > 127).mean()
-        text_ratio = (tb < 127).mean()
-        # 文字がある本文ページに限定（表紙・白紙を除外）
-        if text_ratio < 0.02:
-            continue
-        scores.append((deg_ratio, stem))
+    book_dirs = [book] if book else sorted(
+        d for d in os.listdir(CSC_MASK_V2) if os.path.isdir(os.path.join(CSC_MASK_V2, d))
+    )
+    for b in book_dirs:
+        for d in sorted(glob.glob(os.path.join(CSC_MASK_V2, b, '*'))):
+            if not os.path.isdir(d):
+                continue
+            stem = os.path.basename(d)
+            deg_p = os.path.join(d, '04_degradation.png')
+            tb_p  = os.path.join(d, '02_text_black.png')
+            if not (os.path.exists(deg_p) and os.path.exists(tb_p)):
+                continue
+            deg = cv2.imread(deg_p, cv2.IMREAD_GRAYSCALE)
+            tb  = cv2.imread(tb_p,  cv2.IMREAD_GRAYSCALE)
+            deg_ratio = (deg > 127).mean()
+            text_ratio = (tb < 127).mean()
+            # 文字がある本文ページに限定（表紙・白紙を除外）
+            if text_ratio < 0.02:
+                continue
+            scores.append((deg_ratio, b, stem))
     scores.sort()
-    return [s for _, s in scores[:n_pages]]
+    return [(b, s) for _, b, s in scores[:n_pages]]
 
 
 def pseudo_degrade(img_bgr: np.ndarray,
@@ -111,7 +127,8 @@ def pseudo_degrade(img_bgr: np.ndarray,
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument('--n_pages',   type=int, default=10)
-    parser.add_argument('--book',      default='200010454')
+    parser.add_argument('--book',      default=None,
+                        help='指定時はその冊のみ対象。省略時はテストsplit全冊から選ぶ')
     parser.add_argument('--intensity', type=float, default=1.0)
     parser.add_argument('--seed',      type=int, default=0)
     args = parser.parse_args()
@@ -119,11 +136,11 @@ def main():
     for sub in ['clean', 'degraded', 'stain_gt']:
         os.makedirs(os.path.join(OUT_BASE, sub), exist_ok=True)
 
-    stems = select_clean_pages(args.n_pages, args.book)
-    print(f'クリーンページ {len(stems)} 枚選定: {stems}')
+    pages = select_clean_pages(args.n_pages, args.book)
+    print(f'クリーンページ {len(pages)} 枚選定: {pages}')
 
-    for i, stem in enumerate(stems):
-        src = os.path.join(SPLIT_TEST, args.book, stem + '.jpg')
+    for i, (book, stem) in enumerate(pages):
+        src = os.path.join(SPLIT_TEST, book, stem + '.jpg')
         img = cv2.imread(src)
         if img is None:
             print(f'読み込み失敗: {src}')
@@ -139,7 +156,7 @@ def main():
         # 劣化画像に ACE + CSC v2 → マスク生成
         out_dir = os.path.join(OUT_BASE, 'masks', stem)
         if os.path.exists(os.path.join(out_dir, '02_text_black.png')):
-            print(f'[{i+1}/{len(stems)}] {stem}: マスク既存')
+            print(f'[{i+1}/{len(pages)}] {stem}: マスク既存')
             continue
         os.makedirs(out_dir, exist_ok=True)
         ace_img = automatic_color_equalization(degraded, alpha=5.0, n_samples=200, seed=0)
@@ -151,7 +168,7 @@ def main():
         cv2.imwrite(os.path.join(out_dir, '05_background.png'),  result.background_mask)
         stain_ratio = (stain_mask > 0).mean()
         det_ratio = (result.degradation_mask > 127).mean()
-        print(f'[{i+1}/{len(stems)}] {stem}: 付与シミ={100*stain_ratio:.1f}%, CSC検出={100*det_ratio:.1f}%')
+        print(f'[{i+1}/{len(pages)}] {stem}: 付与シミ={100*stain_ratio:.1f}%, CSC検出={100*det_ratio:.1f}%')
 
     print('\n完了。')
 
