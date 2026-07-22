@@ -230,6 +230,22 @@ def _patch_inference(image_bgr: np.ndarray, mask01: np.ndarray,
     coords = [(y, x) for y in range(0, H, stride) for x in range(0, W, stride)]
     total  = len(coords)
 
+    # 背景参照画像(runner.args.back_ground)は本来パッチごとに対応する位置を
+    # 切り出して使うべきだが、codes/Inpainting.py の SingleDataset は位置を無視して
+    # 画像全体をそのままpatch_sizeへ押しつぶす実装になっており、全パッチが同一の
+    # 「ページ全体を潰した縮小サムネイル」を参照してしまう（→パッチのストライド周期で
+    # 同じサムネイルが繰り返し貼られ、格子状のムラになる）。
+    # ここでページサイズに一度だけリサイズしておき、パッチごとに対応領域を切り出して
+    # 一時ファイルに保存し、そのパッチだけのbackgroundとして差し替える。
+    orig_back_ground = runner.args.back_ground
+    page_bg = None
+    if orig_back_ground and os.path.exists(orig_back_ground):
+        bg_full = cv2.imread(orig_back_ground)
+        if bg_full is not None:
+            page_bg = cv2.resize(bg_full, (W, H), interpolation=cv2.INTER_LINEAR)
+        else:
+            logger.warning(f'背景参照画像が読めません: {orig_back_ground}')
+
     # ページ全体で共有する1枚のノイズマップ。各パッチはここから対応位置を切り出して
     # 初期ノイズとして使う（隣接パッチ間のノイズに空間的相関を持たせ、独立乱数由来の
     # パッチ境界の不整合＝ムラを緩和する）。
@@ -265,6 +281,16 @@ def _patch_inference(image_bgr: np.ndarray, mask01: np.ndarray,
         if page_noise is not None:
             init_noise = page_noise[:, :, y:y+patch_size, x:x+patch_size]
 
+        if page_bg is not None:
+            bg_patch = page_bg[y:y2, x:x2]
+            if ph != patch_size or pw != patch_size:
+                pad_bg = np.zeros((patch_size, patch_size, 3), dtype=bg_patch.dtype)
+                pad_bg[:ph, :pw] = bg_patch
+                bg_patch = pad_bg
+            bg_patch_path = os.path.join(patch_dir, 'bg_patch.png')
+            cv2.imwrite(bg_patch_path, bg_patch)
+            runner.args.back_ground = bg_patch_path
+
         orig_size = runner.config.data.image_size
         runner.config.data.image_size = patch_size
         runner.sample(patch_dir, init_noise=init_noise)
@@ -282,6 +308,7 @@ def _patch_inference(image_bgr: np.ndarray, mask01: np.ndarray,
         if i % 100 == 0:
             logger.info(f'  パッチ {i}/{total}')
 
+    runner.args.back_ground = orig_back_ground
     out = (accum / np.clip(wacc[..., None], 1e-6, None)).astype(np.uint8)
     return out
 

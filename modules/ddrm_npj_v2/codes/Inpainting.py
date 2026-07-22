@@ -86,12 +86,19 @@ class Diffusion(object):
         elif self.model_var_type == "fixedsmall":
             self.logvar = posterior_variance.clamp(min=1e-20).log()
 
-    def sample(self,image_folder, init_noise=None):
-        cls_fn = None
-        args, config = self.args, self.config
+        # モデルはckptごとに1回だけロードしてキャッシュする（sample()はパッチ単位で
+        # 数百〜数千回呼ばれるため、毎回torch.load+state_dict読み込みをやり直すと
+        # 実行時間の大半がディスクI/Oとモデル再構築に消費されてしまう）
+        self._model = None
+        self._model_ckpt = None
+
+    def _get_model(self):
+        args = self.args
+        ckpt = getattr(args, 'ckpt', './model/model_char.pth')
+        if self._model is not None and self._model_ckpt == ckpt:
+            return self._model
         model = unet(in_channels=3, model_channels=64, out_channels=3,
                                 num_res_blocks=2, attention_resolutions=[16, 8])
-        ckpt = getattr(args, 'ckpt', './model/model_char.pth')
         state = torch.load(ckpt, map_location=self.device)
         # stain_removal形式: {"model": state_dict, "epoch": ..., ...}
         if isinstance(state, dict) and 'model' in state and 'epoch' in state:
@@ -99,6 +106,13 @@ class Diffusion(object):
         model.load_state_dict(state)
         model.to(self.device)
         model.eval()
+        self._model = model
+        self._model_ckpt = ckpt
+        return model
+
+    def sample(self,image_folder, init_noise=None):
+        cls_fn = None
+        model = self._get_model()
         self.sample_sequence(model, cls_fn,image_folder, init_noise=init_noise)
 
 
