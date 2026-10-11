@@ -1,0 +1,45 @@
+{
+  "mode": "gain_od_regression",
+  "steps": 8000,
+  "source_sha256": "0310521a151c78db38b83e7ba807d4b30393020b154a332249ca764fbc21b8fe",
+  "parent_source_sha256": "3fdccec0d7e5a960ff4bbbb978117061145044e11a266dbbb14bbfe4cd63636c",
+  "data_sha256": "dd69562fa922d6b0df677382834401f7d18bb4d041f88bb41b99582c6479d022",
+  "loss": "10 * MSE(known synthetic optical density) + .05 RGB L1 + .01 gradient L1",
+  "rationale": "original L1 restoration drives global gain to zero before localization; squared field regression supplies a dense synthetic supervision signal",
+  "changed_loss": true,
+  "not_equal_loss_ablation": true,
+  "synthetic_OD_GT_only": true,
+  "real_images_used": false,
+  "test_used_for_selection": false,
+  "book_sets": {
+    "train": [
+      "100241706",
+      "200003803",
+      "200004107",
+      "200004148",
+      "200005798",
+      "200006665",
+      "200015779",
+      "200021063",
+      "200021712",
+      "200021869",
+      "brsk00000"
+    ],
+    "dev": [
+      "100249476",
+      "200008003",
+      "200021802",
+      "umgy00000"
+    ],
+    "test": [
+      "200010454",
+      "200017458",
+      "200018243",
+      "200021763",
+      "200021851",
+      "200021853",
+      "200022050"
+    ]
+  },
+  "created": 1791369152.939716
+}

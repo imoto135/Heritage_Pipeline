@@ -1,0 +1,12 @@
+{
+  "source_sha256": "5cfe446ae66243214799a72ef3199a222a7a6db793472cf90f0905f32dad05d2",
+  "dependencies": {
+    "scripts/benchmark/probe_full_upper_strong_masks_v2.py": "971a2b8751a2b2871eebb0924a1635923871720503ea4d0e28230f60a774d66b",
+    "scripts/benchmark/prepare_chromatic_external_baselines.py": "c549c43a699768461533ddbf0c10244eae96c5cfaafe1b93da66528be6722c81",
+    "scripts/benchmark/probe_paper_tone_boundary.py": "df17434c209ef30ef823ab229113023df2d2503e296254faf8ccb096d2e6573c",
+    "scripts/benchmark/verify_margin_reference_recomputation.py": "5cfe446ae66243214799a72ef3199a222a7a6db793472cf90f0905f32dad05d2"
+  },
+  "pages": 25,
+  "reference": "same clean_reference(...)[1] qualified base",
+  "pixel_GT": false
+}

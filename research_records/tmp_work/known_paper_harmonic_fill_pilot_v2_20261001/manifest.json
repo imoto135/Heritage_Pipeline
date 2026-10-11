@@ -1,0 +1,44 @@
+{
+  "settings": {
+    "mask": "frozen completed edit; no expansion",
+    "baseline": "saved completed-mask DDRM",
+    "eligibility": "edit intersect saved safe upper domain; exclude long-line guard and warm anchor guard",
+    "reference": "same original-paper Lab gate; outside entire edit and remaining protected pixels",
+    "context_px": 64,
+    "component_connectivity": 4,
+    "min_component_area": 64,
+    "min_boundary_pairs": 16,
+    "operator": "4-neighbor harmonic Lab interpolation, no screening/prior/guidance from DDRM",
+    "excluded_boundary": "zero normal flux at non-reference neighbors and context edges",
+    "modes": {
+      "boundary_raw": "actual unedited reference Lab",
+      "boundary_smooth": "reference-only normalized Gaussian sigma 6 Lab"
+    },
+    "DDRM_residual": false,
+    "DDRM_feather": false,
+    "random_noise": false,
+    "texture_transfer": false,
+    "original_damage_blending": false,
+    "full_page_mask_fixed": true,
+    "local_output": true,
+    "ROI_label_gating": false,
+    "pixel_GT": false,
+    "independent_accuracy": false,
+    "training": false,
+    "inference": false
+  },
+  "dependencies": {
+    "scripts/benchmark/probe_known_paper_harmonic_fill_v2.py": "42869e62cd44ebb3a8454e7af3daf050baf280e408141b5624f65a4a0de38f95",
+    "scripts/benchmark/probe_paper_tone_boundary.py": "df17434c209ef30ef823ab229113023df2d2503e296254faf8ccb096d2e6573c",
+    "tmp_work/margin_top_completion_ddrm_20261001/manifest.json": "2600efbdd7895f52c22516e649f1e6c973c09e821ee4cf60878d58ee6cb306a0",
+    "tmp_work/margin_top_completion_ddrm_20261001/complete.json": "2a176fcda7cc3de6fae5425af2d4ada62b4c05da8247fe82bb7770ec34e39f7f",
+    "tmp_work/margin_top_completion_pilot_20261001/manifest.json": "86ded0f7629f11f4b745c5df023012209aa87651a77598fa19a866f0d1314b5f",
+    "tmp_work/margin_top_completion_pilot_20261001/complete.json": "fe1d5b0a35efbc6aa04df2263cc703b08d645a184938b37c469fad5b0ffddfc0",
+    "tmp_work/margin_top_completion_fill_diagnostic_20261001/manifest.json": "4c107b67caed9c540a85d811a61529bcb99094fd4f48d01f9d9cb0efa18de65f",
+    "tmp_work/margin_top_completion_fill_diagnostic_20261001/complete.json": "f53f2a0d83074fa569d7ba8e8464535c872d01e14c055d662b807473cb6eaa76"
+  },
+  "source_sha256": "42869e62cd44ebb3a8454e7af3daf050baf280e408141b5624f65a4a0de38f95",
+  "pages": 14,
+  "regions": 22,
+  "selection": "same all 22 development ROIs; no semantic ROI labels used"
+}

@@ -1,0 +1,3625 @@
+{
+  "scope": "Reuse 52 audited exploratory ink centers and 9 selected non-ink rectangles; no dense GT, no unbiased accuracy.",
+  "records": [
+    {
+      "id": "N01",
+      "method": "wolf61",
+      "ink_center_hits": 13,
+      "ink_centers": 14,
+      "point_hits": [
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        false
+      ],
+      "nonink_patches": [
+        {
+          "old_roi_relative_xywh": [
+            80,
+            57,
+            25,
+            28
+          ],
+          "foreground_pixels": 0,
+          "pixels": 700
+        },
+        {
+          "old_roi_relative_xywh": [
+            90,
+            91,
+            35,
+            20
+          ],
+          "foreground_pixels": 0,
+          "pixels": 700
+        },
+        {
+          "old_roi_relative_xywh": [
+            75,
+            111,
+            25,
+            10
+          ],
+          "foreground_pixels": 0,
+          "pixels": 250
+        }
+      ],
+      "selected_nonink_foreground_pixels": 0,
+      "selected_nonink_pixels": 1650,
+      "roi_foreground_pixels": 2896
+    },
+    {
+      "id": "N01",
+      "method": "sauvola61",
+      "ink_center_hits": 13,
+      "ink_centers": 14,
+      "point_hits": [
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        false
+      ],
+      "nonink_patches": [
+        {
+          "old_roi_relative_xywh": [
+            80,
+            57,
+            25,
+            28
+          ],
+          "foreground_pixels": 0,
+          "pixels": 700
+        },
+        {
+          "old_roi_relative_xywh": [
+            90,
+            91,
+            35,
+            20
+          ],
+          "foreground_pixels": 0,
+          "pixels": 700
+        },
+        {
+          "old_roi_relative_xywh": [
+            75,
+            111,
+            25,
+            10
+          ],
+          "foreground_pixels": 0,
+          "pixels": 250
+        }
+      ],
+      "selected_nonink_foreground_pixels": 0,
+      "selected_nonink_pixels": 1650,
+      "roi_foreground_pixels": 3208
+    },
+    {
+      "id": "N01",
+      "method": "nick61",
+      "ink_center_hits": 14,
+      "ink_centers": 14,
+      "point_hits": [
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "nonink_patches": [
+        {
+          "old_roi_relative_xywh": [
+            80,
+            57,
+            25,
+            28
+          ],
+          "foreground_pixels": 2,
+          "pixels": 700
+        },
+        {
+          "old_roi_relative_xywh": [
+            90,
+            91,
+            35,
+            20
+          ],
+          "foreground_pixels": 7,
+          "pixels": 700
+        },
+        {
+          "old_roi_relative_xywh": [
+            75,
+            111,
+            25,
+            10
+          ],
+          "foreground_pixels": 0,
+          "pixels": 250
+        }
+      ],
+      "selected_nonink_foreground_pixels": 9,
+      "selected_nonink_pixels": 1650,
+      "roi_foreground_pixels": 3513
+    },
+    {
+      "id": "N01",
+      "method": "nick19",
+      "ink_center_hits": 14,
+      "ink_centers": 14,
+      "point_hits": [
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "nonink_patches": [
+        {
+          "old_roi_relative_xywh": [
+            80,
+            57,
+            25,
+            28
+          ],
+          "foreground_pixels": 0,
+          "pixels": 700
+        },
+        {
+          "old_roi_relative_xywh": [
+            90,
+            91,
+            35,
+            20
+          ],
+          "foreground_pixels": 0,
+          "pixels": 700
+        },
+        {
+          "old_roi_relative_xywh": [
+            75,
+            111,
+            25,
+            10
+          ],
+          "foreground_pixels": 0,
+          "pixels": 250
+        }
+      ],
+      "selected_nonink_foreground_pixels": 0,
+      "selected_nonink_pixels": 1650,
+      "roi_foreground_pixels": 3129
+    },
+    {
+      "id": "N01",
+      "method": "gatos_native",
+      "ink_center_hits": 14,
+      "ink_centers": 14,
+      "point_hits": [
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "nonink_patches": [
+        {
+          "old_roi_relative_xywh": [
+            80,
+            57,
+            25,
+            28
+          ],
+          "foreground_pixels": 0,
+          "pixels": 700
+        },
+        {
+          "old_roi_relative_xywh": [
+            90,
+            91,
+            35,
+            20
+          ],
+          "foreground_pixels": 0,
+          "pixels": 700
+        },
+        {
+          "old_roi_relative_xywh": [
+            75,
+            111,
+            25,
+            10
+          ],
+          "foreground_pixels": 0,
+          "pixels": 250
+        }
+      ],
+      "selected_nonink_foreground_pixels": 0,
+      "selected_nonink_pixels": 1650,
+      "roi_foreground_pixels": 3238
+    },
+    {
+      "id": "N01",
+      "method": "su2013_local",
+      "ink_center_hits": 14,
+      "ink_centers": 14,
+      "point_hits": [
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "nonink_patches": [
+        {
+          "old_roi_relative_xywh": [
+            80,
+            57,
+            25,
+            28
+          ],
+          "foreground_pixels": 651,
+          "pixels": 700
+        },
+        {
+          "old_roi_relative_xywh": [
+            90,
+            91,
+            35,
+            20
+          ],
+          "foreground_pixels": 21,
+          "pixels": 700
+        },
+        {
+          "old_roi_relative_xywh": [
+            75,
+            111,
+            25,
+            10
+          ],
+          "foreground_pixels": 0,
+          "pixels": 250
+        }
+      ],
+      "selected_nonink_foreground_pixels": 672,
+      "selected_nonink_pixels": 1650,
+      "roi_foreground_pixels": 4972
+    },
+    {
+      "id": "N01",
+      "method": "bradley61",
+      "ink_center_hits": 13,
+      "ink_centers": 14,
+      "point_hits": [
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        false
+      ],
+      "nonink_patches": [
+        {
+          "old_roi_relative_xywh": [
+            80,
+            57,
+            25,
+            28
+          ],
+          "foreground_pixels": 0,
+          "pixels": 700
+        },
+        {
+          "old_roi_relative_xywh": [
+            90,
+            91,
+            35,
+            20
+          ],
+          "foreground_pixels": 0,
+          "pixels": 700
+        },
+        {
+          "old_roi_relative_xywh": [
+            75,
+            111,
+            25,
+            10
+          ],
+          "foreground_pixels": 0,
+          "pixels": 250
+        }
+      ],
+      "selected_nonink_foreground_pixels": 0,
+      "selected_nonink_pixels": 1650,
+      "roi_foreground_pixels": 3237
+    },
+    {
+      "id": "N01",
+      "method": "bradley_paper",
+      "ink_center_hits": 14,
+      "ink_centers": 14,
+      "point_hits": [
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "nonink_patches": [
+        {
+          "old_roi_relative_xywh": [
+            80,
+            57,
+            25,
+            28
+          ],
+          "foreground_pixels": 0,
+          "pixels": 700
+        },
+        {
+          "old_roi_relative_xywh": [
+            90,
+            91,
+            35,
+            20
+          ],
+          "foreground_pixels": 7,
+          "pixels": 700
+        },
+        {
+          "old_roi_relative_xywh": [
+            75,
+            111,
+            25,
+            10
+          ],
+          "foreground_pixels": 0,
+          "pixels": 250
+        }
+      ],
+      "selected_nonink_foreground_pixels": 7,
+      "selected_nonink_pixels": 1650,
+      "roi_foreground_pixels": 3412
+    },
+    {
+      "id": "N01",
+      "method": "bradley61_t10",
+      "ink_center_hits": 14,
+      "ink_centers": 14,
+      "point_hits": [
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "nonink_patches": [
+        {
+          "old_roi_relative_xywh": [
+            80,
+            57,
+            25,
+            28
+          ],
+          "foreground_pixels": 2,
+          "pixels": 700
+        },
+        {
+          "old_roi_relative_xywh": [
+            90,
+            91,
+            35,
+            20
+          ],
+          "foreground_pixels": 7,
+          "pixels": 700
+        },
+        {
+          "old_roi_relative_xywh": [
+            75,
+            111,
+            25,
+            10
+          ],
+          "foreground_pixels": 0,
+          "pixels": 250
+        }
+      ],
+      "selected_nonink_foreground_pixels": 9,
+      "selected_nonink_pixels": 1650,
+      "roi_foreground_pixels": 3527
+    },
+    {
+      "id": "N01",
+      "method": "phansalkar61",
+      "ink_center_hits": 13,
+      "ink_centers": 14,
+      "point_hits": [
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        false
+      ],
+      "nonink_patches": [
+        {
+          "old_roi_relative_xywh": [
+            80,
+            57,
+            25,
+            28
+          ],
+          "foreground_pixels": 0,
+          "pixels": 700
+        },
+        {
+          "old_roi_relative_xywh": [
+            90,
+            91,
+            35,
+            20
+          ],
+          "foreground_pixels": 0,
+          "pixels": 700
+        },
+        {
+          "old_roi_relative_xywh": [
+            75,
+            111,
+            25,
+            10
+          ],
+          "foreground_pixels": 0,
+          "pixels": 250
+        }
+      ],
+      "selected_nonink_foreground_pixels": 0,
+      "selected_nonink_pixels": 1650,
+      "roi_foreground_pixels": 3078
+    },
+    {
+      "id": "N01",
+      "method": "phansalkar31",
+      "ink_center_hits": 13,
+      "ink_centers": 14,
+      "point_hits": [
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        false
+      ],
+      "nonink_patches": [
+        {
+          "old_roi_relative_xywh": [
+            80,
+            57,
+            25,
+            28
+          ],
+          "foreground_pixels": 0,
+          "pixels": 700
+        },
+        {
+          "old_roi_relative_xywh": [
+            90,
+            91,
+            35,
+            20
+          ],
+          "foreground_pixels": 0,
+          "pixels": 700
+        },
+        {
+          "old_roi_relative_xywh": [
+            75,
+            111,
+            25,
+            10
+          ],
+          "foreground_pixels": 0,
+          "pixels": 250
+        }
+      ],
+      "selected_nonink_foreground_pixels": 0,
+      "selected_nonink_pixels": 1650,
+      "roi_foreground_pixels": 2968
+    },
+    {
+      "id": "N01",
+      "method": "bg31_otsu",
+      "ink_center_hits": 13,
+      "ink_centers": 14,
+      "point_hits": [
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        false
+      ],
+      "nonink_patches": [
+        {
+          "old_roi_relative_xywh": [
+            80,
+            57,
+            25,
+            28
+          ],
+          "foreground_pixels": 0,
+          "pixels": 700
+        },
+        {
+          "old_roi_relative_xywh": [
+            90,
+            91,
+            35,
+            20
+          ],
+          "foreground_pixels": 0,
+          "pixels": 700
+        },
+        {
+          "old_roi_relative_xywh": [
+            75,
+            111,
+            25,
+            10
+          ],
+          "foreground_pixels": 0,
+          "pixels": 250
+        }
+      ],
+      "selected_nonink_foreground_pixels": 0,
+      "selected_nonink_pixels": 1650,
+      "roi_foreground_pixels": 2993
+    },
+    {
+      "id": "N01",
+      "method": "bg61_otsu",
+      "ink_center_hits": 13,
+      "ink_centers": 14,
+      "point_hits": [
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        false
+      ],
+      "nonink_patches": [
+        {
+          "old_roi_relative_xywh": [
+            80,
+            57,
+            25,
+            28
+          ],
+          "foreground_pixels": 0,
+          "pixels": 700
+        },
+        {
+          "old_roi_relative_xywh": [
+            90,
+            91,
+            35,
+            20
+          ],
+          "foreground_pixels": 0,
+          "pixels": 700
+        },
+        {
+          "old_roi_relative_xywh": [
+            75,
+            111,
+            25,
+            10
+          ],
+          "foreground_pixels": 0,
+          "pixels": 250
+        }
+      ],
+      "selected_nonink_foreground_pixels": 0,
+      "selected_nonink_pixels": 1650,
+      "roi_foreground_pixels": 3013
+    },
+    {
+      "id": "N01",
+      "method": "bg61_wolf",
+      "ink_center_hits": 13,
+      "ink_centers": 14,
+      "point_hits": [
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        false
+      ],
+      "nonink_patches": [
+        {
+          "old_roi_relative_xywh": [
+            80,
+            57,
+            25,
+            28
+          ],
+          "foreground_pixels": 0,
+          "pixels": 700
+        },
+        {
+          "old_roi_relative_xywh": [
+            90,
+            91,
+            35,
+            20
+          ],
+          "foreground_pixels": 0,
+          "pixels": 700
+        },
+        {
+          "old_roi_relative_xywh": [
+            75,
+            111,
+            25,
+            10
+          ],
+          "foreground_pixels": 0,
+          "pixels": 250
+        }
+      ],
+      "selected_nonink_foreground_pixels": 0,
+      "selected_nonink_pixels": 1650,
+      "roi_foreground_pixels": 2924
+    },
+    {
+      "id": "N01",
+      "method": "bg61_sauvola",
+      "ink_center_hits": 13,
+      "ink_centers": 14,
+      "point_hits": [
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        false
+      ],
+      "nonink_patches": [
+        {
+          "old_roi_relative_xywh": [
+            80,
+            57,
+            25,
+            28
+          ],
+          "foreground_pixels": 0,
+          "pixels": 700
+        },
+        {
+          "old_roi_relative_xywh": [
+            90,
+            91,
+            35,
+            20
+          ],
+          "foreground_pixels": 0,
+          "pixels": 700
+        },
+        {
+          "old_roi_relative_xywh": [
+            75,
+            111,
+            25,
+            10
+          ],
+          "foreground_pixels": 0,
+          "pixels": 250
+        }
+      ],
+      "selected_nonink_foreground_pixels": 0,
+      "selected_nonink_pixels": 1650,
+      "roi_foreground_pixels": 3282
+    },
+    {
+      "id": "N01",
+      "method": "bg61_nick",
+      "ink_center_hits": 14,
+      "ink_centers": 14,
+      "point_hits": [
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "nonink_patches": [
+        {
+          "old_roi_relative_xywh": [
+            80,
+            57,
+            25,
+            28
+          ],
+          "foreground_pixels": 3,
+          "pixels": 700
+        },
+        {
+          "old_roi_relative_xywh": [
+            90,
+            91,
+            35,
+            20
+          ],
+          "foreground_pixels": 2,
+          "pixels": 700
+        },
+        {
+          "old_roi_relative_xywh": [
+            75,
+            111,
+            25,
+            10
+          ],
+          "foreground_pixels": 0,
+          "pixels": 250
+        }
+      ],
+      "selected_nonink_foreground_pixels": 5,
+      "selected_nonink_pixels": 1650,
+      "roi_foreground_pixels": 3523
+    },
+    {
+      "id": "N01",
+      "method": "bg121_otsu",
+      "ink_center_hits": 13,
+      "ink_centers": 14,
+      "point_hits": [
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        false
+      ],
+      "nonink_patches": [
+        {
+          "old_roi_relative_xywh": [
+            80,
+            57,
+            25,
+            28
+          ],
+          "foreground_pixels": 0,
+          "pixels": 700
+        },
+        {
+          "old_roi_relative_xywh": [
+            90,
+            91,
+            35,
+            20
+          ],
+          "foreground_pixels": 0,
+          "pixels": 700
+        },
+        {
+          "old_roi_relative_xywh": [
+            75,
+            111,
+            25,
+            10
+          ],
+          "foreground_pixels": 0,
+          "pixels": 250
+        }
+      ],
+      "selected_nonink_foreground_pixels": 0,
+      "selected_nonink_pixels": 1650,
+      "roi_foreground_pixels": 3044
+    },
+    {
+      "id": "N01",
+      "method": "howe80",
+      "ink_center_hits": 14,
+      "ink_centers": 14,
+      "point_hits": [
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "nonink_patches": [
+        {
+          "old_roi_relative_xywh": [
+            80,
+            57,
+            25,
+            28
+          ],
+          "foreground_pixels": 0,
+          "pixels": 700
+        },
+        {
+          "old_roi_relative_xywh": [
+            90,
+            91,
+            35,
+            20
+          ],
+          "foreground_pixels": 0,
+          "pixels": 700
+        },
+        {
+          "old_roi_relative_xywh": [
+            75,
+            111,
+            25,
+            10
+          ],
+          "foreground_pixels": 0,
+          "pixels": 250
+        }
+      ],
+      "selected_nonink_foreground_pixels": 0,
+      "selected_nonink_pixels": 1650,
+      "roi_foreground_pixels": 3198
+    },
+    {
+      "id": "N01",
+      "method": "howe160",
+      "ink_center_hits": 14,
+      "ink_centers": 14,
+      "point_hits": [
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "nonink_patches": [
+        {
+          "old_roi_relative_xywh": [
+            80,
+            57,
+            25,
+            28
+          ],
+          "foreground_pixels": 0,
+          "pixels": 700
+        },
+        {
+          "old_roi_relative_xywh": [
+            90,
+            91,
+            35,
+            20
+          ],
+          "foreground_pixels": 0,
+          "pixels": 700
+        },
+        {
+          "old_roi_relative_xywh": [
+            75,
+            111,
+            25,
+            10
+          ],
+          "foreground_pixels": 0,
+          "pixels": 250
+        }
+      ],
+      "selected_nonink_foreground_pixels": 0,
+      "selected_nonink_pixels": 1650,
+      "roi_foreground_pixels": 3247
+    },
+    {
+      "id": "N01",
+      "method": "howe320",
+      "ink_center_hits": 14,
+      "ink_centers": 14,
+      "point_hits": [
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "nonink_patches": [
+        {
+          "old_roi_relative_xywh": [
+            80,
+            57,
+            25,
+            28
+          ],
+          "foreground_pixels": 0,
+          "pixels": 700
+        },
+        {
+          "old_roi_relative_xywh": [
+            90,
+            91,
+            35,
+            20
+          ],
+          "foreground_pixels": 0,
+          "pixels": 700
+        },
+        {
+          "old_roi_relative_xywh": [
+            75,
+            111,
+            25,
+            10
+          ],
+          "foreground_pixels": 0,
+          "pixels": 250
+        }
+      ],
+      "selected_nonink_foreground_pixels": 0,
+      "selected_nonink_pixels": 1650,
+      "roi_foreground_pixels": 3247
+    },
+    {
+      "id": "T01",
+      "method": "wolf61",
+      "ink_center_hits": 23,
+      "ink_centers": 23,
+      "point_hits": [
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "nonink_patches": [
+        {
+          "old_roi_relative_xywh": [
+            160,
+            100,
+            30,
+            45
+          ],
+          "foreground_pixels": 0,
+          "pixels": 1350
+        },
+        {
+          "old_roi_relative_xywh": [
+            280,
+            130,
+            50,
+            45
+          ],
+          "foreground_pixels": 0,
+          "pixels": 2250
+        },
+        {
+          "old_roi_relative_xywh": [
+            160,
+            330,
+            40,
+            50
+          ],
+          "foreground_pixels": 0,
+          "pixels": 2000
+        }
+      ],
+      "selected_nonink_foreground_pixels": 0,
+      "selected_nonink_pixels": 5600,
+      "roi_foreground_pixels": 40651
+    },
+    {
+      "id": "T01",
+      "method": "sauvola61",
+      "ink_center_hits": 23,
+      "ink_centers": 23,
+      "point_hits": [
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "nonink_patches": [
+        {
+          "old_roi_relative_xywh": [
+            160,
+            100,
+            30,
+            45
+          ],
+          "foreground_pixels": 0,
+          "pixels": 1350
+        },
+        {
+          "old_roi_relative_xywh": [
+            280,
+            130,
+            50,
+            45
+          ],
+          "foreground_pixels": 0,
+          "pixels": 2250
+        },
+        {
+          "old_roi_relative_xywh": [
+            160,
+            330,
+            40,
+            50
+          ],
+          "foreground_pixels": 0,
+          "pixels": 2000
+        }
+      ],
+      "selected_nonink_foreground_pixels": 0,
+      "selected_nonink_pixels": 5600,
+      "roi_foreground_pixels": 41102
+    },
+    {
+      "id": "T01",
+      "method": "nick61",
+      "ink_center_hits": 23,
+      "ink_centers": 23,
+      "point_hits": [
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "nonink_patches": [
+        {
+          "old_roi_relative_xywh": [
+            160,
+            100,
+            30,
+            45
+          ],
+          "foreground_pixels": 23,
+          "pixels": 1350
+        },
+        {
+          "old_roi_relative_xywh": [
+            280,
+            130,
+            50,
+            45
+          ],
+          "foreground_pixels": 24,
+          "pixels": 2250
+        },
+        {
+          "old_roi_relative_xywh": [
+            160,
+            330,
+            40,
+            50
+          ],
+          "foreground_pixels": 0,
+          "pixels": 2000
+        }
+      ],
+      "selected_nonink_foreground_pixels": 47,
+      "selected_nonink_pixels": 5600,
+      "roi_foreground_pixels": 45087
+    },
+    {
+      "id": "T01",
+      "method": "nick19",
+      "ink_center_hits": 22,
+      "ink_centers": 23,
+      "point_hits": [
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        false,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "nonink_patches": [
+        {
+          "old_roi_relative_xywh": [
+            160,
+            100,
+            30,
+            45
+          ],
+          "foreground_pixels": 18,
+          "pixels": 1350
+        },
+        {
+          "old_roi_relative_xywh": [
+            280,
+            130,
+            50,
+            45
+          ],
+          "foreground_pixels": 3,
+          "pixels": 2250
+        },
+        {
+          "old_roi_relative_xywh": [
+            160,
+            330,
+            40,
+            50
+          ],
+          "foreground_pixels": 0,
+          "pixels": 2000
+        }
+      ],
+      "selected_nonink_foreground_pixels": 21,
+      "selected_nonink_pixels": 5600,
+      "roi_foreground_pixels": 37759
+    },
+    {
+      "id": "T01",
+      "method": "gatos_native",
+      "ink_center_hits": 23,
+      "ink_centers": 23,
+      "point_hits": [
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "nonink_patches": [
+        {
+          "old_roi_relative_xywh": [
+            160,
+            100,
+            30,
+            45
+          ],
+          "foreground_pixels": 0,
+          "pixels": 1350
+        },
+        {
+          "old_roi_relative_xywh": [
+            280,
+            130,
+            50,
+            45
+          ],
+          "foreground_pixels": 0,
+          "pixels": 2250
+        },
+        {
+          "old_roi_relative_xywh": [
+            160,
+            330,
+            40,
+            50
+          ],
+          "foreground_pixels": 0,
+          "pixels": 2000
+        }
+      ],
+      "selected_nonink_foreground_pixels": 0,
+      "selected_nonink_pixels": 5600,
+      "roi_foreground_pixels": 44154
+    },
+    {
+      "id": "T01",
+      "method": "su2013_local",
+      "ink_center_hits": 22,
+      "ink_centers": 23,
+      "point_hits": [
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        false,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "nonink_patches": [
+        {
+          "old_roi_relative_xywh": [
+            160,
+            100,
+            30,
+            45
+          ],
+          "foreground_pixels": 0,
+          "pixels": 1350
+        },
+        {
+          "old_roi_relative_xywh": [
+            280,
+            130,
+            50,
+            45
+          ],
+          "foreground_pixels": 0,
+          "pixels": 2250
+        },
+        {
+          "old_roi_relative_xywh": [
+            160,
+            330,
+            40,
+            50
+          ],
+          "foreground_pixels": 55,
+          "pixels": 2000
+        }
+      ],
+      "selected_nonink_foreground_pixels": 55,
+      "selected_nonink_pixels": 5600,
+      "roi_foreground_pixels": 46958
+    },
+    {
+      "id": "T01",
+      "method": "bradley61",
+      "ink_center_hits": 23,
+      "ink_centers": 23,
+      "point_hits": [
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "nonink_patches": [
+        {
+          "old_roi_relative_xywh": [
+            160,
+            100,
+            30,
+            45
+          ],
+          "foreground_pixels": 1,
+          "pixels": 1350
+        },
+        {
+          "old_roi_relative_xywh": [
+            280,
+            130,
+            50,
+            45
+          ],
+          "foreground_pixels": 0,
+          "pixels": 2250
+        },
+        {
+          "old_roi_relative_xywh": [
+            160,
+            330,
+            40,
+            50
+          ],
+          "foreground_pixels": 0,
+          "pixels": 2000
+        }
+      ],
+      "selected_nonink_foreground_pixels": 1,
+      "selected_nonink_pixels": 5600,
+      "roi_foreground_pixels": 41090
+    },
+    {
+      "id": "T01",
+      "method": "bradley_paper",
+      "ink_center_hits": 23,
+      "ink_centers": 23,
+      "point_hits": [
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "nonink_patches": [
+        {
+          "old_roi_relative_xywh": [
+            160,
+            100,
+            30,
+            45
+          ],
+          "foreground_pixels": 8,
+          "pixels": 1350
+        },
+        {
+          "old_roi_relative_xywh": [
+            280,
+            130,
+            50,
+            45
+          ],
+          "foreground_pixels": 120,
+          "pixels": 2250
+        },
+        {
+          "old_roi_relative_xywh": [
+            160,
+            330,
+            40,
+            50
+          ],
+          "foreground_pixels": 0,
+          "pixels": 2000
+        }
+      ],
+      "selected_nonink_foreground_pixels": 128,
+      "selected_nonink_pixels": 5600,
+      "roi_foreground_pixels": 47938
+    },
+    {
+      "id": "T01",
+      "method": "bradley61_t10",
+      "ink_center_hits": 23,
+      "ink_centers": 23,
+      "point_hits": [
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "nonink_patches": [
+        {
+          "old_roi_relative_xywh": [
+            160,
+            100,
+            30,
+            45
+          ],
+          "foreground_pixels": 23,
+          "pixels": 1350
+        },
+        {
+          "old_roi_relative_xywh": [
+            280,
+            130,
+            50,
+            45
+          ],
+          "foreground_pixels": 24,
+          "pixels": 2250
+        },
+        {
+          "old_roi_relative_xywh": [
+            160,
+            330,
+            40,
+            50
+          ],
+          "foreground_pixels": 0,
+          "pixels": 2000
+        }
+      ],
+      "selected_nonink_foreground_pixels": 47,
+      "selected_nonink_pixels": 5600,
+      "roi_foreground_pixels": 45252
+    },
+    {
+      "id": "T01",
+      "method": "phansalkar61",
+      "ink_center_hits": 23,
+      "ink_centers": 23,
+      "point_hits": [
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "nonink_patches": [
+        {
+          "old_roi_relative_xywh": [
+            160,
+            100,
+            30,
+            45
+          ],
+          "foreground_pixels": 0,
+          "pixels": 1350
+        },
+        {
+          "old_roi_relative_xywh": [
+            280,
+            130,
+            50,
+            45
+          ],
+          "foreground_pixels": 0,
+          "pixels": 2250
+        },
+        {
+          "old_roi_relative_xywh": [
+            160,
+            330,
+            40,
+            50
+          ],
+          "foreground_pixels": 0,
+          "pixels": 2000
+        }
+      ],
+      "selected_nonink_foreground_pixels": 0,
+      "selected_nonink_pixels": 5600,
+      "roi_foreground_pixels": 39755
+    },
+    {
+      "id": "T01",
+      "method": "phansalkar31",
+      "ink_center_hits": 22,
+      "ink_centers": 23,
+      "point_hits": [
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        false,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "nonink_patches": [
+        {
+          "old_roi_relative_xywh": [
+            160,
+            100,
+            30,
+            45
+          ],
+          "foreground_pixels": 0,
+          "pixels": 1350
+        },
+        {
+          "old_roi_relative_xywh": [
+            280,
+            130,
+            50,
+            45
+          ],
+          "foreground_pixels": 0,
+          "pixels": 2250
+        },
+        {
+          "old_roi_relative_xywh": [
+            160,
+            330,
+            40,
+            50
+          ],
+          "foreground_pixels": 0,
+          "pixels": 2000
+        }
+      ],
+      "selected_nonink_foreground_pixels": 0,
+      "selected_nonink_pixels": 5600,
+      "roi_foreground_pixels": 37008
+    },
+    {
+      "id": "T01",
+      "method": "bg31_otsu",
+      "ink_center_hits": 22,
+      "ink_centers": 23,
+      "point_hits": [
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        false,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "nonink_patches": [
+        {
+          "old_roi_relative_xywh": [
+            160,
+            100,
+            30,
+            45
+          ],
+          "foreground_pixels": 0,
+          "pixels": 1350
+        },
+        {
+          "old_roi_relative_xywh": [
+            280,
+            130,
+            50,
+            45
+          ],
+          "foreground_pixels": 0,
+          "pixels": 2250
+        },
+        {
+          "old_roi_relative_xywh": [
+            160,
+            330,
+            40,
+            50
+          ],
+          "foreground_pixels": 0,
+          "pixels": 2000
+        }
+      ],
+      "selected_nonink_foreground_pixels": 0,
+      "selected_nonink_pixels": 5600,
+      "roi_foreground_pixels": 41144
+    },
+    {
+      "id": "T01",
+      "method": "bg61_otsu",
+      "ink_center_hits": 22,
+      "ink_centers": 23,
+      "point_hits": [
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        false,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "nonink_patches": [
+        {
+          "old_roi_relative_xywh": [
+            160,
+            100,
+            30,
+            45
+          ],
+          "foreground_pixels": 0,
+          "pixels": 1350
+        },
+        {
+          "old_roi_relative_xywh": [
+            280,
+            130,
+            50,
+            45
+          ],
+          "foreground_pixels": 0,
+          "pixels": 2250
+        },
+        {
+          "old_roi_relative_xywh": [
+            160,
+            330,
+            40,
+            50
+          ],
+          "foreground_pixels": 0,
+          "pixels": 2000
+        }
+      ],
+      "selected_nonink_foreground_pixels": 0,
+      "selected_nonink_pixels": 5600,
+      "roi_foreground_pixels": 42273
+    },
+    {
+      "id": "T01",
+      "method": "bg61_wolf",
+      "ink_center_hits": 22,
+      "ink_centers": 23,
+      "point_hits": [
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        false,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "nonink_patches": [
+        {
+          "old_roi_relative_xywh": [
+            160,
+            100,
+            30,
+            45
+          ],
+          "foreground_pixels": 0,
+          "pixels": 1350
+        },
+        {
+          "old_roi_relative_xywh": [
+            280,
+            130,
+            50,
+            45
+          ],
+          "foreground_pixels": 0,
+          "pixels": 2250
+        },
+        {
+          "old_roi_relative_xywh": [
+            160,
+            330,
+            40,
+            50
+          ],
+          "foreground_pixels": 0,
+          "pixels": 2000
+        }
+      ],
+      "selected_nonink_foreground_pixels": 0,
+      "selected_nonink_pixels": 5600,
+      "roi_foreground_pixels": 41075
+    },
+    {
+      "id": "T01",
+      "method": "bg61_sauvola",
+      "ink_center_hits": 23,
+      "ink_centers": 23,
+      "point_hits": [
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "nonink_patches": [
+        {
+          "old_roi_relative_xywh": [
+            160,
+            100,
+            30,
+            45
+          ],
+          "foreground_pixels": 0,
+          "pixels": 1350
+        },
+        {
+          "old_roi_relative_xywh": [
+            280,
+            130,
+            50,
+            45
+          ],
+          "foreground_pixels": 0,
+          "pixels": 2250
+        },
+        {
+          "old_roi_relative_xywh": [
+            160,
+            330,
+            40,
+            50
+          ],
+          "foreground_pixels": 0,
+          "pixels": 2000
+        }
+      ],
+      "selected_nonink_foreground_pixels": 0,
+      "selected_nonink_pixels": 5600,
+      "roi_foreground_pixels": 42128
+    },
+    {
+      "id": "T01",
+      "method": "bg61_nick",
+      "ink_center_hits": 23,
+      "ink_centers": 23,
+      "point_hits": [
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "nonink_patches": [
+        {
+          "old_roi_relative_xywh": [
+            160,
+            100,
+            30,
+            45
+          ],
+          "foreground_pixels": 24,
+          "pixels": 1350
+        },
+        {
+          "old_roi_relative_xywh": [
+            280,
+            130,
+            50,
+            45
+          ],
+          "foreground_pixels": 22,
+          "pixels": 2250
+        },
+        {
+          "old_roi_relative_xywh": [
+            160,
+            330,
+            40,
+            50
+          ],
+          "foreground_pixels": 0,
+          "pixels": 2000
+        }
+      ],
+      "selected_nonink_foreground_pixels": 46,
+      "selected_nonink_pixels": 5600,
+      "roi_foreground_pixels": 44670
+    },
+    {
+      "id": "T01",
+      "method": "bg121_otsu",
+      "ink_center_hits": 22,
+      "ink_centers": 23,
+      "point_hits": [
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        false,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "nonink_patches": [
+        {
+          "old_roi_relative_xywh": [
+            160,
+            100,
+            30,
+            45
+          ],
+          "foreground_pixels": 0,
+          "pixels": 1350
+        },
+        {
+          "old_roi_relative_xywh": [
+            280,
+            130,
+            50,
+            45
+          ],
+          "foreground_pixels": 0,
+          "pixels": 2250
+        },
+        {
+          "old_roi_relative_xywh": [
+            160,
+            330,
+            40,
+            50
+          ],
+          "foreground_pixels": 0,
+          "pixels": 2000
+        }
+      ],
+      "selected_nonink_foreground_pixels": 0,
+      "selected_nonink_pixels": 5600,
+      "roi_foreground_pixels": 43651
+    },
+    {
+      "id": "T01",
+      "method": "howe80",
+      "ink_center_hits": 23,
+      "ink_centers": 23,
+      "point_hits": [
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "nonink_patches": [
+        {
+          "old_roi_relative_xywh": [
+            160,
+            100,
+            30,
+            45
+          ],
+          "foreground_pixels": 0,
+          "pixels": 1350
+        },
+        {
+          "old_roi_relative_xywh": [
+            280,
+            130,
+            50,
+            45
+          ],
+          "foreground_pixels": 0,
+          "pixels": 2250
+        },
+        {
+          "old_roi_relative_xywh": [
+            160,
+            330,
+            40,
+            50
+          ],
+          "foreground_pixels": 0,
+          "pixels": 2000
+        }
+      ],
+      "selected_nonink_foreground_pixels": 0,
+      "selected_nonink_pixels": 5600,
+      "roi_foreground_pixels": 41476
+    },
+    {
+      "id": "T01",
+      "method": "howe160",
+      "ink_center_hits": 23,
+      "ink_centers": 23,
+      "point_hits": [
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "nonink_patches": [
+        {
+          "old_roi_relative_xywh": [
+            160,
+            100,
+            30,
+            45
+          ],
+          "foreground_pixels": 0,
+          "pixels": 1350
+        },
+        {
+          "old_roi_relative_xywh": [
+            280,
+            130,
+            50,
+            45
+          ],
+          "foreground_pixels": 0,
+          "pixels": 2250
+        },
+        {
+          "old_roi_relative_xywh": [
+            160,
+            330,
+            40,
+            50
+          ],
+          "foreground_pixels": 0,
+          "pixels": 2000
+        }
+      ],
+      "selected_nonink_foreground_pixels": 0,
+      "selected_nonink_pixels": 5600,
+      "roi_foreground_pixels": 41564
+    },
+    {
+      "id": "T01",
+      "method": "howe320",
+      "ink_center_hits": 23,
+      "ink_centers": 23,
+      "point_hits": [
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "nonink_patches": [
+        {
+          "old_roi_relative_xywh": [
+            160,
+            100,
+            30,
+            45
+          ],
+          "foreground_pixels": 0,
+          "pixels": 1350
+        },
+        {
+          "old_roi_relative_xywh": [
+            280,
+            130,
+            50,
+            45
+          ],
+          "foreground_pixels": 0,
+          "pixels": 2250
+        },
+        {
+          "old_roi_relative_xywh": [
+            160,
+            330,
+            40,
+            50
+          ],
+          "foreground_pixels": 0,
+          "pixels": 2000
+        }
+      ],
+      "selected_nonink_foreground_pixels": 0,
+      "selected_nonink_pixels": 5600,
+      "roi_foreground_pixels": 41650
+    },
+    {
+      "id": "N05",
+      "method": "wolf61",
+      "ink_center_hits": 12,
+      "ink_centers": 15,
+      "point_hits": [
+        true,
+        true,
+        true,
+        true,
+        false,
+        true,
+        false,
+        true,
+        true,
+        true,
+        true,
+        true,
+        false,
+        true,
+        true
+      ],
+      "nonink_patches": [
+        {
+          "old_roi_relative_xywh": [
+            120,
+            140,
+            50,
+            35
+          ],
+          "foreground_pixels": 0,
+          "pixels": 1750
+        },
+        {
+          "old_roi_relative_xywh": [
+            110,
+            205,
+            35,
+            40
+          ],
+          "foreground_pixels": 0,
+          "pixels": 1400
+        },
+        {
+          "old_roi_relative_xywh": [
+            110,
+            30,
+            65,
+            40
+          ],
+          "foreground_pixels": 0,
+          "pixels": 2600
+        }
+      ],
+      "selected_nonink_foreground_pixels": 0,
+      "selected_nonink_pixels": 5750,
+      "roi_foreground_pixels": 11899
+    },
+    {
+      "id": "N05",
+      "method": "sauvola61",
+      "ink_center_hits": 13,
+      "ink_centers": 15,
+      "point_hits": [
+        true,
+        true,
+        true,
+        true,
+        false,
+        true,
+        false,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "nonink_patches": [
+        {
+          "old_roi_relative_xywh": [
+            120,
+            140,
+            50,
+            35
+          ],
+          "foreground_pixels": 0,
+          "pixels": 1750
+        },
+        {
+          "old_roi_relative_xywh": [
+            110,
+            205,
+            35,
+            40
+          ],
+          "foreground_pixels": 0,
+          "pixels": 1400
+        },
+        {
+          "old_roi_relative_xywh": [
+            110,
+            30,
+            65,
+            40
+          ],
+          "foreground_pixels": 0,
+          "pixels": 2600
+        }
+      ],
+      "selected_nonink_foreground_pixels": 0,
+      "selected_nonink_pixels": 5750,
+      "roi_foreground_pixels": 13552
+    },
+    {
+      "id": "N05",
+      "method": "nick61",
+      "ink_center_hits": 13,
+      "ink_centers": 15,
+      "point_hits": [
+        true,
+        true,
+        true,
+        true,
+        false,
+        true,
+        false,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "nonink_patches": [
+        {
+          "old_roi_relative_xywh": [
+            120,
+            140,
+            50,
+            35
+          ],
+          "foreground_pixels": 0,
+          "pixels": 1750
+        },
+        {
+          "old_roi_relative_xywh": [
+            110,
+            205,
+            35,
+            40
+          ],
+          "foreground_pixels": 0,
+          "pixels": 1400
+        },
+        {
+          "old_roi_relative_xywh": [
+            110,
+            30,
+            65,
+            40
+          ],
+          "foreground_pixels": 0,
+          "pixels": 2600
+        }
+      ],
+      "selected_nonink_foreground_pixels": 0,
+      "selected_nonink_pixels": 5750,
+      "roi_foreground_pixels": 15112
+    },
+    {
+      "id": "N05",
+      "method": "nick19",
+      "ink_center_hits": 13,
+      "ink_centers": 15,
+      "point_hits": [
+        true,
+        true,
+        true,
+        true,
+        false,
+        true,
+        false,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "nonink_patches": [
+        {
+          "old_roi_relative_xywh": [
+            120,
+            140,
+            50,
+            35
+          ],
+          "foreground_pixels": 0,
+          "pixels": 1750
+        },
+        {
+          "old_roi_relative_xywh": [
+            110,
+            205,
+            35,
+            40
+          ],
+          "foreground_pixels": 0,
+          "pixels": 1400
+        },
+        {
+          "old_roi_relative_xywh": [
+            110,
+            30,
+            65,
+            40
+          ],
+          "foreground_pixels": 0,
+          "pixels": 2600
+        }
+      ],
+      "selected_nonink_foreground_pixels": 0,
+      "selected_nonink_pixels": 5750,
+      "roi_foreground_pixels": 13213
+    },
+    {
+      "id": "N05",
+      "method": "gatos_native",
+      "ink_center_hits": 13,
+      "ink_centers": 15,
+      "point_hits": [
+        true,
+        false,
+        true,
+        true,
+        false,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "nonink_patches": [
+        {
+          "old_roi_relative_xywh": [
+            120,
+            140,
+            50,
+            35
+          ],
+          "foreground_pixels": 0,
+          "pixels": 1750
+        },
+        {
+          "old_roi_relative_xywh": [
+            110,
+            205,
+            35,
+            40
+          ],
+          "foreground_pixels": 0,
+          "pixels": 1400
+        },
+        {
+          "old_roi_relative_xywh": [
+            110,
+            30,
+            65,
+            40
+          ],
+          "foreground_pixels": 0,
+          "pixels": 2600
+        }
+      ],
+      "selected_nonink_foreground_pixels": 0,
+      "selected_nonink_pixels": 5750,
+      "roi_foreground_pixels": 27979
+    },
+    {
+      "id": "N05",
+      "method": "su2013_local",
+      "ink_center_hits": 14,
+      "ink_centers": 15,
+      "point_hits": [
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        false,
+        true,
+        true
+      ],
+      "nonink_patches": [
+        {
+          "old_roi_relative_xywh": [
+            120,
+            140,
+            50,
+            35
+          ],
+          "foreground_pixels": 0,
+          "pixels": 1750
+        },
+        {
+          "old_roi_relative_xywh": [
+            110,
+            205,
+            35,
+            40
+          ],
+          "foreground_pixels": 0,
+          "pixels": 1400
+        },
+        {
+          "old_roi_relative_xywh": [
+            110,
+            30,
+            65,
+            40
+          ],
+          "foreground_pixels": 0,
+          "pixels": 2600
+        }
+      ],
+      "selected_nonink_foreground_pixels": 0,
+      "selected_nonink_pixels": 5750,
+      "roi_foreground_pixels": 14223
+    },
+    {
+      "id": "N05",
+      "method": "bradley61",
+      "ink_center_hits": 13,
+      "ink_centers": 15,
+      "point_hits": [
+        true,
+        true,
+        true,
+        true,
+        false,
+        true,
+        false,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "nonink_patches": [
+        {
+          "old_roi_relative_xywh": [
+            120,
+            140,
+            50,
+            35
+          ],
+          "foreground_pixels": 0,
+          "pixels": 1750
+        },
+        {
+          "old_roi_relative_xywh": [
+            110,
+            205,
+            35,
+            40
+          ],
+          "foreground_pixels": 0,
+          "pixels": 1400
+        },
+        {
+          "old_roi_relative_xywh": [
+            110,
+            30,
+            65,
+            40
+          ],
+          "foreground_pixels": 0,
+          "pixels": 2600
+        }
+      ],
+      "selected_nonink_foreground_pixels": 0,
+      "selected_nonink_pixels": 5750,
+      "roi_foreground_pixels": 13709
+    },
+    {
+      "id": "N05",
+      "method": "bradley_paper",
+      "ink_center_hits": 13,
+      "ink_centers": 15,
+      "point_hits": [
+        true,
+        true,
+        true,
+        true,
+        false,
+        true,
+        false,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "nonink_patches": [
+        {
+          "old_roi_relative_xywh": [
+            120,
+            140,
+            50,
+            35
+          ],
+          "foreground_pixels": 0,
+          "pixels": 1750
+        },
+        {
+          "old_roi_relative_xywh": [
+            110,
+            205,
+            35,
+            40
+          ],
+          "foreground_pixels": 0,
+          "pixels": 1400
+        },
+        {
+          "old_roi_relative_xywh": [
+            110,
+            30,
+            65,
+            40
+          ],
+          "foreground_pixels": 0,
+          "pixels": 2600
+        }
+      ],
+      "selected_nonink_foreground_pixels": 0,
+      "selected_nonink_pixels": 5750,
+      "roi_foreground_pixels": 14329
+    },
+    {
+      "id": "N05",
+      "method": "bradley61_t10",
+      "ink_center_hits": 13,
+      "ink_centers": 15,
+      "point_hits": [
+        true,
+        true,
+        true,
+        true,
+        false,
+        true,
+        false,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "nonink_patches": [
+        {
+          "old_roi_relative_xywh": [
+            120,
+            140,
+            50,
+            35
+          ],
+          "foreground_pixels": 0,
+          "pixels": 1750
+        },
+        {
+          "old_roi_relative_xywh": [
+            110,
+            205,
+            35,
+            40
+          ],
+          "foreground_pixels": 0,
+          "pixels": 1400
+        },
+        {
+          "old_roi_relative_xywh": [
+            110,
+            30,
+            65,
+            40
+          ],
+          "foreground_pixels": 0,
+          "pixels": 2600
+        }
+      ],
+      "selected_nonink_foreground_pixels": 0,
+      "selected_nonink_pixels": 5750,
+      "roi_foreground_pixels": 15141
+    },
+    {
+      "id": "N05",
+      "method": "phansalkar61",
+      "ink_center_hits": 13,
+      "ink_centers": 15,
+      "point_hits": [
+        true,
+        true,
+        true,
+        true,
+        false,
+        true,
+        false,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "nonink_patches": [
+        {
+          "old_roi_relative_xywh": [
+            120,
+            140,
+            50,
+            35
+          ],
+          "foreground_pixels": 0,
+          "pixels": 1750
+        },
+        {
+          "old_roi_relative_xywh": [
+            110,
+            205,
+            35,
+            40
+          ],
+          "foreground_pixels": 0,
+          "pixels": 1400
+        },
+        {
+          "old_roi_relative_xywh": [
+            110,
+            30,
+            65,
+            40
+          ],
+          "foreground_pixels": 0,
+          "pixels": 2600
+        }
+      ],
+      "selected_nonink_foreground_pixels": 0,
+      "selected_nonink_pixels": 5750,
+      "roi_foreground_pixels": 12850
+    },
+    {
+      "id": "N05",
+      "method": "phansalkar31",
+      "ink_center_hits": 13,
+      "ink_centers": 15,
+      "point_hits": [
+        true,
+        true,
+        true,
+        true,
+        false,
+        true,
+        false,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "nonink_patches": [
+        {
+          "old_roi_relative_xywh": [
+            120,
+            140,
+            50,
+            35
+          ],
+          "foreground_pixels": 0,
+          "pixels": 1750
+        },
+        {
+          "old_roi_relative_xywh": [
+            110,
+            205,
+            35,
+            40
+          ],
+          "foreground_pixels": 0,
+          "pixels": 1400
+        },
+        {
+          "old_roi_relative_xywh": [
+            110,
+            30,
+            65,
+            40
+          ],
+          "foreground_pixels": 0,
+          "pixels": 2600
+        }
+      ],
+      "selected_nonink_foreground_pixels": 0,
+      "selected_nonink_pixels": 5750,
+      "roi_foreground_pixels": 12425
+    },
+    {
+      "id": "N05",
+      "method": "bg31_otsu",
+      "ink_center_hits": 12,
+      "ink_centers": 15,
+      "point_hits": [
+        true,
+        true,
+        true,
+        true,
+        false,
+        true,
+        false,
+        true,
+        true,
+        true,
+        true,
+        true,
+        false,
+        true,
+        true
+      ],
+      "nonink_patches": [
+        {
+          "old_roi_relative_xywh": [
+            120,
+            140,
+            50,
+            35
+          ],
+          "foreground_pixels": 0,
+          "pixels": 1750
+        },
+        {
+          "old_roi_relative_xywh": [
+            110,
+            205,
+            35,
+            40
+          ],
+          "foreground_pixels": 0,
+          "pixels": 1400
+        },
+        {
+          "old_roi_relative_xywh": [
+            110,
+            30,
+            65,
+            40
+          ],
+          "foreground_pixels": 0,
+          "pixels": 2600
+        }
+      ],
+      "selected_nonink_foreground_pixels": 0,
+      "selected_nonink_pixels": 5750,
+      "roi_foreground_pixels": 12246
+    },
+    {
+      "id": "N05",
+      "method": "bg61_otsu",
+      "ink_center_hits": 12,
+      "ink_centers": 15,
+      "point_hits": [
+        true,
+        true,
+        true,
+        true,
+        false,
+        true,
+        false,
+        true,
+        true,
+        true,
+        true,
+        true,
+        false,
+        true,
+        true
+      ],
+      "nonink_patches": [
+        {
+          "old_roi_relative_xywh": [
+            120,
+            140,
+            50,
+            35
+          ],
+          "foreground_pixels": 0,
+          "pixels": 1750
+        },
+        {
+          "old_roi_relative_xywh": [
+            110,
+            205,
+            35,
+            40
+          ],
+          "foreground_pixels": 0,
+          "pixels": 1400
+        },
+        {
+          "old_roi_relative_xywh": [
+            110,
+            30,
+            65,
+            40
+          ],
+          "foreground_pixels": 0,
+          "pixels": 2600
+        }
+      ],
+      "selected_nonink_foreground_pixels": 0,
+      "selected_nonink_pixels": 5750,
+      "roi_foreground_pixels": 12157
+    },
+    {
+      "id": "N05",
+      "method": "bg61_wolf",
+      "ink_center_hits": 12,
+      "ink_centers": 15,
+      "point_hits": [
+        true,
+        true,
+        true,
+        true,
+        false,
+        true,
+        false,
+        true,
+        true,
+        true,
+        true,
+        true,
+        false,
+        true,
+        true
+      ],
+      "nonink_patches": [
+        {
+          "old_roi_relative_xywh": [
+            120,
+            140,
+            50,
+            35
+          ],
+          "foreground_pixels": 0,
+          "pixels": 1750
+        },
+        {
+          "old_roi_relative_xywh": [
+            110,
+            205,
+            35,
+            40
+          ],
+          "foreground_pixels": 0,
+          "pixels": 1400
+        },
+        {
+          "old_roi_relative_xywh": [
+            110,
+            30,
+            65,
+            40
+          ],
+          "foreground_pixels": 0,
+          "pixels": 2600
+        }
+      ],
+      "selected_nonink_foreground_pixels": 0,
+      "selected_nonink_pixels": 5750,
+      "roi_foreground_pixels": 11894
+    },
+    {
+      "id": "N05",
+      "method": "bg61_sauvola",
+      "ink_center_hits": 13,
+      "ink_centers": 15,
+      "point_hits": [
+        true,
+        true,
+        true,
+        true,
+        false,
+        true,
+        false,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "nonink_patches": [
+        {
+          "old_roi_relative_xywh": [
+            120,
+            140,
+            50,
+            35
+          ],
+          "foreground_pixels": 0,
+          "pixels": 1750
+        },
+        {
+          "old_roi_relative_xywh": [
+            110,
+            205,
+            35,
+            40
+          ],
+          "foreground_pixels": 0,
+          "pixels": 1400
+        },
+        {
+          "old_roi_relative_xywh": [
+            110,
+            30,
+            65,
+            40
+          ],
+          "foreground_pixels": 0,
+          "pixels": 2600
+        }
+      ],
+      "selected_nonink_foreground_pixels": 0,
+      "selected_nonink_pixels": 5750,
+      "roi_foreground_pixels": 13863
+    },
+    {
+      "id": "N05",
+      "method": "bg61_nick",
+      "ink_center_hits": 13,
+      "ink_centers": 15,
+      "point_hits": [
+        true,
+        true,
+        true,
+        true,
+        false,
+        true,
+        false,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "nonink_patches": [
+        {
+          "old_roi_relative_xywh": [
+            120,
+            140,
+            50,
+            35
+          ],
+          "foreground_pixels": 0,
+          "pixels": 1750
+        },
+        {
+          "old_roi_relative_xywh": [
+            110,
+            205,
+            35,
+            40
+          ],
+          "foreground_pixels": 0,
+          "pixels": 1400
+        },
+        {
+          "old_roi_relative_xywh": [
+            110,
+            30,
+            65,
+            40
+          ],
+          "foreground_pixels": 0,
+          "pixels": 2600
+        }
+      ],
+      "selected_nonink_foreground_pixels": 0,
+      "selected_nonink_pixels": 5750,
+      "roi_foreground_pixels": 15171
+    },
+    {
+      "id": "N05",
+      "method": "bg121_otsu",
+      "ink_center_hits": 12,
+      "ink_centers": 15,
+      "point_hits": [
+        true,
+        true,
+        true,
+        true,
+        false,
+        true,
+        false,
+        true,
+        true,
+        true,
+        true,
+        true,
+        false,
+        true,
+        true
+      ],
+      "nonink_patches": [
+        {
+          "old_roi_relative_xywh": [
+            120,
+            140,
+            50,
+            35
+          ],
+          "foreground_pixels": 0,
+          "pixels": 1750
+        },
+        {
+          "old_roi_relative_xywh": [
+            110,
+            205,
+            35,
+            40
+          ],
+          "foreground_pixels": 0,
+          "pixels": 1400
+        },
+        {
+          "old_roi_relative_xywh": [
+            110,
+            30,
+            65,
+            40
+          ],
+          "foreground_pixels": 0,
+          "pixels": 2600
+        }
+      ],
+      "selected_nonink_foreground_pixels": 0,
+      "selected_nonink_pixels": 5750,
+      "roi_foreground_pixels": 12145
+    },
+    {
+      "id": "N05",
+      "method": "howe80",
+      "ink_center_hits": 13,
+      "ink_centers": 15,
+      "point_hits": [
+        true,
+        true,
+        true,
+        true,
+        false,
+        true,
+        false,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "nonink_patches": [
+        {
+          "old_roi_relative_xywh": [
+            120,
+            140,
+            50,
+            35
+          ],
+          "foreground_pixels": 0,
+          "pixels": 1750
+        },
+        {
+          "old_roi_relative_xywh": [
+            110,
+            205,
+            35,
+            40
+          ],
+          "foreground_pixels": 0,
+          "pixels": 1400
+        },
+        {
+          "old_roi_relative_xywh": [
+            110,
+            30,
+            65,
+            40
+          ],
+          "foreground_pixels": 0,
+          "pixels": 2600
+        }
+      ],
+      "selected_nonink_foreground_pixels": 0,
+      "selected_nonink_pixels": 5750,
+      "roi_foreground_pixels": 14116
+    },
+    {
+      "id": "N05",
+      "method": "howe160",
+      "ink_center_hits": 13,
+      "ink_centers": 15,
+      "point_hits": [
+        true,
+        true,
+        true,
+        true,
+        false,
+        true,
+        false,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "nonink_patches": [
+        {
+          "old_roi_relative_xywh": [
+            120,
+            140,
+            50,
+            35
+          ],
+          "foreground_pixels": 0,
+          "pixels": 1750
+        },
+        {
+          "old_roi_relative_xywh": [
+            110,
+            205,
+            35,
+            40
+          ],
+          "foreground_pixels": 0,
+          "pixels": 1400
+        },
+        {
+          "old_roi_relative_xywh": [
+            110,
+            30,
+            65,
+            40
+          ],
+          "foreground_pixels": 0,
+          "pixels": 2600
+        }
+      ],
+      "selected_nonink_foreground_pixels": 0,
+      "selected_nonink_pixels": 5750,
+      "roi_foreground_pixels": 14297
+    },
+    {
+      "id": "N05",
+      "method": "howe320",
+      "ink_center_hits": 13,
+      "ink_centers": 15,
+      "point_hits": [
+        true,
+        true,
+        true,
+        true,
+        false,
+        true,
+        false,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "nonink_patches": [
+        {
+          "old_roi_relative_xywh": [
+            120,
+            140,
+            50,
+            35
+          ],
+          "foreground_pixels": 0,
+          "pixels": 1750
+        },
+        {
+          "old_roi_relative_xywh": [
+            110,
+            205,
+            35,
+            40
+          ],
+          "foreground_pixels": 0,
+          "pixels": 1400
+        },
+        {
+          "old_roi_relative_xywh": [
+            110,
+            30,
+            65,
+            40
+          ],
+          "foreground_pixels": 0,
+          "pixels": 2600
+        }
+      ],
+      "selected_nonink_foreground_pixels": 0,
+      "selected_nonink_pixels": 5750,
+      "roi_foreground_pixels": 14272
+    }
+  ]
+}

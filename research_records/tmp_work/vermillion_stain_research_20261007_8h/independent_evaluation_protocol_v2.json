@@ -1,0 +1,111 @@
+{
+  "version": 2,
+  "utc": "2026-10-07T18:27:13.116755+00:00",
+  "status": "Protocol frozen before independent selector output inspection; predictions may be computed without viewing",
+  "model_resources": {
+    "relative_overlap": {
+      "path": "tmp_work/vermillion_stain_research_20261007_8h/learned_trials/relative_overlap_seed413/last.pth",
+      "sha256": "cab717380cdd42485bdb78cba9e0afbbc7bae91878d544e85b43b9ebe7b59c77",
+      "step": 12000
+    },
+    "rgb_overlap": {
+      "path": "tmp_work/vermillion_stain_research_20261007_8h/learned_trials/rgb_overlap_seed413/last.pth",
+      "sha256": "a7e0db82ad4d521a55abe812719755d83650177049bdea62ff925ee2a855df88",
+      "step": 12000
+    },
+    "texture_continue_control": {
+      "path": "tmp_work/vermillion_stain_research_20261007_8h/texture_transfer_trials/continue_control_seed614/last.pth",
+      "sha256": "77892d714a06ba6c68e2dea8854dd3b7f1a1feed8c71ef2fabfbbb955e907fb0",
+      "step": 10000
+    },
+    "texture_paper_texture": {
+      "path": "tmp_work/vermillion_stain_research_20261007_8h/texture_transfer_trials/paper_texture_seed614/last.pth",
+      "sha256": "5be7f21984e0f79d06c53a76a836465faccb6f4c40ba9920aa82b59184e4e8f5",
+      "step": 10000
+    },
+    "texture_paper_texture_sparse": {
+      "path": "tmp_work/vermillion_stain_research_20261007_8h/texture_transfer_trials/paper_texture_sparse_seed614/last.pth",
+      "sha256": "692902afaa5c99a83d5e6cc3b76e845a3ef1b61637b19e9a170183f2b3c47989",
+      "step": 10000
+    },
+    "partial_sparse_control": {
+      "path": "tmp_work/vermillion_stain_research_20261007_8h/native_partial_trials/sparse_control_seed715/last.pth",
+      "sha256": "e36b4daccbedd39fb37da87fed976f8804b1b78cef3cf5abbe0c7cf2ad936ac7",
+      "step": 8000
+    },
+    "partial_dense_native": {
+      "path": "tmp_work/vermillion_stain_research_20261007_8h/native_partial_trials/dense_native_seed715/last.pth",
+      "sha256": "43f5476ebf795e7f5fde10dc1e870e872eab6e381489cb0a96361dc5838d537c",
+      "step": 8000
+    },
+    "partial_dense_native_brown": {
+      "path": "tmp_work/vermillion_stain_research_20261007_8h/native_partial_trials/dense_native_brown_seed715/last.pth",
+      "sha256": "4fae44635adcb9f202339c2a1c83b0861b458ea1d62459897dff3774206e9c00",
+      "step": 8000
+    },
+    "spatial_forest": {
+      "path": "tmp_work/vermillion_stain_research_20261007_8h/sparse_context_trials/spatial_forest.pkl",
+      "sha256": "3467836a4d796b0ceecc1484a39776bbf34c9acf69f5138e83f827acf1cde271"
+    },
+    "region_spatial_forest": {
+      "path": "tmp_work/vermillion_stain_research_20261007_8h/region_supported_trials/region_spatial_forest.pkl",
+      "sha256": "512191c0feecfbf55495c5e285a5e4c18c1d5c4fb981591ec3f3bc3bed9e987c"
+    },
+    "partial_dense_native_photometry": {
+      "path": "tmp_work/vermillion_stain_research_20261007_8h/native_partial_trials/dense_native_photometry_seed715/last.pth",
+      "sha256": "465bc18be2c070a17f1fafada1ca9db10abc84377ac2267755d2139ce140a649",
+      "step": 8000
+    }
+  },
+  "mask_baselines": [
+    "csc_v2_red",
+    "saved_csc_v2_red",
+    "relative_chroma",
+    "relative_ridge",
+    "hsv_loose"
+  ],
+  "direct_baselines": [
+    "stain",
+    "stain_global256",
+    "stain_global512",
+    "docres_appearance_author",
+    "docres_appearance_native",
+    "docres_binarization"
+  ],
+  "threshold": 0.5,
+  "local_cases_manifest": "cases_frozen.json",
+  "local_roles": [
+    "validation",
+    "supplemental_known_book"
+  ],
+  "independent_local_validation_books": [
+    "100249416",
+    "200015779",
+    "200017458",
+    "200021637"
+  ],
+  "external_cases": "external_originals/frozen_cases/cases_frozen.json",
+  "external_points": "external_originals/frozen_points/points_frozen.json",
+  "primary_checkpoint_selection": "Fixed LAST, no validation or external checkpoint selection",
+  "image_matching": "Same native ROI for mask and repair; direct color methods shown separately from foreground-only candidates",
+  "real_metrics": "Selected tentative original points, and tentative paper-region selected fraction where frozen; not unbiased pixel accuracy, not chemical stain labels, not reading GT",
+  "scope_limits": [
+    "Purposive original-image case discovery; not random full-library sampling",
+    "Prior-project book use is not universally ruled out; unseen refers to this fitting process",
+    "Known-book supplements are not independent local books",
+    "External brown body text must not be scored as removable dirt",
+    "U-DIADS-TL original GT is text-line segmentation, not red/stain masks",
+    "Japanese-character DDRM not used as a restoration claim on Latin or Syriac pages"
+  ],
+  "prospective_small_notes": "Original-only discovery still running; append an independent manifest before new method outputs are viewed",
+  "extensions": "Any additional candidate must be registered in a new version before independent outputs are inspected; never silently replace this file",
+  "predecessor_sha256": "fd0b9f8f5b043090c74c2b1029a709036892e331327226008625944effa59690",
+  "photometry_extension": "Registered before any independent output inspection; fixed LAST8000 and .5 as all partial models; source-only shared input/paper gain augmentation, not a new physical model",
+  "prospective_cases": "prospective_cases/cases_frozen.json",
+  "prospective_points": "prospective_cases/points_frozen.json",
+  "prospective_cases_sha256": "42dcacccb057e7d0793b6646a97f8a4331fa7c7729ca35f5ae676a3aa6a0ef34",
+  "prospective_points_sha256": "de2d5d59580bfdc27c5f6600659936efeb6a2f3f18b358727e0cf51cfb1ed058",
+  "prospective_status": "Original-only selection and labels fixed before inference; no prospective adaptation",
+  "unified_cases": "independent_cases_v2.json",
+  "unified_cases_sha256": "46aca287cba85dc14c098446064fd66b910d8db184c557a82f38cfeeaebf0471"
+}

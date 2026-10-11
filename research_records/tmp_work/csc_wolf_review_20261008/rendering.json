@@ -1,0 +1,480 @@
+[
+  {
+    "path": "figures/N01_原画像_Wolf_CSC_Sauvola.png",
+    "sha256": "32f3867f0401d2c96b03ad3536c44f83e7436d5361f55f5d9a1f7920ed457dee",
+    "panels": [
+      {
+        "method": "original",
+        "canvas_xywh": [
+          24,
+          162,
+          380,
+          440
+        ],
+        "integer_scale": 2
+      },
+      {
+        "method": "wolf61",
+        "canvas_xywh": [
+          428,
+          162,
+          380,
+          440
+        ],
+        "integer_scale": 2
+      },
+      {
+        "method": "csc_v2",
+        "canvas_xywh": [
+          24,
+          670,
+          380,
+          440
+        ],
+        "integer_scale": 2
+      },
+      {
+        "method": "sauvola61",
+        "canvas_xywh": [
+          428,
+          670,
+          380,
+          440
+        ],
+        "integer_scale": 2
+      }
+    ],
+    "roi_xywh": [
+      428,
+      347,
+      190,
+      220
+    ]
+  },
+  {
+    "path": "figures/N01_CSCと他の古典手法.png",
+    "sha256": "7da8622c2f33d6eef30a8ab217d669061c76ef49dff78266d766ae3df1a56fa7",
+    "panels": [
+      {
+        "method": "csc_v2",
+        "canvas_xywh": [
+          24,
+          162,
+          380,
+          440
+        ],
+        "integer_scale": 2
+      },
+      {
+        "method": "nick61",
+        "canvas_xywh": [
+          428,
+          162,
+          380,
+          440
+        ],
+        "integer_scale": 2
+      },
+      {
+        "method": "gatos_native",
+        "canvas_xywh": [
+          24,
+          670,
+          380,
+          440
+        ],
+        "integer_scale": 2
+      },
+      {
+        "method": "su2013_local",
+        "canvas_xywh": [
+          428,
+          670,
+          380,
+          440
+        ],
+        "integer_scale": 2
+      }
+    ],
+    "roi_xywh": [
+      428,
+      347,
+      190,
+      220
+    ]
+  },
+  {
+    "path": "figures/N01_CSC版の参考比較.png",
+    "sha256": "ad723f150dfac862b53a1a1ea4c92e9be37181edf4923e897587a368c2d2765c",
+    "panels": [
+      {
+        "method": "original",
+        "canvas_xywh": [
+          24,
+          162,
+          380,
+          440
+        ],
+        "integer_scale": 2
+      },
+      {
+        "method": "csc_v2",
+        "canvas_xywh": [
+          428,
+          162,
+          380,
+          440
+        ],
+        "integer_scale": 2
+      },
+      {
+        "method": "csc_v1",
+        "canvas_xywh": [
+          24,
+          670,
+          380,
+          440
+        ],
+        "integer_scale": 2
+      },
+      {
+        "method": "wolf61",
+        "canvas_xywh": [
+          428,
+          670,
+          380,
+          440
+        ],
+        "integer_scale": 2
+      }
+    ],
+    "roi_xywh": [
+      428,
+      347,
+      190,
+      220
+    ]
+  },
+  {
+    "path": "figures/T01_原画像_Wolf_CSC_Sauvola.png",
+    "sha256": "eecf292f9ec16f3a743e687b21baa87fff027d34b178669872154a370456cbe4",
+    "panels": [
+      {
+        "method": "original",
+        "canvas_xywh": [
+          24,
+          162,
+          450,
+          450
+        ],
+        "integer_scale": 1
+      },
+      {
+        "method": "wolf61",
+        "canvas_xywh": [
+          498,
+          162,
+          450,
+          450
+        ],
+        "integer_scale": 1
+      },
+      {
+        "method": "csc_v2",
+        "canvas_xywh": [
+          24,
+          680,
+          450,
+          450
+        ],
+        "integer_scale": 1
+      },
+      {
+        "method": "sauvola61",
+        "canvas_xywh": [
+          498,
+          680,
+          450,
+          450
+        ],
+        "integer_scale": 1
+      },
+      {
+        "method": "csc_v1",
+        "canvas_xywh": [
+          24,
+          1198,
+          450,
+          450
+        ],
+        "integer_scale": 1
+      }
+    ],
+    "roi_xywh": [
+      812,
+      421,
+      450,
+      450
+    ]
+  },
+  {
+    "path": "figures/T01_CSCと他の古典手法.png",
+    "sha256": "ea637729a1ea28bbe1bc21e806740a65230eac3056a161e0cfa75c1a23276b4e",
+    "panels": [
+      {
+        "method": "csc_v2",
+        "canvas_xywh": [
+          24,
+          162,
+          450,
+          450
+        ],
+        "integer_scale": 1
+      },
+      {
+        "method": "nick61",
+        "canvas_xywh": [
+          498,
+          162,
+          450,
+          450
+        ],
+        "integer_scale": 1
+      },
+      {
+        "method": "gatos_native",
+        "canvas_xywh": [
+          24,
+          680,
+          450,
+          450
+        ],
+        "integer_scale": 1
+      },
+      {
+        "method": "su2013_local",
+        "canvas_xywh": [
+          498,
+          680,
+          450,
+          450
+        ],
+        "integer_scale": 1
+      }
+    ],
+    "roi_xywh": [
+      812,
+      421,
+      450,
+      450
+    ]
+  },
+  {
+    "path": "figures/T01_CSC版の参考比較.png",
+    "sha256": "e7745f03aebc6ccdbd03ffe792ede256ed82c72b9f4b343a9c6f81e6d3819d61",
+    "panels": [
+      {
+        "method": "original",
+        "canvas_xywh": [
+          24,
+          162,
+          450,
+          450
+        ],
+        "integer_scale": 1
+      },
+      {
+        "method": "csc_v2",
+        "canvas_xywh": [
+          498,
+          162,
+          450,
+          450
+        ],
+        "integer_scale": 1
+      },
+      {
+        "method": "csc_v1",
+        "canvas_xywh": [
+          24,
+          680,
+          450,
+          450
+        ],
+        "integer_scale": 1
+      },
+      {
+        "method": "wolf61",
+        "canvas_xywh": [
+          498,
+          680,
+          450,
+          450
+        ],
+        "integer_scale": 1
+      }
+    ],
+    "roi_xywh": [
+      812,
+      421,
+      450,
+      450
+    ]
+  },
+  {
+    "path": "figures/N05_原画像_Wolf_CSC_Sauvola.png",
+    "sha256": "ace339de92484e3d8c71488737b10b2f0b188ffba7f38b1a7142829045073daa",
+    "panels": [
+      {
+        "method": "original",
+        "canvas_xywh": [
+          24,
+          162,
+          640,
+          580
+        ],
+        "integer_scale": 1
+      },
+      {
+        "method": "wolf61",
+        "canvas_xywh": [
+          688,
+          162,
+          640,
+          580
+        ],
+        "integer_scale": 1
+      },
+      {
+        "method": "csc_v2",
+        "canvas_xywh": [
+          24,
+          810,
+          640,
+          580
+        ],
+        "integer_scale": 1
+      },
+      {
+        "method": "sauvola61",
+        "canvas_xywh": [
+          688,
+          810,
+          640,
+          580
+        ],
+        "integer_scale": 1
+      }
+    ],
+    "roi_xywh": [
+      1019,
+      1617,
+      640,
+      580
+    ]
+  },
+  {
+    "path": "figures/N05_CSCと他の古典手法.png",
+    "sha256": "b3db874911422092fa17c2664d1da546f3c0fd11b1b95db31e102391bc5e5edc",
+    "panels": [
+      {
+        "method": "csc_v2",
+        "canvas_xywh": [
+          24,
+          162,
+          640,
+          580
+        ],
+        "integer_scale": 1
+      },
+      {
+        "method": "nick61",
+        "canvas_xywh": [
+          688,
+          162,
+          640,
+          580
+        ],
+        "integer_scale": 1
+      },
+      {
+        "method": "gatos_native",
+        "canvas_xywh": [
+          24,
+          810,
+          640,
+          580
+        ],
+        "integer_scale": 1
+      },
+      {
+        "method": "su2013_local",
+        "canvas_xywh": [
+          688,
+          810,
+          640,
+          580
+        ],
+        "integer_scale": 1
+      }
+    ],
+    "roi_xywh": [
+      1019,
+      1617,
+      640,
+      580
+    ]
+  },
+  {
+    "path": "figures/N05_CSC版の参考比較.png",
+    "sha256": "ad1cf1da85f2b38faf22ccda4f3608b878a983ddc0b4751f20d4d791b00c14c2",
+    "panels": [
+      {
+        "method": "original",
+        "canvas_xywh": [
+          24,
+          162,
+          640,
+          580
+        ],
+        "integer_scale": 1
+      },
+      {
+        "method": "csc_v2",
+        "canvas_xywh": [
+          688,
+          162,
+          640,
+          580
+        ],
+        "integer_scale": 1
+      },
+      {
+        "method": "csc_v1",
+        "canvas_xywh": [
+          24,
+          810,
+          640,
+          580
+        ],
+        "integer_scale": 1
+      },
+      {
+        "method": "wolf61",
+        "canvas_xywh": [
+          688,
+          810,
+          640,
+          580
+        ],
+        "integer_scale": 1
+      }
+    ],
+    "roi_xywh": [
+      1019,
+      1617,
+      640,
+      580
+    ]
+  }
+]

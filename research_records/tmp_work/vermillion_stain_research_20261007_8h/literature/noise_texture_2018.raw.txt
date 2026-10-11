@@ -1,0 +1,263 @@
+                                               IMPROVING DOCUMENT BINARIZATION VIA ADVERSARIAL NOISE-TEXTURE
+                                                                      AUGMENTATION
+
+                                                        Ankan Kumar Bhunia1 , Ayan Kumar Bhunia2∗ , Aneeshan Sain3 , Partha Pratim Roy4
+                                                            1
+                                                            Jadavpur University, India 2 Nanyang Technological University, Singapore
+                                                   3
+                                                       Cognizant Technology Solutions, India 4 Indian Institute of Technology Roorkee, India
+                                                                                                2
+                                                                                                    ayanbhunia@ntu.edu.sg
+arXiv:1810.11120v2 [cs.CV] 1 May 2019
+
+
+
+
+                                                                    ABSTRACT
+                                        Binarization of degraded document images is an elementary
+                                        step in most of the problems in document image analysis do-
+                                        main. The paper re-visits the binarization problem by intro-
+                                        ducing an adversarial learning approach. We construct a Tex-
+                                        ture Augmentation Network that transfers the texture element
+                                        of a degraded reference document image to a clean binary
+                                        image. In this way, the network creates multiple versions of
+                                        the same textual content with various noisy textures, thus en-
+                                        larging the available document binarization datasets. At last,
+                                        the newly generated images are passed through a Binarization
+                                        network to get back the clean version. By jointly training the
+                                        two networks we can increase the adversarial robustness of                 Fig. 1. Illustration of the Proposed framework: It consists of
+                                        our system. Also, it is noteworthy that our model can learn                two networks TANet and BiNet. TANet takes a clean docu-
+                                        from unpaired data. Experimental results suggest that the                  ment image Ic and a degraded reference image Ir and tries to
+                                        proposed method1 achieves superior performance over widely                 generate an image Ig with same textual content as Ic retaining
+                                        used DIBCO datasets.                                                       the noisy texture of Ir . Next, BiNet tries to get back the clean
+                                            Index Terms— Document image binarization, Adversar-                    image by de-noising the generated one.
+                                        ial Learning, Augmentation, Style transfer, Unpaired data.
+                                                                                                                   6] have also been applied for binarization of document im-
+                                                                                                                   ages. The objective here is not to predict a threshold but to
+                                                                1. INTRODUCTION                                    directly output a binary mask segregating the foreground text
+                                                                                                                   and the background noise. These deep learning based mod-
+                                        Document image binarization is a fundamental problem in the                els require a considerable amount of paired training data. The
+                                        field of Document analysis. Although binarization seems to                 publicly available binarization datasets are not sufficient to
+                                        be quite easy for images of uniform distribution, it can be                learn various possible noise distributions (i.e., artifacts, stains,
+                                        challenging under real-world scenarios where the document                  ink spills, etc.) that may occur in real-life situations.
+                                        images suffer from various degradations due to aging effect,                   In this paper, we intend to increase the utility of the avail-
+                                        inadequate maintenance, ink stains, faded ink, bleed-through               able bounded datasets by proposing a novel adversarial learn-
+                                        background, wrinkles, warping effect, non-uniform variation                ing technique. The basic idea is to generate a new set of aug-
+                                        of intensity and lighting conditions during document scan-                 mented images of high perceptual quality that combine the
+                                        ning.                                                                      semantic content of a clean binary image with the noisy ap-
+                                            Early document binarization methods [1, 2, 3, 4] for bi-               pearance of a degraded document image. Thus, the low-level
+                                        narization used various thresholding techniques, which in-                 distribution of visual features in an image is modified while
+                                        clude finding a single (or multiple) appropriate threshold(s)              maintaining the semantic content. In this way, we can gener-
+                                        for classifying pixels in the image as belonging to foreground             ate multiple degraded versions of same textual content with
+                                        or background. Recently, few deep learning frameworks [5,                  various noisy textures. For this purpose we propose a Texture
+                                          ∗ Corresponding Author                                                   Augmentation Network that superimposes the noisy appear-
+                                          1 The full source code of the proposed system is publicly available at   ance of the degraded document on the clean binary image.
+                                        https://github.com/ankanbhunia/AdverseBiNet                                Then, the output image is passed through a Binarization Net-
+work called BiNet to get back the clean version of the docu-       maps the combined representations to an output image that
+ment image. Both the networks are jointly trained in an ad-        has the same textual content as the clean image and the same
+versarial manner. The goal is to generate harder adversarial       texture element as the noisy input. The Decoder architecture
+training samples with lots of variations. On the other hand,       is symmetrical to the Encoders with series of deconvolution-
+BiNet tries to learn from the hard augmentations for better        BatchNorm-LeakyReLU up-sampling blocks with tanh acti-
+performance. By jointly training the two networks, we can          vation for the final output. The output and the clean image
+enhance the adversarial robustness of our binarization model.      differ in appearance, but they have the same textual element.
+The advantage of this technique is that the system can learn       However, due to the down-sampling process in the content
+from unpaired images. It becomes very useful in case of an-        encoder, only a part of the input is stored, resulting in a sig-
+cient historical documents as it is difficult to get the corre-    nificant information loss in each layer which can not be used
+sponding binary images for these documents. If the system          to generate the output image. To deal with this, we adopt
+supports unpaired setting then the data collection process be-     skip-connection between the layers of the content encoder and
+comes easier. We can easily get large number of unpaired           the decoder. We concatenate the feature-map of each down-
+images with less effort by collecting document images and          sampling block in the content encoder with the corresponding
+clean images independently from different sources. However,        feature map of the up-sampling block in the decoder.We rep-
+no other previous work on document binarization have tried         resent the TANet as G.
+to utilize the unpaired dataset. In this paper, the proposed
+system can be trained with unpaired data.                                                Ig = G(Ic , Ir ; θG )                    (1)
+    The proposed framework is summarized in Figure 1. The              where, Ig is the generated output and θG is the parameters
+main contributions of our study are as follows: (1) To the best    of TANet. The image generated by the TANet should follow
+of our knowledge, our work is the first attempt to use a Gener-    some constraints and objectives: (1) It should look real and
+ative adversarial model in document binarization problem. (2)      can not be distinguished from the real-world noisy, degraded
+We propose a texture augmentation network to augment im-           document images (2) It has similar texture appearance as the
+age datasets, by generating adversarial examples online. (3)       degraded reference document image Ir . (3) It has same tex-
+We employ adversarial learning technique driven by a general       tual content as the clean document image Ic . To incorporate
+GAN objective where the GAN loss plays a complementary             above constraints in the training process of TANet, we adopt
+role in training TANet and BiNet jointly. Also, it is notewor-     the following loss functions for TANet.
+thy that the method is able to learn from unpaired datasets.           Adversarial loss. we use an adversarial objective to con-
+                                                                   strain the output to look similar to the reference document
+                   2. METHODOLOGY                                  image. Assuming Ir is sampled according to some data dis-
+                                                                   tribution Pr and Ic is sampled from distribution Pc , the loss
+In this section, we present the details of our proposed bina-      is defined as
+rization model. The model consists of two networks: Tex-
+ture Augmentation Network (TANet) and Binarization Net-
+work (BiNet). Given a clean document image, TANet tries to           LGAN
+                                                                      G   (G, DG ) = EIr ∈Pr [logDG (Ir )]+
+obtain a noisy version of that image by transferring the noisy                      EIc ∈Pc ,Ir ∈Pr [log(1 − DG (G(Ic , Ir )))]   (2)
+texture of a reference document image comprising of various
+degradations. On the other hand, the BiNet tries to binarize            where the discriminator DG tries to discriminate between
+the newly generated noisy image.                                   the output image from the degraded reference image.
+     Texture Augmentation Network. To combine the se-                   Style loss. the adversarial loss focuses on getting the over-
+mantic content of a clean document image and the noisy tex-        all structure but sometimes it is not enough to capture the fine
+ture of a degraded document image, the first step would be         details of the texture. We use an additional style loss LS to en-
+to separate the content and texture representation explicitly.     sure the successful transfer of texture from the reference im-
+For this purpose, we employ a Content encoder and a Style          age to the clean document image. Following [7, 8], we have
+encoder. Given a clean image Ic and reference noisy element        used the technique of matching the gram matrices. It cap-
+Ir , the encoders learn to extract latent representations Rc and   tures the correlations between the different feature responses
+Rr , by leveraging the conditional dependence of the content       extracted from certain layers of a pre-trained VGG-19 net-
+and texture images. Both encoders have the same configura-         work. Mathematically, gram matrix Gij       l
+                                                                                                                  ∈ RNl ×N l is the
+tion with eight convolutional blocks of filter size 5 × 5 and      inner product between the vectorised feature maps i and j in
+stride 2. Each convolutional layers are associated with Leaky      layer l:                       X
+                                                                                            l            l   l
+ReLU and Batch Normalization.                                                              Gij =       Fik Fjk                    (3)
+     After extracting the content and texture representations,                                    k
+                                                                                                                   l
+we perform simple concatenation to obtain a mixed represen-        where, Nl is the number of feature maps and Fik    is the ac-
+                                                                                th
+tation. Then, it is passed through a Decoder network that          tivation of i filter at position k in layer l. We use 5 lay-
+ers of VGG-19 network (”conv1 1”, ”conv2 1”, ”conv3 1”,               where, λL2 is a weight parameter. In the next section, we
+”conv4 1”, ”conv5 1”) to define our style loss.                   will provide some salient details of the training process and
+    Content loss. It is required that the generated images        discuss the appropriate weights.
+have the same textual content as the clean document image.
+To incorporate the same in our training process, we define a
+                                                                                      3. EXPERIMENTS
+masked mean square loss function. The loss penalizes the dif-
+ferences between the pixels of the content image and output       In this section we discuss about the datasets, training details,
+image in the text region only. It can be defined as               baseline methods and experimental results regarding the eval-
+                                                                  uation of our proposed binarization model.
+              Lc (G) = ||M      Ic − M        Ig ||2       (4)         Datasets. For training and evaluating our model, we have
+    where, M is a binary mask that has value 1 in the text re-    used some publicly available document datasets. A total of
+gion and 0 in the background. Thus, the total objective func-     9 datasets are used in this work: DIBCO 2009 [10], DIBCO
+tion to train TANet can be written as                             2011 [11], DIBCO 2013 [12], H-DIBCO 2010 [13], H-
+                                                                  DIBCO 2012 [14], H-DIBCO 2014 [15], Bickley diary [16],
+                                                                  PHIDB [17], and S-MS [18] datasets. Out of these datasets,
+   LT AN et = LGAN
+               G   (G, DG ) + λs Ls (G) + λc Lc (G)        (5)    DIBCO 2013 dataset is selected for testing purposes. For the
+where, λs and λc are the weights to balance the multiple ob-      testing, the remaining datasets are used as a training set. At
+jectives.                                                         first, we convert the images from these datasets to patches
+    Binarization Network. Given that we have generated the        of size 256 × 256. To increase the number of patches, we
+noisy version of a clean document image, our system tries to      augment the training patches by rotating with an angle of
+get back the clean binarized image from the generated one         90, 180, or 270. A small part (10%) of the obtained image
+through another network called BiNet. The network employs         patches is used as an evaluation set, and the rest of the images
+an image-to-image translation framework consisting of a gen-      are used to train the model. In the training set, we have two
+erator and a discriminator. The objective is to train a genera-   set of images patches: degraded document set and as well as
+tor network F that takes the output of TANet Ig and obtains       their binarized ground truths. The clean images are sampled
+a binarized version of that image Ib .                            from the binarized set, and reference images are sampled
+                                                                  from the degraded document set in an unpaired manner.
+                       Ib = F (Ig ; θF )                   (6)         Training. To train the model, we follow a particular
+                                                                  stage-wise training protocol. At first, TANet is trained for 10
+where, θF is the parameters of the network F . A discrimina-      epochs. After the training, it should be able to generate noisy
+tor network DF is used to determine how good the generator        version of the clean images. In the next stage, BiNet is trained
+is in generating binarized images. We have used similar net-      using the generated noisy images for another 10 epochs. At
+work architecture for the generator and the discriminator as      last, TANet and BiNet are fine-tuned together for around 30
+mentioned in [9]. During training, both the networks compete      epochs. We note that during the couple training, TANet tends
+against each other in a min-max game. The training objective      to generate more challenging adversarial samples that are
+can be defined as                                                 relatively hard to be detected by BiNet. This training strategy
+                                                                  enforces the model to learn a various type of degradations
+                                                                  including noises and artifacts. Figure 3 illustrates the texture
+  LGAN
+   F   (F, DF ) = EIc ∈Pc [logDF (Ic )]+                          transfer process qualitatively. At the time of testing, BiNet is
+                          EIg ∈Pg [log(1 − DF (F (Ig )))] (7)     used to get the binarized output of a given document image.
+                                                                  Experiments are conducted on a server with 12 GB memory
+    It is noted that the training, in this case, follows the      and single Nvidia Tesla K80 GPU. The model is implemented
+”paired” setting. For each input image to the network F ,         using TensorFlow library. Adam optimizer with learning rate
+there is corresponding ground truth image. Thus, we can           0.0001 is used to train the model. We take λs = 0.5, λc =
+employ full supervision on the predicted binarization results     10 and λL2 = 100 throughout the experiments. We used the
+by leveraging the advantage of L2 pixel loss along with the       following metrics to quantitatively measure the performance
+adversarial loss.                                                 of our proposed model with those of the state-of-the-art al-
+                                                                  gorithms and some baselines: F-measure, pseudo-F-measure
+                   LL2 (F ) = ||Ic − Ib ||2                (8)    (Fps ), Distance reciprocal distortion metric (DRD), and the
+    The adversarial loss helps to obtain sharper output image     peak signal-to-noise ratio (PSNR) metrics [13].
+by de-noising the noisy input whereas the L2 loss helps to             Baselines: We define following baselines.
+preserve the content. The final objective of BiNet is                  U-Net: It is a trivial encoder-decoder network with skip-
+                                                                  connections [19]. We take its same architecture as our gen-
+          LBiN et = LGAN
+                     F   (F, DF ) + λL2 LL2 (F )           (9)    erator unit of BiNet. It is noted that the network is trained in
+          Fig. 2. Qualitative evaluation of texture transfer process and binarizarion technique on the evaluation set.
+
+
+  Methods             F-measure     Fps     DRD     PSNR
+  BERN [22]              52.6       52.8    62.2     10.1
+  Sauvola [2]            85.0       89.8     7.6     16.9
+  Niblack [23]           72.8       72.2    24.9     13.6
+  Gatos [24]             83.4       87.0     9.5     17.1
+  Otsu [1]               83.9       86.5    11.0     16.6
+  Su [25]                87.7       88.3     4.2     19.6
+  Howe [26]              91.3       91.7     3.2     21.3
+  DSN [5]                94.4       96.0     1.8     21.4
+  U-Net [19]             89.6       91.8     5.9     17.6
+  Pix2pix [20]           94.8       97.0     2.7     20.8
+  CycleGAN [21]          66.8       70.1    17.6     12.5         Fig. 3. Binarizartion results using the trained BiNet model on
+  Ours                   97.8       98.7     1.1     24.3         test set. Images are in the order: input, predicted and ground
+                                                                  truth from left to right for each sample result.
+   Table 1. Quantitative results on DIBCO 2013 dataset
+                                                                  CycleGAN obtains poor results as compared to others. Simi-
+a paired setting. For each input image, there is correspond-      lar to CycleGAN our method also utilizes unpaired data, but
+ing ground truth. L2 pixel loss is used to train the complete     the main binarization network (BiNet) of our model learns
+model.                                                            from paired samples which are created internally in our sys-
+    Pix2pix: It is an image-to-image translation framework        tem. Thus, we can impose full supervision in the BiNet
+inspired from [20]. The network resembles the BiNet part of       part that helps to generate high-quality results. However,
+our system. It is trained using adversarial loss and L2 loss      in CycleGAN method, there is no scope to impose the full
+using paired data.                                                supervision.
+    CycleGAN: We employ this baseline by using the concept
+of cycle-consistent image translation frameworks [21]. The                             4. CONCLUSION
+network utilizes unpaired data to train the model.
+    Results:We compare our proposed system with the base-         In this paper, we re-visited the problem of document bina-
+line methods and some state-of-the-art binarization algo-         rization by introducing a new adversarial learning technique
+rithms in Table 3. Some qualitative results are shown in          that intends to increase the utility of the available bounded
+Figure 3. From Table 3, we can see that our proposed method       datasets. The noisy data augmentation is an integral part of
+delivers the best quality results regarding all the four eval-    our network that enforces the model to learn robust represen-
+uation metrics. Also, we have obtained a low DRD score            tation of various types of document degradations from un-
+which implies that our method is also superior regarding the      paired data. Also, the experimental results suggest that our
+visual distortion. U-Net and Pix2pix work moderately, but         method is superior to existing state-of-the-art frameworks.
+                     5. REFERENCES                                  [16] F. Deng, Z. Wu, Z. Lu, and M.S. Brown, “Binarization-
+                                                                         shop: a user-assisted software suite for converting old
+ [1] N. Otsu, “A threshold selection method from gray-level              documents to black-and-white,” in Proceedings of the
+     histograms,” IEEE transactions on systems, man, and                 10th annual joint conference on Digital libraries. ACM,
+     cybernetics, vol. 9, no. 1, pp. 62–66, 1979.                        2010, pp. 255–258.
+ [2] J. Sauvola and M. Pietikäinen, “Adaptive document im-         [17] H.Z. Nafchi, S.M. Ayatollahi, R.F. Moghaddam, and
+     age binarization,” Pattern recognition, vol. 33, no. 2, pp.         M. Cheriet, “An efficient ground truthing tool for bi-
+     225–236, 2000.                                                      narization of historical manuscripts,” in ICDAR. IEEE,
+ [3] N. Phansalkar, S. More, A. Sabale, and M. Joshi, “Adap-             2013, pp. 807–811.
+     tive local thresholding for detection of nuclei in diversity   [18] R. Hedjam, H.Z. Nafchi, R.F. Moghaddam, M. Kalac-
+     stained cytology images,” in ICCSP. IEEE, 2011, pp.                 ska, and M. Cheriet, “Icdar 2015 contest on multispec-
+     218–220.                                                            tral text extraction (ms-tex 2015),” in ICDAR. IEEE,
+ [4] B. Gatos, I. Pratikakis, and S.J. Perantonis, “Improved             2015, pp. 1181–1185.
+     document image binarization by using a combination of          [19] O. Ronneberger, P. Fischer, and T. Brox, “U-net: Convo-
+     multiple binarization techniques and adapted edge infor-            lutional networks for biomedical image segmentation,”
+     mation,” in ICPR. IEEE, 2008, pp. 1–4.                              in International Conference on Medical image comput-
+ [5] Q.N. Vo, S.H. Kim, H.J. Yang, and G. Lee, “Binariza-                ing and computer-assisted intervention. Springer, 2015,
+     tion of degraded document images based on hierarchical              pp. 234–241.
+     deep supervised network,” Pattern Recognition, vol. 74,        [20] P. Isola, J. Zhu, T. Zhou, and A.A. Efros, “Image-
+     pp. 568–586, 2018.                                                  to-image translation with conditional adversarial net-
+ [6] C. Tensmeyer and T. Martinez, “Document image bi-                   works,” arXiv preprint, 2017.
+     narization with fully convolutional neural networks,” in       [21] J. Zhu, T. Park, P. Isola, and A.A. Efros, “Unpaired
+     ICDAR. IEEE, 2017, vol. 1, pp. 99–104.                              image-to-image translation using cycle-consistent ad-
+ [7] L. Gatys, A.S. Ecker, and M. Bethge, “Texture synthesis             versarial networks,” arXiv preprint, 2017.
+     using convolutional neural networks,” in NIPS, 2015,           [22] J. Bernsen, “Dynamic thresholding of gray-level im-
+     pp. 262–270.                                                        ages,” in Proc. Eighth Int’l conf. Pattern Recognition,
+ [8] L.A. Gatys, A.S. Ecker, and M. Bethge, “Image style                 Paris, 1986, 1986.
+     transfer using convolutional neural networks,” in CVPR,        [23] W. Niblack, An introduction to digital image processing,
+     2016, pp. 2414–2423.                                                vol. 34, Prentice-Hall Englewood Cliffs, 1986.
+ [9] A. Konwer, A.K. Bhunia, A. Bhowmick, A.K. Bhunia,              [24] B. Gatos, I. Pratikakis, and S.J. Perantonis, “An adaptive
+     P. Banerjee, P.P. Roy, and U. Pal, “Staff line removal              binarization technique for low quality historical docu-
+     using generative adversarial networks,” arXiv preprint              ments,” in International Workshop on Document Analy-
+     arXiv:1801.07141, 2018.                                             sis Systems. Springer, 2004, pp. 102–113.
+[10] B. Gatos, K. Ntirogiannis, and I. Pratikakis, “Icdar 2009      [25] B. Su, S. Lu, and C.L. Tan, “Robust document image
+     document image binarization contest (dibco 2009),” in               binarization technique for degraded document images,”
+     ICDAR. IEEE, 2009, pp. 1375–1382.                                   IEEE transactions on image processing, vol. 22, no. 4,
+[11] I. Pratikakis, B. Gatos, and K. Ntirogiannis, “Icdar 2011           pp. 1408–1417, 2013.
+     document image binarization contest (dibco 2011),” in          [26] N.R. Howe, “Document binarization with automatic pa-
+     ICDAR. IEEE, 2011, pp. 1506–1510.                                   rameter tuning,” International Journal on Document
+[12] I. Pratikakis, B. Gatos, and K. Ntirogiannis, “Icdar 2013           Analysis and Recognition (IJDAR), vol. 16, no. 3, pp.
+     document image binarization contest (dibco 2013),” in               247–258, 2013.
+     ICDAR. IEEE, 2013, pp. 1471–1476.
+[13] I. Pratikakis, B. Gatos, and K. Ntirogiannis, “H-dibco
+     2010-handwritten document image binarization compe-
+     tition,” in ICFHR. IEEE, 2010, pp. 727–732.
+[14] I. Pratikakis, B. Gatos, and K. Ntirogiannis, “Icfhr 2012
+     competition on handwritten document image binariza-
+     tion (h-dibco 2012),” in ICFHR. IEEE, 2012, pp. 817–
+     822.
+[15] K. Ntirogiannis, B. Gatos, and I. Pratikakis, “Icfhr2014
+     competition on handwritten document image binariza-
+     tion (h-dibco 2014),” in ICFHR. IEEE, 2014, pp. 809–
+     813.
+

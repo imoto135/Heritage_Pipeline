@@ -1,0 +1,18 @@
+{
+  "config": {
+    "window": 61,
+    "k": 0.2,
+    "opening_radius": 5,
+    "minarea": 150,
+    "dilation": 12,
+    "closing": 15,
+    "original_plus_npj": true,
+    "automatic_edit_mask": true,
+    "ROI_used_for_inference": false,
+    "heuristic_stain_detection": true,
+    "stain_material_GT": false,
+    "parameters_fixed_across_cases": true
+  },
+  "created": 1791366959.5057719,
+  "source_sha256": "0c7d00e62f69f301e91c8fe189f95239638e3adc46542436f8a0d59dc29f27a5"
+}

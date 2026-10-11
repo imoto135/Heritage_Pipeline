@@ -1,0 +1,802 @@
+                     This CVPR paper is the Open Access version, provided by the Computer Vision Foundation.
+                                  Except for this watermark, it is identical to the accepted version;
+                            the final published version of the proceedings is available on IEEE Xplore.
+
+
+
+
+  MMDIR: Multimodal Instruction-Driven Framework for Mixed-Degradation
+                     Document Image Restoration
+
+       Heng Li1 , Xingyuan Wang1, 3 , Yang Fan1 , Yunan Zhang1 , Xiangping Wu1 *, Qingcai Chen1, 2 *
+                                   1
+                               Harbin Institute of Technology Shenzhen, China
+             2
+                 PengCheng Laboratory, Shenzhen, China 3 Great Bay University, Dongguan, China
+                   hengli.lh@outlook.com, 24b951045@stu.hit.edu.cn, yfan@stu.hit.edu.cn
+                 zhangyunan@stu.hit.edu.cn, wxpleduole@gmail.com, qingcai.chen@hit.edu.cn
+
+
+
+                                                                          (a) Encoder-Decoder Architecture for End-to-End DIR
+                             Abstract                                                                                               Limitations:
+                                                                                                                    Restored          Single Degradation
+                                                                                             Vision       Vision
+                                                                                                                                      Non-Unified
+                                                                              Degraded
+                                                                                            Encoder      Decoder     Image
+Restoring degraded document image is essential for both                        Image
+
+improving visual quality and optimizing performance in                     (b) Visual-Guided Architecture with Prior Extraction for End-to-End DIR
+downstream document analysis tasks. Although existing                                                                               Limitations:
+                                                                                                                                      Single Degradation
+                                                                                             Vision       Vision    Restored          Priors Required
+methods have demonstrated substantial improvements in                         Degraded
+                                                                                            Encoder      Decoder     Image            Unimodal
+                                                                               Image
+restoration outcomes, they primarily address single-type
+                                                                                                guided
+degradation scenarios. Current approaches typically ne-                       Prior Image
+cessitate training multiple specialized models for specific
+                                                                          (c) Ours: Multimodal Instruction-Guided Architecture for End-to-End DIR
+degradation types or rely on explicit prior knowledge of                                                            Degradation
+                                                                                                                                    Advantages:
+                                                                                    Text    Embedding                                 Mixed Degradation
+degradation patterns to guide the training process. To over-                 Instruction
+                                                                                                                   Identification     Prior-Free
+                                                                                                                                      Multimodal
+
+
+
+                                                                                                         LLM
+come these limitations, we propose MMDIR, a multimodal                                                                                Unified
+
+                                                                                             Vision                 Vision     Restored
+instruction-driven framework designed for document image                      Degraded      Encoder                Decoder      Image
+                                                                               Image
+restoration under mixed and uncertain degradation condi-
+tions. By leveraging semantically structured instructions,
+                                                                      Figure 1. Model patterns for document image restoration (DIR).
+MMDIR dynamically identifies present degradation types
+                                                                      Existing methods (a) such as DocDiff [40], NAF-DPM [5] and
+(blur, shadow, text watermark, and seal), while enhanc-               LGA-Doc [34] consist of an end-to-end image-to-image restora-
+ing degradation-aware representation learning. Further-               tion model without any prompt guidance (focusing on single de-
+more, we introduce a novel benchmark named MixedDoc                   graded type). The method DocRes [41] (b) uses prior image
+comprising complex mixed degradations, where each image               prompts derived from preprocessed degraded images to guide doc-
+contains randomized combinations of the aforementioned                ument restoration, distinguishing between degradation types. Our
+types. This benchmark addresses a critical gap in exist-              approach is fundamentally different. As shown in (c), it simulta-
+ing datasets, which lack realistic multi-degradation samples          neously takes multimodal input and output. Text instructions are
+and often overlook common obstructions such as seals and              fed along with the degraded images, prompting the model to an-
+text watermarks. The effectiveness of our approach is thor-           swer the instruction question, identifying the presence or absence
+oughly validated across both released public benchmarks               of degradation types to guide image restoration.
+and our newly proposed dataset. The dataset is available at
+https://github.com/xiaomore/MMDIR.                                    and protection of the information value contained in the
+                                                                      document. The advancement of deep learning has accel-
+                                                                      erated the digitization and intelligent processing of docu-
+1. Introduction                                                       ment images. This widespread adoption has significantly
+                                                                      enhanced productivity and daily life. However, the devel-
+Document image restoration (DIR) is a crucial preprocess-             opment of document intelligence technology inevitably en-
+ing technology. It is a bridge connecting physical docu-              counters challenges posed by noise-corrupted or degraded
+ments with intelligent information processing in the digi-            image types. Common examples include blurring caused
+tal world. Its ultimate goal is to maximize the restoration           by camera shake during photography, shadows induced by
+  * Corresponding authors.                                            light source positioning and irregular object occlusion, as
+
+
+
+                                                               8387
+well as overlapping seals and text watermarks obscuring                  are jointly processed by a large language model (LLM).
+main text content in scenarios like contracts and invoices.              The LLM dynamically interprets the instruction to gener-
+Therefore, restoring degraded document images is criti-                  ate a diagnostic response specifying present/absent degra-
+cal for enhancing visual quality, improving the recogniz-                dations and guide a visual decoder toward targeted restora-
+ability of key information (text, tables, figures), and sup-             tion. The LLM outputs jointly drive a visual decoder to
+porting downstream tasks such as document understand-                    produce the restored image and generate a textual response
+ing, text recognition, table extraction, and image retrieval             that answers the user’s query. This multi-task setup enables
+[9, 23, 39, 42].                                                         finer-grained degradation-aware restoration and improved
+    Document image restoration (DIR) aims to recover                     interactivity, bridging the gap between conventional end-to-
+clean, readable document images from degraded inputs,                    end DIR and user-guided restoration. This dual-path design
+which may suffer from various distortions such as shad-                  enables context-aware processing: the model can identify
+ows, blur, seals or watermarks. Traditional DIR approaches               whether there is a requested removal of degradation in the
+typically adopt an end-to-end image-to-image framework                   instruction and detect unmentioned degradations. As illus-
+(as shown in Firuge 1 (a)), where a corrupted image is fed               trated in Figure 1 (c), our approach transcends the limita-
+into a model (often based on convolutional neural networks               tions of prior art by embedding semantic reasoning into the
+(CNN), transformers [35], or generative adversarial net-                 restoration pipeline, fostering adaptability, transparency.
+works (GANs) [10]) and supervised using clean reference                      The main contributions are summarized as follows:
+images to produce a restored output. Representative meth-                • We propose a instruction-driven multimodal document
+ods in this category include DocEnTr [33], which leverages                  image restoration (DIR) framework. Our approach inte-
+vision transformer (ViT) [8] architectures, DE-GAN [32],                    grates vision and language understanding into a unified
+utilizing adversarial training, and diffusion-based models                  architecture, enabling more fine-grained, degradation-
+such as DocDiff [40], NAF-DPM [5] and LGA-Doc [34].                         aware restoration.
+While effective, these methods inherently learn a fixed map-             • Our model automatically identifies multiple types of
+ping from degraded inputs to clean outputs without explicit                 degradation in images, guiding restoration and improv-
+degradation-type conditioning or external guidance. A re-                   ing the transparency and interpretability. We construct
+cent approach, DocRes [41], introduced the idea of incorpo-                 a novel benchmark covering diverse mixed degradation
+rating degradation hints during preprocessing. It estimates                 types to systematically address the data gap in this field.
+potential degradation types from the training data and con-              • Experiments demonstrate that our method achieves state-
+catenates these weak prompts with the input image to guide                  of-the-art performance on both single and mixed degrada-
+the restoration network. Though offering improved control,                  tion scenarios. The code and dataset will be made public
+this strategy necessitates prior knowledge of degradation                   to support further research and development.
+categories and rigid preprocessing pipelines (illustrated in
+Figure 1 (b)), failing to generalize to open-world scenarios             2. Releated Work
+where degradation types are ambiguous.                                   Document image restoration (DIR) aims to remove unnec-
+    The main shortcomings of existing methods are: (i) Lack              essary interference information (watermark, seal, shadow)
+of generalization and deviation from real-world scenarios:               in the image that is not the original document content, and
+Real-world document images often exhibit complex mixed                   to repair the original document content that is lost or dam-
+degradations simultaneously (for example, a document may                 aged due to various degradations (such as blur) in the doc-
+contain shadows, blur, watermarks, and seals concurrently).              ument. In recent years, due to the introduction of Convo-
+(ii) Failure to exploit synergistic effects between tasks: Cer-          lutional Neural Networks (CNN), Transformers [35], Gen-
+tain document restoration tasks may possess intrinsic con-               erative Adversarial Networks [10] (GAN) and Diffusion
+nections and commonalities. Independently trained mod-                   model [13], the DIR task has also been widely studied and
+els cannot share or utilize this cross-task knowledge during             achieved significant improvements.
+learning, consequently limiting the potential performance                    Task-specific Methods. Traditional methods processed
+ceiling of each individual model.                                        the entire degraded image using predefined thresholds [27]
+    To bridge this gap, we propose a novel instruction-driven            or kernel operations [4, 28, 29]. These works were usually
+DIR framework that unifies vision and language under-                    effective when the image interference types are relatively
+standing within a unified cohesive architecture (presented               simple, but they lack robustness because they based on prior
+in Figure 1 (c)). Our method accepts degraded image and                  assumptions about the noise patterns in the document.
+textual instruction (“Analyze the image to determine the                     Existing methods including CNN-based [17, 24], GAN-
+presence of noise or interference and classify any iden-                 based [32], Transformer-based [33] and Diffusion-based
+tified types. And eliminate blur, seal.”) as inputs. Dis-                [5, 34, 40] approaches typically employed an encoder-
+tinct encoders extract visual and linguistic features, which             decoder framework to directly regress noise-free images
+
+
+
+                                                                  8388
+             (a) Training Stage                                                                                (b) Inference Stage
+                                                        Text Instruction                                                                                                            Degradation Identification
+                                                                                                                  Text
+                                                          (Question)                                                                                                                       (Answer)
+                                                                                                                 Tokens
+       Output (Ir)                                Please determine whether
+                                                                                                                                                                                According to the prompt, the user
+
+
+
+
+                                                                                                                                                                LLM Head
+                                                                                                                              Large Language Model (LLM)
+                                                                                                                                                                                specifies removal of text watermark,
+
+
+
+
+                                                                                               Embedding
+                                                  the image contains noise
+
+
+
+
+                                                                                 Tokenzier
+                                                  or interference and, if                                                                                                       shadow from the image. Visual analysis
+         Dec.                                     present, identify the                                                   Q                                                Ft   indicates that there is no text watermark
+                                       Ft         specific noise type. Then
+                                                  remove text watermark,
+                                                                                                                                                                                in the image. However, seal is
+                                                  shadow.                                                                                                                       detectable in the image. Consequently,
+                                                                                                                                                                                remove shadow, seal from the image.
+                     LLM                                                                                         Visual
+
+
+
+
+                                                                                                                                                                                                                            Restored Image (Ir)
+                                            Degraded Image (Id)
+             V        Q           A                                                                              Tokens
+
+                                                                                                                                                           Fe
+
+
+
+
+                                                                                                   Projector
+             Fe                                                                                                           V
+                           Embedding
+         Enc.
+
+       Input (Id)    Question     Answer                                      Vision Encoder                                                                               Vision Decoder
+
+
+Figure 2. The architecture of our proposed MMDIR. Our model handles multimodal inputs and outputs for document image restoration.
+In training stage as shown in the (a) on the left, it takes a Degraded Image Id , a corresponding Question (Text Instruction) and Answer
+(Degradation Identification) as input. The vision encoder and text embedding first extract multimodal tokens (V, Q, A), which are then
+fed into a Large Language Model (LLM) to learn cross-modal feature alignment. During the inference stage (in the (b)), only the Id and
+the Question are used as input to the model. In the Question and Answer, degradation types that are not present in the input image are
+marked in red, while those actually present are highlighted in green. Other types requiring model identification are labeled in orange. LLM
+generates text responses by decoding step by step to understand the content of instructions and to identify specific degradation types in the
+input image. The vision decoder incorporates the semantically enriched answer features from the LLM’s output as guidance. It ultimately
+reconstructs the restored images (Ir ).
+
+by minimizing discrepancy with ground-truth pixel values.                                                      3.1. Degradation Identification with Instruction
+However, they required separate training for different degra-
+                                                                                                               Existing document image restoration methods typically fo-
+dation types. Unable to effectively handle multiple and
+                                                                                                               cus on directly predicting a clean image, without the capa-
+complex mixed degradation scenarios.
+                                                                                                               bility to identify the types of degradation present. Conse-
+    Unified Methods. DocRes [41] proposed a generalist
+                                                                                                               quently, these models lack the ability to automatically per-
+model to unify multiple document image restoration tasks.
+                                                                                                               ceive the categories of noise within an image. In previ-
+It introduced a dynamic task-specific visual prompt that in-
+                                                                                                               ous research on multimodal document understanding, align-
+corporates distinct prior features extracted from the input
+                                                                                                               ment between visual and linguistic modalities [9, 23, 38, 42]
+image to guide the model and provide supplementary infor-
+                                                                                                               has been achieved through tasks such as text recogni-
+mation. This highly flexible design enables seamless appli-
+                                                                                                               tion or visual question answering (VQA). Given tailored
+cation to inputs with high and variable resolutions. How-
+                                                                                                               task prompts, these Multimodal Large Language Models
+ever, the method relies on the quality of the extracted visual
+                                                                                                               (MLLMs) can generate relevant textual responses. Inspired
+priors, where inaccuracies in feature extraction may directly
+                                                                                                               by this, we propose a novel multimodal document image
+affect model performance and potentially introduce noise.
+                                                                                                               restoration approach, termed Instruction-based Multimodal
+    For natural scene image restoration, several studies [1,
+                                                                                                               Document Image Restoration with Degradation Identifica-
+6, 11, 19, 45] had made significant progress. UniRestore
+                                                                                                               tion. Beyond reconstructing a degradation-free image, our
+[1] enhanced visual restoration quality by introducing dif-
+                                                                                                               method incorporates a text-modal degradation identification
+fusion priors and designing a complementary feature fusion
+                                                                                                               task. This task is designed to establish a spatial alignment
+module. DiffUIR [45] proposed a shared distribution term
+                                                                                                               between the degradation types described in the text and their
+that mapped different degradation types into a unified repre-
+                                                                                                               corresponding regions in the image, as depicted in Figure 2.
+sentation space to guide the restoration. We re-implemented
+                                                                                                                   Given a degraded document image I d ∈ RH×W ×C as
+the DiffUIR [45] method using the identical training dataset
+                                                                                                               input, where H and W is the height and width of the image
+to enable a comprehensive and fair comparison.
+                                                                                                               and C = 3 represents the RGB channels. We generate cus-
+                                                                                                               tomized text instruction t for each input image. The instruc-
+3. Proposed Method
+                                                                                                               tion contains two parts: Identify Degradations and Specified
+In this section, we present our proposed method for doc-                                                       Removal (optional) (e.g., “Please determine whether the
+ument image restoration. As illustrated in Figure 2, the                                                       image contains noise or interference and, if present, identify
+model utilizes an end-to-end multimodal architecture that                                                      the specific noise type. Then remove text watermark, blur,
+integrates visual and linguistic understanding. It identi-                                                     shadow, seal.”).
+fies degradation types in the input image based on textual                                                         For visual input, we employ a ViTDet-based [21] archi-
+instructions, where semantic prompts guide the visual de-                                                      tecture as our visual encoder (VisEncoder) to obtain visual
+coder to reconstruct a clean image.                                                                            tokens. The high-resolution input image Id is first split
+
+
+
+                                                                                             8389
+                                                                                                                                                                                                                                                                                                                                                      Ft
+into non-overlapping patches (Ipatches ) with patch size 16.                                                                                                                                                                                                                                                                    GuidedLayer
+                                                                                                                                                                                                                                                                                                                                                                                                                         Pixel
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           LayerNorm
+                                                                                                                                                                                                                                                                                                                                                                                                                        Shuffle
+These patches are then processed by multiple transformer
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             Up 2x                                                                             1x1 Conv
+                                                                                                                                                                                                                                                                                                 unpatch
+layers with windowed self-attention, which effectively cap-                                                                                                                                                                                                                   Fe                                                                                  F0                                                                                                                                                                                                           3x3 Conv
+
+
+
+
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                            =
+                                                                                                                                                                                                                                                                                                                                                     𝑯
+tures dependencies among patches. The feature map output                                                                                                                                                                                                             𝑯
+                                                                                                                                                                                                                                                                     𝟏𝟔
+                                                                                                                                                                                                                                                                            𝑾
+                                                                                                                                                                                                                                                                           𝟏𝟔  C'                                                                  𝟖
+                                                                                                                                                                                                                                                                                                                                                                𝑾𝟖  C0                                                                                                                                                                                                   SimpleGate
+                                                                                                                                                                                                                                                                                                                                                                                                                                                         NAF Block
+
+by the encoder is recorded as F e . Then a Projector con-                                                                                                                                                                                                                                         unpatch
+                                                                                                                                                                                                                                                                                                                                                                     F1
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             Up 2x
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       SCA
+
+
+
+
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                            =
+taining two 3 × 3 convolutional layers is used to increase                                                                                                                                                                                                                                                                                           𝑯
+                                                                                                                                                                                                                                                                                                                                                     𝟒
+                                                                                                                                                                                                                                                                                                                                                                 C1          𝑾
+                                                                                                                                                                                                                                                                                                                                                                               𝟒                                                                         NAF Block                                                                                                             1x1 Conv                                                                             GuidedLayer
+
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      Ft   Fe
+the number of channels and reduce the size of the feature                                                                                                                                                                                                                                          unpatch
+                                                                                                                                                                                                                                                                                                                                                                     F2
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             Up 2x                                                                                           +
+
+
+
+
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                            =
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 Wt                                       +
+map. The resulting visual embeddings are represented as                                                                                                                                                                                                                                                                                              𝑯
+                                                                                                                                                                                                                                                                                                                                                     𝟐
+                                                                                                                                                                                                                                                                                                                                                                 C2         𝑾
+                                                                                                                                                                                                                                                                                                                                                                              𝟐                                                                          NAF Block
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            LayerNorm
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        learnable weights
+V = [v1 , ..., vi ], where i = 256 denotes the number of vi-                                                                                                                                                                                                                                      unpatch
+                                                                                                                                                                                                                                                                                                                                                        F3
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             Up 2x                                                                              1x1 Conv
+
+
+
+
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                            =
+sual tokens. For textual input, a tokenizer is applied to both                                                                                                                                                                                                                                                                                        H  W  C3                                                                                                                                                                                                            SimpleGate
+
+                                                                                                                                                                                                                                                                               Concatenate                                                                                                                                                                NAF Block
+
+
+
+
+                                                                                                                                                                                                                                                                      =
+the question (text instruction) and the answer labels (degra-                                                                                                                                                                                                                Element-wise multiplication
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                1x1 Conv
+
+                                                                                                                                                                                                                                                                                                                                                                                                                                              Restored Image                                                                                                                                  +
+dation identifications), yielding m question tokens embed-                                                                                                                                                                                                                +   Element-wise addition                                                                                                                                            H W 3
+
+ded as Q = [q1 , ..., qm ] and n answer tokens embedded as
+A = [a1 , ..., an ]. The maximum sequence length for text                                                                                                                                                                                                           Figure 3. The architecture of vision decoder. SCA represents the
+tokens is set to 128.                                                                                                                                                                                                                                               Simplified Channel Attention in the NAF Block [2]. The Guid-
+   Finally, the visual embeddings V and language embed-                                                                                                                                                                                                             edLayer weights the feature maps of F e and the semantic prompt
+                                                                                                                                                                                                                                                                    features F t from the LLM. Zoom in for the best view.
+dings Q and A are concatenated along the sequence dimen-
+sion and fed into the Large Language Model (LLM) shown
+in Figure 2 (a). This integrated input facilitates cross-modal
+alignment between vision and language, leading to more ac-                                                                                                                                                                                                                                                                                          \begin {aligned} &\boldsymbol {I_r}={VisDecoder}(\boldsymbol {F}_{e}, \boldsymbol {F}_{t}) \\ \end {aligned}                                                                                                                                                                                                                                                (2)
+curate degradation type identification.                                                                                                                                                                                                                                During the inference phase, the large language model
+                                                                                                                                                                                                                                                                    (LLM) only receives visual tokens (V) and text instruction
+                 \begin {aligned} &\boldsymbol {F}_{e}={VisEncoder}(\boldsymbol {I_d}) \\ &\boldsymbol {V}={Projector}(\boldsymbol {F}_{e}) \\ &\boldsymbol {F}_{t}={LLM}(CAT(\boldsymbol {V}, \boldsymbol {Q}, \boldsymbol {A})) \\ \end {aligned} 
+                                                                                                                                                                                                                                                                    tokens (Q) as inputs. It then decodes the Degradation Identi-
+                                                                                                                                                                                                                                                       (1)          fication (A) step by step, while returning the hidden states at
+                                                                                                                                                                                                                                                                    each decoding step and computing the average along the se-
+where F t is the answer features output by the last layer of                                                                                                                                                                                                        quence dimension as the hidden states representations (F t )
+LLM. CAT is concatenation in sequence dimension.                                                                                                                                                                                                                    of the predicted answers.
+
+3.2. Restored with Semantic Prompts                                                                                                                                                                                                                                 3.3. Loss function
+We leverage the answer features F t , which carry textual se-                                                                                                                                                                                                       During the model training process, we predict degradation
+mantic information, as guiding prompts for image restora-                                                                                                                                                                                                           identification with Cross-Entropy (CE) loss (Lce ). Benefit-
+tion. During inference, these prompts represent a question-                                                                                                                                                                                                         ing from the image-to-image learning paradigm, MMDIR’s
+guided, speculative semantics rather than a deterministic                                                                                                                                                                                                           training objective is to minimize the discrepancy between
+semantics derived from ground-truth answers. This ap-                                                                                                                                                                                                               the restored image and the ground-truth reference. The
+proach relies on the LLM’s commonsense and reasoning ca-                                                                                                                                                                                                            pixel-level discrepancy is quantified using the L1 distance
+pabilities acquired during training, thereby enabling a task-                                                                                                                                                                                                       between the restored image Ir and the ground-truth image
+adaptive and semantically-aware image restoration process.                                                                                                                                                                                                          Igt (Lpixel ). Furthermore, a local L1 loss (Llocal ) is incorpo-
+   For the vision encoder’s output F e , we employ an un-                                                                                                                                                                                                           rated to enhance the model’s perception of specific degrada-
+patch operation to upsample it into four multi-scale feature                                                                                                                                                                                                        tion patterns. We define a binary mask image Imask (some
+maps {F 0 , F 1 , F 2 , F 3 }. As illustrated in Figure 3, multi-                                                                                                                                                                                                   samples shown in Figure 4) for degradation types such as
+scale feature fusion is performed following a pyramidal phi-                                                                                                                                                                                                        shadow, watermark, and seal, where the value is 255 in
+losophy. The upsampling is achieved using PixelShuffle                                                                                                                                                                                                              these degradation regions and 0 elsewhere. Additionally, a
+[31], each time increasing the resolution by a factor of 2.                                                                                                                                                                                                         Structural Similarity Index Measure (SSIM) [37] loss Lssim
+Feature maps at different scales are concatenated along the                                                                                                                                                                                                         is introduced to evaluate image quality degradation in per-
+channel dimension and then fed into a Nonlinear Activation                                                                                                                                                                                                          ceptual space. The formula for the overall training loss is
+Free Network’s (NAF) Block [2]. This process is repeated                                                                                                                                                                                                            presented below:
+until the original input image resolution is reconstructed,
+generating the final restored image (Ir ). The text tokens                                                                                                                                                                                                                             \begin {aligned} &\mathcal {L}_{\textit {pixel}} = \left \| I_{gt} - I_r \right \| _{1} \\ &\mathcal {L}_{\textit {local}} = \left \| I_{gt} \times I_{mask} - I_r \times I_{mask} \right \| _{1} \\ &\mathcal {L}_{\textit {total}} = \mathcal {L}_{\textit {pixel}} + \alpha \mathcal {L}_{\textit {local}} + \beta \mathcal {L}_{\textit {ssim}} + \lambda \mathcal {L}_{\textit {ce}} \\ \end {aligned} 
+F t output by LLM is multiplied by a learnable parameter                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        (3)
+W t initialized to 1 as dynamic guided information (Guid-
+edLayer in Figure 3) to obtain F ′t . The visual feature map
+F e is then added to F ′t , resulting in a text-semantics-guided                                                                                                                                                                                                    where the balancing factors α, β and λ are empirically set
+feature map.                                                                                                                                                                                                                                                        to 4, 0.5 and 0.5, respectively.
+
+
+
+                                                                                                                                                                                                                                                             8390
+        Degraded   Degradation        Text Instruction              Degradation Identification        Ground
+         Image       Mask               (Question)                           (Answer)                  Truth
+
+
+
+
+                                                                                                                                Degraded Image
+                                                               According to the prompt, the user
+                                 Analyze the image to          specifies removal of seal, blur from
+                                 confirm whether it contains   the image. Visual analysis indicates
+                                 noise or interference and     that there is no seal in the image.
+                                 characterize any identified   However, text watermark is
+                                 types. Then remove seal,      detectable in the image.
+                                 blur.                         Consequently, remove blur and text
+                                                               watermark from the image.
+
+                                 Please determine whether      According to the prompt, the user
+                                 the image contains noise      specifies removal of shadow from
+                                 or interference and, if       the image. The image also contains
+                                 present, identify the         text watermark and seal.
+                                 specific noise type. Then     Consequently, remove shadow, text
+                                 remove shadow.                watermark and seal from the
+                                                               image.
+
+
+
+
+                                                                                                                                Ground Truth
+      Figure 4. Samples visualization of training dataset.
+
+4. Datasets
+Our work focuses primarily on restoring document images,                                                              Figure 5. Several samples visualization of our test benchmark
+especially removing blur, watermarks (specifically textual                                                            MixedDoc. Top row: the degraded images. Middle row: the
+watermarks), shadows, and seals that frequently occur in                                                              degradation types Seal, Blur, Shadow, or Watermark. Bottom row:
+real-world scenarios. We categorize the datasets into two                                                             the ground-truth images. Zoom in for the best view.
+types: single degradation and mixed degradation. The sin-
+gle degradation set contains images exhibiting only one                                                               320 for synthesis benchmarks. For shadows, we utilize
+type of degradation per image, whereas the mixed degra-                                                               14,200 masks from FSDSRD [26] and 8,000 from Syn-
+dation set encompasses images where multiple degradation                                                              Shadow [16]. For text watermarks, we randomly select
+types co-occur simultaneously.                                                                                        phrases or words from our self-collected corpus of Chinese
+                                                                                                                      and English text, rendered in diverse colors and fonts un-
+    Single Degradation Datasets. Document Deblurring.
+                                                                                                                      der a predefined train-test split. During synthesis, all these
+We utilize the deblurring dataset BMVC [15], which com-
+                                                                                                                      elements are randomly cropped and rotated.
+prises 66k pairs of sharp and blurred document images, each
+                                                                                                                          Testing Benchmark. The source document images are
+with a size of 300×300 pixels. These images originate from
+                                                                                                                      from M6Doc [3]. The synthesis process for the test fol-
+diverse document sources and incorporate varied blur ker-
+                                                                                                                      lows a similar pipeline, with the following distinctions: a
+nels to simulate realistic degradation effects. Following the
+                                                                                                                      separate set of 320 real seal images not used in training is
+training configurations of DocRes [41], DocDiff [40], NAF-
+                                                                                                                      adopted; 432 carefully selected shadow masks from Satel-
+DPM [5], and LGA-Doc[34], we randomly select 30,000
+                                                                                                                      liteWB1 are used; all elements undergo random cropping
+image pairs for training and 10,000 pairs for evaluation.
+                                                                                                                      and rotation to enhance realism. The final test set, named
+    Document Deshadow. Following prior methods, our                                                                   MixedDoc, contains 1,837 images and serves as the evalua-
+training set consists of 14,200 synthetic images from FSD-                                                            tion benchmark. Sample images are shown in Figure 5.
+SRD [26] and 4,371 real images from the RDD [43] training
+set. For evaluation, we employ the OSR [36] (237 images)                                                              5. Experiments
+dataset as our test set.
+    Mixed Degradation Datasets. Given the current lack                                                                Implementation Details. We implement the entire model
+of mixed degradation training and testing datasets, we col-                                                           on the PyTorch [30] framework. For the large language
+lect clean and noise-free document images for synthesis.                                                              model (LLM), we employ Qwen2.5 (0.5B) with its parame-
+The degradation types in the synthetic dataset include blur,                                                          ters frozen throughout training except the embedding layer.
+shadow, watermark, and seal.                                                                                          The training image size is set to 1024 × 1024. We use the
+    Training Dataset. We collect the clean document im-                                                               AdamW optimizer [25] with a batch size of 16. The learn-
+ages from CDLA [18], CDDOD [20], FSDSRD [26] to                                                                       ing rate follows a cosine decay schedule with a maximum
+synthesize a dataset with mixed degradations including                                                                value of 3 × 10−4 . Our network is trained for 80 epochs
+blur, shadow, watermark, or seal. A total of 110k mixed-                                                              with 5% warmup steps on two NVIDIA A100 GPUs.
+degradation document images are synthesized for model                                                                    Multiple instruction variants and generalizability.
+training, with each image incorporating 1 to 4 randomly                                                               During training, two instruction templates are employed: no
+combined degradation types (as shown in Figure 4).                                                                    degradation types specified, randomly specify the types (in
+    For blur, we randomly apply one type from Gaussian,                                                               Table 2). One template and degradation types are randomly
+Defocus, Glass, Zoom, or Motion Blur, with varied kernel                                                              chosen for per sample to enhance adaptability. If the speci-
+sizes. For seals, we systematically generate 20,000 syn-                                                              fied degradation type does not exist in the image, the model
+thetic images by combining random text, dates, shapes, and                                                            will learn to detect and identify it during the training phase.
+colors to circumvent the difficulty of real-world data col-                                                           During testing, each sample is also evaluated under one of
+lection. We further augment this set with 1,597 real seal                                                                1 https://www.kaggle.com/datasets/franciscoescobar/satellite-images-
+
+images from DocDiff [40], using 1,277 for training and                                                                of-water-bodies
+
+
+
+
+                                                                                                               8391
+Table 1. Comparisons on single degradation benchmark. “↑” indicates the higher the better and “↓” denotes the opposite. The best
+performing result is shown in Bold font, and the second best result is shown with an underline. The “*” indicates results reproduced based
+on the authors’ public code and the same training dataset as used in our method. “256” and “1024” refer to the input image resolutions at
+low and high settings, respectively.
+                                                            Deblurring (BMVC [15])                         Deshadow (OSR [36])
+                         Method              Venue
+                                                       PSNR↑ SSIM↑ LPIPS↓ DISTS↓                  PSNR↑     SSIM↑ LPIPS↓ DISTS↓
+                  DE-GAN [32]         TPAMI’19          22.30      0.916     0.0843      0.0968      -        -         -        -
+                   DocDiff [40]      ACMMM’23           23.28      0.951     0.0307      0.0611      -        -         -        -
+                DocShadow [22]          ICCV’23           -          -          -           -      18.25    0.902       -        -
+                   BGSNet [43]         CVPR’23            -          -          -           -      21.25    0.931    0.0702   0.0995
+                  NAF-DPM [5]           arXiv’24        27.61      0.975     0.0207      0.0409      -        -         -        -
+                   DocRes [41]         CVPR’24          27.35      0.972        -           -      17.37    0.923    0.0664   0.1035
+                 LGA-Doc [34]          ICMR’25          28.95      0.978     0.0169      0.0470      -        -         -        -
+                    DocDiff256 *               -        25.19      0.953     0.0257      0.0471    18.06    0.785    0.2806   0.2176
+                   DocDiff1024 *               -        24.95      0.952     0.0261      0.0477    18.80    0.912    0.0703   0.1209
+                    DiffUIR256 *               -        22.68      0.910     0.0618      0.1000    18.47    0.796    0.2724   0.2041
+                   DiffUIR1024 *               -        23.09      0.914     0.0557      0.0752    21.08    0.928    0.0579   0.0848
+                 MMDIR (Ours)                  -        29.03      0.977     0.0150      0.0233    19.60    0.928    0.0547   0.0816
+
+
+                     Table 2. Instruction variants.                                   Table 3. Comparisons on our proposed mixed degradation bench-
+                                                                                      mark (MixedDoc).
+         Type                    Instruction Template Example
+                          Evaluate the image for the presence of noise                      Method           PSNR↑    SSIM↑   LPIPS↓   DISTS↓
+      No specified
+                         or interference and specify the type(s) detected.                  DocDiff256 *     18.35    0.744   0.4392   0.3082
+                          Please determine whether the image contains                       DocDiff1024 *    21.14    0.863   0.1923   0.1966
+   Randomly specified
+                          noise or interference and, if present,identify                    DiffUIR256 *     18.79    0.742   0.4525   0.3093
+                              the specific noise type. Then remove                          DiffUIR1024 *    22.09    0.853   0.2008   0.2064
+                              RANDOM SELECTED 1→4 TYPES.                                    MMDIR (Ours)     24.43    0.908   0.1217   0.1323
+
+two variants like training stage. Results are averaged across                         domain. To ensure a consistent training set and the fair com-
+samples to evaluate model stability and generalization.                               parison, we retrain DocDiff and DiffUIR using our training
+   Evaluation metrics. We follow previous methods [22,                                data, marking these results with “*” in Table 1 and 3.
+34, 40, 41], by combining pixel-level comparison metrics                                 The results in Table 1 demonstrate that our method sur-
+with perceptual similarity metrics. The pixel-level metrics                           passes prior works on most metrics. Regarding deblurring,
+include Peak Signal-to-Noise Ratio (PSNR) and Structural                              our approach yields competitive results: it attains SOTA
+Similarity Index Measure (SSIM) [14]. PSNR quantifies                                 on three metrics, with only the SSIM score being slightly
+image quality by calculating the signal-to-noise ratio, while                         lower (by 0.001) compared to LGA-Doc. Most importantly,
+SSIM evaluates structural similarity between the distortion-                          we observe significant improvements of 11.2% on LPIPS
+free and distorted images in terms of luminance, con-                                 and 43.0% on DISTS. These results suggest that our model
+trast, and structure. Perceptual similarity metrics include                           successfully recovers image edges and textural information,
+Learned Perceptual Image Patch Similarity (LPIPS) [44]                                generating outputs that are not only more natural and au-
+and Deep Image Structure and Texture Similarity (DISTS)                               thentic but also perceptually more aligned with the ground-
+[7]. LPIPS employs deep learning to better reflect percep-                            truth images.
+tual differences compared to traditional metrics. DISTS                                  For deshadow on OSR benchmark [36], our method also
+further improves evaluation by incorporating structural and                           demonstrates a significant advantage in perceptual quality,
+texture sensitivity through a deep neural network, thereby                            achieving the best performance on both LPIPS and DISTS
+providing a more comprehensive quality assessment.                                    metrics. This observation, consistent with the findings in
+                                                                                      deblurring, collectively validates the effectiveness of our
+5.1. Results on single degradation benchmarks
+                                                                                      proposed unified framework in restoring visual realism and
+Quantitative Results. In Table 1, we compare our method                               structural integrity. While methods like BGSNet [43] and
+with task-specific works and unified frameworks (DocRes                               DiffUIR [45] achieved higher scores in PSNR or SSIM,
+[41], DiffUIR [45]). DocRes [41] is a unified framework                               they often produce over-smoothed or blurry outputs, as ev-
+but lacked the prior extraction for seals and watermarks.                             idenced by their poorer LPIPS and DISTS results. There-
+DocDiff [40] performed seal and watermark removal, yet its                            fore, these results confirm that the optimization direction of
+training data was not released. DiffUIR [45] is a recent and                          our method aligns more closely with human visual percep-
+excellent unified natural scene image restoration method                              tion and reflects its strong capability in generating realistic
+based on diffusion model, we transfer it to the document                              details and textures.
+
+
+
+                                                                             8392
+           Degraded     DocDiff1024*          DiffUIR1024*           NAF-DPM              DocRes                LGA-Doc              Ours        Ground Truth
+
+Figure 6. Visual Comparison on the deblurring benchmark BMVC [15]. The first column “Degraded” is input image, and the last column
+“Ground Truth” indicates clean reference. Red and green boxes highlight zoomed-in detail discrepancies.
+
+
+
+
+             Degraded          BGSNet                 DocDiff1024*         DiffUIR1024*                DocRes                 Ours            Ground Truth
+
+                                       Figure 7. Visual Comparison on the deshadow Benchmark OSR [36].
+
+    Qualitative Analysis. To intuitively evaluate the per-                            Table 4. Ablation studies of text instruction on Deblurring (BMVC
+formance, we conduct a visual comparison to further val-                              [15]), Deshadow (OSR [36]) and our proposed benchmark Mixed-
+idate the effectiveness of our proposed method, as shown                              Doc. Inst. means text instruction. “!” indicates that the instruc-
+                                                                                      tion is used. “✗” is the opposite.
+in Figure 6 and 7. We compare our approach against ex-
+isting prominent methods. The visual results demonstrate                                           Bench.          Inst.   PSNR↑/SSIM↑      LPIPS↓/DISTS↓
+that, in the global restoration quality, our method achieves                                                        ✗       26.76/0.966     0.0219/0.0320
+                                                                                                   BMVC[15]
+blur and shadow removal results closer to the ground-truth                                                          !       29.03/0.977     0.0150/0.0233
+image, producing visually clearer character strokes (in Fig-                                                        ✗       18.79/0.922     0.0610/0.0960
+                                                                                                   OSR[36]
+ure 6 for deblurring) and more realistic outputs. Further-                                                          !       19.60/0.928     0.0547/0.0816
+more, in the local detail areas marked by the red and green                                                         ✗       23.83/0.898     0.1324/0.1489
+                                                                                                   MixedDoc
+boxes, our method more accurately distinguishes shadow                                                              !       24.43/0.908     0.1217/0.1323
+regions from background content at shadow boundaries (in
+Figure 7). This effectively mitigates issues of residual shad-                        ates more realistic and natural details. Notably, even in
+ows and over-erasure, showcasing its superior capabilities                            highly complex degradation scenarios as shown in the last
+in detail preservation and boundary recovery.                                         example, our method still exhibits stronger robustness and
+                                                                                      restoration capability.
+5.2. Results on mixed degradation benchmark                                               Figure 9 provides visual examples of our model’s output
+Quantitative Results. We conduct experiments on our pro-                              with multi-modal inputs. As shown, the model can accu-
+posed mixed degradation benchmark (MixedDoc), where                                   rately identify the actual degradation types present in the
+each image contains 1 to 4 randomly combined degradation                              input degraded image based on the text instruction. Ad-
+types. In Table 3, our method comprehensively surpasses                               ditionally, the heatmaps (Attn in Figure 9) show that our
+existing methods like DocDiff and DiffUIR across all four                             method effectively focuses on the relevant regions within
+metrics at both 256 and 1024 resolutions. This result con-                            the document.
+vincingly demonstrates the superior generalization and ro-                                FID, OCR Performance and Computational Cost. As
+bustness of our model in handling uncertain and mixed im-                             shown in Table 5. FID [12] is Fréchet Inception Dis-
+age degradations. Compared to other methods, our model                                tance. Character Error Rate (CER) and Edit Distance (ED)
+more effectively restores multiple co-existing degradations,                          are OCR evaluation metrics. The open-source PaddleOCR
+thereby producing high-quality, high-fidelity results even                            serves as the recognition engine. We retrained FoundIR
+under highly complex degradation conditions.                                          [19], and tested on the MixedDoc benchmark. The results
+   Qualitative Analysis. As shown in Figure 8, we present                             are PSNR/22.33, SSIM/0.86, LPIPS/0.195, DISTS/0.198.
+image restoration examples covering a variety of typi-                                Our method demonstrates superiority in comparison.
+cal scenarios, including scanned images of magazines and                                  Table 6 and 7 present the performance of per-type and
+books, as well as real-world images captured by mobile de-                            varying degradation numbers on MixedDoc benchmark.
+vices. We compare our method with re-implemented ver-                                 The recall declines as the number of degradation types
+sions of DocDiff and DiffUIR trained on the same dataset.                             increases, while precision fluctuates—a pattern consistent
+Experimental results demonstrate that our approach consis-                            with multi-label classification. This reflects conservative
+tently achieves superior restoration performance, both on                             predictions on complex samples (higher precision, lower re-
+single and mixed degradation types. In terms of local tex-                            call) and more relaxed predictions on simpler ones.
+ture and structural recovery, the proposed method gener-                                  Ablation on Text Instructions. To verify the effective-
+
+
+
+                                                                               8393
+               Degraded                    DocDiff1024*                     DiffUIR1024*                     Ours                       Ground Truth    Degraded   DocDiff1024*   DiffUIR1024*   Ours   Ground Truth
+
+
+
+
+Figure 8. Qualitative visual on our proposed MixedDoc benchmark. The “*” denotes results from retraining previous methods (DocDiff
+[40] and DiffUIR [45]) on the same training set, while the green zoomed-in boxes highlight detailed differences.
+
+    Degraded                   Text Instruction                             Degraded                   Text Instruction
+
+               Evaluate the image for the presence of                                  Inspect the image for noise or
+               noise or interference and specify the                                   interference artifacts and provide a
+               type(s) detected. And eliminate blur,                                   classification of the noise type if
+               seal, text watermark.                                                   identified. And eliminate blur, seal.
+
+                          According to the prompt, the user specifies
+                          removal of blur, seal, text watermark from                              According to the prompt, the user specifies
+                          the image. Visual analysis indicates that                               removal of blur, seal from the image. The
+                          there is no seal in the image. The image also                           image also contains shadow, in addition to
+                          contains shadow, in addition to blur, text                              blur, seal. Consequently, remove blur,
+                          watermark. Consequently, remove blur,                                   shadow, seal from the image.
+                          shadow, text watermark from the image.
+      Attn     Restored              Predicted Answer                         Attn     Restored              Predicted Answer
+
+
+
+         Figure 9. Visualization of our model’s predictions.                                                                                           Figure 10. Trend of PSNR and SSIM with increasing degradation
+                                                                                                                                                       types on the MixedDoc benchmark.
+Table 5. OCR (CER/ED), FID, model parameters and inference
+speed results on MixedDoc benchmark. The input image size is                                                                                           proves all performance metrics for document restoration.
+10242 for all methods. The speed is influenced by input size,                                                                                              Impact of the Number of Degradation Types. We ana-
+model architecture, and diffusion model sampling time steps (T ).                                                                                      lyze the restoration results under mixed degradation scenar-
+      Method              CER↓                     ED↓                    FID↓          T         Speed                  #Param.                       ios. As shown in Figure 10, when the number of degrada-
+    DocDiff        *
+                            0.27                  368.2                   24.62        100        3.02s                     8M
+                                                                                                                                                       tion types per image increases from one to four, both PSNR
+    DiffUIR*                0.24                  352.9                   21.45         2         1.80s                    36M                         and SSIM metrics demonstrate a declining trend. This phe-
+    FoundIR*                0.23                  328.5                   10.41         4         3.54s                    36M                         nomenon is highly intuitive. We attribute it primarily to
+      Ours                  0.17                  240.8                    9.07         -         1.51s                    735M                        the complexity and interactions of the degradations. Each
+Table 6. Precision (P), Recall (R) and F1 of per degradation type                                                                                      degradation type has unique statistical properties, such as its
+on MixedDoc Benchmark.                                                                                                                                 distribution, intensity, and spatial correlation. When mul-
+                                                                                                                                                       tiple degradations coexist, they interact and combine into
+                       Degradation Type                                     P               R              F1
+                                                                                                                                                       more complex noise patterns, corrupting information across
+                                blur                                      .9772        .9407           .9586                                           frequency bands. As a result, when the model attempts
+                                seal                                      .9812        .9732           .9772
+                              shadow                                      .9985        .9638           .9808                                           to remove all noises, it risks over-smoothing or mistakenly
+                          textWatermark                                   .9993        .9985           .9989                                           eliminating crucial details like text edges.
+
+Table 7. Precision (P), Recall (R), and F1 for different numbers of                                                                                    6. Conclusion
+degradations on MixedDoc Benchmark.
+                                                                                                                                                       In this paper, we propose MMDIR, a multimodal document
+        Mixed             Samples                     Percentage                       P               R                    F1
+                                                                                                                                                       image restoration method guided by text instructions, to ad-
+               1               110                          6.0%                     .9910          1                   .9955                          dress mixed degradations in real scenarios. Unlike conven-
+               2               693                          37.7%                    .9826        .9784                 .9805
+               3               786                          42.8%                    .9913        .9712                 .9811                          tional works that limited to single degradation types and re-
+               4               248                          13.5%                      1          .9647                 .9820                          liance on specific prior knowledge, MMDIR bridges visual
+                                                                                                                                                       and linguistic modalities to achieve semantic-aware mixed
+ness of text instructions, we design corresponding ablation                                                                                            degradation restoration. We also introduce MixedDoc, a
+experiments. Without incorporating text guidance (with-                                                                                                benchmark covering diverse mixed degradations. Experi-
+out using the Large Language Model), the model structure                                                                                               ments show state-of-the-art results on both public bench-
+retains only the vision encoder and decoder. Quantitative                                                                                              marks and MixedDoc, demonstrating superior robustness in
+evaluation results on three benchmark datasets are shown                                                                                               single and mixed degradation scenarios. Future work will
+in Table 4. Experimental data demonstrate that introduc-                                                                                               expand degradation types and enhance data authenticity to
+ing text instructions comprehensively and significantly im-                                                                                            improve document restoration.
+
+
+
+                                                                                                                                                8394
+Acknowledgments                                                                 vain Gelly, et al. An image is worth 16x16 words: Trans-
+                                                                                formers for image recognition at scale. arXiv preprint
+We thank the reviewers for their thoughtful and constructive                    arXiv:2010.11929, 2020. 2
+comments. This work is jointly supported by grants from                     [9] Hao Feng, Qi Liu, Hao Liu, Jingqun Tang, Wengang Zhou,
+the National Science and Technology Major Project (No.                          Houqiang Li, and Can Huang. Docpedia: Unleashing the
+2022ZD0116002), the National Natural Science Foun-                              power of large multimodal model in the frequency domain
+dation of China (No. 62506099), Shenzhen Science and                            for versatile document understanding. Science China Infor-
+Technology Program (No. KCXFZ20230731093001002,                                 mation Sciences, 67(12):220106, 2024. 2, 3
+KJZD20230923115113026, RCBS20231211090701007),
+                                                                           [10] Ian Goodfellow, Jean Pouget-Abadie, Mehdi Mirza, Bing
+the Guangdong Basic and Applied Basic Research Foun-
+                                                                                Xu, David Warde-Farley, Sherjil Ozair, Aaron Courville, and
+dation (No. 2023A1515110561, 2025A1515012263), the
+                                                                                Yoshua Bengio. Generative adversarial networks. Commu-
+Shenzhen Colleges and Universities Stable Support Pro-
+                                                                                nications of the ACM, 63(11):139–144, 2020. 2
+gram (No. GXWD20231129115148001), the Shenzhen En-
+gineering Laboratory Program (No. XMHT20190108009),                        [11] Yu Guo, Yuan Gao, Yuxu Lu, Huilin Zhu, Ryan Wen Liu, and
+the Key Laboratory of Intelligent Computing in Network                          Shengfeng He. Onerestore: A universal restoration frame-
+Environment, the Postdoctoral Fellowship Program of                             work for composite degradation. In European conference on
+CPSF under Grant Number GZC20252738, GZC20252759,                               computer vision, pages 255–272. Springer, 2024. 3
+the HIT(Shenzhen)-Ysstech Info-Tech AI Joint Lab,                          [12] Martin Heusel, Hubert Ramsauer, Thomas Unterthiner,
+and the HIT(Shenzhen)-Tuling Robot AI Joint Lab.                                Bernhard Nessler, and Sepp Hochreiter. Gans trained by a
+                                                                                two time-scale update rule converge to a local nash equilib-
+                                                                                rium. Advances in neural information processing systems,
+                                                                                30, 2017. 7
+References
+                                                                           [13] Jonathan Ho, Ajay Jain, and Pieter Abbeel. Denoising dif-
+ [1] I Chen, Wei-Ting Chen, Yu-Wei Liu, Yuan-Chun Chiang,                       fusion probabilistic models. Advances in neural information
+     Sy-Yen Kuo, Ming-Hsuan Yang, et al. Unirestore: Unified                    processing systems, 33:6840–6851, 2020. 2
+     perceptual and task-oriented image restoration model using            [14] Alain Hore and Djemel Ziou. Image quality metrics: Psnr
+     diffusion prior. In Proceedings of the Computer Vision and                 vs. ssim. In 2010 20th international conference on pattern
+     Pattern Recognition Conference, pages 17969–17979, 2025.                   recognition, pages 2366–2369. IEEE, 2010. 6
+     3                                                                     [15] Michal Hradiš, Jan Kotera, Pavel Zemcık, and Filip Šroubek.
+ [2] Liangyu Chen, Xiaojie Chu, Xiangyu Zhang, and Jian Sun.                    Convolutional neural networks for direct text deblurring. In
+     Simple baselines for image restoration. In European confer-                Proceedings of BMVC, 2015. 5, 6, 7
+     ence on computer vision, pages 17–33. Springer, 2022. 4               [16] Naoto Inoue and Toshihiko Yamasaki. Learning from syn-
+ [3] Hiuyi Cheng, Peirong Zhang, Sihang Wu, Jiaxin Zhang,                       thetic shadows for shadow detection and removal. IEEE
+     Qiyuan Zhu, Zecheng Xie, Jing Li, Kai Ding, and Lianwen                    Transactions on Circuits and Systems for Video Technology,
+     Jin. M6doc: A large-scale multi-format, multi-type, multi-                 31(11):4187–4197, 2020. 5
+     layout, multi-language, multi-annotation category dataset             [17] Sana Khamekhem Jemni, Mohamed Ali Souibgui, Yousri
+     for modern document layout analysis. In Proceedings of                     Kessentini, and Alicia Fornés. Enhance to read better: a
+     the IEEE/CVF Conference on Computer Vision and Pattern                     multi-task adversarial network for handwritten document im-
+     Recognition (CVPR), pages 15138–15147, 2023. 5                             age enhancement. Pattern Recognition, 123:108370, 2022. 2
+ [4] Hojin Cho, Jue Wang, and Seungyong Lee. Text image de-                [18] Hang Li. Cdla: A chinese document layout analysis (cdla)
+     blurring using text-specific properties. In European Confer-               dataset, 2021. 5
+     ence on Computer Vision, pages 524–537. Springer, 2012.               [19] Hao Li, Xiang Chen, Jiangxin Dong, Jinhui Tang, and Jin-
+     2                                                                          shan Pan. Foundir: Unleashing million-scale training data
+ [5] Giordano Cicchetti and Danilo Comminiello. Naf-dpm: A                      to advance foundation models for image restoration. In Pro-
+     nonlinear activation-free diffusion probabilistic model for                ceedings of the IEEE/CVF international conference on com-
+     document enhancement. arXiv preprint arXiv:2404.05669,                     puter vision, pages 12626–12636, 2025. 3, 7
+     2024. 1, 2, 5, 6                                                      [20] Kai Li, Curtis Wigington, Chris Tensmeyer, Handong Zhao,
+ [6] Marcos V Conde, Gregor Geigle, and Radu Timofte. Instruc-                  Nikolaos Barmpalios, Vlad I Morariu, Varun Manjunatha,
+     tir: High-quality image restoration following human instruc-               Tong Sun, and Yun Fu. Cross-domain document object de-
+     tions. In European Conference on Computer Vision, pages                    tection: Benchmark suite and method. In Proceedings of
+     1–21. Springer, 2024. 3                                                    the IEEE/CVF Conference on Computer Vision and Pattern
+ [7] Keyan Ding, Kede Ma, Shiqi Wang, and Eero P Simoncelli.                    Recognition, pages 12915–12924, 2020. 5
+     Image quality assessment: Unifying structure and texture              [21] Yanghao Li, Hanzi Mao, Ross Girshick, and Kaiming He.
+     similarity. IEEE transactions on pattern analysis and ma-                  Exploring plain vision transformer backbones for object de-
+     chine intelligence, 44(5):2567–2581, 2020. 6                               tection. In European conference on computer vision, pages
+ [8] Alexey Dosovitskiy, Lucas Beyer, Alexander Kolesnikov,                     280–296. Springer, 2022. 3
+     Dirk Weissenborn, Xiaohua Zhai, Thomas Unterthiner,                   [22] Zinuo Li, Xuhang Chen, Chi-Man Pun, and Xiaodong Cun.
+     Mostafa Dehghani, Matthias Minderer, Georg Heigold, Syl-                   High-resolution document shadow removal via a large-scale
+
+
+
+
+                                                                    8395
+     real-world dataset and a frequency-aware shadow erasing                      2025 International Conference on Multimedia Retrieval,
+     net. In 2023 IEEE/CVF International Conference on Com-                       pages 1293–1302, 2025. 1, 2, 5, 6
+     puter Vision (ICCV), pages 12415–12424. IEEE, 2023. 6                   [35] Ashish Vaswani, Noam Shazeer, Niki Parmar, Jakob Uszko-
+[23] Wenhui Liao, Jiapeng Wang, Hongliang Li, Chengyu Wang,                       reit, Llion Jones, Aidan N Gomez, Łukasz Kaiser, and Illia
+     Jun Huang, and Lianwen Jin. Doclayllm: An efficient multi-                   Polosukhin. Attention is all you need. Advances in neural
+     modal extension of large language models for text-rich doc-                  information processing systems, 30, 2017. 2
+     ument understanding. In Proceedings of the Computer Vi-                 [36] Bingshu Wang and CL Philip Chen. Local water-filling algo-
+     sion and Pattern Recognition Conference, pages 4038–4049,                    rithm for shadow detection and removal of document images.
+     2025. 2, 3                                                                   Sensors, 20(23):6929, 2020. 5, 6, 7
+[24] Yun-Hsuan Lin, Wen-Chin Chen, and Yung-Yu Chuang.                       [37] Zhou Wang, Alan C Bovik, Hamid R Sheikh, and Eero P Si-
+     Bedsr-net: A deep shadow removal network from a single                       moncelli. Image quality assessment: from error visibility to
+     document image. In Proceedings of the IEEE/CVF con-                          structural similarity. IEEE transactions on image processing,
+     ference on computer vision and pattern recognition, pages                    13(4):600–612, 2004. 4
+     12905–12914, 2020. 2                                                    [38] Zining Wang, Tongkun Guan, Pei Fu, Chen Duan, Qianyi
+[25] Ilya Loshchilov and Frank Hutter. Decoupled weight de-                       Jiang, Zhentao Guo, Shan Guo, Junfeng Luo, Wei Shen, and
+     cay regularization. In International Conference on Learning                  Xiaokang Yang. Marten: Visual question answering with
+     Representations, 2017. 5                                                     mask generation for multi-modal document understanding.
+[26] Yuhi Matsuo, Naofumi Akimoto, and Yoshimitsu Aoki. Doc-                      In Proceedings of the Computer Vision and Pattern Recogni-
+     ument shadow removal with foreground detection learning                      tion Conference, pages 14460–14471, 2025. 3
+     from fully synthetic images. In 2022 IEEE International                 [39] Haoran Wei, Chenglong Liu, Jinyue Chen, Jia Wang, Lingyu
+     Conference on Image Processing (ICIP), pages 1656–1660.                      Kong, Yanming Xu, Zheng Ge, Liang Zhao, Jian-Yuan Sun,
+     IEEE, 2022. 5                                                                Yuang Peng, Chunrui Han, and Xiangyu Zhang. General
+[27] Nobuyuki Otsu et al. A threshold selection method from                       ocr theory: Towards ocr-2.0 via a unified end-to-end model.
+     gray-level histograms. Automatica, 11(285-296):23–27,                        ArXiv, abs/2409.01704, 2024. 2
+     1975. 2                                                                 [40] Zongyuan Yang, Baolin Liu, Yongping Xxiong, Lan Yi,
+[28] Jinshan Pan, Zhe Hu, Zhixun Su, and Ming-Hsuan Yang. De-                     Guibin Wu, Xiaojun Tang, Ziqi Liu, Junjie Zhou, and Xing
+     blurring text images via l0-regularized intensity and gradient               Zhang. Docdiff: Document enhancement via residual diffu-
+     prior. In Proceedings of the IEEE Conference on Computer                     sion models. In Proceedings of the 31st ACM international
+     Vision and Pattern Recognition, pages 2901–2908, 2014. 2                     conference on multimedia, pages 2795–2806, 2023. 1, 2, 5,
+[29] Gianpiero Panci, Patrizio Campisi, Stefania Colonnese, and                   6, 8
+     Gaetano Scarano. Multichannel blind image deconvolution                 [41] Jiaxin Zhang, Dezhi Peng, Chongyu Liu, Peirong Zhang, and
+     using the bussgang algorithm: Spatial and multiresolution                    Lianwen Jin. Docres: A generalist model toward unifying
+     approaches. IEEE Transactions on Image Processing, 12                        document image restoration tasks. 2024 IEEE/CVF Confer-
+     (11):1324–1337, 2003. 2                                                      ence on Computer Vision and Pattern Recognition (CVPR),
+[30] Adam Paszke, Sam Gross, Soumith Chintala, Gregory                            pages 15654–15664, 2024. 1, 2, 3, 5, 6
+     Chanan, Edward Yang, Zach DeVito, Zeming Lin, Alban                     [42] Jiaxin Zhang, Wentao Yang, Songxuan Lai, Zecheng Xie,
+     Desmaison, Luca Antiga, and Adam Lerer. Automatic dif-                       and Lianwen Jin. Dockylin: A large multimodal model for
+     ferentiation in pytorch. 2017. 5                                             visual document understanding with efficient visual slim-
+[31] Wenzhe Shi, Jose Caballero, Ferenc Huszár, Johannes Totz,                   ming. In Proceedings of the AAAI Conference on Artificial
+     Andrew P Aitken, Rob Bishop, Daniel Rueckert, and Zehan                      Intelligence, pages 9923–9932, 2025. 2, 3
+     Wang. Real-time single image and video super-resolution                 [43] Ling Zhang, Yinghao He, Qing Zhang, Zheng Liu, Xiao-
+     using an efficient sub-pixel convolutional neural network. In                long Zhang, and Chunxia Xiao. Document image shadow
+     Proceedings of the IEEE conference on computer vision and                    removal guided by color-aware background. In Proceedings
+     pattern recognition, pages 1874–1883, 2016. 4                                of the IEEE/CVF Conference on Computer Vision and Pat-
+[32] Mohamed Ali Souibgui and Yousri Kessentini. De-gan: A                        tern Recognition, pages 1818–1827, 2023. 5, 6
+     conditional generative adversarial network for document en-             [44] Richard Zhang, Phillip Isola, Alexei A Efros, Eli Shecht-
+     hancement. IEEE Transactions on Pattern Analysis and Ma-                     man, and Oliver Wang. The unreasonable effectiveness of
+     chine Intelligence, 44(3):1180–1191, 2020. 2, 6                              deep features as a perceptual metric. In Proceedings of the
+[33] Mohamed Ali Souibgui, Sanket Biswas, Sana Khamekhem                          IEEE conference on computer vision and pattern recogni-
+     Jemni, Yousri Kessentini, Alicia Fornés, Josep Lladós, and                 tion, pages 586–595, 2018. 6
+     Umapada Pal. Docentr: An end-to-end document image                      [45] Dian Zheng, Xiao-Ming Wu, Shuzhou Yang, Jian Zhang,
+     enhancement transformer. In 2022 26th International Con-                     Jian-Fang Hu, and Wei-Shi Zheng. Selective hourglass
+     ference on Pattern Recognition (ICPR), pages 1699–1705.                      mapping for universal image restoration based on diffusion
+     IEEE, 2022. 2                                                                model. In Proceedings of the IEEE/CVF conference on com-
+[34] Hongrui Tie, Heng Li, Xiangping Wu, and Qingcai Chen.                        puter vision and pattern recognition, pages 25445–25455,
+     Local and global aware document image enhancement with                       2024. 3, 6, 8
+     residual denoising diffusion model. In Proceedings of the
+
+
+
+
+                                                                      8396
+

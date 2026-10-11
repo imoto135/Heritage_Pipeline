@@ -1,0 +1,415 @@
+                                          Recognizing Challenging Handwritten Annotations
+                                                 with Fully Convolutional Networks
+                                           Andreas Kölsch∗† , Ashutosh Mishra∗ , Saurabh Varshneya∗† , Muhammad Zeshan Afzal∗† , Marcus Liwicki∗†‡§
+                                                        {a koelsch12, a ashutosh16, s varshney16}@cs.uni-kl.de, afzal@iupr.com, marcus.liwicki@ltu.se
+
+                                                                                ∗ MindGarage, University of Kaiserslautern, Germany
+                                                                              † Insiders Technologies GmbH, Kaiserslautern, Germany
+                                                                                         ‡ University of Fribourg, Switzerland
+                                                                                      § Luleå, University of Technology, Sweden
+arXiv:1804.00236v2 [cs.CV] 22 Jun 2018
+
+
+
+
+                                            Abstract—This paper introduces a very challenging dataset of
+                                         historic German documents and evaluates Fully Convolutional
+                                         Neural Network (FCNN) based methods to locate handwritten
+                                         annotations of any kind in these documents. The handwritten
+                                         annotations can appear in form of underlines and text by using
+                                         various writing instruments, e.g., the use of pencils makes the
+                                         data more challenging. We train and evaluate various end-to-end
+                                         semantic segmentation approaches and report the results. The
+                                         task is to classify the pixels of documents into two classes: back-
+                                         ground and handwritten annotation. The best model achieves a
+                                         mean Intersection over Union (I O U) score of 95.6 % on the test
+                                         documents of the presented dataset. We also present a comparison
+                                         of different strategies used for data augmentation and training on
+                                         our presented dataset. For evaluation, we use the Layout Analysis
+                                         Evaluator for the ICDAR 2017 Competition on Layout Analysis
+                                         for Challenging Medieval Manuscripts.
+
+                                                                I. I NTRODUCTION                               Fig. 1: Sample image from the presented dataset. The left
+                                             Libraries are often interested in analyzing handwritten an-       image is the original image1 , the right image shows the GT.
+                                         notations in historic manuscripts or prints. Such annotations
+                                         can give hints to the provenience of the documents or provide
+                                         additional information about the readers’ thoughts.                   both the approaches, the CNN based approaches are becoming
+                                             For successful handwriting recognition in document images,        popular because of their efficiency. These networks which
+                                         a multi-stage processing pipeline is needed. Before an algo-          are known as Fully Convolutional Neural Networks (FCNNs)
+                                         rithm can analyze handwritten annotations in a document, it           outperformed previous methods. Most recently, FCNNs have
+                                         is important to localize the areas in this document that contain      also been used to segment historical document images [11]–
+                                         handwriting. Therefore, it is crucial to implement a robust           [13]. The methods we evaluate on our dataset are FCNN
+                                         algorithm for finding these areas as one of the first steps in        based.
+                                         the processing pipeline.                                                 Our dataset consists of 50 images which are divided into 40
+                                             Due to the huge variety in the layout of these documents,         representative training images and 10 test images. The images
+                                         it is very difficult to come up with a rule-based algorithm that      are taken from multiple manuscripts and feature different lay-
+                                         can reliably find handwritten annotations in unseen documents.        outs and various kinds of annotations (cf. Section III). For each
+                                         Many previous approaches aim to segment the documents into            image, there exists a pixel-wise ground truth (GT) with two
+                                         regions in a top-down manner, bottom-up or, using texture-            classes: handwritten annotation and background (cf. Fig. 1).
+                                         based methods [1].                                                    The task associated with this dataset is to classify each pixel
+                                             In the last years, deep learning based methods have been          of the input images and to maximize the mean I O U score.
+                                         very successful in many computer vision tasks, such as clas-             The contribution of our work is twofold: First, we present
+                                         sification [2]–[5] and segmentation of real-world images [6]–         a new challenging dataset for handwritten annotation detec-
+                                         [8]. There are two distinct approaches for semantic segmen-           tion. Secondly, we train and evaluate multiple methods for
+                                         tation using different types of network architectures. These          segmentation on this dataset.
+                                         approaches are based on Convolutional Neural Networks
+                                         (CNNs) [6]–[8] and LSTMs (Long Short-Term Memory) neu-                  1 Universitätsbibliothek der Humboldt-Universität zu Berlin, Signatur 0001
+                                         ral networks [9], [10]. Although the results are promising with       1433243313511 1 221, Seite 1
+Fig. 2: Sample patches of the document images with the GT as an overlay (red) depicting the different challenges of the
+dataset. Image Sources are described in Section III.
+
+
+   The remaining sections of this paper are organized as fol-         Deep learning has been the key success factor for many
+lows: Section II briefly describes related work in the fields of   of the fields related to computer vision and pattern recogni-
+both handwriting recognition and deep learning. In Section III,    tion [17] such as document analysis [17], [18]. Recently, many
+the new dataset and its unique challenges are illuminated. The     approaches for document classification [19]–[21], binariza-
+network architectures we use are presented in Section IV.          tion [10], [22], [23], historical document segmentation [12],
+The experimental setup and training details are described in       [16], [24], image format detection [25], multiple script identifi-
+Section V. Section VI reports the results of the experiments       cation [26], [27], character recognition of difficult scripts [28],
+that is followed by the discussion in Section VII. At the last,    [29] etc. Following is the description of closely related meth-
+Section VIII concludes the paper and gives perspectives for        ods of semantic segmentation that put the proposed work into
+future work.                                                       perspective.
+                                                                      Very recent approaches for the segmentation of historical
+                     II. R ELATED W ORK                            documents use features extracted from deep-learning based
+   Traditional approaches for the semantic segmentation of         architectures like auto-encoders. Such architectures learn the
+documents build on machine learning methods applied to             features automatically from unlabeled given data. The seg-
+hand-crafted features. Typically, the contribution is extracting   mentation task here is modeled as a pixel-labeling task where
+good feature representations of the document and feeding them      each pixel is assigned a label in the image. Chen et al. [16]
+to a classifier trained on the training data [14]–[16].            used features extracted from auto-encoders which are classified
+   Zagoris et al. used Bag of Visual Words model to extract        using an SVM classifier.
+local image features which are fed to an SVM based classifier         CNN based approaches have also been used in a similar
+for segmentation of key points [14]. This approach, however,       fashion where features are obtained automatically from the
+requires binarization and Hough transform as preprocessing         last or second last fully connected layer of a CNN. Chen and
+operations which can be dependant on the type of the docu-         Seuret [12] generate small image patches using a superpixel
+ments.                                                             algorithm and then a CNN is applied over the fixed-sized
+   Chen et al. [15] extract color and coordinate based hand-       patches to classify image patches called as superpixels into
+crafted feature representations from the colored images, and       respective classes.
+the obtained features are fed to an SVM classifier. The method        Most similar to our work is the application of FCNN based
+works directly on colored images without any pre-processing        methods which have successfully been applied to various
+operations like binarization. However, a threshold based post-     datasets [7], [8], [13]. In case of documents, Yang et al. use
+processing step is required which can be dependent on training     a multimodal FCNN for extracting semantic structures from
+data.                                                              document images [30]. In addition to FCNN, it combines the
+          TABLE I: Statistics of the dataset images
+                            Size       Aspect Ratio
+             Minimum     1000 × 1187    1 : 1.187
+             Median      2495 × 3861    1 : 1.649
+             Maximum     3477 × 4945    1 : 1.878
+
+
+
+unsupervised reconstruction task with the pixel-labeling task
+and added a text embedding map to take into account the
+content of underlying text for better extraction of semantic
+structures like figure, table, heading, and paragraph. These
+methods, however, have been applied to more homogeneous
+data. In this paper, we study the effectiveness of FCNNs on
+diverse data of challenging historical documents.
+                       III. T HE DATASET
+                                                                   Fig. 3: Sample patch of the dataset and the color-coded GT.
+   The actual success or failure of any model is truly dependent   Red pixels in the GT depict annotations, blue pixels depict
+on the type of dataset used for its training and testing. In       ambiguous regions and white pixels in the GT are considered
+the last decade, rich sets of historical manuscript databases      as background.
+have been collected, such as DIVA-HisDB [31], ENP [32] and
+IMPACT [33]. For our experiments, we introduce a challeng-
+ing dataset for training and benchmarking our approaches for          Since the GT is available in PAGE format, we first convert
+handwritten annotation segmentation.                               it to two-color images. To achieve this, we use the DIVA-
+   Our new dataset comprises 40 images for training and            HisDB-PixelLevelLayout2 tool. It binarizes the images and
+validation and 10 images for testing. The images with their        overlays it with the polygons which are described in the GT
+respective GT in the well-known PAGE format [34] are kindly        PAGE file. The pixels which are black after the binarization
+provided by                                                        and within the annotation polygons are considered annotation
+   • Universitätsbibliothek   der Humboldt-Universität zu        pixels, the pixels which are inside the polygons and white are
+     Berlin                                                        marked as ambiguous and are not considered in evaluation
+   • Universitätsbibliothek Kassel                                (cf. Fig. 3). All pixels outside of the GT polygons are labeled
+   • Staatsbibliothek Berlin                                       as background. Since the binarization of the images is not
+   • Staatsarchiv Marburg                                          perfect, the generated GT images can contain some incorrectly
+Figure 2 illustrates different patches of sample images from       labeled pixels. However, these are very few and can be
+our dataset.                                                       neglected.
+   An interesting feature of the dataset is that it contains          All training and testing images with their corresponding GT
+document pages from multiple sources which are digitized           annotations in both PAGE and PNG format can be downloaded
+using different devices. This increased variance makes our         at http://tc11.cvc.uab.es/datasets/AnnotationDB 1.
+dataset especially challenging for segmentation tasks. While
+in other datasets the background and foreground colors of the                    IV. N ETWORK A RCHITECTURES
+images are typically similar, they are very heterogeneous in our     In this section, we describe the FCNN architectures we
+dataset. Not only do the font styles and sizes in our dataset      used to segment the images into the two classes: Handwritten
+vary significantly for both printed text and annotations, but      annotations and background.
+also the line spacing and the overall layout of the pages are
+different. Lastly, both the sizes and the aspect ratios of the     A. FCN-8s
+images differ significantly (cf. Table I) which exacerbates the       The FCN-8s is a multi-stream FCNN architecture that was
+challenge of different fonts and layouts even further.             proposed by Long et al.in 2015 [7] and scores a mean I O U of
+   The handwritten annotations in the images are of various        65.4 % on the segmentation task of the Pascal Visual Object
+nature. They are often comments on the sides and underlines of     Classes (VOC) Challenge [6]. The architecture is based on
+the printed text. However, sometimes the annotations are also      the famous VGG-16 [3] architecture which performed best
+written between printed text lines. Sometimes, the document        on the localization task of the ImageNet Large Scale Visual
+may even consist of handwriting only (cf. Fig. 2, which is a       Recognition Competition (ILSVRC) [2] in 2014.
+note written on an empty page). Also, the indentations of the         Just like VGG-16, FCN-8s employs five stacks of convo-
+handwritten annotations change, sometimes even within the          lutional layers with appended max-pooling. Each of these
+same document page. A challenge regarding the underlines           pooling layers reduces the height and width of the of the
+is to distinguish handwritten lines from horizontally printed
+lines.                                                              2 https://github.com/DIVA-DIA/DIVA-HisDB-PixelLevelLayout
+                                                                                                               Upsample
+               Conv1                                                                                              8x
+                   Conv2                                                                         Upsample
+                       Conv3                                                      Upsample          2x       Fuse
+                                          Conv4                                      2x        Fuse
+                                                          Conv5
+                                                                    fc6   fc7
+                                                                                Score
+
+
+
+
+                                                           1/32
+                                           1/16                                         1/16
+                             1/8                           Score                                     1/8
+                       1/4
+                 1/2                                                                                                1/1
+                                           Score
+
+
+
+Fig. 4: Segmenting an image with the multi-stream network FCN-8s. The five convolutional stacks each reduce the image size
+by a factor of 2. With bilinear upsampling, the original size of the input image can be restored for dense prediction. The score
+layers are 1 × 1 Convolutions which reduce the number of feature maps to 2, as we have 2 classes. The output is, therefore,
+a two-channel image with the same size as the input image.
+
+
+feature maps by a factor of 2. Thus, the feature maps after the       network architecture that includes both atrous convolutions
+fifth pooling layer are of size (1/32 ∗ H) × (1/32 ∗ W ), with        and standard convolutions with max-pooling and bilinear in-
+H and W denoting the height and width of the input image,             terpolation.
+respectively (cf. Fig. 4). While VGG-16 feeds the features of            Chen et al. further propose multi-scale image processing
+the last pooling layer to a stack of three fully-connected layers     with their network architecture. They let rescaled versions
+for classification, the feature maps in FCN-8s are processed          of the original image be processed by multiple branches of
+by a 1 × 1 convolutional layer which produces one feature             the network. All versions are then upsampled by bilinear
+map per class, i.e., class scores. These feature maps are then        interpolation to obtain the original image resolution and fused
+upsampled with bilinear interpolation to generate pixel-wise          by selecting the maximum response across the different scales.
+classification results for segmentation.                                 Lastly, a fully-connected CRF [36] is applied as a post-
+   Additionally to the stream described above, the network            processing step to further improve the results.
+contains two more streams to incorporate lower level features
+into the final classification. This has proven to boost the net-      C. Pyramid Scene Parsing Network (PSPN ET)
+work performance [7], [35]. Specifically, the network uses the           Like DeepLab v2, PSPN ET [38] is an FCNN architecture
+features from the third and the fourth stack of convolutions and      that is based on ResNet [5] with atrous convolutions. It was
+fuses them with the features of the final stack of convolutions.      proposed in different versions, building on top of ResNet-50,
+Since these feature maps are of a different size than the feature     ResNet-101, ResNet-152 and ResNet-269. On the Pascal VOC
+maps in the main stream, the fusion and upsampling happens            Challenge, the method scores 85.4 % mean I O U. However,
+in multiple steps (cf. Fig. 4). Fusion, in this case, is a simple     since the performance boost of the deeper versions of PSPN ET
+addition of the feature maps.                                         over the ResNet-50 based version is less than 1 % (cf. [38]),
+B. DeepLab v2                                                         we use the latter for our two-class segmentation task.
+                                                                         The main difference from DeepLab v2 is that PSPN ET,
+   Deeplab v2 [8] is an FCNN which is based on the ar-                as its name suggests, uses a pyramid pooling module to fuse
+chitecture of ResNet-101 [5] and was proposed by Chen                 features from different sub-regions of the image at different
+et al. in 2016. Using atrous convolution, multi-scale image           scales, while DeepLab v2 uses multi-scale image processing.
+representations and Conditional Random Fields (CRFs) [36],
+the method scores 79.7 % mean I O U on the segmentation task                                   V. E XPERIMENTS
+of the Pascal VOC Challenge [6].
+   Atrous convolutions, also known as dilated convolutions,             We train and evaluate the FCNNs described in Section IV
+have a practical advantage over regular convolution and max-          on semantic segmentation. Thereby we explore transfer learn-
+pooling layers, as the spatial resolution of the feature map can      ing, binarized images, and data augmentation techniques. All
+be retained without any upsampling involved [37]. Although            experiments are performed on an NVIDIA Titan X GPU.
+using atrous convolutions throughout the network can lead               We report the mean I O U score over the entire test set. For
+to feature maps at the original image resolution, it is com-          each class, the I O U score is:
+putationally more expensive to keep full-sized feature maps                                           TP
+throughout the entire network. Thus, DeepLab v2 is a hybrid                                    (F P + T P + F N )
+where T P , F P , and F N denote the true positives, false           TABLE II: Performance of the networks on the new dataset
+positives, and false negatives, respectively.                        with different pretraining and data augmentation.
+  The mean I O U is simply the average over all classes. We                            Pretraining   Data Augmentation   Mean I O U
+compute mean I O U as Long et al. [7]:                                  FCN-8s         ILSVRC           Binarization      63.0 %
+                         1 X               n                            FCN-8s        DIVA-HisDB     Random Cropping      70.0 %
+         mean I O U =       ∗           P ii                            PSPN ET        ILSVRC        Random Cropping      87.7 %
+                        ncl    i
+                                  (ti + j nji − nii )
+                                                                        DeepLab v2     ILSVRC        Random Cropping      89.2 %
+where ncl denotes the number of classes, nij denotes the                FCN-8s         ILSVRC        Random Cropping      91.3 %
+number of pixels of class i predicted to belong to class j,             FCN-8s         ILSVRC            Inception        95.6 %
+and ti denotes the total number of pixels of class i.
+   The evaluation is performed using the DIVA Layout Analy-
+sis Evaluator tool [39]. This tool is used for document segmen-      are binarized using adaptive thresholding and again cropped
+tation for multi-labeled pixel GT and has also been used for         to 512 × 512 pixels to fit in the GPU memory. We manually
+the ICDAR2017 Layout Analysis for Challenging Medieval               verify the representativeness of the samples and the areas of
+Manuscripts [11]. It appropriately fits our requirements as it       interest in the images.
+takes care of ambiguous regions (cf. Fig. 3).
+                                                                                              VI. R ESULTS
+A. Transfer Learning and Finetuning                                     In the following, we report the results of the experiments
+   As our dataset contains only 40 images for training, it is nat-   and attempt to give reasons for the outcomes.
+ural to exploit other datasets for pretraining and then finetune        For evaluation of the trained networks, we pass patches of
+the network parameters on our target dataset. For pretraining,       512 × 512 pixels from the test images through the network
+we exploit both, the ILSVRC dataset which contains 1.2               in a sliding-window manner with an overlap of 128 pixels.
+million real-world images [2] and the DIVA-HisDB dataset             Predictions of pixels which are present in multiple patches are
+which contains 120 images from historic documents [31].              averaged. The scores achieved by the different networks are
+   When initializing the weights with ILSVRC pretraining, the        presented in Table II.
+convolutional layers just keep their weight matrices. However,          Table II reveals that neither binarization of the images nor
+since the original network architectures use fully-connected         pretraining on DIVA-HisDB yields good results. In the case of
+layers for classification and our networks are fully convo-          training and testing on binary images, lots of pixel information
+lutional, we have to convert the fully connected layers to           is already lost during preprocessing. While a colored pixel
+convolutional layers to benefit from the pretraining. The trick      can have 224 different values, it can only be black or white
+is to interpret these layers as convolutional layers with kernels    in binary images. Binarization may be helpful in cases where
+that cover the entire input region (cf. [7]). Now, all we have       all the data is very similar, but for our diverse images, it is
+to do is to reshape the corresponding weight matrices and we         crucial to use colored images. The diversity of our dataset
+have a FCNN.                                                         could also explain, why pretraining on DIVA-HisDB resulted
+                                                                     in a poor mean I O U of only 70 %. When trained on DIVA-
+B. Data Augmentation                                                 HisDB, FCN-8s reaches a mean I O U of more than 90 % on
+   To compensate for our limited training data, we use mul-          the DIVA-HisDB test set, which is comparable to the state-
+tiple data augmentation techniques to artificially increase our      of-the-art. However, if these weights are used as initialization
+training data.                                                       for training on our dataset, the network is unable to generalize
+   First, we use simple random cropping. Since the networks          over the new document types, because it is too inclined to the
+are too large to fit in the GPU memory with large images             homogeneous DIVA-HisDB images.
+(cf. Section III), we crop patches of 512 × 512 pixels from the         Pretraining the networks on the ILSVRC dataset yields
+images.                                                              overall good results, as the trained convolutional filters are
+   Second, we employ the data augmentation technique that            very robust and generalize well thanks to the amount of
+was proposed by Szegedy et al. to train the Inception net-           training data.
+works [4]. This is a more sophisticated data augmentation tech-
+nique which also adds some scaling and aspect ratio invariance                              VII. D ISCUSSION
+to the images. We found these properties particularly useful            The results of the work signify that the current segmentation
+for our heterogeneous dataset (cf. Section III). The method          approaches and data augmentation techniques work well with
+samples patches from the images uniformly at random with             the proposed complex dataset. The dataset contains images
+the following limitations. The area of the patch covers 8 % to       from multiple sources and a variety of different types of
+100 % of the whole image and its aspect ratio is between 43          artifacts.
+and 43 . This patch is then scaled to 512 × 512 pixels.                 Another strong contribution of the paper is the introduction
+   In a last set of experiments, we binarize the training images,    of the new dataset. While it may seem that the number of
+as this has been used frequently for segmentation tasks where        pages is small, the task is to label every pixel and hence the
+the background color is more or less uniform [40]. The images        dataset is large enough. Also the results show that with the
+                                                                   initializations, and data augmentation strategies. The models
+                                                                   trained in this paper do not include any domain-specific post-
+                                                                   processing methods. Employing domain-specific knowledge
+                                                                   would further improve the results, as has been shown in [11]
+                                                                   recently.
+                                                                      An important direction for future work is the analysis of
+                                                                   the generalization and scalability of our methods. While our
+                                                                   dataset is already of diverse nature, it would be interesting
+                                                                   to see if it also applies to documents of other libraries and
+                                                                   countries. Furthermore, specialized methods could be adopted
+                                                                   from our classifier to work on specific types of books and to
+                                                                   incrementally work better after a few pages.
+Fig. 5: Sample from the test set (top) and visualization of the       As it is not feasible to get correct binarization for all the
+prediction of our best model (bottom). Green pixels are true       images in the dataset with automatic approaches, a possible
+positives, black pixels are true negatives, red pixels are false   improvement in the GT pixels could be performed by manu-
+positives and blue pixels are false negatives.                     ally cleaning the binarized documents.
+                                                                      Finally, it would be good to integrate our approach into
+                                                                   production systems. A possible scenario is that human experts
+reasonable amount of augmentation we are able to achieve           can inspect all annotations found by the system, slightly
+great results.                                                     correct them (enabling active learning and human-in-the-loop
+   Furthermore, it is worth mentioning the noise in the GT.        systems), and integrate the findings into higher-level research
+The GT generation is well explained in section III. Although       questions in the humanities, such as the change of annotation-
+there exists some noise in the GT-pixels due to the binariza-      behavior over the centuries.
+tion, it does not affect the evaluation significantly. Further-                         ACKNOWLEDGMENTS
+more, the main purpose of the proposed work is to signify             We thank Insiders Technologies GmbH for providing the
+how well we can perform on a difficult dataset of historical       hardware to conduct the experiments described in this paper.
+documents. However, the improvement of the GT can be               We also want to thank Abhash Sinha and Shridhar Kumar
+done in the future with the provided dataset, as discussed in      for performing the experiments with PSPN ET. Finally, we
+section VIII.                                                      thank the following libraries for providing us with the digitized
+   As far as the results are concerned, the FCNN based             images for the database: Universitätsbibliothek der Humboldt-
+approaches are well capable of segmenting the documents.           Universität zu Berlin; Universitätsbibliothek Kassel; Staatsbib-
+While DeepLab v2 and PSPN ET perform significantly better          liothek Berlin; and Staatsarchiv Marburg.
+on real-world images than FCN-8s (cf. Section IV), FCN-8s
+performs best on our dataset. This result is consistent with a                                   R EFERENCES
+finding by Afzal et al. [20] who found VGG-16 better suited         [1] A. Asi, R. Cohen, K. Kedem, and J. El-Sana, “Simplifying the read-
+                                                                        ing of historical manuscripts,” in Document Analysis and Recognition
+for document image classification, then ResNet-50. When                 (ICDAR), 2015 13th International Conference on. IEEE, 2015, pp.
+analyzing the errors visually, we find that the ResNet based            826–830. 1
+networks have problems detecting fine pencil annotations. This      [2] O. Russakovsky, J. Deng, H. Su, J. Krause, S. Satheesh, S. Ma,
+                                                                        Z. Huang, A. Karpathy, A. Khosla, M. Bernstein et al., “Imagenet large
+relates to one of the failure modes discovered by Chen et al.,          scale visual recognition challenge,” International Journal of Computer
+where their best performing model “fails to capture the delicate        Vision, vol. 115, no. 3, pp. 211–252, 2015. 1, 3, 5
+boundaries of objects, such as bicycle and chair” [8].              [3] K. Simonyan and A. Zisserman, “Very deep convolutional networks for
+                                                                        large-scale image recognition,” arXiv preprint arXiv:1409.1556, 2014.
+   With a data augmentation technique that fits well to our             1, 3
+dataset, we are able to reduce the error by half and achieve a      [4] C. Szegedy, W. Liu, Y. Jia, P. Sermanet, S. Reed, D. Anguelov, D. Erhan,
+final mean I O U score of 95.6 %. At visual inspection, our             V. Vanhoucke, and A. Rabinovich, “Going deeper with convolutions,”
+                                                                        in The IEEE Conference on Computer Vision and Pattern Recognition
+best model is almost perfect in detecting the handwritten               (CVPR), June 2015. 1, 5
+annotations. Most errors come from noisy or incorrect GT            [5] K. He, X. Zhang, S. Ren, and J. Sun, “Deep residual learning for image
+(cf. Fig. 5).                                                           recognition,” CoRR, vol. abs/1512.03385, 2015. 1, 4
+                                                                    [6] M. Everingham, S. A. Eslami, L. Van Gool, C. K. Williams, J. Winn,
+   Our results on this difficult dataset is one step forward            and A. Zisserman, “The pascal visual object classes challenge: A
+towards achieving a general purpose segmentation method that            retrospective,” International journal of computer vision, vol. 111, no. 1,
+could work with most of the documents.                                  pp. 98–136, 2015. 1, 3, 4
+                                                                    [7] J. Long, E. Shelhamer, and T. Darrell, “Fully convolutional networks for
+         VIII. C ONCLUSION AND F UTURE W ORK                            semantic segmentation,” in The IEEE Conference on Computer Vision
+                                                                        and Pattern Recognition (CVPR), June 2015. 1, 2, 3, 4, 5
+   In this work, we have presented a new and challenging            [8] L.-C. Chen, G. Papandreou, I. Kokkinos, K. Murphy, and A. L. Yuille,
+dataset for document layout analysis in terms of semantic seg-          “Deeplab: Semantic image segmentation with deep convolutional nets,
+                                                                        atrous convolution, and fully connected crfs,” IEEE transactions on
+mentation. Furthermore, we have trained and evaluated mul-              pattern analysis and machine intelligence, vol. 40, no. 4, pp. 834–848,
+tiple combinations of different network architectures, weight           2018. 1, 2, 4, 6
+ [9] A. Graves, “Supervised sequence labelling,” Supervised Sequence La-         [27] Y. Fujii, K. Driesen, J. Baccash, A. Hurst, and A. C. Popat, “Sequence-
+     belling with Recurrent Neural Networks, pp. 5–13, 2012. 1                        to-label script identification for multilingual ocr,” arXiv preprint
+[10] M. Z. Afzal, J. Pastor-Pellicer, F. Shafait, T. M. Breuel, A. Dengel,            arXiv:1708.04671, 2017. 2
+     and M. Liwicki, “Document image binarization using lstm: A sequence         [28] R. Ahmad, M. Z. Afzal, S. F. Rashid, M. Liwicki, and T. M. Breuel,
+     learning approach,” in Proceedings of the 3rd International Workshop             “Scale and rotation invariant OCR for pashto cursive script using
+     on Historical Document Imaging and Processing, ser. HIP ’15. New                 MDLSTM network,” in 13th International Conference on Document
+     York, NY, USA: ACM, 2015, pp. 79–84. 1, 2                                        Analysis and Recognition, ICDAR 2015, Nancy, France, August 23-26,
+[11] F. Simistira, M. Bouillon, M. Seuret, M. Würsch, M. Alberti, R. Ingold,         2015, 2015, pp. 1101–1105. 2
+     and M. Liwicki, “Icdar2017 competition on layout analysis for chal-         [29] S. B. Ahmed, S. Naz, M. I. Razzak, S. F. Rashid, M. Z. Afzal, and T. M.
+     lenging medieval manuscripts,” in Document Analysis and Recognition              Breuel, “Evaluation of cursive and non-cursive scripts using recurrent
+     (ICDAR), 2017 14th IAPR International Conference on, vol. 1. IEEE,               neural networks,” Neural Comput. Appl., vol. 27, no. 3, pp. 603–613,
+     2017, pp. 1361–1370. 1, 5, 6                                                     Apr. 2016. 2
+[12] K. Chen, M. Seuret, J. Hennebert, and R. Ingold, “Convolutional neural      [30] X. Yang, M. E. Yümer, P. Asente, M. Kraley, D. Kifer, and C. L. Giles,
+     networks for page segmentation of historical document images,” in Doc-           “Learning to extract semantic structure from documents using multi-
+     ument Analysis and Recognition (ICDAR), 2017 14th IAPR International             modal fully convolutional neural network,” CoRR, vol. abs/1706.02337,
+     Conference on, vol. 1. IEEE, 2017, pp. 965–970. 1, 2                             2017. 2
+                                                                                 [31] F. Simistira, M. Seuret, N. Eichenberger, A. Garz, M. Liwicki, and
+[13] Y. Xu, W. He, F. Yin, and C.-L. Liu, “Page segmentation for historical
+                                                                                      R. Ingold, “Diva-hisdb: A precisely annotated large dataset of chal-
+     handwritten documents using fully convolutional networks,” in Docu-
+                                                                                      lenging medieval manuscripts,” in Frontiers in Handwriting Recognition
+     ment Analysis and Recognition (ICDAR), 2017 14th IAPR International
+                                                                                      (ICFHR), 2016 15th International Conference on. IEEE, 2016, pp.
+     Conference on, vol. 1. IEEE, 2017, pp. 541–546. 1, 2
+                                                                                      471–476. 3, 5
+[14] K. Zagoris, I. Pratikakis, A. Antonacopoulos, B. Gatos, and N. Pa-          [32] C. Clausner, C. Papadopoulos, S. Pletschacher, and A. Antonacopoulos,
+     pamarkos, “Distinction between handwritten and machine-printed text              “The enp image and ground truth dataset of historical newspapers,”
+     based on the bag of visual words model,” Pattern Recognition, vol. 47,           in 2015 13th International Conference on Document Analysis and
+     no. 3, pp. 1051 – 1062, 2014, handwriting Recognition and other PR               Recognition (ICDAR), Aug 2015, pp. 931–935. 3
+     Applications. 2                                                             [33] C. Papadopoulos, S. Pletschacher, C. Clausner, and A. Antonacopoulos,
+[15] K. Chen, H. Wei, M. Liwicki, J. Hennebert, and R. Ingold, “Robust                “The impact dataset of historical document images,” in Proceedings of
+     text line segmentation for historical manuscript images using color and          the 2Nd International Workshop on Historical Document Imaging and
+     texture,” in 2014 22nd International Conference on Pattern Recognition,          Processing, ser. HIP ’13. New York, NY, USA: ACM, 2013, pp. 123–
+     Aug 2014, pp. 2978–2983. 2                                                       130. 3
+[16] K. Chen, M. Seuret, M. Liwicki, J. Hennebert, and R. Ingold, “Page          [34] S. Pletschacher and A. Antonacopoulos, “The page (page analysis
+     segmentation of historical document images with convolutional autoen-            and ground-truth elements) format framework,” in Pattern Recognition
+     coders,” in Document Analysis and Recognition (ICDAR), 2015 13th                 (ICPR), 2010 20th International Conference on. IEEE, 2010, pp. 257–
+     International Conference on. IEEE, 2015, pp. 1011–1015. 2                        260. 3
+[17] Y. LeCun, Y. Bengio, and G. Hinton, “Deep learning,” nature, vol. 521,      [35] A. Kölsch, M. Z. Afzal, and M. Liwicki, “Multilevel context representa-
+     no. 7553, p. 436, 2015. 2                                                        tion for improving object recognition,” in 2017 14th IAPR International
+[18] M. Liwicki, V. Frinken, and M. Z. Afzal, “Latest developments of                 Conference on Document Analysis and Recognition (ICDAR), vol. 05,
+     lstm neural networks with applications of document image analysis,”              Nov 2017, pp. 10–15. 4
+     in Handbook of Pattern Recognition and Computer Vision.            World    [36] P. Krähenbühl and V. Koltun, “Efficient inference in fully connected
+     Scientific, 2016, pp. 293–311. 2                                                 crfs with gaussian edge potentials,” in Advances in neural information
+[19] M. Z. Afzal, S. Capobianco, M. I. Malik, S. Marinai, T. M. Breuel,               processing systems, 2011, pp. 109–117. 4
+     A. Dengel, and M. Liwicki, “Deepdocclassifier: Document classification      [37] F. Yu and V. Koltun, “Multi-scale context aggregation by dilated
+     with deep convolutional neural network,” in 2015 13th International              convolutions,” arXiv preprint arXiv:1511.07122, 2015. 4
+     Conference on Document Analysis and Recognition (ICDAR), Aug 2015,          [38] H. Zhao, J. Shi, X. Qi, X. Wang, and J. Jia, “Pyramid scene parsing
+     pp. 1111–1115. 2                                                                 network,” in IEEE Conf. on Computer Vision and Pattern Recognition
+                                                                                      (CVPR), 2017, pp. 2881–2890. 4
+[20] M. Z. Afzal, A. Kölsch, S. Ahmed, and M. Liwicki, “Cutting the error
+                                                                                 [39] M. Alberti, M. Bouillon, R. Ingold, and M. Liwicki, “Open Evaluation
+     by half: Investigation of very deep cnn and advanced training strategies
+                                                                                      Tool for Layout Analysis of Document Images,” ArXiv e-prints, Nov.
+     for document image classification,” arXiv preprint arXiv:1704.03557,
+                                                                                      2017. 5
+     2017. 2, 6
+                                                                                 [40] Y. Zhong, K. Karu, and A. K. Jain, “Locating text in complex color
+[21] A. Kölsch, M. Z. Afzal, M. Ebbecke, and M. Liwicki, “Real-time                  images,” in Proceedings of the Third International Conference on
+     document image classification using deep cnn and extreme learning                Document Analysis and Recognition (Volume 1) - Volume 1, ser. ICDAR
+     machines,” arXiv preprint arXiv:1711.05862, 2017. 2                              ’95. Washington, DC, USA: IEEE Computer Society, 1995, pp. 146–.
+[22] J. Pastor-Pellicer, S. España-Boquera, F. Zamora-Martı́nez, M. Z. Afzal,        5
+     and M. J. Castro-Bleda, “Insights on the use of convolutional neural
+     networks for document image binarization,” in International Work-
+     Conference on Artificial Neural Networks. Springer, 2015, pp. 115–126.
+     2
+[23] C. Tensmeyer and T. Martinez, “Document image binarization with fully
+     convolutional neural networks,” arXiv preprint arXiv:1708.03276, 2017.
+     2
+[24] J. Younas, M. Z. Afzal, M. I. Malik, F. Shafait, P. Lukowicz, and
+     S. Ahmed, “D-star: A generic method for stamp segmentation from
+     document images,” in Document Analysis and Recognition (ICDAR),
+     2017 14th IAPR International Conference on, vol. 1. IEEE, 2017, pp.
+     248–253. 2
+[25] F. Trier, M. Z. Afzal, M. Ebbecke, and M. Liwicki, “Deep convolutional
+     neural networks for image resolution detection,” in Proceedings of
+     the 4th International Workshop on Historical Document Imaging and
+     Processing. ACM, 2017, pp. 77–82. 2
+[26] A. Ul-Hasan, M. Z. Afzal, F. Shafait, M. Liwicki, and T. M. Breuel,
+     “A sequence learning approach for multiple script identification,” in
+     Document Analysis and Recognition (ICDAR), 2015 13th International
+     Conference on. IEEE, 2015, pp. 1046–1050. 2
+

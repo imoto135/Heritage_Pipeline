@@ -1,0 +1,146 @@
+[
+  {
+    "paper": "white",
+    "condition": "clean",
+    "paper_stats": {
+      "raw_RGB_delta_255": [
+        0.2468571811914444,
+        0.07812029868364334,
+        -0.22383154928684235
+      ],
+      "green_balance_delta_255": 0.0666066852863878,
+      "outside_0_1_fraction": 5.086263020833333e-06,
+      "input_range": [
+        0.13725490868091583,
+        0.9607843160629272
+      ],
+      "output_range": [
+        0.12266591191291809,
+        4.983310699462891
+      ]
+    },
+    "RGB_MAE_to_known_clean": 0.0026563798564217434,
+    "input_RGB_MAE_to_known_clean": 0.0,
+    "official_dataset": false
+  },
+  {
+    "paper": "white",
+    "condition": "stained",
+    "paper_stats": {
+      "raw_RGB_delta_255": [
+        0.37987154722213745,
+        0.3537573516368866,
+        0.15029722452163696
+      ],
+      "green_balance_delta_255": 0.08867254655342549,
+      "outside_0_1_fraction": 5.086263020833333e-06,
+      "input_range": [
+        0.10196078568696976,
+        0.9607843160629272
+      ],
+      "output_range": [
+        0.09365886449813843,
+        5.456231117248535
+      ]
+    },
+    "RGB_MAE_to_known_clean": 0.027948566459709525,
+    "input_RGB_MAE_to_known_clean": 0.02776461333231212,
+    "official_dataset": false
+  },
+  {
+    "paper": "cream",
+    "condition": "clean",
+    "paper_stats": {
+      "raw_RGB_delta_255": [
+        2.041114568710327,
+        2.085042953491211,
+        0.8203750252723694
+      ],
+      "green_balance_delta_255": 0.6542928284034133,
+      "outside_0_1_fraction": 1.0172526041666666e-05,
+      "input_range": [
+        0.13725490868091583,
+        0.9215686321258545
+      ],
+      "output_range": [
+        -0.5997951626777649,
+        4.032926082611084
+      ]
+    },
+    "RGB_MAE_to_known_clean": 0.007357589894188707,
+    "input_RGB_MAE_to_known_clean": 0.0,
+    "official_dataset": false
+  },
+  {
+    "paper": "cream",
+    "condition": "stained",
+    "paper_stats": {
+      "raw_RGB_delta_255": [
+        1.6316323280334473,
+        2.536435604095459,
+        1.8919960260391235
+      ],
+      "green_balance_delta_255": 0.7745963323395699,
+      "outside_0_1_fraction": 1.0172526041666666e-05,
+      "input_range": [
+        0.10196078568696976,
+        0.9215686321258545
+      ],
+      "output_range": [
+        -0.6505613327026367,
+        3.960489511489868
+      ]
+    },
+    "RGB_MAE_to_known_clean": 0.02201736855946927,
+    "input_RGB_MAE_to_known_clean": 0.02410507700801674,
+    "official_dataset": false
+  },
+  {
+    "paper": "aged",
+    "condition": "clean",
+    "paper_stats": {
+      "raw_RGB_delta_255": [
+        -1.35696542263031,
+        2.6887595653533936,
+        3.1870498657226562
+      ],
+      "green_balance_delta_255": 1.7737001739442348,
+      "outside_0_1_fraction": 1.0172526041666666e-05,
+      "input_range": [
+        0.13725490868091583,
+        0.8235294222831726
+      ],
+      "output_range": [
+        -1.4995834827423096,
+        1.5696412324905396
+      ]
+    },
+    "RGB_MAE_to_known_clean": 0.011653458101549911,
+    "input_RGB_MAE_to_known_clean": 0.0,
+    "official_dataset": false
+  },
+  {
+    "paper": "aged",
+    "condition": "stained",
+    "paper_stats": {
+      "raw_RGB_delta_255": [
+        -1.3126310110092163,
+        3.696986675262451,
+        4.179491996765137
+      ],
+      "green_balance_delta_255": 2.2635551635175943,
+      "outside_0_1_fraction": 1.0172526041666666e-05,
+      "input_range": [
+        0.10196078568696976,
+        0.8235294222831726
+      ],
+      "output_range": [
+        -1.4571564197540283,
+        1.553223729133606
+      ]
+    },
+    "RGB_MAE_to_known_clean": 0.018963848168569778,
+    "input_RGB_MAE_to_known_clean": 0.018658566942401957,
+    "official_dataset": false
+  }
+]

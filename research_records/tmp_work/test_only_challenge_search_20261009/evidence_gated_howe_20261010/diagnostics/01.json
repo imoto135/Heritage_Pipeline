@@ -1,0 +1,56 @@
+{
+  "stroke_width": 4.0,
+  "eligible_components": 1,
+  "groups": [
+    {
+      "group": 1,
+      "components": [
+        2
+      ],
+      "context_xywh": [
+        1624,
+        88,
+        160,
+        160
+      ],
+      "matches": [],
+      "selected_components": [],
+      "decision": "hold_single_component"
+    }
+  ],
+  "removed_pixels": 0,
+  "removed_components": 0,
+  "strict_geometry_removed_pixels": 0,
+  "strict_geometry_removed_components": 0,
+  "naive_csc_veto_removed_pixels": 1086,
+  "id": "01",
+  "page": "200010454_00016_2",
+  "origin": "six_challenge_fixed_review",
+  "neighbors": [
+    "data/test/200010454/200010454_00015_2.jpg",
+    "data/test/200010454/200010454_00016_1.jpg",
+    "data/test/200010454/200010454_00017_1.jpg",
+    "data/test/200010454/200010454_00017_2.jpg"
+  ],
+  "masks_unchanged": true,
+  "route_counts": {
+    "red": 0,
+    "text": 189834,
+    "background": 3963817,
+    "repair_candidate": 14074,
+    "unknown": 31811
+  },
+  "dependencies": {
+    "data/test/200010454/200010454_00016_2.jpg": "9a252f8305457507b1ac5e9d18c70be854a2aee28eaebf6607cea48bc3b9cb29",
+    "tmp_work/test_only_challenge_search_20261009/six_challenge_fixed_review/masks/howe/200010454_00016_2/02_text_black.png": "c56ba8d8f7ea7c6530644b24bd83068afdd7c1ac43a1452360865b575ac23b7b",
+    "tmp_work/test_only_challenge_search_20261009/six_challenge_fixed_review/masks/howe/200010454_00016_2/03_text_red.png": "f3a0f84e23e5b7ae2a86aa24fbee94e7a16447cfc883e5f3ace9a5e8c3da3983",
+    "data/split_dataset_csc_mask_v2/test/200010454/200010454_00016_2/02_text_black.png": "71eea2d63fde94175975e319f74e051bfaede4307c8c6da2b17bdc026fc8eed1",
+    "data/split_dataset_csc_mask_v2/test/200010454/200010454_00016_2/04_degradation.png": "0eca21c4bf57c204183a497ba51a807f7917aabb8e5ad2fc505ab7c989fc9565",
+    "data/split_dataset_csc_mask_v2/test/200010454/200010454_00016_2/05_background.png": "952a758583e52eda3547c77dadf7bf9441b4a1941bf821df9240fb3b7a0cd6a7",
+    "data/test/200010454/200010454_00015_2.jpg": "be2ec45ed30a11824192aadd68c50362073cad11a3c50de3ec733af56aedf725",
+    "data/test/200010454/200010454_00016_1.jpg": "64b3f8e3976db264c19a0894ea3d225e9c9ab3613bda1f3d814c3b873781f807",
+    "data/test/200010454/200010454_00017_1.jpg": "cab7acc7bb819f129e53537cd5770b271b9a0187dd4682d1d6422464ab795a10",
+    "data/test/200010454/200010454_00017_2.jpg": "ebb4d0a8993b84abca05963eda796f6557a9e0df6042cab81e8e5b7aa62aa7d1"
+  },
+  "seconds": 1.61
+}

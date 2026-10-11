@@ -1,0 +1,59 @@
+{
+  "mode": "gain_augmented",
+  "steps": 8000,
+  "source_sha256": "d0e004e028259b63397177826956c31a4a23a32ca9f16aaf2419cde0449caad8",
+  "parent_source_sha256": "3fdccec0d7e5a960ff4bbbb978117061145044e11a266dbbb14bbfe4cd63636c",
+  "data_sha256": "dd69562fa922d6b0df677382834401f7d18bb4d041f88bb41b99582c6479d022",
+  "loss": "10 synthetic OD MSE + .05 RGB L1 + .01 gradient L1, same as gain_od_regression",
+  "changes": [
+    "seven synthetic stain families",
+    "random mild clean-paper RGB scaling",
+    "additional low-contrast thin gray/brown procedural lines before stain"
+  ],
+  "families": [
+    "id",
+    "shape",
+    "ring",
+    "crease",
+    "sharp",
+    "color",
+    "gray"
+  ],
+  "identity_fraction": 0.25,
+  "real_data_used": false,
+  "test_used_for_checkpoint_selection": false,
+  "exploratory_design_after_old_synthetic_results": true,
+  "new_independent_generalization_claim": false,
+  "one_combined_change_not_factorial_ablation": true,
+  "book_sets": {
+    "train": [
+      "100241706",
+      "200003803",
+      "200004107",
+      "200004148",
+      "200005798",
+      "200006665",
+      "200015779",
+      "200021063",
+      "200021712",
+      "200021869",
+      "brsk00000"
+    ],
+    "dev": [
+      "100249476",
+      "200008003",
+      "200021802",
+      "umgy00000"
+    ],
+    "test": [
+      "200010454",
+      "200017458",
+      "200018243",
+      "200021763",
+      "200021851",
+      "200021853",
+      "200022050"
+    ]
+  },
+  "created": 1791369972.9162714
+}

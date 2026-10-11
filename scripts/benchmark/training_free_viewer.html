@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="ja"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>学習なしの前処理比較</title>
+<style>
+body{font-family:system-ui,sans-serif;background:#f4f6f8;color:#182839;max-width:1600px;margin:auto;padding:24px}h1{font-size:25px}p{line-height:1.8}a{color:#175ab0}.controls{display:flex;gap:16px;flex-wrap:wrap;background:white;padding:16px;border-radius:10px;position:sticky;top:0;z-index:2}label{display:flex;flex-direction:column;gap:6px}select,button{font:inherit;padding:7px}.grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}.tile{background:white;border:1px solid #d6dee6;padding:10px;border-radius:8px}h2{font-size:15px}canvas{width:100%;height:auto;display:block}#original{cursor:crosshair}.links{display:flex;gap:16px;flex-wrap:wrap;margin:18px 0}.small{font-size:14px;color:#516577}@media(max-width:1000px){.grid{grid-template-columns:repeat(2,minmax(0,1fr))}}@media(max-width:550px){.grid{grid-template-columns:1fr}.controls{position:static}body{padding:12px}}
+</style><body>
+<h1>学習なしの前処理比較</h1>
+<p>原画像にある筆画が前景候補へ残るか、汚れまで候補へ入らないかを同じ場所で比較します。青は全方式共通の前景候補で、黒文字と朱墨を区別していません。前景以外をすべて汚れと判定した結果でもありません。</p>
+<p class="small">教師データ・事前学習モデル・手動注釈は使用していません。既知の4ページを使う探索で、精度評価ではありません。局所背景補正は分類入力だけに適用し、原画像は維持しています。</p>
+<p><a href="report.md">今回の所見と設定</a> · <a href="manifest.json">実行条件</a> · <a href="../npj_preprocess_review_20260930/index.html">元のCSC・色別レビュー</a></p>
+<div class="controls"><label>ページ<select id="page"></select></label><label>見る場所<select id="region"></select></label><label>方式<select id="mode"></select></label><label>表示<select id="display"><option value="overlay">原画像に前景候補を重ねる</option><option value="mask">白＝前景候補のマスク</option><option value="difference">v1との差：青緑＝追加、橙＝除外</option></select></label><button id="whole">全体に戻る</button></div>
+<p id="status" aria-live="polite"></p><p id="coordinates" class="small"></p>
+<div class="grid"><div class="tile"><h2>原画像</h2><canvas id="original"></canvas></div><div class="tile"><h2>分類に使う画像</h2><canvas id="input"></canvas></div><div class="tile"><h2>凍結v1：ACE CSCの前景</h2><canvas id="baseline"></canvas></div><div class="tile"><h2>選択した方式</h2><canvas id="selected"></canvas></div></div>
+<p class="small">原画像をクリックすると512×512画素へ拡大します。v1・v3は黒＋赤マスクの和、Sauvolaは二値前景候補です。背景の推定だけ約1/4解像度で行い、分類と保存は原寸です。CSCだけは元の外周4%設定を含みます。</p>
+<div id="links" class="links"></div>
+<script>
+const DATA=__DATA__;
+const $=id=>document.getElementById(id),cache=new Map();let crop=null,token=0;
+function option(element,value,label){const item=document.createElement('option');item.value=value;item.textContent=label;element.appendChild(item)}
+DATA.cases.forEach((p,i)=>option($('page'),i,p.id+' — '+p.title));Object.entries(DATA.modes).forEach(([k,v])=>option($('mode'),k,v));$('mode').value='sauvola_local';
+function page(){return DATA.cases[Number($('page').value)]}
+function regions(){const p=page();$('region').replaceChildren();option($('region'),'whole','ページ全体');p.rois.forEach((r,i)=>option($('region'),i,r.title));crop=null}
+function area(){const p=page();return crop||($('region').value==='whole'?[0,0,p.width,p.height]:p.rois[Number($('region').value)].xywh)}
+function load(path){if(!cache.has(path)){cache.set(path,new Promise((resolve,reject)=>{const im=new Image();im.onload=()=>resolve(im);im.onerror=()=>reject(new Error('読み込めません：'+path));im.src=path}));if(cache.size>12)cache.delete(cache.keys().next().value)}return cache.get(path)}
+function draw(id,im,rect){const canvas=$(id),[x,y,w,h]=rect,s=Math.min(1,1000/w,1300/h);canvas.width=Math.round(w*s);canvas.height=Math.round(h*s);const ctx=canvas.getContext('2d');ctx.imageSmoothingEnabled=false;ctx.drawImage(im,x,y,w,h,0,0,canvas.width,canvas.height)}
+async function render(){const n=++token,p=page(),m=$('mode').value,r=area(),d=$('display').value;const input=m.startsWith('sauvola')?(m==='sauvola_raw'?'gray':'normalized'):'ace';const selected=d==='mask'?'foreground':d==='difference'?'difference_v1':'overlay';$('status').textContent='読み込み中…';try{const images=await Promise.all([load(p.id+'/original.png'),load(p.id+'/'+input+'.png'),load(p.id+'/v1_ace/overlay.png'),load(p.id+'/'+m+'/'+selected+'.png')]);if(n!==token)return;['original','input','baseline','selected'].forEach((k,i)=>draw(k,images[i],r));$('status').textContent=DATA.modes[m];$('coordinates').textContent='原画像座標 '+r.join(', ')+'（x, y, 幅, 高さ）';$('links').replaceChildren();[['6条件の比較図',p.id+'/overview.png'],...p.rois.map((roi,i)=>['拡大図'+(i+1),roi.image])].forEach(([label,url])=>{const a=document.createElement('a');a.href=url;a.textContent=label;a.target='_blank';$('links').appendChild(a)})}catch(error){if(n===token)$('status').textContent=error.message}}
+$('page').addEventListener('change',()=>{regions();render()});$('region').addEventListener('change',()=>{crop=null;render()});['mode','display'].forEach(k=>$(k).addEventListener('change',render));$('whole').addEventListener('click',()=>{crop=null;$('region').value='whole';render()});$('original').addEventListener('click',event=>{const p=page(),[x,y,w,h]=area(),rect=$('original').getBoundingClientRect(),cx=x+(event.clientX-rect.left)/rect.width*w,cy=y+(event.clientY-rect.top)/rect.height*h,cw=Math.min(512,p.width),ch=Math.min(512,p.height);crop=[Math.max(0,Math.min(p.width-cw,Math.round(cx-cw/2))),Math.max(0,Math.min(p.height-ch,Math.round(cy-ch/2))),cw,ch];render()});regions();render();
+</script></body></html>

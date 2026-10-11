@@ -1,0 +1,43 @@
+{
+  "settings": {
+    "mask_fixed": true,
+    "DDRM_fixed": true,
+    "baseline": "saved adjacent boundary-only output",
+    "scope": "same prior adjusted mask; no new edit pixels",
+    "context_px": 64,
+    "donor_patch_px": 24,
+    "donor_stride_px": 8,
+    "donor_max_count": 512,
+    "minimum_donors": 4,
+    "tile_overlap_px": 8,
+    "overlap_cost": "mean squared Lab highpass residual plus .02 times donor reuse count",
+    "donor_gate": "all 24x24 pixels must belong to saved unedited paper reference",
+    "reference_lowpass_sigma_px": 6,
+    "texture_lowpass_sigma_px": 3,
+    "structure": "screened harmonic Lab field from known-paper lowpass boundary; retain generated highpass",
+    "screening_weight": 0.00043402777777777775,
+    "texture": "overlap-weighted observed-paper highpass tiles; retain generated lowpass",
+    "inward_feather_px": 4,
+    "original_damage_blending": false,
+    "generated_random_noise": false,
+    "pixel_GT": false,
+    "development_regions": 22,
+    "training": false,
+    "inference": false
+  },
+  "dependencies": {
+    "scripts/benchmark/probe_paper_pattern_continuity.py": "87ccf6f590cda09024824cb278b0cb69363b5c67f96885091b6fc13c91edff55",
+    "scripts/benchmark/probe_adjacent_paper_boundary.py": "110abdf87d03e363f3098730ff640a4fb6934fb9acb9ec0ee3a311fd8b4af5d1",
+    "scripts/benchmark/probe_paper_tone_boundary.py": "df17434c209ef30ef823ab229113023df2d2503e296254faf8ccb096d2e6573c",
+    "tmp_work/adjacent_paper_boundary_pilot_20261001/manifest.json": "1629bcf00f8d44c28f1993ab3e46d36c31391d986b9c01dcd1ee57854b30d8ae",
+    "tmp_work/adjacent_paper_boundary_pilot_20261001/complete.json": "4a72810185b3adbd942c715caa6c4503b0e16c8b3384d8dfa1119f50255d2ea4",
+    "tmp_work/paper_tone_boundary_pilot_20261001/manifest.json": "dc70afdee009093707b4117dfcbc9ce3f9e361670d0471c213f03f7a01018e5c",
+    "tmp_work/paper_tone_boundary_pilot_20261001/complete.json": "6637796e26236afd21504a198972f51823eaa0d1c85af94c9566fde740d9af48",
+    "tmp_work/paper_margin_defect_ddrm_20261001/manifest.json": "4144ebcec1bc15f2fbbf8d6bb9404974854aa55ea1139955eb2e74debdccc0e4",
+    "tmp_work/paper_margin_defect_ddrm_20261001/complete.json": "e80ed7bb006b9cdaac2918bc387f4ed98e5765cfeeaeb7936da25db1787eacf6"
+  },
+  "source_sha256": "87ccf6f590cda09024824cb278b0cb69363b5c67f96885091b6fc13c91edff55",
+  "pages": 14,
+  "regions": 22,
+  "selection": "all 22 prior development ROIs; no new selection"
+}

@@ -1,0 +1,65 @@
+{
+  "os": "Linux-6.17.0-35-generic-x86_64-with-glibc2.39",
+  "python": "CPython 3.10.20",
+  "startedAt": "2026-06-18T13:46:20.703915Z",
+  "args": [
+    "--input_dir",
+    "/home/imoto/Heritage_Pipeline/data/test/200003803",
+    "--output_dir",
+    "/home/imoto/Heritage_Pipeline/tmp_work/ddrm_result/200003803",
+    "--ckpt",
+    "/home/imoto/Heritage_Pipeline/modules/stain_removal/experiments/model_char/model_char/ckpt_epoch0500.pth",
+    "--device",
+    "cuda:0",
+    "--back_ground",
+    "scripts/../background/white.png",
+    "--patch_size",
+    "128",
+    "--overlap",
+    "32",
+    "--tmp_dir",
+    "/tmp/ddrm_tmp_gpu0_200003803"
+  ],
+  "program": "/home/imoto/Heritage_Pipeline/modules/ddrm_npj/scripts/pipeline_ddrm.py",
+  "codePath": "scripts/pipeline_ddrm.py",
+  "codePathLocal": "scripts/pipeline_ddrm.py",
+  "git": {
+    "remote": "https://github.com/dz-u/diffusionmodel_for_ancientpage.git",
+    "commit": "4cd76ba10f1ac7b484688ff107666a393d364477"
+  },
+  "email": "imotoyuichi01@gmail.com",
+  "root": "/home/imoto/Heritage_Pipeline/modules/ddrm_npj",
+  "host": "ihpc-a6000-0-WS-E900-G4-WS980T",
+  "executable": "/home/imoto/miniconda3/envs/diffusion/bin/python",
+  "cpu_count": 48,
+  "cpu_count_logical": 96,
+  "gpu": "NVIDIA RTX A6000",
+  "gpu_count": 2,
+  "disk": {
+    "/": {
+      "total": "1935237541888",
+      "used": "24146755584"
+    }
+  },
+  "memory": {
+    "total": "134722170880"
+  },
+  "gpu_nvidia": [
+    {
+      "name": "NVIDIA RTX A6000",
+      "memoryTotal": "51527024640",
+      "cudaCores": 10752,
+      "architecture": "Ampere",
+      "uuid": "GPU-61a66dc3-4e46-83f3-d889-7e6b5f33c424"
+    },
+    {
+      "name": "NVIDIA RTX A6000",
+      "memoryTotal": "51527024640",
+      "cudaCores": 10752,
+      "architecture": "Ampere",
+      "uuid": "GPU-75471331-fa5f-1f63-4302-edcb93115dd8"
+    }
+  ],
+  "cudaVersion": "13.2",
+  "writerId": "hmiq6pfpl0gbyyjs7236gbfrk522fpw7"
+}

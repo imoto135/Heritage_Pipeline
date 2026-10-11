@@ -1,0 +1,32 @@
+{
+  "source_sha256": "7c05d08aac142ec684375978923664efe84a9991eb90e0d372671b0061770667",
+  "dependencies": {
+    "scripts/benchmark/probe_raw_qualified_paper_colour.py": "7c05d08aac142ec684375978923664efe84a9991eb90e0d372671b0061770667",
+    "scripts/benchmark/probe_paper_boundary_pair_gate_v2.py": "8cfbe50a192ad12e0254a9bcff31271f357717fa88845df7b78820fc511580fe",
+    "tmp_work/paper_boundary_reference_bias_diagnostic_20261001/manifest.json": "cb61fe1178bf7032e7b457be4d3ef246dbbdf296f3979b9ffa3e6911f7242362",
+    "tmp_work/paper_boundary_reference_bias_diagnostic_20261001/complete.json": "083137bdf8a13a86dbd59f8af53221a7eaedaccc7180c3cb3e287c63220f4801",
+    "tmp_work/adaptive_paper_texture_scale_pilot_v2_20261001/manifest.json": "ba36650d7b0a9534610a118582e4f31ed7739627387792c991c91a9158d009a7",
+    "tmp_work/adaptive_paper_texture_scale_pilot_v2_20261001/complete.json": "b957225a5c852d7f320164e076957977c1682807299761dfac05d7ffd5d86c09"
+  },
+  "settings": {
+    "pages": 29,
+    "ROIs": 90,
+    "baseline": "directional abstention77 + new4-books13",
+    "fixed": "candidate edit, directional hold, retained paper-applied geometry, original observed L seam",
+    "reference_modes": {
+      "recomputed_colour": "same frozen known paper",
+      "raw_L_colour": "old known AND raw L>=50, Ldrop[-6,4]",
+      "raw_Lab_colour": "raw_L_colour AND abs(raw a-paper a)<=2, abs(raw b-paper b)<=4"
+    },
+    "qualification_paper": "same preprocessor estimate from full-page median Lab; classification only, frozen before colour solve",
+    "restorer": "same raw/sigma6 known-only smooth harmonic fields, boundary mix8, minimum16 adjacent pairs",
+    "colour_change": "baseline float field plus newly computed colour minus saved baseline colour, original fine L retained",
+    "unsupported": "retain saved baseline when new qualification gives insufficient16-pair support; no new applied pixels",
+    "texture_reference": "old qualified paper unchanged, separate from colour-only qualification",
+    "corrections_combined": false,
+    "new_DDRM": false,
+    "pixel_GT": false,
+    "development": true,
+    "control": "recompute old-known colour using same fixed active mask, to isolate historical-field recomputation"
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "wolf61": {
+    "window": 61,
+    "k": 0.5,
+    "global_min": 0.0470588244497776,
+    "global_max_std": 0.24313507974147797
+  },
+  "gatos_native": {
+    "noise_variance": 0.0007872652495279908,
+    "delta": 0.3626772244732283,
+    "mean_background": 0.7269845008850098,
+    "background_window": 181,
+    "undefined_background_pixels": 0,
+    "dominant_component_height": 13,
+    "post_window": 3,
+    "native_upsampling_factor": 1,
+    "initial_pixels": 175954,
+    "final_pixels": 200194
+  },
+  "su2013_local": {
+    "alpha": 0.17743679287377745,
+    "gamma": 1,
+    "contrast_otsu": 0.17151138186454773,
+    "canny_high": 0.038287673890590665,
+    "canny_low": 0.015315069556236266,
+    "edge_pixels": 80802,
+    "estimated_horizontal_edge_width": 47,
+    "threshold_window": 95,
+    "edge_pair_samples": 22185,
+    "window_override": null,
+    "initial_pixels": 345706,
+    "final_pixels": 328375,
+    "implementation_limit": "Canny uses skimage with automatic thresholds; final removal implements isolated pixels, not every boundary logical operator referenced in the paper. Author MATLAB p-code not executed."
+  },
+  "wolf61_k02": {
+    "window": 61,
+    "k": 0.2,
+    "global_min": 0.0470588244497776,
+    "global_max_std": 0.24313507974147797
+  }
+}

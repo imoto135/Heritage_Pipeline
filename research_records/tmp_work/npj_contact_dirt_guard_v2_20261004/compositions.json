@@ -1,0 +1,80 @@
+{
+  "cases": [
+    {
+      "id": "fresh_lower_paper",
+      "additional_applied": 806,
+      "additional_inside_frame": 208,
+      "additional_dark_to_bright": 204,
+      "additional_dark_to_bright_inside": 70,
+      "prior_applied_preserved_exact": true,
+      "not_adopted": true
+    },
+    {
+      "id": "fresh_binding_mark",
+      "additional_applied": 2956,
+      "additional_inside_frame": 2956,
+      "additional_dark_to_bright": 1209,
+      "additional_dark_to_bright_inside": 1209,
+      "prior_applied_preserved_exact": true,
+      "not_adopted": true
+    },
+    {
+      "id": "wormhole",
+      "additional_applied": 0,
+      "additional_inside_frame": 0,
+      "additional_dark_to_bright": 0,
+      "additional_dark_to_bright_inside": 0,
+      "prior_applied_preserved_exact": true,
+      "not_adopted": true
+    },
+    {
+      "id": "seal_control",
+      "additional_applied": 0,
+      "additional_inside_frame": 0,
+      "additional_dark_to_bright": 0,
+      "additional_dark_to_bright_inside": 0,
+      "prior_applied_preserved_exact": true,
+      "not_adopted": true
+    },
+    {
+      "id": "fresh_printed_text",
+      "additional_applied": 0,
+      "additional_inside_frame": 0,
+      "additional_dark_to_bright": 0,
+      "additional_dark_to_bright_inside": 0,
+      "prior_applied_preserved_exact": true,
+      "not_adopted": true
+    },
+    {
+      "id": "unseen_lower_frame_mark",
+      "additional_applied": 0,
+      "additional_inside_frame": 0,
+      "additional_dark_to_bright": 0,
+      "additional_dark_to_bright_inside": 0,
+      "prior_applied_preserved_exact": true,
+      "not_adopted": true
+    },
+    {
+      "id": "unseen_lower_binding_mark",
+      "additional_applied": 0,
+      "additional_inside_frame": 0,
+      "additional_dark_to_bright": 0,
+      "additional_dark_to_bright_inside": 0,
+      "prior_applied_preserved_exact": true,
+      "not_adopted": true
+    },
+    {
+      "id": "saved_hnsd",
+      "additional_applied": 3781,
+      "additional_inside_frame": 3781,
+      "additional_dark_to_bright": 2109,
+      "additional_dark_to_bright_inside": 2109,
+      "prior_applied_preserved_exact": true,
+      "not_adopted": true
+    }
+  ],
+  "recipe": "Keep previous frozen layout edit exactly; only apply guarded chroma-qualified fill outside its applied mask",
+  "no_new_selection_thresholds": true,
+  "no_solver_rerun": true,
+  "automatic_adoption": false
+}

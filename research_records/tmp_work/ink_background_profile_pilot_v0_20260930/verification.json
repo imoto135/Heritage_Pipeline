@@ -1,0 +1,22 @@
+{
+  "status": "passed",
+  "source_and_dependencies_unchanged": true,
+  "native_original_crops_verified": true,
+  "finite_nonnegative_estimates": true,
+  "sampled_label_counts_verified": true,
+  "numerical_checks": {
+    "exact_known_pigment_recovery": true,
+    "colored_crease_ambiguity_detected": true,
+    "background_only_detected": true,
+    "nonnegative_constraint_checked": true,
+    "withheld_intensities_not_used_in_fold_fit": true
+  },
+  "local_viewer_links_checked": true,
+  "browser_rendering_tested": false,
+  "pages": 3,
+  "diagnostic_rectangles": 5,
+  "dense_edit_mask_created": false,
+  "neural_training": false,
+  "pixel_GT": false,
+  "independent_accuracy_test": false
+}

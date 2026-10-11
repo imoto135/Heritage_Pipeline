@@ -1,0 +1,30 @@
+{
+  "cases": [
+    {
+      "id": "unseen_lower_frame_mark",
+      "raw_crop_exact": true,
+      "stored_masks_exact": true,
+      "full_page_v6_roles_exact": true,
+      "panel_pixels_exact": true,
+      "v6_kept_pixels_exact": true,
+      "all_methods_outside_applied_exact": true,
+      "ruled_changes_on_v6_keep": 0,
+      "v6_changed_pixels": 0
+    },
+    {
+      "id": "unseen_lower_binding_mark",
+      "raw_crop_exact": true,
+      "stored_masks_exact": true,
+      "full_page_v6_roles_exact": true,
+      "panel_pixels_exact": true,
+      "v6_kept_pixels_exact": true,
+      "all_methods_outside_applied_exact": true,
+      "ruled_changes_on_v6_keep": 0,
+      "v6_changed_pixels": 0
+    }
+  ],
+  "no_threshold_changes": true,
+  "no_text_generation": true,
+  "decision": "Lower-rule-only mask rejected for general use; v6 preserves selected roles but misses observed defects",
+  "limitations": "Role masks and dark-pixel counts are not semantic GT; visual counterexample is a required gate"
+}

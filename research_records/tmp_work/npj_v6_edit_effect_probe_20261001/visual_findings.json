@@ -1,0 +1,145 @@
+{
+  "findings": [
+    {
+      "id": "dense_stain",
+      "page": "hnsd001_011",
+      "verdict": "fill_artifact",
+      "observation": "濃い汚れは編集されるが、平坦な茶色の塗り跡と灰色の円状部分が生じる。マスク改善を復元成功と数えない。",
+      "baseline_failure": true,
+      "npj_changed_pixels": 13971,
+      "v6_changed_pixels": 3350
+    },
+    {
+      "id": "thin_black_water",
+      "page": "hnsd001_011",
+      "verdict": "stroke_preserved_stain_retained",
+      "observation": "旧npjマスクの補間では薄い筆画の一部と紙面の質感が変わる。v6はほぼ原画像を維持するが、水染み・ムラも残る。",
+      "baseline_failure": true,
+      "npj_changed_pixels": 113708,
+      "v6_changed_pixels": 10
+    },
+    {
+      "id": "brown_as_red",
+      "page": "200010454_00002_2",
+      "verdict": "fill_artifact",
+      "observation": "旧npjで朱候補だった茶色い中心をv6で編集できるが、平坦な塗り跡が残る。",
+      "baseline_failure": true,
+      "npj_changed_pixels": 5230,
+      "v6_changed_pixels": 3657
+    },
+    {
+      "id": "thin_black_loop",
+      "page": "200010454_00002_2",
+      "verdict": "stroke_preservation",
+      "observation": "旧npjマスクの補間で細い輪状筆画などが途切れる。v6はこの矩形の編集画素が0で、原画像と完全一致して筆画を維持する。",
+      "baseline_failure": true,
+      "npj_changed_pixels": 6116,
+      "v6_changed_pixels": 0
+    },
+    {
+      "id": "thin_black_text",
+      "page": "200003803_00009_2",
+      "verdict": "control_preserved",
+      "observation": "主要本文は両方で維持。旧npjマスクの補間は紙面を平滑化し、一部に平坦な点を作る。v6は影・ムラも含めほぼ原画像を維持。",
+      "baseline_failure": false,
+      "npj_changed_pixels": 135295,
+      "v6_changed_pixels": 2
+    },
+    {
+      "id": "warm_stroke",
+      "page": "200021763_00002_2",
+      "verdict": "stroke_preservation",
+      "observation": "v6では赤褐色の長い筆画の端部・周縁が残る。確定朱への分類成功ではなく、保留による編集回避。",
+      "baseline_failure": true,
+      "npj_changed_pixels": 62287,
+      "v6_changed_pixels": 386
+    },
+    {
+      "id": "control_black",
+      "page": "200021869_00010_2",
+      "verdict": "control_preserved",
+      "observation": "主要な黒筆画は両方で維持。v6は紙面の灰色成分もほぼ維持する。",
+      "baseline_failure": false,
+      "npj_changed_pixels": 45588,
+      "v6_changed_pixels": 4
+    },
+    {
+      "id": "dense_stain_new",
+      "page": "hnsd007_042",
+      "verdict": "stain_retained",
+      "observation": "本文・枠とつながる濃い茶色の塊は両方で残る。v6の変更は39画素で、中心の除去には至らない。",
+      "baseline_failure": true,
+      "npj_changed_pixels": 27020,
+      "v6_changed_pixels": 39
+    },
+    {
+      "id": "brown_false_red_new",
+      "page": "100249476_00003_1",
+      "verdict": "fill_artifact_and_stain_retained",
+      "observation": "v6は茶色い領域の一部を編集するが、塗り跡が出て広い薄茶色の染みも残る。",
+      "baseline_failure": true,
+      "npj_changed_pixels": 4248,
+      "v6_changed_pixels": 15572
+    },
+    {
+      "id": "hole_edge_new",
+      "page": "200021712_00082_1",
+      "verdict": "damage_retained",
+      "observation": "穴の濃い縁は両方で残る。v6で周縁を編集しても損傷の修復にはならない。",
+      "baseline_failure": true,
+      "npj_changed_pixels": 3681,
+      "v6_changed_pixels": 643
+    },
+    {
+      "id": "control_text_new",
+      "page": "200021712_00082_1",
+      "verdict": "control_preserved",
+      "observation": "v6はこの矩形を変更せず本文を維持する。同時に紙面の影も維持する。",
+      "baseline_failure": false,
+      "npj_changed_pixels": 37266,
+      "v6_changed_pixels": 0
+    },
+    {
+      "id": "brown_near_text",
+      "page": "200021869_00014_2",
+      "verdict": "stain_or_damage_retained",
+      "observation": "本文に接する茶色い中心は両方で残る。v6は主に周縁を変更する。原因が汚れか損傷かは未確定。",
+      "baseline_failure": true,
+      "npj_changed_pixels": 25572,
+      "v6_changed_pixels": 1353
+    },
+    {
+      "id": "dark_text_control",
+      "page": "200021869_00014_2",
+      "verdict": "control_preserved",
+      "observation": "主要な濃い本文は両方で維持。v6は43画素だけ変更し、紙面のムラも維持する。",
+      "baseline_failure": false,
+      "npj_changed_pixels": 27073,
+      "v6_changed_pixels": 43
+    },
+    {
+      "id": "faint_left_text",
+      "page": "200010454_00026_1",
+      "verdict": "stroke_preservation",
+      "observation": "旧npjマスクの補間では細い輪・払いの一部が消える。v6は薄い筆画をほぼ原状で残す。",
+      "baseline_failure": true,
+      "npj_changed_pixels": 20066,
+      "v6_changed_pixels": 66
+    },
+    {
+      "id": "damage_control",
+      "page": "200014740_00065_2",
+      "verdict": "damage_retained",
+      "observation": "別冊の穴・裂けの縁は両方で残る。v6は112画素だけ変更し、濃い縁の修復には至らない。",
+      "baseline_failure": true,
+      "npj_changed_pixels": 13435,
+      "v6_changed_pixels": 112
+    }
+  ],
+  "reviewer": "assistant_visual_review",
+  "human_confirmation_pending": true,
+  "pixel_GT": false,
+  "restoration_accuracy": false,
+  "full_npj_or_DDRM_reproduction": false,
+  "interpretation": "Same local operator isolates edit-mask consequences. It does not establish full restoration quality."
+}

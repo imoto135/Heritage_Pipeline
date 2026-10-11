@@ -1,0 +1,54 @@
+{
+  "code_sha256": {
+    "modules/ddrm_npj_v2/scripts/csc.py": "11815cbb82d6972644498db9c5a8879dfc7e104b14a2749e04fdf0198e19b22f",
+    "modules/ddrm_npj_v3/scripts/csc.py": "fc5a55b88ae0c90fda0c06508f510f15fde0d3913e47a444f650c7dce1a746ee"
+  },
+  "comparisons": [
+    {
+      "id": "T01",
+      "current_v2_vs_stored_v2_changed": {
+        "black": 0,
+        "red": 0,
+        "degradation": 379626,
+        "background": 0
+      },
+      "current_v3_default_vs_current_v2_changed": {
+        "black": 0,
+        "red": 0,
+        "degradation": 0,
+        "background": 0
+      }
+    },
+    {
+      "id": "N01",
+      "current_v2_vs_stored_v2_changed": {
+        "black": 0,
+        "red": 0,
+        "degradation": 80988,
+        "background": 0
+      },
+      "current_v3_default_vs_current_v2_changed": {
+        "black": 0,
+        "red": 0,
+        "degradation": 0,
+        "background": 0
+      }
+    },
+    {
+      "id": "N02",
+      "current_v2_vs_stored_v2_changed": {
+        "black": 0,
+        "red": 0,
+        "degradation": 250108,
+        "background": 0
+      },
+      "current_v3_default_vs_current_v2_changed": {
+        "black": 0,
+        "red": 0,
+        "degradation": 0,
+        "background": 0
+      }
+    }
+  ],
+  "notes": "Uses identical saved ACE input for current v2/v3 defaults; stored v2 may have other historical settings. No new DDRM inference."
+}

@@ -1,0 +1,896 @@
+PRISM: Pruning for Rank-adaptive Interpretable Segmentation Model
+with Application to Historical Document Multiband Images
+Kilian Declercq1,2
+Abderrahmane Rahiche1
+Mohamed Cheriet1
+1
+Synchromedia Laboratory, École de Technologie Supérieure (ÉTS), Montréal, Canada
+2
+ECAM LaSalle, Lyon, France
+Abstract
+Multispectral (MS) imaging reveals latent content in his-
+torical documents by leveraging material-specific spectral
+signatures. Low-rank decompositions such as Nonnegative
+Matrix Factorization (NMF) effectively extract these com-
+ponents, but selecting the appropriate rank remains an open
+challenge in unsupervised settings. We propose PRISM,
+a structured autoencoder that embeds a tri-factor NMF
+into a convolutional architecture and integrates similarity-
+driven pruning to automatically infer the effective number
+of components during training. The encoder enforces spa-
+tial attention to produce coherent abundance maps, while
+the decoder reconstructs interpretable spectral signatures
+through constrained linear decoding. This formulation
+yields compact, interpretable representations with no su-
+pervision or manual rank tuning. A Minimum Description
+Length criterion estimates the optimal rank directly from the
+input cube, balancing model complexity with data recon-
+struction. Experiments on historical manuscripts and cross-
+domain remote sensing datasets demonstrate PRISM’s abil-
+ity to produce meaningful decompositions, with few compo-
+nents and improved interpretability compared to fixed-rank
+NMF and deep learning baselines.
+1. Introduction
+Model pruning techniques effectively reduce the complex-
+ity of overparameterized deep networks, yet they often op-
+erate with fixed compression ratios without revealing why
+certain parameters are removed or offering principled stop-
+ping criteria [3, 31]. Simultaneously, interpretability re-
+mains a critical challenge, particularly in domains where
+understanding the model’s internal representations is as im-
+portant as its predictive accuracy. This is especially true for
+Blind Source Separation (BSS) problems, where the goal is
+to decompose a mixed signal into its underlying constituent
+sources without prior knowledge of the sources or the mix-
+Email correspondence: kilian.declercq.1@ens.etsmtl.ca
+(a) MS Cube (b) Pseudo color image
+(c) Segment Anything [23] (d) Dinov2 + Mask2Former [33]
+(e) MS-Former [20] (f) Ours
+Figure 1. Qualitative comparison of unsupervised segmentation
+methods with adaptive rank on sample BT56 from MSBin dataset.
+ing process [44]. Extending the concept of blind separation
+to image data, various methods for Blind Image Decom-
+position (BID) were developed for applications in remote
+sensing, to distinguish the land cover types present [21],
+in medical imaging, to isolate tissue types and anatomical
+structures in CT scans [30], or in natural images, separating
+superimposed components such as rain streaks, raindrops,
+snow, and haze [13]. A canonical example is Nonnegative
+Matrix Factorization (NMF), a powerful tool for discov-
+ering parts-based representations in data, such as images
+[24, 25, 29]. However, standard NMF requires the factor-
+ization rank (i.e., the number of components) to be specified
+beforehand, a critical limitation in multispectral (MS) his-
+torical document analysis, where the true number of sources
+is unknown (e.g., the number of distinct inks, substrates,
+auxiliary markings, and degradation products present).
+Analyzing ancient documents captured under multiple
+wavelengths (Multispectral or Hyperspectral (HS)), is es-
+sential for revealing hidden text, distinguishing chemically
+similar inks, and separating overlapping content in degraded
+manuscripts [10, 40]. Yet, decomposing these MS images
+into meaningful components (e.g., text, background, stains,
+This ICCV Workshop paper is the Open Access version, provided by the Computer Vision Foundation.
+Except for this watermark, it is identical to the accepted version;
+the final published version of the proceedings is available on IEEE Xplore.
+7585
+stamps) remains extremely challenging due to ink diffusion,
+paper degradation, spectral overlap, and low signal-to-noise
+ratios [14], making automatic rank determination crucial for
+document analysis and preservation.
+Even sophisticated modern segmentation approaches, in-
+cluding Vision Transformers (ViT), often struggle with doc-
+ument images. This is primarily due to the inherent fine-
+grained nature of text, where thin strokes and delicate struc-
+tures are difficult for patch-based processing. Even SoTA
+segmentation transformers, presented as global and multi-
+task, exhibit limited performance: Dinov2 [33] may help
+identify document regions but struggles with character-level
+segmentation, while Segment Anything Model (SAM) [23]
+cannot find a balance between over-segmentation (split-
+ting text into individual characters) and under-segmentation
+(merging multiple characters into coarse blobs), as seen
+on Fig. 1. These models also don’t benefit from the advan-
+tages of MS imagery with a fixed number of channel design,
+tailored for RGB input. An ideal unsupervised method for
+multiband image decomposition should not only separate
+the layers accurately but also be interpretable (i.e., reveal-
+ing a clear spatial distribution for each component with its
+associated spectral signature) and adaptive to diverse con-
+figurations (e.g., variable depth, resolution or wavelengths).
+To address these limitations, we introduce PRISM,
+Pruning for Rank-adaptive Interpretable Segmentation
+Model. This framework re-envisions pruning not only as
+a compression tool, but as a mechanism for dynamic rank
+selection within an NMF-inspired decomposition model.
+PRISM employs a lightweight, asymmetric convolutional
+autoencoder architecture. The encoder uses spatial attention
+to learn structured spatial abundance maps from the multi-
+band image input. The decoder enforces interpretability
+through a nonnegative linear layer, reconstructing the im-
+age from these abundances and learned spectral signatures.
+Crucially, PRISM starts with an overcomplete set of poten-
+tial components and integrates a learnable pruning mecha-
+nism that progressively deactivates weights tied to the most
+redundant maps during training. This process is guided by
+orthogonality constraints encouraging distinct components
+and by a criterion inspired by the Minimum Description
+Length (MDL) principle [11, 43]. The latter balances re-
+construction fidelity with model compression (linked to still
+active map count) to identify the optimal rank. The convo-
+lutional structure facilitates information redistribution from
+pruned components to active ones, effectively merging se-
+mantically related features. PRISM thus learns both the
+decomposition and the optimal number of components di-
+rectly from the data, yielding interpretable low-rank repre-
+sentations, tailored for challenging document analysis tasks.
+The main contributions of this paper are as follows:
+i) We introduce a new pruning approach guided by a simi-
+larity criterion with an overcomplete-to-optimal training
+strategy, enhancing model interpretability and segmenta-
+tion quality.
+ii) To preserve the spatial relationship between pixels, we
+implement a new lightweight hybrid NMF–convolutional
+autoencoder structure capable of processing whole MS
+and HS cubes of various resolutions and depths.
+iii) Unlike existing models that integrate a two-factor NMF,
+we propose a novel architecture with a tri-factorization
+scheme and a non-local attention module for a more flex-
+ible representation and better focus on important regions.
+iv) We validate PRISM on real datasets, showing its effec-
+tiveness for text binarization via MS cube decomposi-
+tion. Quantitative and qualitative results confirm SoTA
+performance for unsupervised historical document seg-
+mentation. Generalization to remote sensing related task,
+demonstrates method adaptability, key for handling the
+unpredictable structure of historical documents.
+2. Related work
+PRISM integrates concepts from several research areas. We
+position our work relative to recent advances in (i) blind de-
+composition and spectral unmixing, (ii) models combining
+deep learning with matrix factorization principles and (iii)
+interpretable pruning and unsupervised rank selection.
+Blind decomposition and spectral unmixing. Blind Im-
+age Decomposition (BID) seeks to separate a composite im-
+age into its constituent layers when both the sources and
+the mixing process are unknown [13]. This general task
+encompasses various applications, including removing en-
+vironmental effects on images [44], decomposing images
+and videos into dynamic foreground layers and static back-
+grounds [1], or separating illumination effects for auto-
+matic white balancing [46], with recent deep learning ap-
+proaches significantly advancing the area. In remote sens-
+ing and medical imaging, an analogous problem is spectral
+unmixing, which decomposes hyperspectral (HS) or multi-
+spectral (MS) images into a set of pure spectral signatures
+(i.e., endmembers) and their corresponding spatial abun-
+dance maps [22, 32]. In HSI analysis, transformer-based
+architectures combined with diffusion models, like Diff-
+Unmix [48], reformulate denoising and unmixing as condi-
+tional abundance generation, leveraging multi-scale atten-
+tion for improved endmember extraction. Other works pro-
+pose novel paradigms like “unmixing before fusion” to gen-
+erate synthetic HSI data by learning generative models in a
+lower-dimensional abundance space [47]. While powerful,
+these methods often rely on large pre-trained models, re-
+quire task-specific heuristics, or assume a fixed number of
+components. Furthermore, their application to the unique
+challenges of historical document images (e.g., fine textual
+details, bleeding or overlapping inks, few annotated data,
+varying degradations, etc.) is not straightforward.
+7586
+Hybrid Autoencoder–Factorization models. A growing
+body of research explores the integration of classical matrix
+factorization techniques, particularly NMF, with deep neu-
+ral networks to leverage the strengths of both approaches.
+These hybrid models often aim to enhance interpretabil-
+ity by constraining the network’s latent space or weights
+according to factorization principles. In the HS unmixing
+field, Autoencoder (AE) networks were first introduced us-
+ing a pixel-wise approach (i.e., input vector representing a
+single data point) [27]. While this early work effectively
+estimated abundance-like representations decoded via fully
+connected layers, the explicit connection to matrix factor-
+ization was not fully drawn. Subsequent research in re-
+mote sensing built upon this, introducing deeper architec-
+tures like variational AEs [45], recurrent structures such as
+LSTMs [50], 3D CNN for spatial-spectral feature extrac-
+tion [1], and more recently incorporating ViT with spatial-
+spectral attention [39]. Concurrently, non-neural factor-
+ization methods like NMF and Archetypal Analysis con-
+tinue to be effectively applied to HS unmixing [49, 51]. A
+key development in bridging unmixing AEs with convex
+NMF was a series of work by Palsson et al., summarized
+in [38], interpreting the AE’s decoder weights as endmem-
+bers and the latent features as abundances. To address the
+loss of spatial context inherent in pixel-wise approaches, a
+lightweight convolutional AE structure was also introduced,
+demonstrating strong performance, particularly in generat-
+ing spatially coherent abundance maps [37]. In parallel,
+for MS document image decomposition, advanced related
+factorization concepts have proven their effectiveness, such
+as NMF variants with optimization on orthogonal mani-
+folds (MA-ONMF) [41] or variational Bayesian NMF [42],
+which demonstrated interest in the task of model selection.
+AE structures have also been explored for the text binariza-
+tion task [4], but no hybrid structures have been observed.
+Interpretable pruning and unsupervised rank selection.
+Recent efforts in interpretable pruning leverage similarity
+metrics to identify and remove redundant network compo-
+nents like weights, filters, concepts, channels, or even layers
+[2, 5, 28]. While this offers a degree of interpretability by
+targeting similarity-based redundancy, such approaches, to
+our knowledge, have not been directly formulated to per-
+form dynamic rank selection for unsupervised decomposi-
+tion tasks. While rank selection (i.e., determining optimal
+number of components in images) remains an open chal-
+lenge in computer vision, only very few recent approaches
+have emerged, even for Vision Transformers (ViT), which
+have become foundational for segmentation tasks. Despite
+recent advances incorporating hierarchical clustering, meth-
+ods such as Mask2Former [6] are designed for dataset-
+specific applications, requiring extensive pre-training on la-
+beled data. DINOv2 [33] proposes a self-supervised model,
+extracting robust visual representations directly from data,
+allowing SoTA performances on downstream tasks even
+without fine-tuning. However, it relies on adding a trained
+segmentation head, either a linear layer or a Mask2Former
+head, that learns the mapping between the extracted features
+and the predefined labeled materials. Segment Anything
+Model (SAM) [23] employs a promptable ViT-based image
+encoder for universal image segmentation. It also proposes
+an image automatic segmentation with a predefined visual
+prompt and a masks merging strategy based on quality met-
+rics and non-maximum suppression. However, as discussed
+earlier, the quality of the produced segmentation highly de-
+pends on the input prompt, requiring user involvement for
+alignment, and is not suitable for document images. In
+medical imaging, where the scarcity of large-scale anno-
+tated datasets is also a challenge, MS-Former [20] proposes
+a transformer architecture with self-supervisory regulariza-
+tion for unsupervised segmentation of skin and lung images.
+To the best of our knowledge, this is the only ViT-based
+method capable of dynamic rank selection with complete
+unsupervised training for multiband image segmentation.
+Relation to PRISM and key novelties. PRISM builds
+upon these hybrid methodologies, specifically targeting
+document image segmentation. It employs a convolutional
+AE architecture, adapted from [37], combined with orthog-
+onal NMF principles [41]. Crucially, PRISM distinguishes
+itself from the aforementioned fixed-rank methods by intro-
+ducing a dynamic pruning mechanism to determine the op-
+timal number of underlying factors (r). Unlike MDL-based
+approaches requiring post-hoc rank selection after multi-
+ple NMF runs [43], or variational Bayesian NMF methods
+that impose an automatic relevance determination (ARD)
+prior on the optimization but require per-input hyperparam-
+eter tuning [42], PRISM enables MDL-guided rank selec-
+tion within a single end-to-end training process. While
+MS-Former [20] offers a related online adaptation for med-
+ical imaging, PRISM differs by maintaining both NMF
+strengths and CNN high-resolution efficiency. By integrat-
+ing these elements, PRISM aims to achieve a more inter-
+pretable and adaptive decomposition of multiband images.
+3. The proposed model
+3.1. Problem formulation
+In spectral data imaging, the Linear Mixing Model (LMM)
+is a widely used framework to describe the generation of
+MS/HS images. Under the LMM, each observed pixel in
+the image is assumed to arise from a convex combination of
+a finite set of spectral signatures (known as endmembers),
+perturbed by additive noise. Let Y ∈ Rb×n
++ be the observed
+spectral data matrix, where b is the number of spectral bands
+and n the number of pixels. The LMM expresses the data
+as :
+  \mathbf {Y} = \mathbf {E}\,\mathbf {A} + \mathbf {N}, \label {eq:lmm}  (1)
+7587
+Figure 2. Overview of the proposed architecture and the iterative pruning strategy.
+where E ∈ Rb×r
++ contains r pure endmember spectra
+as columns, A ∈ Rr×n
++ holds the corresponding abun-
+dance fractions, and N represents additive noise. To en-
+sure that each pixel is modeled as a convex combination
+of endmembers, the abundance matrix A is subject to
+two constraints: the Abundance Nonnegativity Constraint
+(ANC), A ≥ 0, and the Abundance Sum-to-One Constraint
+(ASC), 1⊤
+r A = 1⊤
+n , where 1k is the all-ones vector in Rk
+.1
+NMF can be seen as a process that seeks to reverse the
+linear mixing in Eq. (1) by finding nonnegative matrices
+\protect \mathbf  {E}\in \mathbb {R}_{+}^{b\times r} and \protect \mathbf  {A}\in \mathbb {R}_{+}^{r\times n} that satisfy
+  \mathbf {Y}\;\approx \;\mathbf {E}\,\mathbf {A}, \label {eq:nmf}  (2)
+often under additional constraints—such as sparsity on
+\protect \mathbf  {A}, smoothness on \protect \mathbf  {E}, or orthogonality of columns—to
+enhance endmember and abundance estimation following
+prior knowledge (e.g., abundances are sparse or endmem-
+ber spectra vary smoothly across bands). To fit complex
+data while retaining the same constraint-based philosophy,
+an additional matrix S ∈ Rr×r
++ is incorporated in Eq. (2),
+which results in a tri-factorization model that writes
+  \mathbf {Y}\approx \mathbf {E}\,\mathbf {S}\mathbf {A}, \label {eq:tri_factor}  (3)
+This tri-factorization thus extends constrained NMF, offer-
+ing extra flexibility to model nonlinear or higher-order in-
+teractions while preserving the interpretability guaranteed
+by nonnegativity [8]. In contrast to most existing methods
+[1, 37, 45, 50], we adopt model (3) in our architecture as
+the intermediate scaling matrix S relaxes the optimization,
+providing additional flexibility by encoding the latent rela-
+tionships among endmembers (E) and the abundance (A).
+1Treating Y as nonnegative is natural since pixel intensities, whether
+radiance, reflectance, or even photon counts, are inherently nonnegative.
+3.2. Proposed PRISM model
+The proposed autoencoder-like NMF model, PRISM, con-
+sists of an encoder-decoder structure with a non-local at-
+tention layer and an interpretable pruning mechanism de-
+signed to automatically estimate the number of components
+found in the input MS scene during training. The encoder
+is designed to extract a rich feature representation from an
+input MS cube, Y ∈ Rh×w×b
+, where h × w is the spatial
+size and b is the number of spectral bands. It generates the
+abundance maps A ∈ Rh×w×r
+, where each map represents
+the relative proportions of spectral endmembers present at
+each pixel. Here, the rank r is initialized to a large number,
+with maps being progressively deactivated by the pruning
+process. Following Eq. (3), the decoder combines the acti-
+vated abundance with a learned scale matrix S. It then re-
+constructs the input image with learned endmembers E. An
+overview of the whole architecture is illustrated in Fig. 2.
+Encoder. The encoder consists of four sequential layers
+designed to process the entire set of MS bands simultane-
+ously. In contrast to existing approaches [37] that adopt a
+patch-based strategy, our encoder operates on the full im-
+age, extracting useful relationships from all pixels. It be-
+gins with a 2D convolutional layer employing c = 4 × b
+kernels. The resulting feature maps are fed into an at-
+tention block, which refines the feature representation by
+emphasizing informative regions. The encoder concludes
+with another depthwise 2D layer, followed by a pointwise
+convolution, creating an expand-and-compress pattern that
+captures spatial and channel-wise dependencies before out-
+putting r maps. Finally, a temperature-scaled softmax func-
+tion is used to handle the nonnegativity of the abundances,
+elegantly satisfying both ANC and ASC conditions. By
+adjusting the temperature hyperparameter, the sparsity of
+abundance coefficients can be tailored to match the unmix-
+ing requirements (i.e., mixed materials for remote sensing
+unmixing or pure pixels for text segmentation).
+7588
+Decoder. In contrast to models utilizing symmetric
+encoder-decoder structures like [1], our PRISM architecture
+incorporates a lightweight, nonnegative decoder that pre-
+serves the interpretability of its learned components. This
+decoder reconstructs the b input spectral bands from the
+r abundance maps (A) by emulating the tri-factorization
+Y ≈ ESA. Specifically, the r abundance maps are first
+processed by an interaction matrix S, which is a learnable
+r×r nonnegative matrix. The resulting r transformed maps
+then pass through a final unbiased pointwise convolution,
+whose b×r nonnegative weights constitute the learned end-
+member matrix E and produce the b output bands. This
+streamlined, asymmetric design significantly reduces com-
+putational demands and the total parameter count; for in-
+stance, the decoder’s learnable parameters for both S and
+E totalled r(r + b) = 2088 for a 162-band hyperspectral
+image, before pruning. Both E and S are constrained to be
+nonnegative and are updated via backpropagation.
+Attention block. The core of our attention block is adapted
+from the original Large Kernel Attention (LKA) [12] that
+is designed to enhance feature representation by capturing
+both local and global relationships between pixels of MS
+images. The module begins by processing the input feature
+map through a standard 2D convolutional layer (DW-Conv)
+with a 5 × 5 kernel size to extract local spatial features.
+This is followed by a dilated depth-wise convolution (DW-
+D-Conv) with a 7 × 7 kernel, which expands the receptive
+field without increasing parameters, capturing broader con-
+text by processing each channel independently. A pointwise
+convolution then combines features across all channels, re-
+fining the representation. The resulting feature map is mul-
+tiplied element-wise with the original input feature map,
+acting as an attention mechanism that emphasizes informa-
+tive regions and suppresses less relevant features. Finally,
+a pointwise convolution, with the same number of output
+channels as the input, further refines the features, producing
+the final output. Attention block is detailed in Supp. Mat.
+Interpretable pruning. At the initial state, the model
+is deliberately overcomplete, with more abundance maps
+than objects, enabling the network to capture a comprehen-
+sive set of all potential components, as done in [20, 42].
+From these starting rinit abundance maps, an iterative train-
+ing strategy is employed where the model alternates be-
+tween training until early stopping, and a pruning step that
+deletes the least informative map. At each pruning step, the
+model is forced to adapt itself through merging, shifting,
+or removal of elements; effectively distilling its knowledge
+into a more compact representation. This strategy offers
+the significant advantage of providing interpretability into
+the model’s focus and enabling control over its decision-
+making process. To identify the least informative map, a
+pairwise similarity score between all unpruned maps is cal-
+culated to identify the most similar pair. From this pair, the
+map with the smallest Frobenius norm (i.e., the map repre-
+senting the smallest image proportion) is added to the set
+of pruned maps. Each map in this set sees the pointwise
+convolution weights producing it being masked, as for its
+corresponding decoder weights, which represent the asso-
+ciated endmember. The similarity formula we developed is
+adapted from the cross-correlation coefficient. To mitigate
+an object fragmentation side effect, which may be induced
+in early overcomplete steps, a spatial smoothing operation
+is applied prior to calculation, using a Gaussian-like filter.
+We observed that if two maps represented similar spatial re-
+gions, having a small object within a larger one was often
+more penalized than the same object split into two separated
+equal parts. Therefore, the difference between the two maps
+activation was included in the equation. Moreover, the spec-
+tral angular distance between the corresponding endmem-
+bers was incorporated to penalize materials having similar
+endmembers but located at different spatial positions. The
+final similarity formula, capturing both spatial and spectral
+similarity between materials, is then expressed as follows:
+  \mathcal {S}_{i,j} = \frac {1}{| {\langle \mathcal {A}_i - \mathcal {A}_j, \mathbf {1} \rangle } |+\epsilon }\frac { {\langle \mathcal {A}_i, \mathcal {A}_j \rangle }} {\| A_i \| \| A_j \|} + \lambda _{\text {SAD}'}\mathcal {L}_{\text {SAD}'}(E_i, E_j), \label {eq:sim}  (4)
+where LSAD′ (Ei, Ej) is the spectral angular similarity be-
+tween endmembers, λSAD′ is a parameter added to scale this
+distance, ⟨·, ·⟩ is the inner product, and ϵ prevents division
+by zero (see Supp. Mat. for ablation and hyperparameters).
+Objective function. The loss function is composed of three
+terms. The reconstruction error between the input MS cube
+and the generated output is measured using a combination
+of Spectral Angle Distance (SAD) and MSE. SAD, a scale-
+invariant measure, addresses spectral variability by eval-
+uating differences along the depth dimension [38], while
+MSE enforces stricter material discrimination by encourag-
+ing element-wise reconstruction. A third term, Lorth, en-
+forces the orthogonality of the abundance matrix A, to pro-
+mote spatially distinct and localized segments. The total
+loss formula, detailed in Supp. Mat., is given as follows:
+  \mathcal {L}_\text {total} = \mathcal {L}_\text {SAD} + \lambda _{1}\mathcal {L}_\text {MSE} + \lambda _{2}\mathcal {L}_\text {orth}. \label {eq:loss}  (5)
+Rank selection criterion. Our channel pruning approach
+seeks to minimize an objective function grounded in the
+Minimum Description Length (MDL) principle [11, 43]
+  \min _{H} \left \{ L(H) + L(D \mid H) \right \},  (6)
+Here, L(D | H) quantifies the data reconstruction error,
+given a model H, while L(H) represents the model’s com-
+plexity or description cost. This framework naturally relates
+to optimizing our Tri-NMF-like model (Y ≈ ASE). In this
+analogy, the model H encompasses the factors {A, S, E}.
+7589
+Figure 3. Evolution of L(H)+L(D | H) during pruning iteration on a MStex sample with 12 initial maps. Reference abundance maps are
+displayed for some ranks. The loss value decreases with each iteration until the model reaches an optimal decomposition for 3 materials.
+The reconstruction term, LSAD + λ1LMSE, directly corre-
+sponds to L(D | H). The model complexity L(H) is in-
+fluenced by both the structure and size of the factors, the
+latter explicitly minimized during the iterative pruning with
+dimensionality reduction (e.g., for A and E ). The struc-
+tural complexity is captured through the orthogonality con-
+straint AT
+A = I, which favors more compact represen-
+tations. We further penalize model size with an additional
+cost proportional to rank r, scaled by a factor λ3. This com-
+plete objective function therefore represents the total MDL
+cost, L(H) + L(D | H), summing the data reconstruction
+error with the model complexity (comprising both the struc-
+tural cost influenced by orthogonality, λ2Lorth and the rank-
+dependent size penalty λ3r). Figure 3 plots this total MDL
+cost across successive pruning stages on a sample image.
+It reveals a characteristic curve that descends, as pruning
+reduces the rank while the model adapts its features to bet-
+ter reconstruct the data D, before reaching a global min-
+imum. Beyond this point, the function starts to increase,
+indicating the onset of overfitting, with the model forced to
+merge components identified as most similar. This empiri-
+cal minimum represents an optimal MDL trade-off; it bal-
+ances compression with data fidelity, identifying the most
+relevant component set, and serves as our rank selection cri-
+terion. Ablation comparing reconstruction loss alone versus
+total MDL cost is shown in the Supplementary Material.
+4. Experiments
+We conducted our main experimental evaluation on 51 dis-
+tinct MS input cubes from MSTEx-1, MSTEx-2, and MS-
+Bin collections, as well as from the Urban HS dataset.
+MSTEx 1 & 2 [14] These collections include 20 MS cubes
+of historical manuscripts from the 17th to 20th centuries,
+provided by BAnQ (Bibliothèque et Archives nationales du
+Quebec). Each cube consists of 8 spectral bands captured
+in the range from 340nm to 1100nm. These images were
+acquired using a Chroma X3 KAF 6303E (Kodak) camera
+at a 6-megapixel resolution (9 µm pixel size). Ground-truth
+(GT) classifies pixels into text or non-text categories only.
+MSBin [17] This collection contains 30 “test” MS cubes
+captured using a Phase One IQ260 achromatic camera with
+a resolution of 60 megapixels, across twelve narrow-band
+ranging from 365nm to 940nm. The images were digi-
+tized from two manuscripts: the Bitola-Triodion ABAN 38
+(Book BT) and Enina-Apostolus NBMK 1144 (Book EA),
+the latter in severely degraded condition. The ground truth
+identifies pixels as text foreground (iron gall ink), back-
+ground, or uncertain regions, too complex for manual anno-
+tations (the latter not included in evaluation). Some images
+also feature a second red ink foreground, as seen on Fig. 1.
+Urban [19] This dataset is a cornerstone in hyperspectral
+unmixing research, which features 307×307 pixels with 162
+spectral bands. Acquired by the HYDICE sensor over the
+Washington DC Mall, it provides three GT scenarios with
+4, 5, and 6 materials, ideal for benchmarking our rank se-
+lection algorithm. With a 2×2 m² spatial resolution and a
+spectral range of 400–2500 nm, it supports detailed material
+identification in urban scenes with highly mixed sources.
+4.1. Text extraction analysis
+4.1.1. Compared methods
+Given that GT exists only for text components, we employ
+text binarization benchmarks to assess decomposition qual-
+ity. As a baseline, we use Howe’s method [18], which is
+one of the SoTA document image binarization algorithms
+in the literature. We also compare the performance of five
+traditional models designed for text extraction: Spatial Ker-
+nel K-Harmonic Means (SKKHM) [26], Gaussian Mixture
+Models (GMMs) [16], Selectional AE (SAE) [4], and Adap-
+tive Coherence Estimator (ACE) v1 & v2 [7, 15]. We also
+compare against two NMF models for BID, namely, MA-
+ONMF, a bi-orthogonal NMF [41], and VBONMF, a Vari-
+7590
+ational Bayesian Orthogonal NMF [42]. Additionally, we
+consider cross-domain methods, with several LMM-based
+AE for unmixing: Endnet [34], MTAEU [36], DAEU [35],
+OSPAEU [9], and CNNAEU [37]. We also evaluated MS-
+Former [20], a promising adaptive-rank ViT-based model.
+4.1.2. Metrics
+To objectively evaluate the performance of the proposed
+model and quantitatively compare it with state-of-the-art
+methods, we employed four standard evaluation metrics:
+F-Measure (FM), Distance Reciprocal Distortion (DRD),
+Negative Rate Metric (NRM), and Peak Signal-to-Noise
+Ratio (PSNR). FM and PSNR values are expressed as per-
+centages (%) and decibels (dB), respectively, with higher
+values indicating better binarization quality. Conversely,
+DRD and NRM values range from 0 to 1, with lower val-
+ues indicating superior binarization performance. Detailed
+metric formulas are provided in Supplementary Material.
+4.1.3. Text extraction results
+Experimental results on the 20 cubes from MSTEx-1 and
+MSTEx-2, seen in Tab. 1, confirm our model’s efficacy,
+achieving the best performance across most metrics. This
+underscores its strong image decomposition capabilities.
+While MA-ONMF, VBONMF, and ACE2 also demon-
+strated competitive results, their average performance was
+lower than ours. Traditional methods such as SKKHM
+and SAE yielded limited performance, in some cases even
+underperforming Howe binarization. MS-Former recorded
+the lowest overall performance on these datasets. Notably,
+some HS unmixing autoencoder-based methods, specifi-
+cally OSPAEU and MTAEU, showed results comparable to
+document-specific techniques without task-specific tuning.
+Table 1. Average performance across the 20 MS cubes in
+MSTEx-1 & 2.
+Method FM(%)↑ DRD(10-3
+)↓ NRM(10-2
+)↓ PSNR↑
+Cross-domain methods
+MSFormer [20] 57.15 19.76 16.79 11.55
+Endnet [34] 61.23 32.20 14.08 11.87
+CNNAEU [37] 65.43 31.02 17.99 13.22
+DAEU [35] 71.49 12.33 14.88 14.50
+OSPAEU [9] 73.62 18.74 12.98 14.78
+MTAEU [36] 73.30 17.01 8.30 13.95
+Document-tailored methods
+SAE [4] 64.98 9.94 14.33 13.45
+SKKHM [26] 71.78 11.09 13.37 14.35
+Howe [18] 76.96 6.63 8.94 14.94
+GMM [16] 80.72 5.12 10.42 16.05
+ACE v1 [15] 83.85 4.12 9.11 -
+MAONMF [41] 85.09 3.59 7.52 -
+ACE v2 [7] 85.15 3.66 8.29 -
+VBONMF [42] 85.70 3.55 6.31 17.12
+Ours 86.47 3.11 7.30 17.24
+On the 30 input cubes of MSBin (Table 2), our method again
+achieved the best results across all metrics for unsuper-
+vised text extraction. MA-ONMF and VBONMF methods,
+which require input-specific hyperparameter tuning, could
+not be reproduced for generalization to this dataset. Many
+document-specific methods, including Howe and SAE, ex-
+hibited diminished performance on MSBin compared to
+MSTEx, attributable to highly degraded samples from the
+EA manuscript. In some instances, these methods failed to
+extract any text, emphasizing the criticality of robust de-
+composition (see Supp. Mat.). Conversely, while achieving
+numerically lower metrics, cross-domain methods main-
+tained consistent performance, indicating good generaliza-
+tion and validating LMM as a strong framework for both
+HS and MS image decomposition. MTAEU secured the
+second-best NRM score after our method. MS-Former
+showed improved performance, potentially due to the larger
+character strokes benefiting its patch-based architecture.
+Table 2. Average performance across the 30 MS cubes in
+MSBin.
+Method FM(%)↑ DRD(10-3
+)↓ NRM(10-2
+)↓ PSNR↑
+Cross-domain methods
+CNNAEU [37] 67.10 39.52 19.35 10.32
+Endnet [34] 67.62 41.71 20.61 10.57
+MSFormer [20] 69.87 46.62 12.55 13.18
+OSPAEU [9] 71.59 52.90 13.14 11.77
+DAEU [35] 72.68 29.73 16.50 11.77
+MTAEU [36] 74.02 34.25 12.81 11.35
+Document-tailored methods
+MAONMF [41] - - - -
+VBONMF [42] - - - -
+SAE [4] 40.83 50.86 32.42 8.95
+Howe [18] 41.50 38.68 31.27 10.48
+SKKHM [26] 73.42 26.78 17.43 11.74
+GMM [16] 80.00 20.35 - 13.18
+ACE v2 [7] 81.25 20.80 - 13.27
+ACE v1 [15] 81.28 22.03 - 13.28
+Ours 82.57 18.71 10.45 13.74
+4.2. Qualitative analysis
+4.2.1. Text component
+For a qualitative assessment, Figs. 1 and 4 compares our
+decomposition and text extraction with different methods.
+This subjective analysis is essential for capturing nuances,
+like fine detail preservation, stroke continuity, and charac-
+ter clarity, that quantitative metrics may not fully reflect. In
+Fig. 4, most methods, including VBONMF, struggle to dis-
+tinguish the overlapping stamp from handwritten text, ex-
+cept for OSPAEU, MA-ONMF, and our model, confirming
+PRISM’s effectiveness. On this specific sample, GMM also
+demonstrates a performant text extraction, with the excep-
+tion of a small stamp part, resulting in a lower FM score.
+7591
+(a) z31 (b) GT (c) Howe (d) VBONMF
+(e) OSPAEU (f) MA-ONMF (g) GMM (h) Ours
+Figure 4. Text components extracted by different methods, ordered by FM, on the sample z31 from MSTEx-1. Visualized as in [41, 42].
+6 Materials 5 Materials 4 Materials
+Ours GT Ours GT Ours GT Ours GT Ours GT Ours GT
+(a) (b)(a) (b)(a) (b)
+(c) (d)(c) (d)(c) (d)
+(e) (f) (e)
+Figure 5. Qualitative assessment of PRISM on Urban dataset for 6, 5 and 4 materials: (a) Asphalt, (b) Grass, (c) Trees, (d) Roof, (e) Soil,
+and (f) Metal. Components (f) Metal and (e) Soil are iteratively merged to the most related maps following the three given GT scenarios.
+4.2.2. Remote sensing generalization
+Following the similarity with the HS unmixing task, gen-
+eralization of PRISM was tested on the Urban dataset. Our
+model successfully extracted the abundances corresponding
+to three given GT scenarios for 6, 5, and 4 materials, respec-
+tively, with performance similar to fixed-rank models [38].
+From twelve initial maps, (12−r) abundances are generated
+after r pruning iterations, iteratively producing the results
+seen in Fig. 5. To our knowledge, this is the first approach
+trying to obtain the results for the three different scenarios
+in a single end-to-end training (more results in Supp. Mat.).
+5. Discussion
+This work demonstrates that similarity-driven pruning can
+serve as an effective rank-selection mechanism inside an
+NMF-constrained autoencoder.
+On two challenging historical-manuscript datasets with di-
+verse temporal and geographical origins, PRISM consis-
+tently outperforms classical and transformer-based meth-
+ods, while producing interpretable abundance/endmember
+pairs. The empirical success across domains suggests
+that linear-mixing-based priors, when combined with
+lightweight deep models, remain highly competitive for
+data-scarce decomposition problems. The proposed ap-
+proach offers significant potential for applications requir-
+ing interpretable decomposition with minimal supervision,
+such as cultural preservation or environmental monitoring.
+Nevertheless, the MDL trade-off between compactness and
+semantic completeness is sensitive to the pruning schedule;
+aggressive compression may discard rare but meaningful
+components. Future versions should therefore integrate do-
+main cues (e.g., either weak labels or physics-based priors)
+to prevent such failures, especially for sensitive domains.
+Future work will explore semi-supervised versions to
+incorporate domain knowledge, investigate reinforcement
+learning for more adaptive pruning policies, and extend
+the framework to natural RGB images, using PRISM as a
+lightweight segmentation head on top of frozen pre-trained
+encoders. In this context, the feature maps extracted by
+these encoders can be interpreted as multiband images,
+making our approach directly applicable for feature-space
+unmixing. Finally, developing robust metrics for the seman-
+tic quality of unsupervised decompositions would further
+solidify the performance comparison between such models.
+7592
+Acknowledgments
+This research was supported by the Natural Sciences and Engi-
+neering Research Council of Canada (NSERC) through the Dis-
+covery Grant Program [Grant No. RGPIN-05230-2019]. This as-
+sistance, which enabled this research, is gratefully acknowledged.
+References
+[1] Jean-Baptiste Alayrac, Joao Carreira, and Andrew Zisser-
+man. The visual centrifuge: Model-free layered video repre-
+sentations. In CVPR, pages 2457–2466, 2019. 2, 3, 4, 5
+[2] Sotiris Anagnostidis, Dario Pavllo, Luca Biggio, Lorenzo
+Noci, Aurelien Lucchi, and Thomas Hofmann. Dynamic
+context pruning for efficient and interpretable autoregressive
+transformers. In NeurIPS, pages 65202–65223, 2023. 3
+[3] Davis Blalock, Jose Javier Gonzalez Ortiz, Jonathan Fran-
+kle, and John Guttag. What is the State of Neural Network
+Pruning? Proceedings of Machine Learning and Systems, 2:
+129–146, 2020. 1
+[4] Jorge Calvo-Zaragoza and Antonio-Javier Gallego. A selec-
+tional auto-encoder approach for document image binariza-
+tion. Pattern Recognition, 86:37–47, 2019. 3, 6, 7
+[5] Shi Chen and Qi Zhao. Shallowing deep networks: Layer-
+wise pruning based on feature representations. IEEE TPAMI,
+41(12):3048–3056, 2018. 3
+[6] Bowen Cheng, Ishan Misra, Alexander G. Schwing, Alexan-
+der Kirillov, and Rohit Girdhar. Masked-attention mask
+transformer for universal image segmentation. In CVPR,
+pages 1290–1299, 2022. 3
+[7] Markus Diem, Fabian Hollaus, and Robert Sablatnig. Msio:
+Multispectral document image binarization. In IAPR Work-
+shop on Document Analysis Systems (DAS), pages 84–89.
+IEEE, 2016. 6, 7
+[8] Chris Ding, Tao Li, Wei Peng, and Haesun Park. Orthogonal
+nonnegative matrix t-factorizations for clustering. In ACM
+SIGKDD international conference on Knowledge discovery
+and data mining, pages 126–135, 2006. 4
+[9] Zeyang Dou, Kun Gao, Xiaodian Zhang, Hong Wang, and
+Junwei Wang. Hyperspectral unmixing using orthogonal
+sparse prior-based autoencoder with hyper-laplacian loss and
+data-driven outlier detection. IEEE TGRS, 58(9):6550–6564,
+2020. 7
+[10] Anna Tonazzini et al. Analytical and mathematical meth-
+ods for revealing hidden details in ancient manuscripts and
+paintings: A review. Journal of Advanced Research, 17:31–
+42, 2019. 1
+[11] Peter Grünwald and Teemu Roos. Minimum description
+length revisited. International journal of mathematics for
+industry, 11(01):1930001, 2019. 2, 5
+[12] Meng-Hao Guo, Cheng-Ze Lu, Zheng-Ning Liu, Ming-Ming
+Cheng, and Shi-Min Hu. Visual attention network. Compu-
+tational Visual Media, 9(4):733–752, 2023. 5
+[13] Junlin Han, Weihao Li, Pengfei Fang, Chunyi Sun, Jie Hong,
+Mohammad Ali Armin, Lars Petersson, and Hongdong Li.
+Blind Image Decomposition. In ECCV, pages 218–237,
+Cham, 2022. Springer Nature Switzerland. 1, 2
+[14] Rachid Hedjam and Mohamed Cheriet. Historical document
+image restoration using multispectral imaging system. Pat-
+tern Recognition, 46(8):2297–2312, 2013. 2, 6
+[15] Fabian Hollaus, Markus Diem, and Robert Sablatnig. Bi-
+narization of multispectral document images. In Computer
+Analysis of Images and Patterns: 16th International Confer-
+ence, CAIP 2015, pages 109–120. Springer, 2015. 6, 7
+[16] Fabian Hollaus, Markus Diem, and Robert Sablatnig. Mul-
+tispectral image binarization using gmms. In IEEE Interna-
+tional Conference on Frontiers in Handwriting Recognition,
+pages 570–575. IEEE, 2018. 6, 7
+[17] Fabian Hollaus, Simon Brenner, and Robert Sablatnig. Cnn
+based binarization of multispectral document images. In
+2019 International Conference on Document Analysis and
+Recognition (ICDAR), pages 533–538, 2019. Dataset DOI:
+10.5281/ZENODO.3257365. 6
+[18] Nicholas R Howe. Document binarization with automatic
+parameter tuning. International journal on document analy-
+sis and recognition (IJDAR), 16:247–258, 2013. 6, 7
+[19] Linda S. Kalman and Edward M. Bassett III. Classification
+and material identification in an urban environment using
+HYDICE hyperspectral data. In Imaging Spectrometry III,
+pages 57 – 68. International Society for Optics and Photon-
+ics, SPIE, 1997. 6
+[20] Sanaz Karimijafarbigloo, Reza Azad, Amirhossein Kazer-
+ouni, and Dorit Merhof. Ms-former: Multi-scale self-guided
+transformer for medical image segmentation. In Medical
+Imaging with Deep Learning, pages 680–694. PMLR, 2024.
+1, 3, 5, 7
+[21] Moussa Sofiane Karoui, Yannick Deville, Shahram Hosseini,
+and Abdelaziz Ouamri. Blind spatial unmixing of multi-
+spectral images: New methods combining sparse component
+analysis, clustering and non-negativity constraints. Pattern
+Recognition, 45(12):4263–4278, 2012. 1
+[22] Nirmal Keshava and John F Mustard. Spectral unmixing.
+IEEE signal processing magazine, 19(1):44–57, 2002. 2
+[23] Alexander Kirillov, Eric Mintun, Nikhila Ravi, and
+Hanzi Mao et al. Segment anything. In ICCV, pages 4015–
+4026, 2023. Meta AI. 1, 2, 3
+[24] Daniel Lee and H. Sebastian Seung. Learning the parts of
+objects by non-negative matrix factorization. Nature, 401
+(6755):788–791, 1999. 1
+[25] Daniel Lee and H. Sebastian Seung. Algorithms for non-
+negative matrix factorization. In NeurIPS, 2000. 1
+[26] Qi Li, Nikolaos Mitianoudis, and Tania Stathaki. Spatial
+kernel k-harmonic means clustering for multi-spectral image
+segmentation. IET Image Processing, 1(2):156–167, 2007.
+6, 7
+[27] Giorgio A. Licciardi and Fabio Del Frate. Pixel unmixing
+in hyperspectral data by means of neural networks. IEEE
+TGRS, 49(11):4163–4172, 2011. 3
+[28] Mingbao Lin and Rongrong Ji et al. Hrank: Filter pruning
+using high-rank feature map. In CVPR, pages 1529–1538,
+2020. 3
+[29] Haifeng Liu, Zhaohui Wu, Xuelong Li, Deng Cai, and
+Thomas S. Huang. Constrained nonnegative matrix factor-
+ization for image representation. IEEE TPAMI, 34(7):1299–
+1311, 2012. 1
+7593
+[30] Paulo RS Mendonça, Peter Lamb, and Dushyant V Sahani.
+A flexible method for multi-material decomposition of dual-
+energy ct images. IEEE T-MI, 33(1):99–116, 2013. 1
+[31] Pavlo Molchanov, Arun Mallya, Stephen Tyree, Iuri Frosio,
+and Jan Kautz. Importance estimation for neural network
+pruning. In CVPR, pages 11264–11272, 2019. 1
+[32] J.M.P. Nascimento and J.M.B. Dias. Vertex component anal-
+ysis: a fast algorithm to unmix hyperspectral data. IEEE
+TGRS, 43(4):898–910, 2005. 2
+[33] Maxime Oquab, Timothée Darcet, and Théo Moutakanni et
+al. DINOv2: Learning robust visual features without super-
+vision. TMLR, 2024. Meta AI. 1, 2, 3
+[34] Savas Ozkan, Berk Kaya, and Gozde Bozdagi Akar. Endnet:
+Sparse autoencoder network for endmember extraction and
+hyperspectral unmixing. IEEE TGRS, 57(1):482–496, 2019.
+7
+[35] Burkni Palsson, Jakob Sigurdsson, Johannes R. Sveinsson,
+and Magnus O. Ulfarsson. Hyperspectral unmixing using a
+neural network autoencoder. IEEE Access, 6:25646–25656,
+2018. 7
+[36] Burkni Palsson, Johannes R. Sveinsson, and Magnus O. Ul-
+farsson. Spectral-spatial hyperspectral unmixing using mul-
+titask learning. IEEE Access, 7:148861–148872, 2019. 7
+[37] Burkni Palsson, Magnus O Ulfarsson, and Johannes R
+Sveinsson. Convolutional autoencoder for spatial-spectral
+hyperspectral unmixing. In IEEE IGARSS, pages 357–360,
+2019. 3, 4, 7
+[38] Burkni Palsson, Johannes R Sveinsson, and Magnus O Ul-
+farsson. Blind hyperspectral unmixing using autoencoders:
+A critical comparison. IEEE Journal of Selected Topics in
+Applied Earth Observations and Remote Sensing, 15:1340–
+1372, 2022. 3, 5, 8
+[39] Aaron Perez and Saurabh Prasad. Layer optimized spatial
+spectral masked autoencoder for semantic segmentation of
+hyperspectral imagery. In WACV Workshops, pages 599–
+607, 2025. 3
+[40] Rizwan Qureshi, Muhammad Uzair, Khurram Khurshid, and
+Hong Yan. Hyperspectral document image processing: Ap-
+plications, challenges and future prospects. Pattern Recog-
+nition, 90:12–22, 2019. 1
+[41] Abderrahmane Rahiche and Mohamed Cheriet. Blind de-
+composition of multispectral document images using orthog-
+onal nonnegative matrix factorization. IEEE TIP, 30:5997–
+6012, 2021. 3, 6, 7, 8
+[42] Abderrahmane Rahiche and Mohamed Cheriet. Variational
+bayesian orthogonal nonnegative matrix factorization over
+the stiefel manifold. IEEE TIP, 31:5543–5558, 2022. 3,
+5, 7, 8
+[43] Steven Squires, Adam Prügel-Bennett, and Mahesan Niran-
+jan. Rank Selection in Nonnegative Matrix Factorization us-
+ing Minimum Description Length. Neural Computation, 29
+(8):2164–2176, 2017. 2, 3, 5
+[44] Chao Wang, Zhedong Zheng, Ruijie Quan, Yifan Sun, and
+Yi Yang. Context-aware pretraining for efficient blind image
+decomposition. In CVPR, pages 18186–18195, 2023. 1, 2
+[45] Mou Wang, Min Zhao, Jie Chen, and Susanto Rahardja.
+Nonlinear unmixing of hyperspectral data via deep autoen-
+coder networks. IEEE Geoscience and Remote Sensing Let-
+ters, 16(9):1467–1471, 2019. 3, 4
+[46] Yusaku Yoshida, Ryo Kawahara, and Takahiro Okabe. Light
+source separation and intrinsic image decomposition under
+ac illumination. In CVPR, pages 5735–5743, 2023. 2
+[47] Yang Yu, Erting Pan, Xinya Wang, Yuheng Wu, Xiaoguang
+Mei, and Jiayi Ma. Unmixing before fusion: A generalized
+paradigm for multi-source-based hyperspectral image syn-
+thesis. In CVPR, pages 9297–9306, 2024. 2
+[48] Haijin Zeng, Jiezhang Cao, Kai Zhang, Yongyong Chen,
+Hiep Luong, and Wilfried Philips. Unmixing diffusion for
+self-supervised hyperspectral image denoising. In CVPR,
+pages 27820–27830, 2024. 2
+[49] Shaoquan Zhang, Guorong Zhang, Fan Li, Chengzhi Deng,
+Shengqian Wang, Antonio Plaza, and Jun Li. Spectral-spatial
+hyperspectral unmixing using nonnegative matrix factoriza-
+tion. IEEE TGRS, 60:1–13, 2022. 3
+[50] Min Zhao, Longbin Yan, and Jie Chen. Lstm-dnn based au-
+toencoder network for nonlinear hyperspectral image unmix-
+ing. IEEE Journal of Selected Topics in Signal Processing,
+15(2):295–309, 2021. 3, 4
+[51] Alexandre Zouaoui, Gedeon Muhawenayo, Behnood Rasti,
+Jocelyn Chanussot, and Julien Mairal. Entropic descent
+archetypal analysis for blind hyperspectral unmixing. IEEE
+TIP, 32:4649–4663, 2023. 3
+7594
+

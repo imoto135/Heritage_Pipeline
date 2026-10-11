@@ -1,0 +1,52 @@
+{
+  "selection": "Two known development pages selected from existing failure inventory; no illustration page",
+  "pages": [
+    {
+      "page": "hnsd001_011",
+      "crop_xywh": [
+        336,
+        396,
+        528,
+        528
+      ],
+      "case": "isolated dense brown mark, existing v1 black mask labels all or part as ink; no historic final output for this crop; fresh local frozen-code control"
+    },
+    {
+      "page": "hnsd007_042",
+      "crop_xywh": [
+        600,
+        100,
+        768,
+        768
+      ],
+      "case": "brown stain overlaps writing and rule; fresh local frozen-code control"
+    }
+  ],
+  "inference": "frozen Oct2 local ddrm_npj_v2 snapshot; archived CSC v1 crop masks; seed999, 20 steps, patch128 overlap32, masking=True/mask_timesteps=50; not historical final npj and not whole-page output",
+  "manual_mask_versions": {
+    "hnsd001_v1": "ellipse centered (170,235), axes45x36, selected from visible original stain; missed part of generated black blob",
+    "hnsd001_v2": "ellipse centered (170,235), axes45x44; still left generated arcs",
+    "hnsd001_v3": "ellipse centered (166,225), axes54x42; exploratory revision after reviewing baseline output; not blind evaluation",
+    "hnsd007": "ellipse centered (448,228), axes27x15; source-only preclean made no output change; removing region from black mask caused unnatural colored hole and changed neighboring output"
+  },
+  "method": "hand-directed clean-paper harmonic fill for hnsd001, using frozen paper_reference/fill routines; threshold unchanged; v3 output changed only inside manual update mask",
+  "pixel_GT": false,
+  "independent_pages": 0,
+  "adopted": false,
+  "dependencies": {
+    "data/split_dataset/train/hnsd00000/hnsd001_011.jpg": "22017c0af65c5f43560ff05cfcc15c6ed8f56b72e60a04a732d9c31b72f05731",
+    "data/split_dataset_csc_mask/train/hnsd00000/hnsd001_011/02_text_black.png": "fe0e36d5f420f713c13784ab6c37e1bac2d4ffccb0a27f54de3e2c1b67fec504",
+    "data/split_dataset_csc_mask/train/hnsd00000/hnsd001_011/03_text_red.png": "2d59ebe24af670e0455482bee6e25b3ea018834c40e68219ab13970a435d5fab",
+    "data/split_dataset/train/hnsd00000/hnsd007_042.jpg": "68315f7e551cb29695d9e830f09826eef92809409d4e9242290c5ed14f393afc",
+    "data/split_dataset_csc_mask/train/hnsd00000/hnsd007_042/02_text_black.png": "005946c1505e4958f9dd4527a21ad4af2ba2d094ed63501511e8852599ffbe03",
+    "data/split_dataset_csc_mask/train/hnsd00000/hnsd007_042/03_text_red.png": "371fecd8850ceb72f93ec2731d493b1c5bbae3a3dd838fd32b22229ab39ebcd3",
+    "modules/stain_removal/experiments/model_char/model_char/ckpt_epoch0350.pth": "1a5decb747e34e8b51ccea96b598fe3c6ec0e7f7a6f8df6cffc3135d8281a7f3",
+    "modules/ddrm_npj_v2/background/isemonogatari.png": "2a96dbde5301415c593dc1d119410e7a077a6ac15ea3d8d8d5f8d4021dc3897c"
+  },
+  "notes": [
+    "All cases are known development pages from the hnsd volume.",
+    "Material labels are provisional visual judgements; no expert or pixel annotation.",
+    "hnsd001 v3 was adjusted after seeing the method output and is exploratory only.",
+    "No training, production source edits, or changes to the user-preserved DDRM files."
+  ]
+}

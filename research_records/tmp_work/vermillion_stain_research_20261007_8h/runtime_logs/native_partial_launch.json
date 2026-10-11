@@ -1,0 +1,28 @@
+[
+  {
+    "pid": 3539884,
+    "args": [
+      "/home/imoto/miniconda3/envs/diffusion/bin/python",
+      "-u",
+      "tmp_work/vermillion_stain_research_20261007_8h/train_native_partial.py",
+      "--name",
+      "sparse_control",
+      "--device",
+      "cuda:1"
+    ],
+    "utc": "2026-10-07T17:22:04.653642+00:00"
+  },
+  {
+    "pid": 3539885,
+    "args": [
+      "/home/imoto/miniconda3/envs/diffusion/bin/python",
+      "-u",
+      "tmp_work/vermillion_stain_research_20261007_8h/train_native_partial.py",
+      "--name",
+      "dense_native",
+      "--device",
+      "cuda:0"
+    ],
+    "utc": "2026-10-07T17:22:04.654837+00:00"
+  }
+]

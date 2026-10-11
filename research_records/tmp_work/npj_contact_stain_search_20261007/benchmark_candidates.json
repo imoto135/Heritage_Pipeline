@@ -1,0 +1,459 @@
+{
+  "objective": "NPJ系の出力後、本文に重なる汚れを局所的に除去し、原画像で確認できる筆画を保つ",
+  "inputs_required": [
+    "original RGB image",
+    "NPJ-derived baseline output"
+  ],
+  "cases": [
+    {
+      "id": "T00",
+      "detail_xywh": [
+        300,
+        150,
+        320,
+        400
+      ],
+      "priority": "高",
+      "group": "既知参照",
+      "title": "枠線から本文までシミが黒い塊になる",
+      "finding": "原画像で見えるシミ下の筆画が、出力では大きな黒い塊に覆われる。枠線にも接続する。",
+      "proposed_role": "元の提案例。比較基準として再利用する。",
+      "page": "hnsd007_042",
+      "book": "hnsd00000",
+      "crop_xywh": [
+        600,
+        100,
+        768,
+        768
+      ],
+      "page_detail_xywh": [
+        900,
+        250,
+        320,
+        400
+      ],
+      "source_kind": "2026-10-04の既存crop対照・今回再利用",
+      "source": {
+        "original": "data/split_dataset/train/hnsd00000/hnsd007_042.jpg",
+        "npj_black": "data/split_dataset_csc_mask/train/hnsd00000/hnsd007_042/02_text_black.png",
+        "npj_red": "data/split_dataset_csc_mask/train/hnsd00000/hnsd007_042/03_text_red.png",
+        "actual_input": "tmp_work/npj_manual_stain_oracle_20261004/input/hnsd007_042.png",
+        "output": "tmp_work/npj_manual_stain_oracle_20261004/output/hnsd007_042/result/hnsd007_042.png"
+      },
+      "source_sha256": {
+        "original": "68315f7e551cb29695d9e830f09826eef92809409d4e9242290c5ed14f393afc",
+        "npj_black": "005946c1505e4958f9dd4527a21ad4af2ba2d094ed63501511e8852599ffbe03",
+        "npj_red": "371fecd8850ceb72f93ec2731d493b1c5bbae3a3dd838fd32b22229ab39ebcd3",
+        "actual_input": "4682b1a2f04d379232da879de4a4135fd328fe98d45e19604cb5d2948749aaee",
+        "output": "207ca789f862ac839cc2a783d6975fc9c181f929a39642d602436efcdfe0e51a"
+      },
+      "comparison": "comparisons/T00.png",
+      "context": "contexts/T00.png",
+      "mask_diagnostic": "mask_diagnostics/T00.png"
+    },
+    {
+      "id": "T01",
+      "detail_xywh": [
+        130,
+        150,
+        450,
+        450
+      ],
+      "priority": "高",
+      "group": "追加・本文重なり",
+      "title": "複数の筆画を広い黒い塊が覆う",
+      "finding": "原画像では茶色いシミを横切る細い線・曲線が見えるが、出力では広い黒い塊に埋まり、隣の列とも接続する。",
+      "proposed_role": "追加例の第一候補。汚れと筆画を分ける処理の開発対象にする。",
+      "page": "hnsd007_023",
+      "book": "hnsd00000",
+      "crop_xywh": [
+        682,
+        271,
+        768,
+        768
+      ],
+      "page_detail_xywh": [
+        812,
+        421,
+        450,
+        450
+      ],
+      "source_kind": "2026-10-07の新規crop対照",
+      "source": {
+        "original": "data/split_dataset/train/hnsd00000/hnsd007_023.jpg",
+        "npj_black": "data/split_dataset_csc_mask/train/hnsd00000/hnsd007_023/02_text_black.png",
+        "npj_red": "data/split_dataset_csc_mask/train/hnsd00000/hnsd007_023/03_text_red.png",
+        "actual_input": "tmp_work/npj_contact_stain_search_20261007/inputs/T01/hnsd007_023.png",
+        "output": "tmp_work/npj_contact_stain_search_20261007/output/hnsd007_023/result/hnsd007_023.png"
+      },
+      "source_sha256": {
+        "original": "41999e5b52d17e60ea068c9b629ffcce037dc27fcbb3a4f45f46a5063d7b22af",
+        "npj_black": "ebd3b3ef4557fe0523ab6cd3bcebfa120f8a7f196672d815f0b3533fda922309",
+        "npj_red": "1184f50da7328831f68ee85b6be0695b11dad7ee54f9582913287562c0731543",
+        "actual_input": "9a997014e0a7705864fb0089fdf97500d48bd817480c15d3e8f0b7d0689ce46e",
+        "output": "20532956fa550bae4ffb43d3a27febd4f732139fbb2e442415ff259af531f6eb"
+      },
+      "comparison": "comparisons/T01.png",
+      "context": "contexts/T01.png",
+      "mask_diagnostic": "mask_diagnostics/T01.png"
+    },
+    {
+      "id": "T02",
+      "detail_xywh": [
+        120,
+        200,
+        440,
+        440
+      ],
+      "priority": "高",
+      "group": "追加・本文重なり",
+      "title": "2つのシミがそれぞれ本文を覆う",
+      "finding": "原画像の2つの茶色い範囲に見える筆画が、出力では大小2つの黒い塊に埋まる。正常な隣の列は概ね追える。",
+      "proposed_role": "大きさの違うシミと、変更しない隣接本文を同時に確認する主要例。",
+      "page": "hnsd007_025",
+      "book": "hnsd00000",
+      "crop_xywh": [
+        628,
+        204,
+        768,
+        768
+      ],
+      "page_detail_xywh": [
+        748,
+        404,
+        440,
+        440
+      ],
+      "source_kind": "2026-10-07の新規crop対照",
+      "source": {
+        "original": "data/split_dataset/train/hnsd00000/hnsd007_025.jpg",
+        "npj_black": "data/split_dataset_csc_mask/train/hnsd00000/hnsd007_025/02_text_black.png",
+        "npj_red": "data/split_dataset_csc_mask/train/hnsd00000/hnsd007_025/03_text_red.png",
+        "actual_input": "tmp_work/npj_contact_stain_search_20261007/inputs/T02/hnsd007_025.png",
+        "output": "tmp_work/npj_contact_stain_search_20261007/output/hnsd007_025/result/hnsd007_025.png"
+      },
+      "source_sha256": {
+        "original": "e2c7e9f8ad82774ed8aeb8f7579a5a15535c07e7c71234cb8f2b2d20fe90b450",
+        "npj_black": "2d4f8d2b4e3385b471a1aae8aac56bf3913adb14ed6a728f18e3168c83d2f597",
+        "npj_red": "1f11f6ad789f2a820ecd6a982661444576655efa494b4374be2bbc3eb80c3dcc",
+        "actual_input": "d4f7ee5a4b014e7ed10c52e606ead570e0d7eb204afba5e22b11f48ae3fe7a7c",
+        "output": "eaab12abc05703cc0f31bed1f841eae954fcef7a0551a21a80680276b7935fba"
+      },
+      "comparison": "comparisons/T02.png",
+      "context": "contexts/T02.png",
+      "mask_diagnostic": "mask_diagnostics/T02.png"
+    },
+    {
+      "id": "T03",
+      "detail_xywh": [
+        250,
+        180,
+        350,
+        480
+      ],
+      "priority": "高",
+      "group": "追加・本文重なり",
+      "title": "本文の横の小さい文字が埋もれる",
+      "finding": "シミの中の本文と、その右の小さい文字に見える線が出力では塊・断片に変わる。広い単一の塊だけでない失敗。",
+      "proposed_role": "小さい添え書きを守れるか確認する主要例。",
+      "page": "hnsd007_022",
+      "book": "hnsd00000",
+      "crop_xywh": [
+        392,
+        203,
+        768,
+        768
+      ],
+      "page_detail_xywh": [
+        642,
+        383,
+        350,
+        480
+      ],
+      "source_kind": "2026-10-07の新規crop対照",
+      "source": {
+        "original": "data/split_dataset/train/hnsd00000/hnsd007_022.jpg",
+        "npj_black": "data/split_dataset_csc_mask/train/hnsd00000/hnsd007_022/02_text_black.png",
+        "npj_red": "data/split_dataset_csc_mask/train/hnsd00000/hnsd007_022/03_text_red.png",
+        "actual_input": "tmp_work/npj_contact_stain_search_20261007/inputs/T03/hnsd007_022.png",
+        "output": "tmp_work/npj_contact_stain_search_20261007/output/hnsd007_022/result/hnsd007_022.png"
+      },
+      "source_sha256": {
+        "original": "7d8811bd447368b6da78d382a47ae9fc6e4ff03a5e25e6d838c5f7475b7b2caf",
+        "npj_black": "e2dc8610926b608b987e2de1d1bc2a31b84406c8375967f9f1803f9e4000dd39",
+        "npj_red": "d4014d073dd41b0c7b8fd6b4cfb51db37e8c23236f1ba41e1d495cdaf9eca173",
+        "actual_input": "646582da2cc8f9afd529055c922bb4814c6766746212b20e899d37f82cf254ba",
+        "output": "b3e05943dea6545f7fe1888d6e0c1ca1863df83e6873f01596f721df3379b56d"
+      },
+      "comparison": "comparisons/T03.png",
+      "context": "contexts/T03.png",
+      "mask_diagnostic": "mask_diagnostics/T03.png"
+    },
+    {
+      "id": "T04",
+      "detail_xywh": [
+        250,
+        190,
+        330,
+        470
+      ],
+      "priority": "中",
+      "group": "追加・筆画接触",
+      "title": "シミが本文の細い線と一体になる",
+      "finding": "原画像のシミに重なる細い曲線の近くが、出力では黒い塊になり、本文の線と接続する。",
+      "proposed_role": "筆画と汚れの接触部を調べる例。薄い線の復元根拠は原画像で確認する。",
+      "page": "hnsd007_026",
+      "book": "hnsd00000",
+      "crop_xywh": [
+        450,
+        236,
+        768,
+        768
+      ],
+      "page_detail_xywh": [
+        700,
+        426,
+        330,
+        470
+      ],
+      "source_kind": "2026-10-07の新規crop対照",
+      "source": {
+        "original": "data/split_dataset/train/hnsd00000/hnsd007_026.jpg",
+        "npj_black": "data/split_dataset_csc_mask/train/hnsd00000/hnsd007_026/02_text_black.png",
+        "npj_red": "data/split_dataset_csc_mask/train/hnsd00000/hnsd007_026/03_text_red.png",
+        "actual_input": "tmp_work/npj_contact_stain_search_20261007/inputs/T04/hnsd007_026.png",
+        "output": "tmp_work/npj_contact_stain_search_20261007/output/hnsd007_026/result/hnsd007_026.png"
+      },
+      "source_sha256": {
+        "original": "fa7137d66a5072f96a2ea401d391ff14d99188033e7f5d6e41b8a02b659c3ea1",
+        "npj_black": "ce56f7a3b45eaefc85169b48d08c88929f66033688181319ed070e76b28847d5",
+        "npj_red": "e7ff77fda9096fbf836a5162eb6084ac2f5416ce668ff2db2a5406366b5c621d",
+        "actual_input": "3e48ec9fa1bfd5f957491c0986544527bb0952e8b31d601e57e3391d778399f2",
+        "output": "1fb470cb9a989c767416f22350eeb6ffea4d0c8e74930e1ec37f06234ada71bd"
+      },
+      "comparison": "comparisons/T04.png",
+      "context": "contexts/T04.png",
+      "mask_diagnostic": "mask_diagnostics/T04.png"
+    },
+    {
+      "id": "T05",
+      "detail_xywh": [
+        245,
+        185,
+        330,
+        420
+      ],
+      "priority": "低",
+      "group": "近接対照",
+      "title": "小さいシミは黒く残るが本文とは離れる",
+      "finding": "本文の線の下に小さい黒い塊が残るが、拡大では主要な線との間に隙間が見える。本文を覆う主要例には数えない。",
+      "proposed_role": "黒い塊があるだけで処理を必要と判断しない対照。",
+      "page": "hnsd007_027",
+      "book": "hnsd00000",
+      "crop_xywh": [
+        686,
+        180,
+        768,
+        768
+      ],
+      "page_detail_xywh": [
+        931,
+        365,
+        330,
+        420
+      ],
+      "source_kind": "2026-10-07の新規crop対照",
+      "source": {
+        "original": "data/split_dataset/train/hnsd00000/hnsd007_027.jpg",
+        "npj_black": "data/split_dataset_csc_mask/train/hnsd00000/hnsd007_027/02_text_black.png",
+        "npj_red": "data/split_dataset_csc_mask/train/hnsd00000/hnsd007_027/03_text_red.png",
+        "actual_input": "tmp_work/npj_contact_stain_search_20261007/inputs/T05/hnsd007_027.png",
+        "output": "tmp_work/npj_contact_stain_search_20261007/output/hnsd007_027/result/hnsd007_027.png"
+      },
+      "source_sha256": {
+        "original": "55bb4ba7f986fcc83f9cf6668b9267b3fb72aed967d09d5b133c8298d29e97d7",
+        "npj_black": "e7a86ea92136428a3d1756696cf6aa0b8cbce9b418e92f321de7655f280a2d42",
+        "npj_red": "82adba6712663bde794c016dcb04c070beedf93022c12a9ccf6c3008f5007290",
+        "actual_input": "94d30e25bf18ed64573c49853c78cfe6018398cc34f10833169b744492ba192f",
+        "output": "a85ac2e189644e57b74822054d2c2f600eabd8e351e323b826fc38f226eb2041"
+      },
+      "comparison": "comparisons/T05.png",
+      "context": "contexts/T05.png",
+      "mask_diagnostic": "mask_diagnostics/T05.png"
+    },
+    {
+      "id": "T06",
+      "detail_xywh": [
+        280,
+        190,
+        300,
+        440
+      ],
+      "priority": "中",
+      "group": "追加・筆画接触",
+      "title": "小さい茶色い範囲が筆画に接続する",
+      "finding": "原画像の曲線に近接・重複する小さい茶色い範囲が、出力では筆画に接続した黒い塊として残る。影響は局所的。",
+      "proposed_role": "小さな接触範囲だけを直して正常な曲線を保護できるか確認する。",
+      "page": "hnsd007_043",
+      "book": "hnsd00000",
+      "crop_xywh": [
+        355,
+        152,
+        768,
+        768
+      ],
+      "page_detail_xywh": [
+        635,
+        342,
+        300,
+        440
+      ],
+      "source_kind": "2026-10-07の新規crop対照",
+      "source": {
+        "original": "data/split_dataset/train/hnsd00000/hnsd007_043.jpg",
+        "npj_black": "data/split_dataset_csc_mask/train/hnsd00000/hnsd007_043/02_text_black.png",
+        "npj_red": "data/split_dataset_csc_mask/train/hnsd00000/hnsd007_043/03_text_red.png",
+        "actual_input": "tmp_work/npj_contact_stain_search_20261007/inputs/T06/hnsd007_043.png",
+        "output": "tmp_work/npj_contact_stain_search_20261007/output/hnsd007_043/result/hnsd007_043.png"
+      },
+      "source_sha256": {
+        "original": "c93a2dda9152a5c053ae5e315a13ad8604e41a7f122833fab9e6d4656952797b",
+        "npj_black": "28d017a02bc72b2ee13e79a815b8f354d44b25cb0601b37b451b0e1d1f213ada",
+        "npj_red": "4a221413ca285b394e36f9c3eb2e17b10703ef335c0564458e419c02c4dd6c72",
+        "actual_input": "9bd7604438ccecd08ebaa56829aa04738a1f27503ca6f7460dc563b122d3e22f",
+        "output": "5bc5fc98975ae5f9e659d3dcd9abb1e218416c419fd329809cf44b2896970a81"
+      },
+      "comparison": "comparisons/T06.png",
+      "context": "contexts/T06.png",
+      "mask_diagnostic": "mask_diagnostics/T06.png"
+    },
+    {
+      "id": "T07",
+      "detail_xywh": [
+        210,
+        170,
+        450,
+        470
+      ],
+      "priority": "保留",
+      "group": "別資料・材質確認",
+      "title": "別資料の茶色い跡が本文の一画につながる",
+      "finding": "濃い茶色い跡の下端が本文の横線に接し、出力では黒い塊として一体になる。ただし跡には白い中心もあり、シミか損傷かは未確定。",
+      "proposed_role": "別資料への展開候補。物理的な穴や欠損が含まれるか先に確認し、純粋なシミの主評価へはまだ入れない。",
+      "page": "200021869_00014_2",
+      "book": "200021869",
+      "crop_xywh": [
+        781,
+        1416,
+        768,
+        768
+      ],
+      "page_detail_xywh": [
+        991,
+        1586,
+        450,
+        470
+      ],
+      "source_kind": "2026-10-07の新規crop対照",
+      "source": {
+        "original": "data/split_dataset/val/200021869/200021869_00014_2.jpg",
+        "npj_black": "data/split_dataset_csc_mask/val/200021869/200021869_00014_2/02_text_black.png",
+        "npj_red": "data/split_dataset_csc_mask/val/200021869/200021869_00014_2/03_text_red.png",
+        "actual_input": "tmp_work/npj_contact_stain_search_20261007/inputs/T07/200021869_00014_2.png",
+        "output": "tmp_work/npj_contact_stain_search_20261007/output/200021869_00014_2/result/200021869_00014_2.png"
+      },
+      "source_sha256": {
+        "original": "cc714c94bbd2f1b65d11321119dbdaf9b371027b5ef5039561427577118cdb19",
+        "npj_black": "2b40e44973eb840004af49d6452b876e910e386237c491dd4725d756e76fcad9",
+        "npj_red": "19f8f7928fb8fea6f4e5d1eadace0054af92b987d57005541c2355ee3bff79d1",
+        "actual_input": "4cafa2896402793339d5ceb6f347c31823df3e5946c713db5f457d94c26b6e95",
+        "output": "4836e2eb7a0f97671ce9475afc86b14e7ba8b4e23554eaca7b30b9da4d663582"
+      },
+      "comparison": "comparisons/T07.png",
+      "context": "contexts/T07.png",
+      "mask_diagnostic": "mask_diagnostics/T07.png"
+    },
+    {
+      "id": "C01",
+      "detail_xywh": [
+        230,
+        160,
+        440,
+        490
+      ],
+      "priority": "保留",
+      "group": "材質・重なり不確定対照",
+      "title": "粒状像は残るが本文との重なりは不確定",
+      "finding": "原画像にある粒状の濃い像が出力でも残る。主要な本文は左右に見え、像の下の灰色線は表の筆画か裏写りか未確定。",
+      "proposed_role": "本文を覆うシミの確定例にはしない。材質と必要な筆画の確認用に記録する。",
+      "page": "200021851_00007_2",
+      "book": "200021851",
+      "crop_xywh": [
+        1445,
+        2030,
+        768,
+        768
+      ],
+      "page_detail_xywh": [
+        1675,
+        2190,
+        440,
+        490
+      ],
+      "source_kind": "2026-10-07の新規crop対照",
+      "source": {
+        "original": "data/split_dataset/val/200021851/200021851_00007_2.jpg",
+        "npj_black": "data/split_dataset_csc_mask/val/200021851/200021851_00007_2/02_text_black.png",
+        "npj_red": "data/split_dataset_csc_mask/val/200021851/200021851_00007_2/03_text_red.png",
+        "actual_input": "tmp_work/npj_contact_stain_search_20261007/inputs/C01/200021851_00007_2.png",
+        "output": "tmp_work/npj_contact_stain_search_20261007/output/200021851_00007_2/result/200021851_00007_2.png"
+      },
+      "source_sha256": {
+        "original": "75fdd5252ed78d47d9908060e5b315439068d0db8a53d241cf490d8ce8cd4aeb",
+        "npj_black": "1756e2eac54cae50dba3e3d2bff77d850017a83767841cdfab1f8b42e08c9ee9",
+        "npj_red": "762f26a01fa2c0b28966794cd90853eda9fab6934e7ecee61d6338abe3e8f4ea",
+        "actual_input": "d95e76e8c227ea83097f52e569d7bef521c7a990cf5ff2430a689d3afc31c307",
+        "output": "14ed312bc61551344a372ff8ab499cef63e436dbe2a2aa70acae23d94c4614b7"
+      },
+      "comparison": "comparisons/C01.png",
+      "context": "contexts/C01.png",
+      "mask_diagnostic": "mask_diagnostics/C01.png"
+    }
+  ],
+  "main_new_candidates": [
+    "T01",
+    "T02",
+    "T03",
+    "T04",
+    "T06"
+  ],
+  "reference": [
+    "T00"
+  ],
+  "separate_material_confirmation": [
+    "T07",
+    "C01"
+  ],
+  "nearby_not_overlapping_control": [
+    "T05"
+  ],
+  "initial_development_priority": [
+    "T01",
+    "T02",
+    "T03"
+  ],
+  "source_grouping_note": "T00,T01,T02,T03,T04,T05,T06 are hnsd007 pages in the same collection. Nearby pages may share stain origins. Not independent documents.",
+  "unknown_document_generalization_demonstrated": false,
+  "reading_improvement_demonstrated": false,
+  "automatic_stain_detection_demonstrated": false,
+  "material_GT": false,
+  "selection_before_inference": true,
+  "parameters_tuned_to_outputs": false,
+  "coordinate_note": "page_detail_xywh is a rectangular review ROI, not an edit mask, stain segmentation or pixel ground truth",
+  "next_evaluation": [
+    "Annotate visible necessary strokes and confirmed stain regions on original",
+    "Compare original, frozen NPJ baseline, and proposed additional processing at same coordinates",
+    "Check adjacent dark writing, faint strokes, small annotations, and rules remain readable",
+    "Evaluate human reading/line tracking after processing rather than cosmetic black-pixel reduction"
+  ]
+}

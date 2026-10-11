@@ -1,0 +1,50 @@
+{
+  "status": "frozen_for_next_book_check_not_production",
+  "variant": "split_direction",
+  "source_sha256": "7d8ab28a12af5db727795f3c488d02a4c05f5ba12b047f7328dbee4ff32994e8",
+  "settings": {
+    "experiment": "Change output color gates only; all ridge seeds and support frozen from v5",
+    "short_path": "v5 narrow18 color & v2 edit & v5 near_red96 & dilated v5 weak ridge seeds",
+    "supported_path": "v3 broad25 color & v2 edit & v4 extra_hold & dilated v5 strong ridge seeds",
+    "split_direction": "short_path | supported_path",
+    "wide_direction": "v3 broad25 color & v2 edit & ((near_red96 & weak seed neighbours) | (v4 extra & strong seed neighbours))",
+    "seed_neighbourhood": "17px ellipse dilation, same 8px radius as v5; seed color still narrow18",
+    "fixed": "Original pixels, confirmed red, protection, stain candidate, guard, v4 support, v5 seeds unchanged",
+    "parameter_selection": "Known development examples; separate output gates after matched ablation; no GT calibration",
+    "limitation": "Diagnostic extra hold does not certify ink; native-pixel thresholds and inherited v4 mistakes"
+  },
+  "development_book_ids": [
+    "100249371",
+    "100249376",
+    "100249537",
+    "200003803",
+    "200006663",
+    "200010454",
+    "200017197",
+    "200018243",
+    "200019865",
+    "200020019",
+    "200021063",
+    "200021071",
+    "200021086",
+    "200021660",
+    "200021763",
+    "200021851",
+    "200021869",
+    "200022050",
+    "200025191",
+    "hnsd00000"
+  ],
+  "development_pages": 21,
+  "development_rois": 52,
+  "pixel_GT": false,
+  "neural_training": false,
+  "selection_basis": "Visual review of known failure zooms and matched-context ablation; not accuracy",
+  "upstream_manifests": {
+    "training_free_protection_v2_20260930": "aee81173acc492fe09bf29acf6e4b8b78411bfb1816532f7949d368bb426c3b2",
+    "warm_ink_hold_v3_20260930": "53e0b3d6e546ff8d3e29964f91666b7edd0b69a049fd5ccd9230f64d88fda41e",
+    "warm_ink_hold_v4_20260930": "97c6efe97249fa1300f637b95898a045adefa4dbcbe25a9267931038ea24d163",
+    "warm_ink_hold_v5_20260930": "491c0971653895120d3753b444ca90da0b934c42a799db4c3296d234a3b8a007"
+  },
+  "next_protocol": "Select other books from original-input information before applying method; preserve parameters; reclassify as development if tuned after looking at outputs"
+}

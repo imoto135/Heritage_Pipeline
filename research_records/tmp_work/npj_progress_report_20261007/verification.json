@@ -1,0 +1,238 @@
+{
+  "figures": 10,
+  "native_panels": 22,
+  "panel_pixel_checks": [
+    {
+      "panel": "02_0",
+      "pixels_match": true
+    },
+    {
+      "panel": "02_1",
+      "pixels_match": true
+    },
+    {
+      "panel": "02_2",
+      "pixels_match": true
+    },
+    {
+      "panel": "03_0",
+      "pixels_match": true
+    },
+    {
+      "panel": "03_1",
+      "pixels_match": true
+    },
+    {
+      "panel": "03_2",
+      "pixels_match": true
+    },
+    {
+      "panel": "03_3",
+      "pixels_match": true
+    },
+    {
+      "panel": "04_0",
+      "pixels_match": true
+    },
+    {
+      "panel": "04_1",
+      "pixels_match": true
+    },
+    {
+      "panel": "04_2",
+      "pixels_match": true
+    },
+    {
+      "panel": "04_3",
+      "pixels_match": true
+    },
+    {
+      "panel": "05_0",
+      "pixels_match": true
+    },
+    {
+      "panel": "05_1",
+      "pixels_match": true
+    },
+    {
+      "panel": "05_2",
+      "pixels_match": true
+    },
+    {
+      "panel": "05_3",
+      "pixels_match": true
+    },
+    {
+      "panel": "06_0",
+      "pixels_match": true
+    },
+    {
+      "panel": "06_1",
+      "pixels_match": true
+    },
+    {
+      "panel": "06_2",
+      "pixels_match": true
+    },
+    {
+      "panel": "06_3",
+      "pixels_match": true
+    },
+    {
+      "panel": "07_0",
+      "pixels_match": true
+    },
+    {
+      "panel": "07_1",
+      "pixels_match": true
+    },
+    {
+      "panel": "07_2",
+      "pixels_match": true
+    }
+  ],
+  "inference_rerun": false,
+  "notes": [
+    "Images are assembled from saved outputs.",
+    "All comparison crops use integer nearest-neighbor enlargement.",
+    "Only figure 04 has explicit red locator boxes; unannotated crops are supplied.",
+    "hnsd001 v3 report text had v2 counts; final v3 pixels were recounted."
+  ],
+  "final_file_checks": [
+    {
+      "panel": "02_0",
+      "source_hash_matches": true,
+      "native_exact": true,
+      "final_panel_exact_except_declared_locator": true
+    },
+    {
+      "panel": "02_1",
+      "source_hash_matches": true,
+      "native_exact": true,
+      "final_panel_exact_except_declared_locator": true
+    },
+    {
+      "panel": "02_2",
+      "source_hash_matches": true,
+      "native_exact": true,
+      "final_panel_exact_except_declared_locator": true
+    },
+    {
+      "panel": "03_0",
+      "source_hash_matches": true,
+      "native_exact": true,
+      "final_panel_exact_except_declared_locator": true
+    },
+    {
+      "panel": "03_1",
+      "source_hash_matches": true,
+      "native_exact": true,
+      "final_panel_exact_except_declared_locator": true
+    },
+    {
+      "panel": "03_2",
+      "source_hash_matches": true,
+      "native_exact": true,
+      "final_panel_exact_except_declared_locator": true
+    },
+    {
+      "panel": "03_3",
+      "source_hash_matches": true,
+      "native_exact": true,
+      "final_panel_exact_except_declared_locator": true
+    },
+    {
+      "panel": "04_0",
+      "source_hash_matches": true,
+      "native_exact": true,
+      "final_panel_exact_except_declared_locator": true
+    },
+    {
+      "panel": "04_1",
+      "source_hash_matches": true,
+      "native_exact": true,
+      "final_panel_exact_except_declared_locator": true
+    },
+    {
+      "panel": "04_2",
+      "source_hash_matches": true,
+      "native_exact": true,
+      "final_panel_exact_except_declared_locator": true
+    },
+    {
+      "panel": "04_3",
+      "source_hash_matches": true,
+      "native_exact": true,
+      "final_panel_exact_except_declared_locator": true
+    },
+    {
+      "panel": "05_0",
+      "source_hash_matches": true,
+      "native_exact": true,
+      "final_panel_exact_except_declared_locator": true
+    },
+    {
+      "panel": "05_1",
+      "source_hash_matches": true,
+      "native_exact": true,
+      "final_panel_exact_except_declared_locator": true
+    },
+    {
+      "panel": "05_2",
+      "source_hash_matches": true,
+      "native_exact": true,
+      "final_panel_exact_except_declared_locator": true
+    },
+    {
+      "panel": "05_3",
+      "source_hash_matches": true,
+      "native_exact": true,
+      "final_panel_exact_except_declared_locator": true
+    },
+    {
+      "panel": "06_0",
+      "source_hash_matches": true,
+      "native_exact": true,
+      "final_panel_exact_except_declared_locator": true
+    },
+    {
+      "panel": "06_1",
+      "source_hash_matches": true,
+      "native_exact": true,
+      "final_panel_exact_except_declared_locator": true
+    },
+    {
+      "panel": "06_2",
+      "source_hash_matches": true,
+      "native_exact": true,
+      "final_panel_exact_except_declared_locator": true
+    },
+    {
+      "panel": "06_3",
+      "source_hash_matches": true,
+      "native_exact": true,
+      "final_panel_exact_except_declared_locator": true
+    },
+    {
+      "panel": "07_0",
+      "source_hash_matches": true,
+      "native_exact": true,
+      "final_panel_exact_except_declared_locator": true
+    },
+    {
+      "panel": "07_1",
+      "source_hash_matches": true,
+      "native_exact": true,
+      "final_panel_exact_except_declared_locator": true
+    },
+    {
+      "panel": "07_2",
+      "source_hash_matches": true,
+      "native_exact": true,
+      "final_panel_exact_except_declared_locator": true
+    }
+  ],
+  "report_links_all_resolve": true,
+  "pdf_pages": 10,
+  "visual_review": "All 10 PNG pages inspected for labels, crops, and text layout."
+}

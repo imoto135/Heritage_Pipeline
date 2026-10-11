@@ -1,0 +1,22 @@
+{
+  "name": "texture_continue_control",
+  "page": "200021071_00003_2",
+  "book": "200021071",
+  "role": "prospective_japanese",
+  "source_sha256": "f1d96a7bbf0cb19c895c273f553f33328312cdc19c4cfda05a5eacd36e7c3fef",
+  "resource_sha256": "77892d714a06ba6c68e2dea8854dd3b7f1a1feed8c71ef2fabfbbb955e907fb0",
+  "protocol_sha256": "4f876d008f2cede2f0f845d7bd6ef94e25e216525e6609d75b2dc914dca4c397",
+  "script_sha256": "d1afa94d1dbccb16e01303d1866e9b247e8dd4b87543cf4eb9c3cbda92268280",
+  "native_inference_source_sha256": "04be92bef36d40cbb29da1ed410ea580e5112be110b1056d3d44e6d67531e903",
+  "threshold": 0.5,
+  "mark_pixels": 5104113,
+  "seconds": 13.827544187195599,
+  "not_for_training": true,
+  "no_pixel_or_reading_GT": true,
+  "outputs": {
+    "mark_mask.png": "4af48acfc229168521c6875507263b17688c6f0e31c3cd3fb57a339e11b7f4ef",
+    "mark_probability_preview.png": "da2a922e1dff247b245dd29c08f03338c700a062572fa01809e28ca53c9fac7c",
+    "stain_probability_preview.png": "0eaca3405cc5181aee2be283cd811b5ef57ef61434afb50385fd06a22ec2654e",
+    "stain_mask.png": "24ec5dd87ba51d9f287de821572795c3838bb1db9e51aece58f949fee41f4c2e"
+  }
+}

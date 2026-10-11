@@ -1,0 +1,30 @@
+[
+  {
+    "id": "F02",
+    "neighbors": [
+      "200021063_00006_2",
+      "200021063_00007_2"
+    ],
+    "dependencies": {
+      "data/test/200021063/200021063_00007_1.jpg": "5b67654ae0bb73ec9dc3c243c253a0841b85d848d3b10130432d7d8e8201f86b",
+      "data/test/200021063/200021063_00006_2.jpg": "7084ea151d5087b267c07fb2cf262abe0dc0a9360b0d6a6c7a7802d50ec7289f",
+      "data/test/200021063/200021063_00007_2.jpg": "d7cae93d27d356c2dbcf6a5e7ef8cbfaca639aa1c70bb096d6f90ee592ef8bce"
+    },
+    "transform": "Horizontal mirror and resize only; no registration or GT",
+    "interpretation": "Visual source context only; matching darkness is not ground-truth ink classification"
+  },
+  {
+    "id": "F04",
+    "neighbors": [
+      "200021063_00002_1",
+      "200021063_00003_1"
+    ],
+    "dependencies": {
+      "data/test/200021063/200021063_00002_2.jpg": "5f3d987a099149ea73332ab7420b22dd5e93d3b9908c34d3f8ee210966a25fe7",
+      "data/test/200021063/200021063_00002_1.jpg": "d643e0e7d4a0542d0b391892b642f1286c0cf66306cffb7f52d2243ad9bfc0c8",
+      "data/test/200021063/200021063_00003_1.jpg": "c2fec35c6eb64caacb608b89c14868c8f09e867a598d5deb6ce34d32ef6f1ee1"
+    },
+    "transform": "Horizontal mirror and resize only; no registration or GT",
+    "interpretation": "Visual source context only; matching darkness is not ground-truth ink classification"
+  }
+]

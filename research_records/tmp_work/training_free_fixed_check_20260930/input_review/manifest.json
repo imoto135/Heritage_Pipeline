@@ -1,0 +1,94 @@
+{
+  "selection": "Seeded selection from 4 val and 4 test book directories, excluding four development book IDs; one page per book sampled from the middle half of filename-sorted JPEG pages. Not a representative or annotated test set. No segmentation outputs used for selection.",
+  "seed": 20260930,
+  "excluded_development_books": [
+    "200010454",
+    "200017197",
+    "200018243",
+    "hnsd00000"
+  ],
+  "cases": [
+    {
+      "id": "200021660_00040_1",
+      "title": "val / 200021660",
+      "original": "data/val/200021660/200021660_00040_1.jpg",
+      "width": 2763,
+      "height": 4307,
+      "book": "200021660",
+      "split": "val"
+    },
+    {
+      "id": "200021851_00019_2",
+      "title": "val / 200021851",
+      "original": "data/val/200021851/200021851_00019_2.jpg",
+      "width": 2296,
+      "height": 3221,
+      "book": "200021851",
+      "split": "val"
+    },
+    {
+      "id": "200021869_00010_2",
+      "title": "val / 200021869",
+      "original": "data/val/200021869/200021869_00010_2.jpg",
+      "width": 2109,
+      "height": 3072,
+      "book": "200021869",
+      "split": "val"
+    },
+    {
+      "id": "200022050_00010_1",
+      "title": "val / 200022050",
+      "original": "data/val/200022050/200022050_00010_1.jpg",
+      "width": 2404,
+      "height": 3527,
+      "book": "200022050",
+      "split": "val"
+    },
+    {
+      "id": "200003803_00009_2",
+      "title": "test / 200003803",
+      "original": "data/test/200003803/200003803_00009_2.jpg",
+      "width": 2127,
+      "height": 3215,
+      "book": "200003803",
+      "split": "test"
+    },
+    {
+      "id": "200019865_00075_2",
+      "title": "test / 200019865",
+      "original": "data/test/200019865/200019865_00075_2.jpg",
+      "width": 2074,
+      "height": 3202,
+      "book": "200019865",
+      "split": "test"
+    },
+    {
+      "id": "200021063_00021_1",
+      "title": "test / 200021063",
+      "original": "data/test/200021063/200021063_00021_1.jpg",
+      "width": 2039,
+      "height": 3180,
+      "book": "200021063",
+      "split": "test"
+    },
+    {
+      "id": "200021071_00079_2",
+      "title": "test / 200021071",
+      "original": "data/test/200021071/200021071_00079_2.jpg",
+      "width": 1934,
+      "height": 3247,
+      "book": "200021071",
+      "split": "test"
+    }
+  ],
+  "inputs": {
+    "data/val/200021660/200021660_00040_1.jpg": "828a3f21b710303badf88c1e4247e41b4cef8f7b6b6cd1f1b8aad030729b9dfc",
+    "data/val/200021851/200021851_00019_2.jpg": "881392bf8ec09c82d9ee0df265bdcddcd90470b0fd0f57c53c7520e34fc46e96",
+    "data/val/200021869/200021869_00010_2.jpg": "90ffdf5a4d8ed77e99d69f1326384cb24b2d25be157a46277500208d0aad6360",
+    "data/val/200022050/200022050_00010_1.jpg": "ee3ac20a1877997517a9edc77a1418149c86de2e4a15467283bdbe542010487b",
+    "data/test/200003803/200003803_00009_2.jpg": "e998f3ec838e4706bdd93396e3ac4ccd46cb0528d2c5f074260f91ba7ade1c0f",
+    "data/test/200019865/200019865_00075_2.jpg": "f4cae55d9ef3da7ce1251935cd083c6cb79da74f8484cedcea3821f823777746",
+    "data/test/200021063/200021063_00021_1.jpg": "51ad2a814e1c0dc39d64b79188ec644aa51d272857186e8f157fbe843a78932e",
+    "data/test/200021071/200021071_00079_2.jpg": "7b757bb81196ba03b7ae4fa6baced69098c22828d60940c645e9c73a26ac0568"
+  }
+}

@@ -1,0 +1,529 @@
+{
+  "output": "tmp_work/test_only_challenge_search_20261009/three_method_comparison/6課題_CSC_Sauvola_Howe_比較.png",
+  "output_sha256": "f0f5215416db2dd39bf52743f7a2e804abe83ffb08aa1f6cafb85965f78b4cc1",
+  "selection_sha256": "b1df74a5300ad74e1dc4cb73c4d13d0d85ec91538e2be0028958f69755d0a3d5",
+  "panels_checked": 24,
+  "conditions": {
+    "CSC": "saved ACE+CSC v2 black-text mask",
+    "Sauvola": "raw native RGB to gray; window=61 k=0.2 R=0.5",
+    "Howe": "raw native RGB to gray; local base-energy port c=160; approximate Canny; no auto-tuning"
+  },
+  "cases": [
+    {
+      "id": "01",
+      "name": "200010454_00016_2",
+      "roi_xywh": [
+        570,
+        600,
+        750,
+        850
+      ],
+      "source_sha256": "9a252f8305457507b1ac5e9d18c70be854a2aee28eaebf6607cea48bc3b9cb29",
+      "panels": [
+        {
+          "method": "original",
+          "path": "data/test/200010454/200010454_00016_2.jpg",
+          "sha256": "9a252f8305457507b1ac5e9d18c70be854a2aee28eaebf6607cea48bc3b9cb29",
+          "canvas_xywh": [
+            25,
+            223,
+            750,
+            850
+          ]
+        },
+        {
+          "method": "csc",
+          "path": "data/split_dataset_csc_mask_v2/test/200010454/200010454_00016_2/02_text_black.png",
+          "sha256": "71eea2d63fde94175975e319f74e051bfaede4307c8c6da2b17bdc026fc8eed1",
+          "canvas_xywh": [
+            895,
+            223,
+            750,
+            850
+          ]
+        },
+        {
+          "method": "sauvola",
+          "path": "tmp_work/test_only_challenge_search_20261009/three_method_comparison/masks/200010454_00016_2/sauvola.png",
+          "sha256": "dda4c476fb0b80a85bde02866e3b861793ae207d5a4d3f1392bc3d054c26d948",
+          "canvas_xywh": [
+            1765,
+            223,
+            750,
+            850
+          ]
+        },
+        {
+          "method": "howe",
+          "path": "tmp_work/test_only_challenge_search_20261009/three_method_comparison/masks/200010454_00016_2/howe.png",
+          "sha256": "c56ba8d8f7ea7c6530644b24bd83068afdd7c1ac43a1452360865b575ac23b7b",
+          "canvas_xywh": [
+            2635,
+            223,
+            750,
+            850
+          ]
+        }
+      ],
+      "classical_provenance": {
+        "status": "computed",
+        "sauvola": {
+          "window": 61,
+          "k": 0.2,
+          "R": 0.5
+        },
+        "howe": {
+          "c": 160,
+          "terms": {
+            "canny_sigma": 0.6,
+            "canny_low_relative": 0.1,
+            "canny_high_relative": 0.4,
+            "canny_max_sobel_magnitude": 1.786886215209961,
+            "canny_edge_pixels": 83692,
+            "background_bias_pixels": 24672,
+            "laplacian_min": -500.0,
+            "laplacian_max": 108.00000116229057,
+            "implementation": "Port of author IJDAR base energy, with skimage Canny normalized by maximum Sobel magnitude. MATLAB canny_old and automatic parameter tuning not reproduced."
+          },
+          "cut": {
+            "c": 160,
+            "mincut_energy": 6276136407.426481,
+            "solver_flow": 6276136407.597662,
+            "foreground_before_post": 197236,
+            "foreground_after_post": 189834
+          }
+        }
+      }
+    },
+    {
+      "id": "02",
+      "name": "200015843_00107_1",
+      "roi_xywh": [
+        700,
+        1200,
+        850,
+        850
+      ],
+      "source_sha256": "4ffec2db86247ebcca99203e6e413d42a90e49740951ce0cb30cad02fcf9da20",
+      "panels": [
+        {
+          "method": "original",
+          "path": "data/test/200015843/200015843_00107_1.jpg",
+          "sha256": "4ffec2db86247ebcca99203e6e413d42a90e49740951ce0cb30cad02fcf9da20",
+          "canvas_xywh": [
+            25,
+            1161,
+            850,
+            850
+          ]
+        },
+        {
+          "method": "csc",
+          "path": "data/split_dataset_csc_mask_v2/test/200015843/200015843_00107_1/02_text_black.png",
+          "sha256": "8b41bcfc37ecc2298ffe60b6765ba1e94f4ce477ab6317bbe15c60a60c860783",
+          "canvas_xywh": [
+            895,
+            1161,
+            850,
+            850
+          ]
+        },
+        {
+          "method": "sauvola",
+          "path": "tmp_work/test_only_challenge_search_20261009/three_method_comparison/masks/200015843_00107_1/sauvola.png",
+          "sha256": "65695e989e5f5a35df6683489b5d98369c3cf8f357a3669d1a6f17f80d251d65",
+          "canvas_xywh": [
+            1765,
+            1161,
+            850,
+            850
+          ]
+        },
+        {
+          "method": "howe",
+          "path": "tmp_work/test_only_challenge_search_20261009/three_method_comparison/masks/200015843_00107_1/howe.png",
+          "sha256": "5ff07f209c9835fd83179b29ae6a98b6b3a125ce22e27af9f683dec4e1cddfac",
+          "canvas_xywh": [
+            2635,
+            1161,
+            850,
+            850
+          ]
+        }
+      ],
+      "classical_provenance": {
+        "status": "computed",
+        "sauvola": {
+          "window": 61,
+          "k": 0.2,
+          "R": 0.5
+        },
+        "howe": {
+          "c": 160,
+          "terms": {
+            "canny_sigma": 0.6,
+            "canny_low_relative": 0.1,
+            "canny_high_relative": 0.4,
+            "canny_max_sobel_magnitude": 1.3205900192260742,
+            "canny_edge_pixels": 310133,
+            "background_bias_pixels": 15852,
+            "laplacian_min": -500.0,
+            "laplacian_max": 88.00000235438347,
+            "implementation": "Port of author IJDAR base energy, with skimage Canny normalized by maximum Sobel magnitude. MATLAB canny_old and automatic parameter tuning not reproduced."
+          },
+          "cut": {
+            "c": 160,
+            "mincut_energy": 10204923073.076633,
+            "solver_flow": 10204923073.457245,
+            "foreground_before_post": 902740,
+            "foreground_after_post": 877826
+          }
+        }
+      }
+    },
+    {
+      "id": "03",
+      "name": "200015843_00105_1",
+      "roi_xywh": [
+        750,
+        700,
+        850,
+        850
+      ],
+      "source_sha256": "f2094b5180c377e666b00437d3adeb975b09cab6fee665c11893ad311eabf134",
+      "panels": [
+        {
+          "method": "original",
+          "path": "data/test/200015843/200015843_00105_1.jpg",
+          "sha256": "f2094b5180c377e666b00437d3adeb975b09cab6fee665c11893ad311eabf134",
+          "canvas_xywh": [
+            25,
+            2099,
+            850,
+            850
+          ]
+        },
+        {
+          "method": "csc",
+          "path": "data/split_dataset_csc_mask_v2/test/200015843/200015843_00105_1/02_text_black.png",
+          "sha256": "3fb6cb2e0f7cc1c9079547010336b87e38e8efc41c688f19bca055ce4f2fa6db",
+          "canvas_xywh": [
+            895,
+            2099,
+            850,
+            850
+          ]
+        },
+        {
+          "method": "sauvola",
+          "path": "tmp_work/test_only_challenge_search_20261009/three_method_comparison/masks/200015843_00105_1/sauvola.png",
+          "sha256": "95d9d14727c7b5ffe8cd60c6807f5135b83cbabe95da7ed397f461b861c68f46",
+          "canvas_xywh": [
+            1765,
+            2099,
+            850,
+            850
+          ]
+        },
+        {
+          "method": "howe",
+          "path": "tmp_work/test_only_challenge_search_20261009/three_method_comparison/masks/200015843_00105_1/howe.png",
+          "sha256": "5eeca929628a9430ceda6e5637dff38e9d35ce4ebc07dd274ebef8206d8d5854",
+          "canvas_xywh": [
+            2635,
+            2099,
+            850,
+            850
+          ]
+        }
+      ],
+      "classical_provenance": {
+        "status": "computed",
+        "sauvola": {
+          "window": 61,
+          "k": 0.2,
+          "R": 0.5
+        },
+        "howe": {
+          "c": 160,
+          "terms": {
+            "canny_sigma": 0.6,
+            "canny_low_relative": 0.1,
+            "canny_high_relative": 0.4,
+            "canny_max_sobel_magnitude": 1.3894281387329102,
+            "canny_edge_pixels": 271515,
+            "background_bias_pixels": 15913,
+            "laplacian_min": -500.0,
+            "laplacian_max": 65.50000559538603,
+            "implementation": "Port of author IJDAR base energy, with skimage Canny normalized by maximum Sobel magnitude. MATLAB canny_old and automatic parameter tuning not reproduced."
+          },
+          "cut": {
+            "c": 160,
+            "mincut_energy": 10346601159.552967,
+            "solver_flow": 10346601159.986027,
+            "foreground_before_post": 933554,
+            "foreground_after_post": 911363
+          }
+        }
+      }
+    },
+    {
+      "id": "04",
+      "name": "200021071_00032_1",
+      "roi_xywh": [
+        550,
+        160,
+        800,
+        820
+      ],
+      "source_sha256": "d8fe32dc777814394c58baacccfdea957e2ab0fe9c63c667b98fbdf35bcfba63",
+      "panels": [
+        {
+          "method": "original",
+          "path": "data/test/200021071/200021071_00032_1.jpg",
+          "sha256": "d8fe32dc777814394c58baacccfdea957e2ab0fe9c63c667b98fbdf35bcfba63",
+          "canvas_xywh": [
+            25,
+            3037,
+            800,
+            820
+          ]
+        },
+        {
+          "method": "csc",
+          "path": "data/split_dataset_csc_mask_v2/test/200021071/200021071_00032_1/02_text_black.png",
+          "sha256": "a0b4308fbd142198b5c46fc81b1f8af1ec5e69bf03fe737fcda740877273d63c",
+          "canvas_xywh": [
+            895,
+            3037,
+            800,
+            820
+          ]
+        },
+        {
+          "method": "sauvola",
+          "path": "tmp_work/test_only_challenge_search_20261009/three_method_comparison/masks/200021071_00032_1/sauvola.png",
+          "sha256": "8bbe81bb3eeaaf59838ebb226abb5b7b77e6ebfde88d847cdfc56fd082288c24",
+          "canvas_xywh": [
+            1765,
+            3037,
+            800,
+            820
+          ]
+        },
+        {
+          "method": "howe",
+          "path": "tmp_work/test_only_challenge_search_20261009/three_method_comparison/masks/200021071_00032_1/howe.png",
+          "sha256": "4924f0df7058ed84b04529717fd899857aaba2005cf621d4ca97f488e7423f48",
+          "canvas_xywh": [
+            2635,
+            3037,
+            800,
+            820
+          ]
+        }
+      ],
+      "classical_provenance": {
+        "status": "computed",
+        "sauvola": {
+          "window": 61,
+          "k": 0.2,
+          "R": 0.5
+        },
+        "howe": {
+          "c": 160,
+          "terms": {
+            "canny_sigma": 0.6,
+            "canny_low_relative": 0.1,
+            "canny_high_relative": 0.4,
+            "canny_max_sobel_magnitude": 1.355615496635437,
+            "canny_edge_pixels": 78187,
+            "background_bias_pixels": 49138,
+            "laplacian_min": -500.0,
+            "laplacian_max": 64.49999995529652,
+            "implementation": "Port of author IJDAR base energy, with skimage Canny normalized by maximum Sobel magnitude. MATLAB canny_old and automatic parameter tuning not reproduced."
+          },
+          "cut": {
+            "c": 160,
+            "mincut_energy": 9608065128.258898,
+            "solver_flow": 9608065128.544775,
+            "foreground_before_post": 253614,
+            "foreground_after_post": 246971
+          }
+        }
+      }
+    },
+    {
+      "id": "06",
+      "name": "200003803_00003_1",
+      "roi_xywh": [
+        80,
+        95,
+        620,
+        530
+      ],
+      "source_sha256": "3cc169f2ebad09fa9b312a0230c2357287f16a0a505f64ef3d00fd44dc39da53",
+      "panels": [
+        {
+          "method": "original",
+          "path": "data/test/200003803/200003803_00003_1.jpg",
+          "sha256": "3cc169f2ebad09fa9b312a0230c2357287f16a0a505f64ef3d00fd44dc39da53",
+          "canvas_xywh": [
+            25,
+            3945,
+            620,
+            530
+          ]
+        },
+        {
+          "method": "csc",
+          "path": "data/split_dataset_csc_mask_v2/test/200003803/200003803_00003_1/02_text_black.png",
+          "sha256": "e0370e3f28e0dd9156b35c53cf3e88dd1f9d6c7a2803b9509fc52d054aae61bf",
+          "canvas_xywh": [
+            895,
+            3945,
+            620,
+            530
+          ]
+        },
+        {
+          "method": "sauvola",
+          "path": "tmp_work/test_only_challenge_search_20261009/three_method_comparison/masks/200003803_00003_1/sauvola.png",
+          "sha256": "608e9dd9e6c49cc93f7e402af95a8c969cb5a4fc03e6c4b878ea9cc3890d064a",
+          "canvas_xywh": [
+            1765,
+            3945,
+            620,
+            530
+          ]
+        },
+        {
+          "method": "howe",
+          "path": "tmp_work/test_only_challenge_search_20261009/three_method_comparison/masks/200003803_00003_1/howe.png",
+          "sha256": "90c8a97d2e85ed8950dffa187189741812696da28246ba2751ed1b23305734b1",
+          "canvas_xywh": [
+            2635,
+            3945,
+            620,
+            530
+          ]
+        }
+      ],
+      "classical_provenance": {
+        "status": "computed",
+        "sauvola": {
+          "window": 61,
+          "k": 0.2,
+          "R": 0.5
+        },
+        "howe": {
+          "c": 160,
+          "terms": {
+            "canny_sigma": 0.6,
+            "canny_low_relative": 0.1,
+            "canny_high_relative": 0.4,
+            "canny_max_sobel_magnitude": 1.8910752534866333,
+            "canny_edge_pixels": 146225,
+            "background_bias_pixels": 22565,
+            "laplacian_min": -500.0,
+            "laplacian_max": 128.00000566989183,
+            "implementation": "Port of author IJDAR base energy, with skimage Canny normalized by maximum Sobel magnitude. MATLAB canny_old and automatic parameter tuning not reproduced."
+          },
+          "cut": {
+            "c": 160,
+            "mincut_energy": 10362621384.268557,
+            "solver_flow": 10362621384.547638,
+            "foreground_before_post": 474368,
+            "foreground_after_post": 461959
+          }
+        }
+      }
+    },
+    {
+      "id": "07",
+      "name": "200021071_00033_2",
+      "roi_xywh": [
+        800,
+        750,
+        850,
+        900
+      ],
+      "source_sha256": "ccb0099adc3745cc6974aa7c7e51791c36e6575c0d3deb394dac64a62276c9e5",
+      "panels": [
+        {
+          "method": "original",
+          "path": "data/test/200021071/200021071_00033_2.jpg",
+          "sha256": "ccb0099adc3745cc6974aa7c7e51791c36e6575c0d3deb394dac64a62276c9e5",
+          "canvas_xywh": [
+            25,
+            4563,
+            850,
+            900
+          ]
+        },
+        {
+          "method": "csc",
+          "path": "data/split_dataset_csc_mask_v2/test/200021071/200021071_00033_2/02_text_black.png",
+          "sha256": "d1e25f571be87bd371b727148425a850bb98b820796db9ccfeda34c42aad9a8e",
+          "canvas_xywh": [
+            895,
+            4563,
+            850,
+            900
+          ]
+        },
+        {
+          "method": "sauvola",
+          "path": "tmp_work/test_only_challenge_search_20261009/three_method_comparison/masks/200021071_00033_2/sauvola.png",
+          "sha256": "9217d299d73a9735f9f1a410beb3ba2e6cd6d7febc3e6d7144f85cdf0642d91d",
+          "canvas_xywh": [
+            1765,
+            4563,
+            850,
+            900
+          ]
+        },
+        {
+          "method": "howe",
+          "path": "tmp_work/test_only_challenge_search_20261009/three_method_comparison/masks/200021071_00033_2/howe.png",
+          "sha256": "c9c8dc65a3dda8e794e9de843f0a1ab564a18e9b8cae7c170b596f9bfb848b34",
+          "canvas_xywh": [
+            2635,
+            4563,
+            850,
+            900
+          ]
+        }
+      ],
+      "classical_provenance": {
+        "status": "computed",
+        "sauvola": {
+          "window": 61,
+          "k": 0.2,
+          "R": 0.5
+        },
+        "howe": {
+          "c": 160,
+          "terms": {
+            "canny_sigma": 0.6,
+            "canny_low_relative": 0.1,
+            "canny_high_relative": 0.4,
+            "canny_max_sobel_magnitude": 1.4847590923309326,
+            "canny_edge_pixels": 134470,
+            "background_bias_pixels": 28087,
+            "laplacian_min": -500.0,
+            "laplacian_max": 64.49999995529652,
+            "implementation": "Port of author IJDAR base energy, with skimage Canny normalized by maximum Sobel magnitude. MATLAB canny_old and automatic parameter tuning not reproduced."
+          },
+          "cut": {
+            "c": 160,
+            "mincut_energy": 9606972233.510124,
+            "solver_flow": 9606972233.792559,
+            "foreground_before_post": 431687,
+            "foreground_after_post": 419722
+          }
+        }
+      }
+    }
+  ]
+}

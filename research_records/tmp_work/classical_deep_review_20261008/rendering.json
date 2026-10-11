@@ -1,0 +1,1382 @@
+[
+  {
+    "path": "figures/N01_局所閾値の追加比較.png",
+    "sha256": "bd9810e5867e480846a3e6d4595db0c6b91225423fb887c4bf7df89e4c520b88",
+    "panels": [
+      {
+        "method": "original",
+        "canvas_xywh": [
+          24,
+          162,
+          380,
+          440
+        ],
+        "integer_scale": 2
+      },
+      {
+        "method": "wolf61",
+        "canvas_xywh": [
+          428,
+          162,
+          380,
+          440
+        ],
+        "integer_scale": 2
+      },
+      {
+        "method": "bradley61",
+        "canvas_xywh": [
+          24,
+          670,
+          380,
+          440
+        ],
+        "integer_scale": 2
+      },
+      {
+        "method": "phansalkar61",
+        "canvas_xywh": [
+          428,
+          670,
+          380,
+          440
+        ],
+        "integer_scale": 2
+      }
+    ]
+  },
+  {
+    "path": "figures/N01_背景補正の比較.png",
+    "sha256": "98313597eeb368eeb9870e2628cdbdb4d2bb84f3f3be81d56679c6691e034185",
+    "panels": [
+      {
+        "method": "original",
+        "canvas_xywh": [
+          24,
+          162,
+          380,
+          440
+        ],
+        "integer_scale": 2
+      },
+      {
+        "method": "wolf61",
+        "canvas_xywh": [
+          428,
+          162,
+          380,
+          440
+        ],
+        "integer_scale": 2
+      },
+      {
+        "method": "bg61_otsu",
+        "canvas_xywh": [
+          24,
+          670,
+          380,
+          440
+        ],
+        "integer_scale": 2
+      },
+      {
+        "method": "bg61_wolf",
+        "canvas_xywh": [
+          428,
+          670,
+          380,
+          440
+        ],
+        "integer_scale": 2
+      }
+    ]
+  },
+  {
+    "path": "figures/N01_筆画の連続性を狙う比較.png",
+    "sha256": "98726b4043780b1d13f230239041b2e65a82de1756f6f88c524a8047510eac7f",
+    "panels": [
+      {
+        "method": "original",
+        "canvas_xywh": [
+          24,
+          162,
+          380,
+          440
+        ],
+        "integer_scale": 2
+      },
+      {
+        "method": "wolf61",
+        "canvas_xywh": [
+          428,
+          162,
+          380,
+          440
+        ],
+        "integer_scale": 2
+      },
+      {
+        "method": "nick61",
+        "canvas_xywh": [
+          24,
+          670,
+          380,
+          440
+        ],
+        "integer_scale": 2
+      },
+      {
+        "method": "howe160",
+        "canvas_xywh": [
+          428,
+          670,
+          380,
+          440
+        ],
+        "integer_scale": 2
+      }
+    ]
+  },
+  {
+    "path": "figures/N01_Bradleyの窓幅と閾値.png",
+    "sha256": "6a7496e6e26855957a82dcf3039c76807230b039aed0df60df3480bda9258080",
+    "panels": [
+      {
+        "method": "original",
+        "canvas_xywh": [
+          24,
+          162,
+          380,
+          440
+        ],
+        "integer_scale": 2
+      },
+      {
+        "method": "bradley61",
+        "canvas_xywh": [
+          428,
+          162,
+          380,
+          440
+        ],
+        "integer_scale": 2
+      },
+      {
+        "method": "bradley_paper",
+        "canvas_xywh": [
+          24,
+          670,
+          380,
+          440
+        ],
+        "integer_scale": 2
+      },
+      {
+        "method": "bradley61_t10",
+        "canvas_xywh": [
+          428,
+          670,
+          380,
+          440
+        ],
+        "integer_scale": 2
+      }
+    ]
+  },
+  {
+    "path": "figures/N01_背景推定サイズの感度.png",
+    "sha256": "34b7bb0413fd0e2251476a79f6f44f32359f15b1e67d7d499b985056255f8b59",
+    "panels": [
+      {
+        "method": "original",
+        "canvas_xywh": [
+          24,
+          162,
+          380,
+          440
+        ],
+        "integer_scale": 2
+      },
+      {
+        "method": "bg31_otsu",
+        "canvas_xywh": [
+          428,
+          162,
+          380,
+          440
+        ],
+        "integer_scale": 2
+      },
+      {
+        "method": "bg61_otsu",
+        "canvas_xywh": [
+          24,
+          670,
+          380,
+          440
+        ],
+        "integer_scale": 2
+      },
+      {
+        "method": "bg121_otsu",
+        "canvas_xywh": [
+          428,
+          670,
+          380,
+          440
+        ],
+        "integer_scale": 2
+      }
+    ]
+  },
+  {
+    "path": "figures/N01_Howeの平滑化重みの感度.png",
+    "sha256": "6c2019a5e6b1bfd7d0bd247eff0dc1cabe77a27cb400f9c73df17ac6c0edaf7a",
+    "panels": [
+      {
+        "method": "original",
+        "canvas_xywh": [
+          24,
+          162,
+          380,
+          440
+        ],
+        "integer_scale": 2
+      },
+      {
+        "method": "howe80",
+        "canvas_xywh": [
+          428,
+          162,
+          380,
+          440
+        ],
+        "integer_scale": 2
+      },
+      {
+        "method": "howe160",
+        "canvas_xywh": [
+          24,
+          670,
+          380,
+          440
+        ],
+        "integer_scale": 2
+      },
+      {
+        "method": "howe320",
+        "canvas_xywh": [
+          428,
+          670,
+          380,
+          440
+        ],
+        "integer_scale": 2
+      }
+    ]
+  },
+  {
+    "path": "figures/N01_背景推定と補正入力.png",
+    "sha256": "284af59d81256ae94d13f037aacdeb833c2747a102cf0724b87fef76ff61db0a",
+    "panels": [
+      {
+        "method": "original",
+        "canvas_xywh": [
+          24,
+          162,
+          380,
+          440
+        ],
+        "integer_scale": 2
+      },
+      {
+        "method": "background",
+        "canvas_xywh": [
+          428,
+          162,
+          380,
+          440
+        ],
+        "integer_scale": 2
+      },
+      {
+        "method": "normalized",
+        "canvas_xywh": [
+          24,
+          670,
+          380,
+          440
+        ],
+        "integer_scale": 2
+      },
+      {
+        "method": "bg61_otsu",
+        "canvas_xywh": [
+          428,
+          670,
+          380,
+          440
+        ],
+        "integer_scale": 2
+      }
+    ]
+  },
+  {
+    "path": "figures/N01_背景補正と筆画保持.png",
+    "sha256": "898480641ec31b73eecd3ac6334c8c0ace2b434df7bff4921f9ce2ef8dbae790",
+    "panels": [
+      {
+        "method": "original",
+        "canvas_xywh": [
+          24,
+          162,
+          380,
+          440
+        ],
+        "integer_scale": 2
+      },
+      {
+        "method": "wolf61",
+        "canvas_xywh": [
+          428,
+          162,
+          380,
+          440
+        ],
+        "integer_scale": 2
+      },
+      {
+        "method": "bg61_sauvola",
+        "canvas_xywh": [
+          24,
+          670,
+          380,
+          440
+        ],
+        "integer_scale": 2
+      },
+      {
+        "method": "bg61_nick",
+        "canvas_xywh": [
+          428,
+          670,
+          380,
+          440
+        ],
+        "integer_scale": 2
+      }
+    ]
+  },
+  {
+    "path": "figures/N01_前回の再実装を広い範囲で確認.png",
+    "sha256": "5086b997a7f18225505a8212adb4b449ad34192f69dcb727d2a1536d73976a98",
+    "panels": [
+      {
+        "method": "original",
+        "canvas_xywh": [
+          24,
+          162,
+          380,
+          440
+        ],
+        "integer_scale": 2
+      },
+      {
+        "method": "wolf61",
+        "canvas_xywh": [
+          428,
+          162,
+          380,
+          440
+        ],
+        "integer_scale": 2
+      },
+      {
+        "method": "gatos_native",
+        "canvas_xywh": [
+          24,
+          670,
+          380,
+          440
+        ],
+        "integer_scale": 2
+      },
+      {
+        "method": "su2013_local",
+        "canvas_xywh": [
+          428,
+          670,
+          380,
+          440
+        ],
+        "integer_scale": 2
+      }
+    ]
+  },
+  {
+    "path": "figures/T01_局所閾値の追加比較.png",
+    "sha256": "0e0261ae39985852c92fd1d6a7ed47bf10c6e7f2472f36bb3cade329e7ec6c62",
+    "panels": [
+      {
+        "method": "original",
+        "canvas_xywh": [
+          24,
+          162,
+          600,
+          600
+        ],
+        "integer_scale": 1
+      },
+      {
+        "method": "wolf61",
+        "canvas_xywh": [
+          648,
+          162,
+          600,
+          600
+        ],
+        "integer_scale": 1
+      },
+      {
+        "method": "bradley61",
+        "canvas_xywh": [
+          24,
+          830,
+          600,
+          600
+        ],
+        "integer_scale": 1
+      },
+      {
+        "method": "phansalkar61",
+        "canvas_xywh": [
+          648,
+          830,
+          600,
+          600
+        ],
+        "integer_scale": 1
+      }
+    ]
+  },
+  {
+    "path": "figures/T01_背景補正の比較.png",
+    "sha256": "12bcc4f5cf0f63e6401164daadc78ed8ead41d92297c8e46d9c593a0ec6363bc",
+    "panels": [
+      {
+        "method": "original",
+        "canvas_xywh": [
+          24,
+          162,
+          600,
+          600
+        ],
+        "integer_scale": 1
+      },
+      {
+        "method": "wolf61",
+        "canvas_xywh": [
+          648,
+          162,
+          600,
+          600
+        ],
+        "integer_scale": 1
+      },
+      {
+        "method": "bg61_otsu",
+        "canvas_xywh": [
+          24,
+          830,
+          600,
+          600
+        ],
+        "integer_scale": 1
+      },
+      {
+        "method": "bg61_wolf",
+        "canvas_xywh": [
+          648,
+          830,
+          600,
+          600
+        ],
+        "integer_scale": 1
+      }
+    ]
+  },
+  {
+    "path": "figures/T01_筆画の連続性を狙う比較.png",
+    "sha256": "b18c72d10e0a4decd4fc390a2bb293ca167a678ed2740990db8e11d6b32fa30a",
+    "panels": [
+      {
+        "method": "original",
+        "canvas_xywh": [
+          24,
+          162,
+          600,
+          600
+        ],
+        "integer_scale": 1
+      },
+      {
+        "method": "wolf61",
+        "canvas_xywh": [
+          648,
+          162,
+          600,
+          600
+        ],
+        "integer_scale": 1
+      },
+      {
+        "method": "nick61",
+        "canvas_xywh": [
+          24,
+          830,
+          600,
+          600
+        ],
+        "integer_scale": 1
+      },
+      {
+        "method": "howe160",
+        "canvas_xywh": [
+          648,
+          830,
+          600,
+          600
+        ],
+        "integer_scale": 1
+      }
+    ]
+  },
+  {
+    "path": "figures/T01_Bradleyの窓幅と閾値.png",
+    "sha256": "0c3bb33dd9a4aa1eabd6348d6a74531b8df52fc076bfe5b722df0bd852388179",
+    "panels": [
+      {
+        "method": "original",
+        "canvas_xywh": [
+          24,
+          162,
+          600,
+          600
+        ],
+        "integer_scale": 1
+      },
+      {
+        "method": "bradley61",
+        "canvas_xywh": [
+          648,
+          162,
+          600,
+          600
+        ],
+        "integer_scale": 1
+      },
+      {
+        "method": "bradley_paper",
+        "canvas_xywh": [
+          24,
+          830,
+          600,
+          600
+        ],
+        "integer_scale": 1
+      },
+      {
+        "method": "bradley61_t10",
+        "canvas_xywh": [
+          648,
+          830,
+          600,
+          600
+        ],
+        "integer_scale": 1
+      }
+    ]
+  },
+  {
+    "path": "figures/T01_背景推定サイズの感度.png",
+    "sha256": "0b2d1e50112bf56eb9e101c0c4c61b82660c2d169c722bc98655375f1024feea",
+    "panels": [
+      {
+        "method": "original",
+        "canvas_xywh": [
+          24,
+          162,
+          600,
+          600
+        ],
+        "integer_scale": 1
+      },
+      {
+        "method": "bg31_otsu",
+        "canvas_xywh": [
+          648,
+          162,
+          600,
+          600
+        ],
+        "integer_scale": 1
+      },
+      {
+        "method": "bg61_otsu",
+        "canvas_xywh": [
+          24,
+          830,
+          600,
+          600
+        ],
+        "integer_scale": 1
+      },
+      {
+        "method": "bg121_otsu",
+        "canvas_xywh": [
+          648,
+          830,
+          600,
+          600
+        ],
+        "integer_scale": 1
+      }
+    ]
+  },
+  {
+    "path": "figures/T01_Howeの平滑化重みの感度.png",
+    "sha256": "b21a4bfa0fafb5f85b3321bd9d3dd23aa6fc44bdb571f27bba6d39d05a36b3cb",
+    "panels": [
+      {
+        "method": "original",
+        "canvas_xywh": [
+          24,
+          162,
+          600,
+          600
+        ],
+        "integer_scale": 1
+      },
+      {
+        "method": "howe80",
+        "canvas_xywh": [
+          648,
+          162,
+          600,
+          600
+        ],
+        "integer_scale": 1
+      },
+      {
+        "method": "howe160",
+        "canvas_xywh": [
+          24,
+          830,
+          600,
+          600
+        ],
+        "integer_scale": 1
+      },
+      {
+        "method": "howe320",
+        "canvas_xywh": [
+          648,
+          830,
+          600,
+          600
+        ],
+        "integer_scale": 1
+      }
+    ]
+  },
+  {
+    "path": "figures/T01_背景推定と補正入力.png",
+    "sha256": "2115caf8a5df5c8ca213b8654343ef9b309d363eaaa0f6659fa1c400923e1fd1",
+    "panels": [
+      {
+        "method": "original",
+        "canvas_xywh": [
+          24,
+          162,
+          600,
+          600
+        ],
+        "integer_scale": 1
+      },
+      {
+        "method": "background",
+        "canvas_xywh": [
+          648,
+          162,
+          600,
+          600
+        ],
+        "integer_scale": 1
+      },
+      {
+        "method": "normalized",
+        "canvas_xywh": [
+          24,
+          830,
+          600,
+          600
+        ],
+        "integer_scale": 1
+      },
+      {
+        "method": "bg61_otsu",
+        "canvas_xywh": [
+          648,
+          830,
+          600,
+          600
+        ],
+        "integer_scale": 1
+      }
+    ]
+  },
+  {
+    "path": "figures/T01_背景補正と筆画保持.png",
+    "sha256": "c5b4b292820aecf46df4d4d8f01b1f3ae57be6651d69b006edf5d07414532d0f",
+    "panels": [
+      {
+        "method": "original",
+        "canvas_xywh": [
+          24,
+          162,
+          600,
+          600
+        ],
+        "integer_scale": 1
+      },
+      {
+        "method": "wolf61",
+        "canvas_xywh": [
+          648,
+          162,
+          600,
+          600
+        ],
+        "integer_scale": 1
+      },
+      {
+        "method": "bg61_sauvola",
+        "canvas_xywh": [
+          24,
+          830,
+          600,
+          600
+        ],
+        "integer_scale": 1
+      },
+      {
+        "method": "bg61_nick",
+        "canvas_xywh": [
+          648,
+          830,
+          600,
+          600
+        ],
+        "integer_scale": 1
+      }
+    ]
+  },
+  {
+    "path": "figures/T01_前回の再実装を広い範囲で確認.png",
+    "sha256": "2aac504a6a949e5bac9752098e8da5a4763d4a3d4dc4fd3cf816017fe0c4956b",
+    "panels": [
+      {
+        "method": "original",
+        "canvas_xywh": [
+          24,
+          162,
+          600,
+          600
+        ],
+        "integer_scale": 1
+      },
+      {
+        "method": "wolf61",
+        "canvas_xywh": [
+          648,
+          162,
+          600,
+          600
+        ],
+        "integer_scale": 1
+      },
+      {
+        "method": "gatos_native",
+        "canvas_xywh": [
+          24,
+          830,
+          600,
+          600
+        ],
+        "integer_scale": 1
+      },
+      {
+        "method": "su2013_local",
+        "canvas_xywh": [
+          648,
+          830,
+          600,
+          600
+        ],
+        "integer_scale": 1
+      }
+    ]
+  },
+  {
+    "path": "figures/N05_局所閾値の追加比較.png",
+    "sha256": "cc391437e5d39ca944a8c2e10ee49a1f57bd4fd06d1fc04d0bb2290e29b9b7e8",
+    "panels": [
+      {
+        "method": "original",
+        "canvas_xywh": [
+          24,
+          162,
+          640,
+          580
+        ],
+        "integer_scale": 1
+      },
+      {
+        "method": "wolf61",
+        "canvas_xywh": [
+          688,
+          162,
+          640,
+          580
+        ],
+        "integer_scale": 1
+      },
+      {
+        "method": "bradley61",
+        "canvas_xywh": [
+          24,
+          810,
+          640,
+          580
+        ],
+        "integer_scale": 1
+      },
+      {
+        "method": "phansalkar61",
+        "canvas_xywh": [
+          688,
+          810,
+          640,
+          580
+        ],
+        "integer_scale": 1
+      }
+    ]
+  },
+  {
+    "path": "figures/N05_背景補正の比較.png",
+    "sha256": "fbae5c3db537e3781b3754585d47388b355adc390bb57c37a72d5eacde708adb",
+    "panels": [
+      {
+        "method": "original",
+        "canvas_xywh": [
+          24,
+          162,
+          640,
+          580
+        ],
+        "integer_scale": 1
+      },
+      {
+        "method": "wolf61",
+        "canvas_xywh": [
+          688,
+          162,
+          640,
+          580
+        ],
+        "integer_scale": 1
+      },
+      {
+        "method": "bg61_otsu",
+        "canvas_xywh": [
+          24,
+          810,
+          640,
+          580
+        ],
+        "integer_scale": 1
+      },
+      {
+        "method": "bg61_wolf",
+        "canvas_xywh": [
+          688,
+          810,
+          640,
+          580
+        ],
+        "integer_scale": 1
+      }
+    ]
+  },
+  {
+    "path": "figures/N05_筆画の連続性を狙う比較.png",
+    "sha256": "10ba0a227e609b301b9ab607f6e1e23226d4c119a682e6da4b2970cea08b401b",
+    "panels": [
+      {
+        "method": "original",
+        "canvas_xywh": [
+          24,
+          162,
+          640,
+          580
+        ],
+        "integer_scale": 1
+      },
+      {
+        "method": "wolf61",
+        "canvas_xywh": [
+          688,
+          162,
+          640,
+          580
+        ],
+        "integer_scale": 1
+      },
+      {
+        "method": "nick61",
+        "canvas_xywh": [
+          24,
+          810,
+          640,
+          580
+        ],
+        "integer_scale": 1
+      },
+      {
+        "method": "howe160",
+        "canvas_xywh": [
+          688,
+          810,
+          640,
+          580
+        ],
+        "integer_scale": 1
+      }
+    ]
+  },
+  {
+    "path": "figures/N05_Bradleyの窓幅と閾値.png",
+    "sha256": "7290d0c28742651681b18ef8eeac7141cbaf74e752ca952bc4cf059884f8aae5",
+    "panels": [
+      {
+        "method": "original",
+        "canvas_xywh": [
+          24,
+          162,
+          640,
+          580
+        ],
+        "integer_scale": 1
+      },
+      {
+        "method": "bradley61",
+        "canvas_xywh": [
+          688,
+          162,
+          640,
+          580
+        ],
+        "integer_scale": 1
+      },
+      {
+        "method": "bradley_paper",
+        "canvas_xywh": [
+          24,
+          810,
+          640,
+          580
+        ],
+        "integer_scale": 1
+      },
+      {
+        "method": "bradley61_t10",
+        "canvas_xywh": [
+          688,
+          810,
+          640,
+          580
+        ],
+        "integer_scale": 1
+      }
+    ]
+  },
+  {
+    "path": "figures/N05_背景推定サイズの感度.png",
+    "sha256": "e2ef6ab2e44e8d04533bd5d037e8ea01ed4400b7c5d9acbf9171c91e3c44349d",
+    "panels": [
+      {
+        "method": "original",
+        "canvas_xywh": [
+          24,
+          162,
+          640,
+          580
+        ],
+        "integer_scale": 1
+      },
+      {
+        "method": "bg31_otsu",
+        "canvas_xywh": [
+          688,
+          162,
+          640,
+          580
+        ],
+        "integer_scale": 1
+      },
+      {
+        "method": "bg61_otsu",
+        "canvas_xywh": [
+          24,
+          810,
+          640,
+          580
+        ],
+        "integer_scale": 1
+      },
+      {
+        "method": "bg121_otsu",
+        "canvas_xywh": [
+          688,
+          810,
+          640,
+          580
+        ],
+        "integer_scale": 1
+      }
+    ]
+  },
+  {
+    "path": "figures/N05_Howeの平滑化重みの感度.png",
+    "sha256": "26f787a9e11210f7bc085714bc2e31c20f551a9d4bed5559a3b6e02a35fe7aa2",
+    "panels": [
+      {
+        "method": "original",
+        "canvas_xywh": [
+          24,
+          162,
+          640,
+          580
+        ],
+        "integer_scale": 1
+      },
+      {
+        "method": "howe80",
+        "canvas_xywh": [
+          688,
+          162,
+          640,
+          580
+        ],
+        "integer_scale": 1
+      },
+      {
+        "method": "howe160",
+        "canvas_xywh": [
+          24,
+          810,
+          640,
+          580
+        ],
+        "integer_scale": 1
+      },
+      {
+        "method": "howe320",
+        "canvas_xywh": [
+          688,
+          810,
+          640,
+          580
+        ],
+        "integer_scale": 1
+      }
+    ]
+  },
+  {
+    "path": "figures/N05_背景推定と補正入力.png",
+    "sha256": "3f9c915b99d5ca5859ae4a2a9c6620ad5a0c80b5180434b3b35827afa2737ae0",
+    "panels": [
+      {
+        "method": "original",
+        "canvas_xywh": [
+          24,
+          162,
+          640,
+          580
+        ],
+        "integer_scale": 1
+      },
+      {
+        "method": "background",
+        "canvas_xywh": [
+          688,
+          162,
+          640,
+          580
+        ],
+        "integer_scale": 1
+      },
+      {
+        "method": "normalized",
+        "canvas_xywh": [
+          24,
+          810,
+          640,
+          580
+        ],
+        "integer_scale": 1
+      },
+      {
+        "method": "bg61_otsu",
+        "canvas_xywh": [
+          688,
+          810,
+          640,
+          580
+        ],
+        "integer_scale": 1
+      }
+    ]
+  },
+  {
+    "path": "figures/N05_背景補正と筆画保持.png",
+    "sha256": "9935a8ea4ced5a3b7ef83649311b932eed7f70f797ee590af09d3b78f854bc89",
+    "panels": [
+      {
+        "method": "original",
+        "canvas_xywh": [
+          24,
+          162,
+          640,
+          580
+        ],
+        "integer_scale": 1
+      },
+      {
+        "method": "wolf61",
+        "canvas_xywh": [
+          688,
+          162,
+          640,
+          580
+        ],
+        "integer_scale": 1
+      },
+      {
+        "method": "bg61_sauvola",
+        "canvas_xywh": [
+          24,
+          810,
+          640,
+          580
+        ],
+        "integer_scale": 1
+      },
+      {
+        "method": "bg61_nick",
+        "canvas_xywh": [
+          688,
+          810,
+          640,
+          580
+        ],
+        "integer_scale": 1
+      }
+    ]
+  },
+  {
+    "path": "figures/N05_前回の再実装を広い範囲で確認.png",
+    "sha256": "76f470759f75a51774193a9ce93bbf74d9c3d5e2984725bc5a3265252971220d",
+    "panels": [
+      {
+        "method": "original",
+        "canvas_xywh": [
+          24,
+          162,
+          640,
+          580
+        ],
+        "integer_scale": 1
+      },
+      {
+        "method": "wolf61",
+        "canvas_xywh": [
+          688,
+          162,
+          640,
+          580
+        ],
+        "integer_scale": 1
+      },
+      {
+        "method": "gatos_native",
+        "canvas_xywh": [
+          24,
+          810,
+          640,
+          580
+        ],
+        "integer_scale": 1
+      },
+      {
+        "method": "su2013_local",
+        "canvas_xywh": [
+          688,
+          810,
+          640,
+          580
+        ],
+        "integer_scale": 1
+      }
+    ]
+  },
+  {
+    "path": "figures/N01_有力候補と基準.png",
+    "sha256": "bbb7b7aad647777e3e798ec511477291b0b157819a43cc4930c096d542551d00",
+    "panels": [
+      {
+        "method": "original",
+        "canvas_xywh": [
+          24,
+          162,
+          380,
+          440
+        ],
+        "integer_scale": 2
+      },
+      {
+        "method": "sauvola61",
+        "canvas_xywh": [
+          428,
+          162,
+          380,
+          440
+        ],
+        "integer_scale": 2
+      },
+      {
+        "method": "wolf61",
+        "canvas_xywh": [
+          24,
+          670,
+          380,
+          440
+        ],
+        "integer_scale": 2
+      },
+      {
+        "method": "howe160",
+        "canvas_xywh": [
+          428,
+          670,
+          380,
+          440
+        ],
+        "integer_scale": 2
+      }
+    ]
+  },
+  {
+    "path": "figures/T01_有力候補と基準.png",
+    "sha256": "acfcd27bbd1805c1fc87b86919ff0ff206118a358ee921550c1257aef2c1c131",
+    "panels": [
+      {
+        "method": "original",
+        "canvas_xywh": [
+          24,
+          162,
+          600,
+          600
+        ],
+        "integer_scale": 1
+      },
+      {
+        "method": "sauvola61",
+        "canvas_xywh": [
+          648,
+          162,
+          600,
+          600
+        ],
+        "integer_scale": 1
+      },
+      {
+        "method": "wolf61",
+        "canvas_xywh": [
+          24,
+          830,
+          600,
+          600
+        ],
+        "integer_scale": 1
+      },
+      {
+        "method": "howe160",
+        "canvas_xywh": [
+          648,
+          830,
+          600,
+          600
+        ],
+        "integer_scale": 1
+      }
+    ]
+  },
+  {
+    "path": "figures/N05_有力候補と基準.png",
+    "sha256": "4cd9fc041fc296167a675310c96b0ef2e96d5ce0012c3ac341de4beb92960d5e",
+    "panels": [
+      {
+        "method": "original",
+        "canvas_xywh": [
+          24,
+          162,
+          640,
+          580
+        ],
+        "integer_scale": 1
+      },
+      {
+        "method": "sauvola61",
+        "canvas_xywh": [
+          688,
+          162,
+          640,
+          580
+        ],
+        "integer_scale": 1
+      },
+      {
+        "method": "wolf61",
+        "canvas_xywh": [
+          24,
+          810,
+          640,
+          580
+        ],
+        "integer_scale": 1
+      },
+      {
+        "method": "howe160",
+        "canvas_xywh": [
+          688,
+          810,
+          640,
+          580
+        ],
+        "integer_scale": 1
+      }
+    ]
+  }
+]

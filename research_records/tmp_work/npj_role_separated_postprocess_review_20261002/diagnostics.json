@@ -1,0 +1,575 @@
+{
+  "regions": [
+    {
+      "id": "01_upper_faint_stroke",
+      "frame": "upper_crop",
+      "xywh": [
+        190,
+        325,
+        180,
+        175
+      ],
+      "title": "上部の薄い筆画",
+      "changed_pixels": {
+        "paper_only": 416,
+        "stroke_only": 17,
+        "combined": 433
+      },
+      "mask_pixels": {
+        "paper_update": 433,
+        "stroke_update": 17,
+        "original_support": 1457,
+        "npj_anchors": 1329
+      },
+      "panels_exact": true,
+      "integer_nearest": true,
+      "display_size": [
+        540,
+        525
+      ]
+    },
+    {
+      "id": "02_upper_dense_control",
+      "frame": "upper_crop",
+      "xywh": [
+        5,
+        335,
+        175,
+        160
+      ],
+      "title": "濃い筆画の対照",
+      "changed_pixels": {
+        "paper_only": 81,
+        "stroke_only": 0,
+        "combined": 81
+      },
+      "mask_pixels": {
+        "paper_update": 93,
+        "stroke_update": 0,
+        "original_support": 2238,
+        "npj_anchors": 1825
+      },
+      "panels_exact": true,
+      "integer_nearest": true,
+      "display_size": [
+        525,
+        480
+      ]
+    },
+    {
+      "id": "03_upper_brown_stain",
+      "frame": "upper_crop",
+      "xywh": [
+        180,
+        235,
+        160,
+        120
+      ],
+      "title": "筆画の上方の茶色い斑点",
+      "changed_pixels": {
+        "paper_only": 2522,
+        "stroke_only": 0,
+        "combined": 2522
+      },
+      "mask_pixels": {
+        "paper_update": 2610,
+        "stroke_update": 0,
+        "original_support": 54,
+        "npj_anchors": 48
+      },
+      "panels_exact": true,
+      "integer_nearest": true,
+      "display_size": [
+        640,
+        480
+      ]
+    },
+    {
+      "id": "04_upper_pale_stain",
+      "frame": "upper_crop",
+      "xywh": [
+        330,
+        120,
+        150,
+        160
+      ],
+      "title": "淡い茶色の広がり",
+      "changed_pixels": {
+        "paper_only": 1906,
+        "stroke_only": 0,
+        "combined": 1906
+      },
+      "mask_pixels": {
+        "paper_update": 1993,
+        "stroke_update": 0,
+        "original_support": 0,
+        "npj_anchors": 0
+      },
+      "panels_exact": true,
+      "integer_nearest": true,
+      "display_size": [
+        600,
+        640
+      ]
+    },
+    {
+      "id": "05_page_faint_left",
+      "frame": "full_page",
+      "xywh": [
+        170,
+        700,
+        235,
+        450
+      ],
+      "title": "左列の薄い筆画",
+      "changed_pixels": {
+        "paper_only": 0,
+        "stroke_only": 0,
+        "combined": 0
+      },
+      "mask_pixels": {
+        "paper_update": 0,
+        "stroke_update": 0,
+        "original_support": 9368,
+        "npj_anchors": 8936
+      },
+      "panels_exact": true,
+      "integer_nearest": true,
+      "display_size": [
+        470,
+        900
+      ]
+    },
+    {
+      "id": "06_page_faint_middle",
+      "frame": "full_page",
+      "xywh": [
+        760,
+        1870,
+        220,
+        480
+      ],
+      "title": "中央列の細い筆画",
+      "changed_pixels": {
+        "paper_only": 0,
+        "stroke_only": 0,
+        "combined": 0
+      },
+      "mask_pixels": {
+        "paper_update": 0,
+        "stroke_update": 0,
+        "original_support": 9207,
+        "npj_anchors": 9088
+      },
+      "panels_exact": true,
+      "integer_nearest": true,
+      "display_size": [
+        440,
+        960
+      ]
+    },
+    {
+      "id": "07_page_dense_control",
+      "frame": "full_page",
+      "xywh": [
+        1510,
+        1650,
+        300,
+        440
+      ],
+      "title": "右列の濃い筆画の対照",
+      "changed_pixels": {
+        "paper_only": 0,
+        "stroke_only": 0,
+        "combined": 0
+      },
+      "mask_pixels": {
+        "paper_update": 0,
+        "stroke_update": 0,
+        "original_support": 13108,
+        "npj_anchors": 12898
+      },
+      "panels_exact": true,
+      "integer_nearest": true,
+      "display_size": [
+        600,
+        880
+      ]
+    },
+    {
+      "id": "08_page_long_stroke",
+      "frame": "full_page",
+      "xywh": [
+        440,
+        1850,
+        240,
+        650
+      ],
+      "title": "左寄りの長い細線",
+      "changed_pixels": {
+        "paper_only": 0,
+        "stroke_only": 5,
+        "combined": 5
+      },
+      "mask_pixels": {
+        "paper_update": 0,
+        "stroke_update": 5,
+        "original_support": 12381,
+        "npj_anchors": 11428
+      },
+      "panels_exact": true,
+      "integer_nearest": true,
+      "display_size": [
+        240,
+        650
+      ]
+    }
+  ],
+  "all_accepted_gaps": [
+    {
+      "frame": "upper_crop",
+      "component": {
+        "id": 42,
+        "xywh": [
+          284,
+          399,
+          5,
+          6
+        ],
+        "pixels": 12,
+        "anchor_components": [
+          2,
+          11
+        ],
+        "accepted": true
+      },
+      "filename": "gap_01_upper_crop_284_399.png",
+      "context_frame_xywh": [
+        262,
+        377,
+        49,
+        50
+      ],
+      "page_gap_xywh": [
+        834,
+        399,
+        5,
+        6
+      ],
+      "fixed_contrast_contacts_connected": true,
+      "panels_exact": true,
+      "integer_nearest": true,
+      "display_size": [
+        588,
+        600
+      ]
+    },
+    {
+      "frame": "upper_crop",
+      "component": {
+        "id": 56,
+        "xywh": [
+          250,
+          418,
+          2,
+          3
+        ],
+        "pixels": 5,
+        "anchor_components": [
+          2,
+          15
+        ],
+        "accepted": true
+      },
+      "filename": "gap_02_upper_crop_250_418.png",
+      "context_frame_xywh": [
+        228,
+        396,
+        46,
+        47
+      ],
+      "page_gap_xywh": [
+        800,
+        418,
+        2,
+        3
+      ],
+      "fixed_contrast_contacts_connected": true,
+      "panels_exact": true,
+      "integer_nearest": true,
+      "display_size": [
+        552,
+        564
+      ]
+    },
+    {
+      "frame": "full_page",
+      "component": {
+        "id": 41,
+        "xywh": [
+          450,
+          188,
+          2,
+          3
+        ],
+        "pixels": 4,
+        "anchor_components": [
+          2,
+          4
+        ],
+        "accepted": true
+      },
+      "filename": "gap_03_full_page_450_188.png",
+      "context_frame_xywh": [
+        428,
+        166,
+        46,
+        47
+      ],
+      "page_gap_xywh": [
+        450,
+        188,
+        2,
+        3
+      ],
+      "fixed_contrast_contacts_connected": true,
+      "panels_exact": true,
+      "integer_nearest": true,
+      "display_size": [
+        552,
+        564
+      ]
+    },
+    {
+      "frame": "full_page",
+      "component": {
+        "id": 325,
+        "xywh": [
+          1538,
+          712,
+          3,
+          2
+        ],
+        "pixels": 4,
+        "anchor_components": [
+          189,
+          241
+        ],
+        "accepted": true
+      },
+      "filename": "gap_04_full_page_1538_712.png",
+      "context_frame_xywh": [
+        1516,
+        690,
+        47,
+        46
+      ],
+      "page_gap_xywh": [
+        1538,
+        712,
+        3,
+        2
+      ],
+      "fixed_contrast_contacts_connected": true,
+      "panels_exact": true,
+      "integer_nearest": true,
+      "display_size": [
+        564,
+        552
+      ]
+    },
+    {
+      "frame": "full_page",
+      "component": {
+        "id": 367,
+        "xywh": [
+          97,
+          739,
+          3,
+          6
+        ],
+        "pixels": 10,
+        "anchor_components": [
+          262,
+          267
+        ],
+        "accepted": true
+      },
+      "filename": "gap_05_full_page_97_739.png",
+      "context_frame_xywh": [
+        75,
+        717,
+        47,
+        50
+      ],
+      "page_gap_xywh": [
+        97,
+        739,
+        3,
+        6
+      ],
+      "fixed_contrast_contacts_connected": true,
+      "panels_exact": true,
+      "integer_nearest": true,
+      "display_size": [
+        564,
+        600
+      ]
+    },
+    {
+      "frame": "full_page",
+      "component": {
+        "id": 562,
+        "xywh": [
+          441,
+          1184,
+          2,
+          2
+        ],
+        "pixels": 3,
+        "anchor_components": [
+          522,
+          564
+        ],
+        "accepted": true
+      },
+      "filename": "gap_06_full_page_441_1184.png",
+      "context_frame_xywh": [
+        419,
+        1162,
+        46,
+        46
+      ],
+      "page_gap_xywh": [
+        441,
+        1184,
+        2,
+        2
+      ],
+      "fixed_contrast_contacts_connected": true,
+      "panels_exact": true,
+      "integer_nearest": true,
+      "display_size": [
+        552,
+        552
+      ]
+    },
+    {
+      "frame": "full_page",
+      "component": {
+        "id": 742,
+        "xywh": [
+          103,
+          1478,
+          1,
+          3
+        ],
+        "pixels": 3,
+        "anchor_components": [
+          262,
+          768
+        ],
+        "accepted": true
+      },
+      "filename": "gap_07_full_page_103_1478.png",
+      "context_frame_xywh": [
+        81,
+        1456,
+        45,
+        47
+      ],
+      "page_gap_xywh": [
+        103,
+        1478,
+        1,
+        3
+      ],
+      "fixed_contrast_contacts_connected": true,
+      "panels_exact": true,
+      "integer_nearest": true,
+      "display_size": [
+        540,
+        564
+      ]
+    },
+    {
+      "frame": "full_page",
+      "component": {
+        "id": 1092,
+        "xywh": [
+          465,
+          2137,
+          3,
+          2
+        ],
+        "pixels": 3,
+        "anchor_components": [
+          1132,
+          1156
+        ],
+        "accepted": true
+      },
+      "filename": "gap_08_full_page_465_2137.png",
+      "context_frame_xywh": [
+        443,
+        2115,
+        47,
+        46
+      ],
+      "page_gap_xywh": [
+        465,
+        2137,
+        3,
+        2
+      ],
+      "fixed_contrast_contacts_connected": true,
+      "panels_exact": true,
+      "integer_nearest": true,
+      "display_size": [
+        564,
+        552
+      ]
+    },
+    {
+      "frame": "full_page",
+      "component": {
+        "id": 1100,
+        "xywh": [
+          465,
+          2143,
+          2,
+          2
+        ],
+        "pixels": 2,
+        "anchor_components": [
+          1132,
+          1156
+        ],
+        "accepted": true
+      },
+      "filename": "gap_09_full_page_465_2143.png",
+      "context_frame_xywh": [
+        443,
+        2121,
+        46,
+        46
+      ],
+      "page_gap_xywh": [
+        465,
+        2143,
+        2,
+        2
+      ],
+      "fixed_contrast_contacts_connected": true,
+      "panels_exact": true,
+      "integer_nearest": true,
+      "display_size": [
+        552,
+        552
+      ]
+    }
+  ],
+  "fixed_contrast_connected": 9,
+  "gap_count": 9,
+  "figure_count": 19
+}

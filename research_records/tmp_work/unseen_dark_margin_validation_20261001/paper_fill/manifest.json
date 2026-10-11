@@ -1,0 +1,35 @@
+{
+  "settings": {
+    "mask_modes": [
+      "npj",
+      "v6",
+      "rim",
+      "thin",
+      "near8"
+    ],
+    "minimum_boundary_pairs": 16,
+    "context_px": 64,
+    "no_recent_tone_chroma_coarse_variants": true,
+    "scope": "safe upper domain minus frozen warm anchors and long lines",
+    "restorer": "frozen harmonic raw/smooth boundary mixture plus observed L texture with minimum-error seams",
+    "reference": "unchanged paper Lab gate; each full mask excluded",
+    "outside_applied": "original image, including unapplied edits; no saved or recomputed DDRM",
+    "npj": "saved npj edit mask through the same conservative paper scope; not original npj pipeline",
+    "parameters_tuned_after_new_outputs": false,
+    "training": false,
+    "DDRM": false,
+    "pixel_GT": false
+  },
+  "dependencies": {
+    "scripts/benchmark/restore_unseen_dark_margin_paper.py": "70ad65686849e091065c867d159fbbb2b9f0d213f62cf29e7a4b2699c319bc98",
+    "scripts/benchmark/probe_paper_rim_lowfrequency_v2.py": "9d1dc0c515f79f86ab502b1a9dea03ea16fc0b42e670b602f5032fe3df0289c5",
+    "scripts/benchmark/probe_paper_seam_texture.py": "cd5bd2fd01175321c7c7e04b02cc25774a69c168e913dd57e7f5fdbaa9975003",
+    "scripts/benchmark/probe_known_paper_harmonic_fill_v2.py": "42869e62cd44ebb3a8454e7af3daf050baf280e408141b5624f65a4a0de38f95",
+    "tmp_work/unseen_dark_margin_validation_20261001/baseline_review.json": "607d511e64d3d4ce6b6a49bfea6ae9895769d92def1706565d13657480a5f0ca",
+    "tmp_work/unseen_dark_margin_validation_20261001/fixed_masks/manifest.json": "4be6ce3212829dec1a5232ddab628780312ef9d1216621907f6e5646d88159d9",
+    "tmp_work/unseen_dark_margin_validation_20261001/fixed_masks/complete.json": "98a9b3a1f48b118a07af12afee2140156f02320c861358c29bfc8a5d1e0ebd30"
+  },
+  "source_sha256": "70ad65686849e091065c867d159fbbb2b9f0d213f62cf29e7a4b2699c319bc98",
+  "pages": 4,
+  "regions": 13
+}

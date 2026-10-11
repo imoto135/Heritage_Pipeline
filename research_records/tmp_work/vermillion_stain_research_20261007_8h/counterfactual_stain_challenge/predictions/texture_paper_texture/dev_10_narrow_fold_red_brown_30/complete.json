@@ -1,0 +1,65 @@
+{
+  "id": "dev_10_narrow_fold_red_brown_30",
+  "case": "dev_10",
+  "name": "texture_paper_texture",
+  "family": "learned",
+  "input_sha256": "c208ff7241ace62a8608fd5bd49b95704260d465bdd1b8359538450c1e8f99d0",
+  "resources": {
+    "/home/imoto/Heritage_Pipeline/tmp_work/vermillion_stain_research_20261007_8h/texture_transfer_trials/paper_texture_seed614/last.pth": "5be7f21984e0f79d06c53a76a836465faccb6f4c40ba9920aa82b59184e4e8f5"
+  },
+  "script_sha256": "e5b0b087d40c4768818e555ae7cc5533c9102382540214d00bc64b3b8a00b66b",
+  "mask_sha256": "15a116c62a595492f33d98634e76816f137b4aa12bfcf6feec387bac06bcc3bd",
+  "seconds": 4.244551449082792,
+  "threshold": 0.5,
+  "diagnostic": {
+    "points": {
+      "observed_red_mark": {
+        "points": 32,
+        "before": 14,
+        "after": 13,
+        "newly_selected": 0,
+        "newly_lost": 1
+      },
+      "paper_or_brown_nonmark": {
+        "points": 10,
+        "before": 0,
+        "after": 0,
+        "newly_selected": 0,
+        "newly_lost": 0
+      }
+    },
+    "selected_paper_region_added_support": [
+      {
+        "region": 0,
+        "added_support_pixels": 0,
+        "before_selected": 0,
+        "after_selected": 0,
+        "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+      },
+      {
+        "region": 1,
+        "added_support_pixels": 0,
+        "before_selected": 0,
+        "after_selected": 0,
+        "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+      },
+      {
+        "region": 2,
+        "added_support_pixels": 0,
+        "before_selected": 0,
+        "after_selected": 0,
+        "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+      },
+      {
+        "region": 3,
+        "added_support_pixels": 0,
+        "before_selected": 0,
+        "after_selected": 0,
+        "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+      }
+    ]
+  },
+  "no_real_pixel_or_reading_GT": true,
+  "original_training_points_may_have_been_seen": true,
+  "perturbation": "Frozen development diagnostic, not final test"
+}

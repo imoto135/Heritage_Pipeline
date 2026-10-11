@@ -1,0 +1,105 @@
+{
+  "cases": [
+    {
+      "id": "damage_near_stamp",
+      "page": "200021637_00003_2",
+      "title": "虫食い・紙の欠損付近：両方式に残る問題",
+      "xywh": [
+        1280,
+        2570,
+        360,
+        270
+      ],
+      "comparison": "damage_near_stamp_compare.png",
+      "counts": {
+        "npj_black": 11575,
+        "npj_red": 16197,
+        "npj_stain": 10072,
+        "protect": 32826,
+        "red": 21651,
+        "edit": 0,
+        "hold": 181
+      },
+      "pixel_GT": false,
+      "selection": "post-review diagnostic; known examples, no accuracy claim"
+    },
+    {
+      "id": "dense_stain",
+      "page": "hnsd001_011",
+      "title": "濃い斑点：npjから改善する根拠の候補",
+      "xywh": [
+        400,
+        460,
+        400,
+        400
+      ],
+      "comparison": "dense_stain_compare.png",
+      "counts": {
+        "npj_black": 32377,
+        "npj_red": 0,
+        "npj_stain": 13442,
+        "protect": 29415,
+        "red": 0,
+        "edit": 3356,
+        "hold": 228
+      },
+      "pixel_GT": false,
+      "selection": "post-review diagnostic; known examples, no accuracy claim"
+    },
+    {
+      "id": "thin_strokes",
+      "page": "200017197_00008_0",
+      "title": "薄い筆画：文字の保護を比較する診断例",
+      "xywh": [
+        700,
+        1470,
+        440,
+        550
+      ],
+      "comparison": "thin_strokes_compare.png",
+      "counts": {
+        "npj_black": 8598,
+        "npj_red": 0,
+        "npj_stain": 9223,
+        "protect": 15021,
+        "red": 0,
+        "edit": 0,
+        "hold": 91
+      },
+      "pixel_GT": false,
+      "selection": "post-review diagnostic; known examples, no accuracy claim"
+    }
+  ],
+  "known_dense_component": {
+    "saved_component_pixels": 3131,
+    "npj_black_on_component": 3131,
+    "v6_edit_on_component": 3131,
+    "pixel_GT": false
+  },
+  "dependencies": {
+    "data/val/200021637/200021637_00003_2.jpg": "8f1529dc441b3546249cb1931261d9401423923ae606b5bc7539b3f5b652d944",
+    "tmp_work/npj_vs_v6_comparison_20261001/baseline/200021637_00003_2/black.png": "df5d289ee75eee31e4626bd80248bac92ead4386ea0891d246cce4728a23efc7",
+    "tmp_work/npj_vs_v6_comparison_20261001/baseline/200021637_00003_2/red.png": "c3581daedb67844848630adbabfdbbb2d227d5a5f8f69233c0eab6089c10780c",
+    "tmp_work/npj_vs_v6_comparison_20261001/baseline/200021637_00003_2/stain.png": "e72023a6022223b4c065f1ebba8fd8bbd390dac2fcba189535bb3cb0e369394a",
+    "tmp_work/warm_ink_v6_other_books_fixed_20261001/200021637_00003_2/v2/protect.png": "c5c343ff69a6dc342fbd82b26a957f888ea54d1ba16cfe6323d33970e4699542",
+    "tmp_work/warm_ink_v6_other_books_fixed_20261001/200021637_00003_2/v2/red.png": "6ed298e152858affa65815f71f162c43075329f9f02443530331e416d9bffa9a",
+    "tmp_work/warm_ink_v6_other_books_fixed_20261001/200021637_00003_2/v6_edit_allowed.png": "1bc3b6df7b6010ffceae702630b4c3ba2c5e57ccee5b95ac05ecac46db79ddae",
+    "tmp_work/warm_ink_v6_other_books_fixed_20261001/200021637_00003_2/v6_hold.png": "c42e70a22836e2b5ad296617e271a85c0de39772b07b64838e268d4bf14c23a5",
+    "data/train/hnsd00000/hnsd001_011.jpg": "22017c0af65c5f43560ff05cfcc15c6ed8f56b72e60a04a732d9c31b72f05731",
+    "tmp_work/npj_preprocess_review_20260930/hnsd001_011/v1_ace/black.png": "e1b6b3f0ac9cc7744be80d68520fbc8696099c129cbbced1a8718f1fccbd108e",
+    "tmp_work/npj_preprocess_review_20260930/hnsd001_011/v1_ace/red.png": "ddd311f5ae61f734d04d743ba0ba85ac2d3ad9faaf0f0d8ed42399625a37f9bb",
+    "tmp_work/npj_preprocess_review_20260930/hnsd001_011/v1_ace/degradation.png": "dc6c7fe6b38f382049517c705a5af4d2a23f10de2c0217efba09cb1a467cd82c",
+    "tmp_work/training_free_protection_v2_20260930/hnsd001_011/protect.png": "59d48adb86859d34795d95cbc7fe9dfbdfffa1bd9cb7afeabb8ac45d92f9d84f",
+    "tmp_work/training_free_protection_v2_20260930/hnsd001_011/red.png": "ddd311f5ae61f734d04d743ba0ba85ac2d3ad9faaf0f0d8ed42399625a37f9bb",
+    "tmp_work/warm_ink_hold_v6_20260930/hnsd001_011/split_direction_edit_allowed.png": "5d3fd2018944676be36cb80c6e1a6fa5d83a65028d79bdede35a5733dba2334d",
+    "tmp_work/warm_ink_hold_v6_20260930/hnsd001_011/split_direction_hold.png": "deaa4dbded7e2806a3ea1f137df854f0f9f2f5b5f04be31b130957daa5367041",
+    "data/makura_csc_mask/200017197_00008_0/00_original.png": "5496d4e4811c147a7305c538a0c2a3cd8443447b2d9e6e677ed25cb6d1b5a3bb",
+    "tmp_work/npj_preprocess_review_20260930/200017197_00008_0/v1_ace/black.png": "af81f944afbd64440344f06cfb781cf9bc76d9a80e9eef02fc75c74d75507c98",
+    "tmp_work/npj_preprocess_review_20260930/200017197_00008_0/v1_ace/red.png": "76fbf91794c36723426af3effcc9be11baac30ae4cc09228c60aa2cede930fbc",
+    "tmp_work/npj_preprocess_review_20260930/200017197_00008_0/v1_ace/degradation.png": "cc20bf898a5b2ca22fc3c7d80a6e1ea54e6a0589c722d6a6fdf068319ef0d2c4",
+    "tmp_work/training_free_protection_v2_20260930/200017197_00008_0/protect.png": "a83ac4de37d58f765ef0dc4c0ab06b40f835e49adaacb7b0995ca83df950655c",
+    "tmp_work/training_free_protection_v2_20260930/200017197_00008_0/red.png": "76fbf91794c36723426af3effcc9be11baac30ae4cc09228c60aa2cede930fbc",
+    "tmp_work/warm_ink_hold_v6_20260930/200017197_00008_0/split_direction_edit_allowed.png": "acc1f93ad29e47cada3d3099856d4e2b91cc114b2a8d161994bf06dd24acc2c0",
+    "tmp_work/warm_ink_hold_v6_20260930/200017197_00008_0/split_direction_hold.png": "cb24291a8dd3afc9871254d847407404b83a3979a01cdfd184ebede0bcea1411"
+  }
+}

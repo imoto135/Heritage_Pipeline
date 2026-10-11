@@ -1,0 +1,35 @@
+{
+  "status": "passed",
+  "constant_paper": true,
+  "all_nonreference_poison_cases": [
+    {
+      "id": "brown_false_red_new",
+      "sigma": 16
+    },
+    {
+      "id": "brown_false_red_new",
+      "sigma": 32
+    },
+    {
+      "id": "unseen_brown_spot",
+      "sigma": 16
+    },
+    {
+      "id": "unseen_brown_spot",
+      "sigma": 32
+    },
+    {
+      "id": "unseen_fold",
+      "sigma": 16
+    },
+    {
+      "id": "unseen_fold",
+      "sigma": 32
+    }
+  ],
+  "outside_newly_applied_changes": 0,
+  "masks_reference_texture_fixed": true,
+  "previous_applied_unchanged": true,
+  "ROIs": 34,
+  "pixel_GT": false
+}

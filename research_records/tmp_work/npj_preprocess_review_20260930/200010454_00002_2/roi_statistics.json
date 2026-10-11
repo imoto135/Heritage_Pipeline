@@ -1,0 +1,65 @@
+[
+  {
+    "title": "茶色い汚れを赤文字と判定する例",
+    "xywh": [
+      710,
+      200,
+      450,
+      330
+    ],
+    "original_gray_mean": 183.1758451178451,
+    "ace_gray_mean": 133.99908417508416,
+    "original_gray_std": 22.7853744153731,
+    "ace_gray_std": 30.050611838838453,
+    "v1_ace_background_fraction": 0.9182962962962963,
+    "v1_ace_black_fraction": 0.03837710437710438,
+    "v1_ace_red_fraction": 0.006074074074074074,
+    "v1_ace_degradation_fraction": 0.03725252525252525,
+    "v1_raw_background_fraction": 0.9274410774410774,
+    "v1_raw_black_fraction": 0.030471380471380472,
+    "v1_raw_red_fraction": 0.0006801346801346801,
+    "v1_raw_degradation_fraction": 0.04140740740740741
+  },
+  {
+    "title": "本物の朱印と黒文字の重なり",
+    "xywh": [
+      1370,
+      1810,
+      360,
+      480
+    ],
+    "original_gray_mean": 179.09303819444443,
+    "ace_gray_mean": 124.64263310185186,
+    "original_gray_std": 25.38986168795063,
+    "ace_gray_std": 40.64773427426909,
+    "v1_ace_background_fraction": 0.8156770833333333,
+    "v1_ace_black_fraction": 0.04563657407407407,
+    "v1_ace_red_fraction": 0.11832175925925927,
+    "v1_ace_degradation_fraction": 0.020364583333333332,
+    "v1_raw_background_fraction": 0.8379571759259259,
+    "v1_raw_black_fraction": 0.04763310185185185,
+    "v1_raw_red_fraction": 0.09254050925925926,
+    "v1_raw_degradation_fraction": 0.021869212962962962
+  },
+  {
+    "title": "右側の細い筆画",
+    "xywh": [
+      1290,
+      600,
+      280,
+      600
+    ],
+    "original_gray_mean": 183.13092261904762,
+    "ace_gray_mean": 136.91538095238096,
+    "original_gray_std": 26.724697129224385,
+    "ace_gray_std": 35.34568750683831,
+    "v1_ace_background_fraction": 0.9136785714285715,
+    "v1_ace_black_fraction": 0.044083333333333335,
+    "v1_ace_red_fraction": 0.000994047619047619,
+    "v1_ace_degradation_fraction": 0.04124404761904762,
+    "v1_raw_background_fraction": 0.9142857142857143,
+    "v1_raw_black_fraction": 0.047125,
+    "v1_raw_red_fraction": 0.0,
+    "v1_raw_degradation_fraction": 0.038589285714285715
+  }
+]

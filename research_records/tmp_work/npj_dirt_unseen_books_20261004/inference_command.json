@@ -1,0 +1,31 @@
+{
+  "command": [
+    "/home/imoto/miniconda3/envs/diffusion/bin/python",
+    "-B",
+    "/home/imoto/Heritage_Pipeline/tmp_work/npj_dirt_control_20261002/source_snapshot/ddrm_npj_v2/scripts/pipeline_ddrm.py",
+    "--input_dir",
+    "/home/imoto/Heritage_Pipeline/tmp_work/npj_dirt_unseen_books_20261004/input",
+    "--output_dir",
+    "/home/imoto/Heritage_Pipeline/tmp_work/npj_dirt_unseen_books_20261004/npj_output",
+    "--mask_dir",
+    "/home/imoto/Heritage_Pipeline/tmp_work/npj_dirt_unseen_books_20261004/masks",
+    "--ckpt",
+    "/home/imoto/Heritage_Pipeline/modules/stain_removal/experiments/model_char/model_char/ckpt_epoch0350.pth",
+    "--back_ground",
+    "/home/imoto/Heritage_Pipeline/modules/ddrm_npj_v2/background/isemonogatari.png",
+    "--device",
+    "cuda:0",
+    "--patch_size",
+    "128",
+    "--overlap",
+    "32",
+    "--no_wandb"
+  ],
+  "seed": 999,
+  "timesteps": 20,
+  "masking": true,
+  "mask_timesteps": 50,
+  "shared_noise": false,
+  "source": "tmp_work/npj_dirt_control_20261002/source_snapshot/ddrm_npj_v2",
+  "source_bundle_sha256": "8af833723651bfafe91b927433c7c0447a72762b5e6973ae09118dfab1ddc4ef"
+}

@@ -1,0 +1,413 @@
+{
+  "status": "passed",
+  "pages": [
+    {
+      "id": "page_200019865",
+      "updated_pixels": 5768,
+      "changed_pixels": 4960,
+      "npj_L_below_40_in_update": 0,
+      "rounded_harmonic_max_residual": 3,
+      "protected_exact_saved_npj": true,
+      "outside_update_exact_saved_npj": true
+    },
+    {
+      "id": "page_200017197",
+      "updated_pixels": 105496,
+      "changed_pixels": 89614,
+      "npj_L_below_40_in_update": 0,
+      "rounded_harmonic_max_residual": 3,
+      "protected_exact_saved_npj": true,
+      "outside_update_exact_saved_npj": true
+    },
+    {
+      "id": "known_200010454_v2",
+      "updated_pixels": 11457,
+      "changed_pixels": 9849,
+      "npj_L_below_40_in_update": 0,
+      "rounded_harmonic_max_residual": 3,
+      "protected_exact_saved_npj": true,
+      "outside_update_exact_saved_npj": true
+    },
+    {
+      "id": "crop_hnsd",
+      "updated_pixels": 0,
+      "changed_pixels": 0,
+      "npj_L_below_40_in_update": 0,
+      "rounded_harmonic_max_residual": 0,
+      "protected_exact_saved_npj": true,
+      "outside_update_exact_saved_npj": true
+    }
+  ],
+  "regions": [
+    {
+      "id": "01_upper_slender_marks",
+      "title": "上余白の細い暖色跡",
+      "xywh": [
+        1270,
+        250,
+        550,
+        400
+      ],
+      "role": "damage_candidate_material_unconfirmed",
+      "frame": "page_200019865",
+      "page": "200019865_00003_1",
+      "reference_input_exact": true,
+      "mask_pixels": {
+        "edit": 2708,
+        "protect": 378,
+        "hold": 850,
+        "red": 0,
+        "extra": 0,
+        "paper_update": 2417
+      },
+      "changed_pixels": 2029,
+      "exact_saved_npj": false,
+      "panels_exact": true,
+      "integer_nearest": true,
+      "display_size": [
+        550,
+        400
+      ]
+    },
+    {
+      "id": "02_left_margin_marks",
+      "title": "左余白の線状跡",
+      "xywh": [
+        20,
+        850,
+        450,
+        900
+      ],
+      "role": "damage_candidate_material_unconfirmed",
+      "frame": "page_200019865",
+      "page": "200019865_00003_1",
+      "reference_input_exact": true,
+      "mask_pixels": {
+        "edit": 261,
+        "protect": 11474,
+        "hold": 462,
+        "red": 0,
+        "extra": 0,
+        "paper_update": 230
+      },
+      "changed_pixels": 209,
+      "exact_saved_npj": false,
+      "panels_exact": true,
+      "integer_nearest": true,
+      "display_size": [
+        450,
+        900
+      ]
+    },
+    {
+      "id": "03_faint_text_control",
+      "title": "薄い文字の対照",
+      "xywh": [
+        1200,
+        1050,
+        650,
+        650
+      ],
+      "role": "text_control",
+      "frame": "page_200019865",
+      "page": "200019865_00003_1",
+      "reference_input_exact": true,
+      "mask_pixels": {
+        "edit": 0,
+        "protect": 41872,
+        "hold": 768,
+        "red": 0,
+        "extra": 0,
+        "paper_update": 0
+      },
+      "changed_pixels": 0,
+      "exact_saved_npj": true,
+      "panels_exact": true,
+      "integer_nearest": true,
+      "display_size": [
+        650,
+        650
+      ]
+    },
+    {
+      "id": "04_warm_paper_pattern",
+      "title": "暖色の紙模様・汚れと断定しない",
+      "xywh": [
+        100,
+        30,
+        650,
+        380
+      ],
+      "role": "paper_pattern_control",
+      "frame": "page_200017197",
+      "page": "200017197_00008_1",
+      "reference_input_exact": false,
+      "mask_pixels": {
+        "edit": 2153,
+        "protect": 134,
+        "hold": 0,
+        "red": 0,
+        "extra": 0,
+        "paper_update": 2153
+      },
+      "changed_pixels": 1847,
+      "exact_saved_npj": false,
+      "panels_exact": true,
+      "integer_nearest": true,
+      "display_size": [
+        650,
+        380
+      ]
+    },
+    {
+      "id": "05_pattern_text_control",
+      "title": "紙模様上の文字対照",
+      "xywh": [
+        1100,
+        1400,
+        550,
+        600
+      ],
+      "role": "text_and_pattern_control",
+      "frame": "page_200017197",
+      "page": "200017197_00008_1",
+      "reference_input_exact": false,
+      "mask_pixels": {
+        "edit": 5862,
+        "protect": 25776,
+        "hold": 184,
+        "red": 0,
+        "extra": 0,
+        "paper_update": 5758
+      },
+      "changed_pixels": 4834,
+      "exact_saved_npj": false,
+      "panels_exact": true,
+      "integer_nearest": true,
+      "display_size": [
+        550,
+        600
+      ]
+    },
+    {
+      "id": "06_lower_thin_text",
+      "title": "下部の細い筆画と紙模様",
+      "xywh": [
+        150,
+        2400,
+        700,
+        600
+      ],
+      "role": "text_and_pattern_control",
+      "frame": "page_200017197",
+      "page": "200017197_00008_1",
+      "reference_input_exact": false,
+      "mask_pixels": {
+        "edit": 6047,
+        "protect": 32139,
+        "hold": 153,
+        "red": 0,
+        "extra": 0,
+        "paper_update": 5962
+      },
+      "changed_pixels": 5072,
+      "exact_saved_npj": false,
+      "panels_exact": true,
+      "integer_nearest": true,
+      "display_size": [
+        700,
+        600
+      ]
+    },
+    {
+      "id": "07_red_seal_control",
+      "title": "朱印の対照・既知ページの別保存版",
+      "xywh": [
+        1330,
+        1800,
+        430,
+        550
+      ],
+      "role": "red_seal_control",
+      "frame": "known_200010454_v2",
+      "page": "200010454_00002_2",
+      "reference_input_exact": true,
+      "mask_pixels": {
+        "edit": 1127,
+        "protect": 28151,
+        "hold": 884,
+        "red": 19555,
+        "extra": 14,
+        "paper_update": 973
+      },
+      "changed_pixels": 850,
+      "exact_saved_npj": false,
+      "panels_exact": true,
+      "integer_nearest": true,
+      "display_size": [
+        430,
+        550
+      ]
+    },
+    {
+      "id": "08_known_brown_stain",
+      "title": "既知の茶色い斑点・別保存版",
+      "xywh": [
+        730,
+        230,
+        180,
+        140
+      ],
+      "role": "known_damage_candidate",
+      "frame": "known_200010454_v2",
+      "page": "200010454_00002_2",
+      "reference_input_exact": true,
+      "mask_pixels": {
+        "edit": 2642,
+        "protect": 239,
+        "hold": 2,
+        "red": 0,
+        "extra": 0,
+        "paper_update": 2610
+      },
+      "changed_pixels": 2241,
+      "exact_saved_npj": false,
+      "panels_exact": true,
+      "integer_nearest": true,
+      "display_size": [
+        540,
+        420
+      ]
+    },
+    {
+      "id": "09_known_dense_text",
+      "title": "既知の濃い筆画・別保存版",
+      "xywh": [
+        555,
+        335,
+        175,
+        160
+      ],
+      "role": "known_text_control",
+      "frame": "known_200010454_v2",
+      "page": "200010454_00002_2",
+      "reference_input_exact": true,
+      "mask_pixels": {
+        "edit": 93,
+        "protect": 2888,
+        "hold": 0,
+        "red": 0,
+        "extra": 0,
+        "paper_update": 93
+      },
+      "changed_pixels": 82,
+      "exact_saved_npj": false,
+      "panels_exact": true,
+      "integer_nearest": true,
+      "display_size": [
+        525,
+        480
+      ]
+    },
+    {
+      "id": "10_rule_crossing_dark_mass",
+      "title": "枠線に接する濃い塊",
+      "xywh": [
+        170,
+        300,
+        350,
+        210
+      ],
+      "role": "residual_damage_positive_candidate",
+      "frame": "crop_hnsd",
+      "page": "hnsd001_011_crop",
+      "reference_input_exact": false,
+      "mask_pixels": {
+        "edit": 0,
+        "protect": 31691,
+        "hold": 1075,
+        "red": 0,
+        "extra": 0,
+        "paper_update": 0
+      },
+      "changed_pixels": 0,
+      "exact_saved_npj": true,
+      "panels_exact": true,
+      "integer_nearest": true,
+      "display_size": [
+        350,
+        210
+      ]
+    },
+    {
+      "id": "11_crop_text_control",
+      "title": "濃い文字と枠線の対照",
+      "xywh": [
+        30,
+        50,
+        160,
+        260
+      ],
+      "role": "text_rule_control",
+      "frame": "crop_hnsd",
+      "page": "hnsd001_011_crop",
+      "reference_input_exact": false,
+      "mask_pixels": {
+        "edit": 0,
+        "protect": 10712,
+        "hold": 182,
+        "red": 0,
+        "extra": 0,
+        "paper_update": 0
+      },
+      "changed_pixels": 0,
+      "exact_saved_npj": true,
+      "panels_exact": true,
+      "integer_nearest": true,
+      "display_size": [
+        480,
+        780
+      ]
+    },
+    {
+      "id": "12_crop_lower_paper",
+      "title": "下端の紙面対照",
+      "xywh": [
+        0,
+        520,
+        620,
+        100
+      ],
+      "role": "paper_control",
+      "frame": "crop_hnsd",
+      "page": "hnsd001_011_crop",
+      "reference_input_exact": false,
+      "mask_pixels": {
+        "edit": 0,
+        "protect": 14362,
+        "hold": 338,
+        "red": 0,
+        "extra": 0,
+        "paper_update": 0
+      },
+      "changed_pixels": 0,
+      "exact_saved_npj": true,
+      "panels_exact": true,
+      "integer_nearest": true,
+      "display_size": [
+        620,
+        100
+      ]
+    }
+  ],
+  "baseline_uses_real_saved_npj": true,
+  "mask_rule_independently_reconstructed": true,
+  "rounded_harmonic_equation_checked": true,
+  "protected_exact_saved_npj": true,
+  "outside_update_exact_saved_npj": true,
+  "panels_exact": true,
+  "archive_png_count": 19,
+  "stroke_update_disabled": true,
+  "pixel_GT": false,
+  "adopted": false
+}

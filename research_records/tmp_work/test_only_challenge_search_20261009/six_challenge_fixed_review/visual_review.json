@@ -1,0 +1,182 @@
+[
+  {
+    "id": "01",
+    "task": "薄い筆画",
+    "text_csc": "細い曲線が断片化し、淡い線の欠落が目立つ",
+    "text_sauvola": "CSCより多くの淡い曲線を保持",
+    "text_howe": "淡い曲線・短線の保持がよく、基本候補として有利",
+    "defect_result": "着色した紙地を抑えるが、元の墨の淡い階調は黒線へ変化",
+    "limitation": "保存筆画の意味・全字形の完全性は未注釈",
+    "next_action": "Howeを固定し、薄い筆画の局所確認を行う",
+    "completed": true,
+    "primary_roi_xywh": [
+      570,
+      600,
+      750,
+      850
+    ],
+    "text_roi_xywh": [
+      500,
+      500,
+      900,
+      1300
+    ],
+    "ground_truth_accuracy_score": false,
+    "whole_page_review_completed": true,
+    "evidence": [
+      "figures/01_6課題DDRM比較.png",
+      "text_context/01_本文比較.png",
+      "6課題_全ページ比較.png"
+    ]
+  },
+  {
+    "id": "02",
+    "task": "広い染みと低コントラスト文字",
+    "text_csc": "右側の淡い字形を中心に大きく断片化",
+    "text_sauvola": "淡い文字を比較的まとまって保持",
+    "text_howe": "淡い本文のまとまりがよい",
+    "defect_result": "褐色の紙地は3条件とも大きく抑制",
+    "limitation": "旧02より弱い代替で、03と同一資料。Howe/Sauvolaでは撮影境界由来の黒い線・帯も残る",
+    "next_action": "全体の閾値を合わせ直さず文字保持を維持",
+    "completed": true,
+    "primary_roi_xywh": [
+      700,
+      1200,
+      850,
+      850
+    ],
+    "text_roi_xywh": [
+      550,
+      800,
+      1050,
+      1500
+    ],
+    "ground_truth_accuracy_score": false,
+    "whole_page_review_completed": true,
+    "evidence": [
+      "figures/02_6課題DDRM比較.png",
+      "text_context/02_本文比較.png",
+      "6課題_全ページ比較.png"
+    ]
+  },
+  {
+    "id": "03",
+    "task": "染みと筆画の接触",
+    "text_csc": "染み付近の淡い字形や曲線が大きく断片化",
+    "text_sauvola": "CSCより字形を多く保持するが細い短線の欠落が残る",
+    "text_howe": "染みに接する淡い筆画の保持がよい",
+    "defect_result": "褐色の紙地は大きく抑えるが、固定赤条件が選んだ染み状の2箇所は3条件とも原色で残る",
+    "limitation": "赤選択1211画素を劣化除去成功として数えない。Howe/Sauvolaでは撮影境界由来の黒い線・帯も残る",
+    "next_action": "文字と染みの接触部を分けて評価",
+    "completed": true,
+    "primary_roi_xywh": [
+      750,
+      700,
+      850,
+      850
+    ],
+    "text_roi_xywh": [
+      450,
+      700,
+      1300,
+      1300
+    ],
+    "ground_truth_accuracy_score": false,
+    "whole_page_review_completed": true,
+    "evidence": [
+      "figures/03_6課題DDRM比較.png",
+      "text_context/03_本文比較.png",
+      "6課題_全ページ比較.png"
+    ]
+  },
+  {
+    "id": "04",
+    "task": "本文外の孤立斑点",
+    "text_csc": "主要な印字を概ね保持",
+    "text_sauvola": "主要な印字を概ね保持",
+    "text_howe": "主要な印字を概ね保持",
+    "defect_result": "基本3条件では3点が残る。既存の限定孤立点除去では3点が消える",
+    "limitation": "孤立点条件は独立記号などの除去を一般には保証しない",
+    "next_action": "孤立点除去を限定した追加条件として残す",
+    "completed": true,
+    "primary_roi_xywh": [
+      550,
+      160,
+      800,
+      820
+    ],
+    "text_roi_xywh": [
+      550,
+      550,
+      800,
+      430
+    ],
+    "ground_truth_accuracy_score": false,
+    "whole_page_review_completed": true,
+    "evidence": [
+      "figures/04_6課題DDRM比較.png",
+      "text_context/04_本文比較.png",
+      "6課題_全ページ比較.png"
+    ]
+  },
+  {
+    "id": "06",
+    "task": "虫食い状の紙面損傷",
+    "text_csc": "追加本文ROIでは主要字形を概ね保持",
+    "text_sauvola": "追加本文ROIでは主要字形を保持し点状片も残る",
+    "text_howe": "追加本文ROIで主要字形を保持。損傷ROI自体は文字保持評価に使わない",
+    "defect_result": "CSCは枝状像を大きく消すが、Sauvola・Howeは黒く残す",
+    "limitation": "虫害という原因は未確定。白くすることは紙・失われた文字の復元ではない。Howe/Sauvolaでは撮影境界由来の黒い線・帯も残る",
+    "next_action": "紙面損傷は文字二値化から分離したタスクとする",
+    "completed": true,
+    "primary_roi_xywh": [
+      80,
+      95,
+      620,
+      530
+    ],
+    "text_roi_xywh": [
+      700,
+      900,
+      800,
+      1000
+    ],
+    "ground_truth_accuracy_score": false,
+    "whole_page_review_completed": true,
+    "evidence": [
+      "figures/06_6課題DDRM比較.png",
+      "text_context/06_本文比較.png",
+      "6課題_全ページ比較.png"
+    ]
+  },
+  {
+    "id": "07",
+    "task": "裏移りと表文字",
+    "text_csc": "主要本文を保持するが細部の欠けは要確認",
+    "text_sauvola": "本文を拾う一方で点・短線が比較的多い",
+    "text_howe": "本文保持と点状片の抑制のバランスはSauvolaよりよい箇所がある",
+    "defect_result": "CSCの出力は点・断片が少ない。Howeにも一部残存像がある",
+    "limitation": "残る短線・点をすべて裏移りとは確認できない",
+    "next_action": "対応ページを参照して残存像を表文字・裏移り候補・傷や点・不明に分ける",
+    "completed": true,
+    "primary_roi_xywh": [
+      800,
+      750,
+      850,
+      900
+    ],
+    "text_roi_xywh": [
+      350,
+      600,
+      1200,
+      1800
+    ],
+    "ground_truth_accuracy_score": false,
+    "whole_page_review_completed": true,
+    "evidence": [
+      "figures/07_6課題DDRM比較.png",
+      "text_context/07_本文比較.png",
+      "6課題_全ページ比較.png"
+    ]
+  }
+]

@@ -1,0 +1,26 @@
+{
+  "settings": {
+    "preblur_sigma": 0.8,
+    "canny_high_gradient_quantile": 0.85,
+    "canny_low_high_ratio": 0.4,
+    "max_ray_px": 32,
+    "min_ray_px": 3,
+    "endpoint_opposition_cosine": 0.866,
+    "midpoint_darkness_min_gray": 4,
+    "background_radius": "ceil(1.5*median initial opposing-ray width), clipped [3,48]",
+    "compensated": "255 - (morphology close(original gray) - original gray)",
+    "second_ray_width": "[max(3,.5*initial_median),min(32,2*initial_median)]",
+    "protect": "Accepted second-pass ray interiors and endpoints, 1px halo; not a true text mask",
+    "exact_paper_reimplementation": false,
+    "new_restoration": false,
+    "ROI_gating": false,
+    "training": false,
+    "pixel_GT": false
+  },
+  "dependencies": {
+    "scripts/benchmark/probe_npj_background_paired_edges.py": "a695503e2cf375b2dbcc81e37318637e69d4f13801ce5a1a8c177c9f112cd477",
+    "tmp_work/npj_literature_trial_20261002/selection.json": "a18403fef7a0c917687b7921bd491889f0302fbfedfb8f887c0ed33e23f76e46",
+    "tmp_work/npj_literature_trial_20261002/selection_complete.json": "4dc93c9d07d4c1fe0a4a843376f89eb2b2b5ebdb13bd43a2b579005b00134756"
+  },
+  "source_sha": "a695503e2cf375b2dbcc81e37318637e69d4f13801ce5a1a8c177c9f112cd477"
+}

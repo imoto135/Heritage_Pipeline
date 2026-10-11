@@ -1,0 +1,20 @@
+{
+  "page": "200020019_00082_2",
+  "name": "color_forest",
+  "book": "200020019",
+  "role": "development",
+  "original": "data/train/200020019/200020019_00082_2.jpg",
+  "source_sha256": "1202997f573d6dcdc461fda9941fa0889311ee31c34842f4b49c0c38d037847c",
+  "model_sha256": "fd422972746f00d54e9ee801c0a5b9420584c40e88c7cfd62da85258c13046e1",
+  "threshold": 0.5,
+  "script_sha256": "588fbd088eac4cdf6957f0f1fb1c5957ab38aabbba74d196a0c7011db0b5741c",
+  "mark_pixels": 1064084,
+  "seconds": 7.350336313247681,
+  "training": "92 tentative original-development points; no validation labels used",
+  "classifier_has_no_stain_head": true,
+  "no_full_pixel_GT": true,
+  "outputs": {
+    "mark_mask.png": "de44d129f738ba91c82253eb09286119b4ae3129370092ab413e8a7dd642823a",
+    "mark_probability_preview.png": "3ebd841260081f785662e3b43eae5af2e82ca146696e781bbde8a4ca0f7c6e87"
+  }
+}

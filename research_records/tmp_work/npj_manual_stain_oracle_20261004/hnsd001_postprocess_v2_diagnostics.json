@@ -1,0 +1,29 @@
+{
+  "manual_mask_pixels": 6341,
+  "blackmask_overlap": 3300,
+  "threshold_L": 74.025146484375,
+  "known_reference_pixels": 205099,
+  "applied_pixels": 6341,
+  "changed_pixels": 6324,
+  "changed_outside_manual_mask": 0,
+  "used_reference_pixels": 190,
+  "component_notes": [
+    {
+      "component": 1,
+      "pixels": 6341,
+      "boundary_pairs": 263,
+      "applied": true,
+      "max_residual": 7.105427357601002e-13,
+      "reference_BGR_min": [
+        181.69098402632272,
+        202.08556656975273,
+        213.25179066655502
+      ],
+      "reference_BGR_max": [
+        188.71509565702434,
+        208.250422252677,
+        218.73533027884665
+      ]
+    }
+  ]
+}

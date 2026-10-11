@@ -1,0 +1,240 @@
+[
+  {
+    "page": "100249376_00056_1",
+    "book": "100249376",
+    "original": "data/train/100249376/100249376_00056_1.jpg",
+    "source_sha256": "58d356496a4bc7facbf5474648d15beb1234871cec9aebed6e02375249b67b92",
+    "ROI": [
+      340,
+      2170,
+      550,
+      520
+    ],
+    "name": "薄い矩形印影",
+    "crop": "development_inputs/100249376_00056_1/100249376_00056_1_roi_01.png",
+    "known_prior_method_outputs": true,
+    "role": "development/regression; not independent validation",
+    "pixel_GT": false
+  },
+  {
+    "page": "100249537_00003_2",
+    "book": "100249537",
+    "original": "data/train/100249537/100249537_00003_2.jpg",
+    "source_sha256": "557d28ea4800b88997e0c7da395b4171583533996508bc88088c0cb85a05ad87",
+    "ROI": [
+      1190,
+      480,
+      430,
+      970
+    ],
+    "name": "上部の囲み線と墨",
+    "crop": "development_inputs/100249537_00003_2/100249537_00003_2_roi_01.png",
+    "known_prior_method_outputs": true,
+    "role": "development/regression; not independent validation",
+    "pixel_GT": false
+  },
+  {
+    "page": "100249537_00003_2",
+    "book": "100249537",
+    "original": "data/train/100249537/100249537_00003_2.jpg",
+    "source_sha256": "557d28ea4800b88997e0c7da395b4171583533996508bc88088c0cb85a05ad87",
+    "ROI": [
+      960,
+      1550,
+      380,
+      600
+    ],
+    "name": "下部の囲み線と墨",
+    "crop": "development_inputs/100249537_00003_2/100249537_00003_2_roi_02.png",
+    "known_prior_method_outputs": true,
+    "role": "development/regression; not independent validation",
+    "pixel_GT": false
+  },
+  {
+    "page": "200006663_00002_2",
+    "book": "200006663",
+    "original": "data/train/200006663/200006663_00002_2.jpg",
+    "source_sha256": "ae604e514da9007ef8ce6c2a4e01cae0bcdcaeb5be2b4c38e3564f522e6aed3c",
+    "ROI": [
+      730,
+      2180,
+      730,
+      780
+    ],
+    "name": "挿絵に重なる印影",
+    "crop": "development_inputs/200006663_00002_2/200006663_00002_2_roi_01.png",
+    "known_prior_method_outputs": true,
+    "role": "development/regression; not independent validation",
+    "pixel_GT": false
+  },
+  {
+    "page": "200020019_00002_2",
+    "book": "200020019",
+    "original": "data/train/200020019/200020019_00002_2.jpg",
+    "source_sha256": "5824181ca480ec7aa37251d7087fa3dc7ed0431d1bdbcc4b9123a491ba8bf9cb",
+    "ROI": [
+      1150,
+      50,
+      600,
+      850
+    ],
+    "name": "上部の印影と墨",
+    "crop": "development_inputs/200020019_00002_2/200020019_00002_2_roi_01.png",
+    "known_prior_method_outputs": true,
+    "role": "development/regression; not independent validation",
+    "pixel_GT": false
+  },
+  {
+    "page": "200020019_00002_2",
+    "book": "200020019",
+    "original": "data/train/200020019/200020019_00002_2.jpg",
+    "source_sha256": "5824181ca480ec7aa37251d7087fa3dc7ed0431d1bdbcc4b9123a491ba8bf9cb",
+    "ROI": [
+      1550,
+      2520,
+      300,
+      420
+    ],
+    "name": "下部の印影と墨",
+    "crop": "development_inputs/200020019_00002_2/200020019_00002_2_roi_02.png",
+    "known_prior_method_outputs": true,
+    "role": "development/regression; not independent validation",
+    "pixel_GT": false
+  },
+  {
+    "page": "200020019_00082_2",
+    "book": "200020019",
+    "original": "data/train/200020019/200020019_00082_2.jpg",
+    "source_sha256": "1202997f573d6dcdc461fda9941fa0889311ee31c34842f4b49c0c38d037847c",
+    "ROI": [
+      40,
+      1300,
+      480,
+      500
+    ],
+    "name": "薄い印影",
+    "crop": "development_inputs/200020019_00082_2/200020019_00082_2_roi_01.png",
+    "known_prior_method_outputs": true,
+    "role": "development/regression; not independent validation",
+    "pixel_GT": false
+  },
+  {
+    "page": "200020019_00082_2",
+    "book": "200020019",
+    "original": "data/train/200020019/200020019_00082_2.jpg",
+    "source_sha256": "1202997f573d6dcdc461fda9941fa0889311ee31c34842f4b49c0c38d037847c",
+    "ROI": [
+      580,
+      2380,
+      500,
+      480
+    ],
+    "name": "明瞭な印影",
+    "crop": "development_inputs/200020019_00082_2/200020019_00082_2_roi_02.png",
+    "known_prior_method_outputs": true,
+    "role": "development/regression; not independent validation",
+    "pixel_GT": false
+  },
+  {
+    "page": "200021086_00032_2",
+    "book": "200021086",
+    "original": "data/train/200021086/200021086_00032_2.jpg",
+    "source_sha256": "26214bf730b542def243debc71ee34aadba790cc4773e1326fdff1aff7c45ba6",
+    "ROI": [
+      570,
+      350,
+      650,
+      1100
+    ],
+    "name": "低コントラストの印影",
+    "crop": "development_inputs/200021086_00032_2/200021086_00032_2_roi_01.png",
+    "known_prior_method_outputs": true,
+    "role": "development/regression; not independent validation",
+    "pixel_GT": false
+  },
+  {
+    "page": "200021763_00002_2",
+    "book": "200021763",
+    "original": "data/train/200021763/200021763_00002_2.jpg",
+    "source_sha256": "44631919294b4cde57c2cfa8f669ac2648fa855a2f204e25629c115f5b986313",
+    "ROI": [
+      190,
+      580,
+      520,
+      800
+    ],
+    "name": "上側の赤褐色筆記",
+    "crop": "development_inputs/200021763_00002_2/200021763_00002_2_roi_01.png",
+    "known_prior_method_outputs": true,
+    "role": "development/regression; not independent validation",
+    "pixel_GT": false
+  },
+  {
+    "page": "200021763_00002_2",
+    "book": "200021763",
+    "original": "data/train/200021763/200021763_00002_2.jpg",
+    "source_sha256": "44631919294b4cde57c2cfa8f669ac2648fa855a2f204e25629c115f5b986313",
+    "ROI": [
+      190,
+      1280,
+      560,
+      1260
+    ],
+    "name": "下側の赤褐色筆記と細線",
+    "crop": "development_inputs/200021763_00002_2/200021763_00002_2_roi_02.png",
+    "known_prior_method_outputs": true,
+    "role": "development/regression; not independent validation",
+    "pixel_GT": false
+  },
+  {
+    "page": "200025191_00004_2",
+    "book": "200025191",
+    "original": "data/train/200025191/200025191_00004_2.jpg",
+    "source_sha256": "28435ed05f9d48efa60f467c628616a3e5dc294642cab424e0014146494add7a",
+    "ROI": [
+      550,
+      1850,
+      440,
+      850
+    ],
+    "name": "細い印影と墨の接触",
+    "crop": "development_inputs/200025191_00004_2/200025191_00004_2_roi_01.png",
+    "known_prior_method_outputs": true,
+    "role": "development/regression; not independent validation",
+    "pixel_GT": false
+  },
+  {
+    "page": "100249371_00002_1",
+    "book": "100249371",
+    "original": "data/val/100249371/100249371_00002_1.jpg",
+    "source_sha256": "fd32440af0d2cd93de4b9b7ac820cbc90d84e2bed0e7b23e3796d0b0f4861ff6",
+    "ROI": [
+      880,
+      60,
+      740,
+      680
+    ],
+    "name": "上部の赤と青・墨",
+    "crop": "development_inputs/100249371_00002_1/100249371_00002_1_roi_01.png",
+    "known_prior_method_outputs": true,
+    "role": "development/regression; not independent validation",
+    "pixel_GT": false
+  },
+  {
+    "page": "100249371_00002_1",
+    "book": "100249371",
+    "original": "data/val/100249371/100249371_00002_1.jpg",
+    "source_sha256": "fd32440af0d2cd93de4b9b7ac820cbc90d84e2bed0e7b23e3796d0b0f4861ff6",
+    "ROI": [
+      180,
+      2050,
+      530,
+      650
+    ],
+    "name": "下部の赤と墨",
+    "crop": "development_inputs/100249371_00002_1/100249371_00002_1_roi_02.png",
+    "known_prior_method_outputs": true,
+    "role": "development/regression; not independent validation",
+    "pixel_GT": false
+  }
+]

@@ -1,0 +1,38 @@
+{
+  "dependencies": {
+    "tmp_work/saved_npj_paper_only_followup_pilot_20261002/manifest.json": "0e8759431aca05a6ca82eda68b3f9fb3053cfe154beea97327abe676393374f0",
+    "tmp_work/saved_npj_paper_only_followup_pilot_20261002/complete.json": "a520f21e198af033372b2e462a1c0cf74c010ec47984f143ed1faf3b9d9d8d41",
+    "tmp_work/saved_npj_paper_only_followup_pilot_20261002/source_snapshot.py": "fa5b9fef8405aee3bf33c93ebbd15fe578ed15d9d085007f3abd268df9ff7591",
+    "scripts/benchmark/diagnose_saved_npj_hnsd_input_scope.py": "4ba47e7bec69c716e33ab12dcfe6c3fd992254078ff8731fd252d4657b7aa150",
+    "scripts/benchmark/validate_saved_npj_paper_only_followup.py": "fa5b9fef8405aee3bf33c93ebbd15fe578ed15d9d085007f3abd268df9ff7591",
+    "tmp_work/mask_ablation_hnsd/input/hnsd001_011_crop.png": "78e46d451a970f81c45ea11aaa4c7185b0921df01db1a3ebd0963055643a09d4",
+    "data/split_dataset/train/hnsd00000/hnsd001_011.jpg": "22017c0af65c5f43560ff05cfcc15c6ed8f56b72e60a04a732d9c31b72f05731",
+    "tmp_work/warm_ink_hold_v6_20260930/manifest.json": "1064fc55b1c1a7f3236ab020d0d7bef3c9f4b8daf5fe6c1a3b162e597359dddf",
+    "tmp_work/warm_ink_hold_v6_20260930/complete.json": "b8891f080eed52f9dc53cfe48713206e8767fdd46cead507ca5edeac972f33c5",
+    "tmp_work/warm_ink_hold_v6_20260930/candidate_freeze.json": "2ed7f5bec639009039946a3548291697b4353a793c5148c3484a44683313b5b0",
+    "tmp_work/warm_ink_hold_v6_20260930/hnsd001_011/split_direction_edit_allowed.png": "5d3fd2018944676be36cb80c6e1a6fa5d83a65028d79bdede35a5733dba2334d",
+    "tmp_work/warm_ink_hold_v6_20260930/hnsd001_011/split_direction_hold.png": "deaa4dbded7e2806a3ea1f137df854f0f9f2f5b5f04be31b130957daa5367041",
+    "tmp_work/warm_ink_hold_v6_20260930/hnsd001_011/split_direction_extra_hold.png": "ddd311f5ae61f734d04d743ba0ba85ac2d3ad9faaf0f0d8ed42399625a37f9bb",
+    "tmp_work/warm_ink_hold_v6_20260930/hnsd001_011/protect.png": "59d48adb86859d34795d95cbc7fe9dfbdfffa1bd9cb7afeabb8ac45d92f9d84f",
+    "tmp_work/warm_ink_hold_v6_20260930/hnsd001_011/red.png": "ddd311f5ae61f734d04d743ba0ba85ac2d3ad9faaf0f0d8ed42399625a37f9bb",
+    "tmp_work/saved_npj_paper_only_followup_pilot_20261002/native/crop_hnsd/edit.png": "5e03efd9a3e992f01b10422ee7ff6a4afbe01e677b4ece02bfb99735a4f395d4",
+    "tmp_work/saved_npj_paper_only_followup_pilot_20261002/native/crop_hnsd/hold.png": "416a0fd02cacddb99795a6cde8829306d4a1c12f1cc25262cd2b571959cbff85",
+    "tmp_work/saved_npj_paper_only_followup_pilot_20261002/native/crop_hnsd/extra.png": "5e03efd9a3e992f01b10422ee7ff6a4afbe01e677b4ece02bfb99735a4f395d4",
+    "tmp_work/saved_npj_paper_only_followup_pilot_20261002/native/crop_hnsd/protect.png": "ef335e8ea1e3cc6ecc1391cc0b0a893a25951dc80a7cbdb9cd41f84d6b067626",
+    "tmp_work/saved_npj_paper_only_followup_pilot_20261002/native/crop_hnsd/red.png": "5e03efd9a3e992f01b10422ee7ff6a4afbe01e677b4ece02bfb99735a4f395d4"
+  },
+  "source_sha256": "4ba47e7bec69c716e33ab12dcfe6c3fd992254078ff8731fd252d4657b7aa150",
+  "reference_xywh": [
+    80,
+    2280,
+    620,
+    620
+  ],
+  "threshold_changes": false,
+  "restoration": false,
+  "comparisons": [
+    "Same original pixels: full-page classification versus crop classification",
+    "Same cropped scope: original reference pixels versus historical saved-input pixels"
+  ],
+  "limitation": "Historical full-image transformation unavailable; source/crop tests are not a complete 2x2"
+}

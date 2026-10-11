@@ -1,0 +1,680 @@
+{
+  "records": [
+    {
+      "id": "dev_06_broad_ellipses_brown_10",
+      "case": "dev_06",
+      "page": "200020019_00082_2",
+      "book": "200020019",
+      "original": "data/train/200020019/200020019_00082_2.jpg",
+      "original_sha256": "1202997f573d6dcdc461fda9941fa0889311ee31c34842f4b49c0c38d037847c",
+      "ROI": [
+        40,
+        1300,
+        480,
+        500
+      ],
+      "shape": "broad_ellipses",
+      "direction_name": "brown",
+      "direction": [
+        0.45,
+        0.72,
+        1.0
+      ],
+      "opacity": 0.1,
+      "input": "counterfactual_stain_challenge/inputs/dev_06_broad_ellipses_brown_10/input.png",
+      "input_sha256": "2f1041ab7be01857ec019cf4f85dd467a9e8b88b042db2861013a8fb8d557c26",
+      "alpha": "counterfactual_stain_challenge/inputs/dev_06_broad_ellipses_brown_10/added_alpha_ROI.npy",
+      "alpha_sha256": "f50414457853727b27980c8432f978946ee7ff9a3f23cb6c9c82e0cfd19cc672",
+      "supervision": "Frozen tentative original points; known added attenuation only",
+      "original_is_not_clean_GT": true
+    },
+    {
+      "id": "dev_06_broad_ellipses_brown_30",
+      "case": "dev_06",
+      "page": "200020019_00082_2",
+      "book": "200020019",
+      "original": "data/train/200020019/200020019_00082_2.jpg",
+      "original_sha256": "1202997f573d6dcdc461fda9941fa0889311ee31c34842f4b49c0c38d037847c",
+      "ROI": [
+        40,
+        1300,
+        480,
+        500
+      ],
+      "shape": "broad_ellipses",
+      "direction_name": "brown",
+      "direction": [
+        0.45,
+        0.72,
+        1.0
+      ],
+      "opacity": 0.3,
+      "input": "counterfactual_stain_challenge/inputs/dev_06_broad_ellipses_brown_30/input.png",
+      "input_sha256": "8cbade62c431916ffa9fa037dfab07cbfd905f56f7836d18df1aea778d750ed9",
+      "alpha": "counterfactual_stain_challenge/inputs/dev_06_broad_ellipses_brown_30/added_alpha_ROI.npy",
+      "alpha_sha256": "f50414457853727b27980c8432f978946ee7ff9a3f23cb6c9c82e0cfd19cc672",
+      "supervision": "Frozen tentative original points; known added attenuation only",
+      "original_is_not_clean_GT": true
+    },
+    {
+      "id": "dev_06_broad_ellipses_red_brown_10",
+      "case": "dev_06",
+      "page": "200020019_00082_2",
+      "book": "200020019",
+      "original": "data/train/200020019/200020019_00082_2.jpg",
+      "original_sha256": "1202997f573d6dcdc461fda9941fa0889311ee31c34842f4b49c0c38d037847c",
+      "ROI": [
+        40,
+        1300,
+        480,
+        500
+      ],
+      "shape": "broad_ellipses",
+      "direction_name": "red_brown",
+      "direction": [
+        0.12,
+        0.72,
+        1.0
+      ],
+      "opacity": 0.1,
+      "input": "counterfactual_stain_challenge/inputs/dev_06_broad_ellipses_red_brown_10/input.png",
+      "input_sha256": "fed76c246ae5715638c760ec0f4b20d4039e0e2112fb1f6191e3e614a5125e67",
+      "alpha": "counterfactual_stain_challenge/inputs/dev_06_broad_ellipses_red_brown_10/added_alpha_ROI.npy",
+      "alpha_sha256": "f50414457853727b27980c8432f978946ee7ff9a3f23cb6c9c82e0cfd19cc672",
+      "supervision": "Frozen tentative original points; known added attenuation only",
+      "original_is_not_clean_GT": true
+    },
+    {
+      "id": "dev_06_broad_ellipses_red_brown_30",
+      "case": "dev_06",
+      "page": "200020019_00082_2",
+      "book": "200020019",
+      "original": "data/train/200020019/200020019_00082_2.jpg",
+      "original_sha256": "1202997f573d6dcdc461fda9941fa0889311ee31c34842f4b49c0c38d037847c",
+      "ROI": [
+        40,
+        1300,
+        480,
+        500
+      ],
+      "shape": "broad_ellipses",
+      "direction_name": "red_brown",
+      "direction": [
+        0.12,
+        0.72,
+        1.0
+      ],
+      "opacity": 0.3,
+      "input": "counterfactual_stain_challenge/inputs/dev_06_broad_ellipses_red_brown_30/input.png",
+      "input_sha256": "9fb43dcb94e56bda14adc28dcd6696a0d6cc7af65b927921e9951d9f3bda89c4",
+      "alpha": "counterfactual_stain_challenge/inputs/dev_06_broad_ellipses_red_brown_30/added_alpha_ROI.npy",
+      "alpha_sha256": "f50414457853727b27980c8432f978946ee7ff9a3f23cb6c9c82e0cfd19cc672",
+      "supervision": "Frozen tentative original points; known added attenuation only",
+      "original_is_not_clean_GT": true
+    },
+    {
+      "id": "dev_06_narrow_fold_brown_10",
+      "case": "dev_06",
+      "page": "200020019_00082_2",
+      "book": "200020019",
+      "original": "data/train/200020019/200020019_00082_2.jpg",
+      "original_sha256": "1202997f573d6dcdc461fda9941fa0889311ee31c34842f4b49c0c38d037847c",
+      "ROI": [
+        40,
+        1300,
+        480,
+        500
+      ],
+      "shape": "narrow_fold",
+      "direction_name": "brown",
+      "direction": [
+        0.45,
+        0.72,
+        1.0
+      ],
+      "opacity": 0.1,
+      "input": "counterfactual_stain_challenge/inputs/dev_06_narrow_fold_brown_10/input.png",
+      "input_sha256": "763b2ba87a933a28f59b07fa29cc6e52be39332a11e94c638c5c1bb36c36f6e7",
+      "alpha": "counterfactual_stain_challenge/inputs/dev_06_narrow_fold_brown_10/added_alpha_ROI.npy",
+      "alpha_sha256": "b371bf995855b28e9e5ec34696c0a31c8bad72981f8ee6bdfd3334cde3d5fb8c",
+      "supervision": "Frozen tentative original points; known added attenuation only",
+      "original_is_not_clean_GT": true
+    },
+    {
+      "id": "dev_06_narrow_fold_brown_30",
+      "case": "dev_06",
+      "page": "200020019_00082_2",
+      "book": "200020019",
+      "original": "data/train/200020019/200020019_00082_2.jpg",
+      "original_sha256": "1202997f573d6dcdc461fda9941fa0889311ee31c34842f4b49c0c38d037847c",
+      "ROI": [
+        40,
+        1300,
+        480,
+        500
+      ],
+      "shape": "narrow_fold",
+      "direction_name": "brown",
+      "direction": [
+        0.45,
+        0.72,
+        1.0
+      ],
+      "opacity": 0.3,
+      "input": "counterfactual_stain_challenge/inputs/dev_06_narrow_fold_brown_30/input.png",
+      "input_sha256": "923b58007732313486de7c15b33942581431b1b37dd7e4f26f735f0e14855994",
+      "alpha": "counterfactual_stain_challenge/inputs/dev_06_narrow_fold_brown_30/added_alpha_ROI.npy",
+      "alpha_sha256": "b371bf995855b28e9e5ec34696c0a31c8bad72981f8ee6bdfd3334cde3d5fb8c",
+      "supervision": "Frozen tentative original points; known added attenuation only",
+      "original_is_not_clean_GT": true
+    },
+    {
+      "id": "dev_06_narrow_fold_red_brown_10",
+      "case": "dev_06",
+      "page": "200020019_00082_2",
+      "book": "200020019",
+      "original": "data/train/200020019/200020019_00082_2.jpg",
+      "original_sha256": "1202997f573d6dcdc461fda9941fa0889311ee31c34842f4b49c0c38d037847c",
+      "ROI": [
+        40,
+        1300,
+        480,
+        500
+      ],
+      "shape": "narrow_fold",
+      "direction_name": "red_brown",
+      "direction": [
+        0.12,
+        0.72,
+        1.0
+      ],
+      "opacity": 0.1,
+      "input": "counterfactual_stain_challenge/inputs/dev_06_narrow_fold_red_brown_10/input.png",
+      "input_sha256": "ea6eae59045bff13da4aa576143b902cebe6660800c6d3bcd750c025b64aaba3",
+      "alpha": "counterfactual_stain_challenge/inputs/dev_06_narrow_fold_red_brown_10/added_alpha_ROI.npy",
+      "alpha_sha256": "b371bf995855b28e9e5ec34696c0a31c8bad72981f8ee6bdfd3334cde3d5fb8c",
+      "supervision": "Frozen tentative original points; known added attenuation only",
+      "original_is_not_clean_GT": true
+    },
+    {
+      "id": "dev_06_narrow_fold_red_brown_30",
+      "case": "dev_06",
+      "page": "200020019_00082_2",
+      "book": "200020019",
+      "original": "data/train/200020019/200020019_00082_2.jpg",
+      "original_sha256": "1202997f573d6dcdc461fda9941fa0889311ee31c34842f4b49c0c38d037847c",
+      "ROI": [
+        40,
+        1300,
+        480,
+        500
+      ],
+      "shape": "narrow_fold",
+      "direction_name": "red_brown",
+      "direction": [
+        0.12,
+        0.72,
+        1.0
+      ],
+      "opacity": 0.3,
+      "input": "counterfactual_stain_challenge/inputs/dev_06_narrow_fold_red_brown_30/input.png",
+      "input_sha256": "4dce49cb09316a1b46f7bb63814cab419f2132aa5c8bdce76a743e85dd0d625d",
+      "alpha": "counterfactual_stain_challenge/inputs/dev_06_narrow_fold_red_brown_30/added_alpha_ROI.npy",
+      "alpha_sha256": "b371bf995855b28e9e5ec34696c0a31c8bad72981f8ee6bdfd3334cde3d5fb8c",
+      "supervision": "Frozen tentative original points; known added attenuation only",
+      "original_is_not_clean_GT": true
+    },
+    {
+      "id": "dev_08_broad_ellipses_brown_10",
+      "case": "dev_08",
+      "page": "200021086_00032_2",
+      "book": "200021086",
+      "original": "data/train/200021086/200021086_00032_2.jpg",
+      "original_sha256": "26214bf730b542def243debc71ee34aadba790cc4773e1326fdff1aff7c45ba6",
+      "ROI": [
+        570,
+        350,
+        650,
+        1100
+      ],
+      "shape": "broad_ellipses",
+      "direction_name": "brown",
+      "direction": [
+        0.45,
+        0.72,
+        1.0
+      ],
+      "opacity": 0.1,
+      "input": "counterfactual_stain_challenge/inputs/dev_08_broad_ellipses_brown_10/input.png",
+      "input_sha256": "2b45675ce3044d88559e567d1bd0693ce0703c27bfe752ee21c558ca17b22594",
+      "alpha": "counterfactual_stain_challenge/inputs/dev_08_broad_ellipses_brown_10/added_alpha_ROI.npy",
+      "alpha_sha256": "8dd341b02c057ed2a8807d0a5b3cc533bfe05d6c394d55f5cd79c6bf4ce1c69b",
+      "supervision": "Frozen tentative original points; known added attenuation only",
+      "original_is_not_clean_GT": true
+    },
+    {
+      "id": "dev_08_broad_ellipses_brown_30",
+      "case": "dev_08",
+      "page": "200021086_00032_2",
+      "book": "200021086",
+      "original": "data/train/200021086/200021086_00032_2.jpg",
+      "original_sha256": "26214bf730b542def243debc71ee34aadba790cc4773e1326fdff1aff7c45ba6",
+      "ROI": [
+        570,
+        350,
+        650,
+        1100
+      ],
+      "shape": "broad_ellipses",
+      "direction_name": "brown",
+      "direction": [
+        0.45,
+        0.72,
+        1.0
+      ],
+      "opacity": 0.3,
+      "input": "counterfactual_stain_challenge/inputs/dev_08_broad_ellipses_brown_30/input.png",
+      "input_sha256": "43a51b8659d91bb09503838dc99ad5d041a3250bea1eca7694f235d56e02cd97",
+      "alpha": "counterfactual_stain_challenge/inputs/dev_08_broad_ellipses_brown_30/added_alpha_ROI.npy",
+      "alpha_sha256": "8dd341b02c057ed2a8807d0a5b3cc533bfe05d6c394d55f5cd79c6bf4ce1c69b",
+      "supervision": "Frozen tentative original points; known added attenuation only",
+      "original_is_not_clean_GT": true
+    },
+    {
+      "id": "dev_08_broad_ellipses_red_brown_10",
+      "case": "dev_08",
+      "page": "200021086_00032_2",
+      "book": "200021086",
+      "original": "data/train/200021086/200021086_00032_2.jpg",
+      "original_sha256": "26214bf730b542def243debc71ee34aadba790cc4773e1326fdff1aff7c45ba6",
+      "ROI": [
+        570,
+        350,
+        650,
+        1100
+      ],
+      "shape": "broad_ellipses",
+      "direction_name": "red_brown",
+      "direction": [
+        0.12,
+        0.72,
+        1.0
+      ],
+      "opacity": 0.1,
+      "input": "counterfactual_stain_challenge/inputs/dev_08_broad_ellipses_red_brown_10/input.png",
+      "input_sha256": "267b8d0980870c91d5814ff33658b4829c2839f705b25f3a528c3a24e9b7b9a6",
+      "alpha": "counterfactual_stain_challenge/inputs/dev_08_broad_ellipses_red_brown_10/added_alpha_ROI.npy",
+      "alpha_sha256": "8dd341b02c057ed2a8807d0a5b3cc533bfe05d6c394d55f5cd79c6bf4ce1c69b",
+      "supervision": "Frozen tentative original points; known added attenuation only",
+      "original_is_not_clean_GT": true
+    },
+    {
+      "id": "dev_08_broad_ellipses_red_brown_30",
+      "case": "dev_08",
+      "page": "200021086_00032_2",
+      "book": "200021086",
+      "original": "data/train/200021086/200021086_00032_2.jpg",
+      "original_sha256": "26214bf730b542def243debc71ee34aadba790cc4773e1326fdff1aff7c45ba6",
+      "ROI": [
+        570,
+        350,
+        650,
+        1100
+      ],
+      "shape": "broad_ellipses",
+      "direction_name": "red_brown",
+      "direction": [
+        0.12,
+        0.72,
+        1.0
+      ],
+      "opacity": 0.3,
+      "input": "counterfactual_stain_challenge/inputs/dev_08_broad_ellipses_red_brown_30/input.png",
+      "input_sha256": "4aa0ad3d93f79e11ef0224e8bc7f7ff8b35a21de559d69912077d3c4e0f69910",
+      "alpha": "counterfactual_stain_challenge/inputs/dev_08_broad_ellipses_red_brown_30/added_alpha_ROI.npy",
+      "alpha_sha256": "8dd341b02c057ed2a8807d0a5b3cc533bfe05d6c394d55f5cd79c6bf4ce1c69b",
+      "supervision": "Frozen tentative original points; known added attenuation only",
+      "original_is_not_clean_GT": true
+    },
+    {
+      "id": "dev_08_narrow_fold_brown_10",
+      "case": "dev_08",
+      "page": "200021086_00032_2",
+      "book": "200021086",
+      "original": "data/train/200021086/200021086_00032_2.jpg",
+      "original_sha256": "26214bf730b542def243debc71ee34aadba790cc4773e1326fdff1aff7c45ba6",
+      "ROI": [
+        570,
+        350,
+        650,
+        1100
+      ],
+      "shape": "narrow_fold",
+      "direction_name": "brown",
+      "direction": [
+        0.45,
+        0.72,
+        1.0
+      ],
+      "opacity": 0.1,
+      "input": "counterfactual_stain_challenge/inputs/dev_08_narrow_fold_brown_10/input.png",
+      "input_sha256": "ab7541752a02d5b518c0db47249b14fad9463a5a5cf2107e26c05c481299b707",
+      "alpha": "counterfactual_stain_challenge/inputs/dev_08_narrow_fold_brown_10/added_alpha_ROI.npy",
+      "alpha_sha256": "281388c47f5744e643d98d5a5677002bbfe9fcf165fb12819c5bccd36d656f37",
+      "supervision": "Frozen tentative original points; known added attenuation only",
+      "original_is_not_clean_GT": true
+    },
+    {
+      "id": "dev_08_narrow_fold_brown_30",
+      "case": "dev_08",
+      "page": "200021086_00032_2",
+      "book": "200021086",
+      "original": "data/train/200021086/200021086_00032_2.jpg",
+      "original_sha256": "26214bf730b542def243debc71ee34aadba790cc4773e1326fdff1aff7c45ba6",
+      "ROI": [
+        570,
+        350,
+        650,
+        1100
+      ],
+      "shape": "narrow_fold",
+      "direction_name": "brown",
+      "direction": [
+        0.45,
+        0.72,
+        1.0
+      ],
+      "opacity": 0.3,
+      "input": "counterfactual_stain_challenge/inputs/dev_08_narrow_fold_brown_30/input.png",
+      "input_sha256": "30c8fd46177c3b5c646d251109e64f5e57e3b85821e79ffc82e0710caf380695",
+      "alpha": "counterfactual_stain_challenge/inputs/dev_08_narrow_fold_brown_30/added_alpha_ROI.npy",
+      "alpha_sha256": "281388c47f5744e643d98d5a5677002bbfe9fcf165fb12819c5bccd36d656f37",
+      "supervision": "Frozen tentative original points; known added attenuation only",
+      "original_is_not_clean_GT": true
+    },
+    {
+      "id": "dev_08_narrow_fold_red_brown_10",
+      "case": "dev_08",
+      "page": "200021086_00032_2",
+      "book": "200021086",
+      "original": "data/train/200021086/200021086_00032_2.jpg",
+      "original_sha256": "26214bf730b542def243debc71ee34aadba790cc4773e1326fdff1aff7c45ba6",
+      "ROI": [
+        570,
+        350,
+        650,
+        1100
+      ],
+      "shape": "narrow_fold",
+      "direction_name": "red_brown",
+      "direction": [
+        0.12,
+        0.72,
+        1.0
+      ],
+      "opacity": 0.1,
+      "input": "counterfactual_stain_challenge/inputs/dev_08_narrow_fold_red_brown_10/input.png",
+      "input_sha256": "9e75c50d5a2b3782f4a384878d33cf1879a02f22b26f9981b14b9767277c256a",
+      "alpha": "counterfactual_stain_challenge/inputs/dev_08_narrow_fold_red_brown_10/added_alpha_ROI.npy",
+      "alpha_sha256": "281388c47f5744e643d98d5a5677002bbfe9fcf165fb12819c5bccd36d656f37",
+      "supervision": "Frozen tentative original points; known added attenuation only",
+      "original_is_not_clean_GT": true
+    },
+    {
+      "id": "dev_08_narrow_fold_red_brown_30",
+      "case": "dev_08",
+      "page": "200021086_00032_2",
+      "book": "200021086",
+      "original": "data/train/200021086/200021086_00032_2.jpg",
+      "original_sha256": "26214bf730b542def243debc71ee34aadba790cc4773e1326fdff1aff7c45ba6",
+      "ROI": [
+        570,
+        350,
+        650,
+        1100
+      ],
+      "shape": "narrow_fold",
+      "direction_name": "red_brown",
+      "direction": [
+        0.12,
+        0.72,
+        1.0
+      ],
+      "opacity": 0.3,
+      "input": "counterfactual_stain_challenge/inputs/dev_08_narrow_fold_red_brown_30/input.png",
+      "input_sha256": "3a8f82cf1051dcbf2aaec7f5ea855aae3d41f2e94c563857f440eec40bf5074f",
+      "alpha": "counterfactual_stain_challenge/inputs/dev_08_narrow_fold_red_brown_30/added_alpha_ROI.npy",
+      "alpha_sha256": "281388c47f5744e643d98d5a5677002bbfe9fcf165fb12819c5bccd36d656f37",
+      "supervision": "Frozen tentative original points; known added attenuation only",
+      "original_is_not_clean_GT": true
+    },
+    {
+      "id": "dev_10_broad_ellipses_brown_10",
+      "case": "dev_10",
+      "page": "200021763_00002_2",
+      "book": "200021763",
+      "original": "data/train/200021763/200021763_00002_2.jpg",
+      "original_sha256": "44631919294b4cde57c2cfa8f669ac2648fa855a2f204e25629c115f5b986313",
+      "ROI": [
+        190,
+        1280,
+        560,
+        1260
+      ],
+      "shape": "broad_ellipses",
+      "direction_name": "brown",
+      "direction": [
+        0.45,
+        0.72,
+        1.0
+      ],
+      "opacity": 0.1,
+      "input": "counterfactual_stain_challenge/inputs/dev_10_broad_ellipses_brown_10/input.png",
+      "input_sha256": "e2c5218029072696fa7fd1c4b127222ae71b8fa7c798e1e8eb763efe59db37a5",
+      "alpha": "counterfactual_stain_challenge/inputs/dev_10_broad_ellipses_brown_10/added_alpha_ROI.npy",
+      "alpha_sha256": "a65d9968197cdbfbc7cde3cae88517e4509317cfacbfd9d0b0dea081762f9532",
+      "supervision": "Frozen tentative original points; known added attenuation only",
+      "original_is_not_clean_GT": true
+    },
+    {
+      "id": "dev_10_broad_ellipses_brown_30",
+      "case": "dev_10",
+      "page": "200021763_00002_2",
+      "book": "200021763",
+      "original": "data/train/200021763/200021763_00002_2.jpg",
+      "original_sha256": "44631919294b4cde57c2cfa8f669ac2648fa855a2f204e25629c115f5b986313",
+      "ROI": [
+        190,
+        1280,
+        560,
+        1260
+      ],
+      "shape": "broad_ellipses",
+      "direction_name": "brown",
+      "direction": [
+        0.45,
+        0.72,
+        1.0
+      ],
+      "opacity": 0.3,
+      "input": "counterfactual_stain_challenge/inputs/dev_10_broad_ellipses_brown_30/input.png",
+      "input_sha256": "60c72af8923b19e25a2bc03d551530c6adae0ed33a819c03da276c9af02e6743",
+      "alpha": "counterfactual_stain_challenge/inputs/dev_10_broad_ellipses_brown_30/added_alpha_ROI.npy",
+      "alpha_sha256": "a65d9968197cdbfbc7cde3cae88517e4509317cfacbfd9d0b0dea081762f9532",
+      "supervision": "Frozen tentative original points; known added attenuation only",
+      "original_is_not_clean_GT": true
+    },
+    {
+      "id": "dev_10_broad_ellipses_red_brown_10",
+      "case": "dev_10",
+      "page": "200021763_00002_2",
+      "book": "200021763",
+      "original": "data/train/200021763/200021763_00002_2.jpg",
+      "original_sha256": "44631919294b4cde57c2cfa8f669ac2648fa855a2f204e25629c115f5b986313",
+      "ROI": [
+        190,
+        1280,
+        560,
+        1260
+      ],
+      "shape": "broad_ellipses",
+      "direction_name": "red_brown",
+      "direction": [
+        0.12,
+        0.72,
+        1.0
+      ],
+      "opacity": 0.1,
+      "input": "counterfactual_stain_challenge/inputs/dev_10_broad_ellipses_red_brown_10/input.png",
+      "input_sha256": "512091d5e593874e4fd7e316e288189ec9bd02521e141eb29e326076e759837e",
+      "alpha": "counterfactual_stain_challenge/inputs/dev_10_broad_ellipses_red_brown_10/added_alpha_ROI.npy",
+      "alpha_sha256": "a65d9968197cdbfbc7cde3cae88517e4509317cfacbfd9d0b0dea081762f9532",
+      "supervision": "Frozen tentative original points; known added attenuation only",
+      "original_is_not_clean_GT": true
+    },
+    {
+      "id": "dev_10_broad_ellipses_red_brown_30",
+      "case": "dev_10",
+      "page": "200021763_00002_2",
+      "book": "200021763",
+      "original": "data/train/200021763/200021763_00002_2.jpg",
+      "original_sha256": "44631919294b4cde57c2cfa8f669ac2648fa855a2f204e25629c115f5b986313",
+      "ROI": [
+        190,
+        1280,
+        560,
+        1260
+      ],
+      "shape": "broad_ellipses",
+      "direction_name": "red_brown",
+      "direction": [
+        0.12,
+        0.72,
+        1.0
+      ],
+      "opacity": 0.3,
+      "input": "counterfactual_stain_challenge/inputs/dev_10_broad_ellipses_red_brown_30/input.png",
+      "input_sha256": "31b2aedfa07aad403a325a6cb2611a9d0c016d62be75fe59e108ace398f1ae1b",
+      "alpha": "counterfactual_stain_challenge/inputs/dev_10_broad_ellipses_red_brown_30/added_alpha_ROI.npy",
+      "alpha_sha256": "a65d9968197cdbfbc7cde3cae88517e4509317cfacbfd9d0b0dea081762f9532",
+      "supervision": "Frozen tentative original points; known added attenuation only",
+      "original_is_not_clean_GT": true
+    },
+    {
+      "id": "dev_10_narrow_fold_brown_10",
+      "case": "dev_10",
+      "page": "200021763_00002_2",
+      "book": "200021763",
+      "original": "data/train/200021763/200021763_00002_2.jpg",
+      "original_sha256": "44631919294b4cde57c2cfa8f669ac2648fa855a2f204e25629c115f5b986313",
+      "ROI": [
+        190,
+        1280,
+        560,
+        1260
+      ],
+      "shape": "narrow_fold",
+      "direction_name": "brown",
+      "direction": [
+        0.45,
+        0.72,
+        1.0
+      ],
+      "opacity": 0.1,
+      "input": "counterfactual_stain_challenge/inputs/dev_10_narrow_fold_brown_10/input.png",
+      "input_sha256": "f8cfeaa5b532829257e3d6bdb09745a1e63bf9b5eaeecfef2599928373c8ee5c",
+      "alpha": "counterfactual_stain_challenge/inputs/dev_10_narrow_fold_brown_10/added_alpha_ROI.npy",
+      "alpha_sha256": "b5d604c91f61ab54ac6533d86d700c832459acf6796db191415939c6a361e745",
+      "supervision": "Frozen tentative original points; known added attenuation only",
+      "original_is_not_clean_GT": true
+    },
+    {
+      "id": "dev_10_narrow_fold_brown_30",
+      "case": "dev_10",
+      "page": "200021763_00002_2",
+      "book": "200021763",
+      "original": "data/train/200021763/200021763_00002_2.jpg",
+      "original_sha256": "44631919294b4cde57c2cfa8f669ac2648fa855a2f204e25629c115f5b986313",
+      "ROI": [
+        190,
+        1280,
+        560,
+        1260
+      ],
+      "shape": "narrow_fold",
+      "direction_name": "brown",
+      "direction": [
+        0.45,
+        0.72,
+        1.0
+      ],
+      "opacity": 0.3,
+      "input": "counterfactual_stain_challenge/inputs/dev_10_narrow_fold_brown_30/input.png",
+      "input_sha256": "e8ad105cdab54312f5bf2ac9ff8c7b4df2d2e322875d22171c6416984735c180",
+      "alpha": "counterfactual_stain_challenge/inputs/dev_10_narrow_fold_brown_30/added_alpha_ROI.npy",
+      "alpha_sha256": "b5d604c91f61ab54ac6533d86d700c832459acf6796db191415939c6a361e745",
+      "supervision": "Frozen tentative original points; known added attenuation only",
+      "original_is_not_clean_GT": true
+    },
+    {
+      "id": "dev_10_narrow_fold_red_brown_10",
+      "case": "dev_10",
+      "page": "200021763_00002_2",
+      "book": "200021763",
+      "original": "data/train/200021763/200021763_00002_2.jpg",
+      "original_sha256": "44631919294b4cde57c2cfa8f669ac2648fa855a2f204e25629c115f5b986313",
+      "ROI": [
+        190,
+        1280,
+        560,
+        1260
+      ],
+      "shape": "narrow_fold",
+      "direction_name": "red_brown",
+      "direction": [
+        0.12,
+        0.72,
+        1.0
+      ],
+      "opacity": 0.1,
+      "input": "counterfactual_stain_challenge/inputs/dev_10_narrow_fold_red_brown_10/input.png",
+      "input_sha256": "6837655dc094e6935bd26d198c808780d351f4d324b2a9f7b4a34fcdbd40a594",
+      "alpha": "counterfactual_stain_challenge/inputs/dev_10_narrow_fold_red_brown_10/added_alpha_ROI.npy",
+      "alpha_sha256": "b5d604c91f61ab54ac6533d86d700c832459acf6796db191415939c6a361e745",
+      "supervision": "Frozen tentative original points; known added attenuation only",
+      "original_is_not_clean_GT": true
+    },
+    {
+      "id": "dev_10_narrow_fold_red_brown_30",
+      "case": "dev_10",
+      "page": "200021763_00002_2",
+      "book": "200021763",
+      "original": "data/train/200021763/200021763_00002_2.jpg",
+      "original_sha256": "44631919294b4cde57c2cfa8f669ac2648fa855a2f204e25629c115f5b986313",
+      "ROI": [
+        190,
+        1280,
+        560,
+        1260
+      ],
+      "shape": "narrow_fold",
+      "direction_name": "red_brown",
+      "direction": [
+        0.12,
+        0.72,
+        1.0
+      ],
+      "opacity": 0.3,
+      "input": "counterfactual_stain_challenge/inputs/dev_10_narrow_fold_red_brown_30/input.png",
+      "input_sha256": "c208ff7241ace62a8608fd5bd49b95704260d465bdd1b8359538450c1e8f99d0",
+      "alpha": "counterfactual_stain_challenge/inputs/dev_10_narrow_fold_red_brown_30/added_alpha_ROI.npy",
+      "alpha_sha256": "b5d604c91f61ab54ac6533d86d700c832459acf6796db191415939c6a361e745",
+      "supervision": "Frozen tentative original points; known added attenuation only",
+      "original_is_not_clean_GT": true
+    }
+  ],
+  "protocol_sha256": "830f580d5b654357a2c0330925fa2e76c25de9ceb07762ff5491c2d90f44b61d",
+  "script_sha256": "f80c985e20f386decf4abf2e4677936657e7a7f461986b75d9d1454307d9ce7e",
+  "no_real_stain_or_reading_GT": true,
+  "original_pages_all_development": true
+}

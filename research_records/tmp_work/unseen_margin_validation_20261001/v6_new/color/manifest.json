@@ -1,0 +1,85 @@
+{
+  "purpose": "Training-free exploratory color/shape segmentation; no manual GT or deletion",
+  "parameters": {
+    "color_space": "OpenCV float32 BGR [0,1] to CIELab; L [0,100], signed a/b",
+    "local_color_background": "quarter-size Lab, Gaussian sigma16, resized to native",
+    "red_weak": {
+      "a_min": 6.0,
+      "delta_a_min": 3.0,
+      "a_over_positive_b": 0.45,
+      "hue_max": 22,
+      "hue_min_wrap": 168,
+      "saturation_min": 30
+    },
+    "red_seed": {
+      "a_min": 14.0,
+      "delta_a_min": 6.0,
+      "a_over_positive_b": 0.8,
+      "hue_max": 18,
+      "hue_min_wrap": 172,
+      "saturation_min": 60
+    },
+    "red_growth": "8-connected weak-color components with at least 2 seed pixels; independent of gray foreground",
+    "brown_field": {
+      "a_min": 3.0,
+      "b_min": 8.0,
+      "delta_a_min": 1.3,
+      "delta_b_min": -0.5,
+      "b_over_a": 1.3,
+      "lightness_below_local": 2.0,
+      "minimum_component_area": 20
+    },
+    "dense_component": {
+      "core_radius": 8.0,
+      "core_fraction": 0.25,
+      "fill": 0.55,
+      "min_area": 200,
+      "max_aspect": 3.0,
+      "red_fraction_exclusion": 0.05
+    },
+    "component_paper_ring": "bbox expanded16 pixels; exclude gray foreground and red candidates; median Lab",
+    "blob_brown_evidence": {
+      "delta_a_min": 1.0,
+      "delta_b_min": -1.0,
+      "mean_a_min": 2.0,
+      "mean_b_min": 8.0
+    },
+    "policy": "dense brown-evidence blobs -> stain candidate; other dense blobs -> hold; no pixels deleted",
+    "scale_disagreement": "only unprotected pixels with 1 or 2 votes; diagnostic hold, not calibrated uncertainty",
+    "border": "no forced background; all classification at native resolution"
+  },
+  "dependencies": {
+    "200017458_00004_2/original.png": "125679d3c321f916b60fbb61830e52ea02469ed5cc6604bfa816ff34de4501dc",
+    "200017458_00004_2/sauvola_local/foreground.png": "2b2844d3823438405b8c45cec446d62f23ddbff219cb2d9f03bd078bd840719f",
+    "200017458_00004_2/scale_votes.png": "af8000bddacf24be5a47a7e2146171022456540bac362cc926926b91edee9398",
+    "200021802_00015_1/original.png": "8a57bdf018169aae1099a24362ead6462bbbf0aa935ad7d99759eacf0c722383",
+    "200021802_00015_1/sauvola_local/foreground.png": "6ce0095459e411b2264583bac95b4bcfd35cdaa58b69015100b3f2ec106aa87b",
+    "200021802_00015_1/scale_votes.png": "75ad15e32716e803f8ba23c0034280826cdb22d64df8388ef26e4ce1f0fb6f81",
+    "100241706_00034_1/original.png": "f22858e8dffa1d42c85f09ee40431bee20b1b27bf936dbddc45bf406e217948d",
+    "100241706_00034_1/sauvola_local/foreground.png": "dfbcab761ea0494edb776a5c3342b309507434f17581daa9ad2efa601c47a787",
+    "100241706_00034_1/scale_votes.png": "a091039e4146039b4c06644a03b62680ac9952d6886c0cdf61bd3645ce0266cf",
+    "200015779_00075_2/original.png": "cb34e1073d612721c208c0311ae6c396bfaac8363f961b000d2c8602bf1d27d3",
+    "200015779_00075_2/sauvola_local/foreground.png": "687f1b9a00c41cb624ef3a0f35357836f42f6567d85aa286cc932a064c4dc243",
+    "200015779_00075_2/scale_votes.png": "5605dc8214b8ab29fa3f7b4cda099099c2ad814f2eae0e7c98fa1e656bf98f5c"
+  },
+  "parent_manifest_sha256": "d60017ebfd70beeeca367f04c6571cd34bf2e5dc78ea7607faf3c9d5bf3715bb",
+  "rois_sha256": "29b003d20469d2a51e3f75c51f07cda7b2c970365438c22afa118e9d50baff9d",
+  "source_sha256": "33d08600b64905c9c722decb2bc140c4b1fe6e23cc6314e42a600b99f30b71ad",
+  "viewer_template_sha256": "f40eac8395620e0ebe00ce36abd0151f0ebc3643e670e8dd0c64ba49f31d9fa2",
+  "versions": {
+    "python": "3.10.20 (main, Jun 11 2026, 15:17:37) [GCC 14.3.0]",
+    "opencv": "4.13.0",
+    "numpy": "1.26.4"
+  },
+  "modes": {
+    "local_baseline": "前回の局所Sauvola：前景のみ",
+    "color_only": "原画像の色を追加：形の判定なし",
+    "color_shape": "色＋詰まった塊の判定＋保留"
+  },
+  "input_hashes": {
+    "data/split_dataset/test/200017458/200017458_00004_2.jpg": "9f314c5b85aaf768c65b1f73183642a9d5f9eccb9ace4a1992ad3a184fad83a9",
+    "data/split_dataset/train/200021802/200021802_00015_1.jpg": "45ca9d96c443004f5bf9fded5d34c9176af2adf0c04cabb1e0acef7403ba7643",
+    "data/split_dataset/train/100241706/100241706_00034_1.jpg": "26be6347929e7271e53730d364af99dc8957da59a97768aaf6b038b28f8cefe3",
+    "data/split_dataset/train/200015779/200015779_00075_2.jpg": "836b93639127b0674378df24273aaed2a1787bba8bf643ac9d373033a24e1266"
+  }
+}

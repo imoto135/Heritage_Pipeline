@@ -1,0 +1,16 @@
+{
+  "dependencies": {
+    "scripts/benchmark/verify_directional_paper_restorer_recomputation.py": "6acb945eafc29af63198a60e5ffc7764ba6a782b8ec91b6dd677c4c10e218a41",
+    "tmp_work/observed_absolute_paper_patches_pilot_20261001/manifest.json": "3caa4d62f2288c94692984bea39a43b375eb15e0e004d062f7de8ebe3758a2b1",
+    "tmp_work/observed_absolute_paper_patches_pilot_20261001/complete.json": "5a85cf590d496b1e42c8672a3282916ee7bd5fdf508c57357ef90a63751a8932"
+  },
+  "source_sha256": "6acb945eafc29af63198a60e5ffc7764ba6a782b8ec91b6dd677c4c10e218a41",
+  "settings": {
+    "pages": 29,
+    "ROIs": 90,
+    "mask": "current effective applied only",
+    "reference": "current frozen paper",
+    "solver": "same16pair field_for including fineL seam",
+    "change": "verification only"
+  }
+}

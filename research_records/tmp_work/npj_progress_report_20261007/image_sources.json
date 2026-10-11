@@ -1,0 +1,376 @@
+[
+  {
+    "panel": "02_0",
+    "source": "tmp_work/npj_manual_stain_oracle_20261004/hnsd001_input/hnsd001_011.png",
+    "crop_xywh": [
+      80,
+      145,
+      180,
+      160
+    ],
+    "paste_xy": [
+      60,
+      275
+    ],
+    "scale": 3,
+    "native": "native_crops/02_0.png",
+    "sha256": "e9500ca03a603d1ae696748581239c08f840112601f86e3c9a87ae2366938ba2"
+  },
+  {
+    "panel": "02_1",
+    "source": "tmp_work/npj_manual_stain_oracle_20261004/hnsd001_output/hnsd001_011/result/hnsd001_011.png",
+    "crop_xywh": [
+      80,
+      145,
+      180,
+      160
+    ],
+    "paste_xy": [
+      670,
+      275
+    ],
+    "scale": 3,
+    "native": "native_crops/02_1.png",
+    "sha256": "d23d4fa76718472ee63a43a9d513d4601c7155ed735fed4a31f7be74be84427d"
+  },
+  {
+    "panel": "02_2",
+    "source": "tmp_work/npj_manual_stain_oracle_20261004/hnsd001_harmonic_postprocess_v3.png",
+    "crop_xywh": [
+      80,
+      145,
+      180,
+      160
+    ],
+    "paste_xy": [
+      1280,
+      275
+    ],
+    "scale": 3,
+    "native": "native_crops/02_2.png",
+    "sha256": "840173276116d89bf16135a362d01d333852b36464ef8892577675ed9975a985"
+  },
+  {
+    "panel": "03_0",
+    "source": "tmp_work/npj_manual_stain_oracle_20261004/input/hnsd007_042.png",
+    "crop_xywh": [
+      353,
+      175,
+      190,
+      160
+    ],
+    "paste_xy": [
+      60,
+      280
+    ],
+    "scale": 2,
+    "native": "native_crops/03_0.png",
+    "sha256": "4682b1a2f04d379232da879de4a4135fd328fe98d45e19604cb5d2948749aaee"
+  },
+  {
+    "panel": "03_1",
+    "source": "tmp_work/npj_manual_stain_oracle_20261004/output/hnsd007_042/result/hnsd007_042.png",
+    "crop_xywh": [
+      353,
+      175,
+      190,
+      160
+    ],
+    "paste_xy": [
+      520,
+      280
+    ],
+    "scale": 2,
+    "native": "native_crops/03_1.png",
+    "sha256": "207ca789f862ac839cc2a783d6975fc9c181f929a39642d602436efcdfe0e51a"
+  },
+  {
+    "panel": "03_2",
+    "source": "tmp_work/npj_manual_stain_oracle_20261004/precleaned_output/hnsd007_042/result/hnsd007_042.png",
+    "crop_xywh": [
+      353,
+      175,
+      190,
+      160
+    ],
+    "paste_xy": [
+      980,
+      280
+    ],
+    "scale": 2,
+    "native": "native_crops/03_2.png",
+    "sha256": "207ca789f862ac839cc2a783d6975fc9c181f929a39642d602436efcdfe0e51a"
+  },
+  {
+    "panel": "03_3",
+    "source": "tmp_work/npj_manual_stain_oracle_20261004/reclassified_output/hnsd007_042/result/hnsd007_042.png",
+    "crop_xywh": [
+      353,
+      175,
+      190,
+      160
+    ],
+    "paste_xy": [
+      1440,
+      280
+    ],
+    "scale": 2,
+    "native": "native_crops/03_3.png",
+    "sha256": "aab4c7bea0b17824f9d6de2457822873b805413160fef13580696e192b4980c8"
+  },
+  {
+    "panel": "04_0",
+    "source": "tmp_work/npj_colour_independent_ridge_20261004/native/new_new_warm_lower_loss/original.png",
+    "crop_xywh": [
+      615,
+      411,
+      80,
+      79
+    ],
+    "paste_xy": [
+      60,
+      280
+    ],
+    "scale": 5,
+    "native": "native_crops/04_0.png",
+    "sha256": "e485685b2833cd8afe92f68d475b6c5c30b084ec6ad35663d6c0fdad42a98842"
+  },
+  {
+    "panel": "04_1",
+    "source": "tmp_work/npj_colour_independent_ridge_20261004/native/new_new_warm_lower_loss/baseline.png",
+    "crop_xywh": [
+      615,
+      411,
+      80,
+      79
+    ],
+    "paste_xy": [
+      520,
+      280
+    ],
+    "scale": 5,
+    "native": "native_crops/04_1.png",
+    "sha256": "3d6a7f79db971fb58ff2c20564ec33b81036f5f4b5b5dfeae0bc0f9f8beb93af"
+  },
+  {
+    "panel": "04_2",
+    "source": "tmp_work/npj_colour_independent_ridge_20261004/native/new_new_warm_lower_loss/before.png",
+    "crop_xywh": [
+      615,
+      411,
+      80,
+      79
+    ],
+    "paste_xy": [
+      980,
+      280
+    ],
+    "scale": 5,
+    "native": "native_crops/04_2.png",
+    "sha256": "99943fbbfc77ede2331d3e7f4f11e080934c289ed39265b611d4a4ad97fe96dc"
+  },
+  {
+    "panel": "04_3",
+    "source": "tmp_work/npj_colour_independent_ridge_20261004/native/new_new_warm_lower_loss/all_colour_ridge/combined.png",
+    "crop_xywh": [
+      615,
+      411,
+      80,
+      79
+    ],
+    "paste_xy": [
+      1440,
+      280
+    ],
+    "scale": 5,
+    "native": "native_crops/04_3.png",
+    "sha256": "3d6a7f79db971fb58ff2c20564ec33b81036f5f4b5b5dfeae0bc0f9f8beb93af"
+  },
+  {
+    "panel": "05_0",
+    "source": "tmp_work/npj_dirt_clean_reference_20261002/native/current_control/original.png",
+    "crop_xywh": [
+      240,
+      310,
+      350,
+      250
+    ],
+    "paste_xy": [
+      60,
+      300
+    ],
+    "scale": 1,
+    "native": "native_crops/05_0.png",
+    "sha256": "45d4bfc4e6064f2b460710398a74e26ebbbb0db821cce9d64d8bca3c47abb2b9"
+  },
+  {
+    "panel": "05_1",
+    "source": "tmp_work/npj_dirt_clean_reference_20261002/native/current_control/baseline.png",
+    "crop_xywh": [
+      240,
+      310,
+      350,
+      250
+    ],
+    "paste_xy": [
+      520,
+      300
+    ],
+    "scale": 1,
+    "native": "native_crops/05_1.png",
+    "sha256": "bf94b1b785f7da331ee3a16fdef635e2552ad03c018f9c1f44dd0cdb6a9d252c"
+  },
+  {
+    "panel": "05_2",
+    "source": "tmp_work/npj_dirt_clean_reference_20261002/native/current_control/all_boundary.png",
+    "crop_xywh": [
+      240,
+      310,
+      350,
+      250
+    ],
+    "paste_xy": [
+      980,
+      300
+    ],
+    "scale": 1,
+    "native": "native_crops/05_2.png",
+    "sha256": "815ae21d4350f9a3ab0a8de91d134a4813f6ecf88d24a3cd681be16021a58849"
+  },
+  {
+    "panel": "05_3",
+    "source": "tmp_work/npj_dirt_clean_reference_20261002/native/current_control/clean_reference.png",
+    "crop_xywh": [
+      240,
+      310,
+      350,
+      250
+    ],
+    "paste_xy": [
+      1440,
+      300
+    ],
+    "scale": 1,
+    "native": "native_crops/05_3.png",
+    "sha256": "1bd8be52d1574b78c869f6542bcc30c492e52b51c38dbcb443d672aec486085d"
+  },
+  {
+    "panel": "06_0",
+    "source": "tmp_work/npj_literature_trial_review_20261002/native/07_red_seal_control/original_image.png",
+    "crop_xywh": [
+      0,
+      0,
+      430,
+      550
+    ],
+    "paste_xy": [
+      60,
+      270
+    ],
+    "scale": 1,
+    "native": "native_crops/06_0.png",
+    "sha256": "2075f33b5afd8032f3b8a47cced7ee3bb3cec2ec99c66813d220fe4caad0e627"
+  },
+  {
+    "panel": "06_1",
+    "source": "tmp_work/npj_literature_trial_review_20261002/native/07_red_seal_control/saved_npj_image.png",
+    "crop_xywh": [
+      0,
+      0,
+      430,
+      550
+    ],
+    "paste_xy": [
+      520,
+      270
+    ],
+    "scale": 1,
+    "native": "native_crops/06_1.png",
+    "sha256": "717a5db86a4535242f7bf4a4bec16f8487053a842d7c451924b3d715a5d594ae"
+  },
+  {
+    "panel": "06_2",
+    "source": "tmp_work/npj_literature_trial_review_20261002/native/07_red_seal_control/stain_image.png",
+    "crop_xywh": [
+      0,
+      0,
+      430,
+      550
+    ],
+    "paste_xy": [
+      980,
+      270
+    ],
+    "scale": 1,
+    "native": "native_crops/06_2.png",
+    "sha256": "e66a71916a3829e98f184c1f781288cf83a76d61a9c03fbaa5babf570945e2e7"
+  },
+  {
+    "panel": "06_3",
+    "source": "tmp_work/npj_literature_trial_review_20261002/native/07_red_seal_control/docres_image.png",
+    "crop_xywh": [
+      0,
+      0,
+      430,
+      550
+    ],
+    "paste_xy": [
+      1440,
+      270
+    ],
+    "scale": 1,
+    "native": "native_crops/06_3.png",
+    "sha256": "d5f9a7ee75e39704c1587388a7a0cdc2e205e66d4563a4ffaa3502a65b47e527"
+  },
+  {
+    "panel": "07_0",
+    "source": "tmp_work/npj_ridge_saved_ranges_20261004/native/known_upper_stain/original.png",
+    "crop_xywh": [
+      230,
+      130,
+      180,
+      140
+    ],
+    "paste_xy": [
+      60,
+      280
+    ],
+    "scale": 3,
+    "native": "native_crops/07_0.png",
+    "sha256": "00e8a57648dfcb6c526df0a2b9ae2c6af9dde8ff98f251728e499eede5edb361"
+  },
+  {
+    "panel": "07_1",
+    "source": "tmp_work/npj_ridge_saved_ranges_20261004/native/known_upper_stain/baseline.png",
+    "crop_xywh": [
+      230,
+      130,
+      180,
+      140
+    ],
+    "paste_xy": [
+      670,
+      280
+    ],
+    "scale": 3,
+    "native": "native_crops/07_1.png",
+    "sha256": "3f4a2e2d86d48578ff2c49558895dca4a17fc8c93e9f45621ffb814483c44958"
+  },
+  {
+    "panel": "07_2",
+    "source": "tmp_work/npj_ridge_saved_ranges_20261004/native/known_upper_stain/all_colour_ridge/combined.png",
+    "crop_xywh": [
+      230,
+      130,
+      180,
+      140
+    ],
+    "paste_xy": [
+      1280,
+      280
+    ],
+    "scale": 3,
+    "native": "native_crops/07_2.png",
+    "sha256": "3f4a2e2d86d48578ff2c49558895dca4a17fc8c93e9f45621ffb814483c44958"
+  }
+]

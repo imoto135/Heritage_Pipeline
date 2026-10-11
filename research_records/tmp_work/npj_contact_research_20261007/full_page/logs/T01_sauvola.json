@@ -1,0 +1,31 @@
+{
+  "id": "T01",
+  "variant": "sauvola",
+  "seconds": 194.8363934699446,
+  "output": "tmp_work/npj_contact_research_20261007/full_page/output/sauvola/hnsd007_023/result/hnsd007_023.png",
+  "output_sha256": "129d36c767d723fa247b0dd9c20b5f4424131bf6b84e9c5ea8f01fcdbe3efbe5",
+  "command": [
+    "/home/imoto/miniconda3/envs/diffusion/bin/python",
+    "-B",
+    "/home/imoto/Heritage_Pipeline/tmp_work/npj_dirt_control_20261002/source_snapshot/ddrm_npj_v2/scripts/pipeline_ddrm.py",
+    "--input_dir",
+    "/home/imoto/Heritage_Pipeline/tmp_work/npj_contact_research_20261007/full_page/inputs/T01",
+    "--output_dir",
+    "/home/imoto/Heritage_Pipeline/tmp_work/npj_contact_research_20261007/full_page/output/sauvola",
+    "--tmp_dir",
+    "/home/imoto/Heritage_Pipeline/tmp_work/npj_contact_research_20261007/full_page/infer_tmp/T01_sauvola",
+    "--mask_dir",
+    "/home/imoto/Heritage_Pipeline/tmp_work/npj_contact_research_20261007/full_page/masks/sauvola",
+    "--ckpt",
+    "/home/imoto/Heritage_Pipeline/modules/stain_removal/experiments/model_char/model_char/ckpt_epoch0350.pth",
+    "--back_ground",
+    "/home/imoto/Heritage_Pipeline/modules/ddrm_npj_v2/background/isemonogatari.png",
+    "--device",
+    "cuda:1",
+    "--patch_size",
+    "128",
+    "--overlap",
+    "32",
+    "--no_wandb"
+  ]
+}

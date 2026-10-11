@@ -1,0 +1,97 @@
+{
+  "status": "passed",
+  "ROIs": 42,
+  "variants": 84,
+  "texture_fixed": true,
+  "paper_color_references_subset_of_baseline": true,
+  "insufficient_reference_fallback": true,
+  "all_nonreference_poison_cases": [
+    {
+      "id": "hole_edge_new",
+      "mode": "chroma75"
+    },
+    {
+      "id": "hole_edge_new",
+      "mode": "chroma50"
+    },
+    {
+      "id": "200021712_00082_1_component_16",
+      "mode": "chroma75"
+    },
+    {
+      "id": "200021712_00082_1_component_16",
+      "mode": "chroma50"
+    },
+    {
+      "id": "200021712_00082_1_component_21",
+      "mode": "chroma75"
+    },
+    {
+      "id": "200021712_00082_1_component_21",
+      "mode": "chroma50"
+    },
+    {
+      "id": "200021712_00082_1_component_28",
+      "mode": "chroma75"
+    },
+    {
+      "id": "200021712_00082_1_component_28",
+      "mode": "chroma50"
+    },
+    {
+      "id": "200021712_00082_1_component_36",
+      "mode": "chroma75"
+    },
+    {
+      "id": "200021712_00082_1_component_160",
+      "mode": "chroma75"
+    },
+    {
+      "id": "new_margin_hole",
+      "mode": "chroma75"
+    },
+    {
+      "id": "new_margin_hole",
+      "mode": "chroma50"
+    },
+    {
+      "id": "new_brown_stamp",
+      "mode": "chroma75"
+    },
+    {
+      "id": "new_brown_stamp",
+      "mode": "chroma50"
+    },
+    {
+      "id": "unseen_thin_crack",
+      "mode": "chroma75"
+    },
+    {
+      "id": "200017458_00004_2_component_7",
+      "mode": "chroma75"
+    },
+    {
+      "id": "200017458_00004_2_component_13",
+      "mode": "chroma75"
+    },
+    {
+      "id": "unseen_fold",
+      "mode": "chroma75"
+    },
+    {
+      "id": "unseen_fold",
+      "mode": "chroma50"
+    },
+    {
+      "id": "unseen_top_trace",
+      "mode": "chroma75"
+    },
+    {
+      "id": "unseen_top_trace",
+      "mode": "chroma50"
+    }
+  ],
+  "outside_applied_changes": 0,
+  "outside_edit_changes": 0,
+  "pixel_GT": false
+}

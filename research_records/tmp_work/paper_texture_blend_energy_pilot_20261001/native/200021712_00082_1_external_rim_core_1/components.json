@@ -1,0 +1,110 @@
+[
+  {
+    "component": 1,
+    "xywh": [
+      103,
+      109,
+      251,
+      154
+    ],
+    "area": 8804,
+    "variance_baseline": 0.21491046747587883,
+    "variance_quilt": 0.39656190835984706,
+    "covariance": 0.002617899014374898,
+    "modes": {
+      "energy8": {
+        "gain_min": 1.0,
+        "gain_max": 1.4142135381698608,
+        "gain_mean": 1.187768816947937,
+        "gain_capped_pixels": 612
+      },
+      "texture4_energy": {
+        "gain_min": 1.0,
+        "gain_max": 1.4142135381698608,
+        "gain_mean": 1.1329275369644165,
+        "gain_capped_pixels": 365
+      }
+    }
+  },
+  {
+    "component": 2,
+    "xywh": [
+      302,
+      151,
+      53,
+      46
+    ],
+    "area": 1057,
+    "variance_baseline": 0.14341202827483582,
+    "variance_quilt": 0.5096137253741575,
+    "covariance": -0.015916189202559102,
+    "modes": {
+      "energy8": {
+        "gain_min": 1.0,
+        "gain_max": 1.4142135381698608,
+        "gain_mean": 1.1798433065414429,
+        "gain_capped_pixels": 245
+      },
+      "texture4_energy": {
+        "gain_min": 1.0,
+        "gain_max": 1.4142135381698608,
+        "gain_mean": 1.1872092485427856,
+        "gain_capped_pixels": 288
+      }
+    }
+  },
+  {
+    "component": 3,
+    "xywh": [
+      75,
+      174,
+      31,
+      23
+    ],
+    "area": 320,
+    "variance_baseline": 0.07831158118175097,
+    "variance_quilt": 0.25623631042047634,
+    "covariance": 0.013836742099354638,
+    "modes": {
+      "energy8": {
+        "gain_min": 1.0,
+        "gain_max": 1.3472236394882202,
+        "gain_mean": 1.0720564126968384,
+        "gain_capped_pixels": 0
+      },
+      "texture4_energy": {
+        "gain_min": 1.0,
+        "gain_max": 1.3991154432296753,
+        "gain_mean": 1.2038390636444092,
+        "gain_capped_pixels": 0
+      }
+    }
+  },
+  {
+    "component": 4,
+    "xywh": [
+      139,
+      232,
+      57,
+      73
+    ],
+    "area": 1184,
+    "variance_baseline": 0.12608300818353987,
+    "variance_quilt": 0.30097240297761124,
+    "covariance": -0.0027136360194627367,
+    "modes": {
+      "energy8": {
+        "gain_min": 1.0,
+        "gain_max": 1.4142135381698608,
+        "gain_mean": 1.1347005367279053,
+        "gain_capped_pixels": 107
+      },
+      "texture4_energy": {
+        "gain_min": 1.0,
+        "gain_max": 1.4142135381698608,
+        "gain_mean": 1.1901735067367554,
+        "gain_capped_pixels": 238
+      }
+    }
+  }
+]

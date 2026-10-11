@@ -1,0 +1,885 @@
+                                    npj | heritage science                                                                                                                                  Article
+
+
+
+                                                                                                                                                        https://doi.org/10.1038/s40494-025-02214-8
+
+
+                                    Restoration of ancient Japanese
+                                    manuscripts via the diffusion denoising
+                                    restoration model and color space-based
+                                    masking
+                                                                                                                                                                                      Check for updates
+                                                     1                      1                      1                   2
+                                    Yuya Yoshizu , Hayata Kaneko , Ryuto Ishibashi & Lin Meng
+
+
+
+                                    Ancient Japanese manuscripts are invaluable cultural assets but are often degraded by stains, fading,
+                  1234567890():,;
+1234567890():,;
+
+
+
+
+                                    and bleed-through. We propose a restoration framework integrating the Diffusion Denoising
+                                    Restoration Model (DDRM) with a two-stage mask generation process combining Automatic Color
+                                    Equalization (ACE) and Gaussian Mixture Model clustering across multiple color spaces. A key novelty
+                                    is the use of binarized text masks as guidance signals for DDRM through noise masking, which
+                                    constrains denoising to character shapes and suppresses background noise. A high-resolution patch-
+                                    based strategy with feather blending further enables seamless reconstruction of both text and
+                                    background. Experiments on synthetic degradations of The Pillow Book and real manuscripts such as
+                                    Tsurezuregusa demonstrate signiﬁcant improvements over binarization-based DDRM, with an
+                                    average PSNR gain of 10 dB, SSIM increase of 0.17, and LPIPS reduction from 0.49 to 0.28. The
+                                    framework enhances textual clarity, preserves red annotations, and offers a scalable solution for AI-
+                                    driven cultural heritage preservation.
+
+
+                                    From the earliest symbols carved into stone to satellites orbiting the Earth,                A distinctive characteristic of Japanese manuscripts lies in their script.
+                                    human civilization has advanced through the accumulation of records and                They are written in kuzushiji, a cursive style widely used before the modern
+                                    knowledge. Among the most valuable legacies of this progress are historical            era. Until the late Edo period (prior to the 19th century), kuzushiji was the
+                                    documents, which preserve the thoughts and expressions of past societies. In           standard writing style. Following the Meiji era, standardized print-based
+                                    particular, ancient manuscripts have served as crucial vessels for transmit-           scripts were adopted, and modern Japanese came to be composed of hir-
+                                    ting the language, emotions, and ideas of earlier generations.                         agana, katakana, and approximately 3000 kanji characters. A unique chal-
+                                          Ancient Japanese manuscripts represent highly signiﬁcant cultural and            lenge of kuzushiji is the wide variation in character shapes depending on the
+                                    historical legacies. Their interpretation provides insight into the culture and        manuscript and scribe. For example, Fig. 1 illustrates the characters U
+                                    daily life of the time, while their philosophical and aesthetic values offer new       +306E, U+306B, and U+3057, each of which appears in signiﬁcantly
+                                    perspectives for the present. For instance, ethical and existential reﬂections         different cursive forms across three manuscripts. Since many of these forms
+                                    documented in these works resonate with contemporary thought, and their                differ drastically from contemporary orthography, deciphering them is
+                                    traditional artistic sensibilities inspire modern design and creative practices.       difﬁcult even for specialists, and only a limited number of scholars are
+                                          However, centuries of storage have resulted in extensive degradation,            capable of accurate interpretation.
+                                    including stains, mold, and insect damage, which often obscure the text and                  In addition to linguistic challenges, these manuscripts suffer from
+                                    further hinder interpretation. Such challenges are not unique to Japan but             various forms of physical degradation. As illustrated in Fig. 2, dete-
+                                    are shared globally. Examples include ancient inscriptions, Dunhuang                   rioration can be broadly classiﬁed into three categories. The ﬁrst is
+                                    murals, and bamboo slips in China, medieval manuscripts in Europe, and                 staining, including background stains blending into the paper (a),
+                                    cuneiform texts in the Middle East, all of which face similar threats of               stains overlapping characters (b), and large-scale stains covering entire
+                                    deterioration and demand restoration.                                                  sections of a page (c). The second is character loss caused by fading ink
+
+
+
+                                    1
+                                    Graduate school of Science and Engineering, Ritsumeikan University, Kusatsu, Shiga, Japan. 2Department of Electronic and Computer Engineering, Ritsumeikan
+                                    University, Kusatsu, Shiga, Japan.  e-mail: menglin@fc.ritsumei.ac.jp
+
+
+                                    npj Heritage Science | (2025)13:634                                                                                                                                  1
+https://doi.org/10.1038/s40494-025-02214-8                                                                                                                       Article
+
+
+
+
+Fig. 1 | Comparison of character variations across multiple historical manu-            proportion, and brush pressure. These examples highlight the signiﬁcant intra-
+scripts. Examples of handwritten character variations for three hiragana letters, U     character variability observed across manuscripts due to differences in calligraphic
++306E, U+306B, and U+3057, extracted from three historical Japanese manu-               style, time period, and individual scribes, illustrating the challenges of character
+scripts. Each row corresponds to a different source: “Uso narubeshi” (top), “Teisa      recognition and clustering in kuzushiji analysis. All images were derived from high-
+Hiroku” (middle), and “Gozen Kashi Hiden sho” (bottom). Each column represents          resolution scans of the Tsurezuregusa manuscript (National Institute of Japanese
+one character, with multiple samples showing stylistic diversity in stroke curvature,   Literature, CODH dataset).
+
+
+
+or physical damage, which manifests as partial fading (d) or structural                 compiled during the Heian period (late 10th to early 11th century), has been
+disappearance of characters (e). The third is bleed-through (f), in                     well preserved with minimal degradation, making it suitable for controlled
+which ink from the reverse side or adjacent pages becomes visible,                      simulation experiments. In contrast, Tsurezuregusa, transcribed in the early
+interfering with the text and reducing readability. Each of these forms                 Keichō era (1596–1615), exhibits prominent natural deterioration, includ-
+presents substantial challenges for restoration.                                        ing stains, ink fading, and bleed-through. Moreover, unlike The Pillow
+     Conventional restoration has relied heavily on manual techniques,                  Book, Tsurezuregusa contains both black and red text, providing more
+requiring interdisciplinary expertise in kuzushiji transcription, history, and          complex conditions for restoration methods.
+philology. Yet manual approaches remain limited in scalability and efﬁ-                      High-resolution scanned images of these manuscripts were
+ciency, and the continued progression of degradation raises concerns of                 obtained from the Center for Open Data in the Humanities (CODH),
+irreversible loss.                                                                      National Institute of Informatics. Images showing bibliographic
+     To address these issues, this study proposes a virtual restoration fra-            information or the physical appearance of the manuscripts (e.g., title
+mework for ancient Japanese manuscripts. The approach incorporates                      slips, exterior photographs) were excluded from the analysis and not
+masks automatically generated via color-space clustering as guidance for                used in the experiments. Only the main text regions were utilized: from
+diffusion-based restoration.                                                            each scanned double-page image, LabelImg (https://github.com/
+     The main contributions of this study are as follows:                               tzutalin/labelImg) was used to crop out individual pages by marking
+  • Introduction of an automatic mask generation method using color-                    the four corners, producing single-page inputs for restoration (Fig. 3).
+     space clustering to distinguish text, background, red annotations, and             This procedure enabled clustering and evaluation restricted solely to
+     degraded regions.                                                                  the textual content of the manuscripts.
+  • Quantitative evaluation across multiple degradation levels, demon-                       The traditional physical restoration of ancient manuscripts has
+     strating superior performance over baseline methods in PSNR, SSIM,                 historically been based on shared principles across different regions.
+     and LPIPS.                                                                         Surface dirt and mold are removed through dry cleaning techniques,
+  • Validation of the method’s practical utility through application to the             such as the use of soft brushes, smoke sponges, and suction devices, or
+     historical manuscript Tsurezuregusa, preserving red annotations while              through wet cleaning using puriﬁed water or pH-neutral solutions.
+     enhancing visual clarity.                                                          Creases and cracks in paper or parchment are corrected by controlled
+                                                                                        humidiﬁcation to soften the ﬁbers, followed by ﬂattening and tension
+     The remainder of this paper is organized as follows. Section 2                     drying. Missing portions are repaired with paper or parchment inﬁlls,
+introduces the target manuscripts and reviews conventional and AI-                      while ﬂaking ink or pigments are consolidated with adhesives or thin
+based restoration approaches. Section 3 then describes the proposed                     resin coatings. In all cases, the principle of reversibility is emphasized,
+diffusion-based restoration framework and presents both quantitative                    ensuring that interventions can be undone in the future. Preventive
+and qualitative evaluations using synthetic and real degradations.                      conservation is also indispensable, including environmental controls
+Section 4 evaluates the effectiveness and limitations of the proposed                   such as stable temperature and humidity, protection from light, and
+method, outlines future directions such as advanced segmentation and                    measures against insects and pollutants.
+tailored evaluation metrics, and concludes by highlighting the aca-                          Japanese manuscripts exhibit unique features compared to their
+demic and cultural signiﬁcance of AI-driven restoration for digital                     Western or Middle Eastern counterparts. They are primarily written
+humanities and cultural heritage preservation.                                          on washi (Japanese handmade paper) made from mulberry, mitsu-
+                                                                                        mata, or gampi ﬁbers, which is thin yet highly durable. Notably, washi
+Methods                                                                                 has been recognized by UNESCO as an Intangible Cultural Heritage,
+Materials                                                                               highlighting its cultural and historical value. Restoration often
+In this study, we targeted two representative classical Japanese manuscripts:           employs the same type of washi for reinforcement and inﬁll to maintain
+The Pillow Book (Makura no Sōshi) and Tsurezuregusa. The Pillow Book,                   material consistency. Distinctive binding formats—such as scrolls
+
+
+
+
+npj Heritage Science | (2025)13:634                                                                                                                                       2
+https://doi.org/10.1038/s40494-025-02214-8                                                                                                                        Article
+
+
+
+
+Fig. 2 | Degradations of ancient Japanese manuscripts. Representative examples of        patch on the right corresponds to the same color-coded region on the left. These
+various types of degradation observed in a page of an ancient Japanese manuscript.       examples illustrate the complexity of mixed degradations-including discoloration,
+Colored boxes indicate distinct categories of deterioration and their corresponding      text fading, and bleed-through-that motivate the need for multi-class clustering and
+magniﬁed regions on the right. Red solid boxes a, b, c denote stains, blue solid boxes   mask-guided restoration in the proposed framework. All images were derived from
+d, e indicate faded text regions or loss character, and green solid boxes f highlight    high-resolution scans of the Tsurezuregusa manuscript (National Institute of
+bleed-through areas where ink has penetrated from the reverse side. Each enlarged        Japanese Literature, CODH dataset).
+
+
+
+(makimono), accordion books (orihon), and stitched booklets (sōshi)—                     damage manuscripts even after treatment, often necessitating repeated
+require treatments that preserve the original structure. Furthermore,                    interventions.
+Japanese manuscripts are frequently written in kuzushiji, a cursive                            In response to these challenges, digitization initiatives have
+script, and may contain annotations in red ink, decorative pigments, or                  rapidly advanced in recent decades. Digital archiving reduces physical
+even gold leaf. These characteristics demand special care: for example,                  handling of the original materials, thereby preventing further wear,
+aqueous treatments risk ink bleeding, and fragile decorative layers may                  while also ensuring long-term preservation of information. Moreover,
+require consolidation. In terms of preservation, washi is particularly                   digitized manuscripts can be made openly accessible, allowing
+sensitive to humidity, making strict environmental control and pro-                      researchers and the public worldwide to engage with cultural heritage.
+tection against acidic gases, light, and insects especially important.                   UNESCO’s Memory of the World Programme1 seeks to safeguard
+     Despite their effectiveness, traditional physical restoration                       documentary heritage and improve accessibility, while European
+methods face several limitations. First, specialized expertise is                        platforms such as Europeana2 and Archives Portal Europe3 provide
+required. Each type of deterioration—whether stains, fading, or                          open access to vast collections of digitized cultural materials. Within
+structural loss—necessitates different treatments, demanding knowl-                      this international context, the restoration of Japanese manuscripts can
+edge in material science, chemistry, history, and philology, as well as                  be regarded as part of the broader movement in cultural heritage
+advanced technical skills. Second, the cost of restoration is substantial.               preservation and digital humanities.
+Manual work requires long hours of labor, specialized tools, and costly                        Therefore, while digitization is essential for preservation, it remains
+conservation materials. As the number of manuscripts increases, both                     insufﬁcient on its own. It can only safeguard and disseminate what is already
+human and ﬁnancial costs escalate signiﬁcantly. Third, dependence on                     visible, but it cannot recover text or information that has been obscured or
+preservation environments poses an ongoing challenge. Deterioration                      lost. To overcome this limitation, recent research increasingly explores
+factors such as ﬂuctuations in temperature and humidity, exposure to                     advanced image processing and artiﬁcial intelligence, opening new avenues
+light, airborne pollutants, and biological activity can continue to                      for the virtual restoration of degraded manuscripts.
+
+
+
+npj Heritage Science | (2025)13:634                                                                                                                                        3
+https://doi.org/10.1038/s40494-025-02214-8                                                                                                                     Article
+
+
+
+
+Fig. 3 | Preprocessing of manuscript images for restoration experiments.             Japanese Literature, CODH dataset). (Right) Cropped single-page images auto-
+Example of the preprocessing step applied to historical manuscripts prior to seg-    matically generated using LabelImg by manually annotating the four corner points
+mentation and restoration. (Left) Original high-resolution scan of a double-page     of each page. This preprocessing step standardizes the input dimensions and ensures
+spread, captured with a color calibration strip for reference. Images were derived   consistent alignment across samples, facilitating downstream color correction,
+from high-resolution scans of the Tsurezuregusa manuscript (National Institute of    clustering, and diffusion-based restoration.
+
+
+
+Methods                                                                              example, Kaneko et al.24 modiﬁed the CycleGAN architecture with tailored
+Recent efforts to preserve ancient texts have focused on digitizing                  loss functions to improve the restoration of degraded characters. Other
+books and storing them in databases. At the Art Research Center                      studies have also utilized GANs for text enhancement and background
+(ARC) of Ritsumeikan University, academic knowledge is digitally                     suppression. Nevertheless, GANs can suffer from training instability and
+archived, facilitating both material preservation and interdisciplinary              mode inconsistency, which may lead to artifacts or content
+collaboration between the humanities and information science4.                       hallucination25–28.
+Optical character recognition (OCR) has also been introduced to                             Diffusion-based methods have emerged as robust generative tools that
+extract digital text from ancient manuscripts5–7.                                    reconstruct images by reversing a gradual noising process. Notable models
+      In recent years, machine learning and deep learning techniques have            include Denoising Diffusion Probabilistic Models (DDPM)29 and Denoising
+increasingly been applied to cultural heritage preservation8. These methods          Diffusion Implicit Models (DDIM)30, which have achieved state-of-the-art
+have been used in tasks such as manuscript image restoration9,10,                    results in natural image generation and are increasingly explored for
+classiﬁcation11–13, and digital archiving14–16.                                      manuscript restoration31–34.
+      However, the complex shapes of kuzushiji characters and various types                 Figure 4 illustrates the restoration framework based on diffusion
+of degradation-such as stains, insect damage, ink fading, and bleed-through-         models. The framework builds upon DDPM and consists of two stages: a
+signiﬁcantly impair OCR accuracy. These challenges remain key obstacles to           forward diffusion process and a reverse denoising process.
+effective manuscript restoration and digital preservation.                                  In the forward diffusion process (top row), a clean image x0 is pro-
+      Conventional manuscript restoration methods can be broadly classi-             gressively perturbed by adding Gaussian noise, producing intermediate
+ﬁed into three categories: mask-based methods, image inpainting, and                 states x1, x2, …, xT. As t increases, each xt becomes increasingly noisy, with
+generative models.                                                                   xT approaching a standard Gaussian distribution.
+      Mask-based approaches focus on extracting textual regions from                        In the reverse diffusion process (bottom row), a neural network
+manuscript images. Among these, binarization techniques are widely used.             parameterized by θ reconstructs the original image(GT) by iteratively
+Local adaptive thresholding methods, including Otsu’s method17, Sauvola18,           denoising from xT to x0, optionally conditioned on auxiliary information
+and Niblack19, are commonly employed to segment text from the back-                  (e.g., a measurement y). This yields a sequence of conditional transitions that
+ground based on contrast20. These techniques are computationally efﬁcient            reﬁne the sample toward a plausible, clean image.
+and straightforward to implement. However, they are highly sensitive to                     Denoising Diffusion Restoration Models (DDRM) extend DDPM to
+uneven backgrounds and degradations such as ink bleed, often resulting in            linear inverse problems by incorporating a measurement model y = Hx + ϵ,
+the loss of faint textual information.                                               where H is a degradation operator, and ϵ is noise. The probabilistic for-
+      To address these limitations, color-space-based mask generation                mulation of the conditional generative process is given as follows:
+methods have gained increasing attention. For instance, Muhammad
+Hanif et al.21 proposed a method that converts RGB images into Lab,                                                             Y
+                                                                                                                                T1                      
+Luv, and HSV color spaces, followed by principal component analysis                                  pθ ðx0:T jyÞ ¼ pðTÞ
+                                                                                                                     θ ðxT Þ           pðtÞ
+                                                                                                                                        θ     xt jxtþ1 ; y ;        ð1Þ
+                                                                                                                                 t¼0
+(PCA) and Gaussian Mixture Model (GMM)-based unsupervised
+clustering to segment text and degradation. These techniques require                 which factorizes the posterior trajectory into step-wise transitions
+no manual annotations and are adaptable to diverse types of dete-                    conditioned on the observation. Intuitively, this equation describes how
+rioration. In addition, advanced digital restoration approaches incor-               the model begins from a noisy image xT and gradually restores it step by step,
+porate multispectral imaging, 3D surface reconstruction, and                         guided by the observation y, much like reﬁning a blurred photo until it
+statistical image processing22,23, further expanding the toolkit available           becomes clear again.
+for cultural heritage preservation.
+      Generative models for manuscript restoration are often categorized             Results
+into GAN-based inpainting and diffusion-based generation. GAN-based                  Overview of the proposed method and contributions
+methods generate high-quality outputs through adversarial training                   The proposed framework introduces noise masking, where a binarized text
+between a generator and a discriminator. In manuscript restoration, GANs             mask is used not as a ﬁnal output but as a guidance signal for DDRM’s
+have been used to remove noise and restore faint or smudged text. For                reverse diffusion process35,36. While binarization removes stains and
+
+
+npj Heritage Science | (2025)13:634                                                                                                                                   4
+https://doi.org/10.1038/s40494-025-02214-8                                                                                                                      Article
+
+
+
+
+Fig. 4 | Overview of the diffusion model architecture and guided restoration           xT under the guidance of an observed degraded image y. In this framework, y
+pipeline. Schematic illustration of the denoising diffusion process and the proposed   represents the observed measurement or degraded input (e.g., blurred, stained, or
+guided restoration framework. (Top) Forward diffusion process, where a clean           incomplete image). By conditioning the reverse process on y, the model reconstructs
+manuscript image x0 is gradually corrupted with Gaussian noise to obtain xT.           a clean and faithful restoration of the original manuscript.
+(Bottom) Reverse diffusion process, where the model iteratively reconstructs x0 from
+
+
+
+discoloration and highlights text regions, in our approach it constrains the           2, only the pixels assigned to the degradation class are further analyzed.
+denoising updates to follow character-shaped structures, thereby suppres-              Color-focused features [a,b,r,g] are employed, emphasizing chromaticity
+sing irrelevant background noise and degradation artifacts.                            rather than luminance. A subsequent PCA → GMM(2) step separates this
+     Formally, let xθ,t denote the network’s prediction of x0 at step t. The           subset into red text and real degradation based on a “redness” index.
+masked update is deﬁned as:                                                            Through this design, black text, red text, and degradation regions can be
+                                                                                       clearly distinguished.
+                           xmask :¼ ð1  HÞ  xθ;t ;                            ð2Þ         The resulting masks for black and red text can effectively reduce small-
+                                                                                       scale noise. However, in the presence of faint or deteriorated strokes,
+where H represents the degradation operator (see Eq. (2)) and ⊙ denotes                excessive post-processing may cause character fragmentation or rounded
+element-wise multiplication. This ensures that updates are suppressed in               edges. For this reason, such operations are treated in a controlled manner,
+degraded regions, while restoration is guided along text contours, enabling            avoiding over-application in order to preserve character ﬁdelity.
+natural stroke regeneration.                                                                The black text mask obtained from this pipeline is used to guide the
+      The effectiveness of noise masking, however, critically depends on the           noise-masking DDRM inference, thereby preserving ﬁne textual details
+accuracy of the input mask. Conventional binarization methods, which are               while selectively restoring degraded regions. For manuscripts containing red
+widely used in manuscript processing, often fail to preserve faint characters          annotations (e.g., Tsurezuregusa), the red text is excluded from the
+and are highly sensitive to luminance variations, leading to the mis-                  denoising process. Instead, after DDRM inference, the reﬁned red text mask
+classiﬁcation of heavily stained regions.                                              is applied to the original image to extract red characters, which are then
+      To overcome these limitations, we adopt a two-stage mask gen-                    overlaid onto the restored output. This ensures both textual clarity and
+eration process. First, Automatic Color Equalization (ACE)37 is applied                chromatic ﬁdelity.
+to the input image to normalize the color distribution and reduce biases                    Furthermore, the pipeline has been implemented in a batch-processing
+caused by illumination or aging (Fig. 5). This correction enhances the                 framework that can handle multiple input images. For each image, the
+separability between textual and background regions. Second, feature                   system automatically outputs the color-corrected version, four-class masks,
+vectors are constructed by concatenating values from RGB, CIELab,                      controlled noise-reduced masks, and statistical summaries such as class-
+and CIELuv color spaces. After dimensionality reduction via Principal                  wise area ratios. This design enables efﬁcient processing of large-scale
+Component Analysis (PCA), a Gaussian Mixture Model (GMM) is                            manuscript datasets.
+employed in a two-stage clustering scheme. As a result, each image is                       Overall, the proposed method offers three main advantages. (1)
+segmented into four classes: background, black text, red text, and real                ACE compensates for uneven illumination and discoloration,
+degradation.                                                                           improving clustering stability. (2) Noise masking constrains denoising
+      The clustering proceeds as follows (Fig. 6). In Stage 1, luminance-based         to character regions, balancing stain suppression with the preservation
+features [L,a,b] are used for PCA and GMM clustering, yielding three                   of faint strokes. (3) The exploitation of color information enables the
+clusters corresponding to background, black text, and degradation. In Stage            extraction of class-speciﬁc masks (e.g., red annotations), supporting
+
+
+npj Heritage Science | (2025)13:634                                                                                                                                     5
+https://doi.org/10.1038/s40494-025-02214-8                                                                                               Article
+
+color-aware, type-speciﬁc restoration. Consequently, the proposed              Algorithm 1. Pseudocode of the pseudo-degradation image generation
+framework enhances visual clarity, structural ﬁdelity, and chromatic           pipeline
+authenticity, providing a robust foundation for the digital restoration
+of ancient manuscripts.
+
+Experimental design
+To evaluate the effectiveness of the proposed method, we conducted a series
+of experiments using high-resolution scans of classical Japanese manu-
+scripts from the ROIS-DS Center for Open Data in the Humanities
+(CODH) (https://codh.rois.ac.jp/). These clean images served as ground
+truth for synthetic degradation.
+      The restoration model is based on DDRM (Diffusion Denoising
+Restoration Model) and was trained on 4829 pages from a humanities-
+focused manuscript dataset. All images were resized to 128 × 128 pixels for
+training due to hardware constraints.
+      We used a 3-channel U-Net architecture with 64 feature channels per
+layer and four residual blocks. To enhance structural understanding, Self-
+Attention layers were added at spatial resolutions of 16 and 8. Class-
+conditional training was introduced using manuscript-speciﬁc labels to
+account for class-wise degradation patterns. The model was trained using
+mean squared error (MSE) loss with a linear beta schedule over 1000 dif-
+fusion steps.
+      Restoration performance was evaluated using standard metrics such
+as PSNR38, SSIM39, and LPIPS40 (AlexNet-based), and we also measured
+the change in pixel count within the degradation mask (generated via
+GMM clustering) to assess noise removal effectiveness. Similar to recent
+ML-based heritage restoration studies41,42, we also considered evaluation
+perspectives that account for input variability and perceptual quality using
+SSIM-based analysis.
+      We compared our method against two baselines: (1) CycleGAN
+and (2) DDRM guided by a binarization mask generated via Otsu’s
+method-a widely used technique that minimizes intra-class variance in
+grayscale histograms. CycleGAN takes as input a downsampled image
+generated in the linear RGB space using the LANCZOS resampling
+algorithm. The restored image is then upsampled using bicubic
+interpolation, after which high-frequency components extracted from
+the original high-resolution image are added to enhance ﬁne details.
+Given its simplicity and longstanding use in manuscript image pro-
+cessing, Otsu’s method provides a robust benchmark for evaluation.
+      For simulation-based evaluation, we used The Pillow Book, a Heian-era
+manuscript well-preserved and minimally degraded, making it ideal for
+controlled experiments. A total of 745 pages were annotated using LabelImg
+to isolate manuscript regions for clustering and evaluation (Fig. 3).
+      Synthetic degradation was introduced using NVlabs’ ocrodeg library
+(https://github.com/NVlabs/ocrodeg) algorithm from the InstructIR fra-
+mework, mimicking real-world artifacts such as stains, smears, and mold.
+Degradation severity was divided into four levels for detailed comparison
+(Fig. 7).
+      Color-space clustering segmented each image into three classes:
+background, black text and pseudo-degradation. The black text masks were
+extracted and applied to clean manuscript pages to create degraded inputs
+for restoration (Fig. 6).
+      In DDRM inference, images were resized to 1024 × 1024, and the
+number of reverse diffusion steps was reduced from 1000 to 20 for efﬁciency.
+The reverse process was guided by a conditional degradation mask with the
+guidance strength parameter η set to 0.5. The diffusion process employed a
+linear beta schedule with βstart = 0.0001, βend = 0.02, and 1000 total
+timesteps.
+      The detailed procedure for generating synthetic stains is summarized
+in the following pseudocode.
+
+
+
+
+npj Heritage Science | (2025)13:634                                                                                                            6
+https://doi.org/10.1038/s40494-025-02214-8                                                                                                             Article
+
+Fig. 5 | Effect of automatic color equalization
+(ACE) on a manuscript image. Example showing
+the impact of color normalization using Automatic
+Color Equalization (ACE)37. (Left) Original manu-
+script image cropped from high-resolution scans of
+the Tsurezuregusa manuscript (National Institute of
+Japanese Literature, CODH dataset) using Labe-
+lImg. (Right) The same image after ACE correction,
+where the color distribution has been normalized
+and the contrast between text and background has
+been enhanced. ACE effectively compensates for
+uneven illumination and discoloration, reduces the
+yellowish tint, and improves the separability
+between ink and paper regions.
+
+
+
+
+Application to real historical manuscripts                                          markedly outperforming DDRM(Bin) (maximum 18.34, average 13.86)
+To assess real-world applicability, we applied our method to Tsurezuregusa,         and surpassing CycleGAN in both maximum and average values. Similarly,
+a classical manuscript written in the early Keichō era, which exhibits natural      SSIM values were higher with reduced variance, indicating greater stability
+degradation such as stains, ink fading, and bleed-through. Unlike The Pillow        and consistency.
+Book, this manuscript contains both black and red text.                                   Regarding LPIPS, the proposed method achieved a minimum score of
+      Color-space clustering was applied to produce four masks, including           0.2498, lower than DDRM(Bin)’s 0.3711, indicating better perceptual
+one for red text. The black text mask was used as conditional input to              similarity. It also achieved an average LPIPS of 0.2789 with a small variance
+DDRM. To ensure visual consistency across pages with varying background             of 0.0003, conﬁrming both high perceptual ﬁdelity and robustness in
+textures, we replaced the backgrounds with a standardized texture extracted         restoration.
+from The Pillow Book.                                                                     At the representative stain level (intensity), the proposed method
+      Following restoration, the red text mask was overlaid onto the restored       achieved a maximum PSNR of 27.6 and an average of 24.83, signiﬁcantly
+image, achieving both textual clarity and color ﬁdelity-an outcome that is          outperforming the baseline (maximum 18.34, average 13.86). SSIM also
+difﬁcult to obtain with traditional binarization-based methods.                     showed higher maximum and average values with reduced variance, indi-
+                                                                                    cating greater stability and consistency. Regarding LPIPS, the proposed
+Output and analysis of results                                                      method achieved a minimum score of 0.2498-lower than the baseline value
+To assess the restoration performance, we applied synthetic stains to               of 0.3711-indicating superior perceptual similarity. The method also yielded
+manuscript images at four intensity levels (0.3, 0.5, 0.7, and 1.0) and com-        an average LPIPS of 0.2789 and a variance of 0.0003, demonstrating both
+pared the proposed clustering-based masking method with a binarization-             high perceptual quality and robustness.
+based baseline (Fig. 8). In addition, we conducted a statistical evaluation at a          We applied our restoration framework to real historical images of
+representative intensity level using three metrics-PSNR, SSIM, and LPIPS-           Tsurezuregusa, which exhibit natural degradation such as stains, faded ink,
+reporting the minimum, maximum, average, and variance (Table 1).                    bleed-through, and red text. Figure 10 provides a visual comparison of the
+      Figure 9 presents qualitative results at the highest stain intensity (1.0),   original degraded input, the output of CycleGAN, DDRM guided by Otsu
+illustrating the superior restoration performance of the proposed method            binarization, and the result of our proposed method.
+over the baseline.                                                                        As shown across all rows in Fig. 10, the proposed method successfully
+      Across all stain intensity levels, the proposed method consistently           preserves red annotations using an overlay-based strategy, unlike Otsu
+outperformed the binarization-based DDRM (DDRM(Bin)) in both PSNR                   binarization, which removes all color information. Given that red ink often
+and SSIM, demonstrating improvements in visual quality and structural               conveys editorial or semantic signiﬁcance, preserving these annotations is
+ﬁdelity. Compared with DDRM(Bin), PSNR increased by approximately                   important for historical integrity. Thus, our method enhances not only
+10 dB, indicating a substantial enhancement in restoration quality. SSIM            readability but also the scholarly utility of the manuscripts.
+also improved by about 0.17, conﬁrming superior preservation of structural                In the middle row of Fig. 10, background stains and smudges are
+details.                                                                            effectively suppressed using a ﬁxed reference background texture, resulting
+      Compared with CycleGAN, the proposed method achieved an                       in visually clean and consistent outputs suitable for digital archiving.
+improvement of approximately 2 dB in PSNR and 0.09 in SSIM, indicating              However, bleed-through artifacts-caused by ink from the reverse side of the
+better structure-preserving capability than other models as well.                   page, remain more prominent than in the binarization result. This indicates
+      LPIPS scores were generally lower for the proposed method, reﬂecting          a limitation in the current segmentation strategy for handling semi-
+higher perceptual quality. Overall, these results demonstrate the superior          transparent noise.
+accuracy and robustness of the proposed approach across all evaluation                    In the bottom row, the method preserves partially faded characters by
+metrics.                                                                            maintaining essential stroke features. Additionally, lightly written
+      At the representative stain intensity level (Table 2), the proposed           marginalia-often excluded in conventional restoration-are restored, con-
+method achieved a maximum PSNR of 27.6 and an average of 24.83,                     tributing to a more complete reproduction of the manuscript.
+
+
+npj Heritage Science | (2025)13:634                                                                                                                            7
+https://doi.org/10.1038/s40494-025-02214-8                                                                                                                     Article
+
+
+
+
+Fig. 6 | Overall workﬂow of the proposed restoration framework. Two-stage            are used to guide the DDRM process, while the red-text mask is overlaid to preserve
+restoration pipeline integrating color-space clustering and guided diffusion-based   handwritten annotations. This hierarchical mask-guided design enables the
+restoration. In the ﬁrst stage (Mask Generation), an ACE-processed manuscript        restoration model to suppress stains and discoloration while maintaining the
+image is clustered via Color Space Clustering (CSC) into three primary classes:      structural integrity and color information of the original manuscript. All manuscript
+background, degradation, and black text. The degradation class is further reﬁned     images were cropped from high-resolution scans of the Tsurezuregusa manuscript
+into two subclasses-red text and real degradation-through a secondary CSC step. In   (National Institute of Japanese Literature, CODH dataset) using LabelImg.
+the second stage (Guided Diffusion Model), the background and black-text masks
+
+
+     However, we also observed the emergence of new artifacts near the top                Although the model was trained on 128 × 128-pixel patches due to
+of the page, where the model introduced worm-eaten-like patterns not                 hardware constraints, inference on larger 1024 × 1024 images remains
+present in the original. This appears to result from an interaction between          feasible because the DDRM’s U-Net backbone is a fully convolutional
+the original texture and interpolation during the restoration process. Miti-         network (FCN). In such architectures, convolutional kernels and upsam-
+gating such artifacts remains a direction for future improvement.                    pling layers are applied locally and uniformly across spatial dimensions,
+     To address the limitations of page-wise restoration, we further intro-          allowing the model to operate independently of input resolution. Moreover,
+duce a high-resolution patch-based strategy. Since diffusion models are              the diffusion process itself is pixel-wise probabilistic and thus not directly
+typically trained on relatively small inputs (e.g., 128 × 128 pixels), directly      constrained by image size. The incorporated self-attention layers-operating
+processing full manuscript pages, which often exceed several thousand                at spatial resolutions of 16 and 8-further contribute to scalable contextual
+pixels in each dimension, leads to memory overﬂow and degradation in                 modeling across multiple spatial levels. However, when directly applied to
+restoration quality.                                                                 large pages, minor inconsistencies such as texture roughness or local
+
+
+npj Heritage Science | (2025)13:634                                                                                                                                     8
+https://doi.org/10.1038/s40494-025-02214-8                                                                                                                                            Article
+
+Fig. 7 | Example of synthetic degradation genera-
+tion at intensity = 1.0. Illustration of pseudo-
+degradation applied to a clean manuscript image for
+quantitative evaluation. (Left) Original clean page
+cropped from high-resolution scans of the Tsur-
+ezuregusa manuscript (National Institute of Japa-
+nese Literature, CODH dataset) using LabelImg.
+(Right) Degraded image generated by the pseudo-
+degradation pipeline with stain intensity parameter
+set to 1.0. The simulated stains (highlighted in red
+boxes) reproduce realistic patterns of discoloration
+and surface contamination, enabling controlled
+evaluation of restoration performance under severe
+degradation conditions.
+
+
+
+
+Fig. 8 | Restoration evaluation on synthetic degradations. Visualization and                       consistently achieves higher PSNR and SSIM values, and lower LPIPS scores than
+quantitative comparison of restoration performance under different levels of syn-                  CycleGAN and the binarization-based DDRM, indicating superior restoration
+thetic stain intensity using the The Pillow Book dataset. Pseudo-degraded manu-                    ﬁdelity across all degradation levels. All input images were cropped from high-
+script images were generated by the proposed pipeline with increasing stain intensity              resolution scans of the The Pillow Book manuscript (National Institute of Japanese
+(0.3, 0.5, 0.7, and 1.0). The results demonstrate that the proposed method                         Literature, CODH dataset) using LabelImg.
+
+
+
+Table 1 | Quantitative results under different stain levels (intensity)
+
+ PSNR ↑                                                        SSIM ↑                                                    LPIPS ↓
+ intensity         CycleGAN             DDRM(Bin)              Ours          CycleGAN             DDRM(Bin)              Ours           CycleGAN              DDRM(Bin)             Ours
+ 0.3               22.08                14.25                  24.50         0.8034               0.7246                 0.8920         0.6360                0.4526                0.2821
+ 0.5               22.04                14.82                  24.65         0.7986               0.7667                 0.8931         0.6493                0.4411                0.2802
+ 0.7               21.96                14.70                  24.76         0.7896               0.7711                 0.8935         0.6643                0.4490                0.2788
+ 1.0               21.85                13.86                  24.83         0.7723               0.7440                 0.8939         0.6832                0.4877                0.2789
+Mean PSNR, SSIM, and LPIPS values for restoration on pseudo-degraded manuscripts with varying stain intensities (0.3–1.0). Our method consistently outperforms CycleGAN and the binarization-based
+DDRM across all metrics, showing robust performance under increasing degradation severity.
+
+
+
+
+discontinuities may occur, as the model was not explicitly trained on large-                       patch boundaries, we employ feather blending, where patch contributions
+scale spatial dependencies.                                                                        are weighted by Gaussian masks that assign higher importance to central
+     To mitigate these limitations, our approach divides large manuscript                          regions and gradually diminish toward edges. Moreover, text regions are
+images into overlapping patches of 128 × 128 pixels, each of which is                              emphasized by increasing their blending weights, ensuring faithful recovery
+independently restored using a diffusion model. To avoid visible seams at                          of strokes.
+
+
+npj Heritage Science | (2025)13:634                                                                                                                                                             9
+https://doi.org/10.1038/s40494-025-02214-8                                                                                                                  Article
+
+
+
+
+Fig. 9 | Comparison of restoration results on synthetically degraded manuscripts   the fourth shows outputs generated by our proposed mask-guided DDRM. Red
+(The Pillow Book). Each row shows different samples from the dataset. The ﬁrst     boxes highlight enlarged regions for detailed visual comparison, demonstrating that
+column displays the clean reference image, the second shows the restoration by     our method effectively restores ﬁne character structures and suppresses background
+CycleGAN, the third presents results from DDRM guided by binarized images, and     artifacts.
+
+
+
+     In addition to text restoration, the high-resolution strategy also            alignment with training resolution, (ii) reduced memory consumption, and
+enhances the clarity of the background texture, enabling a more faithful           (iii) seamless reconstruction without boundary artifacts. As a result, the
+reproduction of both characters and page surfaces. As shown in Fig. 11, the        proposed framework enables large-scale, high-ﬁdelity restoration of his-
+patch-based approach achieves sharper strokes, recovers faint characters,          torical manuscripts, thereby enhancing their readability and scholarly value.
+and yields smoother background reconstruction compared to page-wise
+restoration.                                                                       Discussion
+     Red annotations, which often hold historical signiﬁcance, are auto-           This section discusses the objectives of the study, the extent to which they
+matically detected and preserved from the original input to avoid undesired        were achieved, the limitations of the proposed framework, directions for
+alteration. In addition, the system supports resumption from intermediate          future work, and broader implications.
+states, allowing efﬁcient large-scale processing of manuscript collections.             The primary aim of this study is to establish a restoration framework
+     Overall, this high-resolution patch-based restoration achieves three          for ancient Japanese manuscripts that integrates color-space clustering with
+advantages over page-wise inference: (i) improved quality through                  a pre-trained diffusion model. Traditional binarization methods often fail to
+
+
+npj Heritage Science | (2025)13:634                                                                                                                                10
+https://doi.org/10.1038/s40494-025-02214-8                                                                                                                                                                                                                                                                                                                                                                                                                                               Article
+
+                                                                                                                                                                                                                                                                                                                                                                                                                    retain faint strokes and inevitably discard valuable chromatic information,
+                                                                                                                                                                                                                                                                                                                                                                                                                    such as red annotations. This study addresses these shortcomings by
+
+
+
+
+                                                                                                                                                                                                    0.0036
+                                                                                                                                                                                                               0.0033
+                                                                                                                                                                                                                           0.0003
+                    Table 2 | Statistical comparison of restoration performance among CycleGAN, DDRM (binarization), and our proposed method on the The Pillow Book dataset with
+
+
+
+                                                                                                                                                                                             Var
+                                                                                                                                                                                                                                                                                                                                                                                                                    combining color-space segmentation and guided diffusion.
+                                                                                                                                                                                                                                                                                                                                                                                                                          Experimental results have conﬁrmed that the proposed approach
+                                                                                                                                                                                                                                                                                                                                                                                                                    consistently outperforms conventional methods, achieving more than a
+                                                                                                                                                                                                                                                                                                                                                                                                                    10 dB improvement in PSNR across all stain intensities. While this indicates
+                                                                                                                                                                                                                                                                                                                                                                                                                    improved structural ﬁdelity and reduced pixel-level errors, its signiﬁcance
+
+
+
+
+                                                                                                                                                                                                    0.0893
+                                                                                                                                                                                                               0.4877
+                                                                                                                                                                                                                           0.2789
+                                                                                                                                                                                             Mean
+                                                                                                                                                                                                                                                                                                                                                                                                                    extends beyond numerical gains. By leveraging color-space distributions,
+                                                                                                                                                                                                                                                                                                                                                                                                                    the framework recovers characters that would otherwise vanish under
+                                                                                                                                                                                                                                                                                                                                                                                                                    threshold-based binarization. Crucially, the preservation of red annotations
+                                                                                                                                                                                                                                                                                                                                                                                                                    provides philological value for textual criticism, while the retention of faint
+                                                                                                                                                                                                    0.4231                                                                                                                                                                                                          strokes enhances readability for scholars.
+                                                                                                                                                                                                               0.7014
+                                                                                                                                                                                                                           0.4784
+                                                                                                                                                                                             Max
+
+
+                                                                                                                                                                                                                                                                                                                                                                                                                          At the same time, Several limitations remain. First, the suppression of
+                                                                                                                                                                                                                                                                                                                                                                                                                    bleed-through is still insufﬁcient, reﬂecting a fundamental challenge in
+                                                                                                                                                                                                                                                                                                                                                                                                                    distinguishing semi-transparent ink from foreground text during clustering.
+                                                                                                                                                                                                                                                                                                                                                                                                                    The term semi-transparent ink refers to the ink that has partially soaked
+                                                                                                                                                                                   LPIPS ↓
+
+
+
+
+                                                                                                                                                                                                                                                                                                                                                                                                                    through the thin paper from the reverse side, making it faintly visible on the
+                                                                                                                                                                                                    0.0160
+                                                                                                                                                                                                               0.3711
+                                                                                                                                                                                                                           0.2498
+
+
+
+
+                                                                                                                                                                                                                                                                                                                                                                                                                    front. Because the ink is not completely opaque, it appears as a faint shadow
+                                                                                                                                                                                             Min
+
+
+
+
+                                                                                                                                                                                                                                                                                                                                                                                                                    on the surface, making it difﬁcult for the algorithm to determine whether it
+                                                                                                                                                                                                                                                                                                                                                                                                                    belongs to the front or the back of the manuscript.
+                                                                                                                                                                                                                                    The proposed method achieves the highest mean PSNR and SSIM and the lowest LPIPS variance, demonstrating both superior ﬁdelity and stability compared with the other methods.
+
+
+
+
+                                                                                                                                                                                                                                                                                                                                                                                                                          Furthermore, in areas where red and black text are close together,
+                                                                                                                                                                                                                                                                                                                                                                                                                    mask ambiguity can occur, leading to fragmented or misclassiﬁed
+                                                                                                                                                                                                    0.0049
+                                                                                                                                                                                                               0.0028
+                                                                                                                                                                                                                           0.0001
+
+
+
+
+                                                                                                                                                                                                                                                                                                                                                                                                                    strokes. We also considered integrating GMM with CNN-based seg-
+                                                                                                                                                                                             Var
+
+
+
+
+                                                                                                                                                                                                                                                                                                                                                                                                                    mentation methods. However, when GMM-generated masks are used
+                                                                                                                                                                                                                                                                                                                                                                                                                    as training data, the noise and misclassiﬁcations in those masks tend to
+                                                                                                                                                                                                                                                                                                                                                                                                                    propagate through the learning process, resulting in unstable classiﬁ-
+                                                                                                                                                                                                                                                                                                                                                                                                                    cation performance. In degraded historical manuscripts, GMM alone
+                                                                                                                                                                                                    0.8369
+                                                                                                                                                                                                               0.7440
+                                                                                                                                                                                                                           0.8736
+                                                                                                                                                                                             Mean
+
+
+
+
+                                                                                                                                                                                                                                                                                                                                                                                                                    cannot perfectly separate classes, and using its results as supervision
+                                                                                                                                                                                                                                                                                                                                                                                                                    may lead to accumulated errors. Moreover, creating high-quality
+                                                                                                                                                                                                                                                                                                                                                                                                                    annotated data manually would require considerable time and effort,
+                                                                                                                                                                                                                                                                                                                                                                                                                    making it impractical from a resource standpoint.
+                                                                                                                                                                                                                                                                                                                                                                                                                          In addition, transformer-based models generally require large-scale
+                                                                                                                                                                                                    0.9536
+                                                                                                                                                                                                               0.8369
+                                                                                                                                                                                                                           0.8884
+
+
+
+
+                                                                                                                                                                                                                                                                                                                                                                                                                    training datasets, which are unavailable in our limited manuscript collec-
+                                                                                                                                                                                             Max
+
+
+
+
+                                                                                                                                                                                                                                                                                                                                                                                                                    tion, potentially restricting their effectiveness.
+                                                                                                                                                                                                                                                                                                                                                                                                                          When performing inference on high-resolution full-page images, local
+                                                                                                                                                                                                                                                                                                                                                                                                                    discontinuities such as visible seams or inconsistent textures at patch
+                                                                                                                                                                                                                                                                                                                                                                                                                    boundaries were sometimes observed. Slight differences in lighting and
+                                                                                                                                                                                   SSIM ↑
+
+
+                                                                                                                                                                                                    0.3894
+                                                                                                                                                                                                               0.5176
+                                                                                                                                                                                                                           0.8384
+
+
+
+
+                                                                                                                                                                                                                                                                                                                                                                                                                    paper texture between pages also caused variations in color reproduction.
+                                                                                                                                                                                             Min
+
+
+
+
+                                                                                                                                                                                                                                                                                                                                                                                                                    These issues likely result from the model’s focus on local information,
+                                                                                                                                                                                                                                    Quantitative statistics (minimum, maximum, mean, and variance) of PSNR, SSIM, and LPIPS are reported.
+
+
+
+
+                                                                                                                                                                                                                                                                                                                                                                                                                    suggesting insufﬁcient global structural understanding.
+                                                                                                                                                                                                                                                                                                                                                                                                                          Moreover, clustering methods that rely solely on color-space features
+                                                                                                                                                                                                                                                                                                                                                                                                                    cannot fully account for physical factors such as the material properties of
+                                                                                                                                                                                                    1.3887
+                                                                                                                                                                                                               2.7422
+                                                                                                                                                                                                                           1.2752
+
+
+
+
+                                                                                                                                                                                                                                                                                                                                                                                                                    writing tools or the aging of inks. Addressing these limitations will require
+                                                                                                                                                                                             Var
+
+
+
+
+                                                                                                                                                                                                                                                                                                                                                                                                                    context-aware and multimodal segmentation approaches, such as inte-
+                                                                                                                                                                                                                                                                                                                                                                                                                    grating deep learning with spectral information and regional context to
+                                                                                                                                                                                                                                                                                                                                                                                                                    achieve more physically accurate restoration.
+                                                                                                                                                                                                                                                                                                                                                                                                                          Future research should explore hybrid segmentation strategies com-
+                                                                                                                                                                                             Mean
+                                                                                                                                                                                                    17.16
+                                                                                                                                                                                                               13.86
+                                                                                                                                                                                                                           24.83
+
+
+
+
+                                                                                                                                                                                                                                                                                                                                                                                                                    bining deep learning, adaptive clustering, and human-in-the-loop correc-
+                                                                                                                                                                                                                                                                                                                                                                                                                    tions. Incorporating reﬁnement modules-such as DDPM-based
+                                                                                                                                                                                                                                                                                                                                                                                                                    enhancement or user-guided feedback, could further improve perceptual
+                                                                                                                                                                                                                                                                                                                                                                                                                    quality. Moreover, developing evaluation metrics tailored to historical
+                                                                                                                                                                                                                                                                                                                                                                                                                    manuscripts, including readability-based criteria and OCR integration,
+                                                                                                                                                                                                    20.39
+                                                                                                                                                                                                               18.34
+                                                                                                                                                                                                                           27.60
+                                                                                                                                                                                             Max
+
+
+
+
+                                                                                                                                                                                                                                                                                                                                                                                                                    would enable fairer and more practical assessments.
+                                                                                                                                                                                                                                                                                                                                                                                                                          Another promising direction is the creation of benchmark data-
+                                                                                                                                                                                                                                                                                                                                                                                                                    sets based on manual annotations of real degraded manuscripts. Such
+                    degradation intensity = 1.0
+
+
+
+
+                                                                                                                                                                                                                                                                                                                                                                                                                    annotations would, in principle, enable more objective comparisons.
+                                                                                                                                                                                   PSNR ↑
+
+
+
+
+                                                                                                                                                                                                                                                                                                                                                                                                                    However, since degradation patterns are inherently non-uniform and
+                                                                                                                                                                                                    12.35
+
+
+                                                                                                                                                                                                                           19.20
+                                                                                                                                                                                                               8.96
+                                                                                                                                                                                             Min
+
+
+
+
+                                                                                                                                                                                                                                                                                                                                                                                                                    boundaries are often ambiguous, comprehensive annotation was
+                                                                                                                                                                                                                                                                                                                                                                                                                    impractical within the scope of the present study. As a more feasible
+                                                                                                                                                                                                                                                                                                                                                                                                                    alternative, partial annotations in limited regions or expert-assisted
+                                                                                                                                                                                                                                                                                                                                                                                                                    labeling could be employed to establish small-scale gold standards. In
+                                                                                                                                                                                                                                                                                                                                                                                                                    addition, conducting user studies with historians and calligraphy
+                                                                                                                                                                                                               DDRM(Bin)
+                                                                                                                                                                                                    CycleGAN
+
+
+
+
+                                                                                                                                                                                                                                                                                                                                                                                                                    experts would provide human-centered evaluation of ﬁdelity and
+                                                                                                                                                                                    Method
+
+
+
+
+                                                                                                                                                                                                                           Ours
+
+
+
+
+                                                                                                                                                                                                                                                                                                                                                                                                                    readability, complementing quantitative metrics and bridging the gap
+                                                                                                                                                                                                                                                                                                                                                                                                                    between algorithmic performance and scholarly usability.
+
+
+npj Heritage Science | (2025)13:634                                                                                                                                                                                                                                                                                                                                                                                                                                                             11
+https://doi.org/10.1038/s40494-025-02214-8                                                                                                                    Article
+
+
+
+
+Fig. 10 | Comparison of restoration results on real historical manuscripts           boxes indicate enlarged regions for detailed visual comparison. Our method suc-
+(Tsurezuregusa). Each row presents different pages from the original Tsurezuregusa   cessfully recovers ﬁne textual details while suppressing real degradation, such as
+dataset. The ﬁrst column displays the degraded original manuscripts, the second      stains and fading, demonstrating strong generalization from synthetic to real-world
+shows results restored by CycleGAN, the third presents DDRM guided by binarized      deterioration.
+images, and the fourth shows outputs from our proposed mask-guided DDRM. Red
+
+
+
+     Taken together, this study extends beyond mere performance                      manuscript collections. Societally, it safeguards both textual and
+improvement. It redeﬁnes the role of AI in the preservation and                      chromatic information, contributing to long-term cultural heritage
+interpretation of historical texts. Academically, it demonstrates a novel            preservation and promoting open accessibility. These implications
+integration of diffusion models within digital humanities. Practically, it           align with global initiatives in heritage science and emphasize the
+reduces the workload of experts and enables scalable processing of                   cultural signiﬁcance of AI-driven restoration.
+
+
+
+
+npj Heritage Science | (2025)13:634                                                                                                                                  12
+https://doi.org/10.1038/s40494-025-02214-8                                                                                                          Article
+
+Fig. 11 | Comparison between page-wise restora-
+tion (left) and high-resolution patch-based
+restoration (right). The patch-based approach
+enables detailed reconstruction by processing over-
+lapping image patches, thereby preserving ﬁne
+brushstroke structures and reviving faint or partially
+missing characters. Additionally, it reproduces the
+background texture with higher clarity, resulting in a
+sharper and more natural restoration of both text
+and manuscript background.
+
+
+
+
+Data availability                                                               8.    Fiorucci, M. et al. Machine learning for cultural heritage: a survey.
+All data generated or analyzed during this study are included in this article         Pattern Recognit. Lett. 133, 102–108 (2020).
+and its supplementary materials.The datasets used for training and eva-         9.    Karadag, I. Machine learning for conservation of architectural
+luation, including Tsurezuregusa and The Pillow Book, were obtained from              heritage. Open House Int. 48, 23–37 (2023).
+the ROIS-DS Center for Open Data in the Humanities (CODH) database.             10.   Stoean, R., Bacanin, N., Stoean, C. & Ionescu, L. Bridging the past and
+                                                                                      present: AI-driven 3D restoration of degraded artefacts for museum
+Code availability                                                                     digital display. J. Cult. Herit. 69, 18–26 (2024).
+The custom code developed for data processing, color-space clustering, and      11.   Janković, R. Machine learning models for cultural heritage image
+DDRM-based restoration is not publicly available due to ongoing research              classiﬁcation: comparison based on attribute selection. Information
+and institutional restrictions. However, it can be provided by the corre-             11, 12 (2019).
+sponding author upon reasonable request for academic research and ver-          12.   Cosovic, M., Jankovic, R. & Ramic-Brkic, B. Cultural heritage image
+iﬁcation purposes.                                                                    classiﬁcation. In Proc. Data Analytics for Cultural Heritage: Current
+                                                                                      Trends and Concepts 25–45 (Springer, 2020).
+Received: 18 July 2025; Accepted: 20 November 2025;                             13.   Grilli, E. & Remondino, F. Classiﬁcation of 3D digital heritage. Remote
+                                                                                      Sens. 11, 847 (2019).
+                                                                                14.   Belhi, A., Foufou, S., Bouras, A. & Sadka, A. H. Digitization and
+References                                                                            preservation of cultural heritage products. In Proc. IFIP Int. Conf.
+1.   UNESCO. Memory of the World Programme. https://www.unesco.                       Product Lifecycle Management 241–253 (Springer, 2017).
+     org/en/memory-world (2025).                                                15.   Buragohain, D., Meng, Y., Deng, C., Li, Q. & Chaudhary, S. Digitalizing
+2.   Europeana Foundation. Europeana Collections. https://www.                        cultural heritage through metaverse applications: Challenges,
+     europeana.eu/en (2025).                                                          opportunities, and strategies. Herit. Sci. 12, 295 (2024).
+3.   Archives Portal Europe. Archives Portal Europe. https://www.               16.   Tai, N. Digital archiving of the spatial experience of cultural heritage
+     archivesportaleurope.net (2025).                                                 sites with ancient lighting. J. Comput. Cult. Herit. 16, 45 (2023).
+4.   Akama, R. Digitization of classical Japanese books by Ritsumeikan          17.   Otsu, N. A threshold selection method from gray-level histograms.
+     University Art Research Center: On the ARC international model. J. Inf.          IEEE Trans. Syst. Man Cybern. 9, 62–66 (1979).
+     Sci. Technol. 65, 181–186 (2015).                                          18.   Sauvola, J. & Pietikäinen, M. Adaptive document image binarization.
+5.   Clanuwat, T., Lamb, A. & Kitamoto, A. End-to-end pre-modern                      Pattern Recognit. 33, 225–236 (2000).
+     Japanese character (Kuzushiji) spotting with deep learning. In Proc.       19.   Jain, A. K. Fundamentals of Digital Image Processing (Prentice-Hall,
+     IPSJ SIG Computers and the Humanities Symposium, 15–20                           1989).
+     (Information Processing Society of Japan, 2018).                           20.   Yang, Z. et al. Summary of document image binarization Preprints 1,
+6.   Clanuwat, T., Lamb, A. & Kitamoto, A. KuroNet: Pre-modern Japanese               https://doi.org/10.20944/preprints202401.1534.v1 (2024).
+     Kuzushiji Character Recognition with Deep Learning. In Proc.15th           21.   Hanif, M., Tonazzini, A., Hussain, S. F., Khalil, A. & Habib, U.
+     International Conference on Document Analysis and Recognition                    Restoration and content analysis of ancient manuscripts via color
+     (ICDAR,19) 607–614, https://doi.org/10.1109/ICDAR.2019.00104                     space based segmentation. PLoS ONE 18, 1–14 (2023).
+     (IEEE, 2019).                                                              22.   Bianco, G. et al. A framework for virtual restoration of ancient
+7.   Lamb, A., Clanuwat, T. & Kitamoto, A. KuroNet: regularized residual              documents by combination of multispectral and 3D imaging. In
+     U-Nets for end-to-end Kuzushiji character recognition. SN Comput.                Proc. Eurographics Italian Chapter Conference 1–7 (DBLP,
+     Sci. 1, 177 (2020).                                                              2010).
+
+
+npj Heritage Science | (2025)13:634                                                                                                                        13
+https://doi.org/10.1038/s40494-025-02214-8                                                                                                            Article
+
+23. Munoz-Pandiella, I., Andujar, C., Cayuela, B., Pueyo, X. & Bosch, C.       40. Zhang, R., Isola, P., Efros, A. A., Shechtman, E. & Wang, O. The
+    Automated digital color restitution of mural paintings using minimal art       unreasonable effectiveness of deep features as a perceptual metric. In
+    historian input. In Proc. Eurographics Workshop on Graphics and                Proc. IEEE/CVF Conference on Computer Vision and Pattern
+    Cultural Heritage 316–325 (Computers & Graphics, 2023).                        Recognition 586–595 (IEEE, 2018).
+24. Kaneko, H., Ishibashi, R. & Meng, L. Deteriorated characters               41. Güzelci, O. Z., Alaçam, S., Bekiroğlu, B. & Karadag, I. A machine
+    restoration for early Japanese books using enhanced CycleGAN.                  learning-based prediction model for architectural heritage: The case
+    Heritage 6, 4345–4361 (2023).                                                  of domed Sinan mosques. Digit. Appl. Archaeol. Cult. Herit. 35,
+25. Wenjun, Z., Benpeng, S., Ruiqi, F., Xihua, P. & Shanxiong, C. EA-GAN:          e00370 (2024).
+    restoration of text in ancient Chinese books based on an example           42. Güzelci, O. Z. A machine learning-based model to predict the cap
+    attention generative adversarial network. Herit. Sci. 11, 882 (2023).          geometry of Anatolian Seljuk Kümbets. Period. Polytech. Archit. 53,
+26. Chen, S., Yang, Y., Liu, X. & Zhu, S. Dual discriminator GAN: restoring        207–219 (2022).
+    ancient Yi characters. ACM Trans. Asian Low-Resour. Lang. Inf.
+    Process. 21, 66 (2022).                                                    Acknowledgements
+27. Yalin, M., Li, L., Yichun, J. & Li, G. Research on denoising method of     This study received no funding. The work was conducted under the
+    Chinese ancient character image based on Chinese character writing         supervision of Prof. Meng. The authors also acknowledge the ROIS-DS
+    standard model. Sci. Rep. 12, 19795 (2022).                                Center for Open Data in the Humanities for providing high-resolution
+28. Sun, G., Zheng, Z. & Zhang, M. End-to-end rubbing restoration using        manuscript datasets.
+    generative adversarial networks. Preprint at arXiv https://doi.org/10.
+    48550/arXiv.2205.03743 (2022).                                             Author contributions
+29. Ho, J., Jain, A. & Abbeel, P. Denoising diffusion probabilistic models.    Y.Y. conceived the study, conducted the experiments, performed the data
+    In Advances in Neural Information Processing Systems, vol. 33,             analysis, and wrote the manuscript. H.K. and R.I. provided technical advice
+    6840–6851 (NeurIPS, 2020).                                                 on image processing methods. L.M. supervised the overall research and
+30. Song, J., Meng, C. & Ermon, S. Denoising diffusion implicit models. In     reviewed and revised the manuscript. All authors read and approved the ﬁnal
+    Proc. 9th International Conference on Learning Representations (ICLR       version of the manuscript.
+    2021).
+31. Li, H. et al. Towards automated Chinese ancient character restoration:     Competing interests
+    a diffusion-based method with a new dataset. In Proc. AAAI                 The authors declare no competing interests.
+    Conference on Artiﬁcial Intelligence and Thirty-Sixth Conference on
+    Innovative Applications of Artiﬁcial Intelligence and Fourteenth           Additional information
+    Symposium on Educational Advances in Artiﬁcial Intelligence,               Correspondence and requests for materials should be addressed to
+    342–351 (AAAI Press, 2024).                                                Lin Meng.
+32. Chen, Y., Zhang, A., Gao, F. & Guo, J. Ancient mural super-resolution
+    reconstruction based on conditional diffusion model for enhanced           Reprints and permissions information is available at
+    visual information. npj Herit. Sci. 13, 205 (2025).                        http://www.nature.com/reprints
+33. Wang, Y., Xiao, M., Hu, Y., Yan, J. & Zhu, Z. Research on restoration of
+    murals based on diffusion model and transformer. Comput. Mater.            Publisher’s note Springer Nature remains neutral with regard to jurisdictional
+    Continua 80, 4433–4449 (2024).                                             claims in published maps and institutional afﬁliations.
+34. Zhao, F., Ren, H., Su, Z., Zhu, X. & Zhang, C. Diffusion-based
+    heterogeneous network for ancient mural restoration. npj Herit. Sci.
+    13, 206 (2025).                                                            Open Access This article is licensed under a Creative Commons
+35. Kaneko, H., Yoshizu, Y., Ishibashi, R., Meng, L. & Deng, M. An attempt     Attribution-NonCommercial-NoDerivatives 4.0 International License,
+    at zero-shot ancient documents restoration based on diffusion              which permits any non-commercial use, sharing, distribution and
+    models. In Proc. 2023 International Conference on Advanced                 reproduction in any medium or format, as long as you give appropriate
+    Mechatronic Systems (ICAMechS) 1–6 (IEEE, 2023).                           credit to the original author(s) and the source, provide a link to the Creative
+36. Yoshizu, Y., Kaneko, H., Ishibashi, R., Meng, L. & Deng, M. Two-stage      Commons licence, and indicate if you modiﬁed the licensed material. You
+    stains reduction with diffusion models for ancient Japanese                do not have permission under this licence to share adapted material
+    manuscripts. In Proc. 2024 International Conference on Cyber-              derived from this article or parts of it. The images or other third party
+    Physical Social Intelligence (ICCSI) 1–6 (IEEE, 2024).                     material in this article are included in the article’s Creative Commons
+37. Rizzi, A., Gatta, C. & Marini, D. A new algorithm for unsupervised         licence, unless indicated otherwise in a credit line to the material. If material
+    global and local color correction. Pattern Recognit. Lett. 24,             is not included in the article’s Creative Commons licence and your intended
+    1663–1677 (2003).                                                          use is not permitted by statutory regulation or exceeds the permitted use,
+38. Huynh-Thu, Q. & Ghanbari, M. Scope of validity of PSNR in image/           you will need to obtain permission directly from the copyright holder. To
+    video quality assessment. Electron. Lett. 44, 800–801 (2008).              view a copy of this licence, visit http://creativecommons.org/licenses/by-
+39. Wang, Z., Bovik, A. C., Sheikh, H. R. & Simoncelli, E. P. Image quality    nc-nd/4.0/.
+    assessment: from error visibility to structural similarity. IEEE Trans.
+    Image Process. 13, 600–612 (2004).                                         © The Author(s) 2025
+
+
+
+
+npj Heritage Science | (2025)13:634                                                                                                                          14
+

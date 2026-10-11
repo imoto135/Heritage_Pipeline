@@ -1,0 +1,34 @@
+{
+  "status": "passed",
+  "records": [
+    {
+      "frame": "upper_crop",
+      "input_exact_original_crop": true,
+      "saved_npj_sha256": "6b5599597482bba4ab8a8988b1547add0f46cb84e0955e1e61387fee5ebec41b",
+      "candidate_edit_pixels": 4786,
+      "candidate_changed_pixels": 4786,
+      "outside_edit_changed_pixels": 0,
+      "total_tiles": 36,
+      "sampled_tiles": 12
+    },
+    {
+      "frame": "full_page",
+      "input_exact_original_crop": true,
+      "saved_npj_sha256": "e8dfd431b073d2e43702955ed5cd565e70f90b7d58f92e47e756eb0d4c0c3acc",
+      "candidate_edit_pixels": 9955,
+      "candidate_changed_pixels": 9955,
+      "outside_edit_changed_pixels": 0,
+      "total_tiles": 748,
+      "sampled_tiles": 96
+    }
+  ],
+  "real_saved_npj_outputs": true,
+  "npj_rerun": false,
+  "same_original_input_verified": true,
+  "candidate_mask_unchanged": true,
+  "candidate_outside_edit_exact_original": true,
+  "historical_pipeline_superiority": false,
+  "pixel_GT": false,
+  "model_calls": 2180,
+  "elapsed_seconds": 41.92431078944355
+}

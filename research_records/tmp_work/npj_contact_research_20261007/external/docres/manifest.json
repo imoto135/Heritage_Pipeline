@@ -1,0 +1,37 @@
+{
+  "method": "docres",
+  "device": "cuda:1",
+  "settings": {
+    "native_resolution": true,
+    "resize": false,
+    "tile": 512,
+    "halo": 64,
+    "core": 384,
+    "padding": "reflect101 raw model input+prompt on frame boundary",
+    "blend": "disjoint cores, halo discarded",
+    "precision": "float32",
+    "tf32": false,
+    "model_architecture_changed": false,
+    "weights_changed": false,
+    "input": "aligned reference original only, not saved npj or masks",
+    "output": "raw external method comparison, not adopted or pasted onto saved npj",
+    "pixel_GT": false,
+    "decoding": {
+      "stain": "first return element, clamp [0,1], RGB to BGR, round*255",
+      "docres": "softmax first 2 channels, argmax=1 is white background as author code"
+    },
+    "provenance": {
+      "stain": "Author GitHub release Weights/StainDoc.pth, not mark/seal weights",
+      "docres": "Community mirror DaVinciCode/doctra-docres-main, hash agrees with second mirror; original OneDrive requires auth; author-copy identity not independently verified"
+    }
+  },
+  "dependencies": {
+    "tmp_work/npj_literature_models_20261002/repos/DocRes/models/restormer_arch.py": "4a6f50552cf21c016f3c38f0302ff9c9cea07a38111c219ef9e67279e60d6915",
+    "tmp_work/npj_literature_models_20261002/weights/docres_mirror.pkl": "1d6a89d754fe1e58ffd1865eab0ef3f03344798d39197b2d9a77ce4fbc8c02fd"
+  },
+  "source_sha256": "d1a725e7e6927679f4c1e84f1e3a77490c72d7d7206fc57da71ba82ebe871eb6",
+  "selection_sha256": "dbb7ef227313b1930b07e287c92386e3446f0b62a30a283ef187d353eaabfacb",
+  "created": 1791366690.4408634,
+  "changes": "new frozen real cases; stain native tiles and 256px resized whole-frame both reported",
+  "official_benchmark_reproduction": false
+}

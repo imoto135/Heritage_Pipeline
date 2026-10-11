@@ -1,0 +1,507 @@
+[
+  {
+    "id": "page_200019865",
+    "page": "200019865_00003_1",
+    "original": "data/test/200019865/200019865_00003_1.jpg",
+    "input": "tmp_work/ddrm_visual_check/input_200019865_00003_1/200019865_00003_1.jpg",
+    "output": "tmp_work/ddrm_visual_check/output_200019865_00003_1/200019865_00003_1/result/200019865_00003_1.png",
+    "origin_xywh": null,
+    "kind": "実保存・全ページ",
+    "version": "保存npj：ddrm_visual_check既存版",
+    "input_original_exact": true,
+    "shape_wh": [
+      2113,
+      3191
+    ],
+    "source_hashes": {
+      "original": "31b993f91a1ce6d4db18f435513a2c7d9b9169b9a5b42e1e16c59ec6516dae16",
+      "input": "31b993f91a1ce6d4db18f435513a2c7d9b9169b9a5b42e1e16c59ec6516dae16",
+      "output": "77bd3ecf29b5dc3197d283aecf734a522305f97f0451e102d7879c4de25a86c3"
+    }
+  },
+  {
+    "id": "page_200017197",
+    "page": "200017197_00008_1",
+    "original": "data/makura_kiridashi/200017197_00008_1.png",
+    "input": "tmp_work/trial_run/input/200017197_00008_1.png",
+    "output": "tmp_work/trial_run/ddrm_out/200017197_00008_1/result/200017197_00008_1.png",
+    "origin_xywh": null,
+    "kind": "実保存・全ページ",
+    "version": "保存npj：trial_run既存版",
+    "input_original_exact": false,
+    "shape_wh": [
+      2387,
+      3212
+    ],
+    "source_hashes": {
+      "original": "20dd67d30763e04ecadfebfcd58e28f751fcaaad82c81488ea96d343cba95955",
+      "input": "00e8c9071a3770ca50a53932bbb93b58000821c161e56fdc692b1db8bcc02766",
+      "output": "1c9fbc278ae0b9297184b0afd3dfd472c897ff3bf205719be2d6bf21c0272c26"
+    }
+  },
+  {
+    "id": "known_200010454_v2",
+    "page": "200010454_00002_2",
+    "original": "data/split_dataset/test/200010454/200010454_00002_2.jpg",
+    "input": "tmp_work/speed_test_single/input/200010454_00002_2.jpg",
+    "output": "tmp_work/speed_test_single/ddrm_out/200010454_00002_2/result/200010454_00002_2.png",
+    "origin_xywh": null,
+    "kind": "実保存・全ページ",
+    "version": "保存npj：CSC v2・同ページ追加対照",
+    "input_original_exact": true,
+    "shape_wh": [
+      1784,
+      2365
+    ],
+    "source_hashes": {
+      "original": "177776f90fc08b12e2f59a37773ef433556f43ebe47c503c2d676595a08a60d1",
+      "input": "177776f90fc08b12e2f59a37773ef433556f43ebe47c503c2d676595a08a60d1",
+      "output": "aa24528eefe3c11f1849e7212ff0ea5b3f0a7c1298c7bb8f17888ec0b26bc29e"
+    }
+  },
+  {
+    "id": "crop_hnsd",
+    "page": "hnsd001_011",
+    "original": "data/split_dataset/train/hnsd00000/hnsd001_011.jpg",
+    "input": "tmp_work/mask_ablation_hnsd/input/hnsd001_011_crop.png",
+    "output": "tmp_work/mask_ablation_hnsd/output_v1/hnsd001_011_crop/result/hnsd001_011_crop.png",
+    "origin_xywh": [
+      80,
+      2280,
+      620,
+      620
+    ],
+    "kind": "実保存・旧crop",
+    "version": "保存npj：旧v1・濃淡の異なる保存入力",
+    "input_original_exact": false,
+    "shape_wh": [
+      620,
+      620
+    ],
+    "source_hashes": {
+      "original": "22017c0af65c5f43560ff05cfcc15c6ed8f56b72e60a04a732d9c31b72f05731",
+      "input": "78e46d451a970f81c45ea11aaa4c7185b0921df01db1a3ebd0963055643a09d4",
+      "output": "bf94b1b785f7da331ee3a16fdef635e2552ad03c018f9c1f44dd0cdb6a9d252c"
+    }
+  },
+  {
+    "id": "old_upper_crop",
+    "page": "200010454_00002_2",
+    "original": "data/split_dataset/test/200010454/200010454_00002_2.jpg",
+    "input": "tmp_work/mask_ablation_200010454_selfref/input/200010454_00002_2_crop.png",
+    "output": "tmp_work/mask_ablation_200010454_selfref/output_v1/200010454_00002_2_crop/result/200010454_00002_2_crop.png",
+    "origin_xywh": [
+      550,
+      0,
+      550,
+      500
+    ],
+    "kind": "実保存・旧crop",
+    "version": "保存npj：旧v1マスク・selfref",
+    "input_original_exact": true,
+    "shape_wh": [
+      550,
+      500
+    ],
+    "source_hashes": {
+      "original": "177776f90fc08b12e2f59a37773ef433556f43ebe47c503c2d676595a08a60d1",
+      "input": "1add771773a4391f44cd4f6bacb8d3e24fdad79547fc840ad3650ee4beec40a7",
+      "output": "6b5599597482bba4ab8a8988b1547add0f46cb84e0955e1e61387fee5ebec41b"
+    }
+  },
+  {
+    "id": "old_full_page",
+    "page": "200018243_00003_2",
+    "original": "data/split_dataset/test/200018243/200018243_00003_2.jpg",
+    "input": "tmp_work/full_page_compare/input/200018243_00003_2.jpg",
+    "output": "tmp_work/full_page_compare/ddrm_v1true_out/200018243_00003_2/result/200018243_00003_2.png",
+    "origin_xywh": [
+      0,
+      0,
+      2073,
+      3203
+    ],
+    "kind": "実保存・全ページ",
+    "version": "保存npj：v1true・ページ出力",
+    "input_original_exact": true,
+    "shape_wh": [
+      2073,
+      3203
+    ],
+    "source_hashes": {
+      "original": "f1c8c26fea64d9511c462b9776198eadbf3481793b0e4ed397e9ba58aca45e6d",
+      "input": "f1c8c26fea64d9511c462b9776198eadbf3481793b0e4ed397e9ba58aca45e6d",
+      "output": "e8dfd431b073d2e43702955ed5cd565e70f90b7d58f92e47e756eb0d4c0c3acc"
+    }
+  },
+  {
+    "id": "saved_200018243_00002_2",
+    "page": "200018243_00002_2",
+    "original": "data/split_dataset/test/200018243/200018243_00002_2.jpg",
+    "input": "tmp_work/bt_200018243_00002_2/input/200018243_00002_2.jpg",
+    "output": "tmp_work/bt_200018243_00002_2/ddrm_extref_out/200018243_00002_2/result/200018243_00002_2.png",
+    "origin_xywh": null,
+    "kind": "実保存・全ページ",
+    "version": "ローカルv2・外部紙面参照",
+    "input_original_exact": true,
+    "shape_wh": [
+      2053,
+      3187
+    ],
+    "source_hashes": {
+      "original": "684376939bc90652649c7529994f6c374b6ad0199b2c3eab61e3e701888a2d10",
+      "input": "684376939bc90652649c7529994f6c374b6ad0199b2c3eab61e3e701888a2d10",
+      "output": "06939893f07c1bd341ec0b177fa894674b87d52883bf1a474678561ee4ebe9e7"
+    }
+  },
+  {
+    "id": "fresh_lower_paper",
+    "page": "100249537_00003_2",
+    "original": "data/split_dataset/train/100249537/100249537_00003_2.jpg",
+    "input": "tmp_work/npj_dirt_transfer_20261004/native/fresh_lower_paper/original.png",
+    "output": "tmp_work/npj_dirt_transfer_20261004/native/fresh_lower_paper/baseline.png",
+    "origin_xywh": [
+      520,
+      2250,
+      768,
+      768
+    ],
+    "kind": "凍結コードの新規crop対照",
+    "version": "Fresh frozen-code crop control, not a historical saved page",
+    "input_original_exact": true,
+    "shape_wh": [
+      768,
+      768
+    ],
+    "source_hashes": {
+      "original": "557d28ea4800b88997e0c7da395b4171583533996508bc88088c0cb85a05ad87",
+      "input": "f57850e0228fb13e9df6c7d6ca31ed43d102fd8059f30fccda90556e2fc2db4c",
+      "output": "7a7d05f0ba0d04cf9e35fac2e3f09f86e7839d1fc80ea3574ac46aaa4643c355"
+    }
+  },
+  {
+    "id": "fresh_binding_mark",
+    "page": "200021851_00024_1",
+    "original": "data/split_dataset/val/200021851/200021851_00024_1.jpg",
+    "input": "tmp_work/npj_dirt_transfer_20261004/native/fresh_binding_mark/original.png",
+    "output": "tmp_work/npj_dirt_transfer_20261004/native/fresh_binding_mark/baseline.png",
+    "origin_xywh": [
+      1732,
+      900,
+      768,
+      768
+    ],
+    "kind": "凍結コードの新規crop対照",
+    "version": "Fresh frozen-code crop control, not a historical saved page",
+    "input_original_exact": true,
+    "shape_wh": [
+      768,
+      768
+    ],
+    "source_hashes": {
+      "original": "c3228ab2a02cb1d08f78db0024b03780cc68675b5fe4535147fe137b1dcfebe0",
+      "input": "8fd382faa378f88ed13459e6f1ee5354275f78f3fbcb0083d4c1c8a74c29b07a",
+      "output": "a6df14e38e17f922fd13d66559e4af8b50d42f3a8187fcc5c5c68ec3d75c4cdc"
+    }
+  },
+  {
+    "id": "wormhole",
+    "page": "200021712_00082_1",
+    "original": "data/split_dataset/train/200021712/200021712_00082_1.jpg",
+    "input": "tmp_work/npj_dirt_transfer_20261004/native/wormhole/original.png",
+    "output": "tmp_work/npj_dirt_transfer_20261004/native/wormhole/baseline.png",
+    "origin_xywh": [
+      1070,
+      0,
+      768,
+      768
+    ],
+    "kind": "凍結コードの新規crop対照",
+    "version": "Fresh frozen-code crop control, not a historical saved page",
+    "input_original_exact": true,
+    "shape_wh": [
+      768,
+      768
+    ],
+    "source_hashes": {
+      "original": "79ec47dac035351a4cfcb0efaf6cb6ef75524238deb20cbe1f4cdbe5586336e1",
+      "input": "22bd74652f9b96def22e0add48bfd1e8f917b74954421cb98e7584d1c1e14498",
+      "output": "e0bc0e97f0d727b83262d14351e8a22ca5d56069b5200bbbb79c6aaf32c31800"
+    }
+  },
+  {
+    "id": "seal_control",
+    "page": "200021644_00003_2",
+    "original": "data/split_dataset/train/200021644/200021644_00003_2.jpg",
+    "input": "tmp_work/npj_dirt_transfer_20261004/native/seal_control/original.png",
+    "output": "tmp_work/npj_dirt_transfer_20261004/native/seal_control/baseline.png",
+    "origin_xywh": [
+      1235,
+      0,
+      768,
+      768
+    ],
+    "kind": "凍結コードの新規crop対照",
+    "version": "Fresh frozen-code crop control, not a historical saved page",
+    "input_original_exact": true,
+    "shape_wh": [
+      768,
+      768
+    ],
+    "source_hashes": {
+      "original": "7990fd2d1a2e05e94b5aa4c5ab13dd7dc733ab048bd1e0275ce26e06f584426c",
+      "input": "e450394ecd392e5287d2903b3d7df167c137efb9b1fef2e5667f874c60a83859",
+      "output": "ab7a9cf6be23e0e37115a2b3588a49cbf7ed66e63b559b58eaf12f07b389158e"
+    }
+  },
+  {
+    "id": "fresh_printed_text",
+    "page": "200008003_00004_2",
+    "original": "data/split_dataset/test/200008003/200008003_00004_2.jpg",
+    "input": "tmp_work/npj_dirt_transfer_20261004/native/fresh_printed_text/original.png",
+    "output": "tmp_work/npj_dirt_transfer_20261004/native/fresh_printed_text/baseline.png",
+    "origin_xywh": [
+      850,
+      2400,
+      768,
+      768
+    ],
+    "kind": "凍結コードの新規crop対照",
+    "version": "Fresh frozen-code crop control, not a historical saved page",
+    "input_original_exact": true,
+    "shape_wh": [
+      768,
+      768
+    ],
+    "source_hashes": {
+      "original": "39fe3aa26d74c3ae5379c88293b6cb9479f4b995fd15a8dbb7976f8851adae8b",
+      "input": "22205aa254209499b99dcabf16f00b2bcc3b8f861d0586b4793874f09f27edff",
+      "output": "43060972e0100fee8268d98ddbb0fd603d0545bf1f84800983b105ea55aaf950"
+    }
+  },
+  {
+    "id": "unseen_lower_frame_mark",
+    "page": "200004107_00023_1",
+    "original": "data/split_dataset/test/200004107/200004107_00023_1.jpg",
+    "input": "tmp_work/npj_dirt_unseen_books_20261004/native/unseen_lower_frame_mark/original.png",
+    "output": "tmp_work/npj_dirt_unseen_books_20261004/native/unseen_lower_frame_mark/baseline.png",
+    "origin_xywh": [
+      1150,
+      2181,
+      768,
+      768
+    ],
+    "kind": "凍結コードの新規crop対照",
+    "version": "Fresh frozen-code crop control, not a historical saved page",
+    "input_original_exact": true,
+    "shape_wh": [
+      768,
+      768
+    ],
+    "source_hashes": {
+      "original": "346efda90dbadaf5cc4499f92b846e7121a980dc6b1ada50dfc796854739f9b7",
+      "input": "8843c0a23dd149898a6a31804ac199e0c221cb281c3e77b87bb47b8846123154",
+      "output": "536181b10e36ae1a551041ecede9ed254a1a8be4aeacd2949638f2eb6b9ce6c1"
+    }
+  },
+  {
+    "id": "unseen_lower_binding_mark",
+    "page": "200003967_00043_1",
+    "original": "data/split_dataset/train/200003967/200003967_00043_1.jpg",
+    "input": "tmp_work/npj_dirt_unseen_books_20261004/native/unseen_lower_binding_mark/original.png",
+    "output": "tmp_work/npj_dirt_unseen_books_20261004/native/unseen_lower_binding_mark/baseline.png",
+    "origin_xywh": [
+      1185,
+      2187,
+      768,
+      768
+    ],
+    "kind": "凍結コードの新規crop対照",
+    "version": "Fresh frozen-code crop control, not a historical saved page",
+    "input_original_exact": true,
+    "shape_wh": [
+      768,
+      768
+    ],
+    "source_hashes": {
+      "original": "32de18d0c167336c8cb4a4e8e214516029b6542de1f4053a1189f083c8ff41fb",
+      "input": "731369cdfb4367b28ab0c935764a5610c32e44a61e8d31648409e4629eed778f",
+      "output": "64357ea5f0cc7022b7951d3c1776ccc08ba962eb03c1583219da412c32540bdf"
+    }
+  },
+  {
+    "id": "new_warm_upper_loss",
+    "page": "200021925_00007_1",
+    "original": "data/train/200021925/200021925_00007_1.jpg",
+    "input": "tmp_work/npj_dirt_new_book_20261004/native/new_warm_upper_loss/original.png",
+    "output": "tmp_work/npj_dirt_new_book_20261004/native/new_warm_upper_loss/baseline.png",
+    "origin_xywh": [
+      500,
+      0,
+      768,
+      768
+    ],
+    "kind": "凍結コードの新規crop対照",
+    "version": "New frozen-code crop control; not historical output or whole-page DDRM",
+    "input_original_exact": true,
+    "shape_wh": [
+      768,
+      768
+    ],
+    "source_hashes": {
+      "original": "836f9c418cc5b5f3e1844e9024d1b676c3a6de19d56ccd1c6832ce6017654a8b",
+      "input": "9c9d165fa5f5b4df93f1d1bc80a59fc6576986075b74b77eb1a8d6ad87b45306",
+      "output": "12b10516c95f03df44d10393ce1a76a0d260c36449c14b0a68597a0a34ceb51a"
+    }
+  },
+  {
+    "id": "new_warm_lower_loss",
+    "page": "200021925_00007_1",
+    "original": "data/train/200021925/200021925_00007_1.jpg",
+    "input": "tmp_work/npj_dirt_new_book_20261004/native/new_warm_lower_loss/original.png",
+    "output": "tmp_work/npj_dirt_new_book_20261004/native/new_warm_lower_loss/baseline.png",
+    "origin_xywh": [
+      1050,
+      1171,
+      768,
+      768
+    ],
+    "kind": "凍結コードの新規crop対照",
+    "version": "New frozen-code crop control; not historical output or whole-page DDRM",
+    "input_original_exact": true,
+    "shape_wh": [
+      768,
+      768
+    ],
+    "source_hashes": {
+      "original": "836f9c418cc5b5f3e1844e9024d1b676c3a6de19d56ccd1c6832ce6017654a8b",
+      "input": "e485685b2833cd8afe92f68d475b6c5c30b084ec6ad35663d6c0fdad42a98842",
+      "output": "3d6a7f79db971fb58ff2c20564ec33b81036f5f4b5b5dfeae0bc0f9f8beb93af"
+    }
+  },
+  {
+    "id": "new_warm_faint_writing",
+    "page": "200021925_00004_1",
+    "original": "data/train/200021925/200021925_00004_1.jpg",
+    "input": "tmp_work/npj_dirt_new_book_20261004/native/new_warm_faint_writing/original.png",
+    "output": "tmp_work/npj_dirt_new_book_20261004/native/new_warm_faint_writing/baseline.png",
+    "origin_xywh": [
+      600,
+      550,
+      768,
+      768
+    ],
+    "kind": "凍結コードの新規crop対照",
+    "version": "New frozen-code crop control; not historical output or whole-page DDRM",
+    "input_original_exact": true,
+    "shape_wh": [
+      768,
+      768
+    ],
+    "source_hashes": {
+      "original": "61a09a7bff44908c8e4524e7b58dad02e5011d0bd8ec78259c4b544e9f0972b0",
+      "input": "b9eb5b255272c0ee794493c5daff26846e406a8ff2b606426dc981977e4a131b",
+      "output": "8c7cefd76e0953f7d1ee0e9f964cdb21aebe573a5997bb163984128056b895a0"
+    }
+  },
+  {
+    "id": "new_gray_binding_mark",
+    "page": "200004148_00062_1",
+    "original": "data/split_dataset/train/200004148/200004148_00062_1.jpg",
+    "input": "tmp_work/npj_dirt_new_book_20261004/native/new_gray_binding_mark/original.png",
+    "output": "tmp_work/npj_dirt_new_book_20261004/native/new_gray_binding_mark/baseline.png",
+    "origin_xywh": [
+      1100,
+      2050,
+      768,
+      768
+    ],
+    "kind": "凍結コードの新規crop対照",
+    "version": "New frozen-code crop control; not historical output or whole-page DDRM",
+    "input_original_exact": true,
+    "shape_wh": [
+      768,
+      768
+    ],
+    "source_hashes": {
+      "original": "da91d62d48a3b23633c37a55391d15638fd14184c2abe7d4c53d250c53acb718",
+      "input": "e183dc89f291a71fba0545750bda4d78341e34d51381603f405826317831bc2e",
+      "output": "adba3ab5158b9fb9af6c0d09fbfa86eb30197613463c6cae774cbbc27f47d93a"
+    }
+  },
+  {
+    "id": "new_gray_writing",
+    "page": "200004148_00062_1",
+    "original": "data/split_dataset/train/200004148/200004148_00062_1.jpg",
+    "input": "tmp_work/npj_dirt_new_book_20261004/native/new_gray_writing/original.png",
+    "output": "tmp_work/npj_dirt_new_book_20261004/native/new_gray_writing/baseline.png",
+    "origin_xywh": [
+      600,
+      900,
+      768,
+      768
+    ],
+    "kind": "凍結コードの新規crop対照",
+    "version": "New frozen-code crop control; not historical output or whole-page DDRM",
+    "input_original_exact": true,
+    "shape_wh": [
+      768,
+      768
+    ],
+    "source_hashes": {
+      "original": "da91d62d48a3b23633c37a55391d15638fd14184c2abe7d4c53d250c53acb718",
+      "input": "6aaf2d99210bee7d411bedd252411d1490a21c21633dababe6a08aa1c3361f24",
+      "output": "9cb25e9f1dd3df9e578b8d503ed28408a87e47351ebcbbb015e9c29d98cf6c31"
+    }
+  },
+  {
+    "id": "manual_control_hnsd001_011",
+    "page": "hnsd001_011",
+    "original": "data/split_dataset/train/hnsd00000/hnsd001_011.jpg",
+    "input": "tmp_work/npj_manual_stain_oracle_20261004/hnsd001_input/hnsd001_011.png",
+    "output": "tmp_work/npj_manual_stain_oracle_20261004/hnsd001_output/hnsd001_011/result/hnsd001_011.png",
+    "origin_xywh": [
+      336,
+      396,
+      528,
+      528
+    ],
+    "kind": "凍結コードの新規crop対照",
+    "version": "通常黒文字マスク・後処理前",
+    "input_original_exact": true,
+    "shape_wh": [
+      528,
+      528
+    ],
+    "source_hashes": {
+      "original": "22017c0af65c5f43560ff05cfcc15c6ed8f56b72e60a04a732d9c31b72f05731",
+      "input": "e9500ca03a603d1ae696748581239c08f840112601f86e3c9a87ae2366938ba2",
+      "output": "d23d4fa76718472ee63a43a9d513d4601c7155ed735fed4a31f7be74be84427d"
+    }
+  },
+  {
+    "id": "manual_control_hnsd007_042",
+    "page": "hnsd007_042",
+    "original": "data/split_dataset/train/hnsd00000/hnsd007_042.jpg",
+    "input": "tmp_work/npj_manual_stain_oracle_20261004/input/hnsd007_042.png",
+    "output": "tmp_work/npj_manual_stain_oracle_20261004/output/hnsd007_042/result/hnsd007_042.png",
+    "origin_xywh": [
+      600,
+      100,
+      768,
+      768
+    ],
+    "kind": "凍結コードの新規crop対照",
+    "version": "通常黒文字マスク・後処理前",
+    "input_original_exact": true,
+    "shape_wh": [
+      768,
+      768
+    ],
+    "source_hashes": {
+      "original": "68315f7e551cb29695d9e830f09826eef92809409d4e9242290c5ed14f393afc",
+      "input": "4682b1a2f04d379232da879de4a4135fd328fe98d45e19604cb5d2948749aaee",
+      "output": "207ca789f862ac839cc2a783d6975fc9c181f929a39642d602436efcdfe0e51a"
+    }
+  }
+]

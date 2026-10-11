@@ -1,0 +1,454 @@
+[
+  {
+    "path": "figures/N01_赤固定比較.png",
+    "sha256": "7f954ee6f03b7d7b6c5680ad2222cd01c778d7804361ace1b1079c65935e0ada",
+    "roi_xywh": [
+      428,
+      347,
+      190,
+      220
+    ],
+    "panels": [
+      {
+        "method": "original",
+        "row": "black",
+        "path": "panels/N01/original/black.png",
+        "sha256": "5dcc3726bb3f6b9c8663d0c9dc1b0809ece237c26f314989c7b61b21e07623ee",
+        "canvas_xywh": [
+          150,
+          112,
+          380,
+          440
+        ],
+        "integer_display_scale": 2
+      },
+      {
+        "method": "v2",
+        "row": "black",
+        "path": "panels/N01/v2/black.png",
+        "sha256": "28325b8895355cab1f7838e63c71052fbfcd81dac0b6e99d066004ddada3eb2a",
+        "canvas_xywh": [
+          550,
+          112,
+          380,
+          440
+        ],
+        "integer_display_scale": 2
+      },
+      {
+        "method": "sauvola_v2_red",
+        "row": "black",
+        "path": "panels/N01/sauvola_v2_red/black.png",
+        "sha256": "2924af530fd6769bbf64042e7bee5fa58a83314cfb54b2a1572a0860f6610836",
+        "canvas_xywh": [
+          950,
+          112,
+          380,
+          440
+        ],
+        "integer_display_scale": 2
+      },
+      {
+        "method": "original",
+        "row": "result",
+        "path": "panels/N01/original/result.png",
+        "sha256": "5dcc3726bb3f6b9c8663d0c9dc1b0809ece237c26f314989c7b61b21e07623ee",
+        "canvas_xywh": [
+          150,
+          582,
+          380,
+          440
+        ],
+        "integer_display_scale": 2
+      },
+      {
+        "method": "v2",
+        "row": "result",
+        "path": "panels/N01/v2/result.png",
+        "sha256": "34f9ea82c892c3b5cc0f90ff132beaf5bb2926ad84015a956fc8302bde5433f6",
+        "canvas_xywh": [
+          550,
+          582,
+          380,
+          440
+        ],
+        "integer_display_scale": 2
+      },
+      {
+        "method": "sauvola_v2_red",
+        "row": "result",
+        "path": "panels/N01/sauvola_v2_red/result.png",
+        "sha256": "df20c696196e0a3a19b24c9408c003f3a46590607157969188f771f7c2b0852f",
+        "canvas_xywh": [
+          950,
+          582,
+          380,
+          440
+        ],
+        "integer_display_scale": 2
+      }
+    ]
+  },
+  {
+    "path": "figures/T01_赤固定比較.png",
+    "sha256": "f7010c2f5d3afc45b2bd9e3cf6eb1d7a75a5f26a196878fe7d6b13ef0d3a76bf",
+    "roi_xywh": [
+      812,
+      421,
+      450,
+      450
+    ],
+    "panels": [
+      {
+        "method": "original",
+        "row": "black",
+        "path": "panels/T01/original/black.png",
+        "sha256": "f1cf88df79175bf4dd368f6cf0c75398c4a874af903d4d3e563fd91fd65b47dc",
+        "canvas_xywh": [
+          150,
+          112,
+          450,
+          450
+        ],
+        "integer_display_scale": 1
+      },
+      {
+        "method": "v2",
+        "row": "black",
+        "path": "panels/T01/v2/black.png",
+        "sha256": "b8c042169282402b3c91bc806a14a1a2ce230e1e601679bf76601624ff4628e3",
+        "canvas_xywh": [
+          620,
+          112,
+          450,
+          450
+        ],
+        "integer_display_scale": 1
+      },
+      {
+        "method": "sauvola_v2_red",
+        "row": "black",
+        "path": "panels/T01/sauvola_v2_red/black.png",
+        "sha256": "d9ed4d67b7aba6cbce16ab9b48de7061aa48bcc7e46f168ba0a23749a538a21c",
+        "canvas_xywh": [
+          1090,
+          112,
+          450,
+          450
+        ],
+        "integer_display_scale": 1
+      },
+      {
+        "method": "original",
+        "row": "result",
+        "path": "panels/T01/original/result.png",
+        "sha256": "f1cf88df79175bf4dd368f6cf0c75398c4a874af903d4d3e563fd91fd65b47dc",
+        "canvas_xywh": [
+          150,
+          592,
+          450,
+          450
+        ],
+        "integer_display_scale": 1
+      },
+      {
+        "method": "v2",
+        "row": "result",
+        "path": "panels/T01/v2/result.png",
+        "sha256": "2fef9574bfcf562c3068d772f7bc1631b6e483793e9a1681646fe54ce074f6b8",
+        "canvas_xywh": [
+          620,
+          592,
+          450,
+          450
+        ],
+        "integer_display_scale": 1
+      },
+      {
+        "method": "sauvola_v2_red",
+        "row": "result",
+        "path": "panels/T01/sauvola_v2_red/result.png",
+        "sha256": "34ebc86e7c021f48d686a9f25cfb0abbae41c2d4dbd38f45f908f0601e021fe6",
+        "canvas_xywh": [
+          1090,
+          592,
+          450,
+          450
+        ],
+        "integer_display_scale": 1
+      }
+    ]
+  },
+  {
+    "path": "figures/N02_赤固定比較.png",
+    "sha256": "bcfd33ba0070ad06edf3040f11b8bd95edc869d8eeed93a7444c870e179cb3d0",
+    "roi_xywh": [
+      520,
+      890,
+      520,
+      560
+    ],
+    "panels": [
+      {
+        "method": "original",
+        "row": "black",
+        "path": "panels/N02/original/black.png",
+        "sha256": "d8575012ccd77a46436f65c5278b98257e40217e018201d2423a2f84722b4948",
+        "canvas_xywh": [
+          150,
+          112,
+          520,
+          560
+        ],
+        "integer_display_scale": 1
+      },
+      {
+        "method": "v2",
+        "row": "black",
+        "path": "panels/N02/v2/black.png",
+        "sha256": "bf47e6f7b89cb3af79d69664b788ccca9d598388684c78425e15a75410651e10",
+        "canvas_xywh": [
+          690,
+          112,
+          520,
+          560
+        ],
+        "integer_display_scale": 1
+      },
+      {
+        "method": "sauvola_v2_red",
+        "row": "black",
+        "path": "panels/N02/sauvola_v2_red/black.png",
+        "sha256": "ef4329d6e4a8561177932d3802270d16c938002f065af44ceeb8ba75f73c357b",
+        "canvas_xywh": [
+          1230,
+          112,
+          520,
+          560
+        ],
+        "integer_display_scale": 1
+      },
+      {
+        "method": "sauvola_old_red",
+        "row": "black",
+        "path": "panels/N02/sauvola_old_red/black.png",
+        "sha256": "ef4329d6e4a8561177932d3802270d16c938002f065af44ceeb8ba75f73c357b",
+        "canvas_xywh": [
+          1770,
+          112,
+          520,
+          560
+        ],
+        "integer_display_scale": 1
+      },
+      {
+        "method": "original",
+        "row": "red",
+        "path": "panels/N02/original/red.png",
+        "sha256": "d8575012ccd77a46436f65c5278b98257e40217e018201d2423a2f84722b4948",
+        "canvas_xywh": [
+          150,
+          702,
+          520,
+          560
+        ],
+        "integer_display_scale": 1
+      },
+      {
+        "method": "v2",
+        "row": "red",
+        "path": "panels/N02/v2/red.png",
+        "sha256": "97500f4d109b4adce357ea36f8f08bfe7d9ba60f26625d7350992390cc5af523",
+        "canvas_xywh": [
+          690,
+          702,
+          520,
+          560
+        ],
+        "integer_display_scale": 1
+      },
+      {
+        "method": "sauvola_v2_red",
+        "row": "red",
+        "path": "panels/N02/sauvola_v2_red/red.png",
+        "sha256": "97500f4d109b4adce357ea36f8f08bfe7d9ba60f26625d7350992390cc5af523",
+        "canvas_xywh": [
+          1230,
+          702,
+          520,
+          560
+        ],
+        "integer_display_scale": 1
+      },
+      {
+        "method": "sauvola_old_red",
+        "row": "red",
+        "path": "panels/N02/sauvola_old_red/red.png",
+        "sha256": "588cf06b309b38514ee73d0b77ce8977dbd503266707e6f8b34401366c50d717",
+        "canvas_xywh": [
+          1770,
+          702,
+          520,
+          560
+        ],
+        "integer_display_scale": 1
+      },
+      {
+        "method": "original",
+        "row": "result",
+        "path": "panels/N02/original/result.png",
+        "sha256": "d8575012ccd77a46436f65c5278b98257e40217e018201d2423a2f84722b4948",
+        "canvas_xywh": [
+          150,
+          1292,
+          520,
+          560
+        ],
+        "integer_display_scale": 1
+      },
+      {
+        "method": "v2",
+        "row": "result",
+        "path": "panels/N02/v2/result.png",
+        "sha256": "3477a19ccc94194e1d6f19cc00c02c2d7b1aa7b91658252cb3b4bb5e75029d53",
+        "canvas_xywh": [
+          690,
+          1292,
+          520,
+          560
+        ],
+        "integer_display_scale": 1
+      },
+      {
+        "method": "sauvola_v2_red",
+        "row": "result",
+        "path": "panels/N02/sauvola_v2_red/result.png",
+        "sha256": "11d0b2c9d454d990e5e6be0159d66e1a61d530339b5b76038d189d3457047471",
+        "canvas_xywh": [
+          1230,
+          1292,
+          520,
+          560
+        ],
+        "integer_display_scale": 1
+      },
+      {
+        "method": "sauvola_old_red",
+        "row": "result",
+        "path": "panels/N02/sauvola_old_red/result.png",
+        "sha256": "b07d58af85adf5daa93c6942e87677523237a0ffac2e7e1f6c47e0170115f15f",
+        "canvas_xywh": [
+          1770,
+          1292,
+          520,
+          560
+        ],
+        "integer_display_scale": 1
+      }
+    ]
+  },
+  {
+    "path": "figures/3例_赤固定比較.png",
+    "panels": [
+      {
+        "id": "N01",
+        "method": "original",
+        "canvas_xywh": [
+          155,
+          112,
+          380,
+          440
+        ],
+        "display_resized": true
+      },
+      {
+        "id": "N01",
+        "method": "v2",
+        "canvas_xywh": [
+          645,
+          112,
+          380,
+          440
+        ],
+        "display_resized": true
+      },
+      {
+        "id": "N01",
+        "method": "sauvola_v2_red",
+        "canvas_xywh": [
+          1135,
+          112,
+          380,
+          440
+        ],
+        "display_resized": true
+      },
+      {
+        "id": "T01",
+        "method": "original",
+        "canvas_xywh": [
+          155,
+          642,
+          450,
+          450
+        ],
+        "display_resized": true
+      },
+      {
+        "id": "T01",
+        "method": "v2",
+        "canvas_xywh": [
+          645,
+          642,
+          450,
+          450
+        ],
+        "display_resized": true
+      },
+      {
+        "id": "T01",
+        "method": "sauvola_v2_red",
+        "canvas_xywh": [
+          1135,
+          642,
+          450,
+          450
+        ],
+        "display_resized": true
+      },
+      {
+        "id": "N02",
+        "method": "original",
+        "canvas_xywh": [
+          155,
+          1172,
+          446,
+          480
+        ],
+        "display_resized": true
+      },
+      {
+        "id": "N02",
+        "method": "v2",
+        "canvas_xywh": [
+          645,
+          1172,
+          446,
+          480
+        ],
+        "display_resized": true
+      },
+      {
+        "id": "N02",
+        "method": "sauvola_v2_red",
+        "canvas_xywh": [
+          1135,
+          1172,
+          446,
+          480
+        ],
+        "display_resized": true
+      }
+    ]
+  }
+]

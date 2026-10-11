@@ -1,0 +1,45 @@
+{
+  "status": "passed",
+  "saved_inputs_and_npj_unchanged": true,
+  "all_source_model_selection_output_hashes": true,
+  "native_shapes": true,
+  "finite_probabilities": true,
+  "independent_docres_decode": true,
+  "all_panels_pixel_exact": true,
+  "zip_CRC_bytes_exact": true,
+  "fixed_ROIs_complete": true,
+  "inputs": [
+    {
+      "frame": "page_200019865",
+      "exact": true,
+      "reference_saved_input_MAE_255": 0.0
+    },
+    {
+      "frame": "page_200017197",
+      "exact": false,
+      "reference_saved_input_MAE_255": 0.5696914830104883
+    },
+    {
+      "frame": "known_200010454_v2",
+      "exact": true,
+      "reference_saved_input_MAE_255": 0.0
+    },
+    {
+      "frame": "crop_hnsd",
+      "exact": false,
+      "reference_saved_input_MAE_255": 26.908911723898715
+    },
+    {
+      "frame": "old_upper_crop",
+      "exact": true,
+      "reference_saved_input_MAE_255": 0.0
+    },
+    {
+      "frame": "old_full_page",
+      "exact": true,
+      "reference_saved_input_MAE_255": 0.0
+    }
+  ],
+  "pixel_GT": false,
+  "adopted": false
+}

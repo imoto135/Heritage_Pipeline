@@ -1,0 +1,97 @@
+_wandb:
+    value:
+        cli_version: 0.27.2
+        e:
+            pf8rrjj3z5zj8ubtrcvad0ev2m46xgdl:
+                codePath: modules/stain_removal/scripts/train_page.py
+                codePathLocal: scripts/train_page.py
+                cpu_count: 48
+                cpu_count_logical: 96
+                cudaVersion: "13.2"
+                disk:
+                    /:
+                        total: "1935237541888"
+                        used: "22909710336"
+                email: imotoyuichi01@gmail.com
+                executable: /home/imoto/miniconda3/envs/diffusion/bin/python
+                git:
+                    commit: 07f6413d355f86ebba092db2253fe75ba18f9125
+                    remote: https://github.com/imoto135/Heritage_Pipeline.git
+                gpu: NVIDIA RTX A6000
+                gpu_count: 2
+                gpu_nvidia:
+                    - architecture: Ampere
+                      cudaCores: 10752
+                      memoryTotal: "51527024640"
+                      name: NVIDIA RTX A6000
+                      uuid: GPU-61a66dc3-4e46-83f3-d889-7e6b5f33c424
+                    - architecture: Ampere
+                      cudaCores: 10752
+                      memoryTotal: "51527024640"
+                      name: NVIDIA RTX A6000
+                      uuid: GPU-75471331-fa5f-1f63-4302-edcb93115dd8
+                host: ihpc-a6000-0-WS-E900-G4-WS980T
+                memory:
+                    total: "134722170880"
+                os: Linux-6.17.0-35-generic-x86_64-with-glibc2.39
+                program: /home/imoto/Heritage_Pipeline/modules/stain_removal/scripts/train_page.py
+                python: CPython 3.10.20
+                root: /home/imoto/Heritage_Pipeline/modules/stain_removal
+                startedAt: "2026-06-16T09:09:47.383178Z"
+                writerId: pf8rrjj3z5zj8ubtrcvad0ev2m46xgdl
+        m: []
+        python_version: 3.10.20
+        t:
+            "1":
+                - 1
+                - 41
+            "2":
+                - 1
+                - 41
+            "3":
+                - 1
+                - 2
+                - 3
+                - 13
+                - 16
+                - 61
+            "4": 3.10.20
+            "5": 0.27.2
+            "12": 0.27.2
+            "13": linux-x86_64
+attention_resolutions:
+    value:
+        - 16
+        - 8
+batch_size:
+    value: 8
+beta_end:
+    value: 0.02
+beta_start:
+    value: 0.0001
+channels:
+    value: 3
+device:
+    value: cuda:0
+grad_clip:
+    value: 1
+image_dir:
+    value: ./data/split_dataset/train
+image_size:
+    value: 256
+lr:
+    value: 0.0002
+model_channels:
+    value: 64
+n_epochs:
+    value: 500
+num_diffusion_timesteps:
+    value: 1000
+num_res_blocks:
+    value: 2
+save_freq:
+    value: 50
+save_name:
+    value: model_page.pth
+seed:
+    value: 42

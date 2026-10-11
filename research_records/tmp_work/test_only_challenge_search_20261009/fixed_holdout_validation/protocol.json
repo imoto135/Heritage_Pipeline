@@ -1,0 +1,258 @@
+{
+  "created_utc": "2026-10-09T11:09:57.412801+00:00",
+  "cases": [
+    {
+      "id": "F01",
+      "page": "200004107_00006_1",
+      "source": "data/test/200004107/200004107_00006_1.jpg",
+      "source_sha256": "071c97d447948e1921d3e5ece2dc1b8183e29bf3290c89682cbaa88357eb70f8",
+      "input_size": [
+        1990,
+        2975
+      ],
+      "roi_xywh": [
+        650,
+        900,
+        850,
+        1000
+      ],
+      "controls_xywh": {
+        "text": [
+          500,
+          900,
+          1300,
+          1700
+        ],
+        "margin": [
+          150,
+          300,
+          700,
+          500
+        ]
+      },
+      "reason": "白黒資料の細い本文と小さな傍記",
+      "historical_otsu_outputs": [
+        "results/otsu/200004107/200004107_00006_1/result/200004107_00006_1.png"
+      ]
+    },
+    {
+      "id": "F02",
+      "page": "200021063_00007_1",
+      "source": "data/test/200021063/200021063_00007_1.jpg",
+      "source_sha256": "5b67654ae0bb73ec9dc3c243c253a0841b85d848d3b10130432d7d8e8201f86b",
+      "input_size": [
+        2011,
+        3203
+      ],
+      "roi_xywh": [
+        650,
+        900,
+        800,
+        1000
+      ],
+      "controls_xywh": {
+        "text": [
+          250,
+          750,
+          1650,
+          2300
+        ],
+        "paper": [
+          100,
+          100,
+          700,
+          550
+        ]
+      },
+      "reason": "カラー資料の密な本文と青灰色の背面像候補",
+      "historical_otsu_outputs": [
+        "results/otsu/200021063/200021063_00007_1/result/200021063_00007_1.png"
+      ]
+    },
+    {
+      "id": "F03",
+      "page": "200021063_00009_2",
+      "source": "data/test/200021063/200021063_00009_2.jpg",
+      "source_sha256": "f02210d58439d40b55ad4bb7c44cd8206a37c1fcf059b7c62b93534f49923423",
+      "input_size": [
+        2068,
+        3232
+      ],
+      "roi_xywh": [
+        100,
+        100,
+        1000,
+        1000
+      ],
+      "controls_xywh": {
+        "text": [
+          250,
+          950,
+          1500,
+          1950
+        ],
+        "paper": [
+          300,
+          2850,
+          1350,
+          280
+        ]
+      },
+      "reason": "上部の枝状像・紙色の濃淡と本文",
+      "historical_otsu_outputs": [
+        "results/otsu/200021063/200021063_00009_2/result/200021063_00009_2.png"
+      ]
+    },
+    {
+      "id": "F04",
+      "page": "200021063_00002_2",
+      "source": "data/test/200021063/200021063_00002_2.jpg",
+      "source_sha256": "5f3d987a099149ea73332ab7420b22dd5e93d3b9908c34d3f8ee210966a25fe7",
+      "input_size": [
+        2069,
+        3161
+      ],
+      "roi_xywh": [
+        1650,
+        2500,
+        400,
+        620
+      ],
+      "controls_xywh": {
+        "text": [
+          650,
+          900,
+          800,
+          1000
+        ]
+      },
+      "reason": "本文枠外の表側朱印",
+      "historical_otsu_outputs": [
+        "results/otsu/200021063/200021063_00002_2/result/200021063_00002_2.png"
+      ]
+    },
+    {
+      "id": "F05",
+      "page": "200005798_00036_1",
+      "source": "data/test/200005798/200005798_00036_1.jpg",
+      "source_sha256": "0d2955319c30660157c5f279d75205f6b65ef07bccbd2d105391dad85af8184c",
+      "input_size": [
+        1987,
+        3130
+      ],
+      "roi_xywh": [
+        700,
+        500,
+        850,
+        1100
+      ],
+      "controls_xywh": {
+        "text": [
+          450,
+          1100,
+          1150,
+          1500
+        ],
+        "margin": [
+          350,
+          200,
+          1250,
+          650
+        ]
+      },
+      "reason": "白黒資料の余白の細点と本文",
+      "historical_otsu_outputs": [
+        "results/otsu/200005798/200005798_00036_1/result/200005798_00036_1.png"
+      ]
+    },
+    {
+      "id": "F06",
+      "page": "200008003_00006_1",
+      "source": "data/test/200008003/200008003_00006_1.jpg",
+      "source_sha256": "49dfa208e193e0f1cc6264466348259b3c79b8aa1de7a53f51ffbc640fc120c8",
+      "input_size": [
+        2660,
+        4128
+      ],
+      "roi_xywh": [
+        550,
+        900,
+        1050,
+        2400
+      ],
+      "controls_xywh": {
+        "small_text": [
+          650,
+          1300,
+          700,
+          2000
+        ],
+        "body": [
+          1700,
+          1050,
+          780,
+          2700
+        ]
+      },
+      "reason": "離れた日付・署名と疎な本文",
+      "historical_otsu_outputs": [
+        "results/otsu/200008003/200008003_00006_1/result/200008003_00006_1.png"
+      ]
+    }
+  ],
+  "conditions_fixed_before_new_masks_and_outputs": true,
+  "ddrm": {
+    "code": "tmp_work/npj_dirt_control_20261002/source_snapshot/ddrm_npj_v2/scripts/pipeline_ddrm.py",
+    "code_sha256": "bbc130a1761be21dfa7ff6d5ec9bc29e34155a56dfa405d91daa6a989a77f2ec",
+    "checkpoint": "modules/stain_removal/experiments/model_char/model_char/ckpt_epoch0350.pth",
+    "checkpoint_sha256": "1a5decb747e34e8b51ccea96b598fe3c6ec0e7f7a6f8df6cffc3135d8281a7f3",
+    "background": "modules/ddrm_npj_v2/background/isemonogatari.png",
+    "background_sha256": "2a96dbde5301415c593dc1d119410e7a077a6ac15ea3d8d8d5f8d4021dc3897c",
+    "seed": 999,
+    "timesteps": 20,
+    "patch_size": 128,
+    "overlap": 32,
+    "shared_noise": true,
+    "native_full_page": true
+  },
+  "howe": {
+    "c": 160,
+    "sigma": 0.6,
+    "low": 0.1,
+    "high": 0.4
+  },
+  "isolated_rule": {
+    "stroke_width": "2 * median foreground distance transform",
+    "support_min_area_stroke_squared": 16,
+    "support_min_csc_fraction": 0.1,
+    "degradation_max_area_stroke_squared": 8,
+    "degradation_min_fraction": 0.6,
+    "degradation_max_csc_fraction": 0.02,
+    "degradation_min_distance_strokes": 2,
+    "isolated_max_area_stroke_squared": 16,
+    "isolated_min_fill": 0.4,
+    "isolated_aspect_range": [
+      0.5,
+      2
+    ],
+    "isolated_min_distance_strokes": 12,
+    "degradation_components_removed": false,
+    "isolated_min_csc_fraction": 0.5,
+    "other_howe_ink_exclusion_margin_strokes": 3
+  },
+  "isolated_rule_protocol_sha256": "edea423996afa8a2462c5cc01b2d0b18c7ed436ddd14dd39ecb7b686d23a1b7c",
+  "isolated_regression": "all six original masks reproduced exactly",
+  "methods": [
+    "csc",
+    "howe",
+    "isolated"
+  ],
+  "red_priority": "Both CSC and Howe black &= ~saved CSC red; isolated derived from priority-resolved Howe",
+  "isolated_component_support": "Use original saved CSC black for fixed component-support fractions",
+  "selection_scope": "Four books absent from previous full-page CSC/Howe comparisons in this workflow; six source-selected pages",
+  "prior_exposure": "Original contact sheets and source-screening scores existed; historical Otsu outputs existed but were not inspected for selection; two grayscale books had other mask-only stress pages",
+  "final_test": false,
+  "ground_truth": "No dense GT; source-only review rectangles do not label every pixel",
+  "shared_stepwise_noise_guaranteed_between_black_masks": false,
+  "script_sha256": "7f081d52f575b05039685e8208fd3ac7ad5394419d14ae9d1b5cf495b787d26c"
+}

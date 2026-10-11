@@ -1,0 +1,139 @@
+{
+  "status": "visual_review_complete",
+  "page": "200021071_00033_2",
+  "manually_reviewed_component_ids": [
+    44,
+    50,
+    51,
+    53
+  ],
+  "removed_pixels": 515,
+  "reason": "next-page mirrored shape correspondence in an upper glyph neighborhood",
+  "physical_cause_confirmed": false,
+  "automated_general_rule": false,
+  "development_only": true,
+  "original_source_sha256": "ccb0099adc3745cc6974aa7c7e51791c36e6575c0d3deb394dac64a62276c9e5",
+  "black_before_sha256": "c9c8dc65a3dda8e794e9de843f0a1ab564a18e9b8cae7c170b596f9bfb848b34",
+  "black_after_sha256": "0a8c060e1979205947d9e6579891d9b7d0089608ed6c922527ee7a874ecbe130",
+  "red_before_sha256": "53d0b0ff97d82a0aeea3b78d78146821139ab4a24ea74f457aed00b9b58aa0d1",
+  "red_after_sha256": "53d0b0ff97d82a0aeea3b78d78146821139ab4a24ea74f457aed00b9b58aa0d1",
+  "unreviewed_components_preserved": true,
+  "ddrm": {
+    "code": "tmp_work/npj_dirt_control_20261002/source_snapshot/ddrm_npj_v2/scripts/pipeline_ddrm.py",
+    "code_sha256": "bbc130a1761be21dfa7ff6d5ec9bc29e34155a56dfa405d91daa6a989a77f2ec",
+    "checkpoint": "modules/stain_removal/experiments/model_char/model_char/ckpt_epoch0350.pth",
+    "checkpoint_sha256": "1a5decb747e34e8b51ccea96b598fe3c6ec0e7f7a6f8df6cffc3135d8281a7f3",
+    "background": "modules/ddrm_npj_v2/background/isemonogatari.png",
+    "background_sha256": "2a96dbde5301415c593dc1d119410e7a077a6ac15ea3d8d8d5f8d4021dc3897c",
+    "seed": 999,
+    "timesteps": 20,
+    "patch_size": 128,
+    "overlap": 32,
+    "shared_noise": true,
+    "native_full_page": true
+  },
+  "shared_stepwise_noise_guaranteed": false,
+  "script_sha256": "7ed1ebb1dfac1a31993060b5132f52bec47a2af0da14d943aa4f70b71dea3853",
+  "annotation_sha256": "9fda58611c778f1fc34aaf7b118a6b4ab35ad5f3487fd96afa0a5ca92877056c",
+  "result": {
+    "id": "07",
+    "method": "local_review",
+    "seconds": 236.29,
+    "reused": false,
+    "command": [
+      "/home/imoto/miniconda3/envs/diffusion/bin/python",
+      "-B",
+      "/home/imoto/Heritage_Pipeline/tmp_work/npj_dirt_control_20261002/source_snapshot/ddrm_npj_v2/scripts/pipeline_ddrm.py",
+      "--input_dir",
+      "/home/imoto/Heritage_Pipeline/tmp_work/test_only_challenge_search_20261009/bleed_local_review/local_exclusion_trial/inputs/200021071_00033_2",
+      "--output_dir",
+      "/home/imoto/Heritage_Pipeline/tmp_work/test_only_challenge_search_20261009/bleed_local_review/local_exclusion_trial/outputs/local_review",
+      "--tmp_dir",
+      "/home/imoto/Heritage_Pipeline/tmp_work/test_only_challenge_search_20261009/bleed_local_review/local_exclusion_trial/infer_tmp/local_review/200021071_00033_2",
+      "--mask_dir",
+      "/home/imoto/Heritage_Pipeline/tmp_work/test_only_challenge_search_20261009/bleed_local_review/local_exclusion_trial/masks/local_review",
+      "--ckpt",
+      "/home/imoto/Heritage_Pipeline/modules/stain_removal/experiments/model_char/model_char/ckpt_epoch0350.pth",
+      "--back_ground",
+      "/home/imoto/Heritage_Pipeline/modules/ddrm_npj_v2/background/isemonogatari.png",
+      "--device",
+      "cuda:0",
+      "--patch_size",
+      "128",
+      "--overlap",
+      "32",
+      "--shared_noise",
+      "--no_wandb"
+    ],
+    "output": "tmp_work/test_only_challenge_search_20261009/bleed_local_review/local_exclusion_trial/outputs/local_review/200021071_00033_2/result/200021071_00033_2.png",
+    "sha256": "dd6a7c2fddc8f48c29d273cbdc42188548f4b3a1bc39c6f16b9cc25b2760469f"
+  },
+  "baseline_output_sha256": "3c392cac7765679010790431f898d0b91f7d9b08586c54312e8523ff173216b9",
+  "component_diagnostics": [
+    {
+      "label": 8,
+      "excluded": false,
+      "mask_area": 48,
+      "before_dark_pixels": 48,
+      "after_dark_pixels": 48
+    },
+    {
+      "label": 10,
+      "excluded": false,
+      "mask_area": 48,
+      "before_dark_pixels": 48,
+      "after_dark_pixels": 48
+    },
+    {
+      "label": 13,
+      "excluded": false,
+      "mask_area": 75,
+      "before_dark_pixels": 75,
+      "after_dark_pixels": 75
+    },
+    {
+      "label": 44,
+      "excluded": true,
+      "mask_area": 76,
+      "before_dark_pixels": 76,
+      "after_dark_pixels": 0
+    },
+    {
+      "label": 50,
+      "excluded": true,
+      "mask_area": 101,
+      "before_dark_pixels": 101,
+      "after_dark_pixels": 0
+    },
+    {
+      "label": 51,
+      "excluded": true,
+      "mask_area": 17,
+      "before_dark_pixels": 17,
+      "after_dark_pixels": 0
+    },
+    {
+      "label": 53,
+      "excluded": true,
+      "mask_area": 321,
+      "before_dark_pixels": 321,
+      "after_dark_pixels": 0
+    },
+    {
+      "label": 127,
+      "excluded": false,
+      "mask_area": 67,
+      "before_dark_pixels": 67,
+      "after_dark_pixels": 67
+    }
+  ],
+  "changed_output_pixels": 33117,
+  "removed_mask_pixels": 515,
+  "retained_mask_output_diagnostic": {
+    "retained_black_mask_pixels": 419207,
+    "retained_black_pixels_rgb_changed": 1535,
+    "retained_dark_to_light_pixels": 0,
+    "retained_light_to_dark_pixels": 0,
+    "full_output_changed_pixels": 33117
+  }
+}

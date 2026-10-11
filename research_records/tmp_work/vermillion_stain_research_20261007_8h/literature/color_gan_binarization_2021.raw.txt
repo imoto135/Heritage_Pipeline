@@ -1,0 +1,974 @@
+Two-stage generative adversarial networks for document
+image binarization with color noise and background removal
+Sungho Suha,b
+, Jihun Kima,c
+, Paul Lukowiczb,d
+, Yong Oh Leea,∗
+aSmart Convergence Group, Korea Institute of Science and Technology Europe Forschungsgesellschaft
+mbH, 66123 Saarbrücken, Germany
+bDepartment of Computer Science, TU Kaiserslautern, 67663 Kaiserslautern, Germany
+cDepartment of Computer Science and Engineering, Kyung Hee University, 17104 Yongin-si, South
+Korea
+dGerman Research Center for Artificial Intelligence (DFKI), 67663 Kaiserslautern, Germany
+Abstract
+Document image enhancement and binarization methods are often used to improve the
+accuracy and efficiency of document image analysis tasks such as text recognition. Tra-
+ditional non-machine-learning methods are constructed on low-level features in an un-
+supervised manner but have difficulty with binarization on documents with severely de-
+graded backgrounds. Convolutional neural network (CNN)––based methods focus only
+on grayscale images and on local textual features. In this paper, we propose a two-stage
+color document image enhancement and binarization method using generative adver-
+sarial neural networks. In the first stage, four color-independent adversarial networks
+are trained to extract color foreground information from an input image for document
+image enhancement. In the second stage, two independent adversarial networks with
+global and local features are trained for image binarization of documents of variable
+size. For the adversarial neural networks, we formulate loss functions between a discrim-
+inator and generators having an encoder–decoder structure. Experimental results show
+that the proposed method achieves better performance than many classical and state-
+of-the-art algorithms over the Document Image Binarization Contest (DIBCO) datasets,
+the LRDE Document Binarization Dataset (LRDE DBD), and our shipping label image
+dataset. We plan to release the shipping label dataset as well as our implementation
+code at github.com/opensuh/DocumentBinarization/.
+Keywords: Document image binarization, Generative adversarial networks, Optical
+character recognition, Color document image enhancement
+Preprint submitted to Pattern Recognition April 28, 2021
+arXiv:2010.10103v3
+[cs.CV]
+27
+Apr
+2021
+1. Introduction
+Document image enhancement is one of the most important pre-processing steps for
+the tasks involved in analyzing an imaged document. The main aim of document image
+enhancement is to extract the foreground text from the degraded background in the doc-
+ument image, a process called image binarization. The better binarization methods will
+improve the performance of subsequent document analysis tasks [1] such as layout analy-
+sis [2], text line and word segmentation [3], and optical character recognition (OCR) [4].
+The challenge is that document images normally suffer from various types of degradation
+and interference, such as page stains, uneven illumination, contrast variation, ink bleed,
+paper yellowing, background color, bleed-through, and environmental deterioration [5, 6].
+Over the past few years, many document image enhancement methods have been pro-
+posed in the literature, such as those that improve image quality by removing degradation
+effects and artifacts present in an image to restore its original appearance [7, 8]. How-
+ever, traditional unsupervised document enhancement methods rarely handle multiple
+degradations. Most focus on a single specific problem, such as bleed-through [9, 10].
+Recently, deep-learning-based image binarization methods have provided significant
+improvements over traditional image processing methods, not simply solving a specific
+problem but eliminating multiple degradations [11, 12, 13]. A selectional auto-encoder
+model for document image binarization was proposed by Calvo-Zaragoza and Gallego
+[14]. To generate binarized output the same size as the input image, a fully convolu-
+tional neural network (FCN) was used, generating binary results as a special case of
+semantic segmentation [15, 16, 17]. To improve the performance of the binarization for
+a degraded document, several approaches have been proposed, including a hierarchical
+deep supervised network [18], an iterative supervised network [19], and a conditional
+generative-adversarial-network-based binarization method [20], which outperformed tra-
+ditional methods and other deep-learning-based methods.
+However, all of these methods focus only on grayscale document images because the
+scanned historical documents that most of them are designed to handle are contaminated
+∗Corresponding author
+Email address: yongoh.lee@kist-europe.de (Yong Oh Lee)
+URL: https://github.com/opensuh/DocumentBinarization/ (Sungho Suh)
+2
+Copyright© 2020. KIST Europe Forschungsgesellschaft mbH, All rights reserved.
+Image, Vo, Ground Truth
+(a)
+Copyright© 2020. KIST Europe Forschungsgesellschaft mbH, All rights reserved.
+Image, Vo, Ground Truth
+(b)
+Copyright© 2020. KIST Europe Forschungsgesellschaft mbH, All rights reserved.
+Image, Vo, Ground Truth
+(c)
+Figure 1: Examples of the degraded document and their challenges in image binarization. (a) some
+of the example images from DIBCO dataset and shipping label image dataset, (b) the corresponding
+ground truth images, (c) the corresponding binarization results by Vo’s method [18].
+document images in black and white. Although these methods remove colorless degrada-
+tion factors well, they are weaker in extracting the target from colorful backgrounds and
+in removing colored contaminants. Furthermore, most of the methods are based solely on
+context information in a particular neighborhood region, using small local image patches
+instead of the whole image as the input to the deep learning network. For regions of
+densely placed text, local features in local image patches are advantageous for extract-
+ing text from backgrounds, whereas the spatial contextual information can sometimes
+be missed for regions with a largely blank background. These two major problems are
+exemplified in Figure 1.
+Taking these problems into consideration, we propose a framework of generative ad-
+versarial networks for color document image enhancement and binarization. The pro-
+posed method consists of two stages, the first of which trains multiple color channel ad-
+3
+versarial neural networks to extract color foreground information from small local image
+patches by removing background information for document image enhancement, and the
+second of which learns the local and global binary results with multi-scale adversarial neu-
+ral networks for document image binarization. In the first stage, four color-independent
+networks are trained with red, green, blue, and gray channel images, respectively. In
+the second stage, the local binary transformation network is trained with the merged
+enhanced images from the first stage, and the global binary transformation network is
+trained with the full original input image.
+To evaluate the proposed method on degraded document images, we used three types
+of document image binarization datasets: the Document Image Binarization Contest
+(DIBCO) datasets [21, 22, 23, 24, 25, 26, 27], the LRDE Document Binarization Dataset
+(LRDE DBD) [28, 29], and a shipping label image dataset [30, 31].
+The contributions of this paper can be summarized as follows. (1) Unlike previous
+methods, the proposed method focuses on the multi-color degradation problem with its
+design of four color-independent networks. (2) By combining local and global binary
+transformation networks, the method can balance the fine extraction of strokes and the
+suppression of background misclassification. (3) The proposed method is evaluated on
+multiple datasets and is found to achieve better performance than state-of-the-art models.
+The rest of the paper is organized as follows. Section 2 summarizes related work.
+Section 3 provides the details of the proposed method. Section 4 presents quantitative
+and qualitative experimental results on various datasets. Finally, Section 5 concludes the
+paper.
+2. Related Work
+Studies of document image binarization have been reported in the literature over the
+past two decades. The goal of binarization is to convert each pixel of an input document
+image into either text or background with two levels of gray. Generally, document image
+binarization methods can be categorized into two types: traditional non-machine-learning
+algorithms and semantic segmentation methods based on deep learning. The most well-
+known classical global binarization method is Otsu’s method [11], which computes a
+threshold that minimizes the within-class variance and maximizes the between-class vari-
+4
+ance of two pre-assumed classes. It selects the global threshold based on a histogram,
+and with this simplified calculation, the operation is fast. However, the classical global
+binarization methods are sensitive and unstable with noise, non-uniform backgrounds,
+and degraded documents. To solve these problems, local adaptive binarization methods,
+such as those of Niblack [12], Sauvola and Pietikäinen [13], and Wolf and Jolion [32],
+have been proposed. These methods compute the pixel-wise local threshold based on
+local statistical information.
+Following these methods, several binarization methods have been proposed. Gatos
+et al. [33] used a low-pass Wiener filter to estimate the background and foreground
+regions in a method that employs several post-processing steps to remove noise in the
+background and improve the quality of foreground regions. Su et al. [34] introduced an
+adaptive contrast map combining the local image contrast and the local image gradient;
+the local threshold is estimated based on the values on the detected edges in a local region.
+Pai et al. [35] proposed an adaptive window-size selection method based on the image
+characteristic; the threshold is determined in each window region. Howe [36] formulated
+the binarization task as a global energy loss, the parameters of which can be tuned
+automatically. Jia et al. [37] employed the structural symmetry of strokes to compute
+the local threshold. However, these local adaptive binarization methods require a number
+of empirical parameters and are still not satisfactory for use with highly degraded and
+poor-quality document images.
+In recent years, convolutional neural networks (CNNs) have achieved significant im-
+provements in a variety of tasks in machine learning and computer vision applications
+[38, 39, 40]. Since document image binarization is regarded as an image segmentation
+task, object segmentation methods in deep learning are widely applied. In [17], a fully
+convolutional network (FCN) is applied for the document image binarization task at
+multiple image scales. A convolutional deep auto-encoder–decoder architecture model
+is used for binarization in [41, 14]. A hierarchical deep supervised network has been
+proposed to predict the full foreground map through the results of three multi-scale
+networks [18]; this method achieved state-of-the-art performance on several benchmark
+datasets. He and Schomaker [19] proposed an iterative deep learning framework and
+achieved performance similar to that of Vo et al.’s method [18].
+5
+Recently, generative adversarial networks (GANs) [42] have emerged as a class of gen-
+erative models approximating real data distributions, achieving promising performance
+in the generation of real-world images [43, 44, 45]. The original purpose of GAN [42]
+was to train generative models to capture real data distributions and to generate an
+output image from random noise. A generator network competes against a discrimina-
+tor network that distinguishes between generated and real images. Unlike the original
+GAN, CGAN [46] trains the generator not only to fool the discriminator but also to
+condition on additional inputs, such as class labels, partial data, or input images. Isola
+et al. [47] proposed Pix2Pix GAN for the general purpose of image-to-image translation
+using CGAN. The generator of the Pix2Pix GAN model is trained via adversarial loss,
+which encourages the generation of plausible images in the target domain and minimizes
+the measured L1 loss between the generated image and the expected output image. The
+discriminator is provided with both the source image and a target image and determines
+whether the target image is a plausible transformation of the source image.
+min
+G
+max
+D
+Ex,y[log D(y, x)] + Ex[log(1 − D(G(x), x))] + λ Ex,y[ky − G(x)k1], (1)
+where x is an input image sampled from the input data distribution Px, y is the ground
+truth image corresponding to the input image, λ is a hyperparameter that increases
+the effect of regularization on a model, and the generator G generates an image G(x)
+from an input image. Equation (1) shows that minimization of L1 distance, rather than
+L2 distance, between the generated image and the ground truth image encourages less
+blurring and ambiguity in the generation process [47]. Pix2Pix GAN was demonstrated
+on a range of image-to-image translation tasks such as conversions of maps to satellite
+photographs, black-and-white photographs to color, and product sketches to product
+photographs.
+Konwer et al. [43] used Pix2Pix GAN to remove the staff line for optical music recog-
+nition. Bhunia et al. [48] proposed a texture augmentation network to augment the
+training datasets and handle image binarization by using a CGAN structure. Zhao et al.
+[20] proposed a cascaded generator structure based on Pix2Pix GAN to combine global
+and local information, and De et al. [49] introduced a dual discriminator GAN contain-
+6
+Generated images
+(Gray, R,G,B) /
+Ground Truth
+Generators
+Input Image
+(Gray, R, G, B)
++
+Fake/Real
+Discriminator
++
++
+c
+c
+Original Image
+(Resized)
+Fake/Real
+Discriminator
+Resize, Dilate
+Generator Generated Image/
+Ground Truth
+Generator Generated Image/
+Ground Truth
+Fake/Real
+Discriminator
+c
+Image of
+Stage 1 Output
+Output Image
+Stage 2
+Concatenate
+X
+C
+C
+AND Operation
+X
+Pixel Wise Sum
++
+Stage 1
+Figure 2: The structure of the proposed model for document image enhancement (Stage 1) and document
+image binarization (Stage 2).
+ing two discriminator networks to combine global and local information as well. They
+achieved results comparable to those of state-of-the-art methods on DIBCO datasets.
+3. Proposed Method
+Loss functions of the proposed GAN Although GAN and CGAN are capable
+of generating fake images close to the original input images or target images, the GAN
+training procedure has instability of loss function convergence [50]. To solve this stability
+problem, we apply the Wasserstein GAN with gradient penalty (WGAN-GP) [51], which
+uses the Wasserstein-K distance as the loss function, to the objective function to guide
+the training process. Furthermore, unlike the general image-to-image transfer task [47],
+our task, document image enhancement and binarization, is to primarily classify every
+individual pixel into two classes, text and background. Thus, we decided to use the
+binary cross-entropy (BCE) loss rather than L1 loss as used in previous approaches
+[47, 20]. Bartusiak et al. [52] showed experimentally that BCE loss is indeed a better
+7
+choice than L1 loss for binary classification. The objective loss functions of conditional
+WGAN-GP with the BCE loss are defined as follows:
+LD(x, y; θD) = − Ex,y[D(y, x)] + Ex[D(G(x), x)] + α Ex,ŷ∼Pŷ
+[(k∇ŷD(ŷ, x)k2 − 1)2
+], (2)
+LG(x, y; θG) = Ex[D(G(x), x)] + λ LBCE(G(x), y),
+where LBCE(p, q) = Ep,q[q log p + (1 − q) log(1 − p)],
+(3)
+where α is the penalty coefficient; Pŷ is the uniform sampling along straight lines between
+pairs of points from the ground truth distribution Py and the generated data distribution;
+λ controls the relative importance of different loss terms; and θD and θG are parameters
+of the discriminator and the generator, respectively. Whereas the discriminator D is
+trained to minimize LD for distinguishing between the ground truth and the generated
+image, the generator G is trained to minimize LG.
+Network architecture of the proposed GAN The GAN architecture has two
+neural networks, and we selected a generator and a discriminator for image binariza-
+tion performance. As the encoder in the generator, U-Net [53] is employed. U-Net is a
+network structure that introduces skip concatenation between the encoder and the de-
+coder layers; it provides good performance in image segmentation. The encoder includes
+downsampling to extract the context information, and the decoder is an upsampling pro-
+cess that combines the upsampled features and the low-dimensionality features from the
+downsampling layer to improve the performance of the network. In binarization studies,
+U-Net is widely adopted [47, 19, 20, 49]. To extract important features effectively in
+the proposed adversarial neural networks, we adopted EfficientNet [54] as the encoder in
+the generator; it has achieved much better accuracy and efficiency for image classifica-
+tion than other networks. As the discriminator, the discriminator network in PatchGAN
+[55, 47, 56, 57, 20, 49] is employed with the modification. PatchGAN has been used fre-
+quently in recent work due to its good generalization properties. We employ a network
+with an architecture similar to that of the discriminator network from the discriminator,
+based on a Markov random field model, of Pix2Pix GAN [47].
+8
+The overall network architecture of the proposed method is shown in Figure 2. The
+first stage of the proposed method, shown on the left side of the figure, consists of four
+color-independent generators and a discriminator to distinguish between the ground truth
+and the generated image. Four color-independent networks are trained with red, green,
+blue, and gray channel images, respectively, and produce an enhanced document image
+by removing background color information. Each channel image and the corresponding
+ground truth or generated image are concatenated and fed into the discriminator. In
+the second stage, shown on the right side of the figure, the local binary transformation
+network is trained with the merged enhanced images resulting from the first stage, and
+the global binary transformation network is trained with the full original input image for
+document image binarization.
+3.1. Document Image Enhancement using Color-Independent Adversarial Networks
+Our goal is to enhance the degraded color document and extract the text regions from
+the image. Owing to the diversity and complexity of the degraded color document images,
+it is difficult to extract the text regions in the variety of conditions of degradation and
+printing by training only one generator or by training with a grayscale image. Instead of
+generating a binary image directly from a three-channel color input image or a grayscale
+input image, we first train four color-independent generators, which focus on extracting
+color information and removing the color background. Four color-independent networks
+are trained with split three-channel images and a converted grayscale image.
+Before training the proposed GAN framework in the first stage, a pre-processing
+step for ground truth images of three color input images is required. If a given ground
+truth image were to be used directly to train four different generators, the corresponding
+networks would not be able to extract the proper color information and could not be
+trained to classify the text regions and the background regions from the corresponding
+color channel owing to the lack of information. To generate ground truth images for three
+different color images, we combine a split input channel image and a given ground truth
+image via the logical and operator. After combining the ground truth image and the
+split channel image, we generate a binary image via application of the global threshold.
+Unlike the three split color images, the given ground truth image is used directly for
+training the grayscale generator with the converted grayscale image.
+9
+After the pre-processing step for ground truth images, the four generators and one
+discriminator are trained to extract colored text regions from the background regions
+with the input images and their corresponding ground truth images. During training, we
+divide each document image into small patches of size 256 × 256 without resizing. The
+four generators are trained to fool the discriminator and minimize the distance between
+the generated image and the ground truth image in each color channel by minimizing
+the objective loss function LG in (3), and the discriminator is trained to distinguish
+between the generated image and the ground truth image by minimizing the objective
+loss function LD in (2).
+The four generated images Gr(xr), Gg(xg), Gb(xb), and Ggray(xgray) are predicted
+for each image patch via the four proposed generators. To integrate the information
+in the four images predicted by the four color channel generators, we apply pixel-wise
+addition between Ggray(xgray) and the three generated color images Gr(xr), Gg(xg),
+and Gb(xb), respectively, and merge the three channel images into a color image. The
+training details for the proposed method are summarized in Algorithm 1.
+3.2. Document Image Binarization using Multi-scale Feature Fusion
+As shown on the right side of Figure 2, the second stage combines the global and local
+results of the document binarization. The binarization in the first stage is performed
+mainly using local prediction with the small patches. However, for a document image
+having a large background region portion, local prediction can sometimes misclassify
+parts of the background region as foreground. To address this problem, we perform the
+global binarization with the resized original input image and the local binarization with
+the image result from the first stage. The reason for using the resized original input image
+is that the image result from the first stage can have loss of spatial contextual information
+of the document image since the first stage is only performed using local prediction. The
+input image for the generator and the binary image, which is the corresponding ground
+truth image or the generated image, are concatenated and fed into the discriminator.
+Whereas the input image for the generators is an 8-bit image in the first stage, in the
+second stage it is a 24-bit three-channel image. Furthermore, the input image for the
+local prediction is the small patches of the output image from the first stage, whereas
+the input image for the global prediction is the resized original input image. Thus, the
+10
+Algorithm 1 Training procedure for document image enhancement using adversarial
+networks. We use default values of ω = 0.5, α = 10, λ = 50
+Require: Batch size m, Adam hyperparameters η, hyperparameter for λ.
+1: Initialize: θGr , θGg , θGb
+, θGgray from pre-trained source networks.
+2: for number of training iterations do
+3: Sample {x(i)
+}m
+i=1 a batch from the input image patches and corresponding ground
+truth {y(i)
+}m
+i=1.
+4: for k = {r, g, b, gray} do
+5: if k is not gray then
+6: yk ← xk
+T
+y
+7: Binarize yk with threshold value t.
+8: else
+9: yk ← y
+10: Update discriminator D by descending the gradient of (2):
+11: θD ← θD − ηD∇θD
+LD(xk, yk; θD)
+12: Update generator Gk by descending the gradient of (3):
+13: θGk
+← θGk
+− ηG∇θGk
+LG(xk, yk; θGk
+)
+14: for k = {r, g, b} do
+15: ŷk ← ωGk(xk) + (1 − ω)Ggray(xgray)
+16: ŷ ← [ŷr, ŷg, ŷb]
+second stage for multi-scale feature fusion requires two discriminators, whereas the first
+stage trains only one shared discriminator with four independent generators.
+For the local and global binarizations, the network architecture of the generator is
+the same as that in the first stage except for the input image channel. The degradation
+document image datasets, such as DIBCO and the shipping label dataset, contain images
+of various sizes and height-to-width ratios. In the local binarization process, regions of
+different colors can be removed from text components, and text-only regions can be
+extracted by using the image result from the document image enhancement stage. For
+the global binarization, we add padding to the whole image or directly resize the original
+image to the desired size (r, r). The strategies of global binarization are as follows
+11
+according to the ratio of the input image height h and width w:
+• If max(w,h)
+min(w,h) < 4.0, resize the whole image to (r, r).
+• If 4.0 ≤ max(w,h)
+min(w,h) < 6.0, put the input image at the center of (max(w, h), max(w, h)),
+add padding with the median pixel value of the input image set to (max(w, h), max(w, h)),
+and resize the image of (max(w, h), max(w, h)) to (r, r).
+• If max(w,h)
+min(w,h) ≥ 6.0 or (h < r and w < r), do not perform global binarization.
+Morphological dilation is applied to the global prediction map so that the global map
+can cover all of the text regions because the resizing process can remove textual compo-
+nents. Lastly, the global binarization image is incorporated into the local binarization
+map via the logical and operator to remove any misclassified noise in the background.
+4. Experimental Results
+4.1. Datasets and Evaluation Metrics
+To evaluate the proposed method on degraded document images, three types of doc-
+ument image binarization datasets were used:
+• DIBCO: Seven competition datasets—DIBCO 2009 [21], H-DIBCO 2010 [22], DIBCO
+2011 [23], H-DIBCO 2012 [24], DIBCO 2013 [25], H-DIBCO 2014 [26], and H-
+DIBCO 2016 [27]—were selected for the experiments. A total of 86 degraded doc-
+ument images were used.
+• LRDE DBD [28, 29]: LRDE DBD is a dataset of French magazine images consisting
+of 125 color document images. For evaluation, we conducted a five-fold cross-
+validation procedure for LRDE DBD.
+• A shipping label image dataset [30, 31]: The shipping label image dataset con-
+sists of 1082 images of different types and from various countries, acquired using
+smartphones. For evaluation, we conducted a five-fold cross-validation procedure
+for these as well.
+12
+To compare the performance of the proposed method with state-of-the-art algorithms,
+we constructed training and testing sets from the DIBCO datasets similar to those de-
+scribed in [18, 19]. A total of 34 images from DIBCO 2009, H-DIBCO 2010, and H-
+DIBCO 2012 were selected for training. The training set also contained a total of 109
+images from the Persian Heritage Image Binarization Dataset (PHIBD) [58], the Syn-
+chromedia Multispectral Ancient Document Images (SMADI) dataset [8], and the Bickley
+diary dataset [59]. A total of 52 images from DIBCO 2011, DIBCO 2013, H-DIBCO 2014,
+and H-DIBCO 2016 were used for testing.
+For quantitative evaluation and comparison with the state-of-the-art algorithms, we
+adopted four evaluation metrics, which are used in the image binarization competition
+DIBCO: F-measure (FM), pseudo-F-measure (p-FM), peak signal-to-noise ratio (PSNR),
+and the distance reciprocal distortion (DRD) metric. Additionally, to evaluate the de-
+gree to which the proposed method improves OCR performance on degraded document
+images, we adopted the Levenshtein distance [60] expressed in percent. We measured the
+Levenshtein distance only for images from the shipping label image dataset, for which
+the ground truth is given.
+• F-measure (FM):
+FM =
+2 × Recall × Precision
+Recall + Precision
+, (4)
+where Recall = T P
+T P +F N , Precision = T P
+T P +F P , and TP, FP, and FN denote the
+true positive, false positive, and false negative values, respectively.
+• Pseudo-F-measure (p-FM):
+p − FM =
+2 × pRecall × Precision
+pRecall + Precision
+, (5)
+where pRecall is the percentage of the skeletonized ground truth image [22].
+• Peak signal-to-noise ratio (PSNR):
+PSNR = 10 log
+
+C2
+MSE
+
+, (6)
+where MSE =
+P
+x=1 M
+PN
+y=1(L(x,y)−L0
+(x,y))2
+MN , and C denotes the difference between
+text and background. PSNR is a measure of the similarity between two images.
+13
+• Distance reciprocal distortion (DRD) metric:
+DRD =
+P
+k DRDk
+NUBN
+, (7)
+where DRDk is the distortion of the kth flipped pixel, and NUBN is the number
+of non-uniform 8 × 8 blocks in the ground truth image [26].
+• Levenshtein distance expressed in percent (Lev):
+Lev(s1, s2) =
+
+1 −
+d(s1, s2)
+max(|s1|, |s2|)
+
+× 100, (8)
+where d(s1, s2) denotes the Levenshtein distance between two strings s1, s2 (of
+length |s1| and |s2|, respectively).
+4.2. Implementation Details
+The experiments were all implemented using Python scripts in the PyTorch frame-
+work. Training procedures were conducted in the Linux system with NVIDIA Tesla V100
+GPUs.
+Data preparation To compare just the performance of the algorithms, we used
+the same training sets and data augmentations for the proposed method and the other
+state-of-the-art methods. We cut the images in the training datasets into small patches
+(256 × 256) to train the local prediction networks. Data augmentation was applied to
+create more training samples. For the DIBCO datasets, we sampled patches with the scale
+factors {0.75, 1.25, 1.5}, resized the patches to 256×256, and rotated with a rotation angle
+of 270◦
+. Overall, around 120,000 training image patches were created from the DIBCO
+datasets. For LRDE DBD, scale and rotation augmentations were not utilized and only a
+horizontal flip was applied, but more than 310,000 training patches were created. Lastly,
+for the shipping label image dataset, we applied only scale augmentation, with the scale
+factors {0.75, 1.25, 1.5}. Approximately 65,000 small patches were used in the training
+procedure. To train the global prediction network, we determined the desired size (r, r)
+to be (512, 512) and followed the strategies listed in Section 3.2. Data augmentation was
+also applied for global prediction. We applied the rotation augmentation with rotation
+angles {90◦
+, 180◦
+, 270◦
+}, and horizontal and vertical flip.
+14
+Training Our parameter settings for the first and second stages were the same ex-
+cept for the number of training global epochs, which were 150. The proposed net-
+works were trained for 10 epochs on all datasets. We chose the Adam optimizer with
+a learning rate of 2 × 10−4
+, β1 = 0.5, and β2 = 0.999 for generator and discriminator.
+We plan to release the shipping label dataset as well as our implementation code at
+github.com/opensuh/DocumentBinarization/.
+Pre-training We initialized the encoder in the generator with weights pre-trained
+on the ImageNet dataset [61] to overcome the shortage of training data.
+4.3. Comparison with State-of-the-art Methods
+The proposed method was evaluated on the DIBCO datasets, LRDE DBD, and the
+shipping label image dataset. The five evaluation metrics defined in Section 4.1 were used
+to evaluate and compare the proposed method with traditional binarization methods,
+including Otsu’s [11], Niblack’s [12], and Sauvola and Pietikäinen’s [13] methods, and
+with deep-learning-based state-of-the-art methods, including Vo et al.’s [18], He and
+Schomaker’s [19], and Zhao et al.’s [20] methods. The traditional methods convert the
+three-channel input images into grayscale images. Vo et al.’s and He and Schomaker’s
+methods also feed the grayscale images as input images to the neural networks; only
+Zhao et al.’s method uses the original three-channel input images as the input images.
+Additionally, Vo et al.’s and Zhao et al.’s methods combine the local and global prediction
+results, whereas the other traditional methods and He and Schomaker’s method only use
+the global prediction results from the whole input image or the local prediction result
+from small patch images.
+4.3.1. Results on DIBCO Datasets
+The quantitative evaluation on the DIBCO datasets was performed on four datasets:
+DIBCO 2011, DIBCO 2013, H-DIBCO 2014, and H-DIBCO 2016. Because the DIBCO
+datasets have handwritten texts and do not provide the ground truth for the OCR
+outputs, we evaluated the proposed method and the state-of-the-art methods by using
+four evaluation metrics (omitting the Levenshtein distance).
+Table 1 shows the quantitative evaluation results on the four DIBCO datasets. On
+DIBCO 2011 and H-DIBCO 2016 (Table 1 parts (a) and (d)), the proposed method
+15
+Table 1: Evaluation of document image binarization on the DIBCO datasets.
+(a) DIBCO 2011
+Methods FM p-FM PSNR DRD
+Otsu [11] 82.10 85.96 15.72 8.95
+Niblack [12] 70.44 73.03 12.39 24.95
+Sauvola [13] 82.35 88.63 15.75 7.86
+Vo [18] 92.58 94.67 19.16 2.38
+He [19] 91.92 95.82 19.49 2.37
+Zhao [20] 92.62 95.38 19.58 2.55
+Ours 93.57 95.93 20.22 1.99
+(b) DIBCO 2013
+Methods FM p-FM PSNR DRD
+Otsu [11] 80.04 83.43 16.63 10.98
+Niblack [12] 71.38 73.17 13.54 23.10
+Sauvola [13] 82.73 88.37 16.98 7.34
+Vo [18] 93.43 95.34 20.82 2.26
+He [19] 93.36 96.70 20.88 2.15
+Zhao [20] 93.86 96.47 21.53 2.32
+Ours 95.01 96.49 21.99 1.76
+(c) H-DIBCO 2014
+Methods FM p-FM PSNR DRD
+Otsu [11] 91.62 95.69 18.72 2.65
+Niblack [12] 86.01 88.04 16.54 8.26
+Sauvola [13] 83.72 87.49 17.48 5.05
+Vo [18] 95.97 97.42 21.49 1.09
+He [19] 95.95 98.76 21.60 1.12
+Zhao [20] 96.09 98.25 21.88 1.20
+Ours 96.36 97.87 21.96 1.07
+(d) H-DIBCO 2016
+Methods FM p-FM PSNR DRD
+Otsu [11] 86.59 89.92 17.79 5.58
+Niblack [12] 72.57 73.51 13.26 24.65
+Sauvola [13] 84.27 89.10 17.15 6.09
+Vo [18] 90.01 93.44 18.74 3.91
+He [19] 91.19 95.74 19.51 3.02
+Zhao [20] 89.77 94.85 18.80 3.85
+Ours 92.24 95.95 19.93 2.77
+performed the best in terms of all four of the measurements. On DIBCO 2013 and
+H-DIBCO 2014, (Table 1 parts (b) and (c)), the proposed method achieved the best
+performance in terms of FM, PSNR, and DRD but ranked third in terms of p-FM. The
+FM and DRD of the proposed method are markedly better than those of the state-of-
+the-art methods. These results imply that the proposed method differentiates textual
+components from background more effectively than the state-of-the-art methods and is
+more robust.
+Figure 3, 4, and 5 show the binary results produced by different methods on the
+two example images PR16 from DIBCO 2013. The deep-learning-based state-of-the-art
+methods can efficiently remove the shadow and text-like background noise better than
+the traditional binarization methods. The proposed method not only removes the shadow
+and noise better but also preserves the textual components.
+16
+(a) (b) (c)
+(d) (e) (f)
+(g) (h) (i)
+Figure 3: Binarization results of the document image HW1 in DIBCO 2011. (a) original images, (b) the
+ground truth, (c) Otsu [11], (d) Niblack [12], (e) Sauvola [13], (f) Vo [18], (g) He [19], (h) Zhao [20], (i)
+Ours.
+Table 2: Evaluation of document image binarization on the LRDE DBD.
+Methods FM p-FM PSNR DRD
+Otsu [11] 91.12 97.33 19.70 2.59
+Niblack [12] 84.33 87.00 17.66 10.72
+Sauvola [13] 85.34 96.23 17.72 6.22
+Vo [18] 97.72 98.44 26.21 0.81
+He [19] 97.77 98.04 27.31 0.81
+Zhao [20] 97.97 98.42 27.39 0.75
+Ours 98.01 98.33 27.79 0.73
+17
+(a) (b) (c)
+(d) (e) (f)
+(g) (h) (i)
+Figure 4: Binarization results of the document image HW5 in DIBCO 2013. (a) original images, (b) the
+ground truth, (c) Otsu [11], (d) Niblack [12], (e) Sauvola [13], (f) Vo [18], (g) He [19], (h) Zhao [20], (i)
+Ours.
+(a) (b) (c)
+(d) (e) (f)
+(g) (h) (i)
+Figure 5: Binarization results of the document image PR16 in DIBCO 2013. (a) original images, (b) the
+ground truth, (c) Otsu [11], (d) Niblack [12], (e) Sauvola [13], (f) Vo [18], (g) He [19], (h) Zhao [20], (i)
+Ours.
+18
+4.3.2. Results on LRDE DBD
+Table 2 shows the mean values of the evaluation measures across the five-fold cross-
+validation procedure. The mean values are much higher than the values for the DIBCO
+datasets because the document images in LRDE DBD have color text and background
+without degradation. On LRDE DBD, the differences between the proposed method and
+the state-of-the-art methods are not large, but the proposed method achieved the best
+performance in terms of FM, PSNR, and DRD, whereas it ranked third in terms of p-FM.
+4.3.3. Results on Shipping Label Image Dataset
+The shipping label image dataset contains images of shipping labels with the receiver’s
+address area and the ground truth of the addresses and their text regions. The ground
+truth is manually masked and can be extracted for validation of the text recognition.
+In this subsection, we evaluate the proposed method and the state-of-the-art methods
+by the document image binarization metrics and the Levenshtein distance expressed in
+percent to measure the extent to which the improved binarization affects the quality of
+text recognition. For OCR of the text in the shipping addresses, we utilized Tesseract
+[4], which recognizes characters based on long short-term memory (LSTM) [62]. This
+engine supports a very large database with 116 different languages. The shipping label
+image dataset was collected from eight countries and can be separated into two groups:
+one of labels written in the Latin alphabet and the other in Korean. The results of the
+OCR for the binarized address images were evaluated separately for the two language
+types.
+Table 3 shows the mean values of the evaluation measures across the five-fold cross-
+validation procedure. Even though the shipping label dataset images contain color-
+ful backgrounds and contaminants with colors unlike the other datasets, the proposed
+method outperformed the other methods in terms of all of the metrics. Figure 6, 7, 8, 9,
+and 10 show results of the image binarization and text region extraction; it can be seen
+that the deep-learning-based methods can extract the text regions from the background
+regions, in contrast to the traditional binarization methods. The proposed method can
+remove the colorful backgrounds and contaminants in the shipping label images, whereas
+the state-of-the-art methods handle the color information improperly. Table 4 shows
+the average OCR accuracy results using Levenshtein distance expressed in percent. The
+19
+(a) (b) (c)
+(d) (e) (f)
+(g) (h) (i)
+Figure 6: Binarization results of the address image Kor230 from the shipping label image dataset. (a)
+original images, (b) the ground truth, (c) Otsu [11], (d) Niblack [12], (e) Sauvola [13], (f) Vo [18], (g)
+He [19], (h) Zhao [20], (i) Ours.
+(a) (b) (c)
+(d) (e) (f)
+(g) (h) (i)
+Figure 7: Binarization results of the address image Ger142 from the shipping label image dataset. (a)
+original images, (b) the ground truth, (c) Otsu, (d) Niblack, (e) Sauvola, (f) Vo, (g) He, (h) Zhao, (i)
+Ours.
+20
+(a) (b) (c)
+(d) (e) (f)
+(g) (h) (i)
+Figure 8: Binarization results of the address image Ger177 from the shipping label image dataset. (a)
+original images, (b) the ground truth, (c) Otsu [11], (d) Niblack [12], (e) Sauvola [13], (f) Vo [18], (g)
+He [19], (h) Zhao [20], (i) Ours.
+(a) (b) (c)
+(d) (e) (f)
+(g) (h) (i)
+Figure 9: Binarization results of the address image Kor19 from the shipping label image dataset. (a)
+original images, (b) the ground truth, (c) Otsu [11], (d) Niblack [12], (e) Sauvola [13], (f) Vo [18], (g)
+He [19], (h) Zhao [20], (i) Ours.
+21
+Table 3: Evaluation of document image binarization on shipping label image dataset.
+Methods FM p-FM PSNR DRD
+Otsu [11] 88.31 89.42 14.73 6.17
+Niblack [12] 86.61 89.46 13.59 6.61
+Sauvola [13] 87.67 89.53 14.18 5.75
+Vo [18] 91.20 92.92 16.14 2.20
+He [19] 91.09 92.26 16.03 2.33
+Zhao [20] 92.09 93.83 16.29 2.37
+Ours 94.65 95.94 18.02 1.57
+(a) (b) (c)
+(d) (e) (f)
+(g) (h) (i)
+Figure 10: Binarization results of the address image Kor265 from the shipping label image dataset. (a)
+original images, (b) the ground truth, (c) Otsu [11], (d) Niblack [12], (e) Sauvola [13], (f) Vo [18], (g)
+He [19], (h) Zhao [20], (i) Ours.
+proposed method improved the accuracy of the input images by 6.20 percentage points.
+Moreover, the proposed method provided the best performance on both the Korean and
+Latin alphabet datasets.
+To measure the efficiency, the run time on the shipping label image dataset was
+computed. Table 5 shows the average run time of the different methods on the shipping
+label image dataset. The average run time of the deep-learning-based methods was much
+greater than that of the traditional image processing methods. Of the deep-learning-
+based methods, the proposed method took more time than Vo et al.’s and Zhao et al.’s
+methods but was significantly faster than He and Schomaker’s method.
+22
+Table 4: OCR accuracy comparison in Levenshtein distance in percent on the shipping label image
+dataset.
+Methods Total Korean Alphabet
+Input image 77.20 73.86 94.47
+Ground Truth 87.62 85.88 96.66
+Otsu [11] 74.45 70.72 93.79
+Niblack [12] 69.00 66.31 82.94
+Sauvola [13] 72.84 68.81 93.73
+Vo [18] 77.14 74.69 89.86
+He [19] 75.15 72.45 89.13
+Zhao [20] 77.33 74.56 91.69
+Ours 83.40 81.15 95.09
+Table 5: Average runtime of different methods on the shipping label image dataset in milliseconds
+Method Runtime
+Otsu [11] 1.5
+Niblack [12] 350.2
+Sauvola [13] 15.1
+Vo [18] 139.0
+He [19] 856.2
+Zhao [20] 131.8
+Ours 282.8
+4.4. Model Ablation Study
+Although the comparison experiments showed that the proposed method provided
+better performance than state-of-the-art methods with the converted grayscale image or
+the original three-channel images as the input to the neural networks, we would like to
+better understand the benefits brought by the proposed method. Here, we performed
+our ablation study to verify the advantage of individual modules in the proposed model.
+To verify the benefit of the proposed two-stage framework and the fusion of the
+multi-scale information by using the resized original image and the patches from the
+first stage output image, we derive two variants of the proposed method, named ‘Step1-
+23
+Table 6: Ablation study of the proposed method.
+(a) DIBCO 2011
+Methods FM p-FM PSNR DRD
+Step1-Only 93.09 94.61 19.83 2.51
+NoOriginal 93.42 95.69 20.07 2.20
+NoGAN 93.43 95.90 20.13 1.98
+Proposed 93.81 96.04 20.26 1.96
+(b) DIBCO 2013
+Methods FM p-FM PSNR DRD
+Step1-Only 93.67 94.54 21.07 2.78
+NoOriginal 94.16 95.50 21.50 2.42
+NoGAN 94.18 94.91 21.44 2.51
+Proposed 94.82 96.14 21.89 1.88
+(c) H-DIBCO 2014
+Methods FM p-FM PSNR DRD
+Step1-Only 96.48 97.45 21.98 1.05
+NoOriginal 96.51 98.02 22.12 0.99
+NoGAN 96.19 97.69 21.96 1.09
+Proposed 96.56 98.07 22.18 0.96
+(d) H-DIBCO 2016
+Methods FM p-FM PSNR DRD
+Step1-Only 91.46 94.35 19.35 3.48
+NoOriginal 91.75 95.59 19.63 3.10
+NoGAN 91.79 95.55 19.74 2.99
+Proposed 92.08 95.89 19.85 2.87
+Only’ and ‘NoOriginal’. In particular, ‘Step1-Only’ refers to the non-adapted version of
+the proposed second stage, and ‘NoOriginal’ is implemented with the resized first stage
+output image instead of the resized original image for the global binarization.
+Table 6 shows the comparison between the proposed method and its two variants on
+the four DIBCO datasets. The ‘Step1-Only’ provided the worst performance and the
+proposed method outperformed the ‘Step1-Only’ and ‘NoOriginal’ in terms of all four of
+the measurements, which signifies the effectiveness of the two-stage design and the usage
+of the resized original image for the global binarization.
+Figure 11 shows the enhancement and binarization images obtained using the pro-
+posed method step by step on DIBCO 2011 and DIBCO 2013. The enhancement results
+from the proposed color-independent adversarial networks (Figure 11(b)) show that the
+background color has been removed and the color of the textual regions is highlighted.
+Comparing the binarization images produced by the proposed multi-scale binarization
+method (Figure 11 parts (c) and (d)), we can see that the noise of the pure background
+patches have been effectively removed in Figure 11(d). The results are close to the ground
+truth images (Figure 11(e)).
+24
+Copyright© 2020. KIST Europe Forschungsgesellschaft mbH, All rights reserved.
+1.3. Current Results
+Step1
+Image
+(a)
+Copyright© 2020. KIST Europe Forschungsgesellschaft mbH, All rights reserved.
+1.3. Current Results
+Step1
+Image
+(b)
+Copyright© 2020. KIST Europe Forschungsgesellschaft mbH, All rights reserved.
+1.3. Current Results
+Example images step by step
+(c)
+Copyright© 2020. KIST Europe Forschungsgesellschaft mbH, All rights reserved.
+1.3. Current Results
+Example images step by step
+(d)
+Copyright© 2020. KIST Europe Forschungsgesellschaft mbH, All rights reserved.
+1.3. Current Results
+Example images step by step
+(e)
+Figure 11: Example images of the enhancement and binarization results of document images from DIBCO
+2011 and DIBCO 2013. (a) original images, (b) the enhanced images using proposed image enhancement
+method (Stage 1), (c) the binarization images using proposed local prediction method without global
+prediction method (Stage 2), (d) the final binarization results using the proposed method combining the
+local and global features (Stage 2), (e) ground truth images.
+5. Conclusion
+In this paper, we have proposed a color document image enhancement and bina-
+rization method using multi-scale adversarial neural networks. The proposed method
+focuses on the multi-color degradation problem with its design consisting of four color-
+independent networks and combines the local and global binary transformation networks.
+We evaluated the proposed method on widely used DIBCO datasets, LRDE DBD, and
+a shipping label image dataset. The experimental results demonstrate that the proposed
+method outperforms traditional and state-of-the-art methods.
+In future work, we intend to integrate document image binarization with text recog-
+nition for practical applications. For instance, we can deploy the proposed method for
+automated shipping address recognition and validation based on the enhanced image
+binarization result, which will be applicable to the packaging machine and logistics in-
+dustry. The shipping label image dataset we evaluated in this paper will be published
+on our website for use in further research by the computer vision community.
+Acknowledgments
+This work was supported by the KIST Europe Institutional Program (Project No.
+12120).
+25
+References
+[1] H. Michalak, K. Okarma, Region based adaptive binarization for optical character recognition
+purposes, in: 2018 International Interdisciplinary PhD Workshop (IIPhDW), IEEE, 2018, pp. 361–
+366.
+[2] A. Antonacopoulos, C. Clausner, C. Papadopoulos, S. Pletschacher, Historical document layout
+analysis competition, in: 2011 International Conference on Document Analysis and Recognition,
+IEEE, 2011, pp. 1516–1520.
+[3] N. Stamatopoulos, B. Gatos, G. Louloudis, U. Pal, A. Alaei, Icdar 2013 handwriting segmentation
+contest, in: 2013 12th International Conference on Document Analysis and Recognition, IEEE,
+2013, pp. 1402–1406.
+[4] R. Smith, An overview of the tesseract ocr engine, in: Ninth international conference on document
+analysis and recognition (ICDAR 2007), Vol. 2, IEEE, 2007, pp. 629–633.
+[5] N. Kligler, S. Katz, A. Tal, Document enhancement using visibility detection, in: Proceedings of
+the IEEE Conference on Computer Vision and Pattern Recognition, 2018, pp. 2374–2382.
+[6] A. Sulaiman, K. Omar, M. F. Nasrudin, Degraded historical document binarization: A review on
+issues, challenges, techniques, and future directions, Journal of Imaging 5 (4) (2019) 48.
+[7] R. F. Moghaddam, M. Cheriet, A variational approach to degraded document enhancement, IEEE
+transactions on pattern analysis and machine intelligence 32 (8) (2009) 1347–1361.
+[8] R. Hedjam, M. Cheriet, Historical document image restoration using multispectral imaging system,
+Pattern Recognition 46 (8) (2013) 2297–2312.
+[9] M. R. Yagoubi, A. Serir, A. Beghdadi, A new automatic framework for document image enhance-
+ment process based on anisotropic diffusion, in: 2015 13th International Conference on Document
+Analysis and Recognition (ICDAR), IEEE, 2015, pp. 1126–1130.
+[10] B. Sun, S. Li, X.-P. Zhang, J. Sun, Blind bleed-through removal for scanned historical document
+image with conditional random fields, IEEE Transactions on Image Processing 25 (12) (2016) 5702–
+5712.
+[11] N. Otsu, A threshold selection method from gray-level histograms, IEEE transactions on systems,
+man, and cybernetics 9 (1) (1979) 62–66.
+[12] W. Niblack, An introduction to digital image processing (englewood clivs, nj (1986).
+[13] J. Sauvola, M. Pietikäinen, Adaptive document image binarization, Pattern recognition 33 (2)
+(2000) 225–236.
+[14] J. Calvo-Zaragoza, A.-J. Gallego, A selectional auto-encoder approach for document image bina-
+rization, Pattern Recognition 86 (2019) 37–47.
+[15] X. Peng, H. Cao, K. Subramanian, R. Prasad, P. Natarajan, Exploiting stroke orientation for crf
+based binarization of historical documents, in: 2013 12th International Conference on Document
+Analysis and Recognition, IEEE, 2013, pp. 1034–1038.
+[16] J. Long, E. Shelhamer, T. Darrell, Fully convolutional networks for semantic segmentation, in:
+Proceedings of the IEEE conference on computer vision and pattern recognition, 2015, pp. 3431–
+3440.
+26
+[17] C. Tensmeyer, T. Martinez, Document image binarization with fully convolutional neural networks,
+in: 2017 14th IAPR International Conference on Document Analysis and Recognition (ICDAR),
+Vol. 1, IEEE, 2017, pp. 99–104.
+[18] Q. N. Vo, S. H. Kim, H. J. Yang, G. Lee, Binarization of degraded document images based on
+hierarchical deep supervised network, Pattern Recognition 74 (2018) 568–586.
+[19] S. He, L. Schomaker, Deepotsu: Document enhancement and binarization using iterative deep
+learning, Pattern recognition 91 (2019) 379–390.
+[20] J. Zhao, C. Shi, F. Jia, Y. Wang, B. Xiao, Document image binarization with cascaded generators
+of conditional generative adversarial networks, Pattern Recognition 96 (2019) 106968.
+[21] B. Gatos, K. Ntirogiannis, I. Pratikakis, Icdar 2009 document image binarization contest (dibco
+2009), in: 2009 10th International conference on document analysis and recognition, IEEE, 2009,
+pp. 1375–1382.
+[22] I. Pratikakis, B. Gatos, K. Ntirogiannis, H-dibco 2010-handwritten document image binarization
+competition, in: 2010 12th International Conference on Frontiers in Handwriting Recognition,
+IEEE, 2010, pp. 727–732.
+[23] I. Pratikakis, B. Gatos, K. Ntirogiannis, Icdar 2011 document image binarization contest (dibco
+2011), in: 2011 International Conference on Document Analysis and Recognition, 2011, pp. 1506–
+1510.
+[24] I. Pratikakis, B. Gatos, K. Ntirogiannis, Icfhr 2012 competition on handwritten document image bi-
+narization (h-dibco 2012), in: 2012 international conference on frontiers in handwriting recognition,
+IEEE, 2012, pp. 817–822.
+[25] I. Pratikakis, B. Gatos, K. Ntirogiannis, Icdar 2013 document image binarization contest (dibco
+2013), in: 2013 12th International Conference on Document Analysis and Recognition, IEEE, 2013,
+pp. 1471–1476.
+[26] K. Ntirogiannis, B. Gatos, I. Pratikakis, Icfhr2014 competition on handwritten document image
+binarization (h-dibco 2014), in: 2014 14th International conference on frontiers in handwriting
+recognition, IEEE, 2014, pp. 809–813.
+[27] I. Pratikakis, K. Zagoris, G. Barlas, B. Gatos, Icfhr2016 handwritten document image binariza-
+tion contest (h-dibco 2016), in: 2016 15th International Conference on Frontiers in Handwriting
+Recognition (ICFHR), IEEE, 2016, pp. 619–623.
+[28] G. Lazzara, R. Levillain, T. Géraud, Y. Jacquelet, J. Marquegnies, A. Crépin-Leblond, The scribo
+module of the olena platform: a free software framework for document image analysis, in: 2011
+International Conference on Document Analysis and Recognition, IEEE, 2011, pp. 252–258.
+[29] G. Lazzara, T. Géraud, Efficient multiscale sauvola’s binarization, International Journal on Docu-
+ment Analysis and Recognition (IJDAR) 17 (2) (2014) 105–123.
+[30] S. Suh, H. Lee, Y. O. Lee, P. Lukowicz, J. Hwang, Robust shipping label recognition and validation
+for logistics by using deep neural networks, in: 2019 IEEE International Conference on Image
+Processing (ICIP), IEEE, 2019, pp. 4509–4513.
+[31] S. Suh, P. Lukowicz, Y. O. Lee, Fusion of global-local features for image quality inspection of
+27
+shipping label, arXiv preprint arXiv:2008.11440 (2020).
+[32] C. Wolf, J.-M. Jolion, Extraction and recognition of artificial text in multimedia documents, Formal
+Pattern Analysis & Applications 6 (4) (2004) 309–326.
+[33] B. Gatos, I. Pratikakis, S. J. Perantonis, Adaptive degraded document image binarization, Pattern
+recognition 39 (3) (2006) 317–327.
+[34] B. Su, S. Lu, C. L. Tan, Robust document image binarization technique for degraded document
+images, IEEE transactions on image processing 22 (4) (2012) 1408–1417.
+[35] Y.-T. Pai, Y.-F. Chang, S.-J. Ruan, Adaptive thresholding algorithm: Efficient computation tech-
+nique based on intelligent block detection for degraded document images, Pattern Recognition 43 (9)
+(2010) 3177–3187.
+[36] N. R. Howe, Document binarization with automatic parameter tuning, International journal on
+document analysis and recognition (ijdar) 16 (3) (2013) 247–258.
+[37] F. Jia, C. Shi, K. He, C. Wang, B. Xiao, Degraded document image binarization using structural
+symmetry of strokes, Pattern Recognition 74 (2018) 225–240.
+[38] A. Krizhevsky, I. Sutskever, G. E. Hinton, Imagenet classification with deep convolutional neural
+networks, in: Advances in neural information processing systems, 2012, pp. 1097–1105.
+[39] M. D. Zeiler, R. Fergus, Visualizing and understanding convolutional networks, in: European con-
+ference on computer vision, Springer, 2014, pp. 818–833.
+[40] Y. LeCun, Y. Bengio, G. Hinton, Deep learning, nature 521 (7553) (2015) 436–444.
+[41] X. Peng, H. Cao, P. Natarajan, Using convolutional encoder-decoder for document image bina-
+rization, in: 2017 14th IAPR International Conference on Document Analysis and Recognition
+(ICDAR), Vol. 1, IEEE, 2017, pp. 708–713.
+[42] I. Goodfellow, J. Pouget-Abadie, M. Mirza, B. Xu, D. Warde-Farley, S. Ozair, A. Courville, Y. Ben-
+gio, Generative adversarial nets, in: Advances in neural information processing systems, 2014, pp.
+2672–2680.
+[43] A. Konwer, A. K. Bhunia, A. Bhowmick, A. K. Bhunia, P. Banerjee, P. P. Roy, U. Pal, Staff line
+removal using generative adversarial networks, in: 2018 24th International Conference on Pattern
+Recognition (ICPR), IEEE, 2018, pp. 1103–1108.
+[44] S. Suh, H. Lee, J. Jo, P. Lukowicz, Y. O. Lee, Generative oversampling method for imbalanced data
+on bearing fault detection and diagnosis, Applied Sciences 9 (4) (2019) 746.
+[45] S. Suh, H. Lee, P. Lukowicz, Y. O. Lee, CEGAN: Classification Enhancement Generative Adversarial
+Networks for unraveling data imbalance problems, Neural Networks (2020).
+[46] M. Mirza, S. Osindero, Conditional generative adversarial nets, arXiv preprint arXiv:1411.1784
+(2014).
+[47] P. Isola, J.-Y. Zhu, T. Zhou, A. A. Efros, Image-to-image translation with conditional adversarial
+networks, in: Proceedings of the IEEE conference on computer vision and pattern recognition, 2017,
+pp. 1125–1134.
+[48] A. K. Bhunia, A. K. Bhunia, A. Sain, P. P. Roy, Improving document binarization via adversarial
+noise-texture augmentation, in: 2019 IEEE International Conference on Image Processing (ICIP),
+28
+IEEE, 2019, pp. 2721–2725.
+[49] R. De, A. Chakraborty, R. Sarkar, Document image binarization using dual discriminator generative
+adversarial networks, IEEE Signal Processing Letters (2020).
+[50] I. Goodfellow, Nips 2016 tutorial: Generative adversarial networks, arXiv preprint arXiv:1701.00160
+(2016).
+[51] I. Gulrajani, F. Ahmed, M. Arjovsky, V. Dumoulin, A. C. Courville, Improved training of wasser-
+stein gans, in: Advances in neural information processing systems, 2017, pp. 5767–5777.
+[52] E. R. Bartusiak, S. K. Yarlagadda, D. Güera, P. Bestagini, S. Tubaro, F. M. Zhu, E. J. Delp, Splicing
+detection and localization in satellite imagery using conditional gans, in: 2019 IEEE Conference on
+Multimedia Information Processing and Retrieval (MIPR), IEEE, 2019, pp. 91–96.
+[53] O. Ronneberger, P. Fischer, T. Brox, U-net: Convolutional networks for biomedical image segmenta-
+tion, in: International Conference on Medical image computing and computer-assisted intervention,
+Springer, 2015, pp. 234–241.
+[54] M. Tan, Q. Le, Efficientnet: Rethinking model scaling for convolutional neural networks, in: Inter-
+national Conference on Machine Learning, 2019, pp. 6105–6114.
+[55] C. Li, M. Wand, Precomputed real-time texture synthesis with markovian generative adversarial
+networks, in: European conference on computer vision, Springer, 2016, pp. 702–716.
+[56] J.-Y. Zhu, T. Park, P. Isola, A. A. Efros, Unpaired image-to-image translation using cycle-consistent
+adversarial networks, in: Proceedings of the IEEE international conference on computer vision,
+2017, pp. 2223–2232.
+[57] C. Ledig, L. Theis, F. Huszár, J. Caballero, A. Cunningham, A. Acosta, A. Aitken, A. Tejani,
+J. Totz, Z. Wang, et al., Photo-realistic single image super-resolution using a generative adversarial
+network, in: Proceedings of the IEEE conference on computer vision and pattern recognition, 2017,
+pp. 4681–4690.
+[58] H. Z. Nafchi, S. M. Ayatollahi, R. F. Moghaddam, M. Cheriet, An efficient ground truthing tool
+for binarization of historical manuscripts, in: 2013 12th International Conference on Document
+Analysis and Recognition, IEEE, 2013, pp. 807–811.
+[59] F. Deng, Z. Wu, Z. Lu, M. S. Brown, Binarizationshop: a user-assisted software suite for converting
+old documents to black-and-white, in: Proceedings of the 10th annual joint conference on Digital
+libraries, 2010, pp. 255–258.
+[60] V. I. Levenshtein, Binary codes capable of correcting deletions, insertions, and reversals, in: Soviet
+physics doklady, Vol. 10, 1966, pp. 707–710.
+[61] J. Deng, W. Dong, R. Socher, L.-J. Li, K. Li, L. Fei-Fei, Imagenet: A large-scale hierarchical image
+database, in: 2009 IEEE conference on computer vision and pattern recognition, Ieee, 2009, pp.
+248–255.
+[62] S. Hochreiter, J. Schmidhuber, Long short-term memory, Neural computation 9 (8) (1997) 1735–
+1780.
+29
+

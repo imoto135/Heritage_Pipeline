@@ -1,0 +1,274 @@
+[
+  {
+    "id": "01_upper_faint_stroke",
+    "frame": "upper_crop",
+    "xywh": [
+      190,
+      325,
+      180,
+      175
+    ],
+    "title": "上部の薄い筆画",
+    "page": "200010454_00002_2",
+    "page_xywh": [
+      740,
+      325,
+      180,
+      175
+    ],
+    "candidate_mask_pixels": {
+      "edit": 433,
+      "extra": 0,
+      "hold": 21,
+      "red": 0,
+      "protect": 1526
+    },
+    "candidate_changed_pixels": 433,
+    "candidate_exact_original": false,
+    "baseline_uses_real_saved_inference": true,
+    "integer_nearest": true,
+    "display_size": [
+      540,
+      525
+    ],
+    "panels_exact": true
+  },
+  {
+    "id": "02_upper_dense_control",
+    "frame": "upper_crop",
+    "xywh": [
+      5,
+      335,
+      175,
+      160
+    ],
+    "title": "濃い筆画の対照",
+    "page": "200010454_00002_2",
+    "page_xywh": [
+      555,
+      335,
+      175,
+      160
+    ],
+    "candidate_mask_pixels": {
+      "edit": 93,
+      "extra": 0,
+      "hold": 0,
+      "red": 0,
+      "protect": 2888
+    },
+    "candidate_changed_pixels": 93,
+    "candidate_exact_original": false,
+    "baseline_uses_real_saved_inference": true,
+    "integer_nearest": true,
+    "display_size": [
+      525,
+      480
+    ],
+    "panels_exact": true
+  },
+  {
+    "id": "03_upper_brown_stain",
+    "frame": "upper_crop",
+    "xywh": [
+      180,
+      235,
+      160,
+      120
+    ],
+    "title": "筆画の上方の茶色い斑点",
+    "page": "200010454_00002_2",
+    "page_xywh": [
+      730,
+      235,
+      160,
+      120
+    ],
+    "candidate_mask_pixels": {
+      "edit": 2642,
+      "extra": 0,
+      "hold": 2,
+      "red": 0,
+      "protect": 54
+    },
+    "candidate_changed_pixels": 2642,
+    "candidate_exact_original": false,
+    "baseline_uses_real_saved_inference": true,
+    "integer_nearest": true,
+    "display_size": [
+      640,
+      480
+    ],
+    "panels_exact": true
+  },
+  {
+    "id": "04_upper_pale_stain",
+    "frame": "upper_crop",
+    "xywh": [
+      330,
+      120,
+      150,
+      160
+    ],
+    "title": "淡い茶色の広がり",
+    "page": "200010454_00002_2",
+    "page_xywh": [
+      880,
+      120,
+      150,
+      160
+    ],
+    "candidate_mask_pixels": {
+      "edit": 1993,
+      "extra": 0,
+      "hold": 0,
+      "red": 0,
+      "protect": 0
+    },
+    "candidate_changed_pixels": 1993,
+    "candidate_exact_original": false,
+    "baseline_uses_real_saved_inference": true,
+    "integer_nearest": true,
+    "display_size": [
+      600,
+      640
+    ],
+    "panels_exact": true
+  },
+  {
+    "id": "05_page_faint_left",
+    "frame": "full_page",
+    "xywh": [
+      170,
+      700,
+      235,
+      450
+    ],
+    "title": "左列の薄い筆画",
+    "page": "200018243_00003_2",
+    "page_xywh": [
+      170,
+      700,
+      235,
+      450
+    ],
+    "candidate_mask_pixels": {
+      "edit": 0,
+      "extra": 0,
+      "hold": 145,
+      "red": 0,
+      "protect": 9402
+    },
+    "candidate_changed_pixels": 0,
+    "candidate_exact_original": true,
+    "baseline_uses_real_saved_inference": true,
+    "integer_nearest": true,
+    "display_size": [
+      470,
+      900
+    ],
+    "panels_exact": true
+  },
+  {
+    "id": "06_page_faint_middle",
+    "frame": "full_page",
+    "xywh": [
+      760,
+      1870,
+      220,
+      480
+    ],
+    "title": "中央列の細い筆画",
+    "page": "200018243_00003_2",
+    "page_xywh": [
+      760,
+      1870,
+      220,
+      480
+    ],
+    "candidate_mask_pixels": {
+      "edit": 0,
+      "extra": 0,
+      "hold": 102,
+      "red": 0,
+      "protect": 9207
+    },
+    "candidate_changed_pixels": 0,
+    "candidate_exact_original": true,
+    "baseline_uses_real_saved_inference": true,
+    "integer_nearest": true,
+    "display_size": [
+      440,
+      960
+    ],
+    "panels_exact": true
+  },
+  {
+    "id": "07_page_dense_control",
+    "frame": "full_page",
+    "xywh": [
+      1510,
+      1650,
+      300,
+      440
+    ],
+    "title": "右列の濃い筆画の対照",
+    "page": "200018243_00003_2",
+    "page_xywh": [
+      1510,
+      1650,
+      300,
+      440
+    ],
+    "candidate_mask_pixels": {
+      "edit": 1,
+      "extra": 0,
+      "hold": 29,
+      "red": 0,
+      "protect": 13118
+    },
+    "candidate_changed_pixels": 1,
+    "candidate_exact_original": false,
+    "baseline_uses_real_saved_inference": true,
+    "integer_nearest": true,
+    "display_size": [
+      600,
+      880
+    ],
+    "panels_exact": true
+  },
+  {
+    "id": "08_page_long_stroke",
+    "frame": "full_page",
+    "xywh": [
+      440,
+      1850,
+      240,
+      650
+    ],
+    "title": "左寄りの長い細線",
+    "page": "200018243_00003_2",
+    "page_xywh": [
+      440,
+      1850,
+      240,
+      650
+    ],
+    "candidate_mask_pixels": {
+      "edit": 2,
+      "extra": 0,
+      "hold": 295,
+      "red": 0,
+      "protect": 12482
+    },
+    "candidate_changed_pixels": 2,
+    "candidate_exact_original": false,
+    "baseline_uses_real_saved_inference": true,
+    "integer_nearest": true,
+    "display_size": [
+      480,
+      1300
+    ],
+    "panels_exact": true
+  }
+]

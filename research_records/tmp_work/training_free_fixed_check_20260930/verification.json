@@ -1,0 +1,37 @@
+{
+  "status": "verified",
+  "pages": 8,
+  "rois": 24,
+  "modes": 3,
+  "computation_pngs_checked": 400,
+  "auxiliary_png_sha256": {
+    "200003803_00009_2/central_ink_audit.png": "4e216a075a9a7ff8b68ba04f7d3177cb07e421322d53e473fa2c4f433e28ceb3",
+    "200019865_00075_2/central_ink_audit.png": "816bf04e4b6caf9d04cda23af3668369034f5619a6aca3ec060f0b3fb9f0e88d",
+    "200021063_00021_1/central_ink_audit.png": "86c5547286f99bfc14cae1f4afaec03dc3ca7ad6e302fe52e6afb14ab2dba7a4",
+    "200021063_00021_1/red_audit.png": "a54a7c122c966e96972afb9558596c78eaf7b465865b70f0cf2c875ab0fb0104",
+    "200021071_00079_2/central_ink_audit.png": "360490e654d1968969566f6a20a5b7a103840b92d6f610dfb76456313bc665b3",
+    "200021071_00079_2/red_audit.png": "d37388312b91ba500926218aab36d739fea810b69771fcce8008d3934d37da39",
+    "200021660_00040_1/central_ink_audit.png": "adb66c1870a20892e1e03f57fa2ba1a13ba83ec0311d5b5325d7c6b533acd903",
+    "200021660_00040_1/red_audit.png": "515bab14dfc5e079520dab6b8c29a9f2184519a7792214786345fcbe4524efe2",
+    "200021851_00019_2/central_ink_audit.png": "84db02b763f9e075e5c241281579327554236becd49cd444ae3a2cc46d33f2f8",
+    "200021851_00019_2/red_audit.png": "505b85c5e86e58941613e46b3c4fae1cf200f3cf7433d39eab3b4b52b5a16521",
+    "200021869_00010_2/central_ink_audit.png": "47dab068cfe55efdc0c17f32abc7785665b8b6d0b55d319cba7555aa6332339b",
+    "200021869_00010_2/red_audit.png": "22b855c2de1a8399ac1073156d006d93719f05a6c42b85a72fbd2c43ffd50661",
+    "200022050_00010_1/central_ink_audit.png": "9a849f39ae934c00c62ccbc9c23ea4bf341efb006bd643f248b8b94fa499292f",
+    "200022050_00010_1/red_audit.png": "3a3e5c0dcad03fa660c5fd289d73efa07b71f8dcd626f2d8f4be04c51473fcf2"
+  },
+  "checks": [
+    "parameters equal frozen development version",
+    "eight book IDs outside development set",
+    "source/dependency/output hashes",
+    "original decoded pixels unchanged",
+    "native-size binary masks; disjoint candidate classes",
+    "ink equals black OR red; baseline equals previous local mask",
+    "overlays preserve all pixels outside selected masks",
+    "page and ROI diagnostic counts recomputed",
+    "shape exclusions equal logged component masks",
+    "viewer linked files and JavaScript syntax"
+  ],
+  "browser_ui_tested": false,
+  "manual_ground_truth_used": false
+}

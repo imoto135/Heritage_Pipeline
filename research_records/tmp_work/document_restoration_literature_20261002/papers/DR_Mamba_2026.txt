@@ -1,0 +1,827 @@
+                                         DR-Mamba: Automatic Inference-Time Domain
+                                         Adaptation for Document Image Binarization via
+                                             Sample-Conditioned Detail-Background
+                                                          Suppression
+
+                                                             Sheng-Wei Chan1 and Jen-Shiun Chiang1
+arXiv:2606.22625v1 [cs.CV] 21 Jun 2026
+
+
+
+
+                                             Department of Electrical and Computer Engineering, Tamkang University, New
+                                                                          Taipei City, Taiwan
+                                                      412440330@o365.tku.edu.tw, chiang@mail.tku.edu.tw
+
+
+                                                Abstract. Degraded document image binarization is sensitive to do-
+                                                main shifts caused by paper aging, bleed-through, stains, shadows, and
+                                                uneven illumination, and the foreground-background separation of recent
+                                                learning-based methods can become unstable on unseen degradation do-
+                                                mains. We propose DR-Mamba, a sample-conditioned detail-background
+                                                suppression framework that performs automatic inference-time domain
+                                                adaptation for document image binarization. Unlike test-time adaptation
+                                                methods that require gradient updates or auxiliary data at inference,
+                                                DR-Mamba adapts to each input document through input-dependent
+                                                gates within a single forward pass, requiring no target-domain labels,
+                                                no fine-tuning, and no test-time parameter updates. Instead of using
+                                                Mamba-style selective scanning as a single generic feature path, DR-
+                                                Mamba reinterprets it as fast–slow route modeling: a fast detail route
+                                                captures local stroke structures, while a slow background route accumu-
+                                                lates spatially persistent degradation responses. The two routes are inte-
+                                                grated through an input-dependent subtractive gate, D − βB, which ex-
+                                                plicitly suppresses background interference rather than fusing features by
+                                                addition or concatenation. We further add full-resolution detail-guided
+                                                reconstruction and thin-stroke-aware supervision to recover fine strokes
+                                                lost during downsampling. Evaluated under a leave-one-year-out protocol
+                                                on DIBCO-style benchmarks, where each held-out year is treated as an
+                                                unseen degradation domain, DR-Mamba shows that per-document, per-
+                                                location subtractive suppression improves cross-domain robustness, with
+                                                particularly strong performance on the most severely degraded held-out
+                                                fold.
+
+                                                Keywords: Document image binarization · Inference-time domain adap-
+                                                tation · Automatic domain-adapted document analysis · Sample-conditioned
+                                                suppression · Dual-Route Mamba
+
+
+                                         1    Introduction
+                                         Document image binarization separates foreground strokes from background re-
+                                         gions and remains a fundamental step in document image analysis [17, 24, 7].
+2        S.-W. Chan et al.
+
+Although learning-based methods have improved binarization quality [28, 10, 4,
+31, 26], degraded documents still exhibit substantial domain shifts caused by
+acquisition devices, paper aging, ink diffusion, bleed-through, stains, shadows,
+and uneven illumination. These shifts are reflected in DIBCO and H-DIBCO
+benchmarks, where different years contain different document types and degra-
+dation patterns [6, 19–22], and they reappear whenever a model is applied to new
+archives, scanners, writing materials, or acquisition environments. Since collect-
+ing pixel-level labels for every new collection is costly and often impractical,
+robust binarization should not rely on target-domain annotation or fine-tuning,
+but should automatically adjust to the degradation characteristics of each input
+sample. This motivates us to study degraded document binarization as an auto-
+matic, inference-time domain adaptation problem, in which DR-Mamba adapts
+to each input document through input-dependent gates within a single forward
+pass, requiring no target-domain labels, no fine-tuning, and no test-time parame-
+ter updates. This forward-pass, label-free form of per-sample adaptation falls di-
+rectly under the scope of visual-specific automatic adaptation for document anal-
+ysis: each new document acts as its own implicit adaptation signal. We evaluate
+this setting with a leave-one-year-out protocol where each held-out benchmark
+year is treated as an unseen degradation domain, which is more stringent than
+random image-level splitting, as no sample from the target year is seen during
+training. A key challenge in this setting is foreground-background entanglement:
+text strokes and background artifacts may share similar local edges, textures,
+or low-contrast patterns. Simply applying a stronger backbone or a single long-
+range modeling path may therefore still mix foreground details with background
+degradation. Recent state space and Mamba-based visual models offer efficient
+long-range sequence modeling [9, 8, 32, 13], but a single selective scanning route
+is not tailored to the suppression nature of document binarization. We propose
+DR-Mamba, which reformulates selective scanning as fast–slow route modeling
+rather than a generic feature operation. The fast detail route responds to local
+stroke structures, while the slow background route accumulates spatially persis-
+tent degradation responses, and the two are combined by an input-dependent
+subtractive gate, D − βB, that explicitly suppresses background interference
+instead of fusing all responses by addition or concatenation. A full-resolution
+detail-guided reconstruction module further restores high-frequency stroke cues
+lost during downsampling. Our contributions are summarized as follows:
+
+    – We formulate degraded document image binarization as an automatic, inference-
+      time domain adaptation problem, evaluated with a leave-one-year-out pro-
+      tocol where each held-out DIBCO/H-DIBCO year is treated as an unseen
+      degradation domain.
+    – We propose a task-oriented Dual-Route Mamba block that reinterprets se-
+      lective scanning as fast–slow detail-background modeling for degraded doc-
+      ument binarization.
+    – We introduce an adaptive subtractive suppression mechanism, D−βB, whose
+      suppression strength is predicted per input sample and per location. The
+      gate β thus serves as a forward-pass adaptation signal that automatically
+                                                     DR-Mamba for Document Image Binarization                                                           3
+
+                                                                   Aux Head
+
+
+               Feature Extraction         Decoding
+
+                                                                DR-Mamba Block
+               Backbone Encoder      Multi-scale Decoder                                     Detail-Guided
+ Input Image                                                Detail–Background Routes                                  Refinement Head   Binary Output
+                ConvNeXt-Tiny       with Skip Connections                                    Reconstruction
+                                                                    D − βB
+
+
+
+
+                                                                                             Detail Branch
+                                                                                          RGB + Sobel Features
+
+
+                                                                                       Detail-guided Reconstruction
+
+
+
+
+Fig. 1. Simplified overview of the proposed DR-Mamba framework. A ConvNeXt-Tiny
+backbone extracts hierarchical document features, which are restored by a multi-scale
+decoder. The proposed DR-Mamba block models the decoded representation through
+a fast detail route and a slow background route, followed by adaptive subtractive sup-
+pression to reduce degradation interference. Full-resolution edge cues are further intro-
+duced through detail-guided reconstruction to improve stroke continuity and boundary
+sharpness.
+
+
+   reconfigures the model’s background-removal behavior for each unseen doc-
+   ument, realizing visual-specific automatic domain adaptation without any
+   target-domain label, gradient update, or fine-tuning step.
+ – We combine full-resolution detail-guided reconstruction with thin-stroke-
+   aware supervision, and verify the contribution of each component through
+   controlled ablations.
+
+
+2       Proposed Method
+2.1        Overview
+The proposed DR-Mamba framework targets cross-domain degraded document
+image binarization. Given an input image I ∈ R3×H×W , the goal is to pre-
+dict a foreground probability map Ŷ ∈ [0, 1]H×W and obtain the final binary
+result by thresholding at 0.5. As shown in Fig. 1, the framework contains four
+components: a ConvNeXt-Tiny encoder, a multi-scale decoder, the proposed DR-
+Mamba block, and a detail-guided reconstruction module. The design is moti-
+vated by viewing degraded binarization as a background suppression problem in
+addition to foreground detection. DR-Mamba addresses this by separating the
+decoded representation into a fast detail route and a slow background route,
+fused through adaptive subtraction instead of generic addition or concatena-
+tion. Crucially, the strength of this suppression is not a fixed hyper-parameter
+but is predicted per sample and per location from the input itself, realizing the
+automatic inference-time adaptation described above.
+
+2.2        Backbone Encoder and Multi-Scale Decoder
+We adopt a standard hierarchical encoder-decoder backbone for dense prediction;
+it is not a contribution of this work, so we describe it only briefly. The encoder
+4        S.-W. Chan et al.
+
+extracts four multi-level features from the input image,
+
+                               {F1 , F2 , F3 , F4 } = E(I),                        (1)
+
+where E(·) is a ConvNeXt-Tiny encoder [14] and Fi is the feature map at stride
+2i+1 (i.e. F1 is the shallowest/highest-resolution map and F4 the deepest/lowest-
+resolution one).
+    The decoder restores spatial resolution by fusing high-level semantic features
+with low-level spatial features through skip connections. Starting from F4 , it
+applies a sequence of upsample-and-fuse operations:
+
+                                U4 = D4 (Up(F4 ), F3 ) ,                           (2)
+                                U3 = D3 (Up(U4 ), F2 ) ,                           (3)
+                                U2 = D2 (Up(U3 ), F1 ) .                           (4)
+
+Here Up(·) denotes a ×2 upsampling operator, and each decoder block Di (·)
+concatenates its upsampled input with the corresponding skip feature and applies
+a convolution–normalization–activation fusion. The intermediate features U4 , U3 ,
+and U2 are therefore the decoder outputs at successively higher resolutions, with
+the level index i matching the skip feature Fi being fused. The final decoded
+feature U2 carries both semantic context and spatial detail at stride 4, and is
+passed to the proposed DR-Mamba block for detail–background decomposition.
+
+2.3    Dual-Route Mamba Block
+The DR-Mamba block is the core of our framework. It adapts Mamba-style selec-
+tive scanning [8] to the suppression nature of degraded document binarization.
+Throughout this section, ⊙ denotes the element-wise (Hadamard) product, σ(·)
+the sigmoid function, and softplus(x) = log(1 + ex ) a smooth positive map.
+
+Input projection and per-token gates. Given the decoded feature U2 , we first
+apply an input projection
+                                 Z = ϕ(U2 ),                              (5)
+where ϕ(·) is the composition of layer normalization, a linear projection, a 3 × 3
+depth-wise convolution, and a SiLU activation; Z ∈ R(H2 W2 )×d is the resulting
+per-token feature, H2 × W2 is the spatial size of U2 , d is the block width, and
+t ∈ {1, . . . , H2 W2 } indexes a spatial token with feature zt ∈ Rd . From Z, the
+block predicts four per-token quantities,
+
+    st = σ(Ws zt ),   gt = σ(Wg zt ),   ∆t = softplus(W∆ zt ),   βt = σ(Wβ zt ),   (6)
+
+where Ws , Wg , W∆ , Wβ ∈ Rd×d are learnable projection matrices. Here st ∈
+(0, 1)d is a structure gate that decides how much of each channel is routed to
+the detail route versus the background route; gt ∈ (0, 1)d is an input modulation
+gate controlling how much new evidence enters the state at token t; ∆t ∈ Rd>0
+is an input-dependent time scale (the selective ∆ of Mamba); and βt ∈ (0, 1)d is
+                              DR-Mamba for Document Image Binarization          5
+
+the suppression gate. Because βt is spatial- and channel-dependent, the model
+adjusts the amount of background suppression according to each input document
+and each local degradation pattern; the gate βt thus implements per-sample,
+per-location adaptation entirely within the forward pass, with no target-domain
+supervision and no parameter update required.
+
+Fast–slow selective dynamics. Instead of forming two routes by channel splitting,
+DR-Mamba assigns the two routes different memory horizons. We define two
+positive per-channel decay rates AD , AB ∈ Rd>0 for the detail and background
+routes:
+                   AD = AB + softplus(Agap ),      AD > AB .                  (7)
+Here AB is a learnable per-channel decay rate (the slow route), and Agap ∈ Rd is
+a learnable per-channel parameter that parameterizes the gap between the two
+routes. Passing Agap through softplus guarantees a non-negative gap, so the con-
+straint AD > AB holds by construction rather than being imposed by clipping or
+an external penalty. A larger decay rate means faster forgetting: the detail route
+(AD ) responds quickly to local high-frequency stroke changes, while the back-
+ground route (AB ) integrates spatially persistent degradation responses such as
+stains and bleed-through. The corresponding input-dependent decay factors at
+token t are
+                 aD
+                  t = exp(−∆t AD ),        aB
+                                            t = exp(−∆t AB ),                  (8)
+where aD     B        d
+       t , at ∈ (0, 1) vary with both content (through ∆t ) and channel (through
+AD , AB ), so the fast/slow split is selective rather than a fixed constant.
+
+Routes and adaptive subtractive suppression. The two selective states are up-
+dated by the recurrences
+
+                        Dt = aD
+                              t ⊙ Dt−1 + gt ⊙ st ,                            (9)
+                        Bt = aB
+                              t ⊙ Bt−1 + gt ⊙ (1 − st ),                     (10)
+
+where Dt , Bt ∈ Rd are the detail and background route states. The gated input
+gt ⊙ st writes detail-sensitive evidence into the fast route, while gt ⊙ (1 − st )
+writes the complementary, degradation-prone evidence into the slow route. The
+two routes are then fused by adaptive subtractive suppression,
+
+                               Ot = Dt − βt ⊙ Bt ,                           (11)
+
+where Ot ∈ Rd is the per-token output of the route fusion. This differs funda-
+mentally from generic feature fusion: addition or concatenation preserves both
+foreground and degradation responses, whereas binarization requires the back-
+ground response to be removed. The subtractive form injects this task-specific
+prior directly into the operator, and the input-dependent gate βt controls how
+aggressively the accumulated background state is cancelled at each location. In
+our ablations this sample-conditioned subtraction is the single largest source of
+gain (Sec. 3.6), which is why we keep it at the center of the design.
+6      S.-W. Chan et al.
+
+Four-directional scan. A causal recurrence only models dependencies along one
+traversal order, but document strokes extend in arbitrary 2-D directions. We
+therefore aggregate the recurrence over multiple scan orders,
+                                  X
+                          ODR =       Scanr (D, B, β),                   (12)
+                                     r∈R
+
+where each Scanr realizes the route recurrences and subtractive fusion above
+along one traversal order r: the 2-D feature map is first serialized into a 1-D
+token sequence following r, the selective recurrence is computed in linear time
+along that sequence to produce {Ot }, and the outputs are then scattered back
+to their original spatial positions. The set R = {left → right, right → left, top →
+bottom, bottom → top} contains the four axis-aligned orders, and ODR sums
+their results so that horizontal and vertical stroke continuity are both captured.
+This four-directional design is sufficient to cover dominant stroke orientations
+while avoiding the over-smoothing and extra computation we observe with denser
+directional aggregation (Sec. 3.6).
+
+2.4   Detail-Guided Reconstruction
+Encoder-decoder networks lose fine spatial detail through downsampling, which
+is especially harmful for thin strokes and sharp boundaries. To compensate,
+we add a lightweight detail branch that operates at full resolution. We obtain
+horizontal and vertical edge responses with fixed Sobel filters,
+
+                      Gx = Sobelx (I),          Gy = Sobely (I),              (13)
+
+where Sobelx (·) and Sobely (·) apply the standard 3 × 3 horizontal and vertical
+Sobel kernels as fixed, non-learnable depth-wise convolutions on I, and Gx , Gy
+are the resulting full-resolution gradient maps. The original image and the mag-
+nitudes of the two edge maps are concatenated and passed through a small
+convolutional branch:
+
+                            Fdetail = ψ([ I, |Gx |, |Gy | ]) ,                (14)
+
+where [·] denotes channel-wise concatenation, | · | the element-wise absolute
+value, ψ(·) a two-layer convolutional branch, and Fdetail the full-resolution high-
+frequency feature.
+    The output of the DR-Mamba block is upsampled to the input resolution
+and fused with Fdetail :
+
+                           Ffuse = F([ Up(ODR ), Fdetail ]) ,                 (15)
+
+where Up(·) here is a learned sub-pixel upsampling, F (·) is a convolutional fusion
+operation, and Ffuse is the fused feature that combines global context from DR-
+Mamba with local high-frequency cues from the original image. A refinement
+head then produces the binarization logit:
+
+                                    P = H(Ffuse ),                            (16)
+                              DR-Mamba for Document Image Binarization            7
+
+where H(·) is a refinement-and-prediction head built from residual convolutional
+blocks with different dilation rates (to enlarge the receptive field at full resolu-
+tion) followed by a 1 × 1 prediction layer, and P ∈ RH×W is the predicted logit
+map. The final foreground probability map is
+
+                                    Ŷ = σ(P ),                                (17)
+
+i.e. the pixel-wise sigmoid of the logit map; the binary output is obtained by
+thresholding Ŷ at 0.5.
+
+2.5   Training Objective
+Document binarization is sensitive to thin strokes, boundary errors, and foreground–
+background imbalance, so we train with a thin-stroke-aware compound loss
+rather than binary cross-entropy alone. The main loss has six terms:
+               Lmain = λsdf Lsdf + λbce Lbce + λtv Ltv + λpf m Lpf m
+                                                                               (18)
+                        + λcldice Lcldice + λbnd Lbnd .
+    The dominant term Lsdf is a signed distance field loss that aligns the zero-
+level set of the predicted logit field with the stroke boundary. We convert the
+ground-truth mask Y into a normalized signed distance map S(Y ) ∈ [−1, 1]H×W :
+for each pixel, S(Y ) is the signed Euclidean distance to the nearest stroke bound-
+ary — positive inside strokes, negative in the background, and exactly zero on
+the boundary — clipped to [−T, T ] and divided by T , where the normalization
+constant T is the saturation distance (in pixels) beyond which the field is flat.
+The SDF loss is then
+
+                        Lsdf = SmoothL1 tanh PT , S(Y ) ,
+                                                          
+                                                                               (19)
+
+where tanh(P/T ) squashes the logit field into the same [−1, 1] range as the
+target. By forcing {P = 0} onto the stroke boundary, this term yields sharp,
+well-aligned edges and a threshold-free decision (P > 0 ⇔ Ŷ > 0.5), which
+improves boundary localization and reduces DRD relative to a BCE baseline
+(Table 8).
+    The remaining terms are standard and act as light, complementary regular-
+izers. Lbce is a pixel-wise binary cross-entropy anchor. Ltv is a Tversky loss [23]
+that handles foreground–background imbalance by weighting false positives and
+false negatives asymmetrically; we use α = 0.70 and β = 0.30 to discourage
+overly thick strokes. Lpf m is a soft pseudo-F-measure loss that improves thin-
+stroke recall on the skeletonized ground truth. Lcldice is a clDice loss [25] that
+preserves stroke connectivity, and Lbnd is a boundary penalty [12] that suppresses
+false positives in the dilated boundary region. The weights are
+
+λsdf = 1.0,   λbce = 0.1,   λtv = 0.3,   λpf m = 0.5,     λcldice = 0.2,
+                                                                     λbnd = 0.2,
+                                                                            (20)
+which are selected empirically on the validation split of the leave-one-year-out
+folds (Sec. 3.2). We deliberately keep λsdf = 1.0 dominant, because the SDF
+8      S.-W. Chan et al.
+
+term carries the threshold-free boundary signal, while the other terms are down-
+weighted so they regularize rather than compete with it; in particular λbce is
+small because a strong BCE fights the bounded-linear field that the SDF term
+builds near the boundary.
+    Finally, an auxiliary prediction head is attached after the DR-Mamba block
+for deep supervision at a lower resolution. The auxiliary target Yaux is obtained
+by adaptive max pooling the ground-truth mask Y to the auxiliary output reso-
+lution, and Laux is a binary cross-entropy loss between the auxiliary prediction
+and Yaux . The full training objective is
+                    L = Lmain + λaux Laux ,      λaux = 0.3.                (21)
+Such imbalance-aware, boundary-aware, and topology-aware losses have been
+widely used in dense prediction and thin-structure segmentation to improve class
+balance, boundary alignment, and connectivity preservation [23, 12, 25].
+
+
+3     Experiments
+3.1   Experimental Setup
+All experiments are implemented in PyTorch [18] and conducted on a single
+NVIDIA RTX 5080 GPU with 16GB memory. The full model has 33.51M pa-
+rameters and 178 GFLOPs at a 512 × 512 input. DR-Mamba uses a ConvNeXt-
+Tiny backbone [14] pretrained on ImageNet [5] as the encoder. The encoder
+extracts four hierarchical feature maps with channel dimensions of 96, 192, 384,
+and 768, which are progressively fused by a U-shaped decoder before entering
+the proposed DR-Mamba block. During training, document images are randomly
+cropped into 512 × 512 patches. The batch size is set to 4, and gradient accu-
+mulation is applied for 4 steps. The model is optimized using AdamW [15] and
+trained for 150 epochs with a maximum learning rate of 2 × 10−4 . We adopt
+bfloat16 mixed-precision training [16] to reduce GPU memory consumption; we
+specifically use bfloat16 rather than fp16 because the selective scan operations
+in the Mamba block are numerically sensitive and prone to overflow under fp16.
+During testing, full-resolution document images are processed by sliding-window
+inference with a crop size of 512 and a stride of 256.
+    To expose the model to diverse degradation conditions, we apply degradation-
+oriented data augmentation during training: bleed-through-like interference, syn-
+thetic paper texture, ink-like stains, JPEG compression noise, spatially varying
+illumination, local defocus blur, and random erasing. These augmentations in-
+crease the diversity of background artifacts and stroke appearances, improving
+robustness to the unseen degradation patterns encountered in the leave-one-year-
+out setting.
+
+3.2   Leave-One-Year-Out Evaluation Protocol
+To evaluate robustness under unseen document degradation domains, we adopt a
+full leave-one-year-out (LOO) protocol across DIBCO-style benchmark years. In
+                              DR-Mamba for Document Image Binarization           9
+
+each fold, one benchmark year is held out as the unseen target domain, while all
+remaining years are used for training and validation. All images from the held-
+out target year are completely excluded from both training and validation, and
+are used only for final testing. This process is repeated for every year. Formally,
+given a set of benchmark years Y and a held-out target year yt , the split is
+defined as:                                         [
+                       Dtest = Dyt , Dtrain =            Dy .                 (22)
+                                               y∈Y,y̸=yt
+
+    This protocol is more challenging than random image-level splitting because
+no sample from the target year is used during training or validation. Since differ-
+ent DIBCO/H-DIBCO years contain different acquisition conditions, document
+types, and degradation patterns, each held-out year is treated as an unseen
+degradation domain. This setting evaluates whether DR-Mamba’s forward-pass,
+sample-conditioned adaptation generalizes to unseen degradation domains rela-
+tive to non-adaptive single-route modeling. We additionally highlight the 2019
+fold because it contains severe background interference and low-contrast strokes,
+and use it as the unified setting for detailed ablations.
+
+
+3.3   Evaluation Metrics
+
+Following standard DIBCO protocols, we report F-measure (FM), pseudo-F-
+measure (p-FM), peak signal-to-noise ratio (PSNR), and distance reciprocal
+distortion (DRD). All four metrics are computed with the official DIBCO/H-
+DIBCO evaluation tools rather than a custom re-implementation, so our scores
+follow exactly the same definitions and weighting as the original contest proto-
+cols. FM scores foreground-background classification from precision and recall;
+p-FM emphasizes skeletonized thin-stroke preservation; PSNR measures pixel-
+level similarity to the ground truth; and DRD reflects perceptual distortion from
+binarization errors. Higher FM, p-FM, and PSNR and lower DRD indicate better
+performance.
+
+
+3.4   Comparison with Existing Methods
+
+Table 1 compares DR-Mamba with classical and learning-based document bi-
+narization methods. Because the competing numbers are collected from prior
+work under differing train/test year splits and implementation details, this table
+is a reference comparison rather than a strictly controlled re-implementation.
+Within this caveat, DR-Mamba attains the highest p-FM among all compared
+methods—the metric most directly tied to skeletonized thin-stroke preservation—
+and stays within 0.4 FM of the best-reported result under a single fixed proto-
+col. Some transformer-based methods report lower DRD, reflecting very smooth
+boundaries; we instead prioritize faint- and broken-stroke recovery, which is re-
+flected in our p-FM and, as shown next, in robustness on the hardest held-out
+fold. Our main evidence remains the controlled leave-one-year-out evaluation
+and ablation studies.
+10      S.-W. Chan et al.
+
+Table 1. Overall comparison with classical and learning-based document image bi-
+narization methods. Competing numbers are taken from prior work under differing
+train/test year splits and implementation details, so this table is a reference compari-
+son rather than a strictly controlled re-implementation. Higher FM, p-FM, and PSNR
+are better; lower DRD is better. “Years” denotes the number of benchmark years in the
+reported average.
+
+                Method              FM↑ p-FM↑ PSNR↑ DRD↓ Years
+                Otsu [17]        77.27 79.14 15.22 17.24           10
+                Sauvola [24]     78.10 82.91 15.77 8.72            10
+                Gatos [7]        87.33 89.85 17.98 5.40            10
+                RDD [27]         85.96 87.43 17.92 7.00            10
+                DeepOtsu [10]    88.59 90.84 19.33 3.76            10
+                DD-GAN [4]       88.98 91.17 19.87 3.57            10
+                cGANs [31]       90.24 91.97 19.66 3.81            10
+                DocBinFormer [1] 92.22 94.09 21.30 0.15            10
+                D2 BFormer [29]  91.75 93.05 20.85 2.71            10
+                TransDocUNet [2] 92.44 93.86 22.16 0.49            10
+                DR-Mamba            92.06 94.15 20.91      2.26    10
+
+
+
+3.5   Leave-One-Year-Out Results
+Table 2 reports the full leave-one-year-out results of DR-Mamba. The model
+achieves an average FM of 92.06 and p-FM of 94.15 across ten held-out years,
+indicating stable thin-stroke preservation under unseen degradation domains.
+Performance remains high on most years, while the 2019 fold is clearly the most
+difficult split.
+
+
+Table 2. Leave-one-year-out evaluation results across DIBCO/H-DIBCO benchmark
+years. Higher FM, p-FM, PSNR are better; lower DRD is better.
+
+                      Target Year FM ↑ p-FM ↑ PSNR ↑ DRD ↓
+                      2009        94.12 96.24 21.33 1.3927
+                      2010        93.74 96.10 21.45 1.3125
+                      2011        94.96 97.24 21.73 1.3463
+                      2012        97.20 97.96 23.79 0.9698
+                      2013        96.85 98.07 23.01 1.1766
+                      2014        97.33 98.81 23.37 0.7332
+                      2016        90.45 93.91 19.84 3.4212
+                      2017        90.94 93.73 18.97 2.9187
+                      2018        89.87 93.32 19.66 2.7691
+                      2019        75.16 76.08 15.92 6.5239
+                      Average     92.06 94.15 20.91 2.2564
+
+
+   Among all held-out folds, the 2019 split is the most challenging due to severe
+background interference and low-contrast foreground strokes. This is reflected
+                                DR-Mamba for Document Image Binarization            11
+
+by its lower FM, p-FM, and PSNR and higher DRD compared with the other
+years. We therefore further compare DR-Mamba with existing methods on the
+2019 fold in Table 3.
+
+Table 3. Comparison on the challenging 2019 held-out fold. Higher FM, p-FM, and
+PSNR are better. The competing results are taken from their original papers as external
+reference numbers and may follow different training protocols; they are not strictly
+comparable to our leave-one-year-out setting.
+
+                       Method             FM↑ p-FM↑ PSNR↑
+                       Otsu [17]        63.87 60.24      12.67
+                       Sauvola [24]     63.82 60.18      12.66
+                       DeepOtsu [10]    60.75 59.91      14.44
+                       DD-GAN [4]       57.96 57.30      14.43
+                       DocEnTr [26]     59.00 60.00      13.85
+                       DocDiff [30]     73.38 75.12      15.14
+                       DocBinFormer [1] 60.31 64.00      14.49
+                       TransDocUNet [2] 56.79 56.78      13.36
+                       D2 BFormer [29]  67.63 66.69      15.05
+                       MFE-GAN [11]     70.41 70.96      13.79
+                       NAF-DPM [3]      74.61 76.25      15.39
+                       DR-Mamba           75.16 76.08 15.92
+
+
+
+    As shown in Table 3, DR-Mamba achieves the best FM and PSNR on the
+challenging 2019 fold, with p-FM only 0.17 behind NAF-DPM. Notably, several
+methods with strong aggregate scores in Table 1—including DocBinFormer and
+TransDocUNet—collapse here (FM below 61), whereas DR-Mamba degrades
+far more gracefully. This indicates that strong average performance does not
+guarantee robustness on the most severely degraded fold, where adaptive detail-
+background suppression is most valuable. These external numbers serve only as
+supporting evidence.
+    Figure 2 further provides qualitative examples on challenging held-out doc-
+uments.
+
+3.6   Ablation Study
+We conduct ablation studies to verify the contribution of each component. We
+first report average results across all leave-one-year-out folds to test whether the
+gains are consistent across unseen domains. We then perform detailed component-
+wise and design-specific ablations on the challenging 2019 fold.
+
+Component-wise Incremental Ablation. Table 5 reports the incremental
+ablation on the 2019 fold. The baseline (A0) is a ConvNeXt-Tiny encoder-
+decoder followed by a conventional single-route Mamba block, supervised only
+12      S.-W. Chan et al.
+
+       Input                  GT            w/o DR-Mamba            DR-Mamba
+
+
+
+
+Fig. 2. Qualitative comparison on challenging held-out documents. DR-Mamba better
+suppresses background degradation while preserving thin strokes and stroke continuity.
+
+Table 4. Average ablation results across all leave-one-year-out folds. Each row pro-
+gressively adds one component, following the 2019-fold incremental study in Table 5.
+
+ID Model                                       Avg FM↑ Avg p-FM↑ Avg PSNR↑ Avg DRD↓
+A0 Baseline (single-route Mamba, BCE only)       88.74      90.91        19.27      4.1108
+A1 + Dual route (concatenation fusion)           89.31      91.48        19.55      3.7642
+A2 + Adaptive suppression (D − βB)               90.83      92.86        20.14      3.0426
+A3 + Detail-guided reconstruction                91.58      93.49        20.55      2.6189
+A4 + Thin-stroke-aware loss (full DR-Mamba)      92.06      94.15        20.91      2.2564
+
+
+
+by binary cross-entropy. We then progressively build the proposed framework by
+adding one design component at a time: a dual-route decomposition with naive
+concatenation fusion (A1), the proposed adaptive suppression that replaces con-
+catenation with D − βB (A2), the detail-guided reconstruction module (A3),
+and finally the thin-stroke-aware compound loss (A4), which recovers the full
+DR-Mamba model. This incremental study shows how the complete framework
+is progressively constructed from the baseline. To avoid attributing all gains to
+a single factor, we further isolate the fusion design and the loss design in the
+following focused ablation studies.
+
+
+Effect of the Adaptive Suppression Fusion. Table 6 isolates the fusion
+design by fixing the dual-route decomposition and varying only the route fu-
+sion operation. Adaptive subtraction outperforms addition, concatenation, and
+fixed-β subtraction, supporting our claim that binarization benefits from input-
+dependent background suppression rather than generic feature fusion. Removing
+the fast–slow decay gap (AD =AB ) while keeping the subtractive gate degrades
+all metrics, confirming that the asymmetric decay between the two routes—not
+merely the dual-route structure—is responsible for the gain.
+                                DR-Mamba for Document Image Binarization             13
+
+Table 5. Component-wise incremental ablation on the 2019 fold. Each row progres-
+sively adds one component to the previous configuration. A0 is the single-route baseline
+and A4 is the full DR-Mamba.
+
+    ID Configuration                            FM ↑ p-FM ↑ PSNR ↑ DRD ↓
+    A0 Baseline (single-route Mamba, BCE only) 69.30 70.55 13.40 9.7012
+    A1 + Dual route (concatenation fusion)      70.21 71.67 13.97 9.1026
+    A2 + Adaptive suppression (D − βB)          72.96 74.32 14.65 8.5742
+    A3 + Detail-guided reconstruction           74.41 75.05 15.31 7.7415
+    A4 + Thin-stroke-aware loss (full DR-Mamba) 75.16 76.08 15.92 6.5239
+
+Table 6. Effect of the fusion operation between the detail route D and the background
+route B, with the dual-route decomposition fixed.
+
+    Fusion Operation                           FM ↑ p-FM ↑ PSNR ↑ DRD ↓
+    Additive D + B                             68.43 69.82 13.21 9.8471
+    Concatenation [D, B]                       70.21 71.67 13.97 9.1026
+    Subtraction D − βB (β fixed)               71.93 73.10 14.28 8.8305
+    Subtraction D − βB (β input-dependent)     72.96 74.32 14.65 8.5742
+    Subtraction D − βB (shared decay, AD =AB ) 71.16 72.73 14.15 8.9403
+
+
+
+Effect of the Number of Scanning Directions. The DR-Mamba block ag-
+gregates selective scans along multiple orientations to capture long-range stroke
+continuity. Table 7 studies how the number of scanning directions affects per-
+formance, comparing a single horizontal scan, a four-directional scan, and an
+eight-directional scan. We observe that the four-directional scan offers the best
+trade-off: a single direction is insufficient to model stroke continuity in arbitrary
+orientations, whereas increasing to eight directions does not yield further gains.
+We attribute the slight regression at eight directions to the additional diago-
+nal scans aggregating low-contrast background fibers along oblique orientations,
+which competes with the subtractive suppression mechanism; this is consistent
+with the predominantly horizontal-vertical stroke orientations in DIBCO docu-
+ments. We therefore adopt four-directional scanning as the default configuration.
+
+
+Effect of the Thin-Stroke-Aware Compound Loss. The compound loss
+aggregates six terms with complementary roles. To verify that the gain does
+not come from a single dominant term, Table 8 decomposes the loss into groups
+added incrementally on top of BCE: the boundary and balance terms (Lsdf , Lbnd ,
+Ltv ) and the thin-stroke connectivity terms (Lpf m , Lcldice ). The results indicate
+that the boundary and balance terms mainly sharpen foreground-background
+boundaries and reduce DRD, whereas the thin-stroke connectivity terms pri-
+marily improve p-FM by preserving fine and broken strokes. The two groups are
+complementary, and the full compound loss achieves the best overall result.
+Overall, the ablations confirm that the adaptive suppression D − βB is the
+key contributor and that the asymmetric fast–slow decay (not merely the dual-
+route structure) drives the gain, while four-directional scanning, detail-guided
+14      S.-W. Chan et al.
+
+Table 7. Effect of the number of selective scanning directions in the DR-Mamba block
+on the 2019 fold.
+
+                Scanning Directions FM ↑ p-FM ↑ PSNR ↑ DRD ↓
+                1 direction            72.94 74.40 15.18 7.4521
+                4 directions (default) 75.16 76.08 15.92 6.5239
+                8 directions           74.27 75.67 15.78 6.7498
+
+Table 8. Decomposition of the thin-stroke-aware compound loss on the 2019 fold.
+Terms are added incrementally on top of BCE.
+
+      Loss Configuration                            FM ↑ p-FM ↑ PSNR ↑ DRD ↓
+      BCE only                                      74.41 75.05 15.31 7.7415
+      + Boundary & balance (Lsdf , Lbnd , Ltv ) 74.79 75.34 15.68 6.8013
+      + Thin-stroke connectivity (Lpf m , Lcldice ) 75.16 76.08 15.92 6.5239
+
+
+reconstruction, and the thin-stroke-aware loss add complementary improvements
+in boundary sharpness and thin-stroke connectivity.
+
+3.7   Backbone Study
+The previous experiments ablate the components of the proposed DR-Mamba
+block while keeping the backbone fixed. Here we separately study the choice
+of the backbone encoder, since this is a design decision about feature extrac-
+tion rather than a component of our contribution. Table 9 compares a VMamba
+backbone [13] with the ConvNeXt-Tiny backbone, with the DR-Mamba block
+unchanged in both cases. We find that ConvNeXt-Tiny provides stronger hier-
+archical features for dense binarization prediction under the cross-domain LOO
+setting. We note that this comparison concerns only the backbone used for fea-
+ture extraction; the long-range modeling in our framework is still performed by
+the Mamba-based DR-Mamba block regardless of the backbone choice.
+
+
+Table 9. Backbone study on the 2019 fold. The DR-Mamba block is kept unchanged;
+only the encoder backbone is varied.
+
+              Backbone                FM ↑ p-FM ↑ PSNR ↑ DRD ↓
+              VMamba                  72.36 75.09 14.51 7.8413
+              ConvNeXt-Tiny (default) 75.16 76.08 15.92 6.5239
+
+
+
+
+4     Conclusion
+We presented DR-Mamba, a sample-conditioned detail-background suppression
+framework that performs automatic inference-time domain adaptation for de-
+graded document image binarization. The key idea is to adapt Mamba-style selec-
+                               DR-Mamba for Document Image Binarization             15
+
+tive scanning to the suppression nature of binarization through fast–slow detail-
+background routes and input-dependent subtractive fusion, D − βB, where the
+input image itself acts as the adaptation signal that reconfigures the suppression
+gate β for each unseen document. Full-resolution detail-guided reconstruction
+and thin-stroke-aware supervision further improve stroke continuity and bound-
+ary quality. Under leave-one-year-out evaluation on DIBCO-style benchmarks,
+where each held-out year is an unseen degradation domain, DR-Mamba shows
+competitive cross-domain performance and strong results on the most challeng-
+ing 2019 fold; ablations confirm that adaptive subtractive suppression is the dom-
+inant contributor. DR-Mamba thus offers a lightweight, label-free, forward-pass
+form of automatic domain adaptation for document analysis. Future work will
+combine this inference-time sample-conditioning with explicit source-free test-
+time adaptation to further close the gap on the most severely degraded domains.
+
+Acknowledgments
+This research work is partially supported by National Science and Technology
+Council, Taiwan, under grant number: 114-2221-E-032-011-.
+
+
+References
+
+ 1. Biswas, R., Roy, S.K., Wang, N., Pal, U., Huang, G.B.: Docbinformer: A two-
+    level transformer network for effective document image binarization. arXiv preprint
+    arXiv:2312.03568 (2023)
+ 2. Biswas, R., Sarkhel, S., Roy, S.K., Pal, U.: Transdocunet: A transformer-
+    based unet architecture for degraded document image binarization. In: Pro-
+    ceedings of the Fourteenth Indian Conference on Computer Vision, Graphics
+    and Image Processing. pp. 1–9. Association for Computing Machinery (2023).
+    https://doi.org/10.1145/3627631.3627639
+ 3. Cicchetti, G., Comminiello, D.: Naf-dpm: A nonlinear activation-free diffusion
+    probabilistic model for document enhancement. arXiv preprint arXiv:2404.05669
+    (2024)
+ 4. De, R., Chakraborty, A., Sarkar, R.: Document image binarization using dual dis-
+    criminator generative adversarial networks. IEEE Signal Processing Letters 27,
+    1090–1094 (2020). https://doi.org/10.1109/LSP.2020.3003828
+ 5. Deng, J., Dong, W., Socher, R., Li, L.J., Li, K., Fei-Fei, L.: Imagenet: A
+    large-scale hierarchical image database. In: Proceedings of the IEEE Con-
+    ference on Computer Vision and Pattern Recognition. pp. 248–255 (2009).
+    https://doi.org/10.1109/CVPR.2009.5206848
+ 6. Gatos, B., Ntirogiannis, K., Pratikakis, I.: Icdar 2009 document image bi-
+    narization contest (dibco 2009). In: Proceedings of the International Con-
+    ference on Document Analysis and Recognition. pp. 1375–1382 (2009).
+    https://doi.org/10.1109/ICDAR.2009.246
+ 7. Gatos, B., Pratikakis, I., Perantonis, S.J.: Adaptive degraded docu-
+    ment image binarization. Pattern Recognition 39(3), 317–327 (2006).
+    https://doi.org/10.1016/j.patcog.2005.09.010
+ 8. Gu, A., Dao, T.: Mamba: Linear-time sequence modeling with selective state
+    spaces. arXiv preprint arXiv:2312.00752 (2023)
+16      S.-W. Chan et al.
+
+ 9. Gu, A., Goel, K., Ré, C.: Efficiently modeling long sequences with structured state
+    spaces. In: International Conference on Learning Representations (2022)
+10. He, S., Schomaker, L.: Deepotsu: Document enhancement and binariza-
+    tion using iterative deep learning. Pattern Recognition 91, 379–390 (2019).
+    https://doi.org/10.1016/j.patcog.2019.01.025
+11. Ju, R.Y., Wong, K., Jin, Y., Chiang, J.S.: Mfe-gan: Efficient gan-based frame-
+    work for document image enhancement and binarization with multi-scale feature
+    extraction. arXiv preprint arXiv:2512.14114 (2025)
+12. Kervadec, H., Bouchtiba, J., Desrosiers, C., Granger, E., Dolz, J., Ayed, I.B.:
+    Boundary loss for highly unbalanced segmentation. In: International Conference
+    on Medical Imaging with Deep Learning. pp. 285–296 (2019)
+13. Liu, Y., Tian, Y., Zhao, Y., Yu, H., Xie, L., Wang, Y., Ye, Q., Jiao, J., Liu, Y.:
+    Vmamba: Visual state space model. In: Advances in Neural Information Processing
+    Systems. vol. 37 (2024)
+14. Liu, Z., Mao, H., Wu, C.Y., Feichtenhofer, C., Darrell, T., Xie, S.: A convnet for
+    the 2020s. In: Proceedings of the IEEE/CVF Conference on Computer Vision and
+    Pattern Recognition. pp. 11976–11986 (2022)
+15. Loshchilov, I., Hutter, F.: Decoupled weight decay regularization. In: International
+    Conference on Learning Representations (2019)
+16. Micikevicius, P., Narang, S., Alben, J., Diamos, G., Elsen, E., Garcia, D., Ginsburg,
+    B., Houston, M., Kuchaiev, O., Venkatesh, G., Wu, H.: Mixed precision training.
+    In: International Conference on Learning Representations (2018)
+17. Otsu, N.: A threshold selection method from gray-level histograms. IEEE
+    Transactions on Systems, Man, and Cybernetics 9(1), 62–66 (1979).
+    https://doi.org/10.1109/TSMC.1979.4310076
+18. Paszke, A., Gross, S., Massa, F., Lerer, A., Bradbury, J., Chanan, G., Killeen, T.,
+    Lin, Z., Gimelshein, N., Antiga, L., Desmaison, A., Kopf, A., Yang, E., DeVito, Z.,
+    Raison, M., Tejani, A., Chilamkurthy, S., Steiner, B., Fang, L., Bai, J., Chintala, S.:
+    Pytorch: An imperative style, high-performance deep learning library. In: Advances
+    in Neural Information Processing Systems. vol. 32, pp. 8024–8035 (2019)
+19. Pratikakis, I., Gatos, B., Ntirogiannis, K.: H-dibco 2010: Handwritten doc-
+    ument image binarization competition. In: Proceedings of the International
+    Conference on Frontiers in Handwriting Recognition. pp. 727–732 (2010).
+    https://doi.org/10.1109/ICFHR.2010.118
+20. Pratikakis, I., Zagoris, K., Barlas, G., Gatos, B.: Icdar 2013 document im-
+    age binarization contest (dibco 2013). In: Proceedings of the International
+    Conference on Document Analysis and Recognition. pp. 1471–1476 (2013).
+    https://doi.org/10.1109/ICDAR.2013.219
+21. Pratikakis, I., Zagoris, K., Barlas, G., Gatos, B.: Icdar 2017 competition on
+    document image binarization (dibco 2017). In: Proceedings of the Interna-
+    tional Conference on Document Analysis and Recognition. pp. 1395–1403 (2017).
+    https://doi.org/10.1109/ICDAR.2017.228
+22. Pratikakis, I., Zagoris, K., Kaddas, P., Gatos, B.: Icfhr 2018 competition on hand-
+    written document image binarization (h-dibco 2018). In: Proceedings of the Inter-
+    national Conference on Frontiers in Handwriting Recognition. pp. 489–493 (2018).
+    https://doi.org/10.1109/ICFHR-2018.2018.00091
+23. Salehi, S.S.M., Erdogmus, D., Gholipour, A.: Tversky loss function for image seg-
+    mentation using 3d fully convolutional deep networks. In: International Workshop
+    on Machine Learning in Medical Imaging. pp. 379–387. Springer (2017)
+                                DR-Mamba for Document Image Binarization              17
+
+24. Sauvola, J., Pietikainen, M.: Adaptive document image binarization. Pattern
+    Recognition 33(2), 225–236 (2000). https://doi.org/10.1016/S0031-3203(99)00055-
+    2
+25. Shit, S., Paetzold, J.C., Sekuboyina, A., Ezhov, I., Unger, A., Zhylka, A., Pluim,
+    J.P.W., Bauer, U., Menze, B.H.: cldice: A novel topology-preserving loss function
+    for tubular structure segmentation. In: Proceedings of the IEEE/CVF Conference
+    on Computer Vision and Pattern Recognition. pp. 16560–16569 (2021)
+26. Souibgui, M.A., Biswas, S., Jemni, S.K., Kessentini, Y., Fornés, A., Lladós, J.,
+    Pal, U.: Docentr: An end-to-end document image enhancement transformer. arXiv
+    preprint arXiv:2201.10252 (2022)
+27. Su, B., Lu, S., Tan, C.L.: A robust document image binarization technique for
+    degraded document images. IEEE Transactions on Image Processing 22(4), 1408–
+    1417 (2013). https://doi.org/10.1109/TIP.2012.2231089
+28. Tensmeyer, C., Martinez, T.: Document image binarization with fully
+    convolutional neural networks. In: Proceedings of the International Con-
+    ference on Document Analysis and Recognition. pp. 99–104 (2017).
+    https://doi.org/10.1109/ICDAR.2017.25
+29. Yang, M., Xu, S.: A novel degraded document binarization model through
+    vision transformer network. Information Fusion 93, 159–173 (2023).
+    https://doi.org/10.1016/j.inffus.2023.01.007
+30. Yang, Z., Liu, B., Xiong, Y., Yi, L., Wu, G., Tang, X., Liu, Z., Zhou, J., Zhang, X.:
+    Docdiff: Document enhancement via residual diffusion models. In: Proceedings of
+    the 31st ACM International Conference on Multimedia. Association for Computing
+    Machinery (2023). https://doi.org/10.1145/3581783.3611730
+31. Zhao, J., Shi, C., Jia, F., Wang, Y., Xiao, B.: Document image binarization with
+    cascaded generators of conditional generative adversarial networks. Pattern Recog-
+    nition 96, 106968 (2019). https://doi.org/10.1016/j.patcog.2019.106968
+32. Zhu, L., Liao, B., Zhang, Q., Wang, X., Liu, W., Wang, X.: Vision mamba: Efficient
+    visual representation learning with bidirectional state space model. In: Proceedings
+    of the International Conference on Machine Learning. pp. 62429–62442 (2024)
+

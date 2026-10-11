@@ -1,0 +1,235 @@
+{
+  "source_sha256": "6d1fa38a1ec6c56c67cf16a9b86cae2e00977079656fc5fc7be34a235fe777ab",
+  "settings": {
+    "purpose": "Stage 0/1 feasibility; known development; no accuracy test",
+    "median": 3,
+    "half_profile": 32,
+    "geometry_sigmas": [
+      2.0,
+      4.0,
+      8.0
+    ],
+    "geometry": "Hessian of min(log(R/G), log(R/B)); no v6 color/distance gate",
+    "min_ridge": 0.003,
+    "roi_grid": 16,
+    "max_roi_profiles": 160,
+    "anchor_grid": 24,
+    "max_anchor_profiles": 384,
+    "anchor_roi_exclusion_margin": 40,
+    "anchors": "Frozen v2 red & robust_seed; exclude all target ROIs plus 40px",
+    "anchor_split": "64px spatial tiles; (tile_x + 3 tile_y) % 4 == 0 held out",
+    "min_anchor_estimation": 12,
+    "min_anchor_confirmation": 4,
+    "anchor_direction": "Median nonnegative normalized Gaussian contrast vectors",
+    "spaces": [
+      "rgb_additive",
+      "encoded_od",
+      "linear_srgb_od"
+    ],
+    "ink_widths": [
+      1.5,
+      2.5,
+      4.0,
+      6.0,
+      9.0,
+      12.0
+    ],
+    "backgrounds": [
+      "linear",
+      "quadratic",
+      "soft_edge",
+      "sharp_edge",
+      "broad_spot"
+    ],
+    "crease_stress": [
+      "crease_4",
+      "crease_6",
+      "crease_12"
+    ],
+    "noise": "Flank first-difference MAD/sqrt(2), floor per color representation",
+    "noise_floors": {
+      "rgb_additive": 0.003,
+      "encoded_od": 0.005,
+      "linear_srgb_od": 0.01
+    },
+    "cv": "4 interleaved intensity folds; center geometry uses complete input",
+    "acceptable_mse": 4.0,
+    "near_best_mse": 0.25,
+    "amplitude_snr_gate": 1.0,
+    "scenarios": [
+      "restricted_background",
+      "colored_crease_allowed"
+    ],
+    "note": "Crease models are no-ink alternative explanations; simultaneous crease-plus-ink is not solved. Ranges cover evaluated fits only.",
+    "outputs": "Sampled locations and cross-sections, never a dense edit mask",
+    "insufficient_anchor_policy": "Unexplained; never borrow pigment from another page",
+    "pixel_GT": false,
+    "neural_training": false,
+    "pretrained_inference": false
+  },
+  "rois": [
+    [
+      "200021763_00002_2",
+      "long_tail",
+      [
+        200,
+        2020,
+        490,
+        450
+      ]
+    ],
+    [
+      "200021763_00002_2",
+      "upper_writing",
+      [
+        190,
+        1080,
+        520,
+        290
+      ]
+    ],
+    [
+      "200021086_00032_2",
+      "faint_stamp",
+      [
+        680,
+        620,
+        430,
+        330
+      ]
+    ],
+    [
+      "200010454_00002_2",
+      "near_seal_brown",
+      [
+        1655,
+        1810,
+        75,
+        195
+      ]
+    ],
+    [
+      "200010454_00002_2",
+      "remote_brown",
+      [
+        710,
+        200,
+        450,
+        330
+      ]
+    ]
+  ],
+  "cases": {
+    "200010454_00002_2": {
+      "id": "200010454_00002_2",
+      "original": "data/test/200010454/200010454_00002_2.jpg",
+      "book": "200010454",
+      "group": "initial_development",
+      "reference": "tmp_work/training_free_protection_v2_20260930/200010454_00002_2",
+      "color": "tmp_work/training_free_color_shape_20260930/200010454_00002_2",
+      "rois": [
+        {
+          "title": "茶色い汚れを赤文字と判定する例",
+          "xywh": [
+            710,
+            200,
+            450,
+            330
+          ],
+          "finding": "上部の茶色い汚れの一部がv1のACEあり条件で赤色になります。同じACEを使う改良v3と比較してください。"
+        },
+        {
+          "title": "本物の朱印と黒文字の重なり",
+          "xywh": [
+            1370,
+            1810,
+            360,
+            480
+          ],
+          "finding": "朱印の主要な線はv1で赤として分かれます。細線・薄い線の一部は青や黄にも分かれます。改良v3は茶色い汚れの赤誤検出を減らす一方、この朱印でも黄色へ移る部分が増えます。"
+        },
+        {
+          "title": "右側の細い筆画",
+          "xywh": [
+            1290,
+            600,
+            280,
+            600
+          ],
+          "finding": "左側の薄いループ状の筆画は、v1のACEなし・あり、改良v3でも主に黄に入ります。ACEで線が見やすくなっても、黒文字マスクの欠損は残る例です。"
+        }
+      ]
+    },
+    "200021086_00032_2": {
+      "id": "200021086_00032_2",
+      "original": "data/train/200021086/200021086_00032_2.jpg",
+      "book": "200021086",
+      "group": "positive_development",
+      "reference": "tmp_work/red_positive_fixed_check_20260930/refined/200021086_00032_2",
+      "color": "tmp_work/red_positive_fixed_check_20260930/color/200021086_00032_2",
+      "rois": [
+        {
+          "title": "低コントラストの印影",
+          "xywh": [
+            570,
+            350,
+            650,
+            1100
+          ]
+        }
+      ]
+    },
+    "200021763_00002_2": {
+      "id": "200021763_00002_2",
+      "original": "data/train/200021763/200021763_00002_2.jpg",
+      "book": "200021763",
+      "group": "positive_development",
+      "reference": "tmp_work/red_positive_fixed_check_20260930/refined/200021763_00002_2",
+      "color": "tmp_work/red_positive_fixed_check_20260930/color/200021763_00002_2",
+      "rois": [
+        {
+          "title": "上側の赤褐色筆記",
+          "xywh": [
+            190,
+            580,
+            520,
+            800
+          ]
+        },
+        {
+          "title": "下側の赤褐色筆記と細線",
+          "xywh": [
+            190,
+            1280,
+            560,
+            1260
+          ]
+        }
+      ]
+    }
+  },
+  "dependencies": {
+    "tmp_work/warm_ink_hold_v6_20260930/candidate_freeze.json": "2ed7f5bec639009039946a3548291697b4353a793c5148c3484a44683313b5b0",
+    "tmp_work/warm_ink_hold_v6_20260930/manifest.json": "1064fc55b1c1a7f3236ab020d0d7bef3c9f4b8daf5fe6c1a3b162e597359dddf",
+    "tmp_work/warm_ink_hold_v6_20260930/complete.json": "b8891f080eed52f9dc53cfe48713206e8767fdd46cead507ca5edeac972f33c5",
+    "data/test/200010454/200010454_00002_2.jpg": "177776f90fc08b12e2f59a37773ef433556f43ebe47c503c2d676595a08a60d1",
+    "tmp_work/warm_ink_hold_v6_20260930/200010454_00002_2/original.png": "8805a59128a05467722bd0f0cdb1a133c2983c278b8d239bdb6cbf958a141900",
+    "tmp_work/warm_ink_hold_v6_20260930/200010454_00002_2/split_direction_edit_allowed.png": "d07a0a4ae214999fb1a291b27683134271e3558b59746ffc922d527758aaa14c",
+    "tmp_work/training_free_protection_v2_20260930/200010454_00002_2/red.png": "2558f3bbe4691d1c4a7c502fd4068d8f576ac7660bfd1a14764059381626c0af",
+    "tmp_work/training_free_protection_v2_20260930/200010454_00002_2/robust_seed.png": "812f224fdccf009703a6bdeab6cf7b01310c1b57909014f3c3bb52dd727774aa",
+    "tmp_work/training_free_protection_v2_20260930/200010454_00002_2/edit_allowed.png": "dbb6a7c410b99643cd504c870ca46e16dcfeab0ef2f0211d1eb0b5230a901d14",
+    "data/train/200021086/200021086_00032_2.jpg": "26214bf730b542def243debc71ee34aadba790cc4773e1326fdff1aff7c45ba6",
+    "tmp_work/warm_ink_hold_v6_20260930/200021086_00032_2/original.png": "4eaca5a9238432e4f566adb883aabe36c11af38f82820beec963de1de1269bb4",
+    "tmp_work/warm_ink_hold_v6_20260930/200021086_00032_2/split_direction_edit_allowed.png": "ffc2f5c59f875e0d61be6dc5191eba1f14d4d5b6b0cc772d40af534f730476c1",
+    "tmp_work/red_positive_fixed_check_20260930/refined/200021086_00032_2/red.png": "4aa50cbbe2e92d9926376dc58b00f1fd204137c845924297213daa76996cb3a4",
+    "tmp_work/red_positive_fixed_check_20260930/refined/200021086_00032_2/robust_seed.png": "5c301cdc5d53132406685f3f611285b51e0cb1357eb03bfd8f15ae75c2aeba31",
+    "tmp_work/red_positive_fixed_check_20260930/refined/200021086_00032_2/edit_allowed.png": "195fb71892bf20009be12fde31d0d46465c86570c91bcb23a13ba39c828685b3",
+    "data/train/200021763/200021763_00002_2.jpg": "44631919294b4cde57c2cfa8f669ac2648fa855a2f204e25629c115f5b986313",
+    "tmp_work/warm_ink_hold_v6_20260930/200021763_00002_2/original.png": "2309c24a7e5d08526dc002e1761640a0dbd36a58b9757a525d239f6992b84f19",
+    "tmp_work/warm_ink_hold_v6_20260930/200021763_00002_2/split_direction_edit_allowed.png": "3194573de8d653eaf9befd632c1102beb590e813a9b18389f3184004f8c68bde",
+    "tmp_work/red_positive_fixed_check_20260930/refined/200021763_00002_2/red.png": "f908314a5eb4a14148bc5f02cad9519817f7e1ed04f295a47c0154d27c8c3348",
+    "tmp_work/red_positive_fixed_check_20260930/refined/200021763_00002_2/robust_seed.png": "43ca8833a480c929d7e07639f4ea95017bd8f68850431c51e7e9b3af19ef3923",
+    "tmp_work/red_positive_fixed_check_20260930/refined/200021763_00002_2/edit_allowed.png": "7af0e1a27e119fe5b902f84a1e428f353dcdc00cb1cfe0db2e78e5ffb14ddc59"
+  },
+  "stage": "Protocol before method output"
+}

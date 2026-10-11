@@ -1,0 +1,36 @@
+{
+  "status": "passed",
+  "pages": 3,
+  "regions": 12,
+  "all_unapplied_pixels_original": true,
+  "all_nonreference_poison_cases": [
+    {
+      "id": "fresh_page_edge",
+      "mode": "npj"
+    },
+    {
+      "id": "fresh_margin_flecks",
+      "mode": "npj"
+    },
+    {
+      "id": "fresh_blank_margin",
+      "mode": "npj"
+    },
+    {
+      "id": "fresh_small_top_trace",
+      "mode": "npj"
+    },
+    {
+      "id": "fresh_red_seal",
+      "mode": "npj"
+    },
+    {
+      "id": "fresh_blank_top",
+      "mode": "npj"
+    }
+  ],
+  "outside_edit_changed_pixels": 0,
+  "frozen_paper_restorer": true,
+  "DDRM": false,
+  "pixel_GT": false
+}

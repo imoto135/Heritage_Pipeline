@@ -1,0 +1,125 @@
+{
+  "cases": [
+    {
+      "split": "test",
+      "book": "200018243",
+      "page": "200018243_00003_2",
+      "original": "data/split_dataset/test/200018243/200018243_00003_2.jpg",
+      "ace": "data/split_dataset_csc/test/200018243/200018243_00003_2.jpg",
+      "npj_input": "data/split_dataset_csc_mask/test/200018243/200018243_00003_2/00_input.png",
+      "npj_black": "data/split_dataset_csc_mask/test/200018243/200018243_00003_2/02_text_black.png",
+      "npj_red": "data/split_dataset_csc_mask/test/200018243/200018243_00003_2/03_text_red.png",
+      "npj_degradation": "data/split_dataset_csc_mask/test/200018243/200018243_00003_2/04_degradation.png",
+      "npj_background": "data/split_dataset_csc_mask/test/200018243/200018243_00003_2/05_background.png",
+      "review_status": "thumbnail_reviewed",
+      "failure_type": "",
+      "roi_xywh": "",
+      "v6_status": "",
+      "observation": "",
+      "id": "oldfull_upper_band",
+      "input": "tmp_work/full_page_compare/input/200018243_00003_2.jpg",
+      "box": [
+        0,
+        0,
+        2073,
+        3203
+      ],
+      "saved_npj": "tmp_work/full_page_compare/ddrm_v1true_out/200018243_00003_2/result/200018243_00003_2.png",
+      "baseline_label": "保存npj：v1true・ページ出力",
+      "roles": "tmp_work/npj_ridge_saved_oldfull_20261004/classification/v6_masks/200018243_00003_2",
+      "regions": [
+        {
+          "id": "old_05_page_faint_left",
+          "title": "左列の薄い筆画",
+          "xywh": [
+            170,
+            700,
+            235,
+            450
+          ]
+        },
+        {
+          "id": "old_06_page_faint_middle",
+          "title": "中央列の細い筆画",
+          "xywh": [
+            760,
+            1870,
+            220,
+            480
+          ]
+        },
+        {
+          "id": "old_07_page_dense_control",
+          "title": "右列の濃い筆画の対照",
+          "xywh": [
+            1510,
+            1650,
+            300,
+            440
+          ]
+        },
+        {
+          "id": "old_08_page_long_stroke",
+          "title": "左寄りの長い細線",
+          "xywh": [
+            440,
+            1850,
+            240,
+            650
+          ]
+        }
+      ],
+      "illustration": false,
+      "input_reference_exact": true,
+      "shape": [
+        3203,
+        2073,
+        3
+      ],
+      "xywh": [
+        1100,
+        300,
+        768,
+        768
+      ],
+      "role": "saved_black_frame_band_and_writing_control",
+      "rois": [],
+      "contains_illustration": false,
+      "new_page_for_ridge": false
+    }
+  ],
+  "dependencies": {
+    "data/split_dataset/test/200018243/200018243_00003_2.jpg": "f1c8c26fea64d9511c462b9776198eadbf3481793b0e4ed397e9ba58aca45e6d",
+    "tmp_work/full_page_compare/input/200018243_00003_2.jpg": "f1c8c26fea64d9511c462b9776198eadbf3481793b0e4ed397e9ba58aca45e6d",
+    "tmp_work/full_page_compare/ddrm_v1true_out/200018243_00003_2/result/200018243_00003_2.png": "e8dfd431b073d2e43702955ed5cd565e70f90b7d58f92e47e756eb0d4c0c3acc",
+    "data/split_dataset_csc_mask/test/200018243/200018243_00003_2/03_text_red.png": "dddd1d0785437af2c087767f116fb193de2c890bc94d085ac7f74541c3b245ec",
+    "tmp_work/saved_npj_inference_v6_pilot_20261002/native/full_page/edit.png": "1cfa19d850c41163c46206a1e395344fa5fec18f5d9a57ce9ea54c0d5761f95b",
+    "tmp_work/saved_npj_inference_v6_pilot_20261002/native/full_page/protect.png": "16a39b3c31486b20ec64969be203f1ac95830e83d00f9d603b79b067506311f8",
+    "tmp_work/saved_npj_inference_v6_pilot_20261002/native/full_page/hold.png": "1b7d21ed98d0f33f7bc4b6e6a16b2b848b4755f42b39aca7cf1cb5d77b7d6363",
+    "tmp_work/saved_npj_inference_v6_pilot_20261002/native/full_page/red.png": "a98cec0f78632a09a2fc7a190ab76ee0f38b99301623fbe2294de40642e42f24",
+    "tmp_work/saved_npj_inference_v6_pilot_20261002/native/full_page/extra.png": "a98cec0f78632a09a2fc7a190ab76ee0f38b99301623fbe2294de40642e42f24",
+    "scripts/benchmark/probe_npj_contact_dirt_guard.py": "7004bcb56800204e7c98aa9ec6f311630dbbe06149bd577aa5cbdcc9609d2dce",
+    "scripts/benchmark/probe_npj_contact_dirt_guard_v2.py": "3a78fe1f0750464edf276b35a1233f92f3fa092f8ddde61b2f17429e9236e19e",
+    "scripts/benchmark/probe_npj_colour_independent_ridge_guard.py": "3bcabc05592967becf0f38f05f96b00c0eee472adce7dd3e02789fb25de37ef7",
+    "scripts/benchmark/probe_npj_full_page_layout.py": "16a4b655a899c31a237ceadff1130bcb9e0772a6d5493448f8dca806b1a71bd2",
+    "scripts/benchmark/probe_npj_full_page_layout_v4.py": "c93c2c401d9019af1a6b8e33c0c2ac49b965086466f07f1cd5073bd42a7376b5",
+    "scripts/benchmark/probe_npj_dirt_clean_reference.py": "d5fc8578d35e863e62c9b574257762fa6737297b2b17bd006405ba607fd771fe",
+    "tmp_work/npj_colour_independent_ridge_20261004/complete.json": "0f3fda4bf092cecef61c3f143ad26d6bf68bcdc152228f58a95f3521f7d273fb",
+    "tmp_work/bt_200018243_00002_2/run_4patterns.sh": "27522be89e6da5642908d10c9b4ab039af2f64e83acdb29a4908cf482f6c531e",
+    "tmp_work/bt_200018243_00002_2/log_ddrm_extref.txt": "614ff1cc64a9b103cf661bbbeac5d0ac0afc375161dfbb06c7a56778ac031fdf",
+    "tmp_work/npj_ridge_saved_oldfull_20261004/source_snapshot.py": "08b48eb8cd9b012da773361d35430d2116bc4530146fd316b292ef1f7579d044"
+  },
+  "selection_before_policy_output": true,
+  "all_actual_saved_full_page_outputs": true,
+  "all_actual_inputs_match_original": true,
+  "no_new_diffusion_inference": true,
+  "one_new_page_three_known_pages": true,
+  "new_books": 0,
+  "pixel_GT": false,
+  "adopted": false,
+  "novelty": "New page for this fixed ridge policy plus new ranges in known pages; prior studies may include them",
+  "excluded_sources": {
+    "trial_run": "actual input differs from original",
+    "fidelity_pilot": "different masks/recipe and synthetic intensity variants; not pooled with these actual saved baselines"
+  }
+}

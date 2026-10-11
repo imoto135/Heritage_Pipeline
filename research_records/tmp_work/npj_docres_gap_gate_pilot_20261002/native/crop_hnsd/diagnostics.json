@@ -1,0 +1,220 @@
+{
+  "frame": "crop_hnsd",
+  "probability_source": "matched_docres",
+  "components": [
+    {
+      "id": 23,
+      "xywh": [
+        538,
+        8,
+        12,
+        10
+      ],
+      "pixels": 45,
+      "anchor_components": [
+        6,
+        9
+      ],
+      "accepted": true,
+      "docres_mean_ink_probability": 0.21009932888878716,
+      "selected_05": false,
+      "selected_09": false
+    },
+    {
+      "id": 28,
+      "xywh": [
+        357,
+        10,
+        9,
+        6
+      ],
+      "pixels": 21,
+      "anchor_components": [
+        4,
+        7
+      ],
+      "accepted": true,
+      "docres_mean_ink_probability": 0.06665383350281488,
+      "selected_05": false,
+      "selected_09": false
+    },
+    {
+      "id": 584,
+      "xywh": [
+        328,
+        140,
+        3,
+        5
+      ],
+      "pixels": 6,
+      "anchor_components": [
+        57,
+        60
+      ],
+      "accepted": true,
+      "docres_mean_ink_probability": 0.4500967264175415,
+      "selected_05": false,
+      "selected_09": false
+    },
+    {
+      "id": 851,
+      "xywh": [
+        364,
+        206,
+        4,
+        5
+      ],
+      "pixels": 7,
+      "anchor_components": [
+        73,
+        76
+      ],
+      "accepted": true,
+      "docres_mean_ink_probability": 0.33736986773354666,
+      "selected_05": false,
+      "selected_09": false
+    },
+    {
+      "id": 939,
+      "xywh": [
+        430,
+        227,
+        5,
+        3
+      ],
+      "pixels": 6,
+      "anchor_components": [
+        70,
+        72
+      ],
+      "accepted": true,
+      "docres_mean_ink_probability": 0.08222175637880962,
+      "selected_05": false,
+      "selected_09": false
+    },
+    {
+      "id": 1076,
+      "xywh": [
+        451,
+        256,
+        5,
+        8
+      ],
+      "pixels": 15,
+      "anchor_components": [
+        72,
+        124
+      ],
+      "accepted": true,
+      "docres_mean_ink_probability": 0.09884269634882609,
+      "selected_05": false,
+      "selected_09": false
+    },
+    {
+      "id": 1228,
+      "xywh": [
+        602,
+        309,
+        6,
+        2
+      ],
+      "pixels": 10,
+      "anchor_components": [
+        177,
+        183
+      ],
+      "accepted": true,
+      "docres_mean_ink_probability": 0.11515451073646546,
+      "selected_05": false,
+      "selected_09": false
+    },
+    {
+      "id": 1238,
+      "xywh": [
+        489,
+        310,
+        2,
+        1
+      ],
+      "pixels": 2,
+      "anchor_components": [
+        174,
+        193
+      ],
+      "accepted": true,
+      "docres_mean_ink_probability": 0.007994681596755981,
+      "selected_05": false,
+      "selected_09": false
+    },
+    {
+      "id": 1247,
+      "xywh": [
+        255,
+        314,
+        1,
+        4
+      ],
+      "pixels": 4,
+      "anchor_components": [
+        185,
+        197
+      ],
+      "accepted": true,
+      "docres_mean_ink_probability": 1.9758939743041992e-05,
+      "selected_05": false,
+      "selected_09": false
+    },
+    {
+      "id": 1383,
+      "xywh": [
+        515,
+        403,
+        3,
+        2
+      ],
+      "pixels": 4,
+      "anchor_components": [
+        328,
+        342
+      ],
+      "accepted": true,
+      "docres_mean_ink_probability": 0.00013247132301330566,
+      "selected_05": false,
+      "selected_09": false
+    },
+    {
+      "id": 1564,
+      "xywh": [
+        228,
+        481,
+        2,
+        2
+      ],
+      "pixels": 2,
+      "anchor_components": [
+        442,
+        452
+      ],
+      "accepted": true,
+      "docres_mean_ink_probability": 3.3020973205566406e-05,
+      "selected_05": false,
+      "selected_09": false
+    }
+  ],
+  "counts": {
+    "ungated": 122,
+    "gate_05": 0,
+    "gate_09": 0,
+    "docres_ink": 42796,
+    "old_protection_disagreement": 57710,
+    "red": 0,
+    "hold": 3313,
+    "extra": 0,
+    "protect": 108757
+  },
+  "changed_pixels": {
+    "ungated_output": 122,
+    "gate_05_output": 0,
+    "gate_09_output": 0
+  }
+}

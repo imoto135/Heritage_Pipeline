@@ -1,0 +1,123 @@
+{
+  "cases": [
+    {
+      "id": "N01",
+      "original": "data/split_dataset/test/200010454/200010454_00003_2.jpg",
+      "roi_xywh": [
+        428,
+        347,
+        190,
+        220
+      ],
+      "saved_v2": "data/split_dataset_csc_mask_v2/test/200010454/200010454_00003_2/02_text_black.png",
+      "saved_sauvola": "tmp_work/npj_contact_research_20261007/full_followup/B/masks/sauvola/200010454_00003_2/02_text_black.png",
+      "reason": "細い曲線と円形シミ：線の連続性とシミの誤検出",
+      "source_sha256": "67c1f8a762d442015f420a34512119163c3e4cb06307bb75567d086f119a246f",
+      "page_size": [
+        1768,
+        2383
+      ],
+      "saved_v1": "data/split_dataset_csc_mask/test/200010454/200010454_00003_2/02_text_black.png"
+    },
+    {
+      "id": "T01",
+      "original": "data/split_dataset/train/hnsd00000/hnsd007_023.jpg",
+      "roi_xywh": [
+        812,
+        421,
+        450,
+        450
+      ],
+      "saved_v2": "data/split_dataset_csc_mask_v2/train/hnsd00000/hnsd007_023/02_text_black.png",
+      "saved_sauvola": "tmp_work/npj_contact_research_20261007/full_page/masks/sauvola/hnsd007_023/02_text_black.png",
+      "reason": "広いシミと本文：筆画の欠落・太り・紙面ノイズ",
+      "source_sha256": "41999e5b52d17e60ea068c9b629ffcce037dc27fcbb3a4f45f46a5063d7b22af",
+      "page_size": [
+        1860,
+        2843
+      ],
+      "saved_v1": "data/split_dataset_csc_mask/train/hnsd00000/hnsd007_023/02_text_black.png"
+    },
+    {
+      "id": "N05",
+      "original": "data/split_dataset/test/200010454/200010454_00021_1.jpg",
+      "roi_xywh": [
+        1019,
+        1617,
+        640,
+        580
+      ],
+      "reason": "利用者指定で拡大局所比較を見直し、複数の文字を含む広い範囲へ変更",
+      "source_sha256": "cc0e546948bc14c4f68849aede4a5c02453aabe55d3a3c5c14aa3a1e536aacae",
+      "page_size": [
+        1777,
+        2365
+      ],
+      "prior_roi_xywh": [
+        1329,
+        1757,
+        280,
+        380
+      ],
+      "saved_v2": "data/split_dataset_csc_mask_v2/test/200010454/200010454_00021_1/02_text_black.png",
+      "saved_v1": "data/split_dataset_csc_mask/test/200010454/200010454_00021_1/02_text_black.png"
+    }
+  ],
+  "main_order": [
+    "original",
+    "wolf61",
+    "csc_v2",
+    "sauvola61"
+  ],
+  "main_order_per_case": {
+    "N01": [
+      "original",
+      "wolf61",
+      "csc_v2",
+      "sauvola61"
+    ],
+    "T01": [
+      "original",
+      "wolf61",
+      "csc_v2",
+      "sauvola61",
+      "csc_v1"
+    ],
+    "N05": [
+      "original",
+      "wolf61",
+      "csc_v2",
+      "sauvola61"
+    ]
+  },
+  "csc": "Saved local CSC v2 black masks, with ACE input path; previous v1 also in T01 main comparison and separate reference sheets.",
+  "unchanged_parameters": true,
+  "new_inference": false,
+  "note": "N05 ROI widened only for viewing; source full-page masks unchanged. No quality ranking inferred from pixel counts.",
+  "source_sha256": {
+    "data/split_dataset/test/200010454/200010454_00003_2.jpg": "67c1f8a762d442015f420a34512119163c3e4cb06307bb75567d086f119a246f",
+    "data/split_dataset_csc_mask_v2/test/200010454/200010454_00003_2/02_text_black.png": "9104a04197ee3b78edaadaf0a6d66f6bf039717a94e6cbe3db29a6cdf3b79730",
+    "data/split_dataset_csc_mask/test/200010454/200010454_00003_2/02_text_black.png": "eb9912c62c766975e8752c156536a577d1ae0ee1f5ec7e12647c0a7cda677cd4",
+    "tmp_work/classical_black_comparison_20261008/masks/N01/wolf61.png": "954c7ffdf5715dc38aa687fba4f889ce3995855c9c0e1d137d78fc28522db097",
+    "tmp_work/classical_black_comparison_20261008/masks/N01/sauvola61.png": "03c98cfcd10b35067835806f7de26e4f9668b5bc65efd995f99fe40f3599ced1",
+    "tmp_work/classical_black_comparison_20261008/masks/N01/nick61.png": "347ab48372a64db36fc6571d7ec58f262b4f856405cece668df4a833881eaa8b",
+    "tmp_work/classical_black_comparison_20261008/masks/N01/gatos_native.png": "910a296c330b142ae7b07f559452605ceed605682fecf90c12a359193e1ba084",
+    "tmp_work/classical_black_comparison_20261008/masks/N01/su2013_local.png": "8de96d8ba6ec61dfaabb67a15d25fc3a420182d4b2d46987d8e2b2890c12ea49",
+    "data/split_dataset/train/hnsd00000/hnsd007_023.jpg": "41999e5b52d17e60ea068c9b629ffcce037dc27fcbb3a4f45f46a5063d7b22af",
+    "data/split_dataset_csc_mask_v2/train/hnsd00000/hnsd007_023/02_text_black.png": "b96834418ece51c159af9b19fecbc4c33fdad718fb07d9997dc3f5a5db8a3609",
+    "data/split_dataset_csc_mask/train/hnsd00000/hnsd007_023/02_text_black.png": "ebd3b3ef4557fe0523ab6cd3bcebfa120f8a7f196672d815f0b3533fda922309",
+    "tmp_work/classical_black_comparison_20261008/masks/T01/wolf61.png": "0d76c4e6def59fa2f1e981f7d22dd8f0833e0d1bb5ab4881add198971b2645e1",
+    "tmp_work/classical_black_comparison_20261008/masks/T01/sauvola61.png": "9f2eefd2eca3afd3467456bfdb26b6f74374a0a872bf5eff50b54dd132e55428",
+    "tmp_work/classical_black_comparison_20261008/masks/T01/nick61.png": "323213cf0c3a31bb246d7ed1be0b7ec155a18eadbb7bcd62982628cac66979f0",
+    "tmp_work/classical_black_comparison_20261008/masks/T01/gatos_native.png": "f235c53c3f15031d463d332a8a6549ecb8cd8925e558bcd65674804a9eaa012e",
+    "tmp_work/classical_black_comparison_20261008/masks/T01/su2013_local.png": "bfebbfe4214a60167bd5366077b4241a0bb1a2f7b32fa7b3e92dfb3aaa57e4f4",
+    "data/split_dataset/test/200010454/200010454_00021_1.jpg": "cc0e546948bc14c4f68849aede4a5c02453aabe55d3a3c5c14aa3a1e536aacae",
+    "data/split_dataset_csc_mask_v2/test/200010454/200010454_00021_1/02_text_black.png": "8edcbee8d80e017a96075c7e9dd8ae822addb2af3d0a7101706c57216cd39cf2",
+    "data/split_dataset_csc_mask/test/200010454/200010454_00021_1/02_text_black.png": "aa2db671384fb23470d28ca4cc8804cc320cc1bfb45f6d75bddb393f977301d5",
+    "tmp_work/classical_black_comparison_20261008/masks/N05/wolf61.png": "18ff18cc9a5299ef873f5786fb99072b126dfc42bba3ee7ccca487572ec078ba",
+    "tmp_work/classical_black_comparison_20261008/masks/N05/sauvola61.png": "a33722f7efff6d0124c408516cb7e250b4b70ac40d3ee38370c227eb8c137785",
+    "tmp_work/classical_black_comparison_20261008/masks/N05/nick61.png": "e1f6ee071ac58ad75dc2989312b501c6f1b95c8b1bfdadff79eb2530a05d32c5",
+    "tmp_work/classical_black_comparison_20261008/masks/N05/gatos_native.png": "d236f9cdcec8e9b0572c94fc7230086dac2c0bf3962b362f055e5acf49eb0d97",
+    "tmp_work/classical_black_comparison_20261008/masks/N05/su2013_local.png": "bd2b3265e8981ac1be144542293f8e8c2c481cca7ebff1fe7c6dedbcea1106b7"
+  }
+}

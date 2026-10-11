@@ -1,0 +1,49 @@
+{
+  "dependencies": {
+    "tmp_work/npj_literature_models_20261002/repos/StainRestorer/models/StainRestorer.py": "d12181917d63a80bda21fa6a938baad561748b3b086478761eab0a67d5dba11a",
+    "tmp_work/npj_literature_models_20261002/weights/StainDoc.pth": "7cdbd674367535d4f429ef077030b930da2a460012fe8fc44d995ead2f7418ee",
+    "scripts/benchmark/audit_stainrestorer_colour.py": "6f03812768e8b802bbe04c14b75b8e8a614023ec867425bc9fef470e7167e196",
+    "scripts/benchmark/run_npj_literature_models.py": "1fb608304a989abdcc367d434dd2b7fd77cb953e73de6f634730479bc11fde41",
+    "scripts/benchmark/package_saved_npj_role_separated_review.py": "53e9e94b29143a675c99846eca32da9862795378db2a137224a6b47a7e4cf85a",
+    "tmp_work/npj_literature_trial_20261002/stain/complete.json": "5726ca17744d540d767f765d22def74709deb98d7292a3e0470134664a77cfbd",
+    "tmp_work/npj_literature_trial_20261002/selection_complete.json": "4dc93c9d07d4c1fe0a4a843376f89eb2b2b5ebdb13bd43a2b579005b00134756",
+    "tmp_work/npj_literature_models_20261002/repos/StainRestorer/data/dataset_RGB.py": "68be999c7fc9ae2dd6af4710b78464356e4946e8b7886b2cab1090f0347f8d8c",
+    "tmp_work/npj_literature_models_20261002/repos/StainRestorer/config.yml": "f54c509783732121d646500d69905df3508aafb78a9103b025ccf6ce4b5ac141"
+  },
+  "cases": [
+    [
+      "known_200010454_v2",
+      [
+        1370,
+        1880,
+        256,
+        256
+      ],
+      "朱印と紙面"
+    ],
+    [
+      "old_upper_crop",
+      [
+        140,
+        244,
+        256,
+        256
+      ],
+      "細い筆画と茶色い紙面"
+    ],
+    [
+      "crop_hnsd",
+      [
+        170,
+        300,
+        256,
+        256
+      ],
+      "枠線と暗い紙面"
+    ]
+  ],
+  "source_snapshot": true,
+  "question": "channel/display issue versus model-induced colour",
+  "no_colour_correction": true,
+  "checkpoint_unchanged": true
+}

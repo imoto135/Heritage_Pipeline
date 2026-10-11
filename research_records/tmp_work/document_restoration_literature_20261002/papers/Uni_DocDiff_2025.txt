@@ -1,0 +1,838 @@
+                                          Uni-DocDiff: A Unified Document Restoration Model Based on
+                                                                   Diffusion
+                                                          Fangmin Zhao                                      Weichao Zeng                                    Zhenhang Li
+                                                   zhaofangmin@iie.ac.cn                              weichaozeng22@gmail.com                          zli74@binghamton.edu
+                                            Institute of Information Engineering,                Institute of Information Engineering,                 Binghamton University
+                                                Chinese Academy of Sciences                          Chinese Academy of Sciences                           Binghamton, US
+                                            School of Cyber Security, University                             Beijing, China
+                                              of Chinese Academy of Sciences
+                                                        Beijing, China
+
+                                                          Dongbao Yang                                          Binbin Li∗                                    Xiaojun Bi
+arXiv:2508.04055v1 [cs.CV] 6 Aug 2025
+
+
+
+
+                                                   yangdongbao@iie.ac.cn                                   libinbin@iie.ac.cn                         bixiaojun@hrbeu.edu.cn
+                                            Institute of Information Engineering,                Institute of Information Engineering,               Minzu University of China
+                                                Chinese Academy of Sciences                          Chinese Academy of Sciences                           Beijing, China
+                                                        Beijing, China                                       Beijing, China
+
+                                                                                                                Yu Zhou∗
+                                                                                                       yzhou@nankai.edu.cn
+                                                                                                 VCIP & TMCC & DISSec, College of
+                                                                                                 Computer Science, Nankai University
+                                                                                                           Tianjin, China
+                                        Abstract                                                                       CCS Concepts
+                                        Removing various degradations from damaged documents greatly                   • Computing methodologies → Image processing; Recon-
+                                        benefits digitization, downstream document analysis, and readabil-             struction.
+                                        ity. Previous methods often treat each restoration task indepen-
+                                        dently with dedicated models, leading to a cumbersome and highly               Keywords
+                                        complex document processing system. Although recent studies                    image processing, document image restoration, all-in-one model,
+                                        attempt to unify multiple tasks, they often suffer from limited scala-         diffusion model
+                                        bility due to handcrafted prompts and heavy preprocessing, and fail
+                                        to fully exploit inter-task synergy within a shared architecture. To           ACM Reference Format:
+                                                                                                                       Fangmin Zhao, Weichao Zeng, Zhenhang Li, Dongbao Yang, Binbin Li, Xi-
+                                        address the aforementioned challenges, we propose Uni-DocDiff, a
+                                                                                                                       aojun Bi, and Yu Zhou. 2025. Uni-DocDiff: A Unified Document Restoration
+                                        Unified and highly scalable Document restoration model based on
+                                                                                                                       Model Based on Diffusion. In Proceedings of the 33rd ACM International Con-
+                                        Diffusion. Uni-DocDiff develops a learnable task prompt design,                ference on Multimedia (MM ’25), October 27–31, 2025, Dublin, Ireland. ACM,
+                                        ensuring exceptional scalability across diverse tasks. To further              New York, NY, USA, 10 pages. https://doi.org/10.1145/3746027.3755362
+                                        enhance its multi-task capabilities and address potential task inter-
+                                        ference, we devise a novel Prior Pool, a simple yet comprehensive
+                                                                                                                       1     Introduction
+                                        mechanism that combines both local high-frequency features and
+                                        global low-frequency features. Additionally, we design the Prior               Document images often suffer from various degradations, including
+                                        Fusion Module (PFM), which enables the model to adaptively                     deformations, handwritten traces, uneven illumination, and other
+                                        select the most relevant prior information for each specific task. Ex-         capturing issues. This not only significantly impacts the users’ read-
+                                        tensive experiments show that the versatile Uni-DocDiff achieves               ing experience but also hinders the performance of downstream
+                                        performance comparable or even superior performance compared                   document analysis [50, 51, 70], recognition [48, 64, 76] and spotting
+                                        with task-specific expert models, and simultaneously holds the task            [20, 33, 60] systems, as most of these systems are trained on clean,
+                                        scalability for seamless adaptation to new tasks.                              scanned documents. Consequently, a multitude of approaches have
+                                                                                                                       been proposed to tackle individual degradations, such as dewarping
+                                        ∗ Binbin Li and Yu Zhou are the corresponding authors.
+                                                                                                                       [10, 36, 52, 56, 63], deblurring [37, 38], deshadowing [25, 28, 74],
+                                                                                                                       illumination rectification [13, 61, 72], binarization [2, 65], and hand-
+                                                                                                                       writting removal [16, 23, 58]. However, these single-task models
+                                        This work is licensed under a Creative Commons Attribution-NonCommercial 4.0   exhibit insufficient generalizability when faced with real-world
+                                        International License.                                                         multi-degradation documents.
+                                        MM ’25, Dublin, Ireland                                                            The recently proposed DocRes [73] marks a significant advance-
+                                        © 2025 Copyright held by the owner/author(s).
+                                        ACM ISBN 979-8-4007-2035-2/2025/10                                             ment in the development of a unified method for document restora-
+                                        https://doi.org/10.1145/3746027.3755362                                        tion, demonstrating impressive performance across various tasks.
+MM ’25, October 27–31, 2025, Dublin, Ireland                                                                                                                                                                                               Zhao et al.
+
+
+
+
+  Input
+
+
+
+
+    GT
+
+
+
+
+   Ours
+
+
+
+                            Deblurring                             Deshadowing                                                                       Illumination                  Binarization           Handwriting            Dewarping
+                                                                                                                                                     Rectification                                         Removal
+
+Figure 1: Examples of our proposed Uni-DocDiff on tasks including deblurring, deshadowing, illumination recitification,
+binarization, handwriting removal and dewarping. It is capable of effectively handling multiple tasks..
+
+                deblurring binarization hw removal deshadowing illu-rec                                                                                                       as the edges of text; binarization perceives high-frequency fea-
+                                                                              Perception Restoration Process Reconstruction
+
+
+
+
+ degraded                                                                                                                                                                     tures to determine the strokes of the text; and handwriting removal
+ document
+                                                                                                                                                                              uses high-frequency features to simultaneously extract printed
+                                                                                                                                    deshadowing               deblurring
+                                                               Global Light                                                                                                   text and handwritten script, then further distinguishes between
+                Text Edge   Text Edge Text Edge Global Light
+                                                                                                                                                                              them, thereby removing the handwritten script while preserving
+ task-related
+    prior                                                                                                                                                                     the printed text. On the other hand, deshadowing constructs global
+                                                                                                                                                           hw removal
+                                                                                                                                                                              low-frequency content such as background illumination. In con-
+                                                                                                                                                                              trast, illumination rectification perceives low-frequency feature
+  restored
+ document                                                                                                                                                                     and eliminates it. As a result, integrating these tasks into a sin-
+                                                                                                                                     illu-rec                 binarization
+                                                                                                                              Low                                      High
+                                                                                                                                                                              gle model can lead to interference during training, especially due
+                                                                                                                                           Frequency Domain
+                                      (a)                                                                                                            (b)
+                                                                                                                                                                              to differences in gradient updates. This can hinder model stabil-
+                                                                                                                                                                              ity and convergence, ultimately leading to performance that falls
+Figure 2: Each task has different focuses on feature. Zoom                                                                                                                    short of specialized, task-specific models. This presents a significant
+in to view. (a) Visualization of the features focused upon                                                                                                                    challenge when aiming for unified restoration solutions.
+by different tasks. (b) Different tasks focus on respective                                                                                                                       To address this issue, we propose a simple yet effective solution:
+frequency-domain features at different restoration stages.                                                                                                                    a Prior Pool that stores task-specific prior features, along with a
+                                                                                                                                                                              Prior Fusion Module (PFM) that enables the model to adaptively
+                                                                                                                                                                              select and emphasize the most relevant features from the Prior
+                                                                                                                                                                              Pool. By integrating these selected prior features with the shared
+Nonetheless, its reliance on meticulously crafted prompts con-                                                                                                                document features across multiple tasks, our approach minimizes
+strains its scalability to adapt to new types of image degradations                                                                                                           task interference and enhances overall performance.
+without extensive retraining. Additionally, the interactions and                                                                                                                  Due to the "regression to the mean" inherent in regression meth-
+sharing mechanisms between tasks have not been explored.                                                                                                                      ods [73], restored text edges often appear blurred or damaged. Con-
+   In fact, different tasks share similar or opposite feature focus                                                                                                           sidering the ability of diffusion models [14, 26, 53, 68] to gener-
+during the restoration process. As shown in Fig. 2 (a), deblurring,                                                                                                           ate high-quality images and high-frequency details, we propose a
+binarization, and handwriting removal focus on high-frequency                                                                                                                 unified document restoration model based on diffusion. However,
+features, whereas deshadowing and illumination rectification em-                                                                                                              dewarping differs from tasks for pixel restoration. For dewarping,
+phasize low-frequency features. Specifically, as shown in Fig. 2                                                                                                              it is unnecessary to reconstruct high-frequency details iteratively.
+(b), deblurring requires constructing high-frequency details such                                                                                                             A simple decoder can efficiently achieve the desired results without
+Uni-DocDiff: A Unified Document Restoration Model Based on Diffusion                                    MM ’25, October 27–31, 2025, Dublin, Ireland
+
+
+                          × 𝑇𝑇                                          2.2    All-in-one image restoration
+                                                                        DocRes [73] is the only notable work on unified document image
+                                                         S
+                                                                        restoration. It proposes DTSPrompt to distinguish tasks and incor-
+                                                                        porate priors, marking a successful step toward unified restoration.
+                                                                        In contrast, unified models for natural scenes are more diverse,
+                             Coord Dec                                  covering deraining, dehazing, deblurring, and beyond.
+                                                                           Blind image restoration [19, 27, 41] is often applied in scenarios
+                                                                        such as weather conditions removal tasks. However, for document
+     Figure 3: Schematic illustration of our Uni-DocDiff.               images restoration, similar inputs might require different outputs,
+                                                                        such as deshadowing and illumination rectification, which can
+                                                                        lead to confusion between tasks, failing to accomplish specific
+                                                                        restoration. Task-aware unified image restoration often requires
+wasting resources. Therefore, we decouple the coordinate space
+                                                                        additional prompts to guide the model in handling different types
+from the pixel space and propose a dual-stream Uni-DocDiff, as
+                                                                        of degradation, including learnable prompts, visual prompts, or text
+shown in Fig. 3, which learns the coexisting components, reduces
+                                                                        prompts. ProRes [34] uses learnable prompts, adding task-specific
+interference between tasks, and lowers the learning cost.
+                                                                        prompts to the input image before feeding it into the restoration
+   Our key contributions are summarized as follows:
+                                                                        network. PromptGIP[31] employs a distorted-clean image pair as
+     • We propose a Unified Document image restoration model            visual prompts, enabling the model to perceive the distortion type.
+       based on Diffusion, called Uni-DocDiff. To the best of our       During the training process, a random portion of patches is masked
+       knowledge, this is the first unified document restoration        and then restored. Works such as SPIRE [47], DiffPlugin [32], and
+       model to apply diffusion models in document processing.          InstructIR [4] utilize text prompt, encode user instructions to extract
+     • We design a simple yet comprehensive Prior Pool that in-         intent and feed it into the diffusion model to guide the generation
+       cludes low-level local texture information and high-level        process.
+       global semantic information and introduce a Prior Fusion            Despite the notable progress of existing unified image restoration
+       Module to eliminate task interference.                           methods in natural scenes, their performance [34, 41] still lags
+     • Extensive experiments demonstrate that Uni-Docdiff achieves      behind that of task-specific models. Moreover, unified restoration
+       superior performance compared to task-specific restoration       for document scenes still lacks exploration. Therefore, we proposes
+       models and exhibits excellent task scalability, a capability     Uni-DocDiff to fill this research gap.
+       that existing methods have not achieved.
+
+                                                                        3 Methodology
+2 Related Work
+                                                                        3.1 Overview
+2.1 Document Image Restoration
+                                                                        Given a specified degradation type, Uni-DocDiff aims to trans-
+In real-world scenarios, document images frequently suffer from         form the degraded image 𝑥𝑑 ∈ R𝐻 ×𝑊 ×3 into a restored image
+various degradation. Numerous methods focusing on individual            𝑥𝑟 ∈ R𝐻 ×𝑊 ×3 . Fig. 4 shows the overall architecture of Uni-DocDiff,
+degradation types. Dewarping methods[8, 10, 21, 22, 30, 36, 56, 75]     a dual-stream model comprising a Coordinate Prediction Branch
+focus on addressing geometric distortion predicting the coordinate      (CPB) for dewarping and a Pixel Prediction Branch (PPB) for other
+mapping between distorted documents and flat documents. For             restoration tasks. The CPB predicts a sparse backward map 𝑓𝑏𝑚 , rep-
+deshadowing, BEDSR-Net [28] predicts global background and en-          resenting coordinate positions of reference points in the flattened
+codes shadow position as an attention map. FSENet [25] utilizes         image. And the PPB performs task-specific pixel-wise restoration.
+low-frequency details and high-frequency edges to handle high-             To enhance performance across diverse restoration tasks, Uni-
+resolution document shadows. For illumination rectification, GC-        DocDiff incorporates a designed Prior Pool. Through the learnable
+DRNet [72] sequentially learns global content and recovers details.     Prior Fusion Module (PFM), the model adaptively assigns task-
+UDoc-GAN [61] improves upon CycleGAN [77] to train with un-             relevant and content-based prior weights, effectively handling vari-
+paired data. SVDocNet [37] combines CNN and RNN for deblurring,         ous restoration challenges while mitigating inter-task interference.
+while DocDiff [66] utilizes diffusion to generate high-frequency        The following subsections detail: (1) the PPB branch, including the
+residual details. EnsExam [16] introduces a soft stroke mask and        model architecture, Prior Pool design, and PFM structure; (2) the
+MSFF-Net [23] extracts multi-scale feature to erase handwritten text.   CPB branch; and (3) the training pipeline.
+For binarization, GDB [65] extracts high-frequency prior, providing
+additional prior. DocBinFormer[2] utilizes a two-level Transformer
+to extract local and global features.                                   3.2    Pixel Prediction Branch
+   Some methods [5, 9, 24] sequentially address dewarping and illu-     PPB uses a diffusion model as its backbone and constructs Prior
+mination rectification. Tang et al. [55] adopt a dual-stream network    Pool and PFM to provide priors and differentiate tasks, respectively.
+to handle geometry and lighting separately, while DocNLC [59]           We will introduce these components in detail below.
+uses contrastive learning for unified restoration. Though multi-task,      Denoiser F . Similar to mainstream diffusion models [49], our
+these approaches remain limited in task diversity and real-world        denoiser F is a image-conditional diffusion model. It includes mul-
+generalization.                                                         tiple residual convolutional blocks [3] and employs skip connection
+MM ’25, October 27–31, 2025, Dublin, Ireland                                                                                                                                                                                                                     Zhao et al.
+
+
+
+                                    CPB                                                                                                                                                                                        (a) Prior Pool Generator
+                                                                                                                                                                                                                  Canny         X sobel                     Y sobel
+       Degraded
+                                                  Coord
+                                     C             Dec                                                                S                                                                            high
+                                                                                                                                                                                𝑥𝑥𝑑𝑑               freq
+
+
+                                                                                                                                                                                                                  Median       Guassian                      DCT
+                                    Enc
+
+
+
+
+                                                        Downsampling
+
+
+
+
+                                                                                         Downsampling
+
+
+
+
+                                                                                                                           Downsampling
+
+
+
+
+                                                                                                                                                            Downsampling
+                                                                       Res Block
+                                      Res Block
+
+
+
+
+                                                                                                        Res Block
+
+
+
+
+                                                                                                                                          Res Block
+                                                                                                                                                                                                   low
+                                                                                                                                                                                                   freq
+
+
+                                                                                                                                                                                                                                                 (b) Res Block
+
+
+
+
+                                                                                                                                                            × 𝑇𝑇
+
+
+
+
+                                                                                                                                                                                                                                               SimpleGate
+                                                                                                                                                                                                     SimpleGate
+
+
+
+
+                                                                                                                                                                                                                                  LayerNorm
+                                                                                                                                                                                       LayerNorm
+                                    PPB
+
+
+
+
+                                                                                                                                                                                                                    SCA
+                                                                                                                           Upsampling
+                                                        Upsampling
+
+
+
+
+                                                                                         Upsampling
+
+
+
+
+                                                                                                                                                            Upsampling
+                                      Res Block
+
+
+
+
+                                                                                                        Res Block
+
+
+
+
+                                                                                                                                          Res Block
+                                                                       Res Block
+                                                  PFM
+
+
+
+
+                                                                                   PFM
+
+
+
+
+                                                                                                                     PFM
+
+
+
+
+                                                                                                                                                      PFM
+                            𝑥𝑥�𝑟𝑟                                                                                                                                                                                                                            (c) PFM
+                                                                                                                                                                           task                     Linear            *        Pool
+
+
+
+
+                                                                                                                                                                                                                                                                   Res Block
+                                                                                                        C       Inter-channel Concatenation
+                                                                                                                                                                           P                             Conv                                  +             C
+                                                                                                        + Element-wise Addition
+       Prior Pool                                                                                                                                                           F
+                                                                                                        *           Element-wise Multiplication                                                     GAP               Linear       *          Pool
+       Generator
+                                                                                                        S           Sample
+
+
+Figure 4: An overview of the proposed Uni-DocDiff, which contains a diffusion-based pixel prediction branch and a light-weight
+coordinate prediction branch.
+
+
+operations to increase the retention of information. To save com-                                                                                      we propose a simple yet comprehensive Prior Pool Generator, as
+putational costs, we only incorporate the transformer structure in                                                                                     shown in the Fig. 4, these priors 𝑃 consist of a series of features
+the middle block. During the forward process, we randomly sample                                                                                       that have the same resolution as the original image. Specifically,
+a time step 𝑡 ∼ 𝑈 𝑛𝑖 𝑓 𝑜𝑟𝑚(0,𝑇𝑚𝑎𝑥 ) to noise the clean GT image 𝑥 0                                                                                    we utilize simple, convenient, and time-efficient traditional image
+and obtain the noised image 𝑥𝑡 , as follows:                                                                                                           feature extraction operators to obtain the high-frequency and low-
+                           √︁         √︁                                                                                                               frequency features of the distorted images. For the extraction of
+                      𝑥𝑡 = 𝛼 𝑡 𝑥 0 + 1 − 𝛼 𝑡 𝜖𝑡                     (1)                                                                                high-frequency features, we employ the Sobel operator to compute
+                                                    Î𝑡
+where 𝛼𝑡 is a hyperparameter, 𝛼 0 = 1, and 𝛼 𝑡 = 𝑖=0 𝛼𝑖 .                                                                                              the first-order derivative images in both horizontal and vertical
+                                                                                                                                                       directions, while the Canny operator is utilized to capture edge fea-
+   Then we concatenate the noised image 𝑥𝑡 ∼ R3×𝐻 ×𝑊 and the de-
+                                                                                                                                                       tures from the images. It is well-known that Sobel-based images are
+graded image 𝑥𝑑 ∼ R3×𝐻 ×𝑊 in channel dimension as a 6-channel
+                                                                                                                                                       highly sensitive to noise, whereas Canny-based images are prone to
+input. As detailed in DocDiff[66], for the target of model prediction,
+                                                                                                                                                       information loss due to improper threshold selection. By combining
+while predicting noise 𝜖 and predicting 𝑥 0 are equivalent in the case
+                                                                                                                                                       these two approaches, the model can achieve a more comprehen-
+of unconditional generation, predicting 𝑥 0 tends to reduce diver-
+                                                                                                                                                       sive understanding and reconstruction of high-frequency features,
+sity but can enhance generation quality for conditional generation.
+                                                                                                                                                       including document edges and text boundaries, thereby enhanc-
+Therefore, we opt to predict 𝑥 0 . Consequently, the inference process
+                                                                                                                                                       ing its overall performance in feature perception. For handling
+we employ can be formulated as follows:
+                                                                                                                                                       low-frequency features, median filtering is applied to remove salt-
+                          𝑥ˆ0 = F (𝑥𝑡 ; 𝑥𝑑 , 𝑡𝑎𝑠𝑘, 𝑃)                                                                        (2)                       and-pepper noise and sparse text pixels from the images. We also
+  Here, 𝑡𝑎𝑠𝑘 refers to the current task being processed, and 𝑃                                                                                         use Gaussian filtering to generate a smoothly continuous back-
+denotes the Prior Pool generated based on the distorted image 𝑥𝑑 .                                                                                     ground illumination map. Moreover, by employing the Discrete
+And the reverse denoising process is:                                                                                                                  Cosine Transform (DCT), crucial low-frequency components and
+                                                                                                                                                       local texture edge features are retained. This methodology enables
+                                                   √
+                     √︁          √︁          𝑥𝑡 − 𝛼 𝑡 𝑥ˆ0                                                                                              the model to estimate and reconstruct background illumination
+            𝑥𝑡 −1 = 𝛼 𝑡 −1𝑥ˆ0 + 1 − 𝛼 𝑡 −1 · √                    (3)                                                                                  with greater accuracy, thereby enhancing its capacity to faithfully
+                                                 1 − 𝛼𝑡
+                                                                                                                                                       represent the image’s critical attributes.
+   Prior Pool. In order to alleviate the mutual interference between
+tasks and ensure the restoration performance of all-in-one models,
+Uni-DocDiff: A Unified Document Restoration Model Based on Diffusion                                                                   MM ’25, October 27–31, 2025, Dublin, Ireland
+
+
+    PFM. To enable the model to fully leverage the information                         Feature Extraction            Feature Fusion               Decode             Sample
+
+contained in the Prior Pool 𝑃, and to adaptively select relevant                                                                            Dilated
+features based on the task characteristics and the reconstruction                                                                            Conv
+                                                                                                       𝑓𝑓 1                                 Dilated
+                                                                                                                    AAP        𝑓𝑓𝑐𝑐1
+phase, we propose a novel Prior Fusion Module. PFM is strategi-                                                                              Conv
+
+cally positioned between Res Block and the Upsampling Block,                                           𝑓𝑓 2
+                                                                                                                                            Dilated
+                                                                                                                    AAP        𝑓𝑓𝑐𝑐2         Conv          Conv
+allowing the model to dynamically assess the importance of the                                                                         C    Dilated        Block                 S
+                                                                                                       𝑓𝑓 3                                  Conv
+Prior Pool according to the stage of reconstruction. Its primary                                                    AAP        𝑓𝑓𝑐𝑐3
+
+
+
+
+                                                                                      Enc
+                                                                                                                                                                   interpolate
+                                                                                                                                            Dilated
+structure is illustrated in the lower right of the Fig. 4. Specifically,                              𝑓𝑓 4          AAP        𝑓𝑓𝑐𝑐4
+                                                                                                                                             Conv
+
+we leverage the image features 𝑓 𝑙 ∈ Rℎ𝑙 ×𝑤𝑙 ×𝑐𝑙 , 𝑡𝑎𝑠𝑘, and Prior                                                                          Dilated
+                                                                                                                                             Conv
+Pool 𝑃 ∈ R𝐻 ×𝑊 ×𝐶 at each stage to derive task-specific recon-
+                       𝑙
+struction features 𝑓𝑟𝑒𝑐𝑜𝑛   ∈ Rℎ𝑙 ×𝑤𝑙 ×𝑐𝑙 , where ℎ𝑙 , 𝑤𝑙 , 𝑐𝑙 refer to the
+                                                                                              Figure 5: Structure Diagram of the CPB.
+height, width, and number of channels of the image features at the
+𝑙-th stage of the reconstruction process and 𝑙 ∈ {1, 2, 3, 4}. Firstly,
+to enable the 𝑃 to adapt to the feature distributions at different             different dilation rates to process 𝑓𝑐 , with dilation rates of 1, 2, 5, [8,
+stages of reconstruction, we first construct multiple layers of resid-         3, 2], [12, 7, 4], and [18, 12, 6], respectively, obtaining degradation-
+ual convolutional layers. This processing yields a refined prior               aware features 𝑓𝑑𝑖 , 𝑖 ∈ {1, 2, 3, 4, 5, 6} with varying receptive fields.
+𝑃 𝑙 = 𝐶𝑜𝑛𝑣 (𝑃), 𝑃 𝑙 ∈ Rℎ𝑙 ×𝑤𝑙 ×𝑐𝑙 , which aligns with the feature distri-      𝑓𝑑𝑖 is concatenated and a simple three-layer convolutional module
+bution specific to each stage. Subsequently, a Global Average Pool-            is subsequently applied to produces the final sparse control point
+ing (GAP) operation followed by multiple linear layers is applied              matrix (i.e., the backward map or 𝑏𝑚. The 𝑏𝑚 matrix is then upsam-
+to process 𝑓 𝑙 , yielding content-specific weights 𝑤𝑐𝑜𝑛𝑡𝑒𝑛𝑡𝑙         ∈ R𝑐𝑙 ,   pled to the original image resolution and used to sample from the
+and several linear layers are applied to process 𝑡𝑎𝑠𝑘 to obtain task-          distorted image, thereby generating a flattened document image.
+                     𝑙
+specific weights 𝑤𝑡𝑎𝑠𝑘    ∈ R𝑐𝑙 :                                              The procedure can be formulated as:
+
+           𝑙
+          𝑤𝑡𝑎𝑠𝑘                𝑙
+                = 𝑀𝐿𝑃 (𝑡𝑎𝑠𝑘), 𝑤𝑐𝑜𝑛𝑡𝑒𝑛𝑡 = 𝑀𝐿𝑃 (𝐺𝐴𝑃 (𝑓 𝑙 ))               (4)                  𝑓𝑐𝑙 = 𝐴𝐴𝑃 (𝑓 𝑙 )
+
+   Then these two weights are individually multiplied with 𝑃 𝑙 to ob-                         𝑓𝑐 = 𝐶𝑜𝑛𝑐𝑎𝑡 (𝑓𝑐1, 𝑓𝑐2, 𝑓𝑐3, 𝑓𝑐4 )
+                              𝑙                                 𝑙                                                                                                                    (6)
+tain content-specific priors 𝑃𝑐𝑜𝑛𝑡𝑒𝑛𝑡 and task-specific priors 𝑃𝑡𝑎𝑠𝑘 .                       𝑓𝑑𝑖 = 𝐷𝑖𝑙𝑎𝑡𝑒𝐶𝑜𝑛𝑣𝐵𝑙𝑜𝑐𝑘𝑖 (𝑓𝑐 )
+                                                         𝑙
+These priors are then summed and concatenated with 𝑓 along the                          𝑏𝑚 = 𝐶𝑜𝑛𝑣𝐵𝑙𝑜𝑐𝑘 (𝐶𝑜𝑛𝑐𝑎𝑡 (𝑓𝑑1, 𝑓𝑑2, 𝑓𝑑3, 𝑓𝑑4, 𝑓𝑑5, 𝑓𝑑6 ))
+channel dimension, and then is fed into the subsequent Res Block
+                                             𝑙                                    Through this design, we achieve high-quality image pixel restora-
+to obtain the final reconstructed features 𝑓𝑟𝑒𝑐𝑜𝑛 :
+                                                                               tion as well as efficient and straightforward image geometry de-
+            𝑙                                                                  warping.
+          𝑓𝑟𝑒𝑐𝑜𝑛 = 𝑅𝑒𝑠𝐵𝑙𝑜𝑐𝑘 (𝐶𝑜𝑛𝑐𝑎𝑡 (𝑓 𝑙 , 𝑃𝑡𝑎𝑠𝑘
+                                            𝑙       𝑙
+                                                 + 𝑃𝑐𝑜𝑛𝑡𝑒𝑛𝑡 ))          (5)
+   Therefore, the localization of interactions between features 𝐹 ,            3.4    Training Pipeline
+tasks 𝑇 , and the prior pool 𝑃 exclusively within the PFM archi-               Our training pipeline consists of two stages:
+tecture enhances task flexibility and scalability. When integrating               Stage 1 primarily focuses on the training of the Encoder and
+novel tasks, the diffusion backbone can be frozen to preserve estab-           PPB, thereby handling multiple restoration tasks, including bina-
+lished knowledge, necessitating training solely for the PFM. This              rization, deblurring, deshadowing, illumination rectification, and
+approach significantly reduces training complexity. Furthermore,               handwriting removal. We design loss functions based on the specific
+the trainability of PFM enables selective modification of the Prior            characteristics of each task, including the 𝐿1 loss between the pre-
+Pool according to specific characteristics of emerging tasks, thereby          dicted image and the reference image, as well as a frequency-aware
+facilitating optimal performance and adaptability.                             loss. For deshadowing and illumination rectification, we design a
+                                                                               low-frequency-aware loss L𝑙𝑜𝑤 𝑓 𝑟𝑒𝑞 . And for deblurring, binariza-
+3.3     Coordinate Prediction Branch                                           tion and handwriting removal, we design a high-frequency-aware
+Since the output space for coordinate prediction does not require              loss Lℎ𝑖𝑔ℎ𝑓 𝑟𝑒𝑞 :
+multiple iterations of the diffusion model to achieve high-frequency                                          L𝑙𝑜𝑤 𝑓 𝑟𝑒𝑞 = E ∥𝜙 L (𝑥ˆ0 ) − 𝜙 L (𝑥 0 ) ∥
+perception, and numerous studies [1] have demonstrated the ex-                                                                                                                       (7)
+cellent feature extraction capabilities of diffusion model encoders,                                        Lℎ𝑖𝑔ℎ𝑓 𝑟𝑒𝑞 = E ∥𝜙 H (𝑥ˆ0 ) − 𝜙 H (𝑥 0 ) ∥
+we construct a dual-stream architecture. The specific structure is               where 𝜙 L is the low-pass filter and 𝜙 H is the high-pass filter. The
+illustrated in the Fig. 5.                                                     overall loss for the two types of tasks can be expressed as L𝑙𝑜𝑤
+    Specifically, the image is processed through the Encoder to ex-            and Lℎ𝑖𝑔ℎ :
+tract multi-scale features 𝑓 𝑙 , 𝑙 ∈ {1, 2, 3, 4}. These features are then
+subjected to Adaptive Average Pooling (AAP) to obtain fixed-size                                            L𝑙𝑜𝑤 = E ∥𝑥ˆ0 − 𝑥 0 ∥ + 𝛽 1 L𝑙𝑜𝑤 𝑓 𝑟𝑒𝑞
+                                                                                                                                               (8)
+feature maps 𝑓𝑐𝑙 , facilitating subsequent multi-scale feature fusion                           Lℎ𝑖𝑔ℎ = E ∥𝑥ˆ0 − 𝑥 0 ∥ + 𝛽 2 Lℎ𝑖𝑔ℎ𝑓 𝑟𝑒𝑞
+and model localization. 𝑓𝑐𝑙 are concatenated along the channel di-                𝛽 1 and 𝛽 2 are hyperparameters used to control the numerical
+mension to form fused coordinate prediction features 𝑓𝑐 . Inspired             magnitude of the loss functions for different tasks, ensuring they
+by the DDCP[63], we construct six dilated convolution blocks with              are close to each other.
+MM ’25, October 27–31, 2025, Dublin, Ireland                                                                                                                   Zhao et al.
+
+
+Table 1: Quantitative comparison results between our Uni-DocDiff model and existing task-specific and previous unified
+state-of-the-art models on various tasks. The tasks, from top to bottom, are: deblurring, deshadowing, illumination rectification,
+dewarping, binarization, and handwriting removal. “↑” and “↓” signifies higher and lower better respectively. The best results
+are represented in bold and the second-best results are underlined. “*” indicates that we use the DocUNet dataset dewarped by
+the DocAligner model for evaluation. The same applies to the tables below.
+
+                            DE-GAN[54] DocDiff[66] BGSNet[74] DocShadow[25] GCDRNet[72] UDoc-GAN[61] UVDoc[56] DocGeo[10] GDB[65] EnsExam[16] CTRNet [29] DocRes[73] Ours
+  Metrics     Datasets
+                             TPAMI’20    MM’23      CVPR’23      ICCV’23      TAI’23       MM’22     SIGGRAPH’23 ECCV’22   PR’24   ICDAR’23    ECCV’22     CVPR’24
+  SSIM ↑                      0.9226     0.9559       -           -            -            -            -          -         -         -          -        0.9723   0.9824
+              TDD[15]
+  PSNR ↑                      22.24       24.00       -           -            -            -            -          -         -         -          -         27.35   28.77
+                                -           -       0.9094      0.9005         -            -            -          -         -         -          -        0.9089   0.9156
+             Jung’s[17]
+                                -           -        17.34       21.05         -            -            -          -         -         -          -        23.02    23.93
+  SSIM ↑                        -           -       0.9480      0.9088         -            -            -          -         -         -          -        0.9005   0.9382
+            Kligler’s[18]
+  PSNR ↑                        -           -       29.17        25.12         -            -            -          -         -         -          -         27.14    28.56
+                                -           -       0.9487      0.9018         -            -            -          -         -         -          -        0.9394   0.9532
+              OSR[18]
+                                -           -       22.31        18.25         -            -            -          -         -         -          -         19.17    21.48
+                                -           -         -           -          0.7658       0.6833         -          -         -         -          -        0.7598   0.7682
+            DocUNet*[36]
+  SSIM ↑                        -           -         -           -          17.09         14.29         -          -         -         -          -        17.60    18.22
+  PSNR ↑                        -           -         -           -          0.9423       0.7558         -          -         -         -          -        0.9219   0.9485
+            RealDAE[72]
+                                -           -         -           -          24.42         16.43         -          -         -         -          -        24.65    24.97
+ MSSSIM ↑                       -           -         -           -            -            -          0.6216     0.6380      -         -          -        0.6264   0.6573
+   LD ↓      DIR300[10]         -           -         -           -            -            -           7.73       6.40       -         -          -         6.83     5.30
+  AD ↓                          -           -         -           -            -            -          0.218      0.242       -         -          -        0.241    0.203
+   FM ↑                         -         88.11       -           -            -            -            -          -       91.09       -          -        89.82    90.32
+  pFM ↑     DIBCO’18[45]        -         90.43       -           -            -            -            -          -       94.57       -          -        94.33    93.84
+  PSNR ↑                        -         17.92       -           -            -            -            -          -       19.92       -          -        19.35    19.76
+ MSSSIM ↑                       -           -         -           -            -            -            -          -         -      0.9659      0.9671       -      0.9685
+            EnsExam[16]
+  PSNR ↑                        -           -         -           -            -            -            -          -         -      36.05        35.68       -      36.23
+
+
+
+   Stage 2 focuses on training the CPB. Due to the training in the                           For Binarization, we collect the datasets from DIBCO(09-17) [11,
+first stage, the Encoder is equipment with the ability to extract                         40, 42–44], DIBCO’19[46], the Noisy Office Dataset [69], MSI [12],
+features. Therefore, we freeze the parameters of the Encoder and                          PHIBD [39], and Bickley Diary Dataset [7] as the training set, and
+utilize the dewarping dataset to train the CPB branch. The loss                           use DIBCO2018 [45] as the test set.
+function L𝑐 is:                                                                              For Handwriting Removal, the data used for training originates
+                                                                                          from the Handwritten Erasure Competition dataset and the En-
+                               L𝑐 = E 𝑏𝑚 − 𝑏𝑚𝑔𝑡                                (9)        sExam [16] training set, comprising a total of 26,895 images. For
+                                                                                          testing, we utilize the EnsExam test set, which consists of 115 im-
+   Through the two-stage training, our model has achieved the                             ages.
+capability to handle multiple restoration tasks while also possessing
+the ability to add new tasks at a low cost.                                               4.2      Evaluation Metrics
+                                                                                          Deblurring, deshadowing and illumination rectification use PSNR
+4 Experiment                                                                              and SSIM as evaluation metrics. To facilitate comparison, similar to
+4.1 Datasets                                                                              previous methods, the dewarping task uses multi-scale structural
+For Dewarping, the Doc3D dataset [5], which contains 100,000 syn-                         similarity (MS-SSIM) [67], Local Distortion (LD) [62], and Align
+thetic images, and UVDoc dataset [56], which contains 20K syn-                            Distortion (AD) [35] as evaluation metrics. Specifically, MS-SSIM is
+thetic images, are used for training. For testing, the DocUNet [36]                       the weighted sum of SSIM values computed over an image pyramid
+and DIR300 [10] are utilized, comprising 130 and 300 real-world                           at different resolutions. LD utilizes SIFT flow for dense image regis-
+images, respectively.                                                                     tration between two images, measuring the average deformation
+   For Deblurring, following DocRes [73], we randomly sample 40K                          of each pixel. AD enhances MS-SSIM through unified translation
+images for training from the Text Deblur Dataset (TDD) [15], and                          and scaling operations while alleviating LD errors using image
+1.6K images are selected for evaluation.                                                  gradients as weighting factors. For the binarization task, we adopt
+   For Deshadowing, we use SD7K [25] and the training set from                            PSNR, F-measure (FM), and pseudo F-measure (pFM) for evaluation.
+RDD [74] for deshadowing training. FSDSRD and the training sets                           For handwriting removal, we continue to use the most commonly
+of RDD contain 14,200 synthetic images and 4,916 real images,                             employed metrics, MS-SSIM and PSNR.
+respectively. Jung’s dataset [17], Kligler’s dataset [18] and OSR [57]
+are utilized for testing, with 87, 300, 237 images, respectively.                         4.3      Implementation details
+   For Illumination Rectification, for training, we synthesize a dataset                  During the Stage 1 training, we crop the images into 256×256
+by combining illumination images from DocShade [6] with collected                         patches, adopt an AdamW optimizer with an initial learning rate of
+clean document images, and include 450 real images from the Real-                         10 −4 , and a weight decay of 5 × 10 −4 for 200,000 iterations. For the
+DAE training set. For testing, we utilize the RealDAE test set and                        weights of the loss function, 𝛽 1 is set to 1 and 𝛽 2 to 0.1. For the Stage
+the DocUNet model after dewarping by DocAligner [71].                                     2 training, to enable the model to handle images of various sizes
+Uni-DocDiff: A Unified Document Restoration Model Based on Diffusion                                                   MM ’25, October 27–31, 2025, Dublin, Ireland
+
+
+
+                                                                  Illumination                                     Handwriting
+                Deblurring              Deshadowing               Rectification        Binarization                 Removal                       Dewarping
+
+
+  Input
+
+
+
+
+   GT
+
+
+
+
+  Ours
+
+
+
+
+  Input
+
+
+
+
+   GT
+
+
+
+
+  Ours
+
+
+
+Figure 6: The visualization of Uni-DocDiff’s results on the six tasks. Each pair of adjacent images represents the original
+degraded image, GT images and the restored image, respectively.
+
+
+during inference, we randomly resize the images to sizes between                  Table 2: Ablation study about Prior Pool, PFM and frequency-
+256 and 1024 pixels for training and an AdamW optimizer with                      aware Loss. The tasks, listed from top to bottom, are deblur-
+an initial learning rate of 10 −4 and a weight decay of 5 × 10 −4 for             ring, deshadowing, illu-rec, dewarping, handwriting removal
+100,000 iterations.                                                               and binarization.
+
+                                                                                     Metrics   Datasets    w/o Prior Pool w/o PFM w/o Freq-aware Loss Uni-DocDiff
+4.4     Result
+                                                                                     SSIM ↑                   0.9502      0.9275         0.9794          0.9824
+We conduct a comprehensive quantitative comparison across multi-                                 TDD
+                                                                                     PSNR ↑                    23.59       21.37          27.63           28.77
+ple tasks, against both the current state-of-the-art task-specific mod-                                       0.9090      0.9038         0.9082          0.9156
+                                                                                                Jung’s
+els and the existing unified restoration model, DocRes, as shown                     SSIM ↑                    22.36       20.57          23.04           23.93
+                                                                                     PSNR ↑                   0.9034      0.8907         0.9280          0.9382
+                                                                                               Kligler’s
+in Tab. 1. The results show that our method achieves the best per-                                             24.26       23.54          28.16           28.56
+formance on the majority of datasets and metrics, including all                                DocUNet
+                                                                                                              0.7513      0.7455         0.7661          0.7682
+                                                                                     SSIM ↑                    16.77       16.16          17.11           18.22
+metrics on the TDD, DocUNet, RealDAE, DIR300, Jung’s Dataset,                        PSNR ↑                   0.9273      0.9121         0.9419          0.9485
+                                                                                               RealDAE
+and EnsExam datasets. In addition, we achieve the second-best                                                  23.54       21.65          24.76           24.97
+results on the SSIM and PSNR for the Kligler dataset, as well as                    MSSSIM ↑                  0.6331      0.6228         0.6591          0.6573
+                                                                                      LD ↓      DIR300          5.45        6.43           5.39            5.30
+on the FM and PSNR metrics for the DIBCO’18 dataset. This fully                      AD ↓                      0.207       0.228          0.202           0.203
+demonstrates the effectiveness of our method and its capability to                   SSIM ↑                   0.9308      0.9299         0.9556          0.9685
+                                                                                               EnsExam
+handle multiple tasks.                                                               PSNR ↑                    32.46       27.50          34.32           36.23
+   As shown in Fig. 6, we present the visualization results of the Uni-               FM ↑                     86.31       89.39          89.80          90.32
+                                                                                     pFM ↑     DIBCO’18        91.59      0.9250         0.9314          93.84
+DocDiff model across six tasks. Uni-DocDiff effectively addresses                    PSNR ↑                    17.59       19.30          19.33          19.76
+the given task requirements, successfully removing degradation
+while preserving the original layout and character shapes, thus
+delivering high-quality results that meet the desired standards.
+MM ’25, October 27–31, 2025, Dublin, Ireland                                                                                            Zhao et al.
+
+
+
+
+                                                                                 input    w/o AAP   with AAP       input    w/o AAP   with AAP
+
+
+                                                                            Figure 8: Visualization of the dewarping effects with and
+                                                                            without AAP.
+
+                   (a)                                  (b)
+
+
+
+Figure 7: Analysis of Inter-Task Interactions During Train-
+                                                                               Task scalability. In evaluating task scalability, we conduct a com-
+ing. The X-axis represents the number of training steps. We
+                                                                            parative analysis between our method and DocRes [73]. Our ex-
+conduct both deblurring task and joint deblurring & deshad-
+                                                                            perimental approach involved initially training models on five doc-
+owing tasks, with and without the Prior Pool.
+                                                                            ument restoration tasks, excluding handwriting removal. Subse-
+                                                                            quently, we froze all parameters except for the Prompt Feature
+                                                                            Module (PFM) and train specifically on handwriting removal task.
+         Table 3: Ablation study about task scalability.
+                                                                            For the DocRes baseline, we implement a multi-layer convolutional
+                                                                            architecture to generate visual prompts for handwriting removal,
+                     Metrics      MSSSIM ↑     PSNR ↑                       which are then concatenated with input images and processed by
+                     DocRes         0.8886     22.79                        the restoration network. During this phase, we maintain frozen
+                      Ours          0.9502     32.75                        parameters in the restoration network while exclusively training
+                                                                            the prompt generator. The quantitative results presented in Tab.
+                                                                            3 demonstrate that our method exhibits superior task scalability
+                                                                            compared to DocRes.
+Additionally, our model demonstrates exceptional discriminative
+capabilities. As shown in Fig. 6, in the illumination rectification task,      AAP operation. For the dewarping task, we observe that the
+it effectively preserves handwritten text in document images, while         dewarping results will significantly degrade when the training
+in the handwriting removal task, it precisely eliminates regions            and testing image sizes are inconsistent. To address this issue and
+containing handwritten text.                                                enable the model to handle dewarping for arbitrary input sizes, we
+                                                                            introduce AAP operator in CPB to fix the size of the feature maps,
+4.5     Ablation studies                                                    which effectively solve the problem, as shown in the Fig. 8. With
+                                                                            AAP, the model can effectively rectify documents of different scales,
+   Prior Pool, PFM and Frequency-aware Loss. To validate the ef-            even if it has not been trained on those specific scales. Without
+fectiveness of Prior Pool, PFM, and the frequency-aware loss, we            AAP, this capability is not achieved.
+conduct ablation studies for each of these components in Tab. 2.
+Specifically, (1) for w/o Prior Pool, the prior features are replaced
+with a set of learnable parameters; (2) for w/o PFM, the module is          5   Conclusions
+substituted with convolutional blocks that have the same structure          We propose Uni-DocDiff, a unified and highly scalable document
+but different parameters for different tasks, of which the feature          restoration model based on diffusion, handling various tasks includ-
+maps are concatenated in each stage; (3) for w/o Freq-aware Loss,           ing dewarping, deblurring, deshadowing, illumination rectification,
+the frequency-aware loss is removed during training. The results            binarization, and handwriting removal. To mitigate interference
+highlight the importance of these three designs. Prior Pool and             between multiple tasks in an all-in-one model, we design a compre-
+PFM both contribute to the effectiveness of multi-task training by          hensive Prior Pool and introduce the Prior Fusion Module to adap-
+mitigating task interference, while enabling the model to leverage          tively select and integrate relevant priors at specific stages, which
+cross-task knowledge transfer. The frequency-aware loss improves            makes our model highly scalable across various tasks. Additionally,
+model performance across most tasks, with the exception of de-              we develop an efficient dual-stream architecture to decouple coordi-
+warping where it remains unchanged. To further demonstrate the              nate prediction from pixel prediction spaces. Extensive experiments
+impact of Prior Pool settings on training, we visualize the train-          demonstrate that our model achieves satisfactory performance on
+ing curves for the deblurring task under various settings in Fig. 7.        multiple tasks. In the future, we will focus on considering more task
+Without Prior Pool (w/o PP), combining the deshadowing task with            categories and the complete relationships of inter-task interactions.
+deblurring task in training degrades the model’s performance of                Although we have conducted experiments to validate our method’s
+deblurring. By leveraging the Prior Pool, the model of joint train-         effectiveness in addressing task interference, further experimental
+ing achieves equivalent deblurring performance with the model               verification on a broader range of tasks is still needed. Additionally,
+trained solely on deblurring task, and it surpasses the latter when         introducing tasks such as document watermark removal and stamp
+further trained, demonstrating the capability of Prior Pool in tasks        erasure can enrich the variety of tasks. In the future, we will delve
+interference mitigation.                                                    deeper into more tasks and their inter-task interactions.
+Uni-DocDiff: A Unified Document Restoration Model Based on Diffusion                                                             MM ’25, October 27–31, 2025, Dublin, Ireland
+
+
+Acknowledgments                                                                                Graphics (TOG) 38, 6 (2019), 1–11.
+                                                                                          [25] Zinuo Li, Xuhang Chen, Chi-Man Pun, and Xiaodong Cun. 2023. High-resolution
+This work is supported by the National Natural Science Foundation                              document shadow removal via a large-scale real-world dataset and a frequency-
+of China (Grant NO 62376266 and 62406318).                                                     aware shadow erasing net. In 2023 IEEE/CVF International Conference on Computer
+                                                                                               Vision (ICCV). IEEE, 12415–12424.
+                                                                                          [26] Zhenhang Li, Yan Shu, Weichao Zeng, Dongbao Yang, and Yu Zhou. 2024. First
+                                                                                               creating backgrounds then rendering texts: A new paradigm for visual text
+References                                                                                     blending. In ECAI 2024. IOS Press, 346–353.
+ [1] Dmitry Baranchuk, Ivan Rubachev, Andrey Voynov, Valentin Khrulkov, and               [27] Xinqi Lin, Jingwen He, Ziyan Chen, Zhaoyang Lyu, Bo Dai, Fanghua Yu, Yu
+     Artem Babenko. 2021. Label-efficient semantic segmentation with diffusion                 Qiao, Wanli Ouyang, and Chao Dong. 2025. Diffbir: Toward blind image restora-
+     models. arXiv preprint arXiv:2112.03126 (2021).                                           tion with generative diffusion prior. In European Conference on Computer Vision.
+ [2] Risab Biswas, Swalpa Kumar Roy, Ning Wang, Umapada Pal, and Guang-Bin                     Springer, 430–448.
+     Huang. 2023. DocBinFormer: A Two-Level Transformer Network for Effective             [28] Yun-Hsuan Lin, Wen-Chin Chen, and Yung-Yu Chuang. 2020. Bedsr-net: A deep
+     Document Image Binarization. arXiv preprint arXiv:2312.03568 (2023).                      shadow removal network from a single document image. In Proceedings of the
+ [3] Liangyu Chen, Xiaojie Chu, Xiangyu Zhang, and Jian Sun. 2022. Simple baselines            IEEE/CVF Conference on Computer Vision and Pattern Recognition. 12905–12914.
+     for image restoration. In European conference on computer vision. Springer, 17–33.   [29] Chongyu Liu, Lianwen Jin, Yuliang Liu, Canjie Luo, Bangdong Chen, Fengjun
+ [4] Marcos V Conde, Gregor Geigle, and Radu Timofte. 2024. High-quality image                 Guo, and Kai Ding. 2022. Don’t forget me: accurate background recovery for text
+     restoration following human instructions. arXiv preprint arXiv:2401.16468 (2024).         removal via modeling local-global context. In European Conference on Computer
+ [5] Sagnik Das, Ke Ma, Zhixin Shu, Dimitris Samaras, and Roy Shilkrot. 2019. De-              Vision. Springer, 409–426.
+     warpnet: Single-image document unwarping with stacked 3d and 2d regression           [30] Shaokai Liu, Hao Feng, and Wengang Zhou. 2023. Rethinking Supervision in
+     networks. In Proceedings of the IEEE/CVF international conference on computer             Document Unwarping: A Self-Consistent Flow-Free Approach. IEEE Transactions
+     vision. 131–140.                                                                          on Circuits and Systems for Video Technology 34, 6 (2023), 4817–4828.
+ [6] Sagnik Das, Hassan Ahmed Sial, Ke Ma, Ramon Baldrich, Maria Vanrell, and             [31] Yihao Liu, Xiangyu Chen, Xianzheng Ma, Xintao Wang, Jiantao Zhou, Yu Qiao,
+     Dimitris Samaras. 2020. Intrinsic decomposition of document images in-the-wild.           and Chao Dong. 2023. Unifying image processing as visual prompting question
+     arXiv preprint arXiv:2011.14447 (2020).                                                   answering. arXiv preprint arXiv:2310.10513 (2023).
+ [7] Fanbo Deng, Zheng Wu, Zheng Lu, and Michael S Brown. 2010. Binarizationshop:         [32] Yuhao Liu, Zhanghan Ke, Fang Liu, Nanxuan Zhao, and Rynson WH Lau. 2024.
+     a user-assisted software suite for converting old documents to black-and-white.           Diff-Plugin: Revitalizing Details for Diffusion-based Low-level Tasks. In Pro-
+     In Proceedings of the 10th annual joint conference on Digital libraries. 255–258.         ceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition.
+ [8] Hao Feng, Shaokai Liu, Jiajun Deng, Wengang Zhou, and Houqiang Li. 2023. Deep             4197–4208.
+     unrestricted document image rectification. IEEE Transactions on Multimedia 26        [33] Jiahao Lyu, Wei Wang, Dongbao Yang, Jinwen Zhong, and Yu Zhou. 2025. Arbi-
+     (2023), 6142–6154.                                                                        trary reading order scene text spotter with local semantics guidance. In Proceed-
+ [9] Hao Feng, Yuechen Wang, Wengang Zhou, Jiajun Deng, and Houqiang Li. 2021.                 ings of the AAAI Conference on Artificial Intelligence, Vol. 39. 5919–5927.
+     Doctr: Document image transformer for geometric unwarping and illumination           [34] Jiaqi Ma, Tianheng Cheng, Guoli Wang, Qian Zhang, Xinggang Wang, and Lefei
+     correction. arXiv preprint arXiv:2110.12942 (2021).                                       Zhang. 2023. Prores: Exploring degradation-aware visual prompt for universal
+[10] Hao Feng, Wengang Zhou, Jiajun Deng, Yuechen Wang, and Houqiang Li. 2022.                 image restoration. arXiv preprint arXiv:2306.13653 (2023).
+     Geometric Representation Learning for Document Image Rectification. In Euro-         [35] Ke Ma, Sagnik Das, Zhixin Shu, and Dimitris Samaras. 2022. Learning from
+     pean Conference on Computer Vision. Springer, 475–492.                                    documents in the wild to improve document unwarping. In ACM SIGGRAPH 2022
+[11] Basilis Gatos, Konstantinos Ntirogiannis, and Ioannis Pratikakis. 2009. ICDAR             Conference Proceedings. 1–9.
+     2009 document image binarization contest (DIBCO 2009). In 2009 10th Interna-         [36] Ke Ma, Zhixin Shu, Xue Bai, Jue Wang, and Dimitris Samaras. 2018. DocUNet:
+     tional conference on document analysis and recognition. IEEE, 1375–1382.                  Document Image Unwarping via a Stacked U-Net. In Proceedings of the IEEE
+[12] Rachid Hedjam, Hossein Ziaei Nafchi, Reza Farrahi Moghaddam, Margaret Kalac-              conference on computer vision and pattern recognition. 4700–4709.
+     ska, and Mohamed Cheriet. 2015. Icdar 2015 contest on multispectral text extrac-     [37] Bharat Mamidibathula and Prabir Kumar Biswas. 2019. SVDocNet: Spatially vari-
+     tion (ms-tex 2015). In 2015 13th International Conference on Document Analysis            ant U-Net for blind document deblurring. In Workshop on Document Intelligence
+     and Recognition (ICDAR). IEEE, 1181–1185.                                                 at NeurIPS 2019.
+[13] Felix Hertlein and Alexander Naumann. 2023. Template-guided illumination             [38] Jianhan Mei, Ziming Wu, Xiang Chen, Yu Qiao, Henghui Ding, and Xudong Jiang.
+     correction for document images with imperfect geometric reconstruction. In                2019. Deepdeblur: text image recovery from blur to sharp. Multimedia tools and
+     Proceedings of the IEEE/CVF International Conference on Computer Vision. 904–913.         applications 78 (2019), 18869–18885.
+[14] Jonathan Ho, Ajay Jain, and Pieter Abbeel. 2020. Denoising diffusion probabilistic   [39] Hossein Ziaei Nafchi, Seyed Morteza Ayatollahi, Reza Farrahi Moghaddam, and
+     models. Advances in neural information processing systems 33 (2020), 6840–6851.           Mohamed Cheriet. 2013. An efficient ground truthing tool for binarization of
+[15] Michal Hradiš, Jan Kotera, Pavel Zemcık, and Filip Šroubek. 2015. Convolutional           historical manuscripts. In 2013 12th International Conference on Document Analysis
+     neural networks for direct text deblurring. In Proceedings of BMVC, Vol. 10.              and Recognition. IEEE, 807–811.
+[16] Liufeng Huang, Bangdong Chen, Chongyu Liu, Dezhi Peng, Weiying Zhou,                 [40] Konstantinos Ntirogiannis, Basilis Gatos, and Ioannis Pratikakis. 2014. ICFHR2014
+     Yaqiang Wu, Hui Li, Hao Ni, and Lianwen Jin. 2023. EnsExam: A Dataset for                 competition on handwritten document image binarization (H-DIBCO 2014). In
+     Handwritten Text Erasure on Examination Papers. In International Conference on            2014 14th International conference on frontiers in handwriting recognition. IEEE,
+     Document Analysis and Recognition. Springer, 470–485.                                     809–813.
+[17] Seungjun Jung, Muhammad Abul Hasan, and Changick Kim. 2018. Water-filling:           [41] Vaishnav Potlapalli, Syed Waqas Zamir, Salman H Khan, and Fahad Shahbaz Khan.
+     An efficient algorithm for digitized document shadow removal. In Asian Confer-            2024. Promptir: Prompting for all-in-one image restoration. Advances in Neural
+     ence on Computer Vision. Springer, 398–414.                                               Information Processing Systems 36 (2024).
+[18] Netanel Kligler, Sagi Katz, and Ayellet Tal. 2018. Document enhancement using        [42] Ioannis Pratikakis, Basilis Gatos, and Konstantinos Ntirogiannis. 2010. H-DIBCO
+     visibility detection. In Proceedings of the IEEE Conference on Computer Vision and        2010-handwritten document image binarization competition. In 2010 12th Inter-
+     Pattern Recognition. 2374–2382.                                                           national Conference on Frontiers in Handwriting Recognition. IEEE, 727–732.
+[19] Ashutosh Kulkarni, Prashant W Patil, Subrahmanyam Murala, and Sunil Gupta.           [43] Ioannis Pratikakis, Basilis Gatos, and Konstantinos Ntirogiannis. 2012. ICFHR
+     2022. Unified multi-weather visibility restoration. IEEE Transactions on Multime-         2012 competition on handwritten document image binarization (H-DIBCO 2012).
+     dia 25 (2022), 7686–7698.                                                                 In 2012 international conference on frontiers in handwriting recognition. IEEE,
+[20] Gengluo Li, Huawen Shen, and Yu Zhou. 2025. Beyond Cropped Regions: New                   817–822.
+     Benchmark and Corresponding Baseline for Chinese Scene Text Retrieval in             [44] Ioannis Pratikakis, Basilis Gatos, and Konstantinos Ntirogiannis. 2013. ICDAR
+     Diverse Layouts. In ICML.                                                                 2013 document image binarization contest (DIBCO 2013). In 2013 12th Interna-
+[21] Heng Li, Xiangping Wu, Qingcai Chen, and Qianjin Xiang. 2023. Foreground and              tional Conference on Document Analysis and Recognition. IEEE, 1471–1476.
+     text-lines aware document image rectification. In Proceedings of the IEEE/CVF        [45] Ioannis Pratikakis, Konstantinos Zagori, Panagiotis Kaddas, and Basilis Gatos.
+     International Conference on Computer Vision. 19574–19583.                                 2018. ICFHR 2018 Competition on Handwritten Document Image Binarization
+[22] Pu Li, Weize Quan, Jianwei Guo, and Dong-Ming Yan. 2023. Layout-aware                     (H-DIBCO 2018). In 2018 16th International Conference on Frontiers in Handwriting
+     single-image document flattening. ACM Transactions on Graphics 43, 1 (2023),              Recognition (ICFHR). IEEE, 489–493.
+     1–17.                                                                                [46] Ioannis Pratikakis, Konstantinos Zagoris, George Barlas, and Basilis Gatos. 2017.
+[23] Shuai Li, Xiaolong Zheng, Kewen Lan, Ji Hu, Guangqin Wu, and Lihuan Shao. 2024.           ICDAR2017 competition on document image binarization (DIBCO 2017). In 2017
+     Scene handwritten text erasure based on multi-scale feature fusion. International         14Th IAPR international conference on document analysis and recognition (ICDAR),
+     Journal on Document Analysis and Recognition (IJDAR) (2024), 1–16.                        Vol. 1. IEEE, 1395–1403.
+[24] Xiaoyu Li, Bo Zhang, Jing Liao, and Pedro V Sander. 2019. Document rectification     [47] Chenyang Qi, Zhengzhong Tu, Keren Ye, Mauricio Delbracio, Peyman Milanfar,
+     and illumination correction using a patch-based CNN. ACM Transactions on                  Qifeng Chen, and Hossein Talebi. 2025. SPIRE: Semantic Prompt-Driven Image
+MM ’25, October 27–31, 2025, Dublin, Ireland                                                                                                                            Zhao et al.
+
+
+     Restoration. In European Conference on Computer Vision. Springer, 446–464.              [71] Jiaxin Zhang, Bangdong Chen, Hiuyi Cheng, Fengjun Guo, Kai Ding, and Lianwen
+[48] Zhi Qiao, Yu Zhou, Dongbao Yang, Yucan Zhou, and Weiping Wang. 2020. SEED:                   Jin. 2023. DocAligner: Annotating real-world photographic document images by
+     Semantics enhanced encoder-decoder framework for scene text recognition. In                  simply taking pictures. arXiv preprint arXiv:2306.05749 (2023).
+     Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition.      [72] Jiaxin Zhang, Lingyu Liang, Kai Ding, Fengjun Guo, and Lianwen Jin. 2023.
+     13528–13537.                                                                                 Appearance enhancement for camera-captured document images in the wild.
+[49] Robin Rombach, Andreas Blattmann, Dominik Lorenz, Patrick Esser, and Björn                   IEEE Transactions on Artificial Intelligence (2023).
+     Ommer. 2022. High-resolution image synthesis with latent diffusion models. In           [73] Jiaxin Zhang, Dezhi Peng, Chongyu Liu, Peirong Zhang, and Lianwen Jin. 2024.
+     Proceedings of the IEEE/CVF conference on computer vision and pattern recognition.           DocRes: A Generalist Model Toward Unifying Document Image Restoration
+     10684–10695.                                                                                 Tasks. In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern
+[50] Huawen Shen, Xiang Gao, Jin Wei, Liang Qiao, Yu Zhou, Qiang Li, and Zhanzhan                 Recognition. 15654–15664.
+     Cheng. 2023. Divide rows and conquer cells: towards structure recognition for           [74] Ling Zhang, Yinghao He, Qing Zhang, Zheng Liu, Xiaolong Zhang, and Chunxia
+     large tables. In Proceedings of the Thirty-Second International Joint Conference on          Xiao. 2023. Document image shadow removal guided by color-aware background.
+     Artificial Intelligence (Macao, P.R.China) (IJCAI ’23). Article 152, 9 pages.                In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recog-
+[51] Huawen Shen, Gengluo Li, Jinwen Zhong, and Yu Zhou. 2025. LDP: Generalizing                  nition. 1818–1827.
+     to multilingual visual information extraction by language decoupled pretraining.        [75] Weiguang Zhang, Qiufeng Wang, and Kaizhu Huang. 2023. Polar-Doc: one-stage
+     In Proceedings of the AAAI Conference on Artificial Intelligence, Vol. 39. 6805–6813.        document dewarping with multi-scope constraints under polar representation.
+[52] Yan Shu, Weichao Zeng, Fangmin Zhao, Zeyu Chen, Zhenhang Li, Xiaomeng                        arXiv preprint arXiv:2312.07925 (2023).
+     Yang, Yu Zhou, Paolo Rota, Xiang Bai, Lianwen Jin, et al. 2025. Visual text             [76] Tianlun Zheng, Zhineng Chen, Shancheng Fang, Hongtao Xie, and Yu-Gang
+     processing: A comprehensive review and unified evaluation. arXiv preprint                    Jiang. 2024. CDistNet: Perceiving multi-domain character distance for robust
+     arXiv:2504.21682 (2025).                                                                     text recognition. International Journal of Computer Vision 132, 2 (2024), 300–318.
+[53] Jiaming Song, Chenlin Meng, and Stefano Ermon. 2020. Denoising diffusion                [77] Jun-Yan Zhu, Taesung Park, Phillip Isola, and Alexei A. Efros. 2017. Unpaired
+     implicit models. arXiv preprint arXiv:2010.02502 (2020).                                     Image-to-Image Translation Using Cycle-Consistent Adversarial Networks. In
+[54] Mohamed Ali Souibgui and Yousri Kessentini. 2020. De-gan: A conditional                      2017 IEEE International Conference on Computer Vision (ICCV). 2242–2251. doi:10.
+     generative adversarial network for document enhancement. IEEE Transactions                   1109/ICCV.2017.244
+     on Pattern Analysis and Machine Intelligence 44, 3 (2020), 1180–1191.
+[55] Hao Tang, Junyuan Guo, Teng Wang, Yanwei Yu, and Chao Wang. 2024. Efficient
+     Joint Rectification of Photometric and Geometric Distortions in Document Images.
+     In ICASSP 2024-2024 IEEE International Conference on Acoustics, Speech and Signal
+     Processing (ICASSP). IEEE, 3690–3694.
+[56] Floor Verhoeven, Tanguy Magne, and Olga Sorkine-Hornung. 2023. UVDoc:
+     Neural Grid-based Document Unwarping. In SIGGRAPH Asia 2023 Conference
+     Papers. 1–11.
+[57] Bingshu Wang and CL Philip Chen. 2020. Local water-filling algorithm for
+     shadow detection and removal of document images. Sensors 20, 23 (2020), 6929.
+[58] Biao Wang, Jiayi Li, Xin Jin, and Qiong Yuan. 2022. CHENet: image to image
+     Chinese handwriting eraser. In Chinese Conference on Pattern Recognition and
+     Computer Vision (PRCV). Springer, 40–51.
+[59] Ruilu Wang, Yang Xue, and Lianwen Jin. 2024. DocNLC: A Document Image En-
+     hancement Framework with Normalized and Latent Contrastive Representation
+     for Multiple Degradations. In Proceedings of the AAAI Conference on Artificial
+     Intelligence, Vol. 38. 5563–5571.
+[60] Wei Wang, Yu Zhou, Jiahao Lv, Dayan Wu, Guoqing Zhao, Ning Jiang, and
+     Weipinng Wang. 2022. TPSNet: Reverse thinking of thin plate splines for arbitrary
+     shape scene text representation. In Proceedings of the 30th ACM International
+     Conference on Multimedia. 5014–5025.
+[61] Yonghui Wang, Wengang Zhou, Zhenbo Lu, and Houqiang Li. 2022. Udoc-gan:
+     Unpaired document illumination correction with background light prior. In
+     Proceedings of the 30th ACM International Conference on Multimedia. 5074–5082.
+[62] Zhou Wang, Eero P Simoncelli, and Alan C Bovik. 2003. Multi-scale Structural
+     Similarity for Image Quality Assessment. In The Thrity-Seventh Asilomar Confer-
+     ence on Signals, Systems & Computers, 2003, Vol. 2. Ieee, 1398–1402.
+[63] Guo-Wang Xie, Fei Yin, Xu-Yao Zhang, and Cheng-Lin Liu. 2021. Document
+     Dewarping with Control Points. In Document Analysis and Recognition–ICDAR
+     2021: 16th International Conference, Lausanne, Switzerland, September 5–10, 2021,
+     Proceedings, Part I 16. Springer, 466–480.
+[64] Xiaomeng Yang, Zhi Qiao, and Yu Zhou. 2025. IPAD: Iterative, parallel, and
+     diffusion-based network for scene text recognition. International Journal of
+     Computer Vision (2025), 1–21.
+[65] Zongyuan Yang, Baolin Liu, Yongping Xiong, and Guibin Wu. 2024. GDB:
+     gated convolutions-based document binarization. Pattern Recognition 146 (2024),
+     109989.
+[66] Zongyuan Yang, Baolin Liu, Yongping Xxiong, Lan Yi, Guibin Wu, Xiaojun Tang,
+     Ziqi Liu, Junjie Zhou, and Xing Zhang. 2023. Docdiff: Document enhancement via
+     residual diffusion models. In Proceedings of the 31st ACM international conference
+     on multimedia. 2795–2806.
+[67] Shaodi You, Yasuyuki Matsushita, Sudipta Sinha, Yusuke Bou, and Katsushi
+     Ikeuchi. 2017. Multiview Rectification of Folded Documents. IEEE transactions
+     on pattern analysis and machine intelligence 40, 2 (2017), 505–511.
+[68] Weichao Zeng, Yan Shu, Zhenhang Li, Dongbao Yang, and Yu Zhou. 2024. TextCtrl:
+     Diffusion-based scene text editing with prior guidance control. Advances in Neural
+     Information Processing Systems 37 (2024), 138569–138594.
+[69] Cheng Zhang, Yu Zhu, Qingsen Yan, Jinqiu Sun, and Yanning Zhang. 2023. All-
+     in-one multi-degradation image restoration network via hierarchical degradation
+     representation. In Proceedings of the 31st ACM international conference on multi-
+     media. 2285–2293.
+[70] Demin Zhang, Jiahao Lyu, Zhijie Shen, and Yu Zhou. 2025. Class-Agnostic Region-
+     of-Interest Matching in Document Images. arXiv preprint arXiv:2506.21055 (2025).
+

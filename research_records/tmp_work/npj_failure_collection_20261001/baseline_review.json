@@ -1,0 +1,343 @@
+{
+  "selection_protocol": "Original thumbnails + saved npj v1 masks; ROI and baseline judgement recorded before this comparison computation. Known v6 development examples are explicitly marked.",
+  "cases": [
+    {
+      "split": "train",
+      "book": "hnsd00000",
+      "page": "hnsd001_011",
+      "original": "data/split_dataset/train/hnsd00000/hnsd001_011.jpg",
+      "ace": "data/split_dataset_csc/train/hnsd00000/hnsd001_011.jpg",
+      "npj_input": "data/split_dataset_csc_mask/train/hnsd00000/hnsd001_011/00_input.png",
+      "npj_black": "data/split_dataset_csc_mask/train/hnsd00000/hnsd001_011/02_text_black.png",
+      "npj_red": "data/split_dataset_csc_mask/train/hnsd00000/hnsd001_011/03_text_red.png",
+      "npj_degradation": "data/split_dataset_csc_mask/train/hnsd00000/hnsd001_011/04_degradation.png",
+      "npj_background": "data/split_dataset_csc_mask/train/hnsd00000/hnsd001_011/05_background.png",
+      "review_status": "unreviewed",
+      "failure_type": "",
+      "roi_xywh": "",
+      "v6_status": "",
+      "observation": "",
+      "original_sha256": "22017c0af65c5f43560ff05cfcc15c6ed8f56b72e60a04a732d9c31b72f05731",
+      "contains_illustration": false,
+      "evaluation_group": "既知開発ページの再確認",
+      "rois": [
+        {
+          "id": "dense_stain",
+          "title": "濃い茶色の斑点を墨と判定",
+          "xywh": [
+            400,
+            460,
+            400,
+            400
+          ],
+          "failure_type": "stain_as_ink",
+          "baseline_failure": true,
+          "baseline_observation": "楕円状の茶色い斑点がほぼ全体で黒インク候補に入る。",
+          "reviewer": "assistant_visual_review_not_pixel_GT"
+        },
+        {
+          "id": "thin_black_water",
+          "title": "水染みの中の薄い本文の欠損",
+          "xywh": [
+            220,
+            1620,
+            850,
+            760
+          ],
+          "failure_type": "thin_black_edit",
+          "baseline_failure": true,
+          "baseline_observation": "薄い本文の一部が黄の編集候補に入る。水染みと文字が混在するため矩形全体を文字GTにしない。",
+          "reviewer": "assistant_visual_review_not_pixel_GT"
+        }
+      ]
+    },
+    {
+      "split": "test",
+      "book": "200010454",
+      "page": "200010454_00002_2",
+      "original": "data/split_dataset/test/200010454/200010454_00002_2.jpg",
+      "ace": "data/split_dataset_csc/test/200010454/200010454_00002_2.jpg",
+      "npj_input": "data/split_dataset_csc_mask/test/200010454/200010454_00002_2/00_input.png",
+      "npj_black": "data/split_dataset_csc_mask/test/200010454/200010454_00002_2/02_text_black.png",
+      "npj_red": "data/split_dataset_csc_mask/test/200010454/200010454_00002_2/03_text_red.png",
+      "npj_degradation": "data/split_dataset_csc_mask/test/200010454/200010454_00002_2/04_degradation.png",
+      "npj_background": "data/split_dataset_csc_mask/test/200010454/200010454_00002_2/05_background.png",
+      "review_status": "unreviewed",
+      "failure_type": "",
+      "roi_xywh": "",
+      "v6_status": "",
+      "observation": "",
+      "original_sha256": "177776f90fc08b12e2f59a37773ef433556f43ebe47c503c2d676595a08a60d1",
+      "contains_illustration": false,
+      "evaluation_group": "既知開発ページの再確認",
+      "rois": [
+        {
+          "id": "brown_as_red",
+          "title": "茶色い斑点を朱インクと判定",
+          "xywh": [
+            710,
+            200,
+            450,
+            330
+          ],
+          "failure_type": "stain_as_red",
+          "baseline_failure": true,
+          "baseline_observation": "本文上部の茶色い斑点が朱候補に入る。",
+          "reviewer": "assistant_visual_review_not_pixel_GT"
+        },
+        {
+          "id": "thin_black_loop",
+          "title": "薄い黒筆画のループが編集候補に入る",
+          "xywh": [
+            1290,
+            600,
+            280,
+            600
+          ],
+          "failure_type": "thin_black_edit",
+          "baseline_failure": true,
+          "baseline_observation": "中央左の薄いループの下側・左側を中心に黄の編集候補が付く。",
+          "reviewer": "assistant_visual_review_not_pixel_GT"
+        }
+      ]
+    },
+    {
+      "split": "test",
+      "book": "200003803",
+      "page": "200003803_00009_2",
+      "original": "data/split_dataset/test/200003803/200003803_00009_2.jpg",
+      "ace": "data/split_dataset_csc/test/200003803/200003803_00009_2.jpg",
+      "npj_input": "data/split_dataset_csc_mask/test/200003803/200003803_00009_2/00_input.png",
+      "npj_black": "data/split_dataset_csc_mask/test/200003803/200003803_00009_2/02_text_black.png",
+      "npj_red": "data/split_dataset_csc_mask/test/200003803/200003803_00009_2/03_text_red.png",
+      "npj_degradation": "data/split_dataset_csc_mask/test/200003803/200003803_00009_2/04_degradation.png",
+      "npj_background": "data/split_dataset_csc_mask/test/200003803/200003803_00009_2/05_background.png",
+      "review_status": "unreviewed",
+      "failure_type": "",
+      "roi_xywh": "",
+      "v6_status": "",
+      "observation": "",
+      "original_sha256": "e998f3ec838e4706bdd93396e3ac4ccd46cb0528d2c5f074260f91ba7ade1c0f",
+      "contains_illustration": false,
+      "evaluation_group": "既知開発ページの再確認",
+      "rois": [
+        {
+          "id": "thin_black_text",
+          "title": "対照：本文と薄い青灰色の線",
+          "xywh": [
+            600,
+            960,
+            900,
+            900
+          ],
+          "failure_type": "control",
+          "baseline_failure": false,
+          "baseline_observation": "本文の主要筆画は黒候補に残る。周囲の青灰色の線は表裏の照合なしで本文・裏写りを確定できないので失敗件数に入れない。",
+          "reviewer": "assistant_visual_review_not_pixel_GT"
+        }
+      ]
+    },
+    {
+      "split": "train",
+      "book": "200021763",
+      "page": "200021763_00002_2",
+      "original": "data/split_dataset/train/200021763/200021763_00002_2.jpg",
+      "ace": "data/split_dataset_csc/train/200021763/200021763_00002_2.jpg",
+      "npj_input": "data/split_dataset_csc_mask/train/200021763/200021763_00002_2/00_input.png",
+      "npj_black": "data/split_dataset_csc_mask/train/200021763/200021763_00002_2/02_text_black.png",
+      "npj_red": "data/split_dataset_csc_mask/train/200021763/200021763_00002_2/03_text_red.png",
+      "npj_degradation": "data/split_dataset_csc_mask/train/200021763/200021763_00002_2/04_degradation.png",
+      "npj_background": "data/split_dataset_csc_mask/train/200021763/200021763_00002_2/05_background.png",
+      "review_status": "unreviewed",
+      "failure_type": "",
+      "roi_xywh": "",
+      "v6_status": "",
+      "observation": "",
+      "original_sha256": "44631919294b4cde57c2cfa8f669ac2648fa855a2f204e25629c115f5b986313",
+      "contains_illustration": false,
+      "evaluation_group": "既知開発ページの再確認",
+      "rois": [
+        {
+          "id": "warm_stroke",
+          "title": "赤褐色の長い筆画が分断される",
+          "xywh": [
+            200,
+            2020,
+            490,
+            450
+          ],
+          "failure_type": "warm_ink_edit",
+          "baseline_failure": true,
+          "baseline_observation": "下へ伸びる長い朱褐色筆画が黒候補と編集候補に分断される。主要部は黒候補として保護済みなので、その部分を改善として数えない。",
+          "reviewer": "assistant_visual_review_not_pixel_GT"
+        }
+      ]
+    },
+    {
+      "split": "val",
+      "book": "200021869",
+      "page": "200021869_00010_2",
+      "original": "data/split_dataset/val/200021869/200021869_00010_2.jpg",
+      "ace": "data/split_dataset_csc/val/200021869/200021869_00010_2.jpg",
+      "npj_input": "data/split_dataset_csc_mask/val/200021869/200021869_00010_2/00_input.png",
+      "npj_black": "data/split_dataset_csc_mask/val/200021869/200021869_00010_2/02_text_black.png",
+      "npj_red": "data/split_dataset_csc_mask/val/200021869/200021869_00010_2/03_text_red.png",
+      "npj_degradation": "data/split_dataset_csc_mask/val/200021869/200021869_00010_2/04_degradation.png",
+      "npj_background": "data/split_dataset_csc_mask/val/200021869/200021869_00010_2/05_background.png",
+      "review_status": "unreviewed",
+      "failure_type": "",
+      "roi_xywh": "",
+      "v6_status": "",
+      "observation": "",
+      "original_sha256": "90ffdf5a4d8ed77e99d69f1326384cb24b2d25be157a46277500208d0aad6360",
+      "contains_illustration": false,
+      "evaluation_group": "既知開発ページの再確認",
+      "rois": [
+        {
+          "id": "control_black",
+          "title": "対照：比較的濃い黒本文",
+          "xywh": [
+            377,
+            604,
+            512,
+            512
+          ],
+          "failure_type": "control",
+          "baseline_failure": false,
+          "baseline_observation": "本文の主要部が黒候補に入り、明確な大片欠損はこの矩形では見られない。",
+          "reviewer": "assistant_visual_review_not_pixel_GT"
+        }
+      ]
+    },
+    {
+      "split": "train",
+      "book": "hnsd00000",
+      "page": "hnsd007_042",
+      "original": "data/split_dataset/train/hnsd00000/hnsd007_042.jpg",
+      "ace": "data/split_dataset_csc/train/hnsd00000/hnsd007_042.jpg",
+      "npj_input": "data/split_dataset_csc_mask/train/hnsd00000/hnsd007_042/00_input.png",
+      "npj_black": "data/split_dataset_csc_mask/train/hnsd00000/hnsd007_042/02_text_black.png",
+      "npj_red": "data/split_dataset_csc_mask/train/hnsd00000/hnsd007_042/03_text_red.png",
+      "npj_degradation": "data/split_dataset_csc_mask/train/hnsd00000/hnsd007_042/04_degradation.png",
+      "npj_background": "data/split_dataset_csc_mask/train/hnsd00000/hnsd007_042/05_background.png",
+      "review_status": "unreviewed",
+      "failure_type": "",
+      "roi_xywh": "",
+      "v6_status": "",
+      "observation": "",
+      "original_sha256": "68315f7e551cb29695d9e830f09826eef92809409d4e9242290c5ed14f393afc",
+      "contains_illustration": false,
+      "evaluation_group": "既知開発冊の新しいページ",
+      "rois": [
+        {
+          "id": "dense_stain_new",
+          "title": "枠線・本文に接する濃い茶色の汚れ",
+          "xywh": [
+            930,
+            240,
+            350,
+            440
+          ],
+          "failure_type": "stain_as_ink",
+          "baseline_failure": true,
+          "baseline_observation": "縦長の茶色い汚れが周囲の本文・枠線とつながって黒インク候補に入る。文字との重なりを含む。",
+          "reviewer": "assistant_visual_review_not_pixel_GT"
+        }
+      ]
+    },
+    {
+      "split": "train",
+      "book": "100249476",
+      "page": "100249476_00003_1",
+      "original": "data/split_dataset/train/100249476/100249476_00003_1.jpg",
+      "ace": "data/split_dataset_csc/train/100249476/100249476_00003_1.jpg",
+      "npj_input": "data/split_dataset_csc_mask/train/100249476/100249476_00003_1/00_input.png",
+      "npj_black": "data/split_dataset_csc_mask/train/100249476/100249476_00003_1/02_text_black.png",
+      "npj_red": "data/split_dataset_csc_mask/train/100249476/100249476_00003_1/03_text_red.png",
+      "npj_degradation": "data/split_dataset_csc_mask/train/100249476/100249476_00003_1/04_degradation.png",
+      "npj_background": "data/split_dataset_csc_mask/train/100249476/100249476_00003_1/05_background.png",
+      "review_status": "unreviewed",
+      "failure_type": "",
+      "roi_xywh": "",
+      "v6_status": "",
+      "observation": "",
+      "original_sha256": "df5ee59ff7211993cc0667254f1b3b5251deec47f478ef32375c4b5d8be8afab",
+      "contains_illustration": false,
+      "evaluation_group": "開発冊以外の新しいページ",
+      "rois": [
+        {
+          "id": "brown_false_red_new",
+          "title": "上端の茶色い紙面を朱インクと判定",
+          "xywh": [
+            120,
+            70,
+            650,
+            360
+          ],
+          "failure_type": "stain_as_red",
+          "baseline_failure": true,
+          "baseline_observation": "筆画のない上端の茶色い紙面に広い朱候補が付く。",
+          "reviewer": "assistant_visual_review_not_pixel_GT"
+        }
+      ]
+    },
+    {
+      "split": "train",
+      "book": "200021712",
+      "page": "200021712_00082_1",
+      "original": "data/split_dataset/train/200021712/200021712_00082_1.jpg",
+      "ace": "data/split_dataset_csc/train/200021712/200021712_00082_1.jpg",
+      "npj_input": "data/split_dataset_csc_mask/train/200021712/200021712_00082_1/00_input.png",
+      "npj_black": "data/split_dataset_csc_mask/train/200021712/200021712_00082_1/02_text_black.png",
+      "npj_red": "data/split_dataset_csc_mask/train/200021712/200021712_00082_1/03_text_red.png",
+      "npj_degradation": "data/split_dataset_csc_mask/train/200021712/200021712_00082_1/04_degradation.png",
+      "npj_background": "data/split_dataset_csc_mask/train/200021712/200021712_00082_1/05_background.png",
+      "review_status": "unreviewed",
+      "failure_type": "",
+      "roi_xywh": "",
+      "v6_status": "",
+      "observation": "",
+      "original_sha256": "79ec47dac035351a4cfcb0efaf6cb6ef75524238deb20cbe1f4cdbe5586336e1",
+      "contains_illustration": false,
+      "evaluation_group": "開発冊以外の新しいページ",
+      "rois": [
+        {
+          "id": "hole_edge_new",
+          "title": "虫食い状の穴・裂けの縁を墨と判定",
+          "xywh": [
+            1300,
+            150,
+            400,
+            420
+          ],
+          "failure_type": "damage_as_ink",
+          "baseline_failure": true,
+          "baseline_observation": "文字のない上部の紙の穴・裂けの濃い縁が黒インク候補に入る。虫食いという原因自体は画像だけで確定しない。",
+          "reviewer": "assistant_visual_review_not_pixel_GT"
+        },
+        {
+          "id": "control_text_new",
+          "title": "対照：穴のあるページの通常本文",
+          "xywh": [
+            600,
+            1400,
+            420,
+            580
+          ],
+          "failure_type": "control",
+          "baseline_failure": false,
+          "baseline_observation": "損傷ROIと離れた本文。主要な黒筆画は旧npjでも拾われる。",
+          "reviewer": "assistant_visual_review_not_pixel_GT"
+        }
+      ]
+    }
+  ],
+  "pages": 8,
+  "books": 7,
+  "failure_rois": 8,
+  "control_rois": 3,
+  "human_confirmation_pending": true,
+  "pixel_GT": false,
+  "illustration_pages_excluded": true,
+  "thresholds_changed": false
+}

@@ -1,0 +1,28 @@
+{
+  "run_signature": "4ce7106531d7274fdc4a3a5a6f32fac86104745a97b54703479bc129cc2a1a45",
+  "command": [
+    "/home/imoto/miniconda3/envs/diffusion/bin/python",
+    "-B",
+    "/home/imoto/Heritage_Pipeline/scripts/benchmark/fidelity_stage.py",
+    "ddrm",
+    "--input",
+    "/home/imoto/Heritage_Pipeline/tmp_work/fidelity_pilot_20260923_run1/200017197_00070_1/1.00/input/200017197_00070_1.png",
+    "--masks",
+    "/home/imoto/Heritage_Pipeline/tmp_work/fidelity_pilot_20260923_run1/200017197_00070_1/1.00/masks/200017197_00070_1",
+    "--ckpt",
+    "/home/imoto/Heritage_Pipeline/modules/stain_removal/experiments/model_char/model_char/ckpt_epoch0350.pth",
+    "--device",
+    "cuda:0",
+    "--seed",
+    "999",
+    "--reference",
+    "/home/imoto/Heritage_Pipeline/tmp_work/fidelity_pilot_20260923_run1/200017197_00070_1/1.00/prepared/P1.png",
+    "--output",
+    "/home/imoto/Heritage_Pipeline/tmp_work/fidelity_pilot_20260923_run1/200017197_00070_1/1.00/Fp"
+  ],
+  "wall_seconds": 287.976191743277,
+  "outputs": {
+    "/home/imoto/Heritage_Pipeline/tmp_work/fidelity_pilot_20260923_run1/200017197_00070_1/1.00/Fp/output.png": "2b6d2f16749ffec90b483dc2d516e899253cbba63ccf5f98b0eb665b5e804e73",
+    "/home/imoto/Heritage_Pipeline/tmp_work/fidelity_pilot_20260923_run1/200017197_00070_1/1.00/Fp/stage.json": "95619b6b31b75766a666bb5462fab6740cee52ff0b239f8b5f0513e057071b99"
+  }
+}

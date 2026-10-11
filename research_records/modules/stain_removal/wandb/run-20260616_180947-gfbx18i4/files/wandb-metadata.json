@@ -1,0 +1,47 @@
+{
+  "os": "Linux-6.17.0-35-generic-x86_64-with-glibc2.39",
+  "python": "CPython 3.10.20",
+  "startedAt": "2026-06-16T09:09:47.383178Z",
+  "program": "/home/imoto/Heritage_Pipeline/modules/stain_removal/scripts/train_page.py",
+  "codePath": "modules/stain_removal/scripts/train_page.py",
+  "codePathLocal": "scripts/train_page.py",
+  "git": {
+    "remote": "https://github.com/imoto135/Heritage_Pipeline.git",
+    "commit": "07f6413d355f86ebba092db2253fe75ba18f9125"
+  },
+  "email": "imotoyuichi01@gmail.com",
+  "root": "/home/imoto/Heritage_Pipeline/modules/stain_removal",
+  "host": "ihpc-a6000-0-WS-E900-G4-WS980T",
+  "executable": "/home/imoto/miniconda3/envs/diffusion/bin/python",
+  "cpu_count": 48,
+  "cpu_count_logical": 96,
+  "gpu": "NVIDIA RTX A6000",
+  "gpu_count": 2,
+  "disk": {
+    "/": {
+      "total": "1935237541888",
+      "used": "22909710336"
+    }
+  },
+  "memory": {
+    "total": "134722170880"
+  },
+  "gpu_nvidia": [
+    {
+      "name": "NVIDIA RTX A6000",
+      "memoryTotal": "51527024640",
+      "cudaCores": 10752,
+      "architecture": "Ampere",
+      "uuid": "GPU-61a66dc3-4e46-83f3-d889-7e6b5f33c424"
+    },
+    {
+      "name": "NVIDIA RTX A6000",
+      "memoryTotal": "51527024640",
+      "cudaCores": 10752,
+      "architecture": "Ampere",
+      "uuid": "GPU-75471331-fa5f-1f63-4302-edcb93115dd8"
+    }
+  ],
+  "cudaVersion": "13.2",
+  "writerId": "pf8rrjj3z5zj8ubtrcvad0ev2m46xgdl"
+}

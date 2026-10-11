@@ -1,0 +1,1517 @@
+{
+  "status": "passed",
+  "pages": 25,
+  "ROIs": 77,
+  "whole_page_direction_and_geometry_reconstruction": [
+    {
+      "page": "hnsd001_011",
+      "held_pixels": 0,
+      "components": []
+    },
+    {
+      "page": "200010454_00002_2",
+      "held_pixels": 0,
+      "components": []
+    },
+    {
+      "page": "200003803_00009_2",
+      "held_pixels": 0,
+      "components": []
+    },
+    {
+      "page": "200021763_00002_2",
+      "held_pixels": 0,
+      "components": []
+    },
+    {
+      "page": "200021869_00010_2",
+      "held_pixels": 0,
+      "components": []
+    },
+    {
+      "page": "hnsd007_042",
+      "held_pixels": 0,
+      "components": []
+    },
+    {
+      "page": "100249476_00003_1",
+      "held_pixels": 0,
+      "components": []
+    },
+    {
+      "page": "200021712_00082_1",
+      "held_pixels": 1859,
+      "components": [
+        {
+          "component": 7,
+          "matched": false,
+          "shape_anisotropy": 0.8713164395791311,
+          "retained_sigma1": {
+            "samples": 46564,
+            "available": true,
+            "tensor": [
+              [
+                0.38565388321876526,
+                0.03432256355881691
+              ],
+              [
+                0.03432256355881691,
+                0.4378858804702759
+              ]
+            ],
+            "eigenvalues": [
+              0.368641193556219,
+              0.45489857013282214
+            ],
+            "gradient_energy": 0.8235397636890411,
+            "anisotropy": 0.10473978352935112,
+            "orientation_degrees": 153.6337320122593,
+            "alignment_degrees": 52.33032369531472
+          }
+        },
+        {
+          "component": 11,
+          "matched": false,
+          "shape_anisotropy": 0.6787267053296421,
+          "retained_sigma1": {
+            "samples": 15320,
+            "available": true,
+            "tensor": [
+              [
+                0.5372129082679749,
+                0.0741591602563858
+              ],
+              [
+                0.0741591602563858,
+                0.46075206995010376
+              ]
+            ],
+            "eigenvalues": [
+              0.4155490066274826,
+              0.582415971590596
+            ],
+            "gradient_energy": 0.9979649782180786,
+            "anisotropy": 0.16720723532910295,
+            "orientation_degrees": 121.36402858371565,
+            "alignment_degrees": 82.02086999114127
+          }
+        },
+        {
+          "component": 16,
+          "matched": false,
+          "shape_anisotropy": 0.5973797139548287,
+          "retained_sigma1": {
+            "samples": 13871,
+            "available": true,
+            "tensor": [
+              [
+                0.5311676263809204,
+                0.022104976698756218
+              ],
+              [
+                0.022104976698756218,
+                0.3689832091331482
+              ]
+            ],
+            "eigenvalues": [
+              0.3660243838886016,
+              0.534126451625467
+            ],
+            "gradient_energy": 0.9001508355140686,
+            "anisotropy": 0.18674877709896667,
+            "orientation_degrees": 97.6239158568935,
+            "alignment_degrees": 72.13524390032772
+          }
+        },
+        {
+          "component": 23,
+          "matched": false,
+          "shape_anisotropy": 0.5045563227536934,
+          "retained_sigma1": {
+            "samples": 20893,
+            "available": true,
+            "tensor": [
+              [
+                2.901411533355713,
+                -0.5749110579490662
+              ],
+              [
+                -0.5749110579490662,
+                1.6424036026000977
+              ]
+            ],
+            "eigenvalues": [
+              1.4193831008929432,
+              3.1244320350628674
+            ],
+            "gradient_energy": 4.5438151359558105,
+            "anisotropy": 0.3752461055639448,
+            "orientation_degrees": 68.79764390790568,
+            "alignment_degrees": 6.246067422783312
+          }
+        },
+        {
+          "component": 57,
+          "matched": false,
+          "shape_anisotropy": 0.8110351690840062,
+          "retained_sigma1": {
+            "samples": 23230,
+            "available": true,
+            "tensor": [
+              [
+                0.427378386259079,
+                0.023827264085412025
+              ],
+              [
+                0.023827264085412025,
+                0.35715433955192566
+              ]
+            ],
+            "eigenvalues": [
+              0.3498329715989135,
+              0.43469975421209106
+            ],
+            "gradient_energy": 0.7845327258110046,
+            "anisotropy": 0.10817494263919604,
+            "orientation_degrees": 107.08054460179376,
+            "alignment_degrees": 48.737191366693864
+          }
+        },
+        {
+          "component": 93,
+          "matched": false,
+          "shape_anisotropy": 0.42675320458699406,
+          "retained_sigma1": {
+            "samples": 46719,
+            "available": true,
+            "tensor": [
+              [
+                0.1583629697561264,
+                -0.009867899119853973
+              ],
+              [
+                -0.009867899119853973,
+                0.23708735406398773
+              ]
+            ],
+            "eigenvalues": [
+              0.15714490064669684,
+              0.2383054231734173
+            ],
+            "gradient_energy": 0.39545032382011414,
+            "anisotropy": 0.20523569621260307,
+            "orientation_degrees": 7.03685389407093,
+            "alignment_degrees": 19.89507794221518
+          }
+        },
+        {
+          "component": 265,
+          "matched": false,
+          "shape_anisotropy": 0.3949084199252119,
+          "retained_sigma1": {
+            "samples": 21510,
+            "available": true,
+            "tensor": [
+              [
+                0.11009219288825989,
+                -0.01942303404211998
+              ],
+              [
+                -0.01942303404211998,
+                0.16725027561187744
+              ]
+            ],
+            "eigenvalues": [
+              0.10411669972041064,
+              0.17322576877972667
+            ],
+            "gradient_energy": 0.27734246850013733,
+            "anisotropy": 0.249183146861916,
+            "orientation_degrees": 17.100505766043312,
+            "alignment_degrees": 55.06888338924628
+          }
+        },
+        {
+          "component": 295,
+          "matched": true,
+          "shape_anisotropy": 0.9251765043992822,
+          "retained_sigma1": {
+            "samples": 14691,
+            "available": true,
+            "tensor": [
+              [
+                3.2972941398620605,
+                0.03344671428203583
+              ],
+              [
+                0.03344671428203583,
+                0.7194745540618896
+              ]
+            ],
+            "eigenvalues": [
+              0.7190406623960618,
+              3.297728031527888
+            ],
+            "gradient_energy": 4.01676869392395,
+            "anisotropy": 0.6419805484524245,
+            "orientation_degrees": 90.74323494335592,
+            "alignment_degrees": 1.9542334621772852
+          }
+        },
+        {
+          "component": 316,
+          "matched": false,
+          "shape_anisotropy": 0.8817611758983082,
+          "retained_sigma1": {
+            "samples": 19111,
+            "available": true,
+            "tensor": [
+              [
+                0.10651785135269165,
+                0.009086284786462784
+              ],
+              [
+                0.009086284786462784,
+                0.1470763087272644
+              ]
+            ],
+            "eigenvalues": [
+              0.10457529596731718,
+              0.14901886411263887
+            ],
+            "gradient_energy": 0.25359416007995605,
+            "anisotropy": 0.17525469881210598,
+            "orientation_degrees": 167.93240976183696,
+            "alignment_degrees": 34.577608413336776
+          }
+        }
+      ]
+    },
+    {
+      "page": "200021869_00014_2",
+      "held_pixels": 0,
+      "components": []
+    },
+    {
+      "page": "200010454_00026_1",
+      "held_pixels": 0,
+      "components": []
+    },
+    {
+      "page": "200014740_00065_2",
+      "held_pixels": 0,
+      "components": []
+    },
+    {
+      "page": "100249416_00024_1",
+      "held_pixels": 0,
+      "components": [
+        {
+          "component": 1,
+          "matched": false,
+          "shape_anisotropy": 0.58235884133032,
+          "retained_sigma1": {
+            "samples": 44740,
+            "available": true,
+            "tensor": [
+              [
+                0.0393550731241703,
+                -0.0011392044834792614
+              ],
+              [
+                -0.0011392044834792614,
+                0.08779677003622055
+              ]
+            ],
+            "eigenvalues": [
+              0.03932829722676826,
+              0.08782354593362258
+            ],
+            "gradient_energy": 0.12715184316039085,
+            "anisotropy": 0.3813963486607256,
+            "orientation_degrees": 1.3464338686120243,
+            "alignment_degrees": 31.808368484982765
+          }
+        }
+      ]
+    },
+    {
+      "page": "brsk003_003",
+      "held_pixels": 0,
+      "components": [
+        {
+          "component": 12,
+          "matched": false,
+          "shape_anisotropy": 0.20798118164517257,
+          "retained_sigma1": {
+            "samples": 18605,
+            "available": true,
+            "tensor": [
+              [
+                4.305667400360107,
+                -0.3097737729549408
+              ],
+              [
+                -0.3097737729549408,
+                2.6084177494049072
+              ]
+            ],
+            "eigenvalues": [
+              2.5536468228293847,
+              4.36043832693563
+            ],
+            "gradient_energy": 6.914085149765015,
+            "anisotropy": 0.261320401032037,
+            "orientation_degrees": 79.97319300139253,
+            "alignment_degrees": 2.2635566695639113
+          }
+        }
+      ]
+    },
+    {
+      "page": "200008003_00004_2",
+      "held_pixels": 0,
+      "components": []
+    },
+    {
+      "page": "200017458_00004_2",
+      "held_pixels": 0,
+      "components": [
+        {
+          "component": 79,
+          "matched": false,
+          "shape_anisotropy": 0.6875887728464789,
+          "retained_sigma1": {
+            "samples": 25416,
+            "available": true,
+            "tensor": [
+              [
+                0.16011378169059753,
+                0.004545725416392088
+              ],
+              [
+                0.004545725416392088,
+                0.6958261132240295
+              ]
+            ],
+            "eigenvalues": [
+              0.16007521223691454,
+              0.6958646826777125
+            ],
+            "gradient_energy": 0.8559398949146271,
+            "anisotropy": 0.62596623153573,
+            "orientation_degrees": 179.51386991435612,
+            "alignment_degrees": 54.62317746165215
+          }
+        },
+        {
+          "component": 100,
+          "matched": false,
+          "shape_anisotropy": 0.42446868263327686,
+          "retained_sigma1": {
+            "samples": 31020,
+            "available": true,
+            "tensor": [
+              [
+                0.1304471790790558,
+                0.005202449392527342
+              ],
+              [
+                0.005202449392527342,
+                0.18559320271015167
+              ]
+            ],
+            "eigenvalues": [
+              0.12996067450065718,
+              0.18607970728855028
+            ],
+            "gradient_energy": 0.31604038178920746,
+            "anisotropy": 0.17756918426115356,
+            "orientation_degrees": 174.65754948552194,
+            "alignment_degrees": 67.34290261231881
+          }
+        }
+      ]
+    },
+    {
+      "page": "200021802_00015_1",
+      "held_pixels": 8573,
+      "components": [
+        {
+          "component": 64,
+          "matched": true,
+          "shape_anisotropy": 0.9783072294670228,
+          "retained_sigma1": {
+            "samples": 34383,
+            "available": true,
+            "tensor": [
+              [
+                0.8207645416259766,
+                -0.00031481575570069253
+              ],
+              [
+                -0.00031481575570069253,
+                0.21136349439620972
+              ]
+            ],
+            "eigenvalues": [
+              0.21136333176286007,
+              0.8207647042593262
+            ],
+            "gradient_energy": 1.0321280360221863,
+            "anisotropy": 0.5904319534280791,
+            "orientation_degrees": 89.97040108843018,
+            "alignment_degrees": 1.2600357611847812
+          }
+        },
+        {
+          "component": 69,
+          "matched": false,
+          "shape_anisotropy": 0.6368347314339433,
+          "retained_sigma1": {
+            "samples": 11120,
+            "available": true,
+            "tensor": [
+              [
+                0.30259189009666443,
+                -0.027183081954717636
+              ],
+              [
+                -0.027183081954717636,
+                0.18339130282402039
+              ]
+            ],
+            "eigenvalues": [
+              0.17748499415116517,
+              0.3084981987695196
+            ],
+            "gradient_energy": 0.4859831929206848,
+            "anisotropy": 0.26958381797317943,
+            "orientation_degrees": 77.74137904782104,
+            "alignment_degrees": 22.66468003401131
+          }
+        }
+      ]
+    },
+    {
+      "page": "100241706_00034_1",
+      "held_pixels": 0,
+      "components": []
+    },
+    {
+      "page": "200015779_00075_2",
+      "held_pixels": 0,
+      "components": []
+    },
+    {
+      "page": "200003076_00054_1",
+      "held_pixels": 0,
+      "components": []
+    },
+    {
+      "page": "200021853_00014_2",
+      "held_pixels": 0,
+      "components": []
+    },
+    {
+      "page": "200021644_00003_2",
+      "held_pixels": 0,
+      "components": []
+    },
+    {
+      "page": "200014685_00004_2",
+      "held_pixels": 0,
+      "components": [
+        {
+          "component": 1,
+          "matched": false,
+          "shape_anisotropy": 0.5324888679253638,
+          "retained_sigma1": {
+            "samples": 48200,
+            "available": true,
+            "tensor": [
+              [
+                0.10338518023490906,
+                0.005277557298541069
+              ],
+              [
+                0.005277557298541069,
+                0.08927014470100403
+              ]
+            ],
+            "eigenvalues": [
+              0.08751510505990327,
+              0.10514021987600981
+            ],
+            "gradient_energy": 0.19265532493591309,
+            "anisotropy": 0.09148522015661673,
+            "orientation_degrees": 108.39442812840866,
+            "alignment_degrees": 28.518276549396347
+          }
+        }
+      ]
+    },
+    {
+      "page": "200014685_00002_2",
+      "held_pixels": 0,
+      "components": [
+        {
+          "component": 4,
+          "matched": false,
+          "shape_anisotropy": 0.920416056419416,
+          "retained_sigma1": {
+            "samples": 19435,
+            "available": true,
+            "tensor": [
+              [
+                0.21827171742916107,
+                -0.016936348751187325
+              ],
+              [
+                -0.016936348751187325,
+                0.214627206325531
+              ]
+            ],
+            "eigenvalues": [
+              0.1994153630071984,
+              0.23348356074749368
+            ],
+            "gradient_energy": 0.4328989237546921,
+            "anisotropy": 0.07869781113061969,
+            "orientation_degrees": 48.070538887721625,
+            "alignment_degrees": 12.212497827802885
+          }
+        },
+        {
+          "component": 6,
+          "matched": false,
+          "shape_anisotropy": 0.34135081315115107,
+          "retained_sigma1": {
+            "samples": 7316,
+            "available": true,
+            "tensor": [
+              [
+                0.12183823436498642,
+                0.004125782288610935
+              ],
+              [
+                0.004125782288610935,
+                0.11995115131139755
+              ]
+            ],
+            "eigenvalues": [
+              0.11666239439576127,
+              0.12512699128062268
+            ],
+            "gradient_energy": 0.24178938567638397,
+            "anisotropy": 0.035008140912317,
+            "orientation_degrees": 128.5591630851244,
+            "alignment_degrees": 20.254298660510116
+          }
+        },
+        {
+          "component": 15,
+          "matched": false,
+          "shape_anisotropy": 0.8266900149830578,
+          "retained_sigma1": {
+            "samples": 34172,
+            "available": true,
+            "tensor": [
+              [
+                0.12550540268421173,
+                -0.002223978517577052
+              ],
+              [
+                -0.002223978517577052,
+                0.13803631067276
+              ]
+            ],
+            "eigenvalues": [
+              0.12512239864665547,
+              0.13841931471031627
+            ],
+            "gradient_energy": 0.26354171335697174,
+            "anisotropy": 0.050454692330431546,
+            "orientation_degrees": 9.771384930123787,
+            "alignment_degrees": 83.54000980808871
+          }
+        },
+        {
+          "component": 85,
+          "matched": false,
+          "shape_anisotropy": 0.10504621467567479,
+          "retained_sigma1": {
+            "samples": 14972,
+            "available": true,
+            "tensor": [
+              [
+                0.10158674418926239,
+                -0.0023193415254354477
+              ],
+              [
+                -0.0023193415254354477,
+                0.05940379574894905
+              ]
+            ],
+            "eigenvalues": [
+              0.059276654795368706,
+              0.10171388514284273
+            ],
+            "gradient_energy": 0.16099053993821144,
+            "anisotropy": 0.26360077035434215,
+            "orientation_degrees": 86.86231787777054,
+            "alignment_degrees": 38.17691787094604
+          }
+        }
+      ]
+    },
+    {
+      "page": "umgy004_013",
+      "held_pixels": 0,
+      "components": [
+        {
+          "component": 13,
+          "matched": false,
+          "shape_anisotropy": 0.8768678127739102,
+          "retained_sigma1": {
+            "samples": 19330,
+            "available": true,
+            "tensor": [
+              [
+                0.5331971645355225,
+                -2.7612251869868487e-05
+              ],
+              [
+                -2.7612251869868487e-05,
+                0.1896175593137741
+              ]
+            ],
+            "eigenvalues": [
+              0.1896175570946772,
+              0.5331971667546194
+            ],
+            "gradient_energy": 0.7228147238492966,
+            "anisotropy": 0.47533565424654645,
+            "orientation_degrees": 89.99539534519126,
+            "alignment_degrees": 5.048350994075378
+          }
+        },
+        {
+          "component": 14,
+          "matched": false,
+          "shape_anisotropy": 0.6162695308408901,
+          "retained_sigma1": {
+            "samples": 20150,
+            "available": true,
+            "tensor": [
+              [
+                0.3638564348220825,
+                -1.892676664283499e-05
+              ],
+              [
+                -1.892676664283499e-05,
+                0.13571466505527496
+              ]
+            ],
+            "eigenvalues": [
+              0.1357146634851,
+              0.3638564363922575
+            ],
+            "gradient_energy": 0.4995710998773575,
+            "anisotropy": 0.45667528198321583,
+            "orientation_degrees": 89.99524671067635,
+            "alignment_degrees": 17.906583468292894
+          }
+        }
+      ]
+    },
+    {
+      "page": "200008316_00020_1",
+      "held_pixels": 0,
+      "components": []
+    }
+  ],
+  "independent_finite_stencil_poison_invariance": true,
+  "regions": [
+    {
+      "id": "dense_stain",
+      "hold_candidate_pixels": 0,
+      "paper_reverted_pixels": 0,
+      "remaining_paper_applied": 0,
+      "changed_vs_base": 0,
+      "original_preserved_in_hold": true,
+      "reference_pixels": 0
+    },
+    {
+      "id": "thin_black_water",
+      "hold_candidate_pixels": 0,
+      "paper_reverted_pixels": 0,
+      "remaining_paper_applied": 0,
+      "changed_vs_base": 0,
+      "original_preserved_in_hold": true,
+      "reference_pixels": 0
+    },
+    {
+      "id": "brown_as_red",
+      "hold_candidate_pixels": 0,
+      "paper_reverted_pixels": 0,
+      "remaining_paper_applied": 0,
+      "changed_vs_base": 0,
+      "original_preserved_in_hold": true,
+      "reference_pixels": 0
+    },
+    {
+      "id": "thin_black_loop",
+      "hold_candidate_pixels": 0,
+      "paper_reverted_pixels": 0,
+      "remaining_paper_applied": 0,
+      "changed_vs_base": 0,
+      "original_preserved_in_hold": true,
+      "reference_pixels": 0
+    },
+    {
+      "id": "thin_black_text",
+      "hold_candidate_pixels": 0,
+      "paper_reverted_pixels": 0,
+      "remaining_paper_applied": 0,
+      "changed_vs_base": 0,
+      "original_preserved_in_hold": true,
+      "reference_pixels": 0
+    },
+    {
+      "id": "warm_stroke",
+      "hold_candidate_pixels": 0,
+      "paper_reverted_pixels": 0,
+      "remaining_paper_applied": 0,
+      "changed_vs_base": 0,
+      "original_preserved_in_hold": true,
+      "reference_pixels": 0
+    },
+    {
+      "id": "control_black",
+      "hold_candidate_pixels": 0,
+      "paper_reverted_pixels": 0,
+      "remaining_paper_applied": 0,
+      "changed_vs_base": 0,
+      "original_preserved_in_hold": true,
+      "reference_pixels": 0
+    },
+    {
+      "id": "dense_stain_new",
+      "hold_candidate_pixels": 0,
+      "paper_reverted_pixels": 0,
+      "remaining_paper_applied": 0,
+      "changed_vs_base": 0,
+      "original_preserved_in_hold": true,
+      "reference_pixels": 32666
+    },
+    {
+      "id": "brown_false_red_new",
+      "hold_candidate_pixels": 0,
+      "paper_reverted_pixels": 0,
+      "remaining_paper_applied": 224,
+      "changed_vs_base": 0,
+      "original_preserved_in_hold": true,
+      "reference_pixels": 171560
+    },
+    {
+      "id": "hole_edge_new",
+      "hold_candidate_pixels": 0,
+      "paper_reverted_pixels": 0,
+      "remaining_paper_applied": 10900,
+      "changed_vs_base": 0,
+      "original_preserved_in_hold": true,
+      "reference_pixels": 209280
+    },
+    {
+      "id": "control_text_new",
+      "hold_candidate_pixels": 0,
+      "paper_reverted_pixels": 0,
+      "remaining_paper_applied": 0,
+      "changed_vs_base": 0,
+      "original_preserved_in_hold": true,
+      "reference_pixels": 0
+    },
+    {
+      "id": "200021712_00082_1_component_16",
+      "hold_candidate_pixels": 0,
+      "paper_reverted_pixels": 0,
+      "remaining_paper_applied": 2975,
+      "changed_vs_base": 0,
+      "original_preserved_in_hold": true,
+      "reference_pixels": 25319
+    },
+    {
+      "id": "200021712_00082_1_component_21",
+      "hold_candidate_pixels": 0,
+      "paper_reverted_pixels": 0,
+      "remaining_paper_applied": 3994,
+      "changed_vs_base": 0,
+      "original_preserved_in_hold": true,
+      "reference_pixels": 37458
+    },
+    {
+      "id": "200021712_00082_1_component_28",
+      "hold_candidate_pixels": 0,
+      "paper_reverted_pixels": 0,
+      "remaining_paper_applied": 1430,
+      "changed_vs_base": 0,
+      "original_preserved_in_hold": true,
+      "reference_pixels": 33241
+    },
+    {
+      "id": "200021712_00082_1_component_36",
+      "hold_candidate_pixels": 0,
+      "paper_reverted_pixels": 0,
+      "remaining_paper_applied": 1011,
+      "changed_vs_base": 0,
+      "original_preserved_in_hold": true,
+      "reference_pixels": 3372
+    },
+    {
+      "id": "200021712_00082_1_component_160",
+      "hold_candidate_pixels": 0,
+      "paper_reverted_pixels": 0,
+      "remaining_paper_applied": 563,
+      "changed_vs_base": 0,
+      "original_preserved_in_hold": true,
+      "reference_pixels": 51033
+    },
+    {
+      "id": "200021712_00082_1_external_rim_core_1",
+      "hold_candidate_pixels": 0,
+      "paper_reverted_pixels": 0,
+      "remaining_paper_applied": 8077,
+      "changed_vs_base": 0,
+      "original_preserved_in_hold": true,
+      "reference_pixels": 51597
+    },
+    {
+      "id": "200021712_00082_1_external_rim_core_6",
+      "hold_candidate_pixels": 0,
+      "paper_reverted_pixels": 0,
+      "remaining_paper_applied": 5219,
+      "changed_vs_base": 0,
+      "original_preserved_in_hold": true,
+      "reference_pixels": 55147
+    },
+    {
+      "id": "200021712_00082_1_external_rim_core_7",
+      "hold_candidate_pixels": 0,
+      "paper_reverted_pixels": 0,
+      "remaining_paper_applied": 1268,
+      "changed_vs_base": 0,
+      "original_preserved_in_hold": true,
+      "reference_pixels": 52613
+    },
+    {
+      "id": "200021712_00082_1_external_rim_core_10",
+      "hold_candidate_pixels": 1859,
+      "paper_reverted_pixels": 1859,
+      "remaining_paper_applied": 0,
+      "changed_vs_base": 1856,
+      "original_preserved_in_hold": true,
+      "reference_pixels": 5013
+    },
+    {
+      "id": "brown_near_text",
+      "hold_candidate_pixels": 0,
+      "paper_reverted_pixels": 0,
+      "remaining_paper_applied": 0,
+      "changed_vs_base": 0,
+      "original_preserved_in_hold": true,
+      "reference_pixels": 0
+    },
+    {
+      "id": "dark_text_control",
+      "hold_candidate_pixels": 0,
+      "paper_reverted_pixels": 0,
+      "remaining_paper_applied": 0,
+      "changed_vs_base": 0,
+      "original_preserved_in_hold": true,
+      "reference_pixels": 0
+    },
+    {
+      "id": "faint_left_text",
+      "hold_candidate_pixels": 0,
+      "paper_reverted_pixels": 0,
+      "remaining_paper_applied": 0,
+      "changed_vs_base": 0,
+      "original_preserved_in_hold": true,
+      "reference_pixels": 0
+    },
+    {
+      "id": "damage_control",
+      "hold_candidate_pixels": 0,
+      "paper_reverted_pixels": 0,
+      "remaining_paper_applied": 0,
+      "changed_vs_base": 0,
+      "original_preserved_in_hold": true,
+      "reference_pixels": 132509
+    },
+    {
+      "id": "new_margin_hole",
+      "hold_candidate_pixels": 0,
+      "paper_reverted_pixels": 0,
+      "remaining_paper_applied": 16201,
+      "changed_vs_base": 0,
+      "original_preserved_in_hold": true,
+      "reference_pixels": 94104
+    },
+    {
+      "id": "new_frame_text",
+      "hold_candidate_pixels": 0,
+      "paper_reverted_pixels": 0,
+      "remaining_paper_applied": 0,
+      "changed_vs_base": 0,
+      "original_preserved_in_hold": true,
+      "reference_pixels": 48502
+    },
+    {
+      "id": "new_uncertain_trace",
+      "hold_candidate_pixels": 0,
+      "paper_reverted_pixels": 0,
+      "remaining_paper_applied": 0,
+      "changed_vs_base": 0,
+      "original_preserved_in_hold": true,
+      "reference_pixels": 163117
+    },
+    {
+      "id": "new_brown_stamp",
+      "hold_candidate_pixels": 0,
+      "paper_reverted_pixels": 0,
+      "remaining_paper_applied": 662,
+      "changed_vs_base": 0,
+      "original_preserved_in_hold": true,
+      "reference_pixels": 146020
+    },
+    {
+      "id": "new_header_ink",
+      "hold_candidate_pixels": 0,
+      "paper_reverted_pixels": 0,
+      "remaining_paper_applied": 0,
+      "changed_vs_base": 0,
+      "original_preserved_in_hold": true,
+      "reference_pixels": 88511
+    },
+    {
+      "id": "new_blank_paper",
+      "hold_candidate_pixels": 0,
+      "paper_reverted_pixels": 0,
+      "remaining_paper_applied": 0,
+      "changed_vs_base": 0,
+      "original_preserved_in_hold": true,
+      "reference_pixels": 458631
+    },
+    {
+      "id": "new_mono_text",
+      "hold_candidate_pixels": 0,
+      "paper_reverted_pixels": 0,
+      "remaining_paper_applied": 0,
+      "changed_vs_base": 0,
+      "original_preserved_in_hold": true,
+      "reference_pixels": 0
+    },
+    {
+      "id": "unseen_thin_crack",
+      "hold_candidate_pixels": 0,
+      "paper_reverted_pixels": 0,
+      "remaining_paper_applied": 1522,
+      "changed_vs_base": 0,
+      "original_preserved_in_hold": true,
+      "reference_pixels": 203779
+    },
+    {
+      "id": "unseen_brown_spot",
+      "hold_candidate_pixels": 0,
+      "paper_reverted_pixels": 0,
+      "remaining_paper_applied": 0,
+      "changed_vs_base": 0,
+      "original_preserved_in_hold": true,
+      "reference_pixels": 123796
+    },
+    {
+      "id": "unseen_dense_text",
+      "hold_candidate_pixels": 0,
+      "paper_reverted_pixels": 0,
+      "remaining_paper_applied": 0,
+      "changed_vs_base": 0,
+      "original_preserved_in_hold": true,
+      "reference_pixels": 0
+    },
+    {
+      "id": "200017458_00004_2_component_7",
+      "hold_candidate_pixels": 0,
+      "paper_reverted_pixels": 0,
+      "remaining_paper_applied": 1461,
+      "changed_vs_base": 0,
+      "original_preserved_in_hold": true,
+      "reference_pixels": 34701
+    },
+    {
+      "id": "200017458_00004_2_component_13",
+      "hold_candidate_pixels": 0,
+      "paper_reverted_pixels": 0,
+      "remaining_paper_applied": 1522,
+      "changed_vs_base": 0,
+      "original_preserved_in_hold": true,
+      "reference_pixels": 47186
+    },
+    {
+      "id": "200017458_00004_2_component_45",
+      "hold_candidate_pixels": 0,
+      "paper_reverted_pixels": 0,
+      "remaining_paper_applied": 0,
+      "changed_vs_base": 0,
+      "original_preserved_in_hold": true,
+      "reference_pixels": 37917
+    },
+    {
+      "id": "unseen_fold",
+      "hold_candidate_pixels": 8573,
+      "paper_reverted_pixels": 8573,
+      "remaining_paper_applied": 75,
+      "changed_vs_base": 8546,
+      "original_preserved_in_hold": true,
+      "reference_pixels": 187679
+    },
+    {
+      "id": "unseen_top_trace",
+      "hold_candidate_pixels": 0,
+      "paper_reverted_pixels": 0,
+      "remaining_paper_applied": 131,
+      "changed_vs_base": 0,
+      "original_preserved_in_hold": true,
+      "reference_pixels": 352115
+    },
+    {
+      "id": "unseen_blue_text",
+      "hold_candidate_pixels": 0,
+      "paper_reverted_pixels": 0,
+      "remaining_paper_applied": 0,
+      "changed_vs_base": 0,
+      "original_preserved_in_hold": true,
+      "reference_pixels": 0
+    },
+    {
+      "id": "200021802_00015_1_upper_core_25",
+      "hold_candidate_pixels": 0,
+      "paper_reverted_pixels": 0,
+      "remaining_paper_applied": 0,
+      "changed_vs_base": 0,
+      "original_preserved_in_hold": true,
+      "reference_pixels": 54978
+    },
+    {
+      "id": "200021802_00015_1_upper_core_237",
+      "hold_candidate_pixels": 0,
+      "paper_reverted_pixels": 0,
+      "remaining_paper_applied": 0,
+      "changed_vs_base": 0,
+      "original_preserved_in_hold": true,
+      "reference_pixels": 20816
+    },
+    {
+      "id": "unseen_blank",
+      "hold_candidate_pixels": 0,
+      "paper_reverted_pixels": 0,
+      "remaining_paper_applied": 0,
+      "changed_vs_base": 0,
+      "original_preserved_in_hold": true,
+      "reference_pixels": 535045
+    },
+    {
+      "id": "unseen_frame",
+      "hold_candidate_pixels": 0,
+      "paper_reverted_pixels": 0,
+      "remaining_paper_applied": 0,
+      "changed_vs_base": 0,
+      "original_preserved_in_hold": true,
+      "reference_pixels": 61391
+    },
+    {
+      "id": "unseen_body",
+      "hold_candidate_pixels": 0,
+      "paper_reverted_pixels": 0,
+      "remaining_paper_applied": 0,
+      "changed_vs_base": 0,
+      "original_preserved_in_hold": true,
+      "reference_pixels": 0
+    },
+    {
+      "id": "unseen_upper_paper",
+      "hold_candidate_pixels": 0,
+      "paper_reverted_pixels": 0,
+      "remaining_paper_applied": 0,
+      "changed_vs_base": 0,
+      "original_preserved_in_hold": true,
+      "reference_pixels": 158992
+    },
+    {
+      "id": "unseen_seal",
+      "hold_candidate_pixels": 0,
+      "paper_reverted_pixels": 0,
+      "remaining_paper_applied": 0,
+      "changed_vs_base": 0,
+      "original_preserved_in_hold": true,
+      "reference_pixels": 0
+    },
+    {
+      "id": "unseen_light_text",
+      "hold_candidate_pixels": 0,
+      "paper_reverted_pixels": 0,
+      "remaining_paper_applied": 0,
+      "changed_vs_base": 0,
+      "original_preserved_in_hold": true,
+      "reference_pixels": 0
+    },
+    {
+      "id": "fresh_page_edge",
+      "hold_candidate_pixels": 0,
+      "paper_reverted_pixels": 0,
+      "remaining_paper_applied": 0,
+      "changed_vs_base": 0,
+      "original_preserved_in_hold": true,
+      "reference_pixels": 80272
+    },
+    {
+      "id": "fresh_margin_flecks",
+      "hold_candidate_pixels": 0,
+      "paper_reverted_pixels": 0,
+      "remaining_paper_applied": 0,
+      "changed_vs_base": 0,
+      "original_preserved_in_hold": true,
+      "reference_pixels": 172731
+    },
+    {
+      "id": "fresh_blank_margin",
+      "hold_candidate_pixels": 0,
+      "paper_reverted_pixels": 0,
+      "remaining_paper_applied": 0,
+      "changed_vs_base": 0,
+      "original_preserved_in_hold": true,
+      "reference_pixels": 219021
+    },
+    {
+      "id": "fresh_dark_body",
+      "hold_candidate_pixels": 0,
+      "paper_reverted_pixels": 0,
+      "remaining_paper_applied": 0,
+      "changed_vs_base": 0,
+      "original_preserved_in_hold": true,
+      "reference_pixels": 0
+    },
+    {
+      "id": "fresh_header_ink",
+      "hold_candidate_pixels": 0,
+      "paper_reverted_pixels": 0,
+      "remaining_paper_applied": 0,
+      "changed_vs_base": 0,
+      "original_preserved_in_hold": true,
+      "reference_pixels": 0
+    },
+    {
+      "id": "fresh_left_paper",
+      "hold_candidate_pixels": 0,
+      "paper_reverted_pixels": 0,
+      "remaining_paper_applied": 0,
+      "changed_vs_base": 0,
+      "original_preserved_in_hold": true,
+      "reference_pixels": 0
+    },
+    {
+      "id": "fresh_mid_paper",
+      "hold_candidate_pixels": 0,
+      "paper_reverted_pixels": 0,
+      "remaining_paper_applied": 0,
+      "changed_vs_base": 0,
+      "original_preserved_in_hold": true,
+      "reference_pixels": 0
+    },
+    {
+      "id": "fresh_body_ink",
+      "hold_candidate_pixels": 0,
+      "paper_reverted_pixels": 0,
+      "remaining_paper_applied": 0,
+      "changed_vs_base": 0,
+      "original_preserved_in_hold": true,
+      "reference_pixels": 0
+    },
+    {
+      "id": "fresh_small_top_trace",
+      "hold_candidate_pixels": 0,
+      "paper_reverted_pixels": 0,
+      "remaining_paper_applied": 0,
+      "changed_vs_base": 0,
+      "original_preserved_in_hold": true,
+      "reference_pixels": 141604
+    },
+    {
+      "id": "fresh_red_seal",
+      "hold_candidate_pixels": 0,
+      "paper_reverted_pixels": 0,
+      "remaining_paper_applied": 0,
+      "changed_vs_base": 0,
+      "original_preserved_in_hold": true,
+      "reference_pixels": 79694
+    },
+    {
+      "id": "fresh_blank_top",
+      "hold_candidate_pixels": 0,
+      "paper_reverted_pixels": 0,
+      "remaining_paper_applied": 0,
+      "changed_vs_base": 0,
+      "original_preserved_in_hold": true,
+      "reference_pixels": 142876
+    },
+    {
+      "id": "fresh_gray_body",
+      "hold_candidate_pixels": 0,
+      "paper_reverted_pixels": 0,
+      "remaining_paper_applied": 0,
+      "changed_vs_base": 0,
+      "original_preserved_in_hold": true,
+      "reference_pixels": 0
+    },
+    {
+      "id": "extra_top_branch",
+      "hold_candidate_pixels": 0,
+      "paper_reverted_pixels": 0,
+      "remaining_paper_applied": 6690,
+      "changed_vs_base": 0,
+      "original_preserved_in_hold": true,
+      "reference_pixels": 173368
+    },
+    {
+      "id": "extra_branch_blank",
+      "hold_candidate_pixels": 0,
+      "paper_reverted_pixels": 0,
+      "remaining_paper_applied": 0,
+      "changed_vs_base": 0,
+      "original_preserved_in_hold": true,
+      "reference_pixels": 290315
+    },
+    {
+      "id": "extra_branch_body",
+      "hold_candidate_pixels": 0,
+      "paper_reverted_pixels": 0,
+      "remaining_paper_applied": 0,
+      "changed_vs_base": 0,
+      "original_preserved_in_hold": true,
+      "reference_pixels": 0
+    },
+    {
+      "id": "200014685_00004_2_upper_core_1",
+      "hold_candidate_pixels": 0,
+      "paper_reverted_pixels": 0,
+      "remaining_paper_applied": 2791,
+      "changed_vs_base": 0,
+      "original_preserved_in_hold": true,
+      "reference_pixels": 45848
+    },
+    {
+      "id": "extra_brown_stain",
+      "hold_candidate_pixels": 0,
+      "paper_reverted_pixels": 0,
+      "remaining_paper_applied": 13215,
+      "changed_vs_base": 0,
+      "original_preserved_in_hold": true,
+      "reference_pixels": 355890
+    },
+    {
+      "id": "extra_second_branch",
+      "hold_candidate_pixels": 0,
+      "paper_reverted_pixels": 0,
+      "remaining_paper_applied": 6015,
+      "changed_vs_base": 0,
+      "original_preserved_in_hold": true,
+      "reference_pixels": 163571
+    },
+    {
+      "id": "extra_small_seal",
+      "hold_candidate_pixels": 0,
+      "paper_reverted_pixels": 0,
+      "remaining_paper_applied": 0,
+      "changed_vs_base": 0,
+      "original_preserved_in_hold": true,
+      "reference_pixels": 0
+    },
+    {
+      "id": "extra_stain_body",
+      "hold_candidate_pixels": 0,
+      "paper_reverted_pixels": 0,
+      "remaining_paper_applied": 0,
+      "changed_vs_base": 0,
+      "original_preserved_in_hold": true,
+      "reference_pixels": 0
+    },
+    {
+      "id": "200014685_00002_2_upper_core_3",
+      "hold_candidate_pixels": 0,
+      "paper_reverted_pixels": 0,
+      "remaining_paper_applied": 2963,
+      "changed_vs_base": 0,
+      "original_preserved_in_hold": true,
+      "reference_pixels": 53705
+    },
+    {
+      "id": "200014685_00002_2_upper_core_5",
+      "hold_candidate_pixels": 0,
+      "paper_reverted_pixels": 0,
+      "remaining_paper_applied": 676,
+      "changed_vs_base": 0,
+      "original_preserved_in_hold": true,
+      "reference_pixels": 24907
+    },
+    {
+      "id": "200014685_00002_2_upper_core_16",
+      "hold_candidate_pixels": 0,
+      "paper_reverted_pixels": 0,
+      "remaining_paper_applied": 3495,
+      "changed_vs_base": 0,
+      "original_preserved_in_hold": true,
+      "reference_pixels": 51558
+    },
+    {
+      "id": "extra_isolated_marks",
+      "hold_candidate_pixels": 0,
+      "paper_reverted_pixels": 0,
+      "remaining_paper_applied": 2286,
+      "changed_vs_base": 0,
+      "original_preserved_in_hold": true,
+      "reference_pixels": 154976
+    },
+    {
+      "id": "extra_mark_blank",
+      "hold_candidate_pixels": 0,
+      "paper_reverted_pixels": 0,
+      "remaining_paper_applied": 0,
+      "changed_vs_base": 0,
+      "original_preserved_in_hold": true,
+      "reference_pixels": 83576
+    },
+    {
+      "id": "extra_mark_body",
+      "hold_candidate_pixels": 0,
+      "paper_reverted_pixels": 0,
+      "remaining_paper_applied": 0,
+      "changed_vs_base": 0,
+      "original_preserved_in_hold": true,
+      "reference_pixels": 0
+    },
+    {
+      "id": "extra_header_strokes",
+      "hold_candidate_pixels": 0,
+      "paper_reverted_pixels": 0,
+      "remaining_paper_applied": 0,
+      "changed_vs_base": 0,
+      "original_preserved_in_hold": true,
+      "reference_pixels": 590065
+    },
+    {
+      "id": "extra_header_blank",
+      "hold_candidate_pixels": 0,
+      "paper_reverted_pixels": 0,
+      "remaining_paper_applied": 0,
+      "changed_vs_base": 0,
+      "original_preserved_in_hold": true,
+      "reference_pixels": 386946
+    },
+    {
+      "id": "extra_header_body",
+      "hold_candidate_pixels": 0,
+      "paper_reverted_pixels": 0,
+      "remaining_paper_applied": 0,
+      "changed_vs_base": 0,
+      "original_preserved_in_hold": true,
+      "reference_pixels": 0
+    }
+  ],
+  "unchanged_ROIs": [
+    "dense_stain",
+    "thin_black_water",
+    "brown_as_red",
+    "thin_black_loop",
+    "thin_black_text",
+    "warm_stroke",
+    "control_black",
+    "dense_stain_new",
+    "brown_false_red_new",
+    "hole_edge_new",
+    "control_text_new",
+    "200021712_00082_1_component_16",
+    "200021712_00082_1_component_21",
+    "200021712_00082_1_component_28",
+    "200021712_00082_1_component_36",
+    "200021712_00082_1_component_160",
+    "200021712_00082_1_external_rim_core_1",
+    "200021712_00082_1_external_rim_core_6",
+    "200021712_00082_1_external_rim_core_7",
+    "brown_near_text",
+    "dark_text_control",
+    "faint_left_text",
+    "damage_control",
+    "new_margin_hole",
+    "new_frame_text",
+    "new_uncertain_trace",
+    "new_brown_stamp",
+    "new_header_ink",
+    "new_blank_paper",
+    "new_mono_text",
+    "unseen_thin_crack",
+    "unseen_brown_spot",
+    "unseen_dense_text",
+    "200017458_00004_2_component_7",
+    "200017458_00004_2_component_13",
+    "200017458_00004_2_component_45",
+    "unseen_top_trace",
+    "unseen_blue_text",
+    "200021802_00015_1_upper_core_25",
+    "200021802_00015_1_upper_core_237",
+    "unseen_blank",
+    "unseen_frame",
+    "unseen_body",
+    "unseen_upper_paper",
+    "unseen_seal",
+    "unseen_light_text",
+    "fresh_page_edge",
+    "fresh_margin_flecks",
+    "fresh_blank_margin",
+    "fresh_dark_body",
+    "fresh_header_ink",
+    "fresh_left_paper",
+    "fresh_mid_paper",
+    "fresh_body_ink",
+    "fresh_small_top_trace",
+    "fresh_red_seal",
+    "fresh_blank_top",
+    "fresh_gray_body",
+    "extra_top_branch",
+    "extra_branch_blank",
+    "extra_branch_body",
+    "200014685_00004_2_upper_core_1",
+    "extra_brown_stain",
+    "extra_second_branch",
+    "extra_small_seal",
+    "extra_stain_body",
+    "200014685_00002_2_upper_core_3",
+    "200014685_00002_2_upper_core_5",
+    "200014685_00002_2_upper_core_16",
+    "extra_isolated_marks",
+    "extra_mark_blank",
+    "extra_mark_body",
+    "extra_header_strokes",
+    "extra_header_blank",
+    "extra_header_body"
+  ],
+  "source_page_rows": 26,
+  "unique_pages": 25,
+  "repeated_source_page_rows_verified_identical": true,
+  "hold_exact_original": true,
+  "outside_hold_exact_baseline": true,
+  "held_original_pixels_never_used_as_paper_references": true,
+  "outside_effective_edit_changes": 0,
+  "new_solve": false,
+  "new_DDRM": false,
+  "pixel_GT": false
+}

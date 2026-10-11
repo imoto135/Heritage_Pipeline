@@ -1,0 +1,62 @@
+{
+  "cases": [
+    [
+      "F04",
+      "200021063_00002_2",
+      [
+        1650,
+        2500,
+        400,
+        620
+      ]
+    ],
+    [
+      "R01",
+      "200019865_00002_1",
+      [
+        1350,
+        100,
+        650,
+        650
+      ]
+    ],
+    [
+      "R02",
+      "200017458_00003_2",
+      [
+        1790,
+        80,
+        320,
+        620
+      ]
+    ],
+    [
+      "R03",
+      "200010454_00002_2",
+      [
+        1220,
+        1830,
+        520,
+        480
+      ]
+    ],
+    [
+      "R04",
+      "200003803_00003_1",
+      [
+        200,
+        100,
+        750,
+        550
+      ]
+    ]
+  ],
+  "v1": "modules/ddrm_npj/scripts/csc.py",
+  "v1_sha256": "4213d20062a6e835e6e10ae7399651718060e30ddf5c8d0177c26aa6c1872955",
+  "v2": "tmp_work/npj_dirt_control_20261002/source_snapshot/ddrm_npj_v2/scripts/csc.py",
+  "v2_sha256": "11815cbb82d6972644498db9c5a8879dfc7e104b14a2749e04fdf0198e19b22f",
+  "candidate": "Remove only global red mean-a >=133 gate; retain stage2 red candidate, HSV component support >=.05 and morphology close3/open1",
+  "final_test": false,
+  "ddrm_changed": false,
+  "scope": "Source/mask exploratory audit; ROI counts are not annotated ink recall"
+}

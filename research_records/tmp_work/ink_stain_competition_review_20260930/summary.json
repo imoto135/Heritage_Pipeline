@@ -1,0 +1,806 @@
+{
+  "rows": [
+    {
+      "page": "200010454_00002_2",
+      "roi": "near_seal_brown",
+      "fits": {
+        "no_stain": {
+          "converged": true,
+          "iterations": 25,
+          "relative_kkt": 4.782339858932669e-06,
+          "ink_density_mass_ratio_to_no_stain": 1.0,
+          "ink_above_gate": 4310,
+          "ink_above_gate_on_v6_edit": 583,
+          "lost_above_gate_from_no_stain": 0,
+          "old_solver_relative_l1": 0.002807564102113247,
+          "stain_density_mass": 0.0,
+          "combined_mass_ratio": 1.0,
+          "added_above_gate_from_no_stain": 0
+        },
+        "blobs_low": {
+          "converged": true,
+          "iterations": 247,
+          "relative_kkt": 4.9952849476679786e-05,
+          "ink_density_mass_ratio_to_no_stain": 0.48910048604011536,
+          "ink_above_gate": 2403,
+          "ink_above_gate_on_v6_edit": 507,
+          "lost_above_gate_from_no_stain": 1911,
+          "old_solver_relative_l1": null,
+          "stain_density_mass": 335.4401550292969,
+          "combined_mass_ratio": 1.761041283607483,
+          "added_above_gate_from_no_stain": 4
+        },
+        "creases_low": {
+          "converged": true,
+          "iterations": 2250,
+          "relative_kkt": 4.6055590239379466e-05,
+          "ink_density_mass_ratio_to_no_stain": 0.35595235228538513,
+          "ink_above_gate": 1732,
+          "ink_above_gate_on_v6_edit": 553,
+          "lost_above_gate_from_no_stain": 2604,
+          "old_solver_relative_l1": null,
+          "stain_density_mass": 416.7862854003906,
+          "combined_mass_ratio": 1.9363459348678589,
+          "added_above_gate_from_no_stain": 26
+        },
+        "both_low": {
+          "converged": true,
+          "iterations": 448,
+          "relative_kkt": 4.9166005334989744e-05,
+          "ink_density_mass_ratio_to_no_stain": 0.2557564973831177,
+          "ink_above_gate": 1431,
+          "ink_above_gate_on_v6_edit": 456,
+          "lost_above_gate_from_no_stain": 2881,
+          "old_solver_relative_l1": null,
+          "stain_density_mass": 447.8606872558594,
+          "combined_mass_ratio": 1.953979730606079,
+          "added_above_gate_from_no_stain": 2
+        },
+        "both_high": {
+          "converged": true,
+          "iterations": 2175,
+          "relative_kkt": 3.746835959694214e-05,
+          "ink_density_mass_ratio_to_no_stain": 0.7518150806427002,
+          "ink_above_gate": 3933,
+          "ink_above_gate_on_v6_edit": 583,
+          "lost_above_gate_from_no_stain": 532,
+          "old_solver_relative_l1": null,
+          "stain_density_mass": 85.23802947998047,
+          "combined_mass_ratio": 1.0750254392623901,
+          "added_above_gate_from_no_stain": 155
+        }
+      },
+      "v6_editable_pixels": 583,
+      "all_fits_above_gate_on_v6_edit": 451,
+      "some_fits_above_gate_on_v6_edit": 132,
+      "density_gate_sensitivity": [
+        {
+          "gate": 0.005,
+          "all_fits_above_gate_on_v6_edit": 538
+        },
+        {
+          "gate": 0.01,
+          "all_fits_above_gate_on_v6_edit": 507
+        },
+        {
+          "gate": 0.015,
+          "all_fits_above_gate_on_v6_edit": 451
+        },
+        {
+          "gate": 0.02,
+          "all_fits_above_gate_on_v6_edit": 377
+        },
+        {
+          "gate": 0.03,
+          "all_fits_above_gate_on_v6_edit": 215
+        },
+        {
+          "gate": 0.05,
+          "all_fits_above_gate_on_v6_edit": 42
+        },
+        {
+          "gate": 0.08,
+          "all_fits_above_gate_on_v6_edit": 0
+        },
+        {
+          "gate": 0.1,
+          "all_fits_above_gate_on_v6_edit": 0
+        },
+        {
+          "gate": 0.15,
+          "all_fits_above_gate_on_v6_edit": 0
+        },
+        {
+          "gate": 0.2,
+          "all_fits_above_gate_on_v6_edit": 0
+        }
+      ],
+      "equal_budget_no_stain_on_v6_edit": 132
+    },
+    {
+      "page": "200010454_00002_2",
+      "roi": "remote_brown",
+      "fits": {
+        "no_stain": {
+          "converged": true,
+          "iterations": 25,
+          "relative_kkt": 2.210943413279059e-05,
+          "ink_density_mass_ratio_to_no_stain": 1.0,
+          "ink_above_gate": 21072,
+          "ink_above_gate_on_v6_edit": 3661,
+          "lost_above_gate_from_no_stain": 0,
+          "old_solver_relative_l1": 0.007264408748596907,
+          "stain_density_mass": 0.0,
+          "combined_mass_ratio": 1.0,
+          "added_above_gate_from_no_stain": 0
+        },
+        "blobs_low": {
+          "converged": true,
+          "iterations": 339,
+          "relative_kkt": 4.605879793140581e-05,
+          "ink_density_mass_ratio_to_no_stain": 0.5417655110359192,
+          "ink_above_gate": 11748,
+          "ink_above_gate_on_v6_edit": 858,
+          "lost_above_gate_from_no_stain": 9542,
+          "old_solver_relative_l1": null,
+          "stain_density_mass": 1700.8824462890625,
+          "combined_mass_ratio": 1.583303451538086,
+          "added_above_gate_from_no_stain": 218
+        },
+        "creases_low": {
+          "converged": true,
+          "iterations": 1825,
+          "relative_kkt": 4.639755765776818e-05,
+          "ink_density_mass_ratio_to_no_stain": 0.6119244694709778,
+          "ink_above_gate": 14704,
+          "ink_above_gate_on_v6_edit": 2818,
+          "lost_above_gate_from_no_stain": 6649,
+          "old_solver_relative_l1": null,
+          "stain_density_mass": 2098.68896484375,
+          "combined_mass_ratio": 1.8970599174499512,
+          "added_above_gate_from_no_stain": 281
+        },
+        "both_low": {
+          "converged": true,
+          "iterations": 222,
+          "relative_kkt": 4.7628705850544076e-05,
+          "ink_density_mass_ratio_to_no_stain": 0.5098578333854675,
+          "ink_above_gate": 11084,
+          "ink_above_gate_on_v6_edit": 736,
+          "lost_above_gate_from_no_stain": 10198,
+          "old_solver_relative_l1": null,
+          "stain_density_mass": 2132.502685546875,
+          "combined_mass_ratio": 1.8156992197036743,
+          "added_above_gate_from_no_stain": 210
+        },
+        "both_high": {
+          "converged": true,
+          "iterations": 1325,
+          "relative_kkt": 4.304204146107271e-05,
+          "ink_density_mass_ratio_to_no_stain": 0.9285439848899841,
+          "ink_above_gate": 20814,
+          "ink_above_gate_on_v6_edit": 3661,
+          "lost_above_gate_from_no_stain": 306,
+          "old_solver_relative_l1": null,
+          "stain_density_mass": 136.13778686523438,
+          "combined_mass_ratio": 1.0119081735610962,
+          "added_above_gate_from_no_stain": 48
+        }
+      },
+      "v6_editable_pixels": 3661,
+      "all_fits_above_gate_on_v6_edit": 706,
+      "some_fits_above_gate_on_v6_edit": 2955,
+      "density_gate_sensitivity": [
+        {
+          "gate": 0.005,
+          "all_fits_above_gate_on_v6_edit": 1904
+        },
+        {
+          "gate": 0.01,
+          "all_fits_above_gate_on_v6_edit": 1129
+        },
+        {
+          "gate": 0.015,
+          "all_fits_above_gate_on_v6_edit": 706
+        },
+        {
+          "gate": 0.02,
+          "all_fits_above_gate_on_v6_edit": 453
+        },
+        {
+          "gate": 0.03,
+          "all_fits_above_gate_on_v6_edit": 188
+        },
+        {
+          "gate": 0.05,
+          "all_fits_above_gate_on_v6_edit": 22
+        },
+        {
+          "gate": 0.08,
+          "all_fits_above_gate_on_v6_edit": 0
+        },
+        {
+          "gate": 0.1,
+          "all_fits_above_gate_on_v6_edit": 0
+        },
+        {
+          "gate": 0.15,
+          "all_fits_above_gate_on_v6_edit": 0
+        },
+        {
+          "gate": 0.2,
+          "all_fits_above_gate_on_v6_edit": 0
+        }
+      ],
+      "equal_budget_no_stain_on_v6_edit": 1111
+    },
+    {
+      "page": "200021086_00032_2",
+      "roi": "faint_stamp",
+      "fits": {
+        "no_stain": {
+          "converged": true,
+          "iterations": 50,
+          "relative_kkt": 2.8802149355359165e-05,
+          "ink_density_mass_ratio_to_no_stain": 1.0,
+          "ink_above_gate": 105740,
+          "ink_above_gate_on_v6_edit": 558,
+          "lost_above_gate_from_no_stain": 0,
+          "old_solver_relative_l1": 0.012999733909964561,
+          "stain_density_mass": 0.0,
+          "combined_mass_ratio": 1.0,
+          "added_above_gate_from_no_stain": 0
+        },
+        "blobs_low": {
+          "converged": true,
+          "iterations": 1862,
+          "relative_kkt": 4.921496208238795e-05,
+          "ink_density_mass_ratio_to_no_stain": 0.17225801944732666,
+          "ink_above_gate": 56236,
+          "ink_above_gate_on_v6_edit": 531,
+          "lost_above_gate_from_no_stain": 51729,
+          "old_solver_relative_l1": null,
+          "stain_density_mass": 18773.634765625,
+          "combined_mass_ratio": 1.4451850652694702,
+          "added_above_gate_from_no_stain": 2225
+        },
+        "creases_low": {
+          "converged": true,
+          "iterations": 1816,
+          "relative_kkt": 4.903418588056368e-05,
+          "ink_density_mass_ratio_to_no_stain": 0.24993644654750824,
+          "ink_above_gate": 69746,
+          "ink_above_gate_on_v6_edit": 525,
+          "lost_above_gate_from_no_stain": 38377,
+          "old_solver_relative_l1": null,
+          "stain_density_mass": 20387.751953125,
+          "combined_mass_ratio": 1.6323070526123047,
+          "added_above_gate_from_no_stain": 2383
+        },
+        "both_low": {
+          "converged": true,
+          "iterations": 1801,
+          "relative_kkt": 4.865261743851565e-05,
+          "ink_density_mass_ratio_to_no_stain": 0.13623331487178802,
+          "ink_above_gate": 47697,
+          "ink_above_gate_on_v6_edit": 510,
+          "lost_above_gate_from_no_stain": 59686,
+          "old_solver_relative_l1": null,
+          "stain_density_mass": 19709.6171875,
+          "combined_mass_ratio": 1.4726237058639526,
+          "added_above_gate_from_no_stain": 1643
+        },
+        "both_high": {
+          "converged": true,
+          "iterations": 1550,
+          "relative_kkt": 4.9892014569582665e-05,
+          "ink_density_mass_ratio_to_no_stain": 0.7217124700546265,
+          "ink_above_gate": 101578,
+          "ink_above_gate_on_v6_edit": 558,
+          "lost_above_gate_from_no_stain": 4506,
+          "old_solver_relative_l1": null,
+          "stain_density_mass": 4723.6728515625,
+          "combined_mass_ratio": 1.0419962406158447,
+          "added_above_gate_from_no_stain": 344
+        }
+      },
+      "v6_editable_pixels": 558,
+      "all_fits_above_gate_on_v6_edit": 487,
+      "some_fits_above_gate_on_v6_edit": 71,
+      "density_gate_sensitivity": [
+        {
+          "gate": 0.005,
+          "all_fits_above_gate_on_v6_edit": 538
+        },
+        {
+          "gate": 0.01,
+          "all_fits_above_gate_on_v6_edit": 512
+        },
+        {
+          "gate": 0.015,
+          "all_fits_above_gate_on_v6_edit": 487
+        },
+        {
+          "gate": 0.02,
+          "all_fits_above_gate_on_v6_edit": 468
+        },
+        {
+          "gate": 0.03,
+          "all_fits_above_gate_on_v6_edit": 393
+        },
+        {
+          "gate": 0.05,
+          "all_fits_above_gate_on_v6_edit": 251
+        },
+        {
+          "gate": 0.08,
+          "all_fits_above_gate_on_v6_edit": 25
+        },
+        {
+          "gate": 0.1,
+          "all_fits_above_gate_on_v6_edit": 0
+        },
+        {
+          "gate": 0.15,
+          "all_fits_above_gate_on_v6_edit": 0
+        },
+        {
+          "gate": 0.2,
+          "all_fits_above_gate_on_v6_edit": 0
+        }
+      ],
+      "equal_budget_no_stain_on_v6_edit": 455
+    },
+    {
+      "page": "200021763_00002_2",
+      "roi": "long_tail",
+      "fits": {
+        "no_stain": {
+          "converged": true,
+          "iterations": 25,
+          "relative_kkt": 2.03582242310993e-05,
+          "ink_density_mass_ratio_to_no_stain": 1.0,
+          "ink_above_gate": 62387,
+          "ink_above_gate_on_v6_edit": 386,
+          "lost_above_gate_from_no_stain": 0,
+          "old_solver_relative_l1": 0.002619811799377203,
+          "stain_density_mass": 0.0,
+          "combined_mass_ratio": 1.0,
+          "added_above_gate_from_no_stain": 0
+        },
+        "blobs_low": {
+          "converged": true,
+          "iterations": 1446,
+          "relative_kkt": 4.8019312626406833e-05,
+          "ink_density_mass_ratio_to_no_stain": 0.3887675702571869,
+          "ink_above_gate": 36411,
+          "ink_above_gate_on_v6_edit": 374,
+          "lost_above_gate_from_no_stain": 29214,
+          "old_solver_relative_l1": null,
+          "stain_density_mass": 10534.12890625,
+          "combined_mass_ratio": 1.6376619338989258,
+          "added_above_gate_from_no_stain": 3238
+        },
+        "creases_low": {
+          "converged": true,
+          "iterations": 979,
+          "relative_kkt": 4.8150724756109455e-05,
+          "ink_density_mass_ratio_to_no_stain": 0.4378097355365753,
+          "ink_above_gate": 39149,
+          "ink_above_gate_on_v6_edit": 385,
+          "lost_above_gate_from_no_stain": 26321,
+          "old_solver_relative_l1": null,
+          "stain_density_mass": 10056.7578125,
+          "combined_mass_ratio": 1.6301084756851196,
+          "added_above_gate_from_no_stain": 3083
+        },
+        "both_low": {
+          "converged": true,
+          "iterations": 925,
+          "relative_kkt": 4.406370660289852e-05,
+          "ink_density_mass_ratio_to_no_stain": 0.28942108154296875,
+          "ink_above_gate": 31682,
+          "ink_above_gate_on_v6_edit": 372,
+          "lost_above_gate_from_no_stain": 32634,
+          "old_solver_relative_l1": null,
+          "stain_density_mass": 11310.8701171875,
+          "combined_mass_ratio": 1.6304035186767578,
+          "added_above_gate_from_no_stain": 1929
+        },
+        "both_high": {
+          "converged": true,
+          "iterations": 968,
+          "relative_kkt": 4.3243653201862255e-05,
+          "ink_density_mass_ratio_to_no_stain": 0.6056200861930847,
+          "ink_above_gate": 60185,
+          "ink_above_gate_on_v6_edit": 385,
+          "lost_above_gate_from_no_stain": 6029,
+          "old_solver_relative_l1": null,
+          "stain_density_mass": 4029.2041015625,
+          "combined_mass_ratio": 1.0833103656768799,
+          "added_above_gate_from_no_stain": 3827
+        }
+      },
+      "v6_editable_pixels": 386,
+      "all_fits_above_gate_on_v6_edit": 371,
+      "some_fits_above_gate_on_v6_edit": 15,
+      "density_gate_sensitivity": [
+        {
+          "gate": 0.005,
+          "all_fits_above_gate_on_v6_edit": 380
+        },
+        {
+          "gate": 0.01,
+          "all_fits_above_gate_on_v6_edit": 375
+        },
+        {
+          "gate": 0.015,
+          "all_fits_above_gate_on_v6_edit": 371
+        },
+        {
+          "gate": 0.02,
+          "all_fits_above_gate_on_v6_edit": 366
+        },
+        {
+          "gate": 0.03,
+          "all_fits_above_gate_on_v6_edit": 356
+        },
+        {
+          "gate": 0.05,
+          "all_fits_above_gate_on_v6_edit": 315
+        },
+        {
+          "gate": 0.08,
+          "all_fits_above_gate_on_v6_edit": 218
+        },
+        {
+          "gate": 0.1,
+          "all_fits_above_gate_on_v6_edit": 106
+        },
+        {
+          "gate": 0.15,
+          "all_fits_above_gate_on_v6_edit": 16
+        },
+        {
+          "gate": 0.2,
+          "all_fits_above_gate_on_v6_edit": 0
+        }
+      ],
+      "equal_budget_no_stain_on_v6_edit": 313
+    },
+    {
+      "page": "200021763_00002_2",
+      "roi": "upper_writing",
+      "fits": {
+        "no_stain": {
+          "converged": true,
+          "iterations": 25,
+          "relative_kkt": 3.293063401043652e-05,
+          "ink_density_mass_ratio_to_no_stain": 1.0,
+          "ink_above_gate": 69764,
+          "ink_above_gate_on_v6_edit": 655,
+          "lost_above_gate_from_no_stain": 0,
+          "old_solver_relative_l1": 0.004864245653152466,
+          "stain_density_mass": 0.0,
+          "combined_mass_ratio": 1.0,
+          "added_above_gate_from_no_stain": 0
+        },
+        "blobs_low": {
+          "converged": true,
+          "iterations": 2560,
+          "relative_kkt": 3.91894057906561e-05,
+          "ink_density_mass_ratio_to_no_stain": 0.37224653363227844,
+          "ink_above_gate": 30542,
+          "ink_above_gate_on_v6_edit": 655,
+          "lost_above_gate_from_no_stain": 43522,
+          "old_solver_relative_l1": null,
+          "stain_density_mass": 11448.6767578125,
+          "combined_mass_ratio": 1.765626072883606,
+          "added_above_gate_from_no_stain": 4300
+        },
+        "creases_low": {
+          "converged": true,
+          "iterations": 1730,
+          "relative_kkt": 4.679242632924167e-05,
+          "ink_density_mass_ratio_to_no_stain": 0.4182817339897156,
+          "ink_above_gate": 33039,
+          "ink_above_gate_on_v6_edit": 655,
+          "lost_above_gate_from_no_stain": 40669,
+          "old_solver_relative_l1": null,
+          "stain_density_mass": 11710.15234375,
+          "combined_mass_ratio": 1.84348464012146,
+          "added_above_gate_from_no_stain": 3944
+        },
+        "both_low": {
+          "converged": true,
+          "iterations": 1303,
+          "relative_kkt": 4.5417378041633346e-05,
+          "ink_density_mass_ratio_to_no_stain": 0.27096423506736755,
+          "ink_above_gate": 26999,
+          "ink_above_gate_on_v6_edit": 651,
+          "lost_above_gate_from_no_stain": 46122,
+          "old_solver_relative_l1": null,
+          "stain_density_mass": 12453.5458984375,
+          "combined_mass_ratio": 1.7866429090499878,
+          "added_above_gate_from_no_stain": 3357
+        },
+        "both_high": {
+          "converged": true,
+          "iterations": 1706,
+          "relative_kkt": 4.9856843232677915e-05,
+          "ink_density_mass_ratio_to_no_stain": 0.6250298619270325,
+          "ink_above_gate": 68861,
+          "ink_above_gate_on_v6_edit": 655,
+          "lost_above_gate_from_no_stain": 5195,
+          "old_solver_relative_l1": null,
+          "stain_density_mass": 4105.52490234375,
+          "combined_mass_ratio": 1.124699354171753,
+          "added_above_gate_from_no_stain": 4292
+        }
+      },
+      "v6_editable_pixels": 655,
+      "all_fits_above_gate_on_v6_edit": 651,
+      "some_fits_above_gate_on_v6_edit": 4,
+      "density_gate_sensitivity": [
+        {
+          "gate": 0.005,
+          "all_fits_above_gate_on_v6_edit": 655
+        },
+        {
+          "gate": 0.01,
+          "all_fits_above_gate_on_v6_edit": 655
+        },
+        {
+          "gate": 0.015,
+          "all_fits_above_gate_on_v6_edit": 651
+        },
+        {
+          "gate": 0.02,
+          "all_fits_above_gate_on_v6_edit": 650
+        },
+        {
+          "gate": 0.03,
+          "all_fits_above_gate_on_v6_edit": 638
+        },
+        {
+          "gate": 0.05,
+          "all_fits_above_gate_on_v6_edit": 598
+        },
+        {
+          "gate": 0.08,
+          "all_fits_above_gate_on_v6_edit": 489
+        },
+        {
+          "gate": 0.1,
+          "all_fits_above_gate_on_v6_edit": 329
+        },
+        {
+          "gate": 0.15,
+          "all_fits_above_gate_on_v6_edit": 34
+        },
+        {
+          "gate": 0.2,
+          "all_fits_above_gate_on_v6_edit": 0
+        }
+      ],
+      "equal_budget_no_stain_on_v6_edit": 655
+    }
+  ],
+  "equal_budget_comparison": {
+    "total_existing_edit_pixels": 5843,
+    "additional_hold_budget": 2666,
+    "baseline": "no_stain density descending, deterministic stable tie order",
+    "baseline_last_selected_density": 0.1335388422012329,
+    "proposed": "minimum ink density over all five fits >= .015",
+    "scope": "Only these five mixed development rectangles; not GT or a deployable threshold",
+    "allocation_sensitivity": [
+      {
+        "budget": 0,
+        "no_stain": {
+          "near_seal_brown": 0,
+          "remote_brown": 0,
+          "faint_stamp": 0,
+          "long_tail": 0,
+          "upper_writing": 0
+        },
+        "minimum_over_fits": {
+          "near_seal_brown": 0,
+          "remote_brown": 0,
+          "faint_stamp": 0,
+          "long_tail": 0,
+          "upper_writing": 0
+        }
+      },
+      {
+        "budget": 584,
+        "no_stain": {
+          "near_seal_brown": 0,
+          "remote_brown": 0,
+          "faint_stamp": 0,
+          "long_tail": 126,
+          "upper_writing": 458
+        },
+        "minimum_over_fits": {
+          "near_seal_brown": 0,
+          "remote_brown": 0,
+          "faint_stamp": 6,
+          "long_tail": 172,
+          "upper_writing": 406
+        }
+      },
+      {
+        "budget": 1168,
+        "no_stain": {
+          "near_seal_brown": 19,
+          "remote_brown": 126,
+          "faint_stamp": 155,
+          "long_tail": 232,
+          "upper_writing": 636
+        },
+        "minimum_over_fits": {
+          "near_seal_brown": 23,
+          "remote_brown": 16,
+          "faint_stamp": 229,
+          "long_tail": 306,
+          "upper_writing": 594
+        }
+      },
+      {
+        "budget": 1752,
+        "no_stain": {
+          "near_seal_brown": 70,
+          "remote_brown": 450,
+          "faint_stamp": 308,
+          "long_tail": 272,
+          "upper_writing": 652
+        },
+        "minimum_over_fits": {
+          "near_seal_brown": 195,
+          "remote_brown": 178,
+          "faint_stamp": 387,
+          "long_tail": 355,
+          "upper_writing": 637
+        }
+      },
+      {
+        "budget": 2337,
+        "no_stain": {
+          "near_seal_brown": 114,
+          "remote_brown": 861,
+          "faint_stamp": 409,
+          "long_tail": 298,
+          "upper_writing": 655
+        },
+        "minimum_over_fits": {
+          "near_seal_brown": 383,
+          "remote_brown": 469,
+          "faint_stamp": 468,
+          "long_tail": 367,
+          "upper_writing": 650
+        }
+      },
+      {
+        "budget": 2666,
+        "no_stain": {
+          "near_seal_brown": 132,
+          "remote_brown": 1111,
+          "faint_stamp": 455,
+          "long_tail": 313,
+          "upper_writing": 655
+        },
+        "minimum_over_fits": {
+          "near_seal_brown": 451,
+          "remote_brown": 706,
+          "faint_stamp": 487,
+          "long_tail": 371,
+          "upper_writing": 651
+        }
+      },
+      {
+        "budget": 2921,
+        "no_stain": {
+          "near_seal_brown": 147,
+          "remote_brown": 1320,
+          "faint_stamp": 476,
+          "long_tail": 323,
+          "upper_writing": 655
+        },
+        "minimum_over_fits": {
+          "near_seal_brown": 483,
+          "remote_brown": 911,
+          "faint_stamp": 501,
+          "long_tail": 373,
+          "upper_writing": 653
+        }
+      },
+      {
+        "budget": 3505,
+        "no_stain": {
+          "near_seal_brown": 186,
+          "remote_brown": 1784,
+          "faint_stamp": 534,
+          "long_tail": 346,
+          "upper_writing": 655
+        },
+        "minimum_over_fits": {
+          "near_seal_brown": 521,
+          "remote_brown": 1422,
+          "faint_stamp": 529,
+          "long_tail": 378,
+          "upper_writing": 655
+        }
+      },
+      {
+        "budget": 4090,
+        "no_stain": {
+          "near_seal_brown": 226,
+          "remote_brown": 2290,
+          "faint_stamp": 556,
+          "long_tail": 363,
+          "upper_writing": 655
+        },
+        "minimum_over_fits": {
+          "near_seal_brown": 542,
+          "remote_brown": 1971,
+          "faint_stamp": 542,
+          "long_tail": 380,
+          "upper_writing": 655
+        }
+      },
+      {
+        "budget": 4674,
+        "no_stain": {
+          "near_seal_brown": 264,
+          "remote_brown": 2826,
+          "faint_stamp": 558,
+          "long_tail": 371,
+          "upper_writing": 655
+        },
+        "minimum_over_fits": {
+          "near_seal_brown": 564,
+          "remote_brown": 2519,
+          "faint_stamp": 552,
+          "long_tail": 384,
+          "upper_writing": 655
+        }
+      },
+      {
+        "budget": 5258,
+        "no_stain": {
+          "near_seal_brown": 428,
+          "remote_brown": 3233,
+          "faint_stamp": 558,
+          "long_tail": 384,
+          "upper_writing": 655
+        },
+        "minimum_over_fits": {
+          "near_seal_brown": 575,
+          "remote_brown": 3085,
+          "faint_stamp": 557,
+          "long_tail": 386,
+          "upper_writing": 655
+        }
+      },
+      {
+        "budget": 5843,
+        "no_stain": {
+          "near_seal_brown": 583,
+          "remote_brown": 3661,
+          "faint_stamp": 558,
+          "long_tail": 386,
+          "upper_writing": 655
+        },
+        "minimum_over_fits": {
+          "near_seal_brown": 583,
+          "remote_brown": 3661,
+          "faint_stamp": 558,
+          "long_tail": 386,
+          "upper_writing": 655
+        }
+      }
+    ]
+  },
+  "pixel_GT": false,
+  "improvement_over_v6_demonstrated": false,
+  "caveat": "Density mass ratios over mixed diagnostic rectangles; not ink recall or stain specificity"
+}

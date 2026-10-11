@@ -1,0 +1,59 @@
+{
+  "settings": {
+    "baseline": "saved boundary + observed seam texture; all 22 development ROIs",
+    "mask_factor": {
+      "seed": "frozen accepted dark-margin cores OR completed upper cores",
+      "halo_radius_px": 6,
+      "min_original_L_drop": 2,
+      "domain": "saved safe domain excluding long lines, warm anchors, v6 red/extra",
+      "old_edit_union": true,
+      "reference": "previous paper reference minus newly editable pixels",
+      "restoration": "same harmonic and seam-texture algorithms; reference and donor eligibility track mask",
+      "full_page_mask": true,
+      "local_restoration": true,
+      "ROI_label_gating": false
+    },
+    "tone_factor": {
+      "mask_applied_reference_texture_fixed": true,
+      "sigmas_px": [
+        24,
+        48
+      ],
+      "guidance": "normalized Gaussian of known paper only; subtract harmonic extension of guidance boundary",
+      "fade": "zero at first inside pixel; full at distance >=9px",
+      "min_reference_mass": 0.05,
+      "delta_Lab_limits": [
+        3,
+        1.5,
+        1.5
+      ],
+      "no_damage_blending": true
+    },
+    "factors_combined": false,
+    "DDRM_recomputed": false,
+    "training": false,
+    "random_noise": false,
+    "pixel_GT": false,
+    "independent_accuracy": false,
+    "illustrations_excluded": true
+  },
+  "dependencies": {
+    "scripts/benchmark/probe_paper_rim_lowfrequency.py": "5b7a1975555ddbf50afa2d46b6bb39c57b4af93078f43d3559ce6140291b073c",
+    "scripts/benchmark/probe_paper_seam_texture.py": "cd5bd2fd01175321c7c7e04b02cc25774a69c168e913dd57e7f5fdbaa9975003",
+    "scripts/benchmark/probe_known_paper_harmonic_fill_v2.py": "42869e62cd44ebb3a8454e7af3daf050baf280e408141b5624f65a4a0de38f95",
+    "scripts/benchmark/probe_paper_margin_defects.py": "1de8589d43dc3d5899e202a7853f5e0ae1653cae8a3bfe91e5c837227f8f87d6",
+    "scripts/benchmark/probe_defect_context_preprocessing.py": "42ef25b24c73bb1c9443954e98b67fc7b1126ad8de4093aa3d4d514f21b2ed57",
+    "scripts/benchmark/probe_defect_context_anchors.py": "60b13ab23a2bd1d3c6439a8a8fe9fe20c1e2882a68d7b9c5e5f78360e37a7832",
+    "tmp_work/paper_seam_texture_pilot_20261001/manifest.json": "18bc49ab9ed6810069c09bd206206ee6efaf935eafa77aec289198e9bc7e4223",
+    "tmp_work/paper_seam_texture_pilot_20261001/complete.json": "99053b3ce69a7547ce1bc8edfab68ce3c2a9522bdd0e2c2339486bd1e4cddbac",
+    "tmp_work/known_paper_harmonic_fill_pilot_v2_20261001/manifest.json": "c7ebf6f335d7708549c6155744f5b7e442c1aaed018cf8a986789113661e3510",
+    "tmp_work/known_paper_harmonic_fill_pilot_v2_20261001/complete.json": "f8e1fd2005a689b579c8a87e0a2956905ae5bda954c41c6c813e19eb8316d2f6",
+    "tmp_work/margin_top_completion_pilot_20261001/manifest.json": "86ded0f7629f11f4b745c5df023012209aa87651a77598fa19a866f0d1314b5f",
+    "tmp_work/margin_top_completion_pilot_20261001/complete.json": "fe1d5b0a35efbc6aa04df2263cc703b08d645a184938b37c469fad5b0ffddfc0",
+    "tmp_work/paper_margin_defect_pilot_20261001/candidate_manifest.json": "e5da8c0128a3e702ae62f3928c7983651ca5beabe0deec7cd0b3f93c7a2e3149",
+    "tmp_work/paper_margin_defect_pilot_20261001/candidate_complete.json": "e2207aa98e6e44469e740f23cc5ff55189de42ee7bbe7c51618ad60174055900"
+  },
+  "source_sha256": "5b7a1975555ddbf50afa2d46b6bb39c57b4af93078f43d3559ce6140291b073c",
+  "pages": 14,
+  "regions": 22
+}

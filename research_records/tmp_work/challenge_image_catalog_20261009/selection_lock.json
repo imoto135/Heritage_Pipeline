@@ -1,0 +1,158 @@
+{
+  "schema_version": 1,
+  "revision": 2,
+  "frozen_date": "2026-10-09",
+  "revision_reason": "05をカラー資料に差し替え、07を前後ページ照合に基づく裏移りの追加対象へ変更",
+  "previous_cases_sha256": "14c7f544be4edd767611e605c20097bfbf38a1fd848fc1e1f42d8b534e28ae1d",
+  "purpose": "User-approved exploratory development cases; not an independent test set",
+  "cases_sha256": "2336f9bc6c75b1dd122a22c6b0de1e5ef64253e969dd1868de46ee10b7a8b1d5",
+  "cases": [
+    {
+      "id": "01",
+      "page": "200010454_00002_2",
+      "original": "data/split_dataset/test/200010454/200010454_00002_2.jpg",
+      "source_sha256": "177776f90fc08b12e2f59a37773ef433556f43ebe47c503c2d676595a08a60d1",
+      "roi_xywh": [
+        1110,
+        500,
+        520,
+        650
+      ],
+      "detail_xywh": [
+        1320,
+        540,
+        230,
+        370
+      ],
+      "role": "主対象",
+      "challenge": "薄い筆画の保持",
+      "judgment": "visible_stroke_loss"
+    },
+    {
+      "id": "02",
+      "page": "hnsd001_011",
+      "original": "data/split_dataset/train/hnsd00000/hnsd001_011.jpg",
+      "source_sha256": "22017c0af65c5f43560ff05cfcc15c6ed8f56b72e60a04a732d9c31b72f05731",
+      "roi_xywh": [
+        265,
+        1620,
+        760,
+        760
+      ],
+      "detail_xywh": [
+        580,
+        1800,
+        300,
+        350
+      ],
+      "role": "主対象",
+      "challenge": "水染み中の薄い文字",
+      "judgment": "visible_stroke_loss"
+    },
+    {
+      "id": "03",
+      "page": "hnsd007_042",
+      "original": "data/split_dataset/train/hnsd00000/hnsd007_042.jpg",
+      "source_sha256": "68315f7e551cb29695d9e830f09826eef92809409d4e9242290c5ed14f393afc",
+      "roi_xywh": [
+        800,
+        190,
+        520,
+        520
+      ],
+      "detail_xywh": [
+        970,
+        280,
+        250,
+        360
+      ],
+      "role": "主対象",
+      "challenge": "染みと筆画の接触",
+      "judgment": "stain_ink_contact"
+    },
+    {
+      "id": "04",
+      "page": "hnsd001_011",
+      "original": "data/split_dataset/train/hnsd00000/hnsd001_011.jpg",
+      "source_sha256": "22017c0af65c5f43560ff05cfcc15c6ed8f56b72e60a04a732d9c31b72f05731",
+      "roi_xywh": [
+        340,
+        400,
+        520,
+        520
+      ],
+      "detail_xywh": [
+        400,
+        540,
+        260,
+        270
+      ],
+      "role": "成功対照",
+      "challenge": "孤立斑点の除去",
+      "judgment": "howe_stain_removal_success"
+    },
+    {
+      "id": "05",
+      "page": "200021851_00007_2",
+      "original": "data/split_dataset/val/200021851/200021851_00007_2.jpg",
+      "source_sha256": "75fdd5252ed78d47d9908060e5b315439068d0db8a53d241cf490d8ce8cd4aeb",
+      "roi_xywh": [
+        1635,
+        2175,
+        520,
+        520
+      ],
+      "detail_xywh": [
+        1680,
+        2250,
+        340,
+        330
+      ],
+      "role": "判定保留",
+      "challenge": "色のある紙面の粒状像",
+      "judgment": "colored_granular_mark_material_uncertain"
+    },
+    {
+      "id": "06",
+      "page": "200003803_00003_1",
+      "original": "data/test/200003803/200003803_00003_1.jpg",
+      "source_sha256": "3cc169f2ebad09fa9b312a0230c2357287f16a0a505f64ef3d00fd44dc39da53",
+      "roi_xywh": [
+        80,
+        95,
+        620,
+        530
+      ],
+      "detail_xywh": [
+        175,
+        150,
+        250,
+        220
+      ],
+      "role": "別課題",
+      "challenge": "虫食い状の紙面損傷",
+      "judgment": "insect_like_damage_cause_unconfirmed"
+    },
+    {
+      "id": "07",
+      "page": "200021660_00028_1",
+      "original": "data/split_dataset/val/200021660/200021660_00028_1.jpg",
+      "source_sha256": "716cc9b46f9f2ce021c7f4b58dbecc40eafc208da64538d0d20a5448546eea0e",
+      "roi_xywh": [
+        1093,
+        1723,
+        768,
+        768
+      ],
+      "detail_xywh": [
+        1240,
+        1880,
+        360,
+        360
+      ],
+      "role": "追加対象",
+      "challenge": "強い裏移りと表文字",
+      "judgment": "showthrough_supported_by_adjacent_page"
+    }
+  ]
+}

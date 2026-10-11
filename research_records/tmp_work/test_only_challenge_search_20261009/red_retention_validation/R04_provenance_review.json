@@ -1,0 +1,11 @@
+{
+  "target": "data/test/200003803/200003803_00003_1.jpg",
+  "reference": "data/test/200003803/200003803_00002_2.jpg",
+  "transform": "horizontal mirror and resize only; no registration yet",
+  "interpretation": "Possible red bleedthrough; not a confirmed front-side red-positive example",
+  "pixel_ground_truth": false,
+  "dependencies": {
+    "data/test/200003803/200003803_00003_1.jpg": "3cc169f2ebad09fa9b312a0230c2357287f16a0a505f64ef3d00fd44dc39da53",
+    "data/test/200003803/200003803_00002_2.jpg": "475e3ed9c2425f48c4b1d41efa984241021b709cbcbaeafe7ae42b92921d0a15"
+  }
+}

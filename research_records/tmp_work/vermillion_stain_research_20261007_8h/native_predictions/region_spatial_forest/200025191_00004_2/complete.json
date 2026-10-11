@@ -1,0 +1,21 @@
+{
+  "page": "200025191_00004_2",
+  "name": "region_spatial_forest",
+  "book": "200025191",
+  "role": "development",
+  "original": "data/train/200025191/200025191_00004_2.jpg",
+  "source_sha256": "28435ed05f9d48efa60f467c628616a3e5dc294642cab424e0014146494add7a",
+  "model_sha256": "512191c0feecfbf55495c5e285a5e4c18c1d5c4fb981591ec3f3bc3bed9e987c",
+  "threshold": 0.5,
+  "script_sha256": "7f7e895a1b9f0b4204025264c530e67f4e3c6c9fe523d4de3c0c632c67ddd212",
+  "mark_pixels": 420314,
+  "seconds": 7.36085669696331,
+  "training_points": 924,
+  "training": "Tentative original-development points/regions; no validation labels used",
+  "classifier_has_no_stain_head": true,
+  "no_full_pixel_GT": true,
+  "outputs": {
+    "mark_mask.png": "249920744b71a1de2cd2c2bef6673813797b8e14efb6a2f7590d2e0105f266cf",
+    "mark_probability_preview.png": "81fb008068c797627419fc1831c2beaa633d2c82d690453184f7b0f2939b062c"
+  }
+}

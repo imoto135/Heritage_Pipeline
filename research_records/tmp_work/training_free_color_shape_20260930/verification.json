@@ -1,0 +1,23 @@
+{
+  "status": "verified",
+  "pages": 4,
+  "rois": 14,
+  "modes": 3,
+  "computation_pngs_checked": 187,
+  "auxiliary_png_sha256": {
+    "200017197_00008_0/small_red_classes.png": "dc7b9f72cb3b6db3871562b826d0bbbab55c6bede5bcb9bf5c83d22f1648b1ac",
+    "200017197_00008_0/small_red_original.png": "2ec06194320a363dcb65eaaf5a249219e866764d80660a5b82ba4f3592388f4d"
+  },
+  "checks": [
+    "source/dependency/output hashes",
+    "original decoded pixels unchanged",
+    "native-size binary masks; disjoint candidate classes",
+    "ink equals black OR red; baseline equals previous local mask",
+    "overlays preserve all pixels outside selected masks",
+    "page and ROI diagnostic counts recomputed",
+    "shape exclusions equal logged component masks",
+    "viewer linked files and JavaScript syntax"
+  ],
+  "browser_ui_tested": false,
+  "manual_ground_truth_used": false
+}

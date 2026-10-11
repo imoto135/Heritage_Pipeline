@@ -1,0 +1,72 @@
+{
+  "id": "dev_08_broad_ellipses_red_brown_30",
+  "case": "dev_08",
+  "name": "partial_dense_native_brown",
+  "family": "native_partial",
+  "input_sha256": "4aa0ad3d93f79e11ef0224e8bc7f7ff8b35a21de559d69912077d3c4e0f69910",
+  "checkpoint_sha256": "4fae44635adcb9f202339c2a1c83b0861b458ea1d62459897dff3774206e9c00",
+  "training_protocol_sha256": "f6fff1142a54f3c7edd13b7a70c53f26a20bc09c6d3785871af6e3856e593b89",
+  "script_sha256": "0f564b0df6a14ff841cb21de8e76c01088e787ce8252840e86ff30d6b067e390",
+  "diagnostic_helper_sha256": "e5b0b087d40c4768818e555ae7cc5533c9102382540214d00bc64b3b8a00b66b",
+  "mask_sha256": "672835afc84e1b9baaeb273ff6c02e9bded1099025c3e36a97295afb3c87db3a",
+  "threshold": 0.5,
+  "seconds": 12.374676623381674,
+  "diagnostic": {
+    "points": {
+      "observed_red_mark": {
+        "points": 18,
+        "before": 18,
+        "after": 18,
+        "newly_selected": 0,
+        "newly_lost": 0
+      },
+      "paper_or_brown_nonmark": {
+        "points": 8,
+        "before": 0,
+        "after": 0,
+        "newly_selected": 0,
+        "newly_lost": 0
+      }
+    },
+    "selected_paper_region_added_support": [
+      {
+        "region": 4,
+        "added_support_pixels": 0,
+        "before_selected": 0,
+        "after_selected": 0,
+        "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+      },
+      {
+        "region": 5,
+        "added_support_pixels": 15750,
+        "before_selected": 0,
+        "after_selected": 0,
+        "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+      },
+      {
+        "region": 6,
+        "added_support_pixels": 17500,
+        "before_selected": 0,
+        "after_selected": 0,
+        "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+      },
+      {
+        "region": 7,
+        "added_support_pixels": 0,
+        "before_selected": 0,
+        "after_selected": 0,
+        "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+      },
+      {
+        "region": 8,
+        "added_support_pixels": 10614,
+        "before_selected": 0,
+        "after_selected": 0,
+        "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+      }
+    ]
+  },
+  "original_training_points_may_have_been_seen": true,
+  "no_real_pixel_or_reading_GT": true,
+  "perturbation": "Frozen development diagnosis, not final test"
+}

@@ -1,0 +1,31 @@
+{
+  "checks": {
+    "figures/T01_マスクと処理結果.png_panels_exact": true,
+    "figures/T01_マスクと処理結果.png_sources_unchanged": true,
+    "T01_displayed_masks_equal_actual_masks": true,
+    "figures/N01_マスクと処理結果.png_panels_exact": true,
+    "figures/N01_マスクと処理結果.png_sources_unchanged": true,
+    "N01_displayed_masks_equal_actual_masks": true,
+    "figures/N02_マスクと処理結果.png_panels_exact": true,
+    "figures/N02_マスクと処理結果.png_sources_unchanged": true,
+    "N02_displayed_masks_equal_actual_masks": true,
+    "figures/T01_StainRestorer色診断.png_panels_exact": true,
+    "figures/N01_StainRestorer色診断.png_panels_exact": true,
+    "figures/N02_StainRestorer色診断.png_panels_exact": true,
+    "figures/F41_StainRestorer色診断.png_panels_exact": true,
+    "fresh_official_weight_identical_previous": true,
+    "release_model_and_used_model_byte_equal": true,
+    "four_cases_previous_tiled_PNGs_pixel_exact": true,
+    "actual_loader_inputs_verified_all_cases": true,
+    "adapter_matches_direct_within_numerical_rounding": true,
+    "CPU_GPU_direct_match_within_1e_minus_4": true,
+    "torchvision_save_matches_manual_within_one_level": true,
+    "new_stain_code_weights_unchanged": true,
+    "saved_model_outputs_unchanged": true,
+    "report_links_exist": true
+  },
+  "passed": 23,
+  "total": 23,
+  "no_readability_GT": true,
+  "official_paired_benchmark": false
+}

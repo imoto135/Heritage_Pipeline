@@ -1,0 +1,23 @@
+{
+  "name": "continue_control",
+  "steps": 10000,
+  "seed": 614,
+  "initial_checkpoint": "/home/imoto/Heritage_Pipeline/tmp_work/vermillion_stain_research_20261007_8h/learned_trials/relative_overlap_seed413/last.pth",
+  "initial_checkpoint_sha256": "cab717380cdd42485bdb78cba9e0afbbc7bae91878d544e85b43b9ebe7b59c77",
+  "start_utc": "2026-10-07T16:19:34.351822+00:00",
+  "optimizer": "AdamW lr5e-5 weight_decay1e-4",
+  "normal_branch": "4 synthetic samples per step; both heads known digital support",
+  "domain_branch": "4 samples per step; mark head only; same digitally added geometry sequence",
+  "texture": false,
+  "sparse": false,
+  "domain_stain_head_supervised": false,
+  "sparse_details": "Optional additional 4 native crops with only 3x3 observed-point mark support. Tentative 92 dev points from three books. Extra exposure is not compute matched.",
+  "paper_regions_sha256": "3a8474f07d75e2c71ec6076055e7ec6b4622a70882a1d2ae610d298e5ce4bf82",
+  "sparse_points_sha256": "7ebaf076b01f8a579a54e53c9466125ee3db42621e7bd967dd62f783b7c7a2d3",
+  "no_validation_or_external_used": true,
+  "real_paper_is_not_clean_GT": true,
+  "primary_selection": "Fixed final step, threshold .5; no real-image checkpoint selection",
+  "historical_ink_readability_GT": false,
+  "source_sha256": "8cfafd1b93ace3960a3331fc0404bbe44cb33b480e08345588464bbf5b4c6586",
+  "methods_fixed_before_real_validation": true
+}

@@ -1,0 +1,70 @@
+{
+  "spots": [
+    {
+      "xywh": [
+        787,
+        200,
+        17,
+        15
+      ],
+      "howe_dark_pixels": 200,
+      "isolated_dark_pixels": 0
+    },
+    {
+      "xywh": [
+        730,
+        235,
+        13,
+        13
+      ],
+      "howe_dark_pixels": 132,
+      "isolated_dark_pixels": 0
+    },
+    {
+      "xywh": [
+        918,
+        396,
+        15,
+        15
+      ],
+      "howe_dark_pixels": 170,
+      "isolated_dark_pixels": 0
+    }
+  ],
+  "printing_changed_pixels": 0,
+  "previous_isolated_result": {
+    "id": "04",
+    "method": "isolated",
+    "seconds": 237.78,
+    "reused": false,
+    "command": [
+      "/home/imoto/miniconda3/envs/diffusion/bin/python",
+      "-B",
+      "/home/imoto/Heritage_Pipeline/tmp_work/npj_dirt_control_20261002/source_snapshot/ddrm_npj_v2/scripts/pipeline_ddrm.py",
+      "--input_dir",
+      "/home/imoto/Heritage_Pipeline/tmp_work/test_only_challenge_search_20261009/howe_csc_fusion/isolated_csc_v2/inputs/200021071_00032_1",
+      "--output_dir",
+      "/home/imoto/Heritage_Pipeline/tmp_work/test_only_challenge_search_20261009/howe_csc_fusion/isolated_csc_v2/outputs/isolated",
+      "--tmp_dir",
+      "/home/imoto/Heritage_Pipeline/tmp_work/test_only_challenge_search_20261009/howe_csc_fusion/isolated_csc_v2/infer_tmp/isolated/200021071_00032_1",
+      "--mask_dir",
+      "/home/imoto/Heritage_Pipeline/tmp_work/test_only_challenge_search_20261009/howe_csc_fusion/isolated_csc_v2/masks/isolated",
+      "--ckpt",
+      "/home/imoto/Heritage_Pipeline/modules/stain_removal/experiments/model_char/model_char/ckpt_epoch0350.pth",
+      "--back_ground",
+      "/home/imoto/Heritage_Pipeline/modules/ddrm_npj_v2/background/isemonogatari.png",
+      "--device",
+      "cuda:0",
+      "--patch_size",
+      "128",
+      "--overlap",
+      "32",
+      "--shared_noise",
+      "--no_wandb"
+    ],
+    "output": "tmp_work/test_only_challenge_search_20261009/howe_csc_fusion/isolated_csc_v2/outputs/isolated/200021071_00032_1/result/200021071_00032_1.png",
+    "sha256": "97df93c2e4ef117578cbeab637dc4b4e5e78ea583f3d2c70e6cb3b8bdd163883"
+  },
+  "not_default": true,
+  "dark_counts_are_not_GT": true
+}

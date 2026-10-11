@@ -1,0 +1,24 @@
+{
+  "page": "external_Latin2_128",
+  "book": "Latin2",
+  "role": "external_qualitative_only",
+  "original": "/home/imoto/Heritage_Pipeline/tmp_work/vermillion_stain_research_20261007_8h/external_originals/udiads/originals/U-DIADS-TL/U-DIADS-TL/Latin2/img-Latin2/test/128.jpg",
+  "source_sha256": "4da39994814b5e019fb510058dc67363268cf4df8d6ce410a829beba5f752669",
+  "method": "docres_binarization",
+  "seconds": 13.193502371199429,
+  "shape": [
+    2016,
+    1344,
+    3
+  ],
+  "finite": true,
+  "protocol_sha256": "fcdd1f4d087a75557c2fd0903dfc69df79c9b5b56f48618e078d8e7284b986ee",
+  "source_pixel_GT": false,
+  "inputs_have_no_masks_or_annotations": true,
+  "outputs": {
+    "result.png": "597fac21f9f353b1d5fea25ecb3b9a1fd3b5a1a6dce33d44775ff36e7b16ff82",
+    "background_probability.npy": "1165d7387d9f2954c2932169b00bf1cd019665db3356ec2c473c9d0a92cc68ec",
+    "prompt.png": "3d4e572077771ed04619584aef0f0e7a1258c2b1f47d1c710a3d4d5a11a6bfd0",
+    "ink_mask.png": "fd9b126c89f95be560243a17650844db6f68f8098ac6b3d9ee6e39fd9852cceb"
+  }
+}

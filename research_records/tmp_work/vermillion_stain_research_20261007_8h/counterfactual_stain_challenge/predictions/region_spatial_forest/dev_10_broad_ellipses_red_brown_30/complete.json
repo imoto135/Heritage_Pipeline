@@ -1,0 +1,65 @@
+{
+  "id": "dev_10_broad_ellipses_red_brown_30",
+  "case": "dev_10",
+  "name": "region_spatial_forest",
+  "family": "forest",
+  "input_sha256": "31b2aedfa07aad403a325a6cb2611a9d0c016d62be75fe59e108ace398f1ae1b",
+  "resources": {
+    "/home/imoto/Heritage_Pipeline/tmp_work/vermillion_stain_research_20261007_8h/region_supported_trials/region_spatial_forest.pkl": "512191c0feecfbf55495c5e285a5e4c18c1d5c4fb981591ec3f3bc3bed9e987c"
+  },
+  "script_sha256": "e5b0b087d40c4768818e555ae7cc5533c9102382540214d00bc64b3b8a00b66b",
+  "mask_sha256": "5078334072d4d0684aec2f5ccff22037b11e6767de1806284bd4a7a590e63245",
+  "seconds": 37.02692555077374,
+  "threshold": 0.5,
+  "diagnostic": {
+    "points": {
+      "observed_red_mark": {
+        "points": 32,
+        "before": 32,
+        "after": 32,
+        "newly_selected": 0,
+        "newly_lost": 0
+      },
+      "paper_or_brown_nonmark": {
+        "points": 10,
+        "before": 0,
+        "after": 0,
+        "newly_selected": 0,
+        "newly_lost": 0
+      }
+    },
+    "selected_paper_region_added_support": [
+      {
+        "region": 0,
+        "added_support_pixels": 14172,
+        "before_selected": 0,
+        "after_selected": 0,
+        "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+      },
+      {
+        "region": 1,
+        "added_support_pixels": 18597,
+        "before_selected": 0,
+        "after_selected": 0,
+        "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+      },
+      {
+        "region": 2,
+        "added_support_pixels": 5600,
+        "before_selected": 0,
+        "after_selected": 0,
+        "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+      },
+      {
+        "region": 3,
+        "added_support_pixels": 10500,
+        "before_selected": 0,
+        "after_selected": 0,
+        "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+      }
+    ]
+  },
+  "no_real_pixel_or_reading_GT": true,
+  "original_training_points_may_have_been_seen": true,
+  "perturbation": "Frozen development diagnostic, not final test"
+}

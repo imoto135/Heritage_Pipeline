@@ -1,0 +1,22 @@
+{
+  "utc": "2026-10-07T18:37:05.165270+00:00",
+  "name": "dense_native_relative_only",
+  "hypothesis": "Suppress absolute RGB/paper feature shortcuts by using only the three source-estimated relative OD channels",
+  "rationale": "Matched photometry gains only one selected held red point over sparse/dense controls and paper errors persist; invariant-input ablation tests a more direct restriction",
+  "initial_checkpoint": "learned_trials/relative_overlap_seed413/last.pth",
+  "initial_sha256": "cab717380cdd42485bdb78cba9e0afbbc7bae91878d544e85b43b9ebe7b59c77",
+  "steps": 8000,
+  "seed": 715,
+  "threshold": 0.5,
+  "control": "Matched dense_native: same crop anchors, points, paper regions, source texture, optimizer, losses; only input six absolute channels zeroed in every forward",
+  "folds": [
+    null,
+    "200020019",
+    "200021086",
+    "200021763"
+  ],
+  "model_selection": "Fixed final8000 for all folds; no checkpoint choice",
+  "independent_outputs_not_inspected": true,
+  "prohibition": "Do not fit to validation, external or prospective points; no novelty claim for relative colour or feature masking",
+  "limits": "Source-estimated paper may include stain or broad red ink; OD is gamma-RGB approximation, not recovered chemistry"
+}

@@ -1,0 +1,18 @@
+{
+  "method": "stain_global512",
+  "resources": {
+    "/home/imoto/Heritage_Pipeline/tmp_work/npj_literature_models_20261002/repos/StainRestorer/models/StainRestorer.py": "d12181917d63a80bda21fa6a938baad561748b3b086478761eab0a67d5dba11a",
+    "/home/imoto/Heritage_Pipeline/tmp_work/npj_literature_models_20261002/weights/StainDoc.pth": "7cdbd674367535d4f429ef077030b930da2a460012fe8fc44d995ead2f7418ee"
+  },
+  "source_sha256": "31b017a945adfd5e7bbf548c592087ae4c5f4c6d28f831cf8fc02a09648d48da",
+  "config_sha256": "f54c509783732121d646500d69905df3508aafb78a9103b025ccf6ce4b5ac141",
+  "geometry": "Whole original resized to 512 square with OpenCV bilinear, no tiles; model RGB output upsized bilinearly to native shape",
+  "author_default_config_size": 256,
+  "size_matches_default_config": false,
+  "exact_author_benchmark": false,
+  "input_channel": "RGB float32 /255 as author PIL loader",
+  "weight": "Normal StainDoc, not seal/mark removal",
+  "limitation": "Interpolation restores dimensions, not fine details lost during shrinking. Display diagnostic only, not native-resolution reconstruction quality",
+  "labels_used": false,
+  "expert_GT": false
+}

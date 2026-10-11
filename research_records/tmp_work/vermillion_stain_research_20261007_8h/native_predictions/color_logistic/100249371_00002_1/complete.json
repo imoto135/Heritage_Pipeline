@@ -1,0 +1,20 @@
+{
+  "page": "100249371_00002_1",
+  "name": "color_logistic",
+  "book": "100249371",
+  "role": "development",
+  "original": "data/val/100249371/100249371_00002_1.jpg",
+  "source_sha256": "fd32440af0d2cd93de4b9b7ac820cbc90d84e2bed0e7b23e3796d0b0f4861ff6",
+  "model_sha256": "7eaac9408b9abc0cdbe265c528cdaeed3f28179c4ff5633ab85cb8337712343f",
+  "threshold": 0.5,
+  "script_sha256": "588fbd088eac4cdf6957f0f1fb1c5957ab38aabbba74d196a0c7011db0b5741c",
+  "mark_pixels": 1766135,
+  "seconds": 1.5839367415755987,
+  "training": "92 tentative original-development points; no validation labels used",
+  "classifier_has_no_stain_head": true,
+  "no_full_pixel_GT": true,
+  "outputs": {
+    "mark_mask.png": "f81debad48a5de589d4285c9e459ceb79f6aa44fcb91d7f370f31923c2f1e3e4",
+    "mark_probability_preview.png": "3268eebb350917a7009e1db76d940b9f22b536f3f59bcfdd98f04a296282d5c0"
+  }
+}

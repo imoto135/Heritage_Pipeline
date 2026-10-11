@@ -1,0 +1,24 @@
+{
+  "source_sha256": "e6a2ed47b00e3ea8dd3aa2d931c5c69dce3548c4a91818d3ac6c0fbaf0d51ab8",
+  "points_sha256": "7ebaf076b01f8a579a54e53c9466125ee3db42621e7bd967dd62f783b7c7a2d3",
+  "training_books": [
+    "200020019",
+    "200021086",
+    "200021763"
+  ],
+  "never_use_validation_books": [
+    "100249416",
+    "200015779",
+    "200017458",
+    "200021637"
+  ],
+  "number_points": 92,
+  "classifiers": {
+    "logistic": "StandardScaler + LogisticRegression C1 class_weight balanced max_iter1000",
+    "forest": "256 trees, max_depth5, min_samples_leaf2, balanced class weights, seed524"
+  },
+  "threshold": 0.5,
+  "annotation_status": "Codex tentative sparse original review; not expert GT",
+  "selection": "Predefined hyperparameters; ordinary and spatial ablations",
+  "book_holdout": "Leave-one-of-three known development books out; exploratory, not external validation"
+}

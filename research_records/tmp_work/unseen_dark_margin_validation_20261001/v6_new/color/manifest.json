@@ -1,0 +1,85 @@
+{
+  "purpose": "Training-free exploratory color/shape segmentation; no manual GT or deletion",
+  "parameters": {
+    "color_space": "OpenCV float32 BGR [0,1] to CIELab; L [0,100], signed a/b",
+    "local_color_background": "quarter-size Lab, Gaussian sigma16, resized to native",
+    "red_weak": {
+      "a_min": 6.0,
+      "delta_a_min": 3.0,
+      "a_over_positive_b": 0.45,
+      "hue_max": 22,
+      "hue_min_wrap": 168,
+      "saturation_min": 30
+    },
+    "red_seed": {
+      "a_min": 14.0,
+      "delta_a_min": 6.0,
+      "a_over_positive_b": 0.8,
+      "hue_max": 18,
+      "hue_min_wrap": 172,
+      "saturation_min": 60
+    },
+    "red_growth": "8-connected weak-color components with at least 2 seed pixels; independent of gray foreground",
+    "brown_field": {
+      "a_min": 3.0,
+      "b_min": 8.0,
+      "delta_a_min": 1.3,
+      "delta_b_min": -0.5,
+      "b_over_a": 1.3,
+      "lightness_below_local": 2.0,
+      "minimum_component_area": 20
+    },
+    "dense_component": {
+      "core_radius": 8.0,
+      "core_fraction": 0.25,
+      "fill": 0.55,
+      "min_area": 200,
+      "max_aspect": 3.0,
+      "red_fraction_exclusion": 0.05
+    },
+    "component_paper_ring": "bbox expanded16 pixels; exclude gray foreground and red candidates; median Lab",
+    "blob_brown_evidence": {
+      "delta_a_min": 1.0,
+      "delta_b_min": -1.0,
+      "mean_a_min": 2.0,
+      "mean_b_min": 8.0
+    },
+    "policy": "dense brown-evidence blobs -> stain candidate; other dense blobs -> hold; no pixels deleted",
+    "scale_disagreement": "only unprotected pixels with 1 or 2 votes; diagnostic hold, not calibrated uncertainty",
+    "border": "no forced background; all classification at native resolution"
+  },
+  "dependencies": {
+    "200014685_00004_2/original.png": "d50f87ebb409f0a2df82d867084199b9ad13e6a6fcd3c5da66f64bb4477aa908",
+    "200014685_00004_2/sauvola_local/foreground.png": "5e3d0f6e091d8491a9a5e2d1aec44949565d8d10e925564109d103462201c7aa",
+    "200014685_00004_2/scale_votes.png": "969dbb8944734a428f41ab8e1c512af837c9e90bb65ab2bf31f31c9a78ca5c60",
+    "200014685_00002_2/original.png": "e643643505ee4852ca27961269d60b0c07fbfbcee8c0728e62e01a6a89fa4974",
+    "200014685_00002_2/sauvola_local/foreground.png": "7e8956fbe78f5f1caa39b6cd7bef6fcd642ac11be98ea2a310a7e080aa396f8a",
+    "200014685_00002_2/scale_votes.png": "b608297565be0d878b5947463d7b6990ab04f1012b0fccffe264624f1c006c40",
+    "umgy004_013/original.png": "7a948e515ea9c70f983a6a58a577dc53c66ce8c2e308776731b39bc2f6f3008d",
+    "umgy004_013/sauvola_local/foreground.png": "cff4758ab6e1523984a3760acead2812985b26dfa9a93a3d027bca05ea2a6fb6",
+    "umgy004_013/scale_votes.png": "d3ce1149ba0940cb72c7a152038fb2bfaf7b2a604797a6eb6c55b0661cffe366",
+    "200008316_00020_1/original.png": "8b26504b691e8c3ce63e86aba4becf683b96f155afd09f3c95b7ee0f0c028000",
+    "200008316_00020_1/sauvola_local/foreground.png": "12b4d4f0e02bcae02ecae7a9e68a97c4c6ada1ec4fc0b0c30497189a0859db4f",
+    "200008316_00020_1/scale_votes.png": "a4be5d8f5c45191d07dafffd1be8263f6b2220a97315e00d3afe470b0c1efd74"
+  },
+  "parent_manifest_sha256": "d8a0e72c271e4013fea09c17c98c0c5fb3282372dbd1416712fe078bc71c6c64",
+  "rois_sha256": "156eb6c315e2d18adac864fa86432adfebc5bf3e6ebbea4f1bcad68ac2fd0b3b",
+  "source_sha256": "33d08600b64905c9c722decb2bc140c4b1fe6e23cc6314e42a600b99f30b71ad",
+  "viewer_template_sha256": "f40eac8395620e0ebe00ce36abd0151f0ebc3643e670e8dd0c64ba49f31d9fa2",
+  "versions": {
+    "python": "3.10.20 (main, Jun 11 2026, 15:17:37) [GCC 14.3.0]",
+    "opencv": "4.13.0",
+    "numpy": "1.26.4"
+  },
+  "modes": {
+    "local_baseline": "前回の局所Sauvola：前景のみ",
+    "color_only": "原画像の色を追加：形の判定なし",
+    "color_shape": "色＋詰まった塊の判定＋保留"
+  },
+  "input_hashes": {
+    "data/split_dataset/train/200014685/200014685_00004_2.jpg": "ef4a6af2df2c04984ca47a356fad6a6d02713386be0f166213427895821fe92b",
+    "data/split_dataset/train/200014685/200014685_00002_2.jpg": "ece797d001ca46faf7973da61b631698776a9103a9efb7ba816b695ac418c59e",
+    "data/split_dataset/train/umgy00000/umgy004_013.jpg": "d7d9af9b3cada13d05c6eae923055f0a4445877924fb3344286d9fb764d362e9",
+    "data/split_dataset/train/200008316/200008316_00020_1.jpg": "352781727e51d07c557b1e30f9299aac454f28a294b07d373b7dd53b9e2424ba"
+  }
+}

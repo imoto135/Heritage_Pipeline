@@ -1,0 +1,532 @@
+                                             Pattern Recognition 39 (2006) 317 – 327
+                                                                                                                     www.elsevier.com/locate/patcog
+
+
+
+
+                         Adaptive degraded document image binarization
+                                            B. Gatos∗ , I. Pratikakis, S.J. Perantonis
+    Computational Intelligence Laboratory, Institute of Informatics and Telecommunications, National Center for Scientiﬁc Research “Demokritos”,
+                                                                 153 10 Athens, Greece
+
+                                               Received 11 January 2005; accepted 9 September 2005
+
+
+
+
+Abstract
+   This paper presents a new adaptive approach for the binarization and enhancement of degraded documents. The proposed method does
+not require any parameter tuning by the user and can deal with degradations which occur due to shadows, non-uniform illumination, low
+contrast, large signal-dependent noise, smear and strain. We follow several distinct steps: a pre-processing procedure using a low-pass Wiener
+ﬁlter, a rough estimation of foreground regions, a background surface calculation by interpolating neighboring background intensities, a
+thresholding by combining the calculated background surface with the original image while incorporating image up-sampling and ﬁnally
+a post-processing step in order to improve the quality of text regions and preserve stroke connectivity. After extensive experiments, our
+method demonstrated superior performance against four (4) well-known techniques on numerous degraded document images.
+䉷 2005 Pattern Recognition Society. Published by Elsevier Ltd. All rights reserved.
+
+Keywords: Degraded document images; Local adaptive binarization
+
+
+
+
+1. Introduction                                                                 In general, approaches that deal with document image bi-
+                                                                             narization are either global or local. In a global approach,
+   Document image binarization (threshold selection) refers                  threshold selection leads to a single threshold value for the
+to the conversion of a gray-scale image into a binary image.                 entire image. Global thresholding [1–5] has a good per-
+It is the initial step of most document image analysis and                   formance in the case that there is a good separation be-
+understanding systems. Usually, it distinguishes text areas                  tween the foreground and the background. However, very
+from background areas, so it is used as a text locating tech-                often, document images are exposed to degradations that
+nique. Binarization plays a key role in document processing                  weaken any guaranty for such a separation. Unlike global
+since its performance affects quite critically the degree of                 approaches, local area information may guide the threshold
+success in a subsequent character segmentation and recog-                    value for each pixel in local (adaptive) thresholding tech-
+nition. When processing degraded document images, bina-                      niques [6–14]. These techniques have been widely used in
+rization is not an easy task. Degradations appear frequently                 document image analysis because they have a better perfor-
+and may occur due to several reasons which range from the                    mance in extracting the character strokes from an image that
+acquisition source type to environmental conditions. Exam-                   contains spatially uneven gray levels due to degradations.
+ples of degradation inﬂuence may include the appearance of                      While it is essential to have a binarization technique that
+variable background intensity caused by non-uniform inten-                   can correctly keep all essential textual information, it is of
+sity, shadows, smear, smudge and low contrast.                               equal importance to apply this technique automatically with-
+                                                                             out requiring from the user to adjust a set of parameters each
+  ∗ Corresponding author. Tel.: +30 210 6503183; fax: +30 210 653 2175.
+                                                                             time it is applied.
+                                                                                Taking all the above into account, in this paper, we pro-
+    E-mail addresses: bgat@iit.demokritos.gr (B. Gatos),
+ipratika@iit.demokritos.gr (I. Pratikakis),                                  pose a novel locally adaptive thresholding scheme which
+sper@iit.demokritos.gr (S.J. Perantonis)                                     binarizes and enhances poor quality and degraded docu-
+    URL: http://www.iit.demokritos.gr/cil.                                   ments for the location of meaningful textual information
+0031-3203/$30.00 䉷 2005 Pattern Recognition Society. Published by Elsevier Ltd. All rights reserved.
+doi:10.1016/j.patcog.2005.09.010
+318                                      B. Gatos et al. / Pattern Recognition 39 (2006) 317 – 327
+
+
+without requiring any parameter tuning. The proposed                    evaluation, local methods are shown to perform better. Nev-
+scheme consists of ﬁve basic steps. The ﬁrst step is ded-               ertheless, this evaluation took into consideration only text
+icated to a denoising procedure using a low-pass Wiener                 document images that are degraded with noise and blur.
+ﬁlter. We use an adaptive Wiener method based on local                     In the following, we review three (3) local binarization
+statistics. In the second step, we use a ﬁrst rough estimation          algorithms that are considered as the current state-of-the-art.
+of foreground regions. Next, as a third step, we compute the            These algorithms have been used for the comparison and
+background surface of the image by interpolating neighbor-              evaluation of our approach.
+ing background intensities into the foreground areas that                  Niblack [8] introduced an algorithm that calculates a pix-
+result from the previous step. In the fourth step, we proceed           elwise threshold by shifting a rectangular window across the
+to the ﬁnal binarization by combining information from                  image. The threshold T for the center pixel of the window is
+the calculated background surface and the original image.               computed using the mean m and the variance s of the gray
+Text areas are located if the distance of the original image            values in the window
+from the calculated background exceeds a threshold. This
+threshold adapts to the gray-scale value of the background              T = m + ks,                                                (1)
+surface in order to preserve textual information even in very
+dark background areas. In the last step, we proceed to a                where k is a constant set to −0.2. The value of k is used
+post-processing that eliminates noise, improves the quality             to determine how much of the total print object boundary
+of text regions and preserves stroke connectivity. The pro-             is taken as a part of the given object. This method can dis-
+posed method has been extensively tested with a variety of              tinguish the object from the background effectively in the
+degraded image documents and has demonstrated superior                  areas close to the objects. The results are not very sensitive
+performance against four (4) well-known techniques.                     to the window size as long as the window covers at least 1–2
+   The paper is organized as follows. Section 2 brieﬂy re-              characters. However, noise that is present in the background
+views the state-of-the-art with particular emphasis on local            remains dominant in the ﬁnal binary image. Consequently,
+adaptive methods used during our experiments for compar-                if the objects are sparse in an image, a lot of background
+ison purposes. In Section 3, our methodology is described               noise will be left.
+in detail while in Section 4 we discuss our experimental                   Sauvola and Pietikainen [11] propose a method that solves
+results. Finally, conclusions are drawn in Section 5.                   this problem by adding a hypothesis on the gray values of
+                                                                        text and background pixels (text pixels have gray values near
+                                                                        0 and background pixels have gray values near 255), which
+2. Related work                                                         results in the following formula for the threshold:
+
+   In the literature, binarization is performed either globally         T = m + (1 − k(1 − s/R)),                                  (2)
+or locally. For the global methods (global thresholding), a
+single calculated threshold value is used to classify image             where R is the dynamics of the standard deviation ﬁxed to
+pixels into object or background classes [1–5], while for               128 and k takes on positive values (usually set to 0.5). This
+the local methods (adaptive thresholding), local area in-               method gives better results for document images.
+formation guides the threshold value for each pixel [6,7].                 Kim et al. [7] propose a local adaptive thresholding
+Most of the image binarization algorithms rely on statistical           method where an image is regarded as a 3D terrain and its
+methods, without taking into account the special nature                 local property is characterized by a water ﬂow model. The
+of document images [8–10]. However, some document-                      water ﬂow model locally detects the valleys corresponding
+directed binarization techniques have been developed                    to regions that are lower than neighboring regions. The deep
+[11–14]. For document image binarization, global thresh-                valleys are ﬁlled with dropped water whereas the smooth
+olding methods are not sufﬁcient since document images                  plain regions keep up dry. The ﬁnal step in this method
+usually are degraded and have poor quality including                    concerns the application of a global thresholding such as
+shadows, non-uniform illumination, low contrast, large                  Otsu’s method [2] on a difference image between the orig-
+signal-dependent noise, smear and strains. Concerning local             inal terrain and the water-ﬁlled terrain. A shortcoming of
+methods, a goal-directed performance evaluation of eleven               this method is the selection of two critical parameters for
+popular local thresholding algorithms has been performed                the method, namely, the amount of rainfall, w, and the pa-
+for map images [13]. According to this evaluation, for a                rameter of mask size, s, which is done on an experimental
+slowly changing background, local algorithms work well.                 basis.
+However, with a complex background, it appeared that none
+can be tuned up with a set of operating parameters good for
+all images. Furthermore, local algorithms were dependent                3. Methodology
+on stroke width. A recent exhaustive survey of forty (40)
+image binarization methods, both global and local, is pre-                 The proposed methodology for degraded and poor qual-
+sented in Ref. [15]. Conducting a quantitative performance              ity document image binarization, text preservation and
+                                           B. Gatos et al. / Pattern Recognition 39 (2006) 317 – 327                                              319
+
+
+
+
+                   Fig. 1. Block diagram of the proposed methodology for low quality historical document text preservation.
+
+
+
+
+                                 Fig. 2. Image pre-processing: (a) original image; (b) 3 × 3 Wiener ﬁltering.
+
+
+
+enchancement is illustrated in Fig. 1 and fully described in
+this section.
+
+3.1. Pre-processing
+
+   For degraded and poor quality documents, a pre-
+processing stage of the grayscale source image is essential
+for the elimination of noisy areas, smoothing of back-
+ground texture as well as contrast enhancement between
+background and text areas. The use of a low-pass Wiener
+ﬁlter [16] has proved efﬁcient for the above goals. The
+Wiener ﬁlter is commonly used in ﬁltering theory for image                 Fig. 3. Adaptive thresholding using Sauvola’s approach: (a) original image;
+restoration. Our pre-processing module involves an adap-                   (b) rough estimation of foreground regions.
+tive Wiener method based on statistics estimated from a
+local neighborhood around each pixel. The grayscale source
+image Is is transformed to the ﬁltered grayscale image I
+according to the following formula:                                        approach for adaptive thresholding [11] using k = 0.2, is
+                                                                         suitable for this case (see Fig. 3). At this step, we process
+I (x, y) =  + 2 − v 2 )(Is (x, y) −  /2 ,           (3)                image I (x, y) in order to extract the binary image S(x, y),
+                                                                           where 1’s correspond to the rough estimated foreground
+where  is the local mean, 2 the variance at a 3 × 3
+                                                                           regions.
+neighborhood around each pixel and v 2 is the average of
+all estimated variances for each pixel in the neighborhood.
+Fig. 2 shows the results of applying a 3 × 3 Wiener ﬁlter to               3.3. Background surface estimation
+a document image.
+                                                                             At this stage, we compute an approximate background
+3.2. Rough estimation of foreground regions                                surface B(x, y) of the image I (x, y). A similar approach
+                                                                           has been proposed for the binarization of camera images
+   At this step, we obtain a rough estimation of foreground                [17]. Background surface estimation is guided by the val-
+(text) regions. Our intention is to proceed to an initial seg-             uation of S(x, y) image. For pixels that correspond to
+mentation of foreground and background regions that will                   0’s at image S(x, y), the corresponding value at B(x, y)
+provide us a superset of the correct set of foreground pix-                equals to I (x, y). For the remaining pixels, the valuation of
+els. This is reﬁned at a later step (Section 3.3). Sauvola’s               B(x, y) is computed by a neighboring pixel interpolation, as
+320                                          B. Gatos et al. / Pattern Recognition 39 (2006) 317 – 327
+
+
+                                                                            weighting parameter. Fixing the value of q at 0.8 we achieve
+                                                                            total character body preservation that leads to successful
+                                                                            OCR results [17]. At low contrast regions that appear in
+                                                                            degraded and poor quality documents, we require a smaller
+                                                                            value for the threshold d. To achieve this, we ﬁrst compute
+                                                                            the average background values b of the background surface
+                                                                            B that correspond to the text areas of image S, denoted as
+                                                                                   
+                                                                                     x    y (B(x, y))(1 − S(x, y))
+                                                                            b=                                   .                          (7)
+                                                                                           x  y (1 − S(x, y))
+
+                                                                            We require that the threshold be equal to the value q · 
+Fig. 4. Background surface estimation: (a) image I; (b) background          when the background value is high (greater than the average
+surface B.                                                                  background value b at Eq. (7)) and equal to p2 · q ·  when
+                                                                            the background value is low (less than p1 · b), with p1 , p2 ∈
+                                                                            [0, 1]. To simulate this requirement, we use the following
+described in
+                                                                            logistic sigmoid function that exhibits the desired saturation
+B(x, y)                                                                     behavior for large and small values of the background as
+   
+      I (x, y)                                     if S(x, y) = 0,          shown in Fig. 6:
+      x+dx y+dy
+ =       ix=x−dx iy=y−dy (I (ix,iy)(1−S(ix,iy)))
+           x+dx     y+dy                         if S(x, y) = 1.                                                                     
+                      iy=y−dy (1−S(ix,iy))
+             ix=x−dx
+                                                                                                               (1 − p2 )
+                                                                 (4)        d(B(x, y)) = q                                          + p2 .
+                                                                                                     1 + exp( −4B(x,y)   2(1+p1 )
+                                                                                                              b(1−p1 ) + (1−p1 ) )
+The interpolation window of size dx ×dy is deﬁned to cover
+at least two image characters. An example of the background                                                                                   (8)
+surface estimation is shown in Fig. 4.
+                                                                            After experimental work, for the case of degraded and poor
+                                                                            quality document images, we suggest the following param-
+3.4. Final thresholding
+                                                                            eter values: q = 0.6, p1 = 0.5, p2 = 0.8.
+   In this step, we proceed to ﬁnal thresholding by combining
+the calculated background surface B(x, y) with the prepro-                  3.5. Upsampling
+cessed image I (x, y). Text areas are located if the distance
+of the preprocessed image I (x, y) with the calculated back-                   In order to achieve a better quality binary image we incor-
+ground B(x, y) exceeds a threshold d. We suggest that the                   porate in the previous step an efﬁcient upsampling technique.
+threshold d must change according to the gray-scale value                   Among available image upsampling techniques, bicubic in-
+of the background surface B(x, y) in order to preserve tex-                 terpolation is the most common technique that provides sat-
+tual information even in very dark background areas. For                    isfactory results [18]. It estimates the value at a pixel in the
+this reason, we propose a threshold d that has smaller values               destination image by an average of 16 pixels surrounding
+for darker regions. The ﬁnal binary image T (x, y) is given                 the closest corresponding pixel in the source image. Bicubic
+by the following formula:                                                   interpolation for image upsampling can be incorporated in
+                                                                           our algorithm by substituting formula (5) with the following
+               1 if B(x, y) − I (x, y) > d(B(x, y)),                        formula:
+T (x, y) =                                                (5)
+               0 otherwise.
+                                                                                          
+                                                                                         1 if B(x, y) − Iu (x  , y  ) > d(B(x, y)),
+  A typical histogram of a document image (see Fig. 5) has                  T x ,y =
+                                                                                            0 otherwise,
+two peaks. One peak corresponds to text regions and the
+other peak corresponds to background regions. We may note                                                                                (9)
+that we consider gray value document images in the range
+of [0, 255] and textual information has a low gray level                    where T (x  , y  ) is the binary image of size M times the
+proﬁle. The average distance  between the foreground and                   size of the original gray scale image, x = (int)x  /M, y =
+background can be calculated by the following formula:                      (int)y  /M and Iu is given by the following formula:
+                                                                            
+       x   y (B(x, y) − I (x, y))                                           Iu x  , y  = − b(1 − b)2 F (x  , y − 1)
+=                              .                    (6)                                                   
+              x  y S(x, y)                                                                 + 1 − 2b2 + b3 F (x  , y)
+In the case of document images with uniform illumina-                                                      
+                                                                                           + b 1 + b − b2 F (x  , y + 1)
+tion, the minimum threshold d between text pixels and
+background pixels can be deﬁned as q · , where q is a                                       − b2 (1 − b)F (x  , y + 2),                   (10)
+                                                B. Gatos et al. / Pattern Recognition 39 (2006) 317 – 327                                  321
+
+
+
+
+                                   Fig. 5. Document image histogram: (a) original image; (b) gray level histogram.
+
+
+
+                                                                                  Step 1: A shrink ﬁlter is used to remove noise from the
+     q  54                                                                    background. The entire binary image is scanned and each
+           52
+                                                                               foreground pixel is examined. If Psh is the number of back-
+                                                                               ground pixels in a sliding n × n window, which has the fore-
+           50                                                                  ground pixel as the central pixel, then this pixel is changed
+                                                                               to background if Psh > ksh where ksh can be deﬁned exper-
+      d
+
+
+
+
+           48                                                                  imentally.
+                                                                                  Step 2: A swell ﬁlter is used to ﬁll possible breaks, gaps or
+           46
+                                                                               holes in the foreground. The entire binary image is scanned
+           44
+                                                                               and each background pixel is examined. If Psw is the number
+   p2q                                                                        of foreground pixels in a sliding n×n window, which has the
+           42                                                                  background pixel (x, y) as the central pixel, and xa , ya the
+             0         50         100     150        200        250            average values for all foreground pixels in the n×n window,
+                            p1b         B b                                    then this pixel is changed to foreground if Psw > ksw and
+                                                                               |x − xa | < dx and |y − ya | < dy. The latter two conditions
+                      Fig. 6. Function d(B(x, y)).
+                                                                               are used in order to prevent an increase in the thickness of
+                                                                               character strokes since we examine only background pixels
+                                                                               among uniformly distributed foreground pixels.
+                                                                                  Step 3: An extension of the above conditions, leads to a
+where F () is calculated as follows:
+                                                                               further application of a swell ﬁlter that is used to improve
+                                                                               the quality of the character strokes. The entire binary image
+F (x  , m) = − a(1 − a)2 I (x − 1, m)                                         is scanned and each background pixel is examined. If Psw1
+                              
+              + 1 − 2a 2 + a 3 I (x, m)                                        is the number of foreground pixels in a sliding n×n window,
+                                                                             which has the background pixel as the central pixel, then
+              + a 1 + a − a 2 I (x + 1, m)                                     this pixel is changed to foreground if Psw1 > ksw1 .
+                                                                                  All the parameters used at this step depend on the average
+                 − a 2 (1 − a)I (x + 2, m),                        (11)
+                                                                               character height lh, which is estimated by using connected
+                                                                               component analysis. A height histogram of the connected
+where a = (x  /M) − x, b = (y  /M) − y.                                      components is formed and the largest peak is selected as the
+  In most cases, a double sized resulting binary image                         average character height. After experimental work on a rep-
+(M = 2) is adequate for an improved quality result.                            resentative training set, we suggest the following parameter
+                                                                               values for the post-processing phase: n=0.15lh , ksh =0.9n2 ,
+3.6. Post-processing                                                           ksw = 0.05n2 , dx = dy = 0.25n, ksw1 = 0.35n2 . An exam-
+                                                                               ple of a resulting binary image after post-processing steps
+   In the ﬁnal step, we proceed to post-processing of the                      is given in Fig. 7.
+resulting binary image in order to eliminate noise, improve
+the quality of text regions and preserve stroke connectivity
+by isolated pixel removal and ﬁlling of possible breaks, gaps                  4. Experimental results
+or holes. Below follows a detailed step-by-step description
+of the post-processing algorithm that consists of a successive                   The proposed algorithm was tested using degraded doc-
+application of shrink and swell ﬁltering [19].                                 ument images which belong to three distinct categories:
+322                                               B. Gatos et al. / Pattern Recognition 39 (2006) 317 – 327
+
+
+                                                                                 documents were selected from the Library of Congress on-
+                                                                                 line database [20], from the Mount Sinai Foundation Col-
+                                                                                 lection [21], from the Bodleian Library [22], as well as from
+                                                                                 private collections. All historical handwritten document im-
+                                                                                 ages are of poor quality and have shadows, non-uniform il-
+                                                                                 lumination, smear and strain. In some of these documents,
+                                                                                 ink sipped through the pages and characters on the reverse
+                                                                                 side become visible and interfere with the characters on the
+                                                                                 front side. Example historical handwritten documents used
+                                                                                 for testing are shown in Fig. 8. Old newspaper images come
+                                                                                 from the Library of Congress on-line database [20] and suf-
+                                                                                 fer from problems similar to historical documents. Addition-
+                                                                                 ally, old newspaper images have extra noise due to the old
+                                                                                 printing matrix quality or ink diffusion. Example old news-
+Fig. 7. Post-processing stage: (a) resulting binary image after ﬁnal thresh-     paper documents used for testing are shown in Fig. 9. Poor
+olding; (b) resulting image after post-processing Step 1; (c) resulting im-      quality modern documents originate from the MediaTeam
+age after post-processing Step 2; (d) resulting image after post-processing      Oulu Document Database [23] as well as from recent scan-
+Step 3.                                                                          nings of books and magazines. All modern documents are
+                                                                                 degraded with difﬁculties in distinguishing text and back-
+                                                                                 ground regions.
+historical handwritten documents, old newspapers and poor                           We compared the performance of our algorithm with four
+quality modern documents. All images have varying res-                           (4) well-known binarization techniques. We evaluated the
+olutions, stroke sizes, illumination contrast, background                        following: Otsu’s global thresholding method [2], Niblack’s
+complexity and noise levels. The historical handwritten                          adaptive thresholding method [8], Sauvola et al. adaptive
+
+
+
+
+                                      Fig. 8. Examples from the handwritten historical documents used for testing.
+
+
+
+
+                                                Fig. 9. Examples from the old newspapers used for testing.
+                                               B. Gatos et al. / Pattern Recognition 39 (2006) 317 – 327                                          323
+
+
+
+
+Fig. 10. Binarization of a typed document image: (a) original image; (b) Otsu’s method [2]; (c) Niblack’s method [8]; (d) Sauvola et al. method [11];
+(e) Kim et al. method [7]; (f) the proposed method.
+
+
+
+
+Fig. 11. Binarization of an historical handwritten document image: (a) original image; (b) Otsu’s method [2]; (c) Niblack’s method [8]; (d) Sauvola et
+al. method [11]; (e) Kim et al. method [7]; (f) the proposed method.
+
+
+
+
+method [11], Kim et al. adaptive method [7] and our pro-                      Eq. (1)) is set to −0.2. Sauvola et al. approach has also
+posed adaptive method. Niblack’s approach has been imple-                     been implemented with a 60 × 60 window. Concerning the
+mented with a 60 × 60 window in order to cover at least                       value of k (see Eq. (2)), it is set to 0.5. In Kim et al. ap-
+1–2 characters in all testing samples. The value of k (see                    proach the parameters chosen for the water ﬂow model are:
+324                                             B. Gatos et al. / Pattern Recognition 39 (2006) 317 – 327
+
+
+
+
+Fig. 12. Binarization of a historical handwritten document image: (a) original image; (b) Otsu’s method [2]; (c) Niblack’s method [8]; (d) Sauvola et al.
+method [11]; (e) Kim et al. method [7]; (f) the proposed method.
+
+
+
+
+w =20 and s =3. All the parameters used for the above bina-                    An additional experiment to quantify the efﬁciency of the
+rization algorithms have been proposed in the experiments                      proposed binarization method was also performed. We com-
+by the authors of the corresponding algorithms as the best                     pared the results obtained by the well-known OCR engine
+parameters for most document cases.                                            ABBYY FineReader 6 [24], using as input image the bina-
+   Based on visual criteria, the proposed algorithm out-                       rization results of Otsu [2], Niblack [8], Sauvola et al. [11],
+performs all algorithms that it is tested against with respect                 Kim et al. [7] and the proposed method. A representative
+to image quality and preservation of meaningful textual                        example of OCR results after the application of several bi-
+information. Example results are shown in Figs. 10–12.                         narization schemes example is shown in Table 1. To quan-
+After a thorough examination of our experimental results,                      tify the OCR results quality, we calculated the Levenshtein
+important observations can be summarized in the following:                     distance [25] between the correct text (ground truth) and the
+                                                                               resulting text for ﬁve (5) representative degraded images.
+                                                                               Table 2 shows that the application of the proposed binariza-
+• The global thresholding technique of Otsu is not satisfac-                   tion technique has demonstrated the best performance re-
+  tory for degraded documents that exhibit local variance                      garding the ﬁnal OCR results. Overall results show that by
+  problems.                                                                    using the proposed method, we achieve at least 37% im-
+• At Niblack’s approach, the resulting binary image gen-                       provement compared to the other approaches.
+  erally suffers from a great amount of background noise,
+  especially in areas without text.
+• The approach of Sauvola et al. solves the background
+  noise problem that appears in Niblack’s approach but                          5. Conclusions
+  in many cases characters become extremely thinned and
+  broken.                                                                          In this paper, we propose a novel locally adaptive ap-
+• Although the approach of Kim et al. performs well in most                     proach for the binarization and enhancement of degraded
+  of the testing cases, we have observed occasions that a                       documents. The proposed method does not require any pa-
+  great amount of noise remains in the resulting image as                       rameter tuning by the user and can deal with degradations
+  well as that characters become broken.                                        which occur due to shadows, non-uniform illumination, low
+• The proposed method has superior performance compared                         contrast, large signal-dependent noise, smear and strain. We
+  with all other methods and performs well even when the                        follow several distinct steps: a pre-processing procedure us-
+  documents are very noisy and highly degraded.                                 ing a low-pass Wiener ﬁlter, a rough estimation of fore-
+                                            B. Gatos et al. / Pattern Recognition 39 (2006) 317 – 327                                                  325
+
+Table 1
+Example document image portion and its corresponding OCR results. Marked words indicate the OCR errors
+
+
+   Method                                 Document image portion                                        OCR result
+
+  Fine Reader [24]                                                                                      its salutary effect in of bilious affection,
+                                                                                                        whicHKt is liable to months....It appears
+
+
+
+
+  Otsu [2]                                                                                              its salutary effect in of bilious affection,
+                                                                                                        whicUlt is liable to months....It appears
+
+
+
+
+  Niblack [8]
+                                                                                                        its salutary efex&m aof^Jious;affettio^il^
+                                                                                                        Wcw^^iiabte^flte^prive^0nths^^fc«pp^ar9
+
+
+
+
+  Sauvola et al. [11]                                                                                   its salutary effect in of bilious affection,
+                                                                                                        whictt*it is liable to months....It appears
+
+
+
+
+  Kim et al. [7]                                                                                        its salutary effect in of bilious affection,
+                                                                                                        whicftit is liable to months....It appears
+
+
+
+
+  Proposed method                                                                                       its salutary effect in of bilious affection,
+                                                                                                        which it is liable to months....It appears
+
+
+
+
+ground regions, a background surface calculation by inter-                 Acknowledgements
+polating neighboring background intensities, a thresholding
+by combining the calculated background surface with the                       This research is carried out within the framework of the
+original image while incorporating image up-sampling and                   Greek GSRT-funded R&D project, D-SCRIBE, which aims
+ﬁnally a post-processing step in order to improve the quality              to develop an integrated system for digitization and process-
+of text regions and preserve stroke connectivity. After exten-             ing of old Greek manuscripts.
+sive experiments, our method demonstrated superior perfor-                    The authors would like to thank Dr. Ergina Kavalliera-
+mance against four (4) well-known techniques on numerous                   tou from Open University, Greece, for providing us with
+degraded document images using visual criteria as well as                  samples from her private historical document collection, Dr.
+quantitative measures.                                                     Kim and Prof. Park from Sogang University, South Korea for
+   Further research will focus on the challenges that emerge               the provision of their binarization algorithm as well as Prof.
+from the binarization of low resolution images and videos                  Pietikainnen from Oulu University, Finland, who kindly pro-
+found on the Web.                                                          vided us the Oulu Document Database.
+326                                            B. Gatos et al. / Pattern Recognition 39 (2006) 317 – 327
+
+Table 2
+OCR evaluation
+                          Documents
+
+
+
+
+                                                                                                                                       Total
+                         Chars = 3600          Chars = 883          Chars = 2315         Chars = 1797         Chars = 2823             Chars = 11418
+                         Words = 646           Words = 149          Words = 420          Words = 288          Words = 452              Words = 1955
+
+Methods                   Levenshtein distance from the ground truth
+
+FineReader [24]            159                  81                   124                   98                   85                      547
+Otsu [2]                   417                 262                   162                  324                  184                     1349
+Niblack [8]               1198                 532                  1447                 1249                 2116                     6542
+Sauvola et al. [11]        132                  65                   157                  696                   82                     1132
+Kim et al. [7]             150                  67                   131                  116                  112                      576
+Proposed method             52                  58                    78                   76                   81                      345
+
+
+
+
+References
+                                                                              [13] O.D. Trier, A.K. Jain, Goal-directed evaluation of binarization
+ [1] A. Rosenfeld, A.C. Kak, Digital Picture Processing, second ed.,               methods, IEEE Trans. Pattern Anal. Mach. Intell. 17 (12) (1995)
+     Academic Press, New York, 1982.                                               1191–1201.
+ [2] N. Otsu, A threshold selection method from gray-level histograms,        [14] L. Eikvil, T. Taxt, K. Moen, A fast adaptive method for binarization
+     IEEE Trans. Systems Man Cybernet. 9 (1) (1979) 62–66.                         of document images, International Conference on Document Analysis
+ [3] J. Kittler, J. Illingworth, On threshold selection using clustering           and Recognition, France, 1991, pp. 435–443.
+     criteria, IEEE Trans. Systems Man Cybernet. 15 (1985) 652–655.           [15] M. Sezgin, B. Sankur, Survey over image thresholding techniques
+ [4] A.D. Brink, Thresholding of digital images using two-dimensional              and quantitative performance evaluation, J. Electron. Imaging 13 (1)
+     entropies, Pattern Recognition 25 (8) (1992) 803–808.                         (2004) 146–165.
+ [5] H. Yan, Uniﬁed formulation of a class of image thresholding              [16] A. Jain, Fundamentals of Digital Image Processing, Prentice-Hall,
+     techniques, Pattern Recognition 29 (12) (1996) 2025–2032.                     Englewood Cliffs, NJ, 1989.
+ [6] P.K. Sahoo, S. Soltani, A.K.C. Wong, A survey of thresholding            [17] M. Seeger, C. Dance, Binarising Camera Images for OCR, Sixth
+     techniques, Comput. Vision, Graphics Image Processing 41 (2) (1988)           International Conference on Document Analysis and Recognition
+     233–260.                                                                      (ICDAR’01), Seattle, Washington, 2001, pp. 54–58.
+ [7] I.-K. Kim, D.-W. Jung, R.-H. Park, Document image binarization           [18] H. Hsieh, H. Andrews, Cubic splines for image interpolation and
+     based on topographic analysis using a water ﬂow model, Pattern                digital ﬁltering, IEEE Trans. Acoustics Speech Signal Process. 26
+     Recognition 35 (2002) 265–277.                                                (6) (1978) 508–517.
+ [8] W. Niblack, An Introduction to Digital Image Processing, Prentice-       [19] R.J. Schilling, Fundamentals of Robotics Analysis and Control,
+     Hall, Englewood Cliffs, NJ, 1986 pp. 115–116.                                 Prentice-Hall, Englewood Cliffs, NJ, 1990.
+ [9] J. Yang, Y. Chen, W. Hsu, Adaptive thresholding algorithm and its        [20] The Library of Congress (http://memory.loc.gov/).
+     hardware implementation, Pattern Recognition Lett. 15 (2) (1994)         [21] Holy Monastery of St. Catherine at Mount Sinai (http://
+     141–150.                                                                      www.sinaimonastery.com/).
+[10] J.R. Parker, C. Jennings, A.G. Salkauskas, Thresholding using an         [22] Bodleian Library—University of Oxford, (http://www.bodley.
+     illumination model, ICDAR’93, 1993, pp. 270–273.                              ox.ac.uk/).
+[11] J. Sauvola, M. Pietikainen, Adaptive document image binarization,        [23] Media Team Oulu Document database (http://www.mediateam.
+     Pattern Recognition 33 (2000) 225–236.                                        oulu.ﬁ/MTDB/).
+[12] M. Chang, S. Kang, W. Rho, H. Kim, D. Kim, Improved binarization         [24] ABBYY (www.ﬁnereader.com).
+     algorithm for document image by histogram and edge detection,            [25] V.I. Levenshtein, Binary codes capable of correcting deletions,
+     ICDAR’95, 1993, pp. 636–643.                                                  insertions and reversals, Sov. Phys. Dokl. 6 (1966) 707–710.
+                                               B. Gatos et al. / Pattern Recognition 39 (2006) 317 – 327                                           327
+
+
+About the Author—BASILIOS GATOS received his Electrical Engineering Diploma in 1992 and his Ph.D. degree in 1998, both from the Electrical
+and Computer Engineering Department of Democritus University of Thrace, Xanthi, Greece. He is currently working as a Researcher at the Institute of
+Informatics and Telecommunications of the National Center for Scientiﬁc Research “Demokritos”, Athens, Greece. His main research interests are in
+Image Processing, Pattern Recognition, Document Image Analysis, OCR, Processing and Recognition of Historical Documents.
+
+About the Author—IOANNIS PRATIKAKIS received the Diploma degree in Electrical Engineering from the Demokritus University of Thrace, Xanthi,
+Greece in 1992, and the Ph.D. degree in Applied Sciences from Vrije Universiteit Brussel, Brussels, Belgium, in 1998. From March 1999 to March
+2000, he was at IRISA/ViSTA group, Rennes, France as an INRIA postdoctoral fellow. He is currently working as a Research Scientist at the Institute of
+Informatics and Telecommunications of the NCSR “Demokritos”. His research interests include 2D and 3D image analysis, image and volume sequence
+analysis as well as content-based image/3D models search and retrieval.
+
+About the Author—STAVROS J. PERANTONIS is the holder of a BS degree in Physics from the Department of Physics, University of Athens, an M.Sc.
+degree in Computer Science from the Department of Computer Science, University of Liverpool and a D.Phil. Degree in Computational Physics from the
+Department of Physics, University of Oxford. Since 1992 he has been with the Institute of Informatics and Telecommunications, NCSR “Demokritos”,
+where he currently holds the position of Senior Researcher and Head of the Computational Intelligence Laboratory. His main research interests are in
+Image Processing and Document Image Analysis, OCR and Pattern Recognition.
+

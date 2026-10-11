@@ -1,0 +1,677 @@
+DeepErase: Weakly Supervised Ink Artifact Removal in Document Text Images
+Yike Qi∗
+W. Ronny Huang∗
+Qianqian Li Jonathan L. DeGange
+Ernst & Young LLP
+{ronny.huang, yike.qi, qianqian.li, jonathan.degange}@ey.com
+Abstract
+Paper-intensive industries like insurance, law, and gov-
+ernment have long leveraged optical character recognition
+(OCR) to automatically transcribe hordes of scanned doc-
+uments into text strings for downstream processing. Even
+in 2019, there are still many scanned documents and mail
+that come into businesses in non-digital format. Text to be
+extracted from real world documents is often nestled in-
+side rich formatting, such as tabular structures or forms
+with fill-in-the-blank boxes or underlines whose ink often
+touches or even strikes through the ink of the text itself.
+Further, the text region could have random ink smudges or
+spurious strokes. Such ink artifacts can severely interfere
+with the performance of recognition algorithms or other
+downstream processing tasks. In this work, we propose
+DeepErase, a neural-based preprocessor to erase ink ar-
+tifacts from text images. We devise a method to program-
+matically assemble real text images and real artifacts into
+realistic-looking “dirty” text images, and use them to train
+an artifact segmentation network in a weakly supervised
+manner, since pixel-level annotations are automatically ob-
+tained during the assembly process. In addition to high
+segmentation accuracy, we show that our cleansed images
+achieve a significant boost in recognition accuracy by pop-
+ular OCR software such as Tesseract 4.0. Finally, we test
+DeepErase on out-of-distribution datasets (NIST SDB) of
+scanned IRS tax return forms and achieve double-digit im-
+provements in accuracy. All experiments are performed on
+both printed and handwritten text.
+1. Introduction
+Despite the digitization of information over the past
+twenty years, large swaths of industry still rely on paper
+documents for data entry and ingestion. Optical character
+recognition (OCR) has thus become a widely adopted tool
+∗Authors contributed equally.
+Recognition:“QjZE” Recognition:“9126”
+Raw Cleansed
+Recognition:“I|.I” Recognition:“2003”
+Recognition:“agairsh” Recognition:“against”
+Recognition: “differencd” Recognition: “difference”
+Figure 1: DeepErase cleans, or erases, ink artifacts from document text images, improving recognition accuracy, visual ap-
+peal, and other downstream tasks. Here we show text images cropped from scanned documents with various ink artifacts,
+such as underlines, boxes, smudges, and spurious strokes. DeepErase removes those artifacts, immediately improving recog-
+nition performance by Tesseract 4.0, a widely used open-source OCR tool, for printed text and by SimpleHTR, a popular
+offline handwriting classifier, for handwritten text.
+3522
+for automatically transcribing text images to text strings.
+Modern convolutional neural networks have driven many
+major advances in the performance of OCR systems, cul-
+minating in the large-scale adoption of OCR tools such as
+Tesseract 4.0, Abbyy Fine Reader, or Microsoft Computer
+Vision OCR.
+OCR, or more generally document text recognition, re-
+lies on a two-step process: (1) Localization: determine re-
+gions of the image (i.e. bounding boxes) which contain
+text and crop out those regions. (2) Recognition: transcribe
+cropped text image into a text string. Localization was tra-
+ditionally performed via sliding window-based techniques
+and nowadays is performed via region proposal networks
+[30]. Meanwhile, convolutional feature extractors [17] cou-
+pled with recurrent classifiers with the connected temporal
+classification (CTC) loss has long been the workhorse of
+text recognition algorithms [11, 12], although more recent
+approaches use attention-based networks [5, 24].
+The relevant text to be extracted from real world doc-
+uments are often nestled inside of rich formatting such as
+tabular structures or forms with fill-in-the-blank boxes or
+underlines. Furthermore, documents with handwriting en-
+tries often contain handwritten strokes which do not stay
+within confines of the boxes or lines in which they be-
+long and can encroach into regions occupied by other text
+that needs to be transcribed (henceforth such encroachment
+strokes will be called spurious strokes). When extracting
+text regions from such richly formatted documents, it is in-
+evitable that such document ink artifacts are present in the
+cropped image even if the localization is perfect. Such ar-
+tifacts can severely degrade the performance of recognition
+algorithms, as shown in Figure 1.
+Despite the prevalence of these artifacts in the real world,
+many document text recognition datasets, including IAM
+[21], NIST SDB19 [14], and IFN/ENIT [9] contain only
+images which are cleanly cropped and are more or less free
+from artifacts. Even the recently released FUNSD dataset
+of noisy scanned documents [13] segment their words free
+of underlines, boxes, and spurious strokes. Consequently,
+most results on text recognition have reported their perfor-
+mance on clean test examples [12, 4], typically in the form
+of well-aligned, well-spaced text lines, which are not repre-
+sentative of the noisy, marked-up, richly formatted scanned
+documents encountered in the wild.
+One possible way to improve the robustness of a text
+recognition system is to train it on images containing the
+types of artifacts typically present in documents, making
+it robust against such perturbations, a method akin to data
+augmentation or adversarial training [10]. However, today
+most organizations are already set up with industrial-grade
+recognition systems wrapped in cloud and security infras-
+tructure, rendering the prospect of overhauling the existing
+system with a homemade classifier (which is likely trained
+on much fewer data and therefore a comparatively lower
+performance) too risky an endeavor for most.
+Nonetheless, many industrial-grade classifiers are still
+not robust to document images with ink artifacts (Figure
+1. An alternative way to address this problem is to erase
+artifacts from the image before feeding it into the recog-
+nition engine. One might want artifact-cleansed images
+for other downstream tasks as well besides recognition, in-
+cluding signature extraction/verification [20] and document
+restoration, or simply for visual appeal; thus it is important
+to have an image pre-processing step that erases these arti-
+facts.
+Little work has been done leveraging deep learning for
+document artifact removal. In this work, we present Deep-
+Erase, which inputs a document text image with ink artifacts
+and outputs the same image with artifacts erased (Figure 1).
+Training is weakly supervised as we use a simple artifact
+assembler program to produce dirty images along with their
+segmentation masks for training. Note that henceforth we
+may refer to images with artifacts as “dirty”. We evalu-
+ate the performance of DeepErase by passing the cleansed
+images into two popular text recognition tools: Tesser-
+act and SimpleHTR. On these recognition engines, Deep-
+Erase achieves a 40-60% word accuracy improvement (over
+the dirty images) on our validation set and a 14% improve-
+ment on the NIST SDB2 and SDB6 datasets of scanned IRS
+documents.
+1.1. Related work
+Our work is related broadly to the field of semantic seg-
+mentation [19, 28, 2], which predicts classes for different
+regions of the image. While semantic segmentation is typi-
+cally applied to natural scenes, several works have applied it
+to documents for page segmentation [7], structure segmen-
+tation [31], or text line segmentation [27]. All of these tasks
+discriminate large-scale structure within a document, such
+as tables or text lines, rather than small-scale patterns such
+as underlines striking through text characters.
+Classical methods for line artifact detection used the
+Hough transform to detect lines and other simple shapes in
+documents, such as ellipses [18, 22]. Such methods, how-
+ever, do not pay attention to the spatial structure beyond
+specified shapes, and may erase parts of the clean text that
+overlapped with the artifact. Since the dawn of deep learn-
+ing, similar tasks involving semantic segmentation in doc-
+uments have been actively researched. Document binariza-
+tion is a task in which each pixel in an RGB or grayscale im-
+age is assigned a binary value of either on or off. Binariza-
+tion in low-contrast, degraded documents cannot rely solely
+on neighborhood-independent pixel thresholds and, like our
+task, must pay attention to the spatial patterns in the image.
+Recent approaches in binarization leverage multiscale con-
+volutional networks to perform per-pixel binarization pre-
+3523
+diction [29].
+The works of Calvo-Zaragoza et al. [6] and Kölsch et
+al. [16] are the most similar works to ours. The task in
+[6] is to discriminate between staff-lines and musical sym-
+bols in musical scores, while the task in [16] is to iden-
+tify handwritten annotations inside of historical documents.
+LIke ours, both approaches leverage fully convolutional ar-
+chitectures for their respective semantic segmentation tasks.
+There are several differences which make our task more
+challenging. In [6], the staff-lines and musical symbols,
+which the task wishes to distinguish, comprise a limited
+set of variations. Staff-lines appear in the same position
+with respect to the musical notes and tend to be long con-
+tinuous horizontal lines. In contrast, our artifacts include
+lines, smudges, and spurious strokes in a variety of orienta-
+tions and positions relative to the text. The historical doc-
+ument text characters in [16] are printed while the annota-
+tions are handwritten, and the annotations have a slightly
+different shade, both of which are telltale signs for the net-
+work to discriminate. Our images on the other hand are bi-
+narized before entering the model, forcing our segmentation
+to rely solely on neighborhood spatial structure. Finally,
+both these approaches require full supervision via manually
+labeled segmentation masks, while our approach is weakly
+supervised—only a single artifact image assembly function
+needs to be written.
+1.2. Contributions
+Our contributions are threefold:
+• Novel application: We tackle artifact removal in
+printed and handwritten text images, a problem not yet
+approached by deep learning.
+• Weakly supervised approach: Our approach requires
+only a clean, unlabeled set of printed or handwritten
+text images and artifacts which are widely available
+and a simple program to assemble them together. No
+manual pixel-level annotation is necessary.
+• Empirical results: Our artifact-cleansed images
+achieve low test error and consequently have convinc-
+ing performance upon visual inspection. Further, our
+artifact-cleansed images improve recognition accuracy
+on well-known text recognition engines such as Tesser-
+act 4.0.
+2. Method
+2.1. Summary of approach
+Like other document binarization or segmentation tasks,
+we use a fully convolutional network to map the raw in-
+put image to a binary segmentation mask indicating arti-
+fact or no-artifact for each pixel in the image. Once the
+mask is obtained, all pixels on the mask indicating the pres-
+ence of an artifact are set to 255 (white) on the input im-
+age, effectively cleansing it from artifacts. For training data,
+we automatically assemble a corpus of dirty images paired
+with their segmentation masks, generated using method de-
+scribed below in Section 2.3, for both printed and hand-
+written text. The network is trained and validated on this
+data, and then tested in-the-wild on the NIST dataset of
+scanned IRS tax returns. Code for experiments is available
+at https://github.com/yikeqicn/DeepErase.
+2.2. Datasets
+In this work we train and test on both printed and hand-
+written text. Since printed text is easy to generate, we gen-
+erate 280k text images in various fonts of words pulled from
+Base Image:
+Artifact Line:
+Patched Image:
+Predicted Mask:
+Artifact Removed:
+Slight Dilate Erode:
+(a) An artifact-patched image is obtained through
+the pixel-wise union of the base and artifact images.
+DeepErase predicts the artifact mask, which is used to
+remove artifacts.
+Artifact Patched Training Data Generation
+Model
+Artifact Removal Pipeline
+► Dilate
+(b) Flow diagrams showing the artifact patching and
+artifact removal procedures
+Figure 2: Illustrations of how artifact text images are assembled for training, and how artifacts are removed during inference
+3524
+Wikipedia using TextRecognitionDataGenerator
+[3]. For handwritten text, we use the IAM dataset [21] con-
+sisting of about 110k handwritten words from 657 writers.
+For testing, we use the NIST SDB2 [15] and NIST SDB6
+[15] datasets consisting of about 6k pages (each) of IRS tax
+return forms with printed and handwritten entries, respec-
+tively, each containing the types of artifacts that we wish
+to tackle in this work. We pre-crop text regions from the
+IRS dataset using image registration (the IRS documents all
+share the same template, making image registration espe-
+cially effective) and manually defined crop regions for the
+template. In total, we have 22165 printed text images and
+35202 handwritten text images from the IRS forms for test-
+ing. All images are binarized prior to being input into the
+model.
+2.3. Programmatic assembly of text images with
+artifacts
+In order to automatically obtain a corpus of dirty images,
+we create a program which imposes realistic-looking arti-
+facts on the readily available datasets of clean images. Sim-
+ilar ways of programmatically generating labeled data has
+been done for natural language processing tasks [26]. We
+focus on four types of artifacts: machine-printed underlines,
+machine-printed fill-in-the-blank boxes, random smudges,
+and handwritten spurious strokes.
+For random smudges and spurious strokes, we take a
+sampling of the IAM handwriting dataset to act as the ar-
+tifacts. For line and box artifacts, we extract 5000 crops of
+horizontal and vertical lines and blank boxes from various
+sources of scanned forms, including the NIST IRS dataset
+as well as some internally scanned forms. See Figure 2a
+for an example of a base image and an artifact used in the
+assembly process.
+The datasets contain many examples of forms from the
+same template (e.g. the 1040 tax form). To automate
+extraction of lines or boxes, we first apply conventional
+Algorithm 1 Generation of text images with artifacts
+1: Input clean image x ∈ [0, 255]n×m
+, artifact sample
+xart ∈ [0, 255]o×p
+, offset
+2: Begin
+3: Binarize x and xart with threshold of 128
+4: Translate xart by offset, expanding image if needed
+and filling additional pixels with intensity 255
+5: Crop xart to the same size as x
+6: Superimpose xart onto x to get the dirty image,
+i.e. xdirty ← min(x, xart)
+7: Create segmentation mask,
+i.e. s ← xart + (255 − max(x, xart))
+8: Return dirty image xdirty, segmentation mask s
+homography-based image registration to the entire dataset,
+and then iteratively crop the same region from each image.
+We then binarize both the clean and artifact images. This
+ensures that our network cannot rely on subtle differences
+in shading to predict artifacts.
+Next we sample an offset by which to translate the arti-
+fact image with respect to the clean image. This offset is
+sampled from a uniform distribution with bounds set such
+that the artifact falls within regions of the text that are con-
+sistent with the real-world. For instance, spurious strokes
+usually occur at the top or bottom of the image, while un-
+derlines usually occur at the bottom. We leave the bound-
+aries of the distribution loose enough such that there is sig-
+nificant randomness and the artifacts overlap with the text
+characters a significant portion of the time.
+After translating the artifact image by the offset amount,
+we then superimpose it onto the clean images by taking the
+lower intensity pixel (0 intensity corresponds to black) of
+the two (artifact and clean) images for each pixel in the
+clean image. Examples of the resulting dirty images are
+shown in Figure 4. The entire artifact text image genera-
+tion pipeline is presented in Algorithm 1. Figures 2a shows
+examples of the intermediate images or masks and Figure
+2b shows the artifact assembly (used during training) and
+removal (used during inference) pipelines.
+Finally, the segmentation mask should contain all the
+markings of the artifact image minus the markings of the
+clean image. In other words, suppose that A was the set of
+pixels containing the artifact marks, and B is the set of pix-
+els containing the clean marks. Then the segmentation mask
+(or pixels containing an artifact) would be S = A − A ∩ B.
+During inference, once a segmentation mask is predicted,
+one can use it as a mask to erase the artifacts out of the
+image, as depicted in Figure 2b.
+2.4. Model architecture and training
+The network, schematic in Figure 3 is a simple U-net
+architecture [2] which predicts a segmentation mask of ar-
+tifact or no-artifact for each pixel. Convolutions are per-
+formed in blocks of two layers. At the end of each block,
+the feature map is downsampled via maxpooling, and the
+number of channels is doubled. After two blocks, the fea-
+ture maps are upsampled via deconvolution (or transposed
+convolution) for two blocks until the feature map resolution
+is same as the original image. The first feature map in each
+upsampling block is concatenated with the last feature map
+from the corresponding downsampling block, as is done in
+U-net.
+The training objective is simply to minimize the cross
+entropy loss between the true segmentation mask and the
+predicted segmentation mask on a per pixel basis, with av-
+eraging in the end. To address the class imbalance issue
+(there are a lot more pixels labeled not-artifact than as arti-
+3525
+Conv 3x3 +
+Dropout0.2 +
+ReLU
+Max-pool
+Up-deconv 3x3 +
+ReLU
+Copy &
+Concatenate
+Conv
+1x1
+Input
+Image
+32x128x1
+32x128x32
+32x128x32
+16x64x32
+16x64x64
+16x64x64
+16x64x64
+16x64x128
+16x64x128
+16x64x128
+16x64x64
+16x64x64
+32x128x32
+32x128x32
+32x128x32
+Output
+Mask
+Image
+32x128x2
+Figure 3: Architecture for artifact segmentation
+fact) we use the median frequency balancing scheme from
+[8]. No regularizers are used in the training objective. The
+RMSProp optimizer is used to minimize the objective.
+To encourage translation and size invariance, we apply
+data augmentation in the form of resizing, followed by hor-
+izontal and vertical shifts of the image within the fixed
+32×128 canvas.
+3. Evaluation
+3.1. Comparative artifact detectors
+We compare DeepErase to two comparative artifact de-
+tectors.
+Hough: The first is the widely used Hough-transform
+line detector, a classical computer vision method ubiquitous
+over the past several decades to detect and remove lines and
+other simple shapes from images. We utilize the standard
+OpenCV 3.0 Hough Line [23] implementation.
+Manual Supervision CNN: Second, we implement the
+approaches of [6] and also of [16] without ImageNet pre-
+training, which are nearly identical to ours except for the
+use of full, manual supervision. The authors of [6] manu-
+ally annotated 20 scans of music documents for staff line re-
+moval. To be comparable, we manually annotated 60 docu-
+ment text images at the pixel level for training, costing about
+3 man-hours. With such few examples, it is unlikely that the
+trained network will be able to model all the intricacies of
+artifact text, as we will see in Sections 3.3 and 3.4; this fur-
+ther highlights the need for weakly supervised approaches
+in order to achieve the dataset sizes needed for high model
+performance. We henceforth call this approach the “Manual
+Table 1: Segmentation results on validation set
+Segmentation error
+Setting Baseline Cleaned
+Hough on printed 1.2 17.62
+Manual Supervision on printed 0.55 6.16
+DeepErase on printed 0.4 3.38
+Hough on handwritten 0.56 15.31
+Manual Supervision on handwritten 0.45 7.20
+DeepErase on handwritten 0.25 4.36
+Supervision” approach.
+In our validation set results (Table 2) we evaluate the
+Hough, Manual Supervision, and DeepErase approaches on
+a split of the datasets containing only line artifacts in order
+to ensure a fair comparison. Since the error for Manual Su-
+pervision and DeepErase on the line-artifacts-only split was
+always lower than its error for the entire dataset, we report
+only the error on the entire dataset for Manual Supervision
+and DeepErase.
+Since the Hough approach is validated on a split of the
+full validation set, it has a different value for recognition
+accuracy on dirty images in Table 2. Meanwhile the IRS
+dataset is consisted entirely of line (vertical or horizontal)
+artifacts so the dirty recognition accuracies in Table 3 are
+identical.
+3.2. Metrics
+Other than visual inspection, we use two metrics to de-
+termine our performance on artifact removal.
+Segmentation error: First, we use the segmentation er-
+ror on the validation set, which is the probability that a
+pixel on the predicted segmentation mask does not match
+the ground truth. Baseline: to compare our results, we in-
+clude the segmentation error on the original clean text im-
+ages before artifact assembly, which has a ground-truth seg-
+mentation mask that is uniformly annotated with no-artifact.
+This baseline ensures that when the artifact detector sees an
+image with no artfact inside, it does not falsely claim that
+there are artifacts.
+Recognition error: The secondary metric that we use
+for evaluating performance is recognition error. The sim-
+ple assumption is that images cleaned from artifacts will
+make it easier for recognition models to discriminate. Two
+recognition error metrics are reported. Character error rate
+(CER) is the string edit distance between the predicted
+string and the ground truth string, or in other words, the
+minimum number of per-character add, delete, or replace
+operations needed to match the two strings. Word error
+rate (WER) is the probability that the predicted word does
+not match the ground truth, regardless of how far off it
+is. Baseline: Like the baseline for segmentation error, we
+3526
+Table 2: Recognition results on validation sets
+Baseline Dirty Cleaned
+Setting CER WER CER WER CER WER
+Hough on printed 13.23 20.89 129.53 95.05 132.83 93.67
+Manual Supervision on printed 13.23 20.89 104.98 93.89 53.12 54.94
+DeepErase on printed 13.23 20.89 104.98 93.89 29.13 34.71
+Hough on handwritten 6.89 20.22 50.51 78.34 52.32 81.71
+Manual Supervision on handwritten 6.89 20.22 46.24 77.78 37.63 66.67
+DeepErase on handwritten 6.89 20.22 46.24 77.78 28.58 47.20
+Table 3: Recognition results on NIST IRS datasets
+Baseline Cleaned
+Setting CER WER CER WER
+Hough on printed 97.26 78.87 194.13 94.98
+Manual Supervision on printed 97.26 78.87 67.66 73.89
+DeepErase on printed 97.26 78.87 60.87 64.20
+Hough on handwritten 94.93 98.38 81.19 93.09
+Manual Supervision on handwritten 94.93 98.38 70.04 91.18
+DeepErase on handwritten 94.93 98.38 59.91 84.86
+use the recognition accuracy on the “gold-standard” origi-
+nal clean images without any artifacts superimposed as our
+recognition baseline. These are the raw unmodified im-
+ages from TextRecognitionDataGeneratoror for
+printed and IAM for handwritten.
+For printed text recognition we use the widely used open-
+source Tesseract v4 software. Since there is no widely avail-
+able offline handwriting recognition software, we used the
+model from the SimpleHTR repo [1]. Both softwares are
+based on an LSTM-CTC architecture.
+3.3. Validation results
+We first test our model on a held-out set of examples
+from our dirty datasets. Since we used a train/validation
+split of 9:1, the held-out set consists of 28k examples for
+printed and about 11k for handwritten. Since our dirty
+dataset was crafted from a base dataset (raw images from
+TextRecognitionDataGenerator or IAM), we re-
+port the performance of the original base images (which do
+not have artifacts) on the recognition models as our base-
+line.
+Using DeepErase, we observe segmentation error of less
+than 5% on printed and handwritten text, which means that
+most pixels are correctly erased (see Table 1). In contrast,
+the Hough transform-based line removal achieves signifi-
+cantly higher error, since it removes entire lines including
+the parts which overlap with the text. The Manual Super-
+vision approach performs better than Hough, but does not
+achieve as low of error as DeepErase, due to the shortage of
+available Manual Supervision data as discussed in Sec. 3.1.
+Good segmentation leads to greatly improved recogni-
+tion performance as well as shown in Table 2. When
+the artifacts are erased before inputting into Tesseract
+or SimpleHTR, the recognition accuracy improves by
+60.56% and 31.20%, respectively, compared to no clean-
+ing. DeepErase-cleaned images also achieve 20-60% lower
+downstream recognition word error than those clean by the
+Hough and Manual Supervision approaches. The segmenta-
+tion is not perfect though—when compared with the “gold
+standard” base images, cleansed images get about 15-30%
+higher recognition error. Figure 4 shows some example im-
+ages before and after artifact erasing.
+3.4. Results on real-world NIST IRS dataset
+In addition to evaluating on the validation set, we wish
+to test DeepErase in the wild on text from scanned IRS tax
+return forms. In-the-wild data tends to experience distribu-
+tion shift [25], leading to lower performance when tested on
+models trained on data from other distributions. Typically
+this results in an iterative process where the training data is
+better adapted to the distribution in-the-wild, and the sys-
+tem is re-tested. We present results from our first-pass here,
+where we had not seen the IRS data before designing our
+artifact generation algorithm 1.
+On the IRS printed data, removing artifacts via Deep-
+Erase lowers the Tesseract recognition error by 14.67%
+compared to not removing them, as shown in Table 3. Sim-
+ilarly on the handwritten data, it lowers the SimpleHTR
+recognition error by 13.52%. In both cases, DeepErase per-
+forms better than the Hough and Manual Supervision com-
+parables.
+Figure 5 shows examples of artifact removal in both
+3527
+Figure 4: Examples from validation results. Columns 1 and 3 are before cleansing, 2 and 4 are after cleansing.
+printed and handwritten IRS text. Despite the relatively
+high recognition error on handwritten data even after clean-
+ing (which is primarily due to distribution shift), upon vi-
+sual inspection the erased images look reasonably good and
+3528
+Figure 5: Examples from IRS results. Columns 1 and 3 are before cleansing, 2 and 4 are after cleansing.
+indicate that the objective of artifact removal (to yield bet-
+ter results on other downstream recognition engines or other
+tasks) is satisfied.
+4. Conclusion
+We have presented DeepErase, a neural-based approach
+to removing artifacts from document text images. This task
+is challenging because it must rely solely on spatial struc-
+ture (rather than differences in shading since the images are
+binarized) to do semantic segmentation of a wide variety
+of artifacts. We present a method to programmatically as-
+semble unlimited realistic-looking text artifact images from
+real data and use them to train DeepErase in weakly super-
+vised manner. The results on the validation set are excellent,
+showing good segmentation along with a 40 to 60% boost in
+recognition accuracy for both printed and handwritten text
+using common recognition software. On the real-world IRS
+dataset, DeepErase improves recognition accuracy by about
+14% on both printed and handwritten text. The cleansed
+images on both printed and handwritten examples look vi-
+sually convincing. Next steps include better modeling the
+test distribution during the artifact generation process such
+that the trained model performs better at test time.
+3529
+References
+[1] https://github.com/githubharald/simplehtr. 6
+[2] V. Badrinarayanan, A. Kendall, and R. Cipolla. Segnet: A
+deep convolutional encoder-decoder architecture for image
+segmentation. IEEE transactions on pattern analysis and
+machine intelligence, 39(12):2481–2495, 2017. 2, 4
+[3] Belval. Belval/textrecognitiondatagenerator, Jul 2019. 4
+[4] T. Bluche. Joint line segmentation and transcription for
+end-to-end handwritten paragraph recognition. In Advances
+in Neural Information Processing Systems, pages 838–846,
+2016. 2
+[5] T. Bluche, J. Louradour, and R. Messina. Scan, attend and
+read: End-to-end handwritten paragraph recognition with
+mdlstm attention. In 2017 14th IAPR International Confer-
+ence on Document Analysis and Recognition (ICDAR), vol-
+ume 1, pages 1050–1055. IEEE, 2017. 2
+[6] J. Calvo-Zaragoza, G. Vigliensoni, and I. Fujinaga. One-step
+detection of background, staff lines, and symbols in medieval
+music manuscripts with convolutional neural networks. In
+ISMIR, pages 724–730, 2017. 3, 5
+[7] K. Chen, M. Seuret, J. Hennebert, and R. Ingold. Convo-
+lutional neural networks for page segmentation of historical
+document images. In 2017 14th IAPR International Confer-
+ence on Document Analysis and Recognition (ICDAR), vol-
+ume 1, pages 965–970. IEEE, 2017. 2
+[8] D. Eigen and R. Fergus. Predicting depth, surface normals
+and semantic labels with a common multi-scale convolu-
+tional architecture. In Proceedings of the IEEE international
+conference on computer vision, pages 2650–2658, 2015. 5
+[9] H. El Abed and V. Margner. The ifn/enit-database - a tool
+to develop arabic handwriting recognition systems. In 2007
+9th International Symposium on Signal Processing and Its
+Applications, pages 1–4, Feb 2007. 2
+[10] I. Goodfellow, J. Shlens, and C. Szegedy. Explaining and
+harnessing adversarial examples. In International Confer-
+ence on Learning Representations, 2015. 2
+[11] A. Graves, S. Fernández, F. Gomez, and J. Schmidhu-
+ber. Connectionist temporal classification: labelling unseg-
+mented sequence data with recurrent neural networks. In
+Proceedings of the 23rd international conference on Ma-
+chine learning, pages 369–376. ACM, 2006. 2
+[12] A. Graves and J. Schmidhuber. Offline handwriting recog-
+nition with multidimensional recurrent neural networks. In
+Advances in neural information processing systems, pages
+545–552, 2009. 2
+[13] J.-P. T. Guillaume Jaume, Hazim Kemal Ekenel. Funsd: A
+dataset for form understanding in noisy scanned documents.
+In Accepted to ICDAR-OST, 2019. 2
+[14] S. G. Johnson. Nist special database 33. 2012. 2
+[15] S. G. Johnson. Nist special database 2, Apr 2019. 4
+[16] A. Kölsch, A. Mishra, S. Varshneya, M. Z. Afzal, and M. Li-
+wicki. Recognizing challenging handwritten annotations
+with fully convolutional networks. In 2018 16th Interna-
+tional Conference on Frontiers in Handwriting Recognition
+(ICFHR), pages 25–31. IEEE, 2018. 3, 5
+[17] Y. LeCun, B. E. Boser, J. S. Denker, D. Henderson, R. E.
+Howard, W. E. Hubbard, and L. D. Jackel. Handwritten digit
+recognition with a back-propagation network. In Advances
+in neural information processing systems, pages 396–404,
+1990. 2
+[18] L. Likforman-Sulem, A. Hanimyan, and C. Faure. A hough
+based algorithm for extracting text lines in handwritten doc-
+uments. In Proceedings of 3rd International Conference on
+Document Analysis and Recognition, volume 2, pages 774–
+777. IEEE, 1995. 2
+[19] J. Long, E. Shelhamer, and T. Darrell. Fully convolutional
+networks for semantic segmentation. In Proceedings of the
+IEEE conference on computer vision and pattern recogni-
+tion, pages 3431–3440, 2015. 2
+[20] C. I. Ltd. Icdar 2019 competition on signature verification
+based on an on-line and off-line signature dataset. 2
+[21] U.-V. Marti and H. Bunke. The iam-database: an english
+sentence database for offline handwriting recognition. In-
+ternational Journal on Document Analysis and Recognition,
+5(1):39–46, 2002. 2, 4
+[22] J. Matas, C. Galambos, and J. Kittler. Robust detection of
+lines using the progressive probabilistic hough transform.
+Computer Vision and Image Understanding, 78(1):119–137,
+2000. 2
+[23] OpenCV. https://docs.opencv.org, Jul 2019. 5
+[24] J. Poulos and R. Valle. Attention networks for image-to-text.
+arXiv preprint arXiv:1712.04046, 2017. 2
+[25] J. Quionero-Candela, M. Sugiyama, A. Schwaighofer, and
+N. D. Lawrence. Dataset shift in machine learning. The
+MIT Press, 2009. 6
+[26] A. J. Ratner, C. M. De Sa, S. Wu, D. Selsam, and C. Ré.
+Data programming: Creating large training sets, quickly. In
+Advances in neural information processing systems, pages
+3567–3575, 2016. 4
+[27] G. Renton, C. Chatelain, S. Adam, C. Kermorvant, and T. Pa-
+quet. Handwritten text line segmentation using fully convo-
+lutional network. In 2017 14th IAPR International Confer-
+ence on Document Analysis and Recognition (ICDAR), vol-
+ume 5, pages 5–9. IEEE, 2017. 2
+[28] O. Ronneberger, P. Fischer, and T. Brox. U-net: Convo-
+lutional networks for biomedical image segmentation. In
+International Conference on Medical image computing and
+computer-assisted intervention, pages 234–241. Springer,
+2015. 2
+[29] C. Tensmeyer and T. Martinez. Document image binariza-
+tion with fully convolutional neural networks. In 2017 14th
+IAPR International Conference on Document Analysis and
+Recognition (ICDAR), volume 01, pages 99–104, Nov 2017.
+3
+[30] Z. Tian, W. Huang, T. He, P. He, and Y. Qiao. Detecting text
+in natural image with connectionist text proposal network.
+In European conference on computer vision, pages 56–72.
+Springer, 2016. 2
+[31] X. Yang, E. Yumer, P. Asente, M. Kraley, D. Kifer, and
+C. Lee Giles. Learning to extract semantic structure from
+documents using multimodal fully convolutional neural net-
+works. In Proceedings of the IEEE Conference on Computer
+Vision and Pattern Recognition, pages 5315–5324, 2017. 2
+3530
+

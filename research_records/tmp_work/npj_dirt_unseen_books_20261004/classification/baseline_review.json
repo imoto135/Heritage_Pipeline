@@ -1,0 +1,67 @@
+{
+  "cases": [
+    {
+      "split": "test",
+      "book": "200004107",
+      "page": "200004107_00023_1",
+      "original": "data/split_dataset/test/200004107/200004107_00023_1.jpg",
+      "ace": "data/split_dataset_csc/test/200004107/200004107_00023_1.jpg",
+      "npj_input": "data/split_dataset_csc_mask/test/200004107/200004107_00023_1/00_input.png",
+      "npj_black": "data/split_dataset_csc_mask/test/200004107/200004107_00023_1/02_text_black.png",
+      "npj_red": "data/split_dataset_csc_mask/test/200004107/200004107_00023_1/03_text_red.png",
+      "npj_degradation": "data/split_dataset_csc_mask/test/200004107/200004107_00023_1/04_degradation.png",
+      "npj_background": "data/split_dataset_csc_mask/test/200004107/200004107_00023_1/05_background.png",
+      "review_status": "thumbnail_reviewed",
+      "failure_type": "",
+      "roi_xywh": "",
+      "v6_status": "",
+      "observation": "",
+      "id": "unseen_lower_frame_mark",
+      "xywh": [
+        1150,
+        2181,
+        768,
+        768
+      ],
+      "reason": "Monochrome dark fragments contacting lower writing frame; physical material unconfirmed",
+      "role": "monochrome_damage_candidate_and_text",
+      "new_v6_book": true,
+      "contains_illustration": false,
+      "novelty": "Frames new to clean-reference renderer; new_v6_book marks only unused-v6 books",
+      "baseline_kind": "Fresh frozen-code crop control, not a historical saved page",
+      "rois": []
+    },
+    {
+      "split": "train",
+      "book": "200003967",
+      "page": "200003967_00043_1",
+      "original": "data/split_dataset/train/200003967/200003967_00043_1.jpg",
+      "ace": "data/split_dataset_csc/train/200003967/200003967_00043_1.jpg",
+      "npj_input": "data/split_dataset_csc_mask/train/200003967/200003967_00043_1/00_input.png",
+      "npj_black": "data/split_dataset_csc_mask/train/200003967/200003967_00043_1/02_text_black.png",
+      "npj_red": "data/split_dataset_csc_mask/train/200003967/200003967_00043_1/03_text_red.png",
+      "npj_degradation": "data/split_dataset_csc_mask/train/200003967/200003967_00043_1/04_degradation.png",
+      "npj_background": "data/split_dataset_csc_mask/train/200003967/200003967_00043_1/05_background.png",
+      "review_status": "thumbnail_reviewed",
+      "failure_type": "",
+      "roi_xywh": "",
+      "v6_status": "",
+      "observation": "",
+      "id": "unseen_lower_binding_mark",
+      "xywh": [
+        1185,
+        2187,
+        768,
+        768
+      ],
+      "reason": "Monochrome dark mass outside lower frame near binding; physical material unconfirmed",
+      "role": "monochrome_damage_candidate_and_text",
+      "new_v6_book": true,
+      "contains_illustration": false,
+      "novelty": "Frames new to clean-reference renderer; new_v6_book marks only unused-v6 books",
+      "baseline_kind": "Fresh frozen-code crop control, not a historical saved page",
+      "rois": []
+    }
+  ],
+  "selection_protocol": "Original-only full-page review; no restoration output used to select"
+}

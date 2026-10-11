@@ -1,0 +1,3223 @@
+{
+  "cases": [
+    {
+      "id": "new_page_upper",
+      "page": "200018243_00002_2",
+      "role": "writing_and_gray_secondary_image",
+      "layout": {
+        "chosen": null,
+        "supported_frames": 0,
+        "horizontal_lines": 55,
+        "vertical_lines": 38,
+        "horizontal_groups": 4,
+        "vertical_groups": 3
+      },
+      "methods": {
+        "frame": {
+          "update": 0,
+          "applied": 0,
+          "changed": 0,
+          "reference_L_threshold": 100.0,
+          "poison_invariant": true,
+          "solves": []
+        },
+        "v6": {
+          "update": 0,
+          "applied": 0,
+          "changed": 0,
+          "reference_L_threshold": 74.318115234375,
+          "poison_invariant": true,
+          "solves": []
+        },
+        "old_contact": {
+          "update": 0,
+          "applied": 0,
+          "changed": 0,
+          "reference_L_threshold": 74.275390625,
+          "poison_invariant": true,
+          "solves": [],
+          "additional": 0,
+          "additional_changed": 0,
+          "additional_dark_to_bright": 0,
+          "additional_bright_green": 0
+        },
+        "all_colour_ridge": {
+          "update": 0,
+          "applied": 0,
+          "changed": 0,
+          "reference_L_threshold": 74.275390625,
+          "poison_invariant": true,
+          "solves": [],
+          "additional": 0,
+          "additional_changed": 0,
+          "additional_dark_to_bright": 0,
+          "additional_bright_green": 0
+        },
+        "protect_anchored_ridge": {
+          "update": 0,
+          "applied": 0,
+          "changed": 0,
+          "reference_L_threshold": 74.275390625,
+          "poison_invariant": true,
+          "solves": [],
+          "additional": 0,
+          "additional_changed": 0,
+          "additional_dark_to_bright": 0,
+          "additional_bright_green": 0
+        }
+      }
+    },
+    {
+      "id": "new_page_lower",
+      "page": "200018243_00002_2",
+      "role": "thin_writing_and_gray_secondary_image",
+      "layout": {
+        "chosen": null,
+        "supported_frames": 0,
+        "horizontal_lines": 55,
+        "vertical_lines": 38,
+        "horizontal_groups": 4,
+        "vertical_groups": 3
+      },
+      "methods": {
+        "frame": {
+          "update": 0,
+          "applied": 0,
+          "changed": 0,
+          "reference_L_threshold": 100.0,
+          "poison_invariant": true,
+          "solves": []
+        },
+        "v6": {
+          "update": 0,
+          "applied": 0,
+          "changed": 0,
+          "reference_L_threshold": 73.70166015625,
+          "poison_invariant": true,
+          "solves": []
+        },
+        "old_contact": {
+          "update": 14,
+          "applied": 0,
+          "changed": 0,
+          "reference_L_threshold": 73.689453125,
+          "poison_invariant": true,
+          "solves": [
+            {
+              "component": 1,
+              "pixels": 14,
+              "boundary_pairs": 0,
+              "applied": false
+            }
+          ],
+          "additional": 0,
+          "additional_changed": 0,
+          "additional_dark_to_bright": 0,
+          "additional_bright_green": 0
+        },
+        "all_colour_ridge": {
+          "update": 0,
+          "applied": 0,
+          "changed": 0,
+          "reference_L_threshold": 73.689453125,
+          "poison_invariant": true,
+          "solves": [],
+          "additional": 0,
+          "additional_changed": 0,
+          "additional_dark_to_bright": 0,
+          "additional_bright_green": 0
+        },
+        "protect_anchored_ridge": {
+          "update": 0,
+          "applied": 0,
+          "changed": 0,
+          "reference_L_threshold": 73.689453125,
+          "poison_invariant": true,
+          "solves": [],
+          "additional": 0,
+          "additional_changed": 0,
+          "additional_dark_to_bright": 0,
+          "additional_bright_green": 0
+        }
+      }
+    },
+    {
+      "id": "known_upper_stain",
+      "page": "200010454_00002_2",
+      "role": "brown_spot_and_writing",
+      "layout": {
+        "chosen": null,
+        "supported_frames": 0,
+        "horizontal_lines": 7,
+        "vertical_lines": 9,
+        "horizontal_groups": 1,
+        "vertical_groups": 1
+      },
+      "methods": {
+        "frame": {
+          "update": 0,
+          "applied": 0,
+          "changed": 0,
+          "reference_L_threshold": 100.0,
+          "poison_invariant": true,
+          "solves": []
+        },
+        "v6": {
+          "update": 2606,
+          "applied": 2536,
+          "changed": 2224,
+          "reference_L_threshold": 73.707763671875,
+          "poison_invariant": true,
+          "solves": [
+            {
+              "component": 1,
+              "pixels": 31,
+              "boundary_pairs": 32,
+              "applied": true,
+              "max_residual": 2.2737367544323206e-13,
+              "reference_BGR_min": [
+                176.92861978266066,
+                200.07214023157258,
+                212.50368060415872
+              ],
+              "reference_BGR_max": [
+                180.16994810719407,
+                201.61606412418186,
+                213.57066862286308
+              ]
+            },
+            {
+              "component": 2,
+              "pixels": 1515,
+              "boundary_pairs": 508,
+              "applied": true,
+              "max_residual": 6.536993168992922e-13,
+              "reference_BGR_min": [
+                175.96794881500603,
+                197.9855836398005,
+                211.26458185494525
+              ],
+              "reference_BGR_max": [
+                181.9584144135439,
+                202.01667076387082,
+                213.89465426738036
+              ]
+            },
+            {
+              "component": 3,
+              "pixels": 4,
+              "boundary_pairs": 8,
+              "applied": false
+            },
+            {
+              "component": 4,
+              "pixels": 2,
+              "boundary_pairs": 6,
+              "applied": false
+            },
+            {
+              "component": 5,
+              "pixels": 45,
+              "boundary_pairs": 44,
+              "applied": true,
+              "max_residual": 2.2737367544323206e-13,
+              "reference_BGR_min": [
+                178.08503665256788,
+                199.69843336272072,
+                211.81984154977758
+              ],
+              "reference_BGR_max": [
+                180.78062776385804,
+                201.0646786629373,
+                213.44466654732219
+              ]
+            },
+            {
+              "component": 6,
+              "pixels": 38,
+              "boundary_pairs": 34,
+              "applied": true,
+              "max_residual": 1.9895196601282805e-13,
+              "reference_BGR_min": [
+                180.69017859665792,
+                200.99356932006384,
+                214.81380309283387
+              ],
+              "reference_BGR_max": [
+                182.47707200146388,
+                202.338627529964,
+                215.81997628726958
+              ]
+            },
+            {
+              "component": 7,
+              "pixels": 19,
+              "boundary_pairs": 26,
+              "applied": true,
+              "max_residual": 1.7053025658242404e-13,
+              "reference_BGR_min": [
+                180.50907259995535,
+                201.24604500370683,
+                212.6250633264178
+              ],
+              "reference_BGR_max": [
+                181.7379049080394,
+                201.9623267631813,
+                213.44966246557487
+              ]
+            },
+            {
+              "component": 8,
+              "pixels": 1,
+              "boundary_pairs": 4,
+              "applied": false
+            },
+            {
+              "component": 9,
+              "pixels": 187,
+              "boundary_pairs": 148,
+              "applied": true,
+              "max_residual": 5.115907697472721e-13,
+              "reference_BGR_min": [
+                180.57407099864818,
+                201.31896023070794,
+                212.59166800988837
+              ],
+              "reference_BGR_max": [
+                183.21299114856333,
+                203.04375882183467,
+                214.4595736062568
+              ]
+            },
+            {
+              "component": 10,
+              "pixels": 7,
+              "boundary_pairs": 12,
+              "applied": false
+            },
+            {
+              "component": 11,
+              "pixels": 13,
+              "boundary_pairs": 20,
+              "applied": true,
+              "max_residual": 2.2737367544323206e-13,
+              "reference_BGR_min": [
+                178.8395292739184,
+                200.53109197972879,
+                214.42530850807321
+              ],
+              "reference_BGR_max": [
+                180.59328164366195,
+                201.37733382974173,
+                215.07725486599787
+              ]
+            },
+            {
+              "component": 12,
+              "pixels": 20,
+              "boundary_pairs": 22,
+              "applied": true,
+              "max_residual": 2.5579538487363607e-13,
+              "reference_BGR_min": [
+                181.4498244096672,
+                202.06591933056575,
+                213.30407014877986
+              ],
+              "reference_BGR_max": [
+                183.49190761602992,
+                203.35857839847398,
+                214.33022089135486
+              ]
+            },
+            {
+              "component": 13,
+              "pixels": 1,
+              "boundary_pairs": 4,
+              "applied": false
+            },
+            {
+              "component": 14,
+              "pixels": 11,
+              "boundary_pairs": 24,
+              "applied": true,
+              "max_residual": 1.9895196601282805e-13,
+              "reference_BGR_min": [
+                180.6927602556729,
+                201.34384795741238,
+                212.9470355396924
+              ],
+              "reference_BGR_max": [
+                181.491445407726,
+                202.1729935358205,
+                213.83666388560363
+              ]
+            },
+            {
+              "component": 15,
+              "pixels": 1,
+              "boundary_pairs": 4,
+              "applied": false
+            },
+            {
+              "component": 16,
+              "pixels": 1,
+              "boundary_pairs": 4,
+              "applied": false
+            },
+            {
+              "component": 17,
+              "pixels": 77,
+              "boundary_pairs": 64,
+              "applied": true,
+              "max_residual": 2.5579538487363607e-13,
+              "reference_BGR_min": [
+                179.14426964485637,
+                199.91693763435353,
+                212.18326466866972
+              ],
+              "reference_BGR_max": [
+                182.6811651986422,
+                202.6233654241297,
+                214.4124924306252
+              ]
+            },
+            {
+              "component": 18,
+              "pixels": 70,
+              "boundary_pairs": 62,
+              "applied": true,
+              "max_residual": 3.410605131648481e-13,
+              "reference_BGR_min": [
+                180.4642149580052,
+                200.87449761537783,
+                213.22659294359562
+              ],
+              "reference_BGR_max": [
+                182.73127747117115,
+                202.65545387341865,
+                214.23002222886657
+              ]
+            },
+            {
+              "component": 19,
+              "pixels": 4,
+              "boundary_pairs": 8,
+              "applied": false
+            },
+            {
+              "component": 20,
+              "pixels": 367,
+              "boundary_pairs": 218,
+              "applied": true,
+              "max_residual": 4.547473508864641e-13,
+              "reference_BGR_min": [
+                179.09028171622376,
+                199.90404386620858,
+                212.61698300981192
+              ],
+              "reference_BGR_max": [
+                184.27661914482525,
+                203.19662097939363,
+                215.0522817225613
+              ]
+            },
+            {
+              "component": 21,
+              "pixels": 8,
+              "boundary_pairs": 14,
+              "applied": false
+            },
+            {
+              "component": 22,
+              "pixels": 1,
+              "boundary_pairs": 4,
+              "applied": false
+            },
+            {
+              "component": 23,
+              "pixels": 3,
+              "boundary_pairs": 8,
+              "applied": false
+            },
+            {
+              "component": 24,
+              "pixels": 1,
+              "boundary_pairs": 4,
+              "applied": false
+            },
+            {
+              "component": 25,
+              "pixels": 64,
+              "boundary_pairs": 60,
+              "applied": true,
+              "max_residual": 2.8421709430404007e-13,
+              "reference_BGR_min": [
+                181.53754447591936,
+                201.84762997133822,
+                213.60885812764835
+              ],
+              "reference_BGR_max": [
+                182.80813763447625,
+                202.5470425152245,
+                214.59980595966675
+              ]
+            },
+            {
+              "component": 26,
+              "pixels": 1,
+              "boundary_pairs": 4,
+              "applied": false
+            },
+            {
+              "component": 27,
+              "pixels": 17,
+              "boundary_pairs": 24,
+              "applied": true,
+              "max_residual": 2.2737367544323206e-13,
+              "reference_BGR_min": [
+                180.22617951723635,
+                200.8899377075403,
+                212.99533242171412
+              ],
+              "reference_BGR_max": [
+                182.47477080428894,
+                202.2990857416513,
+                214.1145713770306
+              ]
+            },
+            {
+              "component": 28,
+              "pixels": 1,
+              "boundary_pairs": 4,
+              "applied": false
+            },
+            {
+              "component": 29,
+              "pixels": 2,
+              "boundary_pairs": 6,
+              "applied": false
+            },
+            {
+              "component": 30,
+              "pixels": 19,
+              "boundary_pairs": 26,
+              "applied": true,
+              "max_residual": 1.7053025658242404e-13,
+              "reference_BGR_min": [
+                183.4255173604629,
+                202.7591228704397,
+                214.65722807318429
+              ],
+              "reference_BGR_max": [
+                185.07223544344072,
+                203.53628309084263,
+                215.35969438270942
+              ]
+            },
+            {
+              "component": 31,
+              "pixels": 2,
+              "boundary_pairs": 6,
+              "applied": false
+            },
+            {
+              "component": 32,
+              "pixels": 1,
+              "boundary_pairs": 4,
+              "applied": false
+            },
+            {
+              "component": 33,
+              "pixels": 21,
+              "boundary_pairs": 26,
+              "applied": true,
+              "max_residual": 1.9895196601282805e-13,
+              "reference_BGR_min": [
+                183.6276888042053,
+                202.9110588366619,
+                214.86971990401443
+              ],
+              "reference_BGR_max": [
+                185.12936802225664,
+                203.58198270228422,
+                215.52396602461909
+              ]
+            },
+            {
+              "component": 34,
+              "pixels": 2,
+              "boundary_pairs": 6,
+              "applied": false
+            },
+            {
+              "component": 35,
+              "pixels": 6,
+              "boundary_pairs": 12,
+              "applied": false
+            },
+            {
+              "component": 36,
+              "pixels": 7,
+              "boundary_pairs": 12,
+              "applied": false
+            },
+            {
+              "component": 37,
+              "pixels": 1,
+              "boundary_pairs": 4,
+              "applied": false
+            },
+            {
+              "component": 38,
+              "pixels": 5,
+              "boundary_pairs": 10,
+              "applied": false
+            },
+            {
+              "component": 39,
+              "pixels": 22,
+              "boundary_pairs": 26,
+              "applied": true,
+              "max_residual": 2.2737367544323206e-13,
+              "reference_BGR_min": [
+                180.53840465144023,
+                203.16986213285423,
+                214.96059912935922
+              ],
+              "reference_BGR_max": [
+                183.29982290089205,
+                204.41096958717193,
+                216.70729855347605
+              ]
+            },
+            {
+              "component": 40,
+              "pixels": 8,
+              "boundary_pairs": 14,
+              "applied": false
+            }
+          ]
+        },
+        "old_contact": {
+          "update": 42,
+          "applied": 0,
+          "changed": 0,
+          "reference_L_threshold": 73.707763671875,
+          "poison_invariant": true,
+          "solves": [
+            {
+              "component": 1,
+              "pixels": 40,
+              "boundary_pairs": 1,
+              "applied": false
+            },
+            {
+              "component": 2,
+              "pixels": 1,
+              "boundary_pairs": 2,
+              "applied": false
+            },
+            {
+              "component": 3,
+              "pixels": 1,
+              "boundary_pairs": 2,
+              "applied": false
+            }
+          ],
+          "additional": 0,
+          "additional_changed": 0,
+          "additional_dark_to_bright": 0,
+          "additional_bright_green": 0
+        },
+        "all_colour_ridge": {
+          "update": 0,
+          "applied": 0,
+          "changed": 0,
+          "reference_L_threshold": 73.707763671875,
+          "poison_invariant": true,
+          "solves": [],
+          "additional": 0,
+          "additional_changed": 0,
+          "additional_dark_to_bright": 0,
+          "additional_bright_green": 0
+        },
+        "protect_anchored_ridge": {
+          "update": 0,
+          "applied": 0,
+          "changed": 0,
+          "reference_L_threshold": 73.707763671875,
+          "poison_invariant": true,
+          "solves": [],
+          "additional": 0,
+          "additional_changed": 0,
+          "additional_dark_to_bright": 0,
+          "additional_bright_green": 0
+        }
+      }
+    },
+    {
+      "id": "known_left_marks",
+      "page": "200019865_00003_1",
+      "role": "slender_margin_marks_material_unconfirmed",
+      "layout": {
+        "chosen": {
+          "box": [
+            346,
+            657,
+            2112,
+            3044
+          ],
+          "corners": [
+            [
+              347.8262519722124,
+              663.0
+            ],
+            [
+              2032.5,
+              663.0
+            ],
+            [
+              2032.5,
+              3038.5
+            ],
+            [
+              430.19817590957257,
+              3038.5
+            ]
+          ],
+          "lines": [
+            [
+              348,
+              663,
+              2032,
+              663
+            ],
+            [
+              430,
+              3038,
+              2032,
+              3038
+            ],
+            [
+              348,
+              663,
+              430,
+              3038
+            ],
+            [
+              2032,
+              663,
+              2032,
+              3038
+            ]
+          ],
+          "support_fraction": [
+            1.0,
+            1.0,
+            0.9877997475809844,
+            0.9524410774410774
+          ],
+          "ink_inside": 0.13561833959200242,
+          "score": 4005936.0,
+          "grouped": true,
+          "raw_support_members": [
+            [
+              606,
+              657,
+              1758,
+              657
+            ],
+            [
+              346,
+              658,
+              2112,
+              658
+            ],
+            [
+              346,
+              659,
+              2112,
+              659
+            ],
+            [
+              346,
+              660,
+              2108,
+              660
+            ],
+            [
+              346,
+              661,
+              2107,
+              661
+            ],
+            [
+              346,
+              662,
+              2107,
+              662
+            ],
+            [
+              346,
+              663,
+              2108,
+              663
+            ],
+            [
+              347,
+              664,
+              2108,
+              664
+            ],
+            [
+              347,
+              665,
+              2110,
+              665
+            ],
+            [
+              347,
+              666,
+              2111,
+              666
+            ],
+            [
+              347,
+              667,
+              2110,
+              667
+            ],
+            [
+              347,
+              668,
+              2109,
+              668
+            ],
+            [
+              371,
+              669,
+              1426,
+              669
+            ],
+            [
+              424,
+              3033,
+              1857,
+              3033
+            ],
+            [
+              425,
+              3034,
+              2034,
+              3034
+            ],
+            [
+              425,
+              3035,
+              2104,
+              3035
+            ],
+            [
+              425,
+              3036,
+              2112,
+              3036
+            ],
+            [
+              454,
+              3037,
+              2112,
+              3037
+            ],
+            [
+              455,
+              3038,
+              2112,
+              3038
+            ],
+            [
+              455,
+              3039,
+              2112,
+              3039
+            ],
+            [
+              460,
+              3040,
+              2112,
+              3040
+            ],
+            [
+              464,
+              3041,
+              2112,
+              3041
+            ],
+            [
+              497,
+              3042,
+              2112,
+              3042
+            ],
+            [
+              502,
+              3043,
+              2112,
+              3043
+            ],
+            [
+              508,
+              3044,
+              1559,
+              3044
+            ],
+            [
+              373,
+              1554,
+              418,
+              2846
+            ],
+            [
+              372,
+              1488,
+              419,
+              2846
+            ],
+            [
+              363,
+              1201,
+              421,
+              2867
+            ],
+            [
+              359,
+              1073,
+              421,
+              2861
+            ],
+            [
+              349,
+              780,
+              421,
+              2847
+            ],
+            [
+              348,
+              694,
+              429,
+              3038
+            ],
+            [
+              348,
+              664,
+              430,
+              3039
+            ],
+            [
+              349,
+              657,
+              432,
+              3039
+            ],
+            [
+              350,
+              657,
+              419,
+              2647
+            ],
+            [
+              352,
+              657,
+              416,
+              2516
+            ],
+            [
+              353,
+              668,
+              416,
+              2488
+            ],
+            [
+              353,
+              657,
+              409,
+              2260
+            ],
+            [
+              366,
+              986,
+              404,
+              2078
+            ],
+            [
+              2031,
+              1264,
+              2031,
+              2690
+            ],
+            [
+              2032,
+              1222,
+              2032,
+              2852
+            ],
+            [
+              2033,
+              1808,
+              2033,
+              3006
+            ],
+            [
+              2034,
+              1831,
+              2034,
+              3006
+            ]
+          ],
+          "fitted_box_before_observed_span": [
+            347,
+            663,
+            2033,
+            3039
+          ],
+          "envelope_includes_complete_horizontal_observations": true
+        },
+        "supported_frames": 1,
+        "horizontal_lines": 25,
+        "vertical_lines": 28,
+        "horizontal_groups": 2,
+        "vertical_groups": 3
+      },
+      "methods": {
+        "frame": {
+          "update": 0,
+          "applied": 0,
+          "changed": 0,
+          "reference_L_threshold": 75.099365234375,
+          "poison_invariant": true,
+          "solves": []
+        },
+        "v6": {
+          "update": 254,
+          "applied": 242,
+          "changed": 224,
+          "reference_L_threshold": 74.904052734375,
+          "poison_invariant": true,
+          "solves": [
+            {
+              "component": 1,
+              "pixels": 135,
+              "boundary_pairs": 120,
+              "applied": true,
+              "max_residual": 2.2737367544323206e-13,
+              "reference_BGR_min": [
+                180.65151348004244,
+                203.47554549141927,
+                216.92080643369417
+              ],
+              "reference_BGR_max": [
+                185.51364444196145,
+                207.0247426783004,
+                219.46844728908098
+              ]
+            },
+            {
+              "component": 2,
+              "pixels": 34,
+              "boundary_pairs": 40,
+              "applied": true,
+              "max_residual": 1.9895196601282805e-13,
+              "reference_BGR_min": [
+                183.32868746068874,
+                205.68178686986667,
+                218.77806487797045
+              ],
+              "reference_BGR_max": [
+                190.2159513768978,
+                210.45181782150848,
+                222.5352794589883
+              ]
+            },
+            {
+              "component": 3,
+              "pixels": 13,
+              "boundary_pairs": 22,
+              "applied": true,
+              "max_residual": 1.4210854715202004e-13,
+              "reference_BGR_min": [
+                183.72127841807296,
+                205.73329204031052,
+                218.0560938682244
+              ],
+              "reference_BGR_max": [
+                187.3706316548579,
+                208.16095206380112,
+                220.51424084925873
+              ]
+            },
+            {
+              "component": 4,
+              "pixels": 1,
+              "boundary_pairs": 4,
+              "applied": false
+            },
+            {
+              "component": 5,
+              "pixels": 2,
+              "boundary_pairs": 6,
+              "applied": false
+            },
+            {
+              "component": 6,
+              "pixels": 24,
+              "boundary_pairs": 22,
+              "applied": true,
+              "max_residual": 2.2737367544323206e-13,
+              "reference_BGR_min": [
+                192.22179846825102,
+                211.19366528792324,
+                223.42072363466454
+              ],
+              "reference_BGR_max": [
+                197.81743630666284,
+                214.79176206937132,
+                225.96351652827312
+              ]
+            },
+            {
+              "component": 7,
+              "pixels": 6,
+              "boundary_pairs": 14,
+              "applied": false
+            },
+            {
+              "component": 8,
+              "pixels": 36,
+              "boundary_pairs": 48,
+              "applied": true,
+              "max_residual": 3.410605131648481e-13,
+              "reference_BGR_min": [
+                183.29390549830723,
+                204.8487513665986,
+                218.07273601094104
+              ],
+              "reference_BGR_max": [
+                184.57471526312432,
+                206.04208810310118,
+                218.96281172231852
+              ]
+            },
+            {
+              "component": 9,
+              "pixels": 1,
+              "boundary_pairs": 4,
+              "applied": false
+            },
+            {
+              "component": 10,
+              "pixels": 1,
+              "boundary_pairs": 4,
+              "applied": false
+            },
+            {
+              "component": 11,
+              "pixels": 1,
+              "boundary_pairs": 4,
+              "applied": false
+            }
+          ]
+        },
+        "old_contact": {
+          "update": 7,
+          "applied": 0,
+          "changed": 0,
+          "reference_L_threshold": 74.97119140625,
+          "poison_invariant": true,
+          "solves": [
+            {
+              "component": 1,
+              "pixels": 6,
+              "boundary_pairs": 4,
+              "applied": false
+            },
+            {
+              "component": 2,
+              "pixels": 1,
+              "boundary_pairs": 2,
+              "applied": false
+            }
+          ],
+          "additional": 0,
+          "additional_changed": 0,
+          "additional_dark_to_bright": 0,
+          "additional_bright_green": 0
+        },
+        "all_colour_ridge": {
+          "update": 7,
+          "applied": 0,
+          "changed": 0,
+          "reference_L_threshold": 74.97119140625,
+          "poison_invariant": true,
+          "solves": [
+            {
+              "component": 1,
+              "pixels": 6,
+              "boundary_pairs": 4,
+              "applied": false
+            },
+            {
+              "component": 2,
+              "pixels": 1,
+              "boundary_pairs": 2,
+              "applied": false
+            }
+          ],
+          "additional": 0,
+          "additional_changed": 0,
+          "additional_dark_to_bright": 0,
+          "additional_bright_green": 0
+        },
+        "protect_anchored_ridge": {
+          "update": 7,
+          "applied": 0,
+          "changed": 0,
+          "reference_L_threshold": 74.97119140625,
+          "poison_invariant": true,
+          "solves": [
+            {
+              "component": 1,
+              "pixels": 6,
+              "boundary_pairs": 4,
+              "applied": false
+            },
+            {
+              "component": 2,
+              "pixels": 1,
+              "boundary_pairs": 2,
+              "applied": false
+            }
+          ],
+          "additional": 0,
+          "additional_changed": 0,
+          "additional_dark_to_bright": 0,
+          "additional_bright_green": 0
+        }
+      }
+    },
+    {
+      "id": "known_right_writing",
+      "page": "200019865_00003_1",
+      "role": "faint_and_brown_writing",
+      "layout": {
+        "chosen": {
+          "box": [
+            346,
+            657,
+            2112,
+            3044
+          ],
+          "corners": [
+            [
+              347.8262519722124,
+              663.0
+            ],
+            [
+              2032.5,
+              663.0
+            ],
+            [
+              2032.5,
+              3038.5
+            ],
+            [
+              430.19817590957257,
+              3038.5
+            ]
+          ],
+          "lines": [
+            [
+              348,
+              663,
+              2032,
+              663
+            ],
+            [
+              430,
+              3038,
+              2032,
+              3038
+            ],
+            [
+              348,
+              663,
+              430,
+              3038
+            ],
+            [
+              2032,
+              663,
+              2032,
+              3038
+            ]
+          ],
+          "support_fraction": [
+            1.0,
+            1.0,
+            0.9877997475809844,
+            0.9524410774410774
+          ],
+          "ink_inside": 0.13561833959200242,
+          "score": 4005936.0,
+          "grouped": true,
+          "raw_support_members": [
+            [
+              606,
+              657,
+              1758,
+              657
+            ],
+            [
+              346,
+              658,
+              2112,
+              658
+            ],
+            [
+              346,
+              659,
+              2112,
+              659
+            ],
+            [
+              346,
+              660,
+              2108,
+              660
+            ],
+            [
+              346,
+              661,
+              2107,
+              661
+            ],
+            [
+              346,
+              662,
+              2107,
+              662
+            ],
+            [
+              346,
+              663,
+              2108,
+              663
+            ],
+            [
+              347,
+              664,
+              2108,
+              664
+            ],
+            [
+              347,
+              665,
+              2110,
+              665
+            ],
+            [
+              347,
+              666,
+              2111,
+              666
+            ],
+            [
+              347,
+              667,
+              2110,
+              667
+            ],
+            [
+              347,
+              668,
+              2109,
+              668
+            ],
+            [
+              371,
+              669,
+              1426,
+              669
+            ],
+            [
+              424,
+              3033,
+              1857,
+              3033
+            ],
+            [
+              425,
+              3034,
+              2034,
+              3034
+            ],
+            [
+              425,
+              3035,
+              2104,
+              3035
+            ],
+            [
+              425,
+              3036,
+              2112,
+              3036
+            ],
+            [
+              454,
+              3037,
+              2112,
+              3037
+            ],
+            [
+              455,
+              3038,
+              2112,
+              3038
+            ],
+            [
+              455,
+              3039,
+              2112,
+              3039
+            ],
+            [
+              460,
+              3040,
+              2112,
+              3040
+            ],
+            [
+              464,
+              3041,
+              2112,
+              3041
+            ],
+            [
+              497,
+              3042,
+              2112,
+              3042
+            ],
+            [
+              502,
+              3043,
+              2112,
+              3043
+            ],
+            [
+              508,
+              3044,
+              1559,
+              3044
+            ],
+            [
+              373,
+              1554,
+              418,
+              2846
+            ],
+            [
+              372,
+              1488,
+              419,
+              2846
+            ],
+            [
+              363,
+              1201,
+              421,
+              2867
+            ],
+            [
+              359,
+              1073,
+              421,
+              2861
+            ],
+            [
+              349,
+              780,
+              421,
+              2847
+            ],
+            [
+              348,
+              694,
+              429,
+              3038
+            ],
+            [
+              348,
+              664,
+              430,
+              3039
+            ],
+            [
+              349,
+              657,
+              432,
+              3039
+            ],
+            [
+              350,
+              657,
+              419,
+              2647
+            ],
+            [
+              352,
+              657,
+              416,
+              2516
+            ],
+            [
+              353,
+              668,
+              416,
+              2488
+            ],
+            [
+              353,
+              657,
+              409,
+              2260
+            ],
+            [
+              366,
+              986,
+              404,
+              2078
+            ],
+            [
+              2031,
+              1264,
+              2031,
+              2690
+            ],
+            [
+              2032,
+              1222,
+              2032,
+              2852
+            ],
+            [
+              2033,
+              1808,
+              2033,
+              3006
+            ],
+            [
+              2034,
+              1831,
+              2034,
+              3006
+            ]
+          ],
+          "fitted_box_before_observed_span": [
+            347,
+            663,
+            2033,
+            3039
+          ],
+          "envelope_includes_complete_horizontal_observations": true
+        },
+        "supported_frames": 1,
+        "horizontal_lines": 25,
+        "vertical_lines": 28,
+        "horizontal_groups": 2,
+        "vertical_groups": 3
+      },
+      "methods": {
+        "frame": {
+          "update": 0,
+          "applied": 0,
+          "changed": 0,
+          "reference_L_threshold": 100.0,
+          "poison_invariant": true,
+          "solves": []
+        },
+        "v6": {
+          "update": 0,
+          "applied": 0,
+          "changed": 0,
+          "reference_L_threshold": 74.06787109375,
+          "poison_invariant": true,
+          "solves": []
+        },
+        "old_contact": {
+          "update": 152,
+          "applied": 30,
+          "changed": 30,
+          "reference_L_threshold": 74.06787109375,
+          "poison_invariant": true,
+          "solves": [
+            {
+              "component": 1,
+              "pixels": 5,
+              "boundary_pairs": 6,
+              "applied": false
+            },
+            {
+              "component": 2,
+              "pixels": 8,
+              "boundary_pairs": 9,
+              "applied": false
+            },
+            {
+              "component": 3,
+              "pixels": 1,
+              "boundary_pairs": 4,
+              "applied": false
+            },
+            {
+              "component": 4,
+              "pixels": 14,
+              "boundary_pairs": 10,
+              "applied": false
+            },
+            {
+              "component": 5,
+              "pixels": 2,
+              "boundary_pairs": 3,
+              "applied": false
+            },
+            {
+              "component": 6,
+              "pixels": 3,
+              "boundary_pairs": 4,
+              "applied": false
+            },
+            {
+              "component": 7,
+              "pixels": 4,
+              "boundary_pairs": 1,
+              "applied": false
+            },
+            {
+              "component": 8,
+              "pixels": 3,
+              "boundary_pairs": 4,
+              "applied": false
+            },
+            {
+              "component": 9,
+              "pixels": 1,
+              "boundary_pairs": 2,
+              "applied": false
+            },
+            {
+              "component": 10,
+              "pixels": 2,
+              "boundary_pairs": 0,
+              "applied": false
+            },
+            {
+              "component": 11,
+              "pixels": 13,
+              "boundary_pairs": 18,
+              "applied": true,
+              "max_residual": 3.410605131648481e-13,
+              "reference_BGR_min": [
+                181.13491445041223,
+                199.5582392259951,
+                211.22280186427002
+              ],
+              "reference_BGR_max": [
+                182.04549610383847,
+                200.89026529555719,
+                212.21518329505602
+              ]
+            },
+            {
+              "component": 12,
+              "pixels": 1,
+              "boundary_pairs": 0,
+              "applied": false
+            },
+            {
+              "component": 13,
+              "pixels": 9,
+              "boundary_pairs": 7,
+              "applied": false
+            },
+            {
+              "component": 14,
+              "pixels": 1,
+              "boundary_pairs": 1,
+              "applied": false
+            },
+            {
+              "component": 15,
+              "pixels": 1,
+              "boundary_pairs": 0,
+              "applied": false
+            },
+            {
+              "component": 16,
+              "pixels": 6,
+              "boundary_pairs": 9,
+              "applied": false
+            },
+            {
+              "component": 17,
+              "pixels": 1,
+              "boundary_pairs": 1,
+              "applied": false
+            },
+            {
+              "component": 18,
+              "pixels": 1,
+              "boundary_pairs": 2,
+              "applied": false
+            },
+            {
+              "component": 19,
+              "pixels": 1,
+              "boundary_pairs": 3,
+              "applied": false
+            },
+            {
+              "component": 20,
+              "pixels": 1,
+              "boundary_pairs": 2,
+              "applied": false
+            },
+            {
+              "component": 21,
+              "pixels": 10,
+              "boundary_pairs": 11,
+              "applied": false
+            },
+            {
+              "component": 22,
+              "pixels": 10,
+              "boundary_pairs": 10,
+              "applied": false
+            },
+            {
+              "component": 23,
+              "pixels": 1,
+              "boundary_pairs": 0,
+              "applied": false
+            },
+            {
+              "component": 24,
+              "pixels": 13,
+              "boundary_pairs": 7,
+              "applied": false
+            },
+            {
+              "component": 25,
+              "pixels": 1,
+              "boundary_pairs": 2,
+              "applied": false
+            },
+            {
+              "component": 26,
+              "pixels": 17,
+              "boundary_pairs": 18,
+              "applied": true,
+              "max_residual": 2.8421709430404007e-13,
+              "reference_BGR_min": [
+                183.77178381801434,
+                202.78090337000918,
+                215.2187751263556
+              ],
+              "reference_BGR_max": [
+                185.74002023534695,
+                204.23900647723525,
+                216.25167797099425
+              ]
+            },
+            {
+              "component": 27,
+              "pixels": 11,
+              "boundary_pairs": 6,
+              "applied": false
+            },
+            {
+              "component": 28,
+              "pixels": 3,
+              "boundary_pairs": 4,
+              "applied": false
+            },
+            {
+              "component": 29,
+              "pixels": 1,
+              "boundary_pairs": 2,
+              "applied": false
+            },
+            {
+              "component": 30,
+              "pixels": 6,
+              "boundary_pairs": 7,
+              "applied": false
+            },
+            {
+              "component": 31,
+              "pixels": 1,
+              "boundary_pairs": 2,
+              "applied": false
+            }
+          ],
+          "additional": 30,
+          "additional_changed": 30,
+          "additional_dark_to_bright": 2,
+          "additional_bright_green": 0
+        },
+        "all_colour_ridge": {
+          "update": 137,
+          "applied": 30,
+          "changed": 30,
+          "reference_L_threshold": 74.06787109375,
+          "poison_invariant": true,
+          "solves": [
+            {
+              "component": 1,
+              "pixels": 5,
+              "boundary_pairs": 6,
+              "applied": false
+            },
+            {
+              "component": 2,
+              "pixels": 8,
+              "boundary_pairs": 9,
+              "applied": false
+            },
+            {
+              "component": 3,
+              "pixels": 1,
+              "boundary_pairs": 4,
+              "applied": false
+            },
+            {
+              "component": 4,
+              "pixels": 14,
+              "boundary_pairs": 10,
+              "applied": false
+            },
+            {
+              "component": 5,
+              "pixels": 2,
+              "boundary_pairs": 3,
+              "applied": false
+            },
+            {
+              "component": 6,
+              "pixels": 3,
+              "boundary_pairs": 4,
+              "applied": false
+            },
+            {
+              "component": 7,
+              "pixels": 4,
+              "boundary_pairs": 1,
+              "applied": false
+            },
+            {
+              "component": 8,
+              "pixels": 3,
+              "boundary_pairs": 4,
+              "applied": false
+            },
+            {
+              "component": 9,
+              "pixels": 1,
+              "boundary_pairs": 2,
+              "applied": false
+            },
+            {
+              "component": 10,
+              "pixels": 2,
+              "boundary_pairs": 0,
+              "applied": false
+            },
+            {
+              "component": 11,
+              "pixels": 13,
+              "boundary_pairs": 18,
+              "applied": true,
+              "max_residual": 3.410605131648481e-13,
+              "reference_BGR_min": [
+                181.13491445041223,
+                199.5582392259951,
+                211.22280186427002
+              ],
+              "reference_BGR_max": [
+                182.04549610383847,
+                200.89026529555719,
+                212.21518329505602
+              ]
+            },
+            {
+              "component": 12,
+              "pixels": 1,
+              "boundary_pairs": 0,
+              "applied": false
+            },
+            {
+              "component": 13,
+              "pixels": 9,
+              "boundary_pairs": 7,
+              "applied": false
+            },
+            {
+              "component": 14,
+              "pixels": 1,
+              "boundary_pairs": 1,
+              "applied": false
+            },
+            {
+              "component": 15,
+              "pixels": 1,
+              "boundary_pairs": 0,
+              "applied": false
+            },
+            {
+              "component": 16,
+              "pixels": 6,
+              "boundary_pairs": 9,
+              "applied": false
+            },
+            {
+              "component": 17,
+              "pixels": 1,
+              "boundary_pairs": 1,
+              "applied": false
+            },
+            {
+              "component": 18,
+              "pixels": 1,
+              "boundary_pairs": 2,
+              "applied": false
+            },
+            {
+              "component": 19,
+              "pixels": 1,
+              "boundary_pairs": 3,
+              "applied": false
+            },
+            {
+              "component": 20,
+              "pixels": 1,
+              "boundary_pairs": 2,
+              "applied": false
+            },
+            {
+              "component": 21,
+              "pixels": 10,
+              "boundary_pairs": 11,
+              "applied": false
+            },
+            {
+              "component": 22,
+              "pixels": 10,
+              "boundary_pairs": 10,
+              "applied": false
+            },
+            {
+              "component": 23,
+              "pixels": 17,
+              "boundary_pairs": 18,
+              "applied": true,
+              "max_residual": 1.7053025658242404e-13,
+              "reference_BGR_min": [
+                183.77178381801434,
+                202.78090337000918,
+                215.2187751263556
+              ],
+              "reference_BGR_max": [
+                185.74002023534695,
+                204.23900647723525,
+                216.25167797099425
+              ]
+            },
+            {
+              "component": 24,
+              "pixels": 11,
+              "boundary_pairs": 6,
+              "applied": false
+            },
+            {
+              "component": 25,
+              "pixels": 3,
+              "boundary_pairs": 4,
+              "applied": false
+            },
+            {
+              "component": 26,
+              "pixels": 1,
+              "boundary_pairs": 2,
+              "applied": false
+            },
+            {
+              "component": 27,
+              "pixels": 6,
+              "boundary_pairs": 7,
+              "applied": false
+            },
+            {
+              "component": 28,
+              "pixels": 1,
+              "boundary_pairs": 2,
+              "applied": false
+            }
+          ],
+          "additional": 30,
+          "additional_changed": 30,
+          "additional_dark_to_bright": 2,
+          "additional_bright_green": 0
+        },
+        "protect_anchored_ridge": {
+          "update": 137,
+          "applied": 30,
+          "changed": 30,
+          "reference_L_threshold": 74.06787109375,
+          "poison_invariant": true,
+          "solves": [
+            {
+              "component": 1,
+              "pixels": 5,
+              "boundary_pairs": 6,
+              "applied": false
+            },
+            {
+              "component": 2,
+              "pixels": 8,
+              "boundary_pairs": 9,
+              "applied": false
+            },
+            {
+              "component": 3,
+              "pixels": 1,
+              "boundary_pairs": 4,
+              "applied": false
+            },
+            {
+              "component": 4,
+              "pixels": 14,
+              "boundary_pairs": 10,
+              "applied": false
+            },
+            {
+              "component": 5,
+              "pixels": 2,
+              "boundary_pairs": 3,
+              "applied": false
+            },
+            {
+              "component": 6,
+              "pixels": 3,
+              "boundary_pairs": 4,
+              "applied": false
+            },
+            {
+              "component": 7,
+              "pixels": 4,
+              "boundary_pairs": 1,
+              "applied": false
+            },
+            {
+              "component": 8,
+              "pixels": 3,
+              "boundary_pairs": 4,
+              "applied": false
+            },
+            {
+              "component": 9,
+              "pixels": 1,
+              "boundary_pairs": 2,
+              "applied": false
+            },
+            {
+              "component": 10,
+              "pixels": 2,
+              "boundary_pairs": 0,
+              "applied": false
+            },
+            {
+              "component": 11,
+              "pixels": 13,
+              "boundary_pairs": 18,
+              "applied": true,
+              "max_residual": 3.410605131648481e-13,
+              "reference_BGR_min": [
+                181.13491445041223,
+                199.5582392259951,
+                211.22280186427002
+              ],
+              "reference_BGR_max": [
+                182.04549610383847,
+                200.89026529555719,
+                212.21518329505602
+              ]
+            },
+            {
+              "component": 12,
+              "pixels": 1,
+              "boundary_pairs": 0,
+              "applied": false
+            },
+            {
+              "component": 13,
+              "pixels": 9,
+              "boundary_pairs": 7,
+              "applied": false
+            },
+            {
+              "component": 14,
+              "pixels": 1,
+              "boundary_pairs": 1,
+              "applied": false
+            },
+            {
+              "component": 15,
+              "pixels": 1,
+              "boundary_pairs": 0,
+              "applied": false
+            },
+            {
+              "component": 16,
+              "pixels": 6,
+              "boundary_pairs": 9,
+              "applied": false
+            },
+            {
+              "component": 17,
+              "pixels": 1,
+              "boundary_pairs": 1,
+              "applied": false
+            },
+            {
+              "component": 18,
+              "pixels": 1,
+              "boundary_pairs": 2,
+              "applied": false
+            },
+            {
+              "component": 19,
+              "pixels": 1,
+              "boundary_pairs": 3,
+              "applied": false
+            },
+            {
+              "component": 20,
+              "pixels": 1,
+              "boundary_pairs": 2,
+              "applied": false
+            },
+            {
+              "component": 21,
+              "pixels": 10,
+              "boundary_pairs": 11,
+              "applied": false
+            },
+            {
+              "component": 22,
+              "pixels": 10,
+              "boundary_pairs": 10,
+              "applied": false
+            },
+            {
+              "component": 23,
+              "pixels": 17,
+              "boundary_pairs": 18,
+              "applied": true,
+              "max_residual": 1.7053025658242404e-13,
+              "reference_BGR_min": [
+                183.77178381801434,
+                202.78090337000918,
+                215.2187751263556
+              ],
+              "reference_BGR_max": [
+                185.74002023534695,
+                204.23900647723525,
+                216.25167797099425
+              ]
+            },
+            {
+              "component": 24,
+              "pixels": 11,
+              "boundary_pairs": 6,
+              "applied": false
+            },
+            {
+              "component": 25,
+              "pixels": 3,
+              "boundary_pairs": 4,
+              "applied": false
+            },
+            {
+              "component": 26,
+              "pixels": 1,
+              "boundary_pairs": 2,
+              "applied": false
+            },
+            {
+              "component": 27,
+              "pixels": 6,
+              "boundary_pairs": 7,
+              "applied": false
+            },
+            {
+              "component": 28,
+              "pixels": 1,
+              "boundary_pairs": 2,
+              "applied": false
+            }
+          ],
+          "additional": 30,
+          "additional_changed": 30,
+          "additional_dark_to_bright": 2,
+          "additional_bright_green": 0
+        }
+      }
+    },
+    {
+      "id": "known_lower_writing",
+      "page": "200018243_00003_2",
+      "role": "thin_writing_and_gray_secondary_image",
+      "layout": {
+        "chosen": null,
+        "supported_frames": 0,
+        "horizontal_lines": 31,
+        "vertical_lines": 32,
+        "horizontal_groups": 3,
+        "vertical_groups": 3
+      },
+      "methods": {
+        "frame": {
+          "update": 0,
+          "applied": 0,
+          "changed": 0,
+          "reference_L_threshold": 100.0,
+          "poison_invariant": true,
+          "solves": []
+        },
+        "v6": {
+          "update": 0,
+          "applied": 0,
+          "changed": 0,
+          "reference_L_threshold": 75.074951171875,
+          "poison_invariant": true,
+          "solves": []
+        },
+        "old_contact": {
+          "update": 251,
+          "applied": 77,
+          "changed": 77,
+          "reference_L_threshold": 75.099365234375,
+          "poison_invariant": true,
+          "solves": [
+            {
+              "component": 1,
+              "pixels": 4,
+              "boundary_pairs": 6,
+              "applied": false
+            },
+            {
+              "component": 2,
+              "pixels": 3,
+              "boundary_pairs": 5,
+              "applied": false
+            },
+            {
+              "component": 3,
+              "pixels": 10,
+              "boundary_pairs": 10,
+              "applied": false
+            },
+            {
+              "component": 4,
+              "pixels": 1,
+              "boundary_pairs": 1,
+              "applied": false
+            },
+            {
+              "component": 5,
+              "pixels": 2,
+              "boundary_pairs": 4,
+              "applied": false
+            },
+            {
+              "component": 6,
+              "pixels": 1,
+              "boundary_pairs": 2,
+              "applied": false
+            },
+            {
+              "component": 7,
+              "pixels": 2,
+              "boundary_pairs": 3,
+              "applied": false
+            },
+            {
+              "component": 8,
+              "pixels": 1,
+              "boundary_pairs": 4,
+              "applied": false
+            },
+            {
+              "component": 9,
+              "pixels": 4,
+              "boundary_pairs": 5,
+              "applied": false
+            },
+            {
+              "component": 10,
+              "pixels": 1,
+              "boundary_pairs": 2,
+              "applied": false
+            },
+            {
+              "component": 11,
+              "pixels": 1,
+              "boundary_pairs": 1,
+              "applied": false
+            },
+            {
+              "component": 12,
+              "pixels": 1,
+              "boundary_pairs": 2,
+              "applied": false
+            },
+            {
+              "component": 13,
+              "pixels": 4,
+              "boundary_pairs": 6,
+              "applied": false
+            },
+            {
+              "component": 14,
+              "pixels": 1,
+              "boundary_pairs": 3,
+              "applied": false
+            },
+            {
+              "component": 15,
+              "pixels": 1,
+              "boundary_pairs": 2,
+              "applied": false
+            },
+            {
+              "component": 16,
+              "pixels": 13,
+              "boundary_pairs": 12,
+              "applied": false
+            },
+            {
+              "component": 17,
+              "pixels": 2,
+              "boundary_pairs": 3,
+              "applied": false
+            },
+            {
+              "component": 18,
+              "pixels": 55,
+              "boundary_pairs": 16,
+              "applied": true,
+              "max_residual": 1.9895196601282805e-13,
+              "reference_BGR_min": [
+                184.52396560363297,
+                201.95899857703276,
+                214.90781294957517
+              ],
+              "reference_BGR_max": [
+                191.75917764544698,
+                209.33166790619967,
+                220.4676299747588
+              ]
+            },
+            {
+              "component": 19,
+              "pixels": 2,
+              "boundary_pairs": 2,
+              "applied": false
+            },
+            {
+              "component": 20,
+              "pixels": 1,
+              "boundary_pairs": 2,
+              "applied": false
+            },
+            {
+              "component": 21,
+              "pixels": 15,
+              "boundary_pairs": 14,
+              "applied": false
+            },
+            {
+              "component": 22,
+              "pixels": 1,
+              "boundary_pairs": 2,
+              "applied": false
+            },
+            {
+              "component": 23,
+              "pixels": 1,
+              "boundary_pairs": 2,
+              "applied": false
+            },
+            {
+              "component": 24,
+              "pixels": 5,
+              "boundary_pairs": 6,
+              "applied": false
+            },
+            {
+              "component": 25,
+              "pixels": 6,
+              "boundary_pairs": 6,
+              "applied": false
+            },
+            {
+              "component": 26,
+              "pixels": 7,
+              "boundary_pairs": 8,
+              "applied": false
+            },
+            {
+              "component": 27,
+              "pixels": 3,
+              "boundary_pairs": 5,
+              "applied": false
+            },
+            {
+              "component": 28,
+              "pixels": 11,
+              "boundary_pairs": 10,
+              "applied": false
+            },
+            {
+              "component": 29,
+              "pixels": 6,
+              "boundary_pairs": 7,
+              "applied": false
+            },
+            {
+              "component": 30,
+              "pixels": 1,
+              "boundary_pairs": 0,
+              "applied": false
+            },
+            {
+              "component": 31,
+              "pixels": 1,
+              "boundary_pairs": 1,
+              "applied": false
+            },
+            {
+              "component": 32,
+              "pixels": 2,
+              "boundary_pairs": 2,
+              "applied": false
+            },
+            {
+              "component": 33,
+              "pixels": 1,
+              "boundary_pairs": 2,
+              "applied": false
+            },
+            {
+              "component": 34,
+              "pixels": 1,
+              "boundary_pairs": 2,
+              "applied": false
+            },
+            {
+              "component": 35,
+              "pixels": 22,
+              "boundary_pairs": 17,
+              "applied": true,
+              "max_residual": 2.5579538487363607e-13,
+              "reference_BGR_min": [
+                190.5258887334683,
+                208.73559708479456,
+                219.0617409826976
+              ],
+              "reference_BGR_max": [
+                191.35190057481088,
+                209.72692033307746,
+                219.91900109639485
+              ]
+            },
+            {
+              "component": 36,
+              "pixels": 3,
+              "boundary_pairs": 2,
+              "applied": false
+            },
+            {
+              "component": 37,
+              "pixels": 14,
+              "boundary_pairs": 12,
+              "applied": false
+            },
+            {
+              "component": 38,
+              "pixels": 3,
+              "boundary_pairs": 4,
+              "applied": false
+            },
+            {
+              "component": 39,
+              "pixels": 6,
+              "boundary_pairs": 9,
+              "applied": false
+            },
+            {
+              "component": 40,
+              "pixels": 4,
+              "boundary_pairs": 4,
+              "applied": false
+            },
+            {
+              "component": 41,
+              "pixels": 1,
+              "boundary_pairs": 2,
+              "applied": false
+            },
+            {
+              "component": 42,
+              "pixels": 6,
+              "boundary_pairs": 7,
+              "applied": false
+            },
+            {
+              "component": 43,
+              "pixels": 1,
+              "boundary_pairs": 4,
+              "applied": false
+            },
+            {
+              "component": 44,
+              "pixels": 1,
+              "boundary_pairs": 2,
+              "applied": false
+            },
+            {
+              "component": 45,
+              "pixels": 1,
+              "boundary_pairs": 2,
+              "applied": false
+            },
+            {
+              "component": 46,
+              "pixels": 1,
+              "boundary_pairs": 2,
+              "applied": false
+            },
+            {
+              "component": 47,
+              "pixels": 4,
+              "boundary_pairs": 4,
+              "applied": false
+            },
+            {
+              "component": 48,
+              "pixels": 1,
+              "boundary_pairs": 0,
+              "applied": false
+            },
+            {
+              "component": 49,
+              "pixels": 1,
+              "boundary_pairs": 0,
+              "applied": false
+            },
+            {
+              "component": 50,
+              "pixels": 11,
+              "boundary_pairs": 9,
+              "applied": false
+            }
+          ],
+          "additional": 77,
+          "additional_changed": 77,
+          "additional_dark_to_bright": 20,
+          "additional_bright_green": 0
+        },
+        "all_colour_ridge": {
+          "update": 251,
+          "applied": 77,
+          "changed": 77,
+          "reference_L_threshold": 75.099365234375,
+          "poison_invariant": true,
+          "solves": [
+            {
+              "component": 1,
+              "pixels": 4,
+              "boundary_pairs": 6,
+              "applied": false
+            },
+            {
+              "component": 2,
+              "pixels": 3,
+              "boundary_pairs": 5,
+              "applied": false
+            },
+            {
+              "component": 3,
+              "pixels": 10,
+              "boundary_pairs": 10,
+              "applied": false
+            },
+            {
+              "component": 4,
+              "pixels": 1,
+              "boundary_pairs": 1,
+              "applied": false
+            },
+            {
+              "component": 5,
+              "pixels": 2,
+              "boundary_pairs": 4,
+              "applied": false
+            },
+            {
+              "component": 6,
+              "pixels": 1,
+              "boundary_pairs": 2,
+              "applied": false
+            },
+            {
+              "component": 7,
+              "pixels": 2,
+              "boundary_pairs": 3,
+              "applied": false
+            },
+            {
+              "component": 8,
+              "pixels": 1,
+              "boundary_pairs": 4,
+              "applied": false
+            },
+            {
+              "component": 9,
+              "pixels": 4,
+              "boundary_pairs": 5,
+              "applied": false
+            },
+            {
+              "component": 10,
+              "pixels": 1,
+              "boundary_pairs": 2,
+              "applied": false
+            },
+            {
+              "component": 11,
+              "pixels": 1,
+              "boundary_pairs": 1,
+              "applied": false
+            },
+            {
+              "component": 12,
+              "pixels": 1,
+              "boundary_pairs": 2,
+              "applied": false
+            },
+            {
+              "component": 13,
+              "pixels": 4,
+              "boundary_pairs": 6,
+              "applied": false
+            },
+            {
+              "component": 14,
+              "pixels": 1,
+              "boundary_pairs": 3,
+              "applied": false
+            },
+            {
+              "component": 15,
+              "pixels": 1,
+              "boundary_pairs": 2,
+              "applied": false
+            },
+            {
+              "component": 16,
+              "pixels": 13,
+              "boundary_pairs": 12,
+              "applied": false
+            },
+            {
+              "component": 17,
+              "pixels": 2,
+              "boundary_pairs": 3,
+              "applied": false
+            },
+            {
+              "component": 18,
+              "pixels": 55,
+              "boundary_pairs": 16,
+              "applied": true,
+              "max_residual": 1.9895196601282805e-13,
+              "reference_BGR_min": [
+                184.52396560363297,
+                201.95899857703276,
+                214.90781294957517
+              ],
+              "reference_BGR_max": [
+                191.75917764544698,
+                209.33166790619967,
+                220.4676299747588
+              ]
+            },
+            {
+              "component": 19,
+              "pixels": 2,
+              "boundary_pairs": 2,
+              "applied": false
+            },
+            {
+              "component": 20,
+              "pixels": 1,
+              "boundary_pairs": 2,
+              "applied": false
+            },
+            {
+              "component": 21,
+              "pixels": 15,
+              "boundary_pairs": 14,
+              "applied": false
+            },
+            {
+              "component": 22,
+              "pixels": 1,
+              "boundary_pairs": 2,
+              "applied": false
+            },
+            {
+              "component": 23,
+              "pixels": 1,
+              "boundary_pairs": 2,
+              "applied": false
+            },
+            {
+              "component": 24,
+              "pixels": 5,
+              "boundary_pairs": 6,
+              "applied": false
+            },
+            {
+              "component": 25,
+              "pixels": 6,
+              "boundary_pairs": 6,
+              "applied": false
+            },
+            {
+              "component": 26,
+              "pixels": 7,
+              "boundary_pairs": 8,
+              "applied": false
+            },
+            {
+              "component": 27,
+              "pixels": 3,
+              "boundary_pairs": 5,
+              "applied": false
+            },
+            {
+              "component": 28,
+              "pixels": 11,
+              "boundary_pairs": 10,
+              "applied": false
+            },
+            {
+              "component": 29,
+              "pixels": 6,
+              "boundary_pairs": 7,
+              "applied": false
+            },
+            {
+              "component": 30,
+              "pixels": 1,
+              "boundary_pairs": 0,
+              "applied": false
+            },
+            {
+              "component": 31,
+              "pixels": 1,
+              "boundary_pairs": 1,
+              "applied": false
+            },
+            {
+              "component": 32,
+              "pixels": 2,
+              "boundary_pairs": 2,
+              "applied": false
+            },
+            {
+              "component": 33,
+              "pixels": 1,
+              "boundary_pairs": 2,
+              "applied": false
+            },
+            {
+              "component": 34,
+              "pixels": 1,
+              "boundary_pairs": 2,
+              "applied": false
+            },
+            {
+              "component": 35,
+              "pixels": 22,
+              "boundary_pairs": 17,
+              "applied": true,
+              "max_residual": 2.5579538487363607e-13,
+              "reference_BGR_min": [
+                190.5258887334683,
+                208.73559708479456,
+                219.0617409826976
+              ],
+              "reference_BGR_max": [
+                191.35190057481088,
+                209.72692033307746,
+                219.91900109639485
+              ]
+            },
+            {
+              "component": 36,
+              "pixels": 3,
+              "boundary_pairs": 2,
+              "applied": false
+            },
+            {
+              "component": 37,
+              "pixels": 14,
+              "boundary_pairs": 12,
+              "applied": false
+            },
+            {
+              "component": 38,
+              "pixels": 3,
+              "boundary_pairs": 4,
+              "applied": false
+            },
+            {
+              "component": 39,
+              "pixels": 6,
+              "boundary_pairs": 9,
+              "applied": false
+            },
+            {
+              "component": 40,
+              "pixels": 4,
+              "boundary_pairs": 4,
+              "applied": false
+            },
+            {
+              "component": 41,
+              "pixels": 1,
+              "boundary_pairs": 2,
+              "applied": false
+            },
+            {
+              "component": 42,
+              "pixels": 6,
+              "boundary_pairs": 7,
+              "applied": false
+            },
+            {
+              "component": 43,
+              "pixels": 1,
+              "boundary_pairs": 4,
+              "applied": false
+            },
+            {
+              "component": 44,
+              "pixels": 1,
+              "boundary_pairs": 2,
+              "applied": false
+            },
+            {
+              "component": 45,
+              "pixels": 1,
+              "boundary_pairs": 2,
+              "applied": false
+            },
+            {
+              "component": 46,
+              "pixels": 1,
+              "boundary_pairs": 2,
+              "applied": false
+            },
+            {
+              "component": 47,
+              "pixels": 4,
+              "boundary_pairs": 4,
+              "applied": false
+            },
+            {
+              "component": 48,
+              "pixels": 1,
+              "boundary_pairs": 0,
+              "applied": false
+            },
+            {
+              "component": 49,
+              "pixels": 1,
+              "boundary_pairs": 0,
+              "applied": false
+            },
+            {
+              "component": 50,
+              "pixels": 11,
+              "boundary_pairs": 9,
+              "applied": false
+            }
+          ],
+          "additional": 77,
+          "additional_changed": 77,
+          "additional_dark_to_bright": 20,
+          "additional_bright_green": 0
+        },
+        "protect_anchored_ridge": {
+          "update": 251,
+          "applied": 77,
+          "changed": 77,
+          "reference_L_threshold": 75.099365234375,
+          "poison_invariant": true,
+          "solves": [
+            {
+              "component": 1,
+              "pixels": 4,
+              "boundary_pairs": 6,
+              "applied": false
+            },
+            {
+              "component": 2,
+              "pixels": 3,
+              "boundary_pairs": 5,
+              "applied": false
+            },
+            {
+              "component": 3,
+              "pixels": 10,
+              "boundary_pairs": 10,
+              "applied": false
+            },
+            {
+              "component": 4,
+              "pixels": 1,
+              "boundary_pairs": 1,
+              "applied": false
+            },
+            {
+              "component": 5,
+              "pixels": 2,
+              "boundary_pairs": 4,
+              "applied": false
+            },
+            {
+              "component": 6,
+              "pixels": 1,
+              "boundary_pairs": 2,
+              "applied": false
+            },
+            {
+              "component": 7,
+              "pixels": 2,
+              "boundary_pairs": 3,
+              "applied": false
+            },
+            {
+              "component": 8,
+              "pixels": 1,
+              "boundary_pairs": 4,
+              "applied": false
+            },
+            {
+              "component": 9,
+              "pixels": 4,
+              "boundary_pairs": 5,
+              "applied": false
+            },
+            {
+              "component": 10,
+              "pixels": 1,
+              "boundary_pairs": 2,
+              "applied": false
+            },
+            {
+              "component": 11,
+              "pixels": 1,
+              "boundary_pairs": 1,
+              "applied": false
+            },
+            {
+              "component": 12,
+              "pixels": 1,
+              "boundary_pairs": 2,
+              "applied": false
+            },
+            {
+              "component": 13,
+              "pixels": 4,
+              "boundary_pairs": 6,
+              "applied": false
+            },
+            {
+              "component": 14,
+              "pixels": 1,
+              "boundary_pairs": 3,
+              "applied": false
+            },
+            {
+              "component": 15,
+              "pixels": 1,
+              "boundary_pairs": 2,
+              "applied": false
+            },
+            {
+              "component": 16,
+              "pixels": 13,
+              "boundary_pairs": 12,
+              "applied": false
+            },
+            {
+              "component": 17,
+              "pixels": 2,
+              "boundary_pairs": 3,
+              "applied": false
+            },
+            {
+              "component": 18,
+              "pixels": 55,
+              "boundary_pairs": 16,
+              "applied": true,
+              "max_residual": 1.9895196601282805e-13,
+              "reference_BGR_min": [
+                184.52396560363297,
+                201.95899857703276,
+                214.90781294957517
+              ],
+              "reference_BGR_max": [
+                191.75917764544698,
+                209.33166790619967,
+                220.4676299747588
+              ]
+            },
+            {
+              "component": 19,
+              "pixels": 2,
+              "boundary_pairs": 2,
+              "applied": false
+            },
+            {
+              "component": 20,
+              "pixels": 1,
+              "boundary_pairs": 2,
+              "applied": false
+            },
+            {
+              "component": 21,
+              "pixels": 15,
+              "boundary_pairs": 14,
+              "applied": false
+            },
+            {
+              "component": 22,
+              "pixels": 1,
+              "boundary_pairs": 2,
+              "applied": false
+            },
+            {
+              "component": 23,
+              "pixels": 1,
+              "boundary_pairs": 2,
+              "applied": false
+            },
+            {
+              "component": 24,
+              "pixels": 5,
+              "boundary_pairs": 6,
+              "applied": false
+            },
+            {
+              "component": 25,
+              "pixels": 6,
+              "boundary_pairs": 6,
+              "applied": false
+            },
+            {
+              "component": 26,
+              "pixels": 7,
+              "boundary_pairs": 8,
+              "applied": false
+            },
+            {
+              "component": 27,
+              "pixels": 3,
+              "boundary_pairs": 5,
+              "applied": false
+            },
+            {
+              "component": 28,
+              "pixels": 11,
+              "boundary_pairs": 10,
+              "applied": false
+            },
+            {
+              "component": 29,
+              "pixels": 6,
+              "boundary_pairs": 7,
+              "applied": false
+            },
+            {
+              "component": 30,
+              "pixels": 1,
+              "boundary_pairs": 0,
+              "applied": false
+            },
+            {
+              "component": 31,
+              "pixels": 1,
+              "boundary_pairs": 1,
+              "applied": false
+            },
+            {
+              "component": 32,
+              "pixels": 2,
+              "boundary_pairs": 2,
+              "applied": false
+            },
+            {
+              "component": 33,
+              "pixels": 1,
+              "boundary_pairs": 2,
+              "applied": false
+            },
+            {
+              "component": 34,
+              "pixels": 1,
+              "boundary_pairs": 2,
+              "applied": false
+            },
+            {
+              "component": 35,
+              "pixels": 22,
+              "boundary_pairs": 17,
+              "applied": true,
+              "max_residual": 2.5579538487363607e-13,
+              "reference_BGR_min": [
+                190.5258887334683,
+                208.73559708479456,
+                219.0617409826976
+              ],
+              "reference_BGR_max": [
+                191.35190057481088,
+                209.72692033307746,
+                219.91900109639485
+              ]
+            },
+            {
+              "component": 36,
+              "pixels": 3,
+              "boundary_pairs": 2,
+              "applied": false
+            },
+            {
+              "component": 37,
+              "pixels": 14,
+              "boundary_pairs": 12,
+              "applied": false
+            },
+            {
+              "component": 38,
+              "pixels": 3,
+              "boundary_pairs": 4,
+              "applied": false
+            },
+            {
+              "component": 39,
+              "pixels": 6,
+              "boundary_pairs": 9,
+              "applied": false
+            },
+            {
+              "component": 40,
+              "pixels": 4,
+              "boundary_pairs": 4,
+              "applied": false
+            },
+            {
+              "component": 41,
+              "pixels": 1,
+              "boundary_pairs": 2,
+              "applied": false
+            },
+            {
+              "component": 42,
+              "pixels": 6,
+              "boundary_pairs": 7,
+              "applied": false
+            },
+            {
+              "component": 43,
+              "pixels": 1,
+              "boundary_pairs": 4,
+              "applied": false
+            },
+            {
+              "component": 44,
+              "pixels": 1,
+              "boundary_pairs": 2,
+              "applied": false
+            },
+            {
+              "component": 45,
+              "pixels": 1,
+              "boundary_pairs": 2,
+              "applied": false
+            },
+            {
+              "component": 46,
+              "pixels": 1,
+              "boundary_pairs": 2,
+              "applied": false
+            },
+            {
+              "component": 47,
+              "pixels": 4,
+              "boundary_pairs": 4,
+              "applied": false
+            },
+            {
+              "component": 48,
+              "pixels": 1,
+              "boundary_pairs": 0,
+              "applied": false
+            },
+            {
+              "component": 49,
+              "pixels": 1,
+              "boundary_pairs": 0,
+              "applied": false
+            },
+            {
+              "component": 50,
+              "pixels": 11,
+              "boundary_pairs": 9,
+              "applied": false
+            }
+          ],
+          "additional": 77,
+          "additional_changed": 77,
+          "additional_dark_to_bright": 20,
+          "additional_bright_green": 0
+        }
+      }
+    }
+  ]
+}

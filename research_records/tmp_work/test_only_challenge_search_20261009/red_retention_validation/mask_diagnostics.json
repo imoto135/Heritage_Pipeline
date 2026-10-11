@@ -1,0 +1,168 @@
+[
+  {
+    "id": "R01",
+    "page": "200019865_00002_1",
+    "red_pixels_page": 35825,
+    "red_pixels_roi": 34994,
+    "red_pixels_outside_roi": 831,
+    "red_control_pixels": {
+      "black_text": 72
+    },
+    "black_red_overlap_before_priority": {
+      "csc": 62,
+      "howe": 19074
+    },
+    "howe": {
+      "terms": {
+        "canny_sigma": 0.6,
+        "canny_low_relative": 0.1,
+        "canny_high_relative": 0.4,
+        "canny_max_sobel_magnitude": 2.2544684410095215,
+        "canny_edge_pixels": 160769,
+        "background_bias_pixels": 37987,
+        "laplacian_min": -500.0,
+        "laplacian_max": 203.5000030696392,
+        "implementation": "Port of author IJDAR base energy, with skimage Canny normalized by maximum Sobel magnitude. MATLAB canny_old and automatic parameter tuning not reproduced."
+      },
+      "cut": {
+        "c": 160,
+        "mincut_energy": 10182705821.562426,
+        "solver_flow": 10182705822.210865,
+        "foreground_before_post": 483226,
+        "foreground_after_post": 469354
+      }
+    },
+    "dependencies": {
+      "data/test/200019865/200019865_00002_1.jpg": "66e59afbf085f7b0a21219683f91d852356f6612a61b627f10b6fb19664f5cec",
+      "data/split_dataset_csc_mask_v2/test/200019865/200019865_00002_1/02_text_black.png": "a57ca47b988b887b1263b46bb8a2e8578fd5128002d5cd182ad64d77a7baae4e",
+      "data/split_dataset_csc_mask_v2/test/200019865/200019865_00002_1/03_text_red.png": "4d697d3142b2fec4e6eef5aa7f4bcbf1f5df169dd35368a1ca282a435b32cd2a"
+    },
+    "masks_sha256": {
+      "tmp_work/test_only_challenge_search_20261009/red_retention_validation/masks/csc/200019865_00002_1/03_text_red.png": "4d697d3142b2fec4e6eef5aa7f4bcbf1f5df169dd35368a1ca282a435b32cd2a",
+      "tmp_work/test_only_challenge_search_20261009/red_retention_validation/masks/csc/200019865_00002_1/02_text_black.png": "9a276cc45de900c8c82c832a6fbb0916cd52f941c49aafa3e42147ae1e835252",
+      "tmp_work/test_only_challenge_search_20261009/red_retention_validation/masks/howe/200019865_00002_1/03_text_red.png": "4d697d3142b2fec4e6eef5aa7f4bcbf1f5df169dd35368a1ca282a435b32cd2a",
+      "tmp_work/test_only_challenge_search_20261009/red_retention_validation/masks/howe/200019865_00002_1/02_text_black.png": "2363f7bbd574f8f6cff94259b49bc9e85fe7ea25b9b96b7e2ede01e3ea6c9df9"
+    }
+  },
+  {
+    "id": "R02",
+    "page": "200017458_00003_2",
+    "red_pixels_page": 125662,
+    "red_pixels_roi": 22201,
+    "red_pixels_outside_roi": 103461,
+    "red_control_pixels": {
+      "brown_binding": 101567,
+      "black_text": 46
+    },
+    "black_red_overlap_before_priority": {
+      "csc": 1720,
+      "howe": 21702
+    },
+    "howe": {
+      "terms": {
+        "canny_sigma": 0.6,
+        "canny_low_relative": 0.1,
+        "canny_high_relative": 0.4,
+        "canny_max_sobel_magnitude": 1.954591989517212,
+        "canny_edge_pixels": 248834,
+        "background_bias_pixels": 17772,
+        "laplacian_min": -500.0,
+        "laplacian_max": 142.50000290572643,
+        "implementation": "Port of author IJDAR base energy, with skimage Canny normalized by maximum Sobel magnitude. MATLAB canny_old and automatic parameter tuning not reproduced."
+      },
+      "cut": {
+        "c": 160,
+        "mincut_energy": 10598121997.762558,
+        "solver_flow": 10598121998.396475,
+        "foreground_before_post": 853525,
+        "foreground_after_post": 833069
+      }
+    },
+    "dependencies": {
+      "data/test/200017458/200017458_00003_2.jpg": "dba458ff40c3944e93ccbda866a6683c4cdb6cc312576ec66dddfd5d9a0f5ac1",
+      "data/split_dataset_csc_mask_v2/test/200017458/200017458_00003_2/02_text_black.png": "20d2ee3d0016e6a533d6b49962b6102ff641965f660c5c5080b017bd2a016bac",
+      "data/split_dataset_csc_mask_v2/test/200017458/200017458_00003_2/03_text_red.png": "8697d0d092e35dae8cf489429f8eb43e52ffd94cbb545a8460b16147bf6337df"
+    },
+    "masks_sha256": {
+      "tmp_work/test_only_challenge_search_20261009/red_retention_validation/masks/csc/200017458_00003_2/03_text_red.png": "8697d0d092e35dae8cf489429f8eb43e52ffd94cbb545a8460b16147bf6337df",
+      "tmp_work/test_only_challenge_search_20261009/red_retention_validation/masks/csc/200017458_00003_2/02_text_black.png": "a38ba08283a65ca8d6e3436335d214a56794897e33191290e2bf0c024f22cc9b",
+      "tmp_work/test_only_challenge_search_20261009/red_retention_validation/masks/howe/200017458_00003_2/03_text_red.png": "8697d0d092e35dae8cf489429f8eb43e52ffd94cbb545a8460b16147bf6337df",
+      "tmp_work/test_only_challenge_search_20261009/red_retention_validation/masks/howe/200017458_00003_2/02_text_black.png": "8bd28c1db428782cb24529145baaa2f2880265a0ecfc9a9b9811d3505ff39fee",
+      "tmp_work/test_only_challenge_search_20261009/red_retention_validation/masks/howe_no_red/200017458_00003_2/03_text_red.png": "2af39970683c6369182d85dbc8f7a8c455abccbffc6d6af6458576e1fef6ff3d",
+      "tmp_work/test_only_challenge_search_20261009/red_retention_validation/masks/howe_no_red/200017458_00003_2/02_text_black.png": "8bd28c1db428782cb24529145baaa2f2880265a0ecfc9a9b9811d3505ff39fee"
+    }
+  },
+  {
+    "id": "R03",
+    "page": "200010454_00002_2",
+    "red_pixels_page": 20432,
+    "red_pixels_roi": 18443,
+    "red_pixels_outside_roi": 1989,
+    "red_control_pixels": {
+      "black_text": 365
+    },
+    "black_red_overlap_before_priority": {
+      "csc": 137,
+      "howe": 16687
+    },
+    "howe": {
+      "terms": {
+        "canny_sigma": 0.6,
+        "canny_low_relative": 0.1,
+        "canny_high_relative": 0.4,
+        "canny_max_sobel_magnitude": 1.9488517045974731,
+        "canny_edge_pixels": 92899,
+        "background_bias_pixels": 20147,
+        "laplacian_min": -500.0,
+        "laplacian_max": 133.00000727176666,
+        "implementation": "Port of author IJDAR base energy, with skimage Canny normalized by maximum Sobel magnitude. MATLAB canny_old and automatic parameter tuning not reproduced."
+      },
+      "cut": {
+        "c": 160,
+        "mincut_energy": 6306027844.870995,
+        "solver_flow": 6306027845.020557,
+        "foreground_before_post": 240931,
+        "foreground_after_post": 233293
+      }
+    },
+    "dependencies": {
+      "data/test/200010454/200010454_00002_2.jpg": "177776f90fc08b12e2f59a37773ef433556f43ebe47c503c2d676595a08a60d1",
+      "data/split_dataset_csc_mask_v2/test/200010454/200010454_00002_2/02_text_black.png": "80fc8e3a7b20fc3b6eb635cf764fc220ad1f859b98ac03a9e7b655d691cca6db",
+      "data/split_dataset_csc_mask_v2/test/200010454/200010454_00002_2/03_text_red.png": "f4440a7e333d66a520712cb444fc49d02c77190d148ea508f2d5db9f603735e3"
+    },
+    "masks_sha256": {
+      "tmp_work/test_only_challenge_search_20261009/red_retention_validation/masks/csc/200010454_00002_2/03_text_red.png": "f4440a7e333d66a520712cb444fc49d02c77190d148ea508f2d5db9f603735e3",
+      "tmp_work/test_only_challenge_search_20261009/red_retention_validation/masks/csc/200010454_00002_2/02_text_black.png": "a7f73361535fdc48cf4a30737e64ab47caa5ac95452ff21b757b9750e7b8b04d",
+      "tmp_work/test_only_challenge_search_20261009/red_retention_validation/masks/howe/200010454_00002_2/03_text_red.png": "f4440a7e333d66a520712cb444fc49d02c77190d148ea508f2d5db9f603735e3",
+      "tmp_work/test_only_challenge_search_20261009/red_retention_validation/masks/howe/200010454_00002_2/02_text_black.png": "c97412e0125525b36f1e6fb1d27dc9de3fd059a22200d346ba755229f55db4d9"
+    }
+  },
+  {
+    "id": "R04",
+    "page": "200003803_00003_1",
+    "red_pixels_page": 0,
+    "red_pixels_roi": 0,
+    "red_pixels_outside_roi": 0,
+    "red_control_pixels": {
+      "black_text": 0
+    },
+    "black_red_overlap_before_priority": {
+      "csc": 0,
+      "howe": 0
+    },
+    "howe": {
+      "reused": "original six-case fixed Howe mask"
+    },
+    "dependencies": {
+      "data/test/200003803/200003803_00003_1.jpg": "3cc169f2ebad09fa9b312a0230c2357287f16a0a505f64ef3d00fd44dc39da53",
+      "data/split_dataset_csc_mask_v2/test/200003803/200003803_00003_1/02_text_black.png": "e0370e3f28e0dd9156b35c53cf3e88dd1f9d6c7a2803b9509fc52d054aae61bf",
+      "data/split_dataset_csc_mask_v2/test/200003803/200003803_00003_1/03_text_red.png": "3aa6930deeb00ba57efe1f1b81488f4854614ca1dd17946e9f6590d2b5a37808"
+    },
+    "masks_sha256": {
+      "tmp_work/test_only_challenge_search_20261009/red_retention_validation/masks/csc/200003803_00003_1/03_text_red.png": "3aa6930deeb00ba57efe1f1b81488f4854614ca1dd17946e9f6590d2b5a37808",
+      "tmp_work/test_only_challenge_search_20261009/red_retention_validation/masks/csc/200003803_00003_1/02_text_black.png": "e0370e3f28e0dd9156b35c53cf3e88dd1f9d6c7a2803b9509fc52d054aae61bf",
+      "tmp_work/test_only_challenge_search_20261009/red_retention_validation/masks/howe/200003803_00003_1/03_text_red.png": "3aa6930deeb00ba57efe1f1b81488f4854614ca1dd17946e9f6590d2b5a37808",
+      "tmp_work/test_only_challenge_search_20261009/red_retention_validation/masks/howe/200003803_00003_1/02_text_black.png": "44710f2a039d01a841867ce1ed7f5ec50e9a6ed816ee1d1207679202937764f8"
+    }
+  }
+]

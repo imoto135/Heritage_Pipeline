@@ -1,0 +1,1658 @@
+{
+  "context_enabled": true,
+  "routing_pixels": 249545,
+  "red_touch_components": 19,
+  "nearby_protect_components": 103,
+  "accepted_components": [
+    {
+      "id": 1,
+      "xywh": [
+        88,
+        0,
+        137,
+        14
+      ],
+      "bridge_area": 950,
+      "red_support_pixels": 0,
+      "protected_support_pixels": 195,
+      "minimum_red_distance": 66.5906982421875,
+      "red_touch": false,
+      "nearby_protect": true
+    },
+    {
+      "id": 2,
+      "xywh": [
+        236,
+        0,
+        116,
+        12
+      ],
+      "bridge_area": 747,
+      "red_support_pixels": 0,
+      "protected_support_pixels": 375,
+      "minimum_red_distance": 214.0,
+      "red_touch": false,
+      "nearby_protect": true
+    },
+    {
+      "id": 4,
+      "xywh": [
+        403,
+        0,
+        11,
+        8
+      ],
+      "bridge_area": 51,
+      "red_support_pixels": 0,
+      "protected_support_pixels": 28,
+      "minimum_red_distance": 379.5751953125,
+      "red_touch": false,
+      "nearby_protect": true
+    },
+    {
+      "id": 5,
+      "xywh": [
+        436,
+        0,
+        21,
+        12
+      ],
+      "bridge_area": 182,
+      "red_support_pixels": 0,
+      "protected_support_pixels": 42,
+      "minimum_red_distance": 384.23876953125,
+      "red_touch": false,
+      "nearby_protect": true
+    },
+    {
+      "id": 7,
+      "xywh": [
+        535,
+        0,
+        41,
+        14
+      ],
+      "bridge_area": 332,
+      "red_support_pixels": 0,
+      "protected_support_pixels": 157,
+      "minimum_red_distance": 403.7008056640625,
+      "red_touch": false,
+      "nearby_protect": true
+    },
+    {
+      "id": 9,
+      "xywh": [
+        587,
+        0,
+        77,
+        14
+      ],
+      "bridge_area": 592,
+      "red_support_pixels": 0,
+      "protected_support_pixels": 189,
+      "minimum_red_distance": 417.4109191894531,
+      "red_touch": false,
+      "nearby_protect": true
+    },
+    {
+      "id": 13,
+      "xywh": [
+        753,
+        0,
+        13,
+        4
+      ],
+      "bridge_area": 33,
+      "red_support_pixels": 0,
+      "protected_support_pixels": 12,
+      "minimum_red_distance": 456.5596923828125,
+      "red_touch": false,
+      "nearby_protect": true
+    },
+    {
+      "id": 17,
+      "xywh": [
+        838,
+        0,
+        26,
+        6
+      ],
+      "bridge_area": 99,
+      "red_support_pixels": 0,
+      "protected_support_pixels": 85,
+      "minimum_red_distance": 456.968994140625,
+      "red_touch": false,
+      "nearby_protect": true
+    },
+    {
+      "id": 18,
+      "xywh": [
+        866,
+        0,
+        37,
+        8
+      ],
+      "bridge_area": 192,
+      "red_support_pixels": 0,
+      "protected_support_pixels": 163,
+      "minimum_red_distance": 451.181396484375,
+      "red_touch": false,
+      "nearby_protect": true
+    },
+    {
+      "id": 19,
+      "xywh": [
+        909,
+        0,
+        340,
+        29
+      ],
+      "bridge_area": 4175,
+      "red_support_pixels": 0,
+      "protected_support_pixels": 2626,
+      "minimum_red_distance": 423.2496337890625,
+      "red_touch": false,
+      "nearby_protect": true
+    },
+    {
+      "id": 20,
+      "xywh": [
+        1255,
+        0,
+        4,
+        5
+      ],
+      "bridge_area": 14,
+      "red_support_pixels": 0,
+      "protected_support_pixels": 11,
+      "minimum_red_distance": 412.4620361328125,
+      "red_touch": false,
+      "nearby_protect": true
+    },
+    {
+      "id": 24,
+      "xywh": [
+        1395,
+        0,
+        50,
+        32
+      ],
+      "bridge_area": 655,
+      "red_support_pixels": 0,
+      "protected_support_pixels": 164,
+      "minimum_red_distance": 226.68992614746094,
+      "red_touch": false,
+      "nearby_protect": true
+    },
+    {
+      "id": 26,
+      "xywh": [
+        1479,
+        0,
+        14,
+        6
+      ],
+      "bridge_area": 54,
+      "red_support_pixels": 0,
+      "protected_support_pixels": 23,
+      "minimum_red_distance": 188.56736755371094,
+      "red_touch": false,
+      "nearby_protect": true
+    },
+    {
+      "id": 32,
+      "xywh": [
+        1838,
+        0,
+        12,
+        11
+      ],
+      "bridge_area": 92,
+      "red_support_pixels": 0,
+      "protected_support_pixels": 85,
+      "minimum_red_distance": 181.56739807128906,
+      "red_touch": false,
+      "nearby_protect": true
+    },
+    {
+      "id": 34,
+      "xywh": [
+        52,
+        2,
+        24,
+        12
+      ],
+      "bridge_area": 128,
+      "red_support_pixels": 0,
+      "protected_support_pixels": 98,
+      "minimum_red_distance": 30.78759765625,
+      "red_touch": false,
+      "nearby_protect": true
+    },
+    {
+      "id": 36,
+      "xywh": [
+        367,
+        2,
+        13,
+        7
+      ],
+      "bridge_area": 48,
+      "red_support_pixels": 0,
+      "protected_support_pixels": 11,
+      "minimum_red_distance": 345.0,
+      "red_touch": false,
+      "nearby_protect": true
+    },
+    {
+      "id": 40,
+      "xywh": [
+        0,
+        4,
+        50,
+        3078
+      ],
+      "bridge_area": 16313,
+      "red_support_pixels": 15594,
+      "protected_support_pixels": 148,
+      "minimum_red_distance": 0.0,
+      "red_touch": true,
+      "nearby_protect": false
+    },
+    {
+      "id": 41,
+      "xywh": [
+        353,
+        4,
+        6,
+        4
+      ],
+      "bridge_area": 15,
+      "red_support_pixels": 0,
+      "protected_support_pixels": 14,
+      "minimum_red_distance": 332.1968994140625,
+      "red_touch": false,
+      "nearby_protect": true
+    },
+    {
+      "id": 56,
+      "xywh": [
+        1868,
+        30,
+        4,
+        13
+      ],
+      "bridge_area": 38,
+      "red_support_pixels": 0,
+      "protected_support_pixels": 7,
+      "minimum_red_distance": 167.906982421875,
+      "red_touch": false,
+      "nearby_protect": true
+    },
+    {
+      "id": 58,
+      "xywh": [
+        1372,
+        47,
+        48,
+        55
+      ],
+      "bridge_area": 1022,
+      "red_support_pixels": 0,
+      "protected_support_pixels": 5,
+      "minimum_red_distance": 235.906982421875,
+      "red_touch": false,
+      "nearby_protect": true
+    },
+    {
+      "id": 61,
+      "xywh": [
+        1348,
+        53,
+        23,
+        24
+      ],
+      "bridge_area": 237,
+      "red_support_pixels": 0,
+      "protected_support_pixels": 9,
+      "minimum_red_distance": 289.0418701171875,
+      "red_touch": false,
+      "nearby_protect": true
+    },
+    {
+      "id": 62,
+      "xywh": [
+        104,
+        56,
+        12,
+        5
+      ],
+      "bridge_area": 34,
+      "red_support_pixels": 0,
+      "protected_support_pixels": 15,
+      "minimum_red_distance": 96.70697784423828,
+      "red_touch": false,
+      "nearby_protect": true
+    },
+    {
+      "id": 71,
+      "xywh": [
+        1649,
+        92,
+        28,
+        22
+      ],
+      "bridge_area": 262,
+      "red_support_pixels": 249,
+      "protected_support_pixels": 0,
+      "minimum_red_distance": 0.0,
+      "red_touch": true,
+      "nearby_protect": false
+    },
+    {
+      "id": 72,
+      "xywh": [
+        263,
+        96,
+        16,
+        14
+      ],
+      "bridge_area": 156,
+      "red_support_pixels": 0,
+      "protected_support_pixels": 62,
+      "minimum_red_distance": 258.720947265625,
+      "red_touch": false,
+      "nearby_protect": true
+    },
+    {
+      "id": 80,
+      "xywh": [
+        244,
+        123,
+        20,
+        30
+      ],
+      "bridge_area": 408,
+      "red_support_pixels": 0,
+      "protected_support_pixels": 185,
+      "minimum_red_distance": 241.0,
+      "red_touch": false,
+      "nearby_protect": true
+    },
+    {
+      "id": 86,
+      "xywh": [
+        1600,
+        140,
+        146,
+        62
+      ],
+      "bridge_area": 3707,
+      "red_support_pixels": 0,
+      "protected_support_pixels": 6,
+      "minimum_red_distance": 36.35659408569336,
+      "red_touch": false,
+      "nearby_protect": true
+    },
+    {
+      "id": 99,
+      "xywh": [
+        1765,
+        191,
+        84,
+        54
+      ],
+      "bridge_area": 2667,
+      "red_support_pixels": 584,
+      "protected_support_pixels": 54,
+      "minimum_red_distance": 0.0,
+      "red_touch": true,
+      "nearby_protect": true
+    },
+    {
+      "id": 140,
+      "xywh": [
+        384,
+        385,
+        31,
+        27
+      ],
+      "bridge_area": 364,
+      "red_support_pixels": 308,
+      "protected_support_pixels": 44,
+      "minimum_red_distance": 0.0,
+      "red_touch": true,
+      "nearby_protect": true
+    },
+    {
+      "id": 142,
+      "xywh": [
+        190,
+        400,
+        18,
+        24
+      ],
+      "bridge_area": 231,
+      "red_support_pixels": 0,
+      "protected_support_pixels": 13,
+      "minimum_red_distance": 177.0,
+      "red_touch": false,
+      "nearby_protect": true
+    },
+    {
+      "id": 148,
+      "xywh": [
+        682,
+        454,
+        386,
+        138
+      ],
+      "bridge_area": 25440,
+      "red_support_pixels": 24028,
+      "protected_support_pixels": 3,
+      "minimum_red_distance": 0.0,
+      "red_touch": true,
+      "nearby_protect": true
+    },
+    {
+      "id": 155,
+      "xywh": [
+        1850,
+        502,
+        22,
+        23
+      ],
+      "bridge_area": 333,
+      "red_support_pixels": 0,
+      "protected_support_pixels": 28,
+      "minimum_red_distance": 65.95038604736328,
+      "red_touch": false,
+      "nearby_protect": true
+    },
+    {
+      "id": 157,
+      "xywh": [
+        968,
+        512,
+        122,
+        536
+      ],
+      "bridge_area": 19340,
+      "red_support_pixels": 3391,
+      "protected_support_pixels": 13071,
+      "minimum_red_distance": 0.0,
+      "red_touch": true,
+      "nearby_protect": true
+    },
+    {
+      "id": 160,
+      "xywh": [
+        1716,
+        536,
+        20,
+        17
+      ],
+      "bridge_area": 231,
+      "red_support_pixels": 0,
+      "protected_support_pixels": 183,
+      "minimum_red_distance": 36.550392150878906,
+      "red_touch": false,
+      "nearby_protect": true
+    },
+    {
+      "id": 164,
+      "xywh": [
+        1767,
+        552,
+        33,
+        24
+      ],
+      "bridge_area": 489,
+      "red_support_pixels": 272,
+      "protected_support_pixels": 122,
+      "minimum_red_distance": 0.0,
+      "red_touch": true,
+      "nearby_protect": true
+    },
+    {
+      "id": 173,
+      "xywh": [
+        687,
+        575,
+        179,
+        371
+      ],
+      "bridge_area": 18118,
+      "red_support_pixels": 16888,
+      "protected_support_pixels": 0,
+      "minimum_red_distance": 0.0,
+      "red_touch": true,
+      "nearby_protect": false
+    },
+    {
+      "id": 178,
+      "xywh": [
+        747,
+        597,
+        6,
+        13
+      ],
+      "bridge_area": 53,
+      "red_support_pixels": 0,
+      "protected_support_pixels": 50,
+      "minimum_red_distance": 7.990699768066406,
+      "red_touch": false,
+      "nearby_protect": true
+    },
+    {
+      "id": 179,
+      "xywh": [
+        898,
+        598,
+        66,
+        54
+      ],
+      "bridge_area": 2197,
+      "red_support_pixels": 0,
+      "protected_support_pixels": 2010,
+      "minimum_red_distance": 9.39069938659668,
+      "red_touch": false,
+      "nearby_protect": true
+    },
+    {
+      "id": 187,
+      "xywh": [
+        968,
+        620,
+        18,
+        26
+      ],
+      "bridge_area": 275,
+      "red_support_pixels": 271,
+      "protected_support_pixels": 0,
+      "minimum_red_distance": 0.0,
+      "red_touch": true,
+      "nearby_protect": false
+    },
+    {
+      "id": 202,
+      "xywh": [
+        26,
+        672,
+        22,
+        47
+      ],
+      "bridge_area": 469,
+      "red_support_pixels": 0,
+      "protected_support_pixels": 440,
+      "minimum_red_distance": 23.0,
+      "red_touch": false,
+      "nearby_protect": true
+    },
+    {
+      "id": 208,
+      "xywh": [
+        1792,
+        688,
+        8,
+        5
+      ],
+      "bridge_area": 28,
+      "red_support_pixels": 0,
+      "protected_support_pixels": 5,
+      "minimum_red_distance": 119.5906982421875,
+      "red_touch": false,
+      "nearby_protect": true
+    },
+    {
+      "id": 216,
+      "xywh": [
+        908,
+        749,
+        83,
+        39
+      ],
+      "bridge_area": 1978,
+      "red_support_pixels": 0,
+      "protected_support_pixels": 4,
+      "minimum_red_distance": 86.58453369140625,
+      "red_touch": false,
+      "nearby_protect": true
+    },
+    {
+      "id": 219,
+      "xywh": [
+        1859,
+        757,
+        13,
+        22
+      ],
+      "bridge_area": 173,
+      "red_support_pixels": 0,
+      "protected_support_pixels": 81,
+      "minimum_red_distance": 203.751953125,
+      "red_touch": false,
+      "nearby_protect": true
+    },
+    {
+      "id": 223,
+      "xywh": [
+        763,
+        765,
+        21,
+        15
+      ],
+      "bridge_area": 202,
+      "red_support_pixels": 0,
+      "protected_support_pixels": 175,
+      "minimum_red_distance": 23.99379539489746,
+      "red_touch": false,
+      "nearby_protect": true
+    },
+    {
+      "id": 232,
+      "xywh": [
+        1836,
+        788,
+        36,
+        29
+      ],
+      "bridge_area": 404,
+      "red_support_pixels": 0,
+      "protected_support_pixels": 257,
+      "minimum_red_distance": 231.6015625,
+      "red_touch": false,
+      "nearby_protect": true
+    },
+    {
+      "id": 239,
+      "xywh": [
+        1830,
+        815,
+        19,
+        17
+      ],
+      "bridge_area": 220,
+      "red_support_pixels": 0,
+      "protected_support_pixels": 187,
+      "minimum_red_distance": 255.2542724609375,
+      "red_touch": false,
+      "nearby_protect": true
+    },
+    {
+      "id": 245,
+      "xywh": [
+        556,
+        838,
+        13,
+        25
+      ],
+      "bridge_area": 160,
+      "red_support_pixels": 0,
+      "protected_support_pixels": 96,
+      "minimum_red_distance": 122.5906982421875,
+      "red_touch": false,
+      "nearby_protect": true
+    },
+    {
+      "id": 247,
+      "xywh": [
+        758,
+        863,
+        89,
+        66
+      ],
+      "bridge_area": 1891,
+      "red_support_pixels": 0,
+      "protected_support_pixels": 1857,
+      "minimum_red_distance": 9.799999237060547,
+      "red_touch": false,
+      "nearby_protect": true
+    },
+    {
+      "id": 253,
+      "xywh": [
+        849,
+        878,
+        33,
+        22
+      ],
+      "bridge_area": 388,
+      "red_support_pixels": 0,
+      "protected_support_pixels": 9,
+      "minimum_red_distance": 51.80001449584961,
+      "red_touch": false,
+      "nearby_protect": true
+    },
+    {
+      "id": 260,
+      "xywh": [
+        591,
+        909,
+        5,
+        10
+      ],
+      "bridge_area": 26,
+      "red_support_pixels": 0,
+      "protected_support_pixels": 22,
+      "minimum_red_distance": 98.756591796875,
+      "red_touch": false,
+      "nearby_protect": true
+    },
+    {
+      "id": 261,
+      "xywh": [
+        254,
+        912,
+        18,
+        18
+      ],
+      "bridge_area": 278,
+      "red_support_pixels": 244,
+      "protected_support_pixels": 0,
+      "minimum_red_distance": 0.0,
+      "red_touch": true,
+      "nearby_protect": false
+    },
+    {
+      "id": 266,
+      "xywh": [
+        824,
+        917,
+        84,
+        22
+      ],
+      "bridge_area": 873,
+      "red_support_pixels": 0,
+      "protected_support_pixels": 794,
+      "minimum_red_distance": 4.0,
+      "red_touch": false,
+      "nearby_protect": true
+    },
+    {
+      "id": 269,
+      "xywh": [
+        694,
+        924,
+        53,
+        52
+      ],
+      "bridge_area": 1186,
+      "red_support_pixels": 0,
+      "protected_support_pixels": 1165,
+      "minimum_red_distance": 4.199999809265137,
+      "red_touch": false,
+      "nearby_protect": true
+    },
+    {
+      "id": 273,
+      "xywh": [
+        789,
+        931,
+        32,
+        44
+      ],
+      "bridge_area": 725,
+      "red_support_pixels": 701,
+      "protected_support_pixels": 0,
+      "minimum_red_distance": 0.0,
+      "red_touch": true,
+      "nearby_protect": false
+    },
+    {
+      "id": 277,
+      "xywh": [
+        929,
+        944,
+        30,
+        26
+      ],
+      "bridge_area": 245,
+      "red_support_pixels": 0,
+      "protected_support_pixels": 5,
+      "minimum_red_distance": 28.165895462036133,
+      "red_touch": false,
+      "nearby_protect": true
+    },
+    {
+      "id": 279,
+      "xywh": [
+        693,
+        960,
+        399,
+        374
+      ],
+      "bridge_area": 35194,
+      "red_support_pixels": 33639,
+      "protected_support_pixels": 32,
+      "minimum_red_distance": 0.0,
+      "red_touch": true,
+      "nearby_protect": true
+    },
+    {
+      "id": 281,
+      "xywh": [
+        785,
+        971,
+        150,
+        54
+      ],
+      "bridge_area": 2872,
+      "red_support_pixels": 2480,
+      "protected_support_pixels": 205,
+      "minimum_red_distance": 0.0,
+      "red_touch": true,
+      "nearby_protect": true
+    },
+    {
+      "id": 287,
+      "xywh": [
+        939,
+        996,
+        31,
+        14
+      ],
+      "bridge_area": 216,
+      "red_support_pixels": 0,
+      "protected_support_pixels": 14,
+      "minimum_red_distance": 6.393799781799316,
+      "red_touch": false,
+      "nearby_protect": true
+    },
+    {
+      "id": 289,
+      "xywh": [
+        998,
+        1004,
+        93,
+        198
+      ],
+      "bridge_area": 7416,
+      "red_support_pixels": 3553,
+      "protected_support_pixels": 3041,
+      "minimum_red_distance": 0.0,
+      "red_touch": true,
+      "nearby_protect": true
+    },
+    {
+      "id": 291,
+      "xywh": [
+        904,
+        1029,
+        72,
+        27
+      ],
+      "bridge_area": 943,
+      "red_support_pixels": 0,
+      "protected_support_pixels": 168,
+      "minimum_red_distance": 23.0,
+      "red_touch": false,
+      "nearby_protect": true
+    },
+    {
+      "id": 297,
+      "xywh": [
+        812,
+        1045,
+        44,
+        19
+      ],
+      "bridge_area": 478,
+      "red_support_pixels": 0,
+      "protected_support_pixels": 408,
+      "minimum_red_distance": 22.393798828125,
+      "red_touch": false,
+      "nearby_protect": true
+    },
+    {
+      "id": 300,
+      "xywh": [
+        789,
+        1051,
+        15,
+        9
+      ],
+      "bridge_area": 56,
+      "red_support_pixels": 0,
+      "protected_support_pixels": 6,
+      "minimum_red_distance": 28.1968994140625,
+      "red_touch": false,
+      "nearby_protect": true
+    },
+    {
+      "id": 302,
+      "xywh": [
+        1789,
+        1055,
+        47,
+        58
+      ],
+      "bridge_area": 872,
+      "red_support_pixels": 0,
+      "protected_support_pixels": 488,
+      "minimum_red_distance": 490.331787109375,
+      "red_touch": false,
+      "nearby_protect": true
+    },
+    {
+      "id": 306,
+      "xywh": [
+        44,
+        1074,
+        3,
+        7
+      ],
+      "bridge_area": 13,
+      "red_support_pixels": 0,
+      "protected_support_pixels": 12,
+      "minimum_red_distance": 39.9844970703125,
+      "red_touch": false,
+      "nearby_protect": true
+    },
+    {
+      "id": 307,
+      "xywh": [
+        805,
+        1091,
+        91,
+        121
+      ],
+      "bridge_area": 3313,
+      "red_support_pixels": 2767,
+      "protected_support_pixels": 351,
+      "minimum_red_distance": 0.0,
+      "red_touch": true,
+      "nearby_protect": true
+    },
+    {
+      "id": 315,
+      "xywh": [
+        846,
+        1120,
+        53,
+        26
+      ],
+      "bridge_area": 843,
+      "red_support_pixels": 0,
+      "protected_support_pixels": 816,
+      "minimum_red_distance": 17.0,
+      "red_touch": false,
+      "nearby_protect": true
+    },
+    {
+      "id": 325,
+      "xywh": [
+        963,
+        1185,
+        93,
+        62
+      ],
+      "bridge_area": 1736,
+      "red_support_pixels": 0,
+      "protected_support_pixels": 1550,
+      "minimum_red_distance": 23.99379539489746,
+      "red_touch": false,
+      "nearby_protect": true
+    },
+    {
+      "id": 332,
+      "xywh": [
+        852,
+        1223,
+        17,
+        15
+      ],
+      "bridge_area": 190,
+      "red_support_pixels": 0,
+      "protected_support_pixels": 190,
+      "minimum_red_distance": 21.172096252441406,
+      "red_touch": false,
+      "nearby_protect": true
+    },
+    {
+      "id": 372,
+      "xywh": [
+        1156,
+        1430,
+        53,
+        37
+      ],
+      "bridge_area": 618,
+      "red_support_pixels": 0,
+      "protected_support_pixels": 396,
+      "minimum_red_distance": 145.1472625732422,
+      "red_touch": false,
+      "nearby_protect": true
+    },
+    {
+      "id": 384,
+      "xywh": [
+        239,
+        1526,
+        25,
+        26
+      ],
+      "bridge_area": 464,
+      "red_support_pixels": 459,
+      "protected_support_pixels": 0,
+      "minimum_red_distance": 0.0,
+      "red_touch": true,
+      "nearby_protect": false
+    },
+    {
+      "id": 403,
+      "xywh": [
+        1152,
+        1692,
+        5,
+        7
+      ],
+      "bridge_area": 24,
+      "red_support_pixels": 0,
+      "protected_support_pixels": 21,
+      "minimum_red_distance": 386.26513671875,
+      "red_touch": false,
+      "nearby_protect": true
+    },
+    {
+      "id": 414,
+      "xywh": [
+        11,
+        1824,
+        15,
+        16
+      ],
+      "bridge_area": 115,
+      "red_support_pixels": 0,
+      "protected_support_pixels": 38,
+      "minimum_red_distance": 5.196899890899658,
+      "red_touch": false,
+      "nearby_protect": true
+    },
+    {
+      "id": 431,
+      "xywh": [
+        431,
+        1942,
+        15,
+        8
+      ],
+      "bridge_area": 83,
+      "red_support_pixels": 0,
+      "protected_support_pixels": 12,
+      "minimum_red_distance": 427.0,
+      "red_touch": false,
+      "nearby_protect": true
+    },
+    {
+      "id": 467,
+      "xywh": [
+        377,
+        2155,
+        14,
+        24
+      ],
+      "bridge_area": 152,
+      "red_support_pixels": 0,
+      "protected_support_pixels": 112,
+      "minimum_red_distance": 372.9844970703125,
+      "red_touch": false,
+      "nearby_protect": true
+    },
+    {
+      "id": 473,
+      "xywh": [
+        396,
+        2198,
+        28,
+        18
+      ],
+      "bridge_area": 363,
+      "red_support_pixels": 0,
+      "protected_support_pixels": 283,
+      "minimum_red_distance": 393.968994140625,
+      "red_touch": false,
+      "nearby_protect": true
+    },
+    {
+      "id": 481,
+      "xywh": [
+        635,
+        2302,
+        9,
+        11
+      ],
+      "bridge_area": 72,
+      "red_support_pixels": 0,
+      "protected_support_pixels": 5,
+      "minimum_red_distance": 368.4310302734375,
+      "red_touch": false,
+      "nearby_protect": true
+    },
+    {
+      "id": 495,
+      "xywh": [
+        728,
+        2387,
+        10,
+        10
+      ],
+      "bridge_area": 66,
+      "red_support_pixels": 0,
+      "protected_support_pixels": 4,
+      "minimum_red_distance": 310.9690246582031,
+      "red_touch": false,
+      "nearby_protect": true
+    },
+    {
+      "id": 506,
+      "xywh": [
+        793,
+        2451,
+        12,
+        15
+      ],
+      "bridge_area": 81,
+      "red_support_pixels": 0,
+      "protected_support_pixels": 10,
+      "minimum_red_distance": 287.98858642578125,
+      "red_touch": false,
+      "nearby_protect": true
+    },
+    {
+      "id": 532,
+      "xywh": [
+        198,
+        2653,
+        463,
+        259
+      ],
+      "bridge_area": 33327,
+      "red_support_pixels": 32315,
+      "protected_support_pixels": 391,
+      "minimum_red_distance": 0.0,
+      "red_touch": true,
+      "nearby_protect": true
+    },
+    {
+      "id": 545,
+      "xywh": [
+        1855,
+        2752,
+        17,
+        38
+      ],
+      "bridge_area": 407,
+      "red_support_pixels": 0,
+      "protected_support_pixels": 297,
+      "minimum_red_distance": 334.0,
+      "red_touch": false,
+      "nearby_protect": true
+    },
+    {
+      "id": 547,
+      "xywh": [
+        518,
+        2760,
+        16,
+        6
+      ],
+      "bridge_area": 52,
+      "red_support_pixels": 0,
+      "protected_support_pixels": 44,
+      "minimum_red_distance": 15.0,
+      "red_touch": false,
+      "nearby_protect": true
+    },
+    {
+      "id": 548,
+      "xywh": [
+        476,
+        2762,
+        18,
+        17
+      ],
+      "bridge_area": 103,
+      "red_support_pixels": 0,
+      "protected_support_pixels": 101,
+      "minimum_red_distance": 11.0,
+      "red_touch": false,
+      "nearby_protect": true
+    },
+    {
+      "id": 549,
+      "xywh": [
+        398,
+        2769,
+        16,
+        18
+      ],
+      "bridge_area": 88,
+      "red_support_pixels": 0,
+      "protected_support_pixels": 86,
+      "minimum_red_distance": 9.0,
+      "red_touch": false,
+      "nearby_protect": true
+    },
+    {
+      "id": 550,
+      "xywh": [
+        437,
+        2768,
+        6,
+        16
+      ],
+      "bridge_area": 48,
+      "red_support_pixels": 0,
+      "protected_support_pixels": 44,
+      "minimum_red_distance": 13.0,
+      "red_touch": false,
+      "nearby_protect": true
+    },
+    {
+      "id": 552,
+      "xywh": [
+        310,
+        2773,
+        15,
+        14
+      ],
+      "bridge_area": 72,
+      "red_support_pixels": 0,
+      "protected_support_pixels": 69,
+      "minimum_red_distance": 6.0,
+      "red_touch": false,
+      "nearby_protect": true
+    },
+    {
+      "id": 553,
+      "xywh": [
+        364,
+        2773,
+        9,
+        33
+      ],
+      "bridge_area": 120,
+      "red_support_pixels": 0,
+      "protected_support_pixels": 119,
+      "minimum_red_distance": 7.0,
+      "red_touch": false,
+      "nearby_protect": true
+    },
+    {
+      "id": 554,
+      "xywh": [
+        351,
+        2775,
+        5,
+        10
+      ],
+      "bridge_area": 30,
+      "red_support_pixels": 0,
+      "protected_support_pixels": 30,
+      "minimum_red_distance": 10.787599563598633,
+      "red_touch": false,
+      "nearby_protect": true
+    },
+    {
+      "id": 555,
+      "xywh": [
+        525,
+        2775,
+        10,
+        6
+      ],
+      "bridge_area": 33,
+      "red_support_pixels": 0,
+      "protected_support_pixels": 29,
+      "minimum_red_distance": 14.0,
+      "red_touch": false,
+      "nearby_protect": true
+    },
+    {
+      "id": 556,
+      "xywh": [
+        481,
+        2781,
+        5,
+        5
+      ],
+      "bridge_area": 15,
+      "red_support_pixels": 0,
+      "protected_support_pixels": 10,
+      "minimum_red_distance": 13.78449821472168,
+      "red_touch": false,
+      "nearby_protect": true
+    },
+    {
+      "id": 557,
+      "xywh": [
+        441,
+        2787,
+        7,
+        10
+      ],
+      "bridge_area": 45,
+      "red_support_pixels": 0,
+      "protected_support_pixels": 44,
+      "minimum_red_distance": 8.1968994140625,
+      "red_touch": false,
+      "nearby_protect": true
+    },
+    {
+      "id": 558,
+      "xywh": [
+        292,
+        2788,
+        280,
+        40
+      ],
+      "bridge_area": 2932,
+      "red_support_pixels": 2686,
+      "protected_support_pixels": 200,
+      "minimum_red_distance": 0.0,
+      "red_touch": true,
+      "nearby_protect": true
+    },
+    {
+      "id": 559,
+      "xywh": [
+        1760,
+        2789,
+        37,
+        39
+      ],
+      "bridge_area": 1040,
+      "red_support_pixels": 0,
+      "protected_support_pixels": 823,
+      "minimum_red_distance": 298.5906982421875,
+      "red_touch": false,
+      "nearby_protect": true
+    },
+    {
+      "id": 562,
+      "xywh": [
+        398,
+        2793,
+        4,
+        6
+      ],
+      "bridge_area": 14,
+      "red_support_pixels": 0,
+      "protected_support_pixels": 13,
+      "minimum_red_distance": 10.787599563598633,
+      "red_touch": false,
+      "nearby_protect": true
+    },
+    {
+      "id": 563,
+      "xywh": [
+        304,
+        2795,
+        9,
+        13
+      ],
+      "bridge_area": 40,
+      "red_support_pixels": 0,
+      "protected_support_pixels": 40,
+      "minimum_red_distance": 12.0,
+      "red_touch": false,
+      "nearby_protect": true
+    },
+    {
+      "id": 566,
+      "xywh": [
+        310,
+        2805,
+        14,
+        7
+      ],
+      "bridge_area": 56,
+      "red_support_pixels": 0,
+      "protected_support_pixels": 53,
+      "minimum_red_distance": 6.0,
+      "red_touch": false,
+      "nearby_protect": true
+    },
+    {
+      "id": 569,
+      "xywh": [
+        1398,
+        2821,
+        26,
+        23
+      ],
+      "bridge_area": 310,
+      "red_support_pixels": 0,
+      "protected_support_pixels": 207,
+      "minimum_red_distance": 426.5243225097656,
+      "red_touch": false,
+      "nearby_protect": true
+    },
+    {
+      "id": 571,
+      "xywh": [
+        545,
+        2826,
+        17,
+        23
+      ],
+      "bridge_area": 131,
+      "red_support_pixels": 0,
+      "protected_support_pixels": 123,
+      "minimum_red_distance": 8.787599563598633,
+      "red_touch": false,
+      "nearby_protect": true
+    },
+    {
+      "id": 573,
+      "xywh": [
+        451,
+        2835,
+        9,
+        5
+      ],
+      "bridge_area": 30,
+      "red_support_pixels": 0,
+      "protected_support_pixels": 29,
+      "minimum_red_distance": 22.968996047973633,
+      "red_touch": false,
+      "nearby_protect": true
+    },
+    {
+      "id": 575,
+      "xywh": [
+        344,
+        2844,
+        17,
+        17
+      ],
+      "bridge_area": 81,
+      "red_support_pixels": 0,
+      "protected_support_pixels": 74,
+      "minimum_red_distance": 9.787599563598633,
+      "red_touch": false,
+      "nearby_protect": true
+    },
+    {
+      "id": 579,
+      "xywh": [
+        457,
+        2850,
+        6,
+        4
+      ],
+      "bridge_area": 14,
+      "red_support_pixels": 0,
+      "protected_support_pixels": 14,
+      "minimum_red_distance": 27.393798828125,
+      "red_touch": false,
+      "nearby_protect": true
+    },
+    {
+      "id": 582,
+      "xywh": [
+        454,
+        2857,
+        12,
+        14
+      ],
+      "bridge_area": 51,
+      "red_support_pixels": 0,
+      "protected_support_pixels": 48,
+      "minimum_red_distance": 21.968996047973633,
+      "red_touch": false,
+      "nearby_protect": true
+    },
+    {
+      "id": 587,
+      "xywh": [
+        385,
+        2872,
+        8,
+        7
+      ],
+      "bridge_area": 18,
+      "red_support_pixels": 0,
+      "protected_support_pixels": 17,
+      "minimum_red_distance": 8.787599563598633,
+      "red_touch": false,
+      "nearby_protect": true
+    },
+    {
+      "id": 589,
+      "xywh": [
+        1722,
+        2883,
+        15,
+        16
+      ],
+      "bridge_area": 177,
+      "red_support_pixels": 0,
+      "protected_support_pixels": 88,
+      "minimum_red_distance": 229.968994140625,
+      "red_touch": false,
+      "nearby_protect": true
+    },
+    {
+      "id": 596,
+      "xywh": [
+        89,
+        2936,
+        7,
+        4
+      ],
+      "bridge_area": 20,
+      "red_support_pixels": 0,
+      "protected_support_pixels": 20,
+      "minimum_red_distance": 85.393798828125,
+      "red_touch": false,
+      "nearby_protect": true
+    },
+    {
+      "id": 597,
+      "xywh": [
+        95,
+        2937,
+        17,
+        11
+      ],
+      "bridge_area": 70,
+      "red_support_pixels": 0,
+      "protected_support_pixels": 64,
+      "minimum_red_distance": 91.0,
+      "red_touch": false,
+      "nearby_protect": true
+    },
+    {
+      "id": 604,
+      "xywh": [
+        118,
+        2959,
+        8,
+        8
+      ],
+      "bridge_area": 23,
+      "red_support_pixels": 0,
+      "protected_support_pixels": 19,
+      "minimum_red_distance": 114.0,
+      "red_touch": false,
+      "nearby_protect": true
+    },
+    {
+      "id": 622,
+      "xywh": [
+        529,
+        2996,
+        14,
+        10
+      ],
+      "bridge_area": 83,
+      "red_support_pixels": 0,
+      "protected_support_pixels": 34,
+      "minimum_red_distance": 101.6790771484375,
+      "red_touch": false,
+      "nearby_protect": true
+    },
+    {
+      "id": 634,
+      "xywh": [
+        729,
+        3071,
+        7,
+        8
+      ],
+      "bridge_area": 29,
+      "red_support_pixels": 0,
+      "protected_support_pixels": 13,
+      "minimum_red_distance": 248.46510314941406,
+      "red_touch": false,
+      "nearby_protect": true
+    },
+    {
+      "id": 635,
+      "xywh": [
+        1033,
+        3080,
+        9,
+        12
+      ],
+      "bridge_area": 60,
+      "red_support_pixels": 0,
+      "protected_support_pixels": 38,
+      "minimum_red_distance": 472.61468505859375,
+      "red_touch": false,
+      "nearby_protect": true
+    },
+    {
+      "id": 636,
+      "xywh": [
+        0,
+        3105,
+        24,
+        28
+      ],
+      "bridge_area": 279,
+      "red_support_pixels": 0,
+      "protected_support_pixels": 182,
+      "minimum_red_distance": 28.5751953125,
+      "red_touch": false,
+      "nearby_protect": true
+    },
+    {
+      "id": 640,
+      "xywh": [
+        1718,
+        3123,
+        154,
+        10
+      ],
+      "bridge_area": 841,
+      "red_support_pixels": 783,
+      "protected_support_pixels": 9,
+      "minimum_red_distance": 0.0,
+      "red_touch": true,
+      "nearby_protect": true
+    }
+  ]
+}

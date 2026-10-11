@@ -1,0 +1,328 @@
+                                          THINK BEFORE YOU RESTORE: RISK-AWARE MANCHU MANUSCRIPT RESTORATION
+                                                             WITH STROKE-GUIDED ATTENTION
+
+                                                                         Mingqiu Liang1,†    Dongdong Wang2,†                           Siyang Lu1,∗
+                                                                                      Ting Huang1    Yingjun Qi3
+                                                     1
+                                                      School of Computer Science and Technology, Beijing Jiaotong University, Beijing, China
+                                                 2
+                                                     College of Design, Construction, and Planning, University of Florida, Gainesville, FL, USA
+                                                       3
+                                                         School of Japanese Studies, Dalian University of Foreign Languages, Dalian, China
+arXiv:2609.36243v1 [cs.CV] 28 Sep 2026
+
+
+
+
+                                                                      ABSTRACT                                     repairs degraded content may therefore modify valid strokes and
+                                                                                                                   paper textures, leading to over-restoration, whereas a conserva-
+                                         Full-page blind restoration of historical Manchu manuscripts is           tive model may leave damaged strokes unrecovered, resulting in
+                                         challenging due to scarce annotations, unknown degradation re-            under-restoration.
+                                         gions, and fragile connected strokes. Generic restoration models               This problem is not well reflected by conventional image qual-
+                                         may improve visual quality but often modify intact content, lead-         ity assessment (IQA). Full-reference metrics mainly measure global
+                                         ing to over-restoration. We propose SAGE-Restore (Stroke-Aware            pixel or structural similarity [13–17], while no-reference metrics fo-
+                                         Gated rEstoration), a selective restoration framework that first as-      cus on perceptual quality [18–23]. As shown in our observations,
+                                         sesses where restoration is needed and then uses this assessment to       favorable scores on these metrics do not necessarily indicate suc-
+                                         guide restoration candidate generation and pixel-level selection. Its     cessful restoration: a method may obtain high similarity by mak-
+                                         encoder predicts patch-level repair probabilities from complemen-         ing few changes, or achieve better perceptual quality while alter-
+                                         tary appearance and stroke-structural cues to condition restoration       ing originally intact content. Document-specific metrics likewise
+                                         candidate generation, while the corresponding repair logits are re-       focus primarily on overall quality, readability, or binarization accu-
+                                         fined into a pixel-level soft gate that selectively controls where the    racy [24–26]. These metrics do not explicitly distinguish recovery in
+                                         restoration candidate is applied. We further introduce a fidelity-        degraded regions from unintended changes to intact regions.
+                                         aware evaluation protocol that jointly measures degraded-region                We therefore formulate full-page blind Manchu manuscript
+                                         recovery, intact-content preservation, and their balance. SAGE-           restoration as a risk-aware selective restoration problem, where
+                                         Restore achieves the highest R-Recovery (0.463) and RFS (0.626),          successful restoration requires both recovering degraded structures
+                                         while maintaining high U-Fidelity (0.968), demonstrating an effec-        and preserving intact content. To evaluate this trade-off, we in-
+                                         tive balance between restoration and content preservation.                troduce a fidelity-aware evaluation protocol that separately mea-
+                                              Index Terms— Historical document restoration, stroke-aware           sures degraded-region recovery and intact-content preservation, to-
+                                         risk assessment, over-restoration suppression, fidelity-aware evalua-     gether with their balance. Accordingly, we propose SAGE-Restore
+                                         tion, Manchu manuscripts                                                  (Stroke-Aware Gated rEstoration), which uses stroke-guided repair
+                                                                                                                   assessment to determine where restoration is needed and pixel-level
+                                                                                                                   gating to selectively apply the generated restoration candidate.
+                                                                1. INTRODUCTION                                         The main contributions are summarized as follows:
+                                         Historical document restoration aims to recover damaged textual               • We characterize the recovery–preservation trade-off in his-
+                                         structures while preserving original content and appearance. This               torical Manchu manuscript restoration and introduce R-
+                                         is particularly challenging for historical Manchu manuscripts, where            Recovery, U-Fidelity, and RFS to quantify degraded-region
+                                         sparse and irregular degradations such as ink loss, corrosion, and lo-          recovery, intact-content preservation, and their balance, re-
+                                         cal fractures disrupt fine, connected strokes and may resemble intact           spectively.
+                                         structures in local appearance, making stroke structure an important          • We propose SAGE-Restore, a selective restoration frame-
+                                         cue for deciding where restoration is needed. With degradation lo-              work that couples stroke-guided repair assessment with pixel-
+                                         cations unknown in advance, restoration must often operate blindly              level restoration selection to suppress over-restoration with-
+                                         on full manuscript pages without predefined damage masks [1].                   out requiring manually annotated masks during inference.
+                                              Recent image restoration methods have shown strong perfor-
+                                                                                                                       • Extensive experiments demonstrate superior recovery–fidelity
+                                         mance using convolutional networks, vision Transformers, condi-
+                                                                                                                         performance over existing restoration methods, while ab-
+                                         tional prompts, and generative priors [3–7]. Document restoration
+                                                                                                                         lations verify the complementary contributions of Stroke-
+                                         methods further exploit stroke and structural information [1, 8–10],
+                                                                                                                         Guided Attention and pixel-level gating.
+                                         while gated and mask-aware architectures use spatial constraints
+                                         to control image modification [11, 12]. However, blind full-page
+                                         restoration introduces another challenge: most regions may already                     2. OBSERVATIONS AND ANALYSIS
+                                         be intact and should not be changed. A model that aggressively
+                                                                                                                   We first evaluate the restoration quality of different methods us-
+                                             † Mingqiu Liang and Dongdong Wang contributed equally to this work.   ing conventional image quality metrics. More importantly, we ex-
+                                         ∗ Corresponding author: Siyang Lu (sylu@bjtu.edu.cn).                     amine their fidelity in preserving intact content, which is critical
+                     Table 1. Comparison of full-reference (FR) and no-reference (NR) image quality metrics.
+                                       Full-reference (FR)                                           No-reference (NR)
+Method        PSNR↑ SSIM↑ MAE↓ MSE↓ RMSE↓ MS-S↑ FSIM↑ GMSD↓ VIF↑ NCC↑ NIQE↓ BRIS↓ IL-N↓ MAN↑ MUSIQ↑ CLIP↑
+Blind-Omni [2] 23.68 0.98 0.01 0.01 0.07             0.96 0.95      0.10 0.89 0.94 3.93 25.61 34.79 0.54             60.19 0.65
+DiffBIR [3]    17.26 0.58 0.06 0.02 0.14             0.81 0.89      0.20 0.09 0.77 6.80 17.71 40.01 0.59             64.97 0.77
+GSDM [1]       18.89 0.91 0.04 0.02 0.12             0.87 0.84      0.17 0.44 0.78 4.25 30.17 30.85 0.47             61.08 0.68
+
+
+for historical manuscript restoration. Table 1 compares represen-          where λ = 0.8 emphasizes intact-stroke preservation. R-Recovery
+tative full-reference (FR) and no-reference (NR) metrics [13–23]           and RFS are defined as
+across restoration methods, while Fig. 1 highlights the correspond-
+                                                                                                                         2RR UF
+ing quality–fidelity trade-off.                                                       RR = Rlocal UF ,        RFS =                ,           (2)
+                                                                                                                       RR + UF + ϵ
+                                                                           where RR and UF denote R-Recovery and U-Fidelity. Higher values
+                                                                           indicate a better balance between recovery and fidelity.
+
+                                                                                                       3. METHOD
+
+                                                                           3.1. Overall Framework
+                                                                           We propose SAGE-Restore, a risk-aware selective restoration frame-
+Fig. 1. Restoration performance across different methods, with
+                                                                           work that couples stroke-guided repair assessment with restoration
+red boxes indicating fidelity preservation and blue boxes indicating
+                                                                           candidate generation and pixel-level selection. As shown in Fig. 2,
+restoration quality.
+                                                                           a shared repair assessment guides both where restoration correc-
+                                                                           tions are generated and where they are applied, enabling damaged-
+     We first observe substantial differences in restoration qual-         region recovery while preserving intact content. Given a degraded
+ity across methods. DiffBIR is favored by several NR perceptual            manuscript image Id , we partition it into overlapping 512 × 512
+metrics, achieving the best MANIQA (MAN), MUSIQ, and CLIP                  tiles {Idt } with a 64-pixel overlap. For each tile, grayscale, dark-
+scores, while Blind-Omni dominates the FR metrics. However, these          stroke, and edge maps are divided into aligned 32 × 32 patches,
+metric scores do not fully reflect actual restoration behavior. As         forming a 16 × 16 token grid with 2-D positional encodings. A
+shown in Fig. 1, Blind-Omni largely preserves the degraded input,          Stroke-Guided Attention (SGA) encoder extracts stroke-aware fea-
+leaving damaged strokes unrecovered, whereas DiffBIR provides              tures Z, from which a prediction head produces patch-level repair
+stronger visual restoration. More importantly, stronger restoration        logits Lp and probabilities
+can come at the cost of fidelity. GSDM and DiffBIR visibly modify
+originally intact strokes, introducing undesirable changes to valid                          P = σ(Lp ),      P ∈ [0, 1]16×16 ,                (3)
+content. This highlights a key limitation of conventional image
+quality metrics: they evaluate overall similarity or perceptual quality    where σ denotes the sigmoid function. The probabilities P condition
+but do not explicitly assess the fidelity of intact regions.               the restoration decoder to generate a candidate Irt , while the logits
+     These observations suggest that effective manuscript restoration      Lp are refined into a pixel-level soft gate Gt . The final restored tile
+should balance two complementary objectives: recovering degraded           is
+regions while preserving intact regions. Accordingly, we introduce                           Iˆt = (1 − Gt ) ⊙ Idt + Gt ⊙ Irt ,                (4)
+R-Recovery to quantify restoration in degraded regions and U-              where ⊙ denotes element-wise multiplication. The gate selectively
+Fidelity to measure fidelity in intact regions, and combine them into      applies restoration corrections while retaining the original input in
+RFS for joint evaluation. Rather than favoring aggressive restoration      regions where restoration is unnecessary. Finally, restored tiles are
+or conservative preservation, RFS captures the desired principle of        combined using Hann-window weighted overlap blending to pro-
+“local restoration with global fidelity.”                                                            ˆ
+                                                                           duce the full-page output I.
+     Full-reference and no-reference metrics mainly assess global
+distortion or perceptual quality, but cannot distinguish degraded-         3.2. Stroke-Guided Repair Assessment
+region recovery from unintended changes to intact content. We
+therefore introduce three region-aware metrics for evaluating restora-     Blind manuscript restoration requires distinguishing damaged re-
+                         ˆ and Igt denote the degraded input, re-
+tion fidelity. Let Id , I,                                                 gions from intact stroke structures with similar local appearances.
+stored output, and ground truth, respectively. Given the degradation       We introduce SGA to incorporate stroke-related structural similarity
+                                                                           and spatial proximity into patch interactions.
+mask MR , the local recovery rate is ein = MAE(I        d , Igt | MR),
+                 ˆ Igt | MR ), and Rlocal = clip ein −eout , 0, 1 .        Stroke-Aware Representation. Grayscale, dark-stroke, and edge
+eout = MAE(I,                                            ein +ϵ            maps characterize local appearance, ink-like structures, and stroke
+The intact region MU is divided into stroke and background regions,        boundaries, respectively. Their aligned patch embeddings provide
+MU,S and MU,B . Its modification error and fidelity are                    complementary visual and structural cues.
+                                                                           Stroke-Guided Attention. SGA incorporates spatial and structural
+               EU = λ MAE(I, ˆ Id | MU,S )                                 biases into content-based self-attention:
+                    + (1 − λ) MAE(I, ˆ Id | MU,B ),                 (1)                                   
+                                                                                                             QK ⊤
+                                                                                                                                 
+                                                                                       ASGA = Softmax         √ + Bsp + Bstr ,              (5)
+               UF = clip(1 − EU , 0, 1),                                                                         d
+Fig. 2. Overview of the proposed SAGE-Restore framework. The SGA encoder predicts patch-level repair logits Lp , whose probabilities
+P condition restoration candidate generation. The logits are further refined into a pixel-level soft gate Gt , which selectively combines the
+degraded input Idt and restoration candidate Irt . Restored overlapping tiles are combined using Hann-weighted blending.
+
+
+
+
+Fig. 3. Qualitative comparison on two Manchu manuscripts. GSDM recovers degraded strokes but introduces substantial changes to intact
+content, while Blind-Omni largely preserves the degraded input without recovering missing structures. DiffBIR and HYPIR improve overall
+appearance but fail to reconstruct key missing strokes. In contrast, SAGE-Restore selectively restores damaged structures while preserving
+intact handwriting and paper texture, achieving a better balance between recovery and fidelity.
+
+
+where Q and K are query and key representations, and d is their            features Zd are combined with the degraded tile to predict a bounded
+feature dimension. The biases are defined as                               RGB residual:
+                                                                                           t
+                    si = AvgPooli (0.7Idark + 0.3Iedge ),                                 Rraw = Hrec (Zd , Idt ),
+           Bstr (i, j) = 1 − |si − sj |,                                                    ∆t = rmax tanh(Rraw
+                                                                                                              t
+                                                                                                                  ),
+                                                                    (6)                                                                     (7)
+                             ∥pi − pj ∥1                                                         (
+           Bsp (i, j) = −                ,                                                         ∆ ⊙ (1 − Id ), ∆t ≥ 0,
+                                                                                                    t           t
+                            Hg + W g − 2                                                    Rt =
+                                                                                                   ∆t ⊙ Idt ,        ∆t < 0.
+where si is the stroke-related descriptor of patch i, pi is its grid co-
+ordinate, and Hg , Wg are the patch-grid dimensions. These biases          The restoration candidate is obtained as Irt = Idt + Rt .
+favor interactions between structurally similar and spatially nearby       Pixel-Level Gate Prediction. The patch-level repair logits Lp are
+patches, yielding stroke-aware encoder features Z.                         bilinearly upsampled and refined using the grayscale degraded tile:
+Patch-Level Repair Prediction. A lightweight prediction head pro-
+duces repair logits Lp = Hp (Z) ∈ R16×16 . The corresponding                                     L
+                                                                                                 e p = Up(Lp ),
+probabilities P estimate patch-level restoration needs and condition                           ∆Ltg = Hgate ([L      t
+                                                                                                              e p , Igray ]),               (8)
+candidate generation, while Lp is retained for pixel-level gate pre-
+                                                                                                   t   e p + ∆Ltg ),
+diction.                                                                                         G = σ(L
+
+3.3. Gate-Guided Restoration                                               where Gt ∈ [0, 1]Ht ×Wt ×1 . The gate combines coarse repair as-
+                                                                           sessment with high-resolution image information to selectively ap-
+The repair assessment guides two complementary processes: restora-         ply the restoration candidate according to Eq. (4).
+tion candidate generation and pixel-level selection.                       Training Objective. We jointly optimize repair assessment and se-
+Restoration Candidate Generation. The repair probabilities P               lective restoration using L = Lgate + Lrecovery + Lpreservation +
+are projected into the token feature space through a gate-embedding        Laux . The gate loss supervises patch-level repair prediction with
+MLP: Eg = MLP(P ) and T = Z + Eg . Initialized with T0 = T ,               focal BCE and Tversky losses and pixel-level gate prediction with
+each decoder block applies self-attention, cross-attention with en-        focal BCE. Recovery, preservation, and auxiliary losses respectively
+coder features Z, and a feed-forward network. The resulting decoder        apply structure-weighted masked ℓ1 reconstruction, constrain both
+ Table 2. Quantitative comparison with state-of-the-art restoration methods. Best results are in bold and second-best results are underlined.
+                              Fidelity-aware                        Full-reference (FR)                       No-reference (NR)
+        Method           R-Rec.↑ U-Fid.↑ RFS↑ PSNR↑ SSIM↑ MAE↓ FSIM↑ GMSD↓ VIF↑ NIQE↓ MUSIQ↑ CLIP↑
+        Blind-Omni        0.033     0.993 0.063 23.677 0.977 0.010 0.954                  0.101 0.889 3.932 60.188 0.653
+        DiffBIR           0.062     0.848 0.116 17.264 0.576 0.057 0.886                  0.204 0.088 6.795 64.967 0.774
+        GSDM              0.420     0.819 0.555 18.888 0.913 0.040 0.837                  0.171 0.442 4.250 61.080 0.683
+        HYPIR             0.047     0.889 0.089 19.399 0.807 0.038 0.923                  0.156 0.170 5.867 60.762 0.819
+        SAGE-Restore 0.463          0.968 0.626 26.077 0.975 0.006 0.971                  0.094 0.856 4.056 60.478 0.688
+
+
+outputs to match the degraded input in intact regions, and combine
+masked edge-gradient with global ℓ1 losses.                                     Table 3. Ablation results for SGA and pixel-level gating.
+                                                                                SGA Gate R-Rec. U-Fid. RFS PSNR SSIM MAE
+                                                                                 –      –   0.322 0.881 0.472 21.270 0.873 0.028
+                        4. EXPERIMENTS                                           ✓      –   0.448 0.925 0.596 22.980 0.914 0.014
+                                                                                 –     ✓ 0.405 0.965 0.571 24.780 0.944 0.009
+4.1. Experimental Setup
+                                                                                 ✓     ✓ 0.463 0.968 0.626 26.077 0.975 0.006
+Dataset and Evaluation. The dataset contains 600 training, 120 val-
+idation, and 120 test samples. The test set includes ink occlusions,
+text-like degradations, and clean hard negatives to assess recovery        strokes. In contrast, SAGE-Restore selectively restores damaged
+and preservation. At inference, only the degraded image Id is pro-         strokes while preserving surrounding handwriting and paper texture.
+vided. All methods are evaluated on the same test set using the same       These observations are consistent with the quantitative results and il-
+fidelity-aware, full-reference, and no-reference metrics.                  lustrate the importance of balancing localized restoration with intact-
+Implementation Details. We trained SAGE-Restore for 30 epochs              content preservation.
+using 512 × 512 crops and the AdamW optimizer. Positive-region
+crops were sampled with a probability of 0.8. The batch size was 1,
+with four gradient-accumulation steps, and the encoder was frozen          4.3. Ablation Study
+for the first three epochs. The initial learning rates were 10−5 for the
+encoder and 10−4 for the remaining network, with cosine annealing          Table 3 investigates the individual and complementary contributions
+to a minimum of 10−6 . The weight decay was 10−4 , and the check-          of Stroke-Guided Attention (SGA) and pixel-level gating.
+point with the lowest validation loss was selected for evaluation.         Effect of Stroke-Guided Attention. Without pixel-level gating, in-
+                                                                           troducing SGA improves R-Recovery from 0.322 to 0.448 and U-
+4.2. Comparison with State-of-the-Art Methods                              Fidelity from 0.881 to 0.925. With gating enabled, SGA further im-
+                                                                           proves R-Recovery from 0.405 to 0.463. These results indicate that
+Recovery–Preservation Trade-off. Table 2 reveals distinct restora-         stroke-guided structural context enhances damaged-region recovery
+tion behaviors across competing methods. Blind-Omni achieves the           while also contributing to intact-content preservation.
+highest U-Fidelity (0.993) but exhibits limited R-Recovery (0.033),        Effect of Pixel-Level Gating. Without SGA, introducing pixel-level
+indicating that preserving the degraded input alone is insufficient        gating increases U-Fidelity from 0.881 to 0.965 and R-Recovery
+to recover missing stroke structures. In contrast, GSDM achieves           from 0.322 to 0.405. When combined with SGA, gating further im-
+substantially higher R-Recovery (0.420) at the cost of reduced U-          proves U-Fidelity from 0.925 to 0.968. These results indicate that
+Fidelity (0.819), illustrating the trade-off between damaged-region        pixel-level restoration selection helps suppress unintended modifi-
+recovery and intact-content preservation. SAGE-Restore achieves            cations to intact regions while supporting damaged-region recovery.
+the highest R-Recovery (0.463) while maintaining high U-Fidelity           Complementary Contributions. SAGE-Restore achieves the
+(0.968), resulting in the highest RFS (0.626). These results demon-        highest R-Recovery (0.463), U-Fidelity (0.968), and RFS (0.626)
+strate that selective restoration can improve damaged-region recov-        among all variants, together with the best PSNR, SSIM, and MAE.
+ery while limiting unintended modifications to intact content.             These improvements demonstrate the complementary roles of
+Conventional Image Quality versus Restoration Effectiveness.               stroke-guided repair assessment and pixel-level gating in balanc-
+SAGE-Restore achieves the highest PSNR (26.080) and the lowest             ing damaged-region recovery and intact-content preservation.
+MAE (0.006), while Blind-Omni obtains a slightly higher SSIM
+(0.977 versus 0.975). However, the substantial difference in R-
+Recovery between these two methods (0.033 versus 0.463) shows                                      5. CONCLUSION
+that high global structural similarity does not necessarily indicate
+successful recovery of missing strokes. Similarly, DiffBIR and             We presented SAGE-Restore, a selective framework for blind histor-
+HYPIR exhibit low R-Recovery (0.062 and 0.047, respectively),              ical Manchu manuscript restoration that combines stroke-guided re-
+despite producing restored outputs. These results highlight the need       pair assessment with gate-guided restoration. A fidelity-aware eval-
+to evaluate damaged-region recovery and intact-content preservation        uation protocol was introduced to quantify damaged-region recov-
+explicitly, rather than relying solely on global image quality metrics.    ery, intact-content preservation, and their balance. Experimental re-
+Qualitative Analysis. As shown in Fig. 3, Blind-Omni largely pre-          sults demonstrate improved recovery–preservation performance over
+serves the degraded input but leaves missing strokes unrecovered.          competing methods, while ablation studies confirm the complemen-
+GSDM recovers damaged structures while introducing noticeable              tary contributions of SGA and pixel-level gating. Future work will
+modifications to intact handwriting. DiffBIR and HYPIR improve             address severe stroke loss and extend the framework to multilingual
+overall visual appearance but fail to reconstruct some key missing         manuscripts.
+     6. COMPLIANCE WITH ETHICAL STANDARDS                               [12] Wenbo Li, Zhe Lin, Kun Zhou, Lu Qi, Yi Wang, and Jiaya Jia,
+                                                                             “MAT: Mask-aware transformer for large hole image inpaint-
+This study involved no human participants or animals; therefore, eth-        ing,” in Proc. IEEE/CVF Conf. Comput. Vis. Pattern Recognit.,
+ical approval was not required.                                              2022, pp. 10758–10768.
+                                                                        [13] Zhou Wang, Alan C. Bovik, Hamid R. Sheikh, and Eero P.
+                   7. ACKNOWLEDGMENT                                         Simoncelli, “Image quality assessment: From error visibility
+                                                                             to structural similarity,” IEEE Trans. Image Process., vol. 13,
+This research was supported by the General Program of the National           no. 4, pp. 600–612, 2004.
+Natural Science Foundation of China (No.62376023).
+                                                                        [14] Zhou Wang, Eero P. Simoncelli, and Alan C. Bovik, “Mul-
+                                                                             tiscale structural similarity for image quality assessment,” in
+                        8. REFERENCES                                        Proc. Asilomar Conf. Signals, Syst. Comput., 2003, vol. 2, pp.
+                                                                             1398–1402.
+ [1] Shipeng Zhu, Pengfei Fang, Chenjie Zhu, Zuoyan Zhao, Qiang
+                                                                        [15] Hamid R. Sheikh and Alan C. Bovik, “Image information and
+     Xu, and Hui Xue, “Text image inpainting via global structure-
+                                                                             visual quality,” IEEE Trans. Image Process., vol. 15, no. 2, pp.
+     guided diffusion models,” in Proc. AAAI Conf. Artif. Intell.,
+                                                                             430–444, 2006.
+     2024, pp. 7775–7783.
+                                                                        [16] Lin Zhang, Lei Zhang, Xuanqin Mou, and David Zhang,
+ [2] Shruti S Phutke, Ashutosh Kulkarni, Santosh Kumar Vip-
+                                                                             “FSIM: A feature similarity index for image quality assess-
+     parthi, and Subrahmanyam Murala, “Blind image inpaint-
+                                                                             ment,” IEEE Trans. Image Process., vol. 20, no. 8, pp. 2378–
+     ing via omni-dimensional gated attention and wavelet queries,”
+                                                                             2386, 2011.
+     in 2023 IEEE/CVF Conference on Computer Vision and Pat-
+     tern Recognition Workshops (CVPRW). IEEE, 2023, pp. 1251–          [17] Wufeng Xue, Lei Zhang, Xuanqin Mou, and Alan C. Bovik,
+     1260.                                                                   “Gradient magnitude similarity deviation: A highly efficient
+                                                                             perceptual image quality index,” IEEE Trans. Image Process.,
+ [3] Xinqi Lin, Jingwen He, Ziyan Chen, Zhaoyang Lyu, Bo Dai,                vol. 23, no. 2, pp. 684–695, 2014.
+     Fanghua Yu, Yu Qiao, Wanli Ouyang, and Chao Dong, “Diff-
+     BIR: Toward blind image restoration with generative diffusion      [18] Anish Mittal, Anush Krishna Moorthy, and Alan C. Bovik,
+     prior,” in Proc. Eur. Conf. Comput. Vis., 2024, pp. 430–448.            “No-reference image quality assessment in the spatial domain,”
+                                                                             IEEE Trans. Image Process., vol. 21, no. 12, pp. 4695–4708,
+ [4] Syed Waqas Zamir, Aditya Arora, Salman Khan, Munawar                    2012.
+     Hayat, Fahad Shahbaz Khan, Ming-Hsuan Yang, and Ling
+     Shao, “Restormer: Efficient transformer for high-resolution        [19] Anish Mittal, Rajiv Soundararajan, and Alan C. Bovik, “Mak-
+     image restoration,” in Proc. IEEE/CVF Conf. Comput. Vis. Pat-           ing a “completely blind” image quality analyzer,” IEEE Signal
+     tern Recognit., 2022, pp. 5728–5739.                                    Process. Lett., vol. 20, no. 3, pp. 209–212, 2013.
+ [5] Liangyu Chen, Xiaojie Chu, Xiangyu Zhang, and Jian Sun,            [20] Lin Zhang, Lei Zhang, and Alan C. Bovik, “A feature-enriched
+     “Simple baselines for image restoration,” in Proc. Eur. Conf.           completely blind image quality evaluator,” IEEE Trans. Image
+     Comput. Vis., 2022, pp. 17–33.                                          Process., vol. 24, no. 8, pp. 2579–2591, 2015.
+
+ [6] Vaishnav Potlapalli, Syed Waqas Zamir, Salman Khan, and            [21] Junjie Ke, Qifei Wang, Yilin Wang, Peyman Milanfar, and
+     Fahad Shahbaz Khan, “PromptIR: Prompting for all-in-one                 Feng Yang, “MUSIQ: Multi-scale image quality transformer,”
+     image restoration,” in Adv. Neural Inf. Process. Syst., 2023,           in Proc. IEEE/CVF Int. Conf. Comput. Vis., 2021, pp. 5148–
+     vol. 36, pp. 71275–71293.                                               5157.
+                                                                        [22] Sidi Yang, Tianhe Wu, Shuwei Shi, Shanshan Lao, Yuan Gong,
+ [7] Xinqi Lin, Fanghua Yu, Jinfan Hu, Zhiyuan You, Wu Shi,
+                                                                             Mingdeng Cao, Jiahao Wang, and Yujiu Yang, “MANIQA:
+     Jimmy S. Ren, Jinjin Gu, and Chao Dong, “Harnessing
+                                                                             Multi-dimension attention network for no-reference image
+     diffusion-yielded score priors for image restoration,” ACM
+                                                                             quality assessment,” in Proc. IEEE/CVF Conf. Comput. Vis.
+     Trans. Graph., vol. 44, no. 6, pp. 1–21, 2025.
+                                                                             Pattern Recognit. Workshops, 2022, pp. 1191–1199.
+ [8] Jingye Chen, Haiyang Yu, Jianqi Ma, Bin Li, and Xiangyang
+                                                                        [23] Jianyi Wang, Kelvin C. K. Chan, and Chen Change Loy, “Ex-
+     Xue, “Text gestalt: Stroke-aware scene text image super-
+                                                                             ploring CLIP for assessing the look and feel of images,” in
+     resolution,” in Proc. AAAI Conf. Artif. Intell., 2022, pp. 285–
+                                                                             Proc. AAAI Conf. Artif. Intell., 2023, pp. 2555–2563.
+     293.
+                                                                        [24] Pranjal Kumar Rai, Sajal Maheshwari, and Vineet Gandhi,
+ [9] Jiaxin Zhang, Dezhi Peng, Chongyu Liu, Peirong Zhang, and               “Document quality estimation using spatial frequency re-
+     Lianwen Jin, “DocRes: A generalist model toward unifying                sponse,” in Proc. IEEE Int. Conf. Acoust., Speech Signal Pro-
+     document image restoration tasks,” in Proc. IEEE/CVF Conf.              cess., 2018, pp. 1233–1237.
+     Comput. Vis. Pattern Recognit., 2024, pp. 15654–15664.
+                                                                        [25] Atena Shahkolaei, Azeddine Beghdadi, and Mohamed Cheriet,
+[10] Zhenhua Yang, Dezhi Peng, Yongxin Shi, Yuyi Zhang,                      “Blind quality assessment metric and degradation classification
+     Chongyu Liu, and Lianwen Jin, “Predicting the original ap-              for degraded document images,” Signal Process.: Image Com-
+     pearance of damaged historical documents,” in Proc. AAAI                mun., vol. 76, pp. 11–21, 2019.
+     Conf. Artif. Intell., 2025, pp. 9382–9390.
+                                                                        [26] Konstantinos Ntirogiannis, Basilis Gatos, and Ioannis
+[11] Jiahui Yu, Zhe Lin, Jimei Yang, Xiaohui Shen, Xin Lu, and               Pratikakis, “Performance evaluation methodology for histor-
+     Thomas S. Huang, “Free-form image inpainting with gated                 ical document image binarization,” IEEE Trans. Image Pro-
+     convolution,” in Proc. IEEE/CVF Int. Conf. Comput. Vis.,                cess., vol. 22, no. 2, pp. 595–609, 2013.
+     2019, pp. 4471–4480.
+

@@ -1,0 +1,166 @@
+"""Figures and an explicit distinction between prototype results and novelty."""
+from pathlib import Path
+import json
+import csv
+import cv2
+import numpy as np
+from PIL import Image,ImageDraw,ImageFont
+import run_ddrm_pilot as driver
+import review_bleed_local as gallery
+
+BASE=Path(__file__).resolve().parent
+ROOT=driver.ROOT
+OUT=BASE/'evidence_gated_howe_20261010'
+
+def mask(path):return np.asarray(Image.open(path).convert('L'))<127
+
+def main():
+    protocol=json.loads((OUT/'protocol.json').read_text());done=json.loads((OUT/'complete.json').read_text())
+    infer=json.loads((OUT/'ddrm_complete.json').read_text());assert len(done['results'])==len(infer['results'])==12
+    assert infer['new']==1 and infer['reused']==11
+    panels=[];checks=[];old_gallery_out=gallery.OUT;gallery.OUT=OUT
+    for case,d,inf in zip(protocol['cases'],done['results'],infer['results']):
+        assert case['id']==d['id']==inf['id'];page=case['page'];origin=BASE/case['origin']
+        assert json.loads((origin/'protocol.json').read_text())['ddrm']==json.loads((BASE/'ddrm_pilot/protocol.json').read_text())['ddrm']
+        for rel,exp in d['dependencies'].items():assert driver.digest(ROOT/rel)==exp,rel
+        before=mask(origin/'masks/howe'/page/'02_text_black.png');after=mask(OUT/'masks/automatic'/page/'02_text_black.png')
+        red=mask(origin/'masks/howe'/page/'03_text_red.png');newred=mask(OUT/'masks/automatic'/page/'03_text_red.png')
+        removed=before&~after;csc=mask(ROOT/'data/split_dataset_csc_mask_v2/test'/page.split('_')[0]/page/'02_text_black.png')
+        assert not np.any(after&~before) and not np.any(removed&csc) and not np.any(removed&red)
+        assert np.array_equal(red,newred) and int(removed.sum())==d['removed_pixels']
+        assert driver.digest(ROOT/inf['output'])==inf['sha256']
+        assert driver.digest(ROOT/inf['baseline'])==inf['baseline_sha256']
+        prior_file='inference_audit.json' if case['origin']=='six_challenge_fixed_review' else 'inference_complete.json'
+        history=json.loads((origin/prior_file).read_text())['results']
+        expected=next(r for r in history if r['id']==case['id'] and r['method']=='howe')
+        assert expected['sha256']==inf['baseline_sha256']
+        source=Image.open(ROOT/case['source']).convert('RGB');baseline=Image.open(ROOT/inf['baseline']).convert('RGB');output=Image.open(ROOT/inf['output']).convert('RGB')
+        assert source.size==baseline.size==output.size==tuple(case['input_size'])
+        a=np.asarray(baseline);z=np.asarray(output);ag=cv2.cvtColor(a,cv2.COLOR_RGB2GRAY);zg=cv2.cvtColor(z,cv2.COLOR_RGB2GRAY)
+        check=dict(id=case['id'],removed_pixels=int(removed.sum()),removed_csc_black=0,red_mask_changed=0,
+            source_red_output_changed=int(np.any(np.asarray(source)!=z,axis=2)[red].sum()),
+            retained_dark_to_light=int((after&(ag<100)&(zg>=100)).sum()),
+            excluded_dark_before=int((removed&(ag<100)).sum()),excluded_dark_after=int((removed&(zg<100)).sum()))
+        assert check['source_red_output_changed']==0
+        if case['id']=='07':assert check['excluded_dark_after']==0 and check['retained_dark_to_light']==0
+        overlay=np.asarray(source).copy();overlay[removed]=[255,45,45]
+        x,y,w,h=case['roi_xywh']
+        row=[dict(caption=case['id']+'：原画像・基本Howe・自動候補条件／開発例',context_xyxy=[x,y,x+w,y+h])]
+        name=f"{case['id']}_DDRM比較.png"
+        gallery.board(row,[source,baseline,output,Image.fromarray(overlay)],
+                      ['原画像','固定Howe → DDRM','自動候補 → DDRM','除外画素（赤）'],name,(430,450))
+        panels.append(Image.open(OUT/name).convert('RGB'));checks.append(check)
+        if case['id']=='07':
+            controls=json.loads((BASE/'bleed_local_review/局所分類.json').read_text())['controls']
+            gallery.board(controls,[source,baseline,output,Image.fromarray(overlay)],
+                ['原画像','固定Howe → DDRM','自動候補 → DDRM','除外画素（赤）'],
+                '07_自動候補_DDRM拡大比較.png',(430,500))
+            gallery.board([dict(caption='全ページ：自動対応条件／手指定座標と成分番号を選定に使わない',context_xyxy=[0,0,source.width,source.height])],
+                [source,baseline,output],['原画像','固定Howe → DDRM','自動候補 → DDRM'],
+                '07_自動候補_DDRM全ページ比較.png',(620,1040))
+            colors=np.array([[210,50,50],[20,30,45],[220,218,208],[225,155,30],[140,105,200]],np.uint8)
+            route=np.asarray(Image.open(OUT/'masks/automatic'/page/'routing_labels.png'))
+            assert np.isin(route,[0,1,2,3,4]).all()
+            sh=Image.new('RGB',(1240,1080),'white');dr=ImageDraw.Draw(sh);font=ImageFont.truetype(gallery.FONT,18)
+            sh.paste(source.resize((590,978)),(10,65));sh.paste(Image.fromarray(colors[route]).resize((590,978)),(630,65))
+            dr.text((10,5),'07 原画像',font=font,fill='black');dr.text((630,5),'排他的な分類：全クラスのDDRM接続は未実装',font=font,fill='black')
+            dr.text((10,1047),'赤=赤候補　黒=文字　灰=背景　橙=修復候補　紫=未割当・競合を含む保留',font=font,fill='black')
+            sh.save(OUT/'07_修復対象の分類.png')
+    gallery.OUT=old_gallery_out
+    width=max(p.width for p in panels);sh=Image.new('RGB',(width,sum(p.height for p in panels)+12*(len(panels)-1)),'white');y=0
+    for p in panels:sh.paste(p,(0,y));y+=p.height+12
+    sh.save(OUT/'12例_Howeと自動候補_DDRM比較.png')
+    with (OUT/'12例_アブレーション.csv').open('w') as f:
+        writer=csv.writer(f);writer.writerow(['id','CSC劣化を一律除外する画素数','位置対応のみの除外画素数','CSCと位置対応と保留条件による除外画素数','保留クラス画素数'])
+        for d in done['results']:writer.writerow([d['id'],d['naive_csc_veto_removed_pixels'],d['strict_geometry_removed_pixels'],d['removed_pixels'],d['route_counts']['unknown']])
+    driver.save_json(OUT/'output_checks.json',dict(results=checks,
+        visual_review='07 native context and full-page reviewed; 11 unchanged outputs verified against historical hashes',
+        completed=True))
+    proposal='''# Howeを基準とした提案手法の位置づけ
+
+**Howeへの置換だけを提案の中心にしない。研究仮説は、筆画保持と劣化除去の根拠を分け、判定できない領域を保留する修復領域制御が、文字欠落を抑えながらDDRMによる文書改善を可能にする、というものとする。**
+
+この文書は実装済みの成果と今後検証する仮説を区別する。論文としての新規性を確認済みとはしていない。
+
+## 先行研究との境界
+
+Howeに背景補償・筆画連結性保持・孤立ノイズ除去を組み合わせる枠組みはすでに存在する。[Xiong et al., 2021](https://link.springer.com/article/10.1186/s13640-021-00556-4)。表裏ページを位置合わせしてカラー写本の裏移りを修復する方法も既存である。[Savino and Tonazzini, 2016](https://iris.cnr.it/bitstream/20.500.14243/312138/2/prod_345617-doc_168639.pdf)。したがって「Howe＋後処理」「近隣鏡像＋除去」「保留ラベル」の存在だけを独自性にしない。今回の確認は関連研究の一部であり、網羅的な新規性調査ではない。
+
+DDRM自体も既存の逆問題修復法である。[Kawar et al., 2022](https://arxiv.org/abs/2201.11793)。我々が検証する対象は、歴史文書の色情報と弱い筆画を扱う領域制御、およびその制御が復元後の文字欠落・非文字残留に与える効果である。
+
+## 提案の候補構成
+
+| 役割 | 基本情報 | 制御する内容 |
+|---|---|---|
+| 字形候補の確保 | 固定Howe | 淡い筆画を最初に確保する。Howeそのものを新規手法と呼ばない |
+| 文字・色情報の保護 | CSC黒・赤、筆画成分 | 除外候補が保護領域と重なる場合は保持する |
+| 劣化の根拠 | CSC劣化、原画像の局所濃淡 | 明るい・CSC未検出という理由だけで消さない |
+| 追加の対応根拠 | 使用可能な近隣ページの鏡像 | 同じ移動量で複数の成分が説明できる候補を絞る |
+| 不確かな領域の扱い | CSC未割当・クラス競合・弱い対応 | 未割当を劣化へ強制分類しない。保留を明示する |
+| 再構成 | DDRM | 修復対象と保護対象の区別を条件として反映する |
+
+近隣ページは追加情報のある場合の補助機能とする。これを必須にすると単一画像で処理できる方法とは入力条件が変わるため、単一画像条件と複数画像条件を分けて比較する。
+
+## 今回実装した範囲
+
+画像ID・手指定座標・前回の成分番号を選定に使わず、Howe成分の濃淡、CSC分類、近隣ページとの局所形状対応から黒マスクの除外候補を生成した。CSC劣化分類は実際に判定条件に用い、その結果をDDRMの黒マスクへ反映した。
+
+近隣候補は同じtest資料ディレクトリに存在するページ順の前後2ステップ以内とし、左右反転して対象寸法に合わせる。弱い成分を筆画幅に応じてグループ化し、局所相関の上下分割で移動量の整合性を確認する。単独成分は保留し、同一参照によって少なくとも2成分の濃い形状が支持される場合だけ候補を認める。赤とCSC黒の成分は除外しない。条件はprotocol.jsonに保存した。
+
+Howe、朱印、DDRMモデル・サンプリングの設定は変更していない。原画像・基本マスク・凍結推論コードも変更していない。新しい修復対象のラベル画像は、赤・文字・背景・修復候補・保留の排他的な分類として保存した。
+
+**このラベル画像全体をDDRMの観測条件へ接続する実装はまだ行っていない。現行推論は引き続き黒・赤マスクを使用する。** CSC背景クラスは今回の分類図に用いるが、直接の推論条件ではない。既存コードでは原画像の黒インクRGBを観測として保持する処理もなく、主に文字形状マスクと背景参照を用い、赤だけを原画像から後合成している。多クラスの観測制御を主張するなら、この接続と挙動の検証が必要になる。
+
+## 今回の結果
+
+既存6課題と追加6開発例、計12例に同じ条件を適用した。最終の自動条件は07の3成分・439画素を選択し、他の11例の黒マスクは変更しなかった。前回の手動除外4成分・515画素を完全再現した結果ではない。残る1成分は濃淡支持条件を満たさず保留した。
+
+CSC劣化を一律に除外する条件は多くの画素を削除する。除去量の多さを改善と見なさない。位置対応だけの厳しい条件では最終12例とも選択なしとなった。07で新たに選択された3成分はCSC劣化と位置対応の両方を使う分岐によるもので、単純なHowe置換との差を切り分けられる。
+
+ただし初回の自動位置対応試作では07で候補を選べず、CSC支持を加えた初回試作では04の2成分と07の点状像を含む計6成分を選んだ。点状像の由来は確認できなかったため、最終試作で単独成分の保留条件を追加した。この検討履歴はinitial_strict_geometry_probeとinitial_joint_probeへコード・結果とも保存した。最終条件は今回の開発例を見て修正しており、これら12例を独立testと呼ばない。
+
+DDRM出力は07のみ新規推論し、他の11例は黒・赤の完全一致と入力・推論条件を検証して既存出力を再利用した。原画像付きの拡大比較と全ページで、07の候補3成分の減少と主要な表文字の保持を確認した。除外した439画素の暗画素は439から0となり、保持した黒マスク領域でグレー100未満から100以上へ変化した画素は0だった。これは元マスク上の診断で、文字の正解精度ではない。同じ領域には未選択の点と短線が残り、他の11例では追加の劣化除去効果を示していない。1例の局所改善だけでは汎用的な優位性や論文の新規性を実証できない。
+
+## 次に成立させる検証
+
+1. 文書単位で開発資料と未使用の評価資料を分け、以後の条件を固定する。現状の12例は開発資料とする。資料単位の分割を優先し、近隣参照ページも同じ分割に所属させる。
+2. 表文字・確認可能な劣化・不明を分けた局所正解を作る。表文字の欠落、筆画連結性、非文字の残留を別々に評価する。不明を劣化の正解へ含めない。
+3. CSC＋DDRM、Howe＋DDRM、CSC劣化の一律除外、位置対応のみ、提案候補、保留なしの条件を比較し、何が改善を生んだかを検証する。追加参照画像の有無は揃えるか別の比較群にする。
+4. 背景と劣化の分類をDDRMの観測条件へ明示的に接続する。保護対象の画素値を何から取るか、劣化上の本文をどう守るかを仕様化する。現在のモデルで不要な筆画が生成されないことも調べる。
+5. 修復の有効性を二値化の精度だけで判断しない。復元後の本文保持、劣化残留、朱印への副作用、紙面の見た目、保留率を報告する。汚れた原画像を清浄な正解画像としてPSNRを計算しない。
+
+研究としての判断基準は「Howe単独と同程度に筆画を保持しながら、劣化残留を複数の未使用資料で減らせるか」とする。差が示せなければ、提案の独自性や優位性を強く主張せず、統合システムと失敗例の分析として位置づけを見直す。
+
+## 成果物
+
+- [07のDDRM拡大比較](07_自動候補_DDRM拡大比較.png)
+- [12例のDDRM比較](12例_Howeと自動候補_DDRM比較.png)
+- [07の分類図](07_修復対象の分類.png)
+- [除外数の比較表](12例_アブレーション.csv)
+- [実装](../../../scripts/benchmark/probe_evidence_gated_howe.py)
+- [自動判定の保護条件のテスト](../../../scripts/benchmark/test_evidence_gated_howe.py)
+
+相関値やCSCの一致率は正解確率ではない。現時点でdense GT、OCRによるCER、独立資料での性能は測定していない。
+'''
+    (OUT/'提案手法の設計と初期検証.md').write_text(proposal)
+    artifact_paths=[OUT/'提案手法の設計と初期検証.md',OUT/'12例_アブレーション.csv',OUT/'output_checks.json',
+        OUT/'protocol.json',OUT/'complete.json',OUT/'ddrm_complete.json']+list(OUT.glob('*.png'))
+    for p in artifact_paths:
+        if p.suffix=='.png':Image.open(p).verify()
+    scripts=[ROOT/'scripts/benchmark/probe_evidence_gated_howe.py',ROOT/'scripts/benchmark/test_evidence_gated_howe.py',
+             BASE/'run_evidence_gated_ddrm.py',Path(__file__)]
+    driver.save_json(OUT/'final_audit.json',dict(status='completed_development_prototype',
+        checked_cases=12,new_native_inferences=1,exact_baseline_reuse=11,
+        original_sources_and_default_masks_unchanged=True,howe_red_ddrm_parameters_unchanged=True,
+        all_csc_black_and_red_mask_pixels_protected=True,independent_test=False,
+        novelty_established=False,multiclass_observation_operator_implemented=False,
+        safety_tests_passed=7,safety_test_code_sha256=driver.digest(scripts[1]),
+        artifacts_sha256={driver.relative(p):driver.digest(p) for p in artifact_paths},
+        scripts_sha256={driver.relative(p):driver.digest(p) for p in scripts}))
+    for name,target in [('Howe改善_自動判定比較.png','evidence_gated_howe_20261010/07_自動候補_DDRM拡大比較.png'),
+        ('提案手法_設計と初期検証.md','evidence_gated_howe_20261010/提案手法の設計と初期検証.md')]:
+        link=BASE/name
+        if not link.exists():link.symlink_to(target)
+    print(json.dumps(checks[-7:],ensure_ascii=False),flush=True)
+
+if __name__=='__main__':main()

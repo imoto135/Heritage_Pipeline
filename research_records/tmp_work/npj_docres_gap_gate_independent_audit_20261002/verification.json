@@ -1,0 +1,175 @@
+{
+  "status": "passed",
+  "frames": 6,
+  "native_ROI_panels": 80,
+  "independent_component_mean_gate": true,
+  "independent_scalar_composition": true,
+  "colour_rounding_bound": true,
+  "input_probability_provenance_matched": true,
+  "records": [
+    {
+      "frame": "page_200019865",
+      "gate_counts": {
+        "ungated": 611,
+        "gate_05": 162,
+        "gate_09": 20,
+        "red": 0,
+        "hold": 12852,
+        "extra": 0
+      },
+      "fixed_contrast_connectivity": {
+        "ungated": {
+          "selected": 44,
+          "connected_at_fixed_local_L_contrast_12": 43
+        },
+        "gate_05": {
+          "selected": 12,
+          "connected_at_fixed_local_L_contrast_12": 12
+        },
+        "gate_09": {
+          "selected": 5,
+          "connected_at_fixed_local_L_contrast_12": 5
+        }
+      },
+      "colour_channel_multiplier_exact_up_to_rounding": true,
+      "outside_mask_and_red_hold_extra_exact": true
+    },
+    {
+      "frame": "page_200017197",
+      "gate_counts": {
+        "ungated": 36,
+        "gate_05": 36,
+        "gate_09": 29,
+        "red": 0,
+        "hold": 3235,
+        "extra": 0
+      },
+      "fixed_contrast_connectivity": {
+        "ungated": {
+          "selected": 8,
+          "connected_at_fixed_local_L_contrast_12": 7
+        },
+        "gate_05": {
+          "selected": 8,
+          "connected_at_fixed_local_L_contrast_12": 7
+        },
+        "gate_09": {
+          "selected": 6,
+          "connected_at_fixed_local_L_contrast_12": 6
+        }
+      },
+      "colour_channel_multiplier_exact_up_to_rounding": true,
+      "outside_mask_and_red_hold_extra_exact": true
+    },
+    {
+      "frame": "known_200010454_v2",
+      "gate_counts": {
+        "ungated": 298,
+        "gate_05": 288,
+        "gate_09": 186,
+        "red": 20609,
+        "hold": 8555,
+        "extra": 1997
+      },
+      "fixed_contrast_connectivity": {
+        "ungated": {
+          "selected": 32,
+          "connected_at_fixed_local_L_contrast_12": 32
+        },
+        "gate_05": {
+          "selected": 30,
+          "connected_at_fixed_local_L_contrast_12": 30
+        },
+        "gate_09": {
+          "selected": 23,
+          "connected_at_fixed_local_L_contrast_12": 23
+        }
+      },
+      "colour_channel_multiplier_exact_up_to_rounding": true,
+      "outside_mask_and_red_hold_extra_exact": true
+    },
+    {
+      "frame": "crop_hnsd",
+      "gate_counts": {
+        "ungated": 122,
+        "gate_05": 0,
+        "gate_09": 0,
+        "red": 0,
+        "hold": 3313,
+        "extra": 0
+      },
+      "fixed_contrast_connectivity": {
+        "ungated": {
+          "selected": 11,
+          "connected_at_fixed_local_L_contrast_12": 11
+        },
+        "gate_05": {
+          "selected": 0,
+          "connected_at_fixed_local_L_contrast_12": 0
+        },
+        "gate_09": {
+          "selected": 0,
+          "connected_at_fixed_local_L_contrast_12": 0
+        }
+      },
+      "colour_channel_multiplier_exact_up_to_rounding": true,
+      "outside_mask_and_red_hold_extra_exact": true
+    },
+    {
+      "frame": "old_upper_crop",
+      "gate_counts": {
+        "ungated": 17,
+        "gate_05": 5,
+        "gate_09": 5,
+        "red": 0,
+        "hold": 24,
+        "extra": 0
+      },
+      "fixed_contrast_connectivity": {
+        "ungated": {
+          "selected": 2,
+          "connected_at_fixed_local_L_contrast_12": 2
+        },
+        "gate_05": {
+          "selected": 1,
+          "connected_at_fixed_local_L_contrast_12": 1
+        },
+        "gate_09": {
+          "selected": 1,
+          "connected_at_fixed_local_L_contrast_12": 1
+        }
+      },
+      "colour_channel_multiplier_exact_up_to_rounding": true,
+      "outside_mask_and_red_hold_extra_exact": true
+    },
+    {
+      "frame": "old_full_page",
+      "gate_counts": {
+        "ungated": 29,
+        "gate_05": 4,
+        "gate_09": 4,
+        "red": 0,
+        "hold": 43276,
+        "extra": 0
+      },
+      "fixed_contrast_connectivity": {
+        "ungated": {
+          "selected": 7,
+          "connected_at_fixed_local_L_contrast_12": 7
+        },
+        "gate_05": {
+          "selected": 1,
+          "connected_at_fixed_local_L_contrast_12": 1
+        },
+        "gate_09": {
+          "selected": 1,
+          "connected_at_fixed_local_L_contrast_12": 1
+        }
+      },
+      "colour_channel_multiplier_exact_up_to_rounding": true,
+      "outside_mask_and_red_hold_extra_exact": true
+    }
+  ],
+  "pixel_GT": false,
+  "adopted": false
+}

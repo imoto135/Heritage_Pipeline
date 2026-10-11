@@ -1,0 +1,40 @@
+{
+  "settings": {
+    "change": "Add nonnegative piecewise-linear ink density instead of a single Gaussian",
+    "knot_spacing_native_pixels": [
+      4,
+      8
+    ],
+    "endpoints": "zero density at -32 and +32",
+    "frozen": "v0 pigment and sampled geometry; v1 chromatic data and original hypotheses",
+    "background": "Same 5 v0/v1 models",
+    "stress": "Additional arbitrary-color piecewise profile as a no-ink background explanation",
+    "sufficient_anchor_rule": "Unchanged; missing q remains unexplained",
+    "acceptable_mse": 4.0,
+    "near_best_mse": 0.25,
+    "amplitude_snr_gate": 1.0,
+    "stage": "Known-development chromatic reconstruction; no dense masks or accuracy",
+    "neural_training": false,
+    "pixel_GT": false
+  },
+  "source_sha256": "60282ccfae0da1b4a2202efd8ac772eeb4f0e9e090c5e42437b5614da54a1e65",
+  "dependencies": {
+    "scripts/benchmark/probe_ink_background_decomposition.py": "6d1fa38a1ec6c56c67cf16a9b86cae2e00977079656fc5fc7be34a235fe777ab",
+    "scripts/benchmark/probe_chromatic_ink_decomposition.py": "99599162f4c09422eee553d45889068b87936482d3381923d721617437a12aa6",
+    "tmp_work/ink_background_chromatic_pilot_v1_20260930/manifest.json": "2cb8d26fbe563b746b119042110ba5e94f02c214485cb5ac94099be090f1ca33",
+    "tmp_work/ink_background_chromatic_pilot_v1_20260930/complete.json": "a9c53051021b127cb15c4d4374d4b5969621885b7cbe967f543fdce06800e653",
+    "tmp_work/ink_background_chromatic_pilot_v1_20260930/diagnostics.json": "21187fc70f437d377e1b62d65542f6babf99615e4cefde33a3f01e6e600d274b",
+    "tmp_work/ink_background_profile_pilot_v0_20260930/calibrations.json": "d8cb04e034162c29a2aa43ffc7862e02505f1ade565d1769ff744d436d3fbe3c",
+    "tmp_work/ink_background_chromatic_pilot_v1_20260930/200010454_00002_2/near_seal_brown/profiles.npz": "d400684d1d524a3877330404ef05748c5e42e91ab56470fe7b287d1ca19130e6",
+    "tmp_work/ink_background_chromatic_pilot_v1_20260930/200010454_00002_2/near_seal_brown/original.png": "6a1972435e699895ca24742c4588f640914c2d39147c175156bebb1aa62cac92",
+    "tmp_work/ink_background_chromatic_pilot_v1_20260930/200010454_00002_2/remote_brown/profiles.npz": "05f21e0c0af048b5f2c205b8e46e58271d29601229d8dc392ea114536d46248f",
+    "tmp_work/ink_background_chromatic_pilot_v1_20260930/200010454_00002_2/remote_brown/original.png": "a875b60f6a03c4054466d7495bc5bb1020d70f17a1f876ef14302575e0462de9",
+    "tmp_work/ink_background_chromatic_pilot_v1_20260930/200021086_00032_2/faint_stamp/profiles.npz": "b2b3cecc9eef18c01240e73196e486af0c6d85f898c431090bfd828005eff482",
+    "tmp_work/ink_background_chromatic_pilot_v1_20260930/200021086_00032_2/faint_stamp/original.png": "9dc38792ccab6a602681906c042e972ed19553eb4e65b995948fe92291808778",
+    "tmp_work/ink_background_chromatic_pilot_v1_20260930/200021763_00002_2/long_tail/profiles.npz": "6ae4a9975508314ff1a4dafe580ab2d8d2948b1b45480b04e8197c2f314f4eee",
+    "tmp_work/ink_background_chromatic_pilot_v1_20260930/200021763_00002_2/long_tail/original.png": "6445237274395dd190d7f45623991e16ff5bb9da7294c0d229f87bb1456466dc",
+    "tmp_work/ink_background_chromatic_pilot_v1_20260930/200021763_00002_2/upper_writing/profiles.npz": "b74ff7d49d3fbfa15c124243df325e8a0b76ea1751d4e9eab19d4edf81250d51",
+    "tmp_work/ink_background_chromatic_pilot_v1_20260930/200021763_00002_2/upper_writing/original.png": "6cad149474be43d09a0c7bcfb20e7346918c1856cc9cc7854fa38413df3670e7"
+  },
+  "protocol_before_outputs": true
+}

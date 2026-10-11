@@ -1,0 +1,118 @@
+{
+  "runtime_root": "tmp_work/npj_dirt_control_20261002/source_snapshot/ddrm_npj_v2",
+  "capture": "During inference; frozen snapshot untouched",
+  "files": [
+    {
+      "path": "tmp_work/npj_dirt_control_20261002/source_snapshot/ddrm_npj_v2/codes/Inpainting.py",
+      "sha256": "cc783e6f6b8e76c6352d39b51da04f4d4c6f1afbc7a167a2269e13a83cf2e12a"
+    },
+    {
+      "path": "tmp_work/npj_dirt_control_20261002/source_snapshot/ddrm_npj_v2/codes/OrigDataset.py",
+      "sha256": "33c6660f1ad97d045509f24865a7811b2a52f9f329172436e59fbc676070fd6c"
+    },
+    {
+      "path": "tmp_work/npj_dirt_control_20261002/source_snapshot/ddrm_npj_v2/codes/diffusion.py",
+      "sha256": "9ef760c426b51f6a345d0c750dd0dae04b8ad8b308d5b79b1d10c500c59080bf"
+    },
+    {
+      "path": "tmp_work/npj_dirt_control_20261002/source_snapshot/ddrm_npj_v2/codes/openai/nn.py",
+      "sha256": "d9547fb22b421a16dc079cb82a9d98630100b5e1b2a710d343f4d3f90b8661f3"
+    },
+    {
+      "path": "tmp_work/npj_dirt_control_20261002/source_snapshot/ddrm_npj_v2/codes/openai/unet.py",
+      "sha256": "ceb81079066117455c71ced730a62ee3f23967e7a51271126340b59cb24069b7"
+    },
+    {
+      "path": "tmp_work/npj_dirt_control_20261002/source_snapshot/ddrm_npj_v2/codes/openai_1ch/nn.py",
+      "sha256": "d9547fb22b421a16dc079cb82a9d98630100b5e1b2a710d343f4d3f90b8661f3"
+    },
+    {
+      "path": "tmp_work/npj_dirt_control_20261002/source_snapshot/ddrm_npj_v2/codes/openai_1ch/unet.py",
+      "sha256": "ceb81079066117455c71ced730a62ee3f23967e7a51271126340b59cb24069b7"
+    },
+    {
+      "path": "tmp_work/npj_dirt_control_20261002/source_snapshot/ddrm_npj_v2/codes/random_crop.py",
+      "sha256": "2b4df6582b1754652548960be66e7a4a668be1c6a1ec82cdf57580d3c72cc0e9"
+    },
+    {
+      "path": "tmp_work/npj_dirt_control_20261002/source_snapshot/ddrm_npj_v2/datasets/__init__.py",
+      "sha256": "e120b14931f914e5fb1c3c64847d407178eb7ed4e378c27200f2abda56762954"
+    },
+    {
+      "path": "tmp_work/npj_dirt_control_20261002/source_snapshot/ddrm_npj_v2/datasets/celeba.py",
+      "sha256": "ae136695098b70ed6ed7e6140a2ad9ca717034e7bd8ddf8ec71d118baca34b5e"
+    },
+    {
+      "path": "tmp_work/npj_dirt_control_20261002/source_snapshot/ddrm_npj_v2/datasets/imagenet_subset.py",
+      "sha256": "f9b8d31c653bb8d8518fb84a6bdff9bfde385fd9b5d0143de19909e679ccb601"
+    },
+    {
+      "path": "tmp_work/npj_dirt_control_20261002/source_snapshot/ddrm_npj_v2/datasets/lsun.py",
+      "sha256": "0b0bfaa3ce8f82490725069c6a5f576cf6a05b88498241f20480c05506f20c0f"
+    },
+    {
+      "path": "tmp_work/npj_dirt_control_20261002/source_snapshot/ddrm_npj_v2/datasets/utils.py",
+      "sha256": "c1ff6203044ab3300156caa957bd9b2ddb092ce7ca84eb84354adce56b4679ed"
+    },
+    {
+      "path": "tmp_work/npj_dirt_control_20261002/source_snapshot/ddrm_npj_v2/datasets/vision.py",
+      "sha256": "7e7a817dca0da5f91d438141ad93108b3d6319ff63300900916fa576577b1891"
+    },
+    {
+      "path": "tmp_work/npj_dirt_control_20261002/source_snapshot/ddrm_npj_v2/functions/__init__.py",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "tmp_work/npj_dirt_control_20261002/source_snapshot/ddrm_npj_v2/functions/ckpt_util.py",
+      "sha256": "7a9d0a26dbd8a753a128c673a6de236271f8749d2da874e5ad3152e6034b2d0e"
+    },
+    {
+      "path": "tmp_work/npj_dirt_control_20261002/source_snapshot/ddrm_npj_v2/functions/denoising.py",
+      "sha256": "6e59f0b2348b81e3b24e2e62c50047be5bda63cd6583822e3d09ba152beff74f"
+    },
+    {
+      "path": "tmp_work/npj_dirt_control_20261002/source_snapshot/ddrm_npj_v2/functions/svd_replacement.py",
+      "sha256": "2d54c04de543558c0091d4e1db3e84be437a52e33af7c07bd5246e64af2f7cbc"
+    },
+    {
+      "path": "tmp_work/npj_dirt_control_20261002/source_snapshot/ddrm_npj_v2/runners/__init__.py",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "tmp_work/npj_dirt_control_20261002/source_snapshot/ddrm_npj_v2/scripts/ace.py",
+      "sha256": "35f40c8397a4df8fc07e64ec61994b561ceefe922803e84d9046434d992b5146"
+    },
+    {
+      "path": "tmp_work/npj_dirt_control_20261002/source_snapshot/ddrm_npj_v2/scripts/csc.py",
+      "sha256": "11815cbb82d6972644498db9c5a8879dfc7e104b14a2749e04fdf0198e19b22f"
+    },
+    {
+      "path": "tmp_work/npj_dirt_control_20261002/source_snapshot/ddrm_npj_v2/scripts/generate_mask_csc.py",
+      "sha256": "c77d63315c46117a8a978634d2a5b04ad8aacef09b790d08653667e8950c74ff"
+    },
+    {
+      "path": "tmp_work/npj_dirt_control_20261002/source_snapshot/ddrm_npj_v2/scripts/pipeline_ddrm.py",
+      "sha256": "bbc130a1761be21dfa7ff6d5ec9bc29e34155a56dfa405d91daa6a989a77f2ec"
+    },
+    {
+      "path": "tmp_work/npj_dirt_control_20261002/source_snapshot/ddrm_npj_v2/scripts/pipeline_ddrm_page.py",
+      "sha256": "38d54734213e6b83b1e5271b94a0239baf803b590af334112e1e496c6d4c0a58"
+    },
+    {
+      "path": "tmp_work/npj_dirt_control_20261002/source_snapshot/ddrm_npj_v2/scripts/postprocess_composite_stage.py",
+      "sha256": "cda3dff74420e03b5bb3b9827631512e4f7edd5ed56de249e66c85b580727dc3"
+    },
+    {
+      "path": "tmp_work/npj_dirt_control_20261002/source_snapshot/ddrm_npj_v2/scripts/postprocess_flatfield.py",
+      "sha256": "537b19526fc44a56843498ca499590a387334136e4338f70e631b21e884965df"
+    }
+  ],
+  "versions": {
+    "opencv": "4.13.0",
+    "numpy": "1.26.4",
+    "scipy": "1.15.3",
+    "skimage": "0.25.2",
+    "torch": "2.1.0+cu118",
+    "pillow": "12.2.0"
+  }
+}

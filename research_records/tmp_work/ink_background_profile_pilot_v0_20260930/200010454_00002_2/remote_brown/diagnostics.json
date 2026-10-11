@@ -1,0 +1,73 @@
+{
+  "page": "200010454_00002_2",
+  "roi": "remote_brown",
+  "xywh": [
+    710,
+    200,
+    450,
+    330
+  ],
+  "profiles": 160,
+  "sampled_v2_edit": 28,
+  "sampled_v6_edit": 28,
+  "spaces": {
+    "rgb_additive": {
+      "status": "estimated",
+      "median_best_background_cv_mse": 401.7639012369589,
+      "median_best_ink_cv_mse": 151.68271339088844
+    },
+    "encoded_od": {
+      "status": "estimated",
+      "median_best_background_cv_mse": 916.965605141813,
+      "median_best_ink_cv_mse": 283.8170879779485
+    },
+    "linear_srgb_od": {
+      "status": "estimated",
+      "median_best_background_cv_mse": 870.7602807729093,
+      "median_best_ink_cv_mse": 278.29531969298773
+    }
+  },
+  "scenarios": {
+    "restricted_background": {
+      "all": {
+        "ink_required": 1,
+        "ambiguous": 1,
+        "low_ink": 2,
+        "unexplained": 156
+      },
+      "v2_edit_locations": {
+        "ink_required": 1,
+        "ambiguous": 0,
+        "low_ink": 0,
+        "unexplained": 27
+      },
+      "v6_edit_locations": {
+        "ink_required": 1,
+        "ambiguous": 0,
+        "low_ink": 0,
+        "unexplained": 27
+      }
+    },
+    "colored_crease_allowed": {
+      "all": {
+        "ink_required": 1,
+        "ambiguous": 2,
+        "low_ink": 2,
+        "unexplained": 155
+      },
+      "v2_edit_locations": {
+        "ink_required": 1,
+        "ambiguous": 1,
+        "low_ink": 0,
+        "unexplained": 26
+      },
+      "v6_edit_locations": {
+        "ink_required": 1,
+        "ambiguous": 1,
+        "low_ink": 0,
+        "unexplained": 26
+      }
+    }
+  },
+  "pixel_GT": false
+}

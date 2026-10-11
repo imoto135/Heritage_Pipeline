@@ -1,0 +1,52 @@
+[
+  {
+    "name": "small_annotations_recovery",
+    "pid": 3538426,
+    "args": [
+      "scan_small_annotations.py"
+    ],
+    "log": "tmp_work/vermillion_stain_research_20261007_8h/runtime_logs/small_annotations_recovery.log",
+    "utc": "2026-10-07T17:18:24.101814+00:00"
+  },
+  {
+    "name": "counterfactual_csc_resume",
+    "pid": 3538427,
+    "args": [
+      "evaluate_counterfactual_challenge.py",
+      "--family",
+      "csc_v2"
+    ],
+    "log": "tmp_work/vermillion_stain_research_20261007_8h/runtime_logs/counterfactual_csc_resume.log",
+    "utc": "2026-10-07T17:18:24.102559+00:00"
+  },
+  {
+    "name": "counterfactual_docres_resume",
+    "pid": 3538428,
+    "args": [
+      "evaluate_counterfactual_challenge.py",
+      "--family",
+      "docres_chroma",
+      "--device",
+      "cuda:0"
+    ],
+    "log": "tmp_work/vermillion_stain_research_20261007_8h/runtime_logs/counterfactual_docres_resume.log",
+    "utc": "2026-10-07T17:18:24.103516+00:00"
+  },
+  {
+    "name": "render_loo",
+    "pid": 3538429,
+    "args": [
+      "render_actual_red_overlay.py",
+      "--methods",
+      "saved_csc_v2_red",
+      "texture_paper_texture_sparse_exclude200021763",
+      "texture_paper_texture_sparse_exclude200021086",
+      "texture_paper_texture_sparse_exclude200020019",
+      "region_spatial_forest",
+      "--suffix",
+      "leave_book_out_texture"
+    ],
+    "log": "tmp_work/vermillion_stain_research_20261007_8h/runtime_logs/render_loo.log",
+    "utc": "2026-10-07T17:18:24.104409+00:00"
+  }
+]

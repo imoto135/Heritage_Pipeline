@@ -1,0 +1,18 @@
+{
+  "method": "stain",
+  "resources": {
+    "/home/imoto/Heritage_Pipeline/tmp_work/npj_literature_models_20261002/repos/StainRestorer/models/StainRestorer.py": "d12181917d63a80bda21fa6a938baad561748b3b086478761eab0a67d5dba11a",
+    "/home/imoto/Heritage_Pipeline/tmp_work/npj_literature_models_20261002/weights/StainDoc.pth": "7cdbd674367535d4f429ef077030b930da2a460012fe8fc44d995ead2f7418ee"
+  },
+  "original_inputs_only": true,
+  "source_sha256": "01ea2f8636b4412a1aea7a47e9d56ea9c47254e0744ab91e44e24e368e2cb47d",
+  "adapter_source_sha256": "1fb608304a989abdcc367d434dd2b7fd77cb953e73de6f634730479bc11fde41",
+  "docres_weight_provenance": "Community mirror DaVinciCode/doctra-docres-main, hash agrees with second mirror; original OneDrive requires auth; author-copy identity not independently verified",
+  "stain_weight": "Author StainDoc normal-stain release, not Seal/Mark-removal weights",
+  "tiling": "512 native tiles, halo64, disjoint384 cores; complete original-size prompt",
+  "exact_author_benchmark": false,
+  "GT": false,
+  "not_adopted": true,
+  "color": "Stain RGB tensor -> BGR array -> RGB PNG; DocRes BGR tensor/output -> RGB PNG",
+  "interpretation": "DocRes binarization is a foreground candidate, not color restoration"
+}

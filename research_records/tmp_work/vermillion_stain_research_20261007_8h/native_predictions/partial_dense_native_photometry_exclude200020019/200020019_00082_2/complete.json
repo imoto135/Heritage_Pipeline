@@ -1,0 +1,26 @@
+{
+  "name": "partial_dense_native_photometry_exclude200020019",
+  "page": "200020019_00082_2",
+  "book": "200020019",
+  "role": "development",
+  "original": "data/train/200020019/200020019_00082_2.jpg",
+  "source_sha256": "1202997f573d6dcdc461fda9941fa0889311ee31c34842f4b49c0c38d037847c",
+  "checkpoint_sha256": "731f689006e57ad734949a3b96537a57b2784a7001899f408d47435b6b1a2243",
+  "training_protocol_sha256": "e5a0c3d6ce190428b850acfb3076cd43b426584f52e184042388604e0c8f2c57",
+  "script_sha256": "656ba477c7df771d6efa5ed49451b6ba0086ac19bc854b50eb9da19dc8e031cf",
+  "native_inference_source_sha256": "04be92bef36d40cbb29da1ed410ea580e5112be110b1056d3d44e6d67531e903",
+  "threshold": 0.5,
+  "final_steps": 8000,
+  "mark_pixels": 559792,
+  "seconds": 7.746597715653479,
+  "outputs": {
+    "mark_mask.png": "9e9165ef49feb2d1e2e26c11b0b09639f02f284173514eab461ba8c9458fe2b7",
+    "mark_probability_preview.png": "badb1444588fb167a4de6c8be5e18dd80380df712901266f73e395c0057d96a7",
+    "stain_probability_preview.png": "28546d65ef3baf520cb04f96e0a517faba8865781941ae1e4d3e85dd5d211782",
+    "stain_mask.png": "a04e4545182b09f2ebab432a05f4c4364365e9f0d30d34fb65df18b0b045cf8f"
+  },
+  "no_real_pixel_or_reading_GT": true,
+  "excluded_development_books": [
+    "200020019"
+  ]
+}

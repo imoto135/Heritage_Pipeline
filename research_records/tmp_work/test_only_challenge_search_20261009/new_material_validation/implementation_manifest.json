@@ -1,0 +1,49 @@
+{
+  "captured_utc": "2026-10-09T10:00:36.516312+00:00",
+  "capture_scope": "implementation snapshot captured after masks, no implementation edits during mask computation",
+  "sources": [
+    {
+      "source": "tmp_work/classical_deep_review_20261008/run.py",
+      "sha256": "6992dca33c907aa6a187495b064b97f1b4cf174e64b82da036bb993c68e1f5d0",
+      "snapshot": "tmp_work/test_only_challenge_search_20261009/new_material_validation/source_snapshot/tmp_work/classical_deep_review_20261008/run.py"
+    },
+    {
+      "source": "tmp_work/classical_deep_review_20261008/graphcut_cli",
+      "sha256": "2c26f655019335c224c315e1a2444b7189e6faca7407f6076a0e8597a504e250",
+      "snapshot": "tmp_work/test_only_challenge_search_20261009/new_material_validation/source_snapshot/tmp_work/classical_deep_review_20261008/graphcut_cli"
+    },
+    {
+      "source": "tmp_work/classical_deep_review_20261008/graphcut_cli.cpp",
+      "sha256": "ad21ff552c882d4d48f64f89c8c98137ce891d300ad399f40ed281a600a5c828",
+      "snapshot": "tmp_work/test_only_challenge_search_20261009/new_material_validation/source_snapshot/tmp_work/classical_deep_review_20261008/graphcut_cli.cpp"
+    },
+    {
+      "source": "tmp_work/classical_black_comparison_20261008/compare.py",
+      "sha256": "3a496b552304301817a2f71818a38798161d31e3d0c66391b0dc1fc79c07dce6",
+      "snapshot": "tmp_work/test_only_challenge_search_20261009/new_material_validation/source_snapshot/tmp_work/classical_black_comparison_20261008/compare.py"
+    },
+    {
+      "source": "tmp_work/test_only_challenge_search_20261009/probe_howe_csc_fusion.py",
+      "sha256": "36df7841863b984ceba057e705217ed97ebd0368baa2f64eef0e1ce94dea2c23",
+      "snapshot": "tmp_work/test_only_challenge_search_20261009/new_material_validation/source_snapshot/tmp_work/test_only_challenge_search_20261009/probe_howe_csc_fusion.py"
+    },
+    {
+      "source": "tmp_work/test_only_challenge_search_20261009/make_howe_isolated_csc.py",
+      "sha256": "9611c6e923dc7ee6f738856a1b153b11736040cdbb128474c825fd9b66804863",
+      "snapshot": "tmp_work/test_only_challenge_search_20261009/new_material_validation/source_snapshot/tmp_work/test_only_challenge_search_20261009/make_howe_isolated_csc.py"
+    },
+    {
+      "source": "tmp_work/test_only_challenge_search_20261009/validate_new_materials.py",
+      "sha256": "87dbb39e6163e9257795bfa98b8419fa8e4c612eb096471d05b53bfe071be6cd",
+      "snapshot": "tmp_work/test_only_challenge_search_20261009/new_material_validation/source_snapshot/tmp_work/test_only_challenge_search_20261009/validate_new_materials.py"
+    }
+  ],
+  "versions": {
+    "opencv": "4.13.0",
+    "numpy": "1.26.4",
+    "scipy": "1.15.3",
+    "skimage": "0.25.2",
+    "pillow": "12.2.0",
+    "torch": "2.1.0+cu118"
+  }
+}

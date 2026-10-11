@@ -1,0 +1,57 @@
+{
+  "pages": 3,
+  "books": 3,
+  "failure_rois": 3,
+  "control_rois": 1,
+  "failure_verdicts": {
+    "partial": 1,
+    "unresolved": 2
+  },
+  "findings": [
+    {
+      "id": "brown_near_text",
+      "page": "200021869_00014_2",
+      "title": "文字のすぐ上の濃い茶色い斑点",
+      "baseline_failure": true,
+      "verdict": "unresolved",
+      "verdict_label": "未解決",
+      "observation": "本文に接する茶色い部分の中心は保護・保留側に残る。汚れと損傷のどちらかは画像だけでは確定できない。",
+      "v6_extra_pixels": 0
+    },
+    {
+      "id": "dark_text_control",
+      "page": "200021869_00014_2",
+      "title": "対照：同じページの濃い本文",
+      "baseline_failure": false,
+      "verdict": "control_preserved",
+      "verdict_label": "対照：主要筆画を維持",
+      "observation": "主要な黒筆画を維持。紙面の影・ムラも保留されるため、編集面積の減少を除去品質の改善とは数えない。",
+      "v6_extra_pixels": 0
+    },
+    {
+      "id": "faint_left_text",
+      "page": "200010454_00026_1",
+      "title": "別ページの細い筆画の分断",
+      "baseline_failure": true,
+      "verdict": "partial",
+      "verdict_label": "部分改善",
+      "observation": "細い端部・払いの編集候補が減る。極薄い線の分類には欠落が残り、全筆画の正解判定とは言えない。",
+      "v6_extra_pixels": 0
+    },
+    {
+      "id": "damage_control",
+      "page": "200014740_00065_2",
+      "title": "別冊の穴・裂けの濃い縁",
+      "baseline_failure": true,
+      "verdict": "unresolved",
+      "verdict_label": "未解決",
+      "observation": "穴・裂けの濃い縁が保護・保留側に残る。このIDは対照ではなく失敗例として登録済み。",
+      "v6_extra_pixels": 0
+    }
+  ],
+  "reviewer": "assistant_visual_review",
+  "pixel_GT": false,
+  "human_confirmation_pending": true,
+  "representative_accuracy": false,
+  "v6_specific_increment_in_selected_rois": false
+}

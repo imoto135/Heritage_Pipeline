@@ -1,0 +1,50 @@
+{
+  "outputs": {
+    "npj_output/new_warm_upper_loss/result/new_warm_upper_loss.png": "12b10516c95f03df44d10393ce1a76a0d260c36449c14b0a68597a0a34ceb51a",
+    "npj_output/new_warm_lower_loss/result/new_warm_lower_loss.png": "3d6a7f79db971fb58ff2c20564ec33b81036f5f4b5b5dfeae0bc0f9f8beb93af",
+    "npj_output/new_warm_faint_writing/result/new_warm_faint_writing.png": "8c7cefd76e0953f7d1ee0e9f964cdb21aebe573a5997bb163984128056b895a0",
+    "npj_output/new_gray_binding_mark/result/new_gray_binding_mark.png": "adba3ab5158b9fb9af6c0d09fbfa86eb30197613463c6cae774cbbc27f47d93a",
+    "npj_output/new_gray_writing/result/new_gray_writing.png": "9cb25e9f1dd3df9e578b8d503ed28408a87e47351ebcbbb015e9c29d98cf6c31",
+    "npj_output/known_saved_red_seal/result/known_saved_red_seal.png": "6d87390baaf02a701e5f7b9509c0a972b17effd26a55704db9e920334ce74e88"
+  },
+  "cases": [
+    {
+      "id": "new_warm_upper_loss",
+      "kind": "New frozen-code crop control",
+      "native_dimensions_verified": true
+    },
+    {
+      "id": "new_warm_lower_loss",
+      "kind": "New frozen-code crop control",
+      "native_dimensions_verified": true
+    },
+    {
+      "id": "new_warm_faint_writing",
+      "kind": "New frozen-code crop control",
+      "native_dimensions_verified": true
+    },
+    {
+      "id": "new_gray_binding_mark",
+      "kind": "New frozen-code crop control",
+      "native_dimensions_verified": true
+    },
+    {
+      "id": "new_gray_writing",
+      "kind": "New frozen-code crop control",
+      "native_dimensions_verified": true
+    },
+    {
+      "id": "known_saved_red_seal",
+      "kind": "Actual historical saved npj crop; model not run",
+      "native_dimensions_verified": true
+    }
+  ],
+  "newly_inferred_controls": 5,
+  "historical_saved_controls": 1,
+  "source_bundle_sha256": "8af833723651bfafe91b927433c7c0447a72762b5e6973ae09118dfab1ddc4ef",
+  "inference_command_sha256": "8b00a40e327c0149b6f55684ceeca83ae38a167ede7703640a528220cdd8eba8",
+  "no_inference_rerun": true,
+  "model_log_terminal_success": true,
+  "correction": "Generic verifier expected an input for the actual saved seal; do not fabricate that input",
+  "adapter_sha256": "aa7b17cf00e8f3c94a71cd4f33c862596dcaf4351f56612536cc5356421929e7"
+}

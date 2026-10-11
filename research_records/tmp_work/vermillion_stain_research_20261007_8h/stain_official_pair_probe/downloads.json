@@ -1,0 +1,62 @@
+{
+  "utc": "2026-10-07T18:33:04.198185+00:00",
+  "source": "Official StainRestorer README Kaggle link",
+  "records": [
+    {
+      "remote": "WACV2025-StainDoc/StainDoc/test/input/1.jpg",
+      "url": "https://www.kaggle.com/api/v1/datasets/download/xuhangc/wacv2025-staindoc/WACV2025-StainDoc%2FStainDoc%2Ftest%2Finput%2F1.jpg",
+      "status": 200,
+      "type": "image/jpeg",
+      "bytes": 2094503,
+      "file": "input_1.jpg",
+      "sha256": "e8d99abb81485251091364dc6c40581c5872a0718d51f5953c1137a0963379b7"
+    },
+    {
+      "remote": "WACV2025-StainDoc/StainDoc/test/target/1.jpg",
+      "url": "https://www.kaggle.com/api/v1/datasets/download/xuhangc/wacv2025-staindoc/WACV2025-StainDoc%2FStainDoc%2Ftest%2Ftarget%2F1.jpg",
+      "status": 200,
+      "type": "image/jpeg",
+      "bytes": 2080658,
+      "file": "target_1.jpg",
+      "sha256": "4aa1c9456cf8f05f3b1084661954426f02d9b8dc705b445d4af42eea0e3cb65f"
+    },
+    {
+      "remote": "WACV2025-StainDoc/StainDoc/test/input/10.jpg",
+      "url": "https://www.kaggle.com/api/v1/datasets/download/xuhangc/wacv2025-staindoc/WACV2025-StainDoc%2FStainDoc%2Ftest%2Finput%2F10.jpg",
+      "status": 200,
+      "type": "image/jpeg",
+      "bytes": 1652896,
+      "file": "input_10.jpg",
+      "sha256": "478ac706d5e6ced24c49d6f740951f0bab555326d4076b78bf9b6781dcdde5b6"
+    },
+    {
+      "remote": "WACV2025-StainDoc/StainDoc/test/target/10.jpg",
+      "url": "https://www.kaggle.com/api/v1/datasets/download/xuhangc/wacv2025-staindoc/WACV2025-StainDoc%2FStainDoc%2Ftest%2Ftarget%2F10.jpg",
+      "status": 200,
+      "type": "image/jpeg",
+      "bytes": 1577621,
+      "file": "target_10.jpg",
+      "sha256": "19bc37da4e614e84667b33a81ecbecaa7281443d3a57cfe3a85c95239cb63d78"
+    },
+    {
+      "remote": "WACV2025-StainDoc/StainDoc/test/input/1006.jpg",
+      "url": "https://www.kaggle.com/api/v1/datasets/download/xuhangc/wacv2025-staindoc/WACV2025-StainDoc%2FStainDoc%2Ftest%2Finput%2F1006.jpg",
+      "status": 200,
+      "type": "image/jpeg",
+      "bytes": 1118929,
+      "file": "input_1006.jpg",
+      "sha256": "0402a8b625b52a0deb78564e842df7acbee046a12a537480d1ee7e1e5255dfed"
+    },
+    {
+      "remote": "WACV2025-StainDoc/StainDoc/test/target/1006.jpg",
+      "url": "https://www.kaggle.com/api/v1/datasets/download/xuhangc/wacv2025-staindoc/WACV2025-StainDoc%2FStainDoc%2Ftest%2Ftarget%2F1006.jpg",
+      "status": 200,
+      "type": "image/jpeg",
+      "bytes": 1102780,
+      "file": "target_1006.jpg",
+      "sha256": "28ce1957cf90b9882e75acf0032c6624cf726f2e3fb7a5f6609f130247a695b1"
+    }
+  ],
+  "purpose": "Colour/geometry own-domain sanity control only; no task-aligned benchmark or training",
+  "selector_outputs_used": false
+}

@@ -1,0 +1,32 @@
+{
+  "source_sha256": "13c682d854878acd85e05029ee22b2a3e3c29dda48d8d9056974134de1102e6a",
+  "dependencies": {
+    "scripts/benchmark/probe_paper_boundary_pair_gate_v2.py": "8cfbe50a192ad12e0254a9bcff31271f357717fa88845df7b78820fc511580fe",
+    "scripts/benchmark/probe_paper_tone_boundary.py": "df17434c209ef30ef823ab229113023df2d2503e296254faf8ccb096d2e6573c",
+    "scripts/benchmark/validate_unseen_directional_margin_candidate.py": "e17799137c9ba58a1e95d9850944cf3ff7a9b5ba5d26767d88bfe6be4c1c01db",
+    "scripts/benchmark/restore_unseen_directional_margin_paper.py": "13c682d854878acd85e05029ee22b2a3e3c29dda48d8d9056974134de1102e6a",
+    "tmp_work/unseen_directional_margin_validation_20261001/fixed_masks/manifest.json": "b03f13d8c627e899a368605fabcbae7f5127a61d27b45648d41d4a8ad0ce6e16",
+    "tmp_work/unseen_directional_margin_validation_20261001/fixed_masks/complete.json": "46111f2193ce7d4449245548ac83584558555a51db322a86ca6385428945e5dc",
+    "tmp_work/unseen_directional_margin_validation_20261001/baseline_review.json": "fd4cf7ba64f9b5bd41f9a7fa832bba11fb0fa29c8c1dadc9e76fa51b3360354e"
+  },
+  "pages": 4,
+  "ROIs": 13,
+  "settings": {
+    "mask_modes": [
+      "npj",
+      "v6",
+      "candidate",
+      "abstention"
+    ],
+    "minimum_boundary_pairs": 16,
+    "context_px": 64,
+    "original_elsewhere": true,
+    "new_DDRM": false,
+    "adaptive_texture": false,
+    "chromatic_rim": false,
+    "low_order_surface": false,
+    "pixel_GT": false,
+    "hold": "replace baseline paper-applied & frozen full-page hold with original; other pixels bitwise unchanged",
+    "npj": "saved degradation mask through same pure-paper scope, not full original npj pipeline"
+  }
+}

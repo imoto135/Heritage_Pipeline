@@ -1,0 +1,1010 @@
+[
+  {
+    "path": "figures/T01_マスクと処理結果.png",
+    "ROI": [
+      812,
+      421,
+      450,
+      450
+    ],
+    "frame_xywh": [
+      682,
+      271,
+      768,
+      768
+    ],
+    "panels": [
+      {
+        "method": "original",
+        "row": "black",
+        "placeholder": false,
+        "path": "panels/T01/original/black.png",
+        "sha256": "f1cf88df79175bf4dd368f6cf0c75398c4a874af903d4d3e563fd91fd65b47dc",
+        "canvas_xywh": [
+          158,
+          115,
+          450,
+          450
+        ],
+        "scale": 1
+      },
+      {
+        "method": "v1",
+        "row": "black",
+        "placeholder": false,
+        "path": "panels/T01/v1/black.png",
+        "sha256": "b5b8cfa28a1c92298d12caac95dd6bcb4bb3fdb870b91cb71c1454ae8745bdca",
+        "canvas_xywh": [
+          626,
+          115,
+          450,
+          450
+        ],
+        "scale": 1
+      },
+      {
+        "method": "v2",
+        "row": "black",
+        "placeholder": false,
+        "path": "panels/T01/v2/black.png",
+        "sha256": "b8c042169282402b3c91bc806a14a1a2ce230e1e601679bf76601624ff4628e3",
+        "canvas_xywh": [
+          1094,
+          115,
+          450,
+          450
+        ],
+        "scale": 1
+      },
+      {
+        "method": "sauvola",
+        "row": "black",
+        "placeholder": false,
+        "path": "panels/T01/sauvola/black.png",
+        "sha256": "d9ed4d67b7aba6cbce16ab9b48de7061aa48bcc7e46f168ba0a23749a538a21c",
+        "canvas_xywh": [
+          1562,
+          115,
+          450,
+          450
+        ],
+        "scale": 1
+      },
+      {
+        "method": "docres",
+        "row": "black",
+        "placeholder": false,
+        "path": "panels/T01/docres/black.png",
+        "sha256": "3e9c03084c490d9407e96be7515f1f700363543e7da791a1c0eaf2ce08aadbcb",
+        "canvas_xywh": [
+          2030,
+          115,
+          450,
+          450
+        ],
+        "scale": 1
+      },
+      {
+        "method": "stain",
+        "row": "black",
+        "placeholder": true,
+        "path": "panels/T01/stain/black.png",
+        "sha256": "48ed251c682769925b4c5a5ef308a69c431618ea75ffbdf30d4c3ce2d7741d19",
+        "canvas_xywh": [
+          2498,
+          115,
+          450,
+          450
+        ],
+        "scale": 1
+      },
+      {
+        "method": "original",
+        "row": "result",
+        "placeholder": false,
+        "path": "panels/T01/original/result.png",
+        "sha256": "f1cf88df79175bf4dd368f6cf0c75398c4a874af903d4d3e563fd91fd65b47dc",
+        "canvas_xywh": [
+          158,
+          605,
+          450,
+          450
+        ],
+        "scale": 1
+      },
+      {
+        "method": "v1",
+        "row": "result",
+        "placeholder": false,
+        "path": "panels/T01/v1/result.png",
+        "sha256": "d50a25963eea213e8784ca09a307ccd5f14219586db720a485ea365a7571eb91",
+        "canvas_xywh": [
+          626,
+          605,
+          450,
+          450
+        ],
+        "scale": 1
+      },
+      {
+        "method": "v2",
+        "row": "result",
+        "placeholder": false,
+        "path": "panels/T01/v2/result.png",
+        "sha256": "2fef9574bfcf562c3068d772f7bc1631b6e483793e9a1681646fe54ce074f6b8",
+        "canvas_xywh": [
+          1094,
+          605,
+          450,
+          450
+        ],
+        "scale": 1
+      },
+      {
+        "method": "sauvola",
+        "row": "result",
+        "placeholder": false,
+        "path": "panels/T01/sauvola/result.png",
+        "sha256": "34ebc86e7c021f48d686a9f25cfb0abbae41c2d4dbd38f45f908f0601e021fe6",
+        "canvas_xywh": [
+          1562,
+          605,
+          450,
+          450
+        ],
+        "scale": 1
+      },
+      {
+        "method": "docres",
+        "row": "result",
+        "placeholder": false,
+        "path": "panels/T01/docres/result.png",
+        "sha256": "7c47bb17ea54fe92bb3fdd52fce5324b23824e87be9a1bada2273803555ac9f8",
+        "canvas_xywh": [
+          2030,
+          605,
+          450,
+          450
+        ],
+        "scale": 1
+      },
+      {
+        "method": "stain",
+        "row": "result",
+        "placeholder": false,
+        "path": "panels/T01/stain/result.png",
+        "sha256": "e866fc8a0e1cbbbb974954cc61a876fc751533e5dcbdeff3ac358657a509f39c",
+        "canvas_xywh": [
+          2498,
+          605,
+          450,
+          450
+        ],
+        "scale": 1
+      }
+    ],
+    "source_sha256": {
+      "data/split_dataset/train/hnsd00000/hnsd007_023.jpg": "41999e5b52d17e60ea068c9b629ffcce037dc27fcbb3a4f45f46a5063d7b22af",
+      "data/split_dataset_csc_mask/train/hnsd00000/hnsd007_023/02_text_black.png": "ebd3b3ef4557fe0523ab6cd3bcebfa120f8a7f196672d815f0b3533fda922309",
+      "data/split_dataset_csc_mask/train/hnsd00000/hnsd007_023/03_text_red.png": "1184f50da7328831f68ee85b6be0695b11dad7ee54f9582913287562c0731543",
+      "data/split_dataset_csc_mask_v2/train/hnsd00000/hnsd007_023/02_text_black.png": "b96834418ece51c159af9b19fecbc4c33fdad718fb07d9997dc3f5a5db8a3609",
+      "data/split_dataset_csc_mask_v2/train/hnsd00000/hnsd007_023/03_text_red.png": "1184f50da7328831f68ee85b6be0695b11dad7ee54f9582913287562c0731543",
+      "tmp_work/npj_contact_research_20261007/full_page/masks/sauvola/hnsd007_023/02_text_black.png": "9f2eefd2eca3afd3467456bfdb26b6f74374a0a872bf5eff50b54dd132e55428",
+      "tmp_work/npj_contact_research_20261007/full_page/masks/sauvola/hnsd007_023/03_text_red.png": "1184f50da7328831f68ee85b6be0695b11dad7ee54f9582913287562c0731543",
+      "tmp_work/npj_contact_research_20261007/full_page/output/baseline/hnsd007_023/result/hnsd007_023.png": "50f8d8a04c2cf9cf916f4f2dec0af735ca79f3bd97d8f91e5f00275c270514ba",
+      "tmp_work/npj_reproduction_audit_20261007/outputs/v2_masks/hnsd007_023/result/hnsd007_023.png": "168edf205eb9af5dd2b836e415356ac6a75d2734da0c6c2e34a9fbc11dad4323",
+      "tmp_work/npj_contact_research_20261007/full_page/output/sauvola/hnsd007_023/result/hnsd007_023.png": "129d36c767d723fa247b0dd9c20b5f4424131bf6b84e9c5ea8f01fcdbe3efbe5",
+      "tmp_work/npj_contact_research_20261007/real_models/T01/docres.png": "8c3cbfcf2a49850ddeb7269993b7462245e17f2deaf17a6eac6bd568e9079533",
+      "tmp_work/npj_contact_research_20261007/real_models/T01/docres_probability.npy": "008ab0e799be3e255c49b26936542c78f38403649480a3f3acfc562335a7607d",
+      "tmp_work/npj_masks_and_stain_audit_20261007/stain/T01/native_whole_final.png": "6672766e1450aa328b7126f966d3b758faa6a174aec44005f1f56d14231e264e"
+    }
+  },
+  {
+    "path": "figures/N01_マスクと処理結果.png",
+    "ROI": [
+      428,
+      347,
+      190,
+      220
+    ],
+    "frame_xywh": [
+      148,
+      57,
+      768,
+      768
+    ],
+    "panels": [
+      {
+        "method": "original",
+        "row": "black",
+        "placeholder": false,
+        "path": "panels/N01/original/black.png",
+        "sha256": "5dcc3726bb3f6b9c8663d0c9dc1b0809ece237c26f314989c7b61b21e07623ee",
+        "canvas_xywh": [
+          158,
+          115,
+          380,
+          440
+        ],
+        "scale": 2
+      },
+      {
+        "method": "v1",
+        "row": "black",
+        "placeholder": false,
+        "path": "panels/N01/v1/black.png",
+        "sha256": "cb60f4a294fa8240ca1dc70838f0bf2860d3897205533ada1122b2f934d94c91",
+        "canvas_xywh": [
+          556,
+          115,
+          380,
+          440
+        ],
+        "scale": 2
+      },
+      {
+        "method": "v2",
+        "row": "black",
+        "placeholder": false,
+        "path": "panels/N01/v2/black.png",
+        "sha256": "28325b8895355cab1f7838e63c71052fbfcd81dac0b6e99d066004ddada3eb2a",
+        "canvas_xywh": [
+          954,
+          115,
+          380,
+          440
+        ],
+        "scale": 2
+      },
+      {
+        "method": "sauvola",
+        "row": "black",
+        "placeholder": false,
+        "path": "panels/N01/sauvola/black.png",
+        "sha256": "2924af530fd6769bbf64042e7bee5fa58a83314cfb54b2a1572a0860f6610836",
+        "canvas_xywh": [
+          1352,
+          115,
+          380,
+          440
+        ],
+        "scale": 2
+      },
+      {
+        "method": "docres",
+        "row": "black",
+        "placeholder": false,
+        "path": "panels/N01/docres/black.png",
+        "sha256": "8db265520b522704960fdb0edcc35e543021da9b2174797f5fb9a330b09c4859",
+        "canvas_xywh": [
+          1750,
+          115,
+          380,
+          440
+        ],
+        "scale": 2
+      },
+      {
+        "method": "stain",
+        "row": "black",
+        "placeholder": true,
+        "path": "panels/N01/stain/black.png",
+        "sha256": "c4512c9a2279d7bc9902b9d1c6f88d00e8a1b20c696a825004133338d665aea6",
+        "canvas_xywh": [
+          2148,
+          115,
+          380,
+          440
+        ],
+        "scale": 2
+      },
+      {
+        "method": "original",
+        "row": "result",
+        "placeholder": false,
+        "path": "panels/N01/original/result.png",
+        "sha256": "5dcc3726bb3f6b9c8663d0c9dc1b0809ece237c26f314989c7b61b21e07623ee",
+        "canvas_xywh": [
+          158,
+          595,
+          380,
+          440
+        ],
+        "scale": 2
+      },
+      {
+        "method": "v1",
+        "row": "result",
+        "placeholder": false,
+        "path": "panels/N01/v1/result.png",
+        "sha256": "d0bdb4a8d8ebd7ead625eaec737b472100b75abd0308970925c103e1449a9770",
+        "canvas_xywh": [
+          556,
+          595,
+          380,
+          440
+        ],
+        "scale": 2
+      },
+      {
+        "method": "v2",
+        "row": "result",
+        "placeholder": false,
+        "path": "panels/N01/v2/result.png",
+        "sha256": "34f9ea82c892c3b5cc0f90ff132beaf5bb2926ad84015a956fc8302bde5433f6",
+        "canvas_xywh": [
+          954,
+          595,
+          380,
+          440
+        ],
+        "scale": 2
+      },
+      {
+        "method": "sauvola",
+        "row": "result",
+        "placeholder": false,
+        "path": "panels/N01/sauvola/result.png",
+        "sha256": "df20c696196e0a3a19b24c9408c003f3a46590607157969188f771f7c2b0852f",
+        "canvas_xywh": [
+          1352,
+          595,
+          380,
+          440
+        ],
+        "scale": 2
+      },
+      {
+        "method": "docres",
+        "row": "result",
+        "placeholder": false,
+        "path": "panels/N01/docres/result.png",
+        "sha256": "6e4faa0f68392363228b331a5d54044b8a5541ffa8eb60d39f86f7ef7540e59d",
+        "canvas_xywh": [
+          1750,
+          595,
+          380,
+          440
+        ],
+        "scale": 2
+      },
+      {
+        "method": "stain",
+        "row": "result",
+        "placeholder": false,
+        "path": "panels/N01/stain/result.png",
+        "sha256": "42ac4eda2134b7072341f12e85420e2c60d4b9b3566f54874ede7b6854f719b9",
+        "canvas_xywh": [
+          2148,
+          595,
+          380,
+          440
+        ],
+        "scale": 2
+      }
+    ],
+    "source_sha256": {
+      "data/split_dataset/test/200010454/200010454_00003_2.jpg": "67c1f8a762d442015f420a34512119163c3e4cb06307bb75567d086f119a246f",
+      "data/split_dataset_csc_mask/test/200010454/200010454_00003_2/02_text_black.png": "eb9912c62c766975e8752c156536a577d1ae0ee1f5ec7e12647c0a7cda677cd4",
+      "data/split_dataset_csc_mask/test/200010454/200010454_00003_2/03_text_red.png": "895ab69ea45c1c3ae17a5e1fa1c2ac1253b35872251b555fd32eadf19ef4ec22",
+      "data/split_dataset_csc_mask_v2/test/200010454/200010454_00003_2/02_text_black.png": "9104a04197ee3b78edaadaf0a6d66f6bf039717a94e6cbe3db29a6cdf3b79730",
+      "data/split_dataset_csc_mask_v2/test/200010454/200010454_00003_2/03_text_red.png": "895ab69ea45c1c3ae17a5e1fa1c2ac1253b35872251b555fd32eadf19ef4ec22",
+      "tmp_work/npj_contact_research_20261007/full_followup/B/masks/sauvola/200010454_00003_2/02_text_black.png": "03c98cfcd10b35067835806f7de26e4f9668b5bc65efd995f99fe40f3599ced1",
+      "tmp_work/npj_contact_research_20261007/full_followup/B/masks/sauvola/200010454_00003_2/03_text_red.png": "895ab69ea45c1c3ae17a5e1fa1c2ac1253b35872251b555fd32eadf19ef4ec22",
+      "tmp_work/npj_contact_research_20261007/full_followup/B/output/baseline/200010454_00003_2/result/200010454_00003_2.png": "d8eda259033b04d15aa7f43249019594bd4fee55cc181c898911e148dcb1ba1e",
+      "tmp_work/npj_reproduction_audit_20261007/outputs/v2_masks/200010454_00003_2/result/200010454_00003_2.png": "f69d28d5f79c0f6e2a112e45f7f0d976844c3fcab6b52530dbebb4750e09f1d2",
+      "tmp_work/npj_contact_research_20261007/full_followup/B/output/sauvola/200010454_00003_2/result/200010454_00003_2.png": "d0fb00826ecfc1b8080042b425ab03cdb655960039ce728acfa82c4fea5c00e7",
+      "tmp_work/npj_contact_research_20261007/real_models/N01/docres.png": "7153b1c3ffdd10b9d4be059b419cd575fd0f8bcd4014a33a61c2a56d1be1d5e6",
+      "tmp_work/npj_contact_research_20261007/real_models/N01/docres_probability.npy": "c73b438e24e545d06962dfdf9ab5745edf13817e58038ee56ddf14966e954524",
+      "tmp_work/npj_masks_and_stain_audit_20261007/stain/N01/native_whole_final.png": "0467b1a497403518704750cae209ec6b3d6866e2edc107c897321e6281692963"
+    }
+  },
+  {
+    "path": "figures/N02_マスクと処理結果.png",
+    "ROI": [
+      520,
+      890,
+      520,
+      560
+    ],
+    "frame_xywh": [
+      400,
+      790,
+      768,
+      768
+    ],
+    "panels": [
+      {
+        "method": "original",
+        "row": "black",
+        "placeholder": false,
+        "path": "panels/N02/original/black.png",
+        "sha256": "d8575012ccd77a46436f65c5278b98257e40217e018201d2423a2f84722b4948",
+        "canvas_xywh": [
+          158,
+          115,
+          520,
+          560
+        ],
+        "scale": 1
+      },
+      {
+        "method": "v1",
+        "row": "black",
+        "placeholder": false,
+        "path": "panels/N02/v1/black.png",
+        "sha256": "3f57d98f3225b4f764bb544881f5187e4fccaea4528887ded0453c3c70190a6b",
+        "canvas_xywh": [
+          696,
+          115,
+          520,
+          560
+        ],
+        "scale": 1
+      },
+      {
+        "method": "v2",
+        "row": "black",
+        "placeholder": false,
+        "path": "panels/N02/v2/black.png",
+        "sha256": "bf47e6f7b89cb3af79d69664b788ccca9d598388684c78425e15a75410651e10",
+        "canvas_xywh": [
+          1234,
+          115,
+          520,
+          560
+        ],
+        "scale": 1
+      },
+      {
+        "method": "sauvola",
+        "row": "black",
+        "placeholder": false,
+        "path": "panels/N02/sauvola/black.png",
+        "sha256": "ef4329d6e4a8561177932d3802270d16c938002f065af44ceeb8ba75f73c357b",
+        "canvas_xywh": [
+          1772,
+          115,
+          520,
+          560
+        ],
+        "scale": 1
+      },
+      {
+        "method": "docres",
+        "row": "black",
+        "placeholder": false,
+        "path": "panels/N02/docres/black.png",
+        "sha256": "f2affc07453c8d43b315f987208e67e2ce262b01400d91edd7d8fbd3923a4189",
+        "canvas_xywh": [
+          2310,
+          115,
+          520,
+          560
+        ],
+        "scale": 1
+      },
+      {
+        "method": "stain",
+        "row": "black",
+        "placeholder": true,
+        "path": "panels/N02/stain/black.png",
+        "sha256": "0b3466641eb87f6f7e50eadfdeb33fb3f4636be750fe2f1d9e695b686f2918eb",
+        "canvas_xywh": [
+          2848,
+          115,
+          520,
+          560
+        ],
+        "scale": 1
+      },
+      {
+        "method": "original",
+        "row": "red",
+        "placeholder": false,
+        "path": "panels/N02/original/red.png",
+        "sha256": "d8575012ccd77a46436f65c5278b98257e40217e018201d2423a2f84722b4948",
+        "canvas_xywh": [
+          158,
+          715,
+          520,
+          560
+        ],
+        "scale": 1
+      },
+      {
+        "method": "v1",
+        "row": "red",
+        "placeholder": false,
+        "path": "panels/N02/v1/red.png",
+        "sha256": "588cf06b309b38514ee73d0b77ce8977dbd503266707e6f8b34401366c50d717",
+        "canvas_xywh": [
+          696,
+          715,
+          520,
+          560
+        ],
+        "scale": 1
+      },
+      {
+        "method": "v2",
+        "row": "red",
+        "placeholder": false,
+        "path": "panels/N02/v2/red.png",
+        "sha256": "97500f4d109b4adce357ea36f8f08bfe7d9ba60f26625d7350992390cc5af523",
+        "canvas_xywh": [
+          1234,
+          715,
+          520,
+          560
+        ],
+        "scale": 1
+      },
+      {
+        "method": "sauvola",
+        "row": "red",
+        "placeholder": false,
+        "path": "panels/N02/sauvola/red.png",
+        "sha256": "588cf06b309b38514ee73d0b77ce8977dbd503266707e6f8b34401366c50d717",
+        "canvas_xywh": [
+          1772,
+          715,
+          520,
+          560
+        ],
+        "scale": 1
+      },
+      {
+        "method": "docres",
+        "row": "red",
+        "placeholder": true,
+        "path": "panels/N02/docres/red.png",
+        "sha256": "bf05eb07bebbb556b9a30c1f18fecca031cd18dfa80fc270d9862fe4e660989b",
+        "canvas_xywh": [
+          2310,
+          715,
+          520,
+          560
+        ],
+        "scale": 1
+      },
+      {
+        "method": "stain",
+        "row": "red",
+        "placeholder": true,
+        "path": "panels/N02/stain/red.png",
+        "sha256": "0b3466641eb87f6f7e50eadfdeb33fb3f4636be750fe2f1d9e695b686f2918eb",
+        "canvas_xywh": [
+          2848,
+          715,
+          520,
+          560
+        ],
+        "scale": 1
+      },
+      {
+        "method": "original",
+        "row": "result",
+        "placeholder": false,
+        "path": "panels/N02/original/result.png",
+        "sha256": "d8575012ccd77a46436f65c5278b98257e40217e018201d2423a2f84722b4948",
+        "canvas_xywh": [
+          158,
+          1315,
+          520,
+          560
+        ],
+        "scale": 1
+      },
+      {
+        "method": "v1",
+        "row": "result",
+        "placeholder": false,
+        "path": "panels/N02/v1/result.png",
+        "sha256": "1a3d5eff73201c086ce8880adf0348167e928bd985963c4f86c32e58dfde56f4",
+        "canvas_xywh": [
+          696,
+          1315,
+          520,
+          560
+        ],
+        "scale": 1
+      },
+      {
+        "method": "v2",
+        "row": "result",
+        "placeholder": false,
+        "path": "panels/N02/v2/result.png",
+        "sha256": "3477a19ccc94194e1d6f19cc00c02c2d7b1aa7b91658252cb3b4bb5e75029d53",
+        "canvas_xywh": [
+          1234,
+          1315,
+          520,
+          560
+        ],
+        "scale": 1
+      },
+      {
+        "method": "sauvola",
+        "row": "result",
+        "placeholder": false,
+        "path": "panels/N02/sauvola/result.png",
+        "sha256": "b07d58af85adf5daa93c6942e87677523237a0ffac2e7e1f6c47e0170115f15f",
+        "canvas_xywh": [
+          1772,
+          1315,
+          520,
+          560
+        ],
+        "scale": 1
+      },
+      {
+        "method": "docres",
+        "row": "result",
+        "placeholder": false,
+        "path": "panels/N02/docres/result.png",
+        "sha256": "77c384d7e011c99a530e31720e9584213e8072f318551b2edfe225f580e1bf33",
+        "canvas_xywh": [
+          2310,
+          1315,
+          520,
+          560
+        ],
+        "scale": 1
+      },
+      {
+        "method": "stain",
+        "row": "result",
+        "placeholder": false,
+        "path": "panels/N02/stain/result.png",
+        "sha256": "bdc9111dc37780c532b7c45d8c55f99d235550de2d5e07eebdba26d381a50658",
+        "canvas_xywh": [
+          2848,
+          1315,
+          520,
+          560
+        ],
+        "scale": 1
+      }
+    ],
+    "source_sha256": {
+      "data/split_dataset/test/200021071/200021071_00032_1.jpg": "d8fe32dc777814394c58baacccfdea957e2ab0fe9c63c667b98fbdf35bcfba63",
+      "data/split_dataset_csc_mask/test/200021071/200021071_00032_1/02_text_black.png": "b27e3285be71e12f7fe6fa9b74af093e7ba5ace9160431ad8c62873851e330e1",
+      "data/split_dataset_csc_mask/test/200021071/200021071_00032_1/03_text_red.png": "8c5bc65f2feea2efaba5581f5fa58214131af5a80bd3de2ffb7df0b0fca8ae26",
+      "data/split_dataset_csc_mask_v2/test/200021071/200021071_00032_1/02_text_black.png": "a0b4308fbd142198b5c46fc81b1f8af1ec5e69bf03fe737fcda740877273d63c",
+      "data/split_dataset_csc_mask_v2/test/200021071/200021071_00032_1/03_text_red.png": "efff6b440965e869b1c1ae068e2b9974e14600b241cce87f2b805b1b2e22f401",
+      "tmp_work/npj_contact_research_20261007/full_followup/B/masks/sauvola/200021071_00032_1/02_text_black.png": "c9af314022ac7322bcba8669002c67e58a61671237412bd1e37838d962ace5b4",
+      "tmp_work/npj_contact_research_20261007/full_followup/B/masks/sauvola/200021071_00032_1/03_text_red.png": "8c5bc65f2feea2efaba5581f5fa58214131af5a80bd3de2ffb7df0b0fca8ae26",
+      "tmp_work/npj_contact_research_20261007/full_followup/B/output/baseline/200021071_00032_1/result/200021071_00032_1.png": "bd6b47c158c641e77e04e47258c9607e8ebadaa8278a7f1351248dc7e79bb6e0",
+      "tmp_work/npj_reproduction_audit_20261007/outputs/v2_masks/200021071_00032_1/result/200021071_00032_1.png": "ce87f21d99790a18cf3bdf4feb7f1cb12b37fde33b7cab63cc1b521751aea642",
+      "tmp_work/npj_contact_research_20261007/full_followup/B/output/sauvola/200021071_00032_1/result/200021071_00032_1.png": "e4b0f4d3571ab158c70abf83491c81802bad55d7d16966079e0553e957e9a352",
+      "tmp_work/npj_contact_research_20261007/real_models/N02/docres.png": "968a484f066db778de04a1c5c08bef119df3da23024c348d45bc59468ef945e6",
+      "tmp_work/npj_contact_research_20261007/real_models/N02/docres_probability.npy": "5918a5d7fad5578c8da39f5d8e47c795d09e27ae4319dfe2b87df7e5f23e1b00",
+      "tmp_work/npj_masks_and_stain_audit_20261007/stain/N02/native_whole_final.png": "8d7a05a97c35ac322feb682ae63a80474180b7f52cacb1c52636debbed20b2a3"
+    }
+  },
+  {
+    "path": "figures/T01_StainRestorer色診断.png",
+    "panels": [
+      {
+        "source": "stain/T01/official256_input.png",
+        "sha256": "7b4e1b77f31a10435aaa4c71a2e626166fc3a177928724d425128b2ba57a0218",
+        "display_resize": false,
+        "display_size": [
+          256,
+          256
+        ],
+        "canvas_xywh": [
+          14,
+          104,
+          256,
+          256
+        ]
+      },
+      {
+        "source": "stain/T01/official256_final.png",
+        "sha256": "d9184dd5cdcc8acff838e308b80cb4b10d240c0a676448476298b44ccd481b35",
+        "display_resize": false,
+        "display_size": [
+          256,
+          256
+        ],
+        "canvas_xywh": [
+          292,
+          104,
+          256,
+          256
+        ]
+      },
+      {
+        "source": "stain/T01/official256_coarse.png",
+        "sha256": "ed410aaa90cca3f68b396bfb4a9f4e89d741b075004e1205d66e2c23a2162d72",
+        "display_resize": false,
+        "display_size": [
+          256,
+          256
+        ],
+        "canvas_xywh": [
+          570,
+          104,
+          256,
+          256
+        ]
+      },
+      {
+        "source": "stain/T01/native_whole_final.png",
+        "sha256": "6672766e1450aa328b7126f966d3b758faa6a174aec44005f1f56d14231e264e",
+        "display_resize": true,
+        "display_size": [
+          256,
+          256
+        ],
+        "canvas_xywh": [
+          848,
+          104,
+          256,
+          256
+        ]
+      },
+      {
+        "source": "stain/T01/native_tiles_final.png",
+        "sha256": "6c01fa12ae4e9097cb32fca4a12eab98166858d57cf35c13fc88d1562dc5f6f2",
+        "display_resize": true,
+        "display_size": [
+          256,
+          256
+        ],
+        "canvas_xywh": [
+          1126,
+          104,
+          256,
+          256
+        ]
+      }
+    ],
+    "kind": "colour"
+  },
+  {
+    "path": "figures/N01_StainRestorer色診断.png",
+    "panels": [
+      {
+        "source": "stain/N01/official256_input.png",
+        "sha256": "7fb1b19341187397e078f98a92c6fa15677471015ad68fe5a5c72b1c52eb0221",
+        "display_resize": false,
+        "display_size": [
+          256,
+          256
+        ],
+        "canvas_xywh": [
+          14,
+          104,
+          256,
+          256
+        ]
+      },
+      {
+        "source": "stain/N01/official256_final.png",
+        "sha256": "69a20cd24043af4efd18e1dbd434ee3b0040eb10eb0eba5d3eba0a2e096360e3",
+        "display_resize": false,
+        "display_size": [
+          256,
+          256
+        ],
+        "canvas_xywh": [
+          292,
+          104,
+          256,
+          256
+        ]
+      },
+      {
+        "source": "stain/N01/official256_coarse.png",
+        "sha256": "7d072e2eabdecba69d48bcc91fe6351974aa5e0a4d1a10b05d565ae1f2dcc8b3",
+        "display_resize": false,
+        "display_size": [
+          256,
+          256
+        ],
+        "canvas_xywh": [
+          570,
+          104,
+          256,
+          256
+        ]
+      },
+      {
+        "source": "stain/N01/native_whole_final.png",
+        "sha256": "0467b1a497403518704750cae209ec6b3d6866e2edc107c897321e6281692963",
+        "display_resize": true,
+        "display_size": [
+          256,
+          256
+        ],
+        "canvas_xywh": [
+          848,
+          104,
+          256,
+          256
+        ]
+      },
+      {
+        "source": "stain/N01/native_tiles_final.png",
+        "sha256": "49ed010ecf472d8b55577d268b859c5d4251e9e7c4d48887dcfde50c5522f400",
+        "display_resize": true,
+        "display_size": [
+          256,
+          256
+        ],
+        "canvas_xywh": [
+          1126,
+          104,
+          256,
+          256
+        ]
+      }
+    ],
+    "kind": "colour"
+  },
+  {
+    "path": "figures/N02_StainRestorer色診断.png",
+    "panels": [
+      {
+        "source": "stain/N02/official256_input.png",
+        "sha256": "0c1ec8feda838c365eb4f30f8f508642bd4f9cadb1b757d813a9b6b4e29b4305",
+        "display_resize": false,
+        "display_size": [
+          256,
+          256
+        ],
+        "canvas_xywh": [
+          14,
+          104,
+          256,
+          256
+        ]
+      },
+      {
+        "source": "stain/N02/official256_final.png",
+        "sha256": "5ffb28b22d374b9f44d11cfdddbfef76e9a34a4d4ad68e011be24354c113a631",
+        "display_resize": false,
+        "display_size": [
+          256,
+          256
+        ],
+        "canvas_xywh": [
+          292,
+          104,
+          256,
+          256
+        ]
+      },
+      {
+        "source": "stain/N02/official256_coarse.png",
+        "sha256": "7d94309717793a83bf8f3596376465016b7492c18a8b3aa92acf8e0245a176ea",
+        "display_resize": false,
+        "display_size": [
+          256,
+          256
+        ],
+        "canvas_xywh": [
+          570,
+          104,
+          256,
+          256
+        ]
+      },
+      {
+        "source": "stain/N02/native_whole_final.png",
+        "sha256": "8d7a05a97c35ac322feb682ae63a80474180b7f52cacb1c52636debbed20b2a3",
+        "display_resize": true,
+        "display_size": [
+          256,
+          256
+        ],
+        "canvas_xywh": [
+          848,
+          104,
+          256,
+          256
+        ]
+      },
+      {
+        "source": "stain/N02/native_tiles_final.png",
+        "sha256": "7d0a35336316330c8f987d3f2f9065e07b925918cc0aab0a09823a56e7f2155f",
+        "display_resize": true,
+        "display_size": [
+          256,
+          256
+        ],
+        "canvas_xywh": [
+          1126,
+          104,
+          256,
+          256
+        ]
+      }
+    ],
+    "kind": "colour"
+  },
+  {
+    "path": "figures/F41_StainRestorer色診断.png",
+    "panels": [
+      {
+        "source": "stain/F41/official256_input.png",
+        "sha256": "03c65a0c35bd4511209e3366b682ebd701162d5aa08360d7a2a3e0bd57abe365",
+        "display_resize": false,
+        "display_size": [
+          256,
+          256
+        ],
+        "canvas_xywh": [
+          14,
+          104,
+          256,
+          256
+        ]
+      },
+      {
+        "source": "stain/F41/official256_final.png",
+        "sha256": "0e14553b8dff62a1a75d25778b0b9e9a8ab24f7c3b1f6e85724b0eb09bba921f",
+        "display_resize": false,
+        "display_size": [
+          256,
+          256
+        ],
+        "canvas_xywh": [
+          292,
+          104,
+          256,
+          256
+        ]
+      },
+      {
+        "source": "stain/F41/official256_coarse.png",
+        "sha256": "e243eb9d56b105f797ad25028210c1179b9cb72f0d4a3ba8090abf2926bef6d5",
+        "display_resize": false,
+        "display_size": [
+          256,
+          256
+        ],
+        "canvas_xywh": [
+          570,
+          104,
+          256,
+          256
+        ]
+      },
+      {
+        "source": "stain/F41/native_whole_final.png",
+        "sha256": "cab56da8c097250d6c0e0da974e3cc1154b47da248f99e45927051583e878dfb",
+        "display_resize": true,
+        "display_size": [
+          256,
+          256
+        ],
+        "canvas_xywh": [
+          848,
+          104,
+          256,
+          256
+        ]
+      },
+      {
+        "source": "stain/F41/native_tiles_final.png",
+        "sha256": "874158f93bfacc07d7992762f55f5dcd4054e3dd97fca6de89ec63b8b2555311",
+        "display_resize": true,
+        "display_size": [
+          256,
+          256
+        ],
+        "canvas_xywh": [
+          1126,
+          104,
+          256,
+          256
+        ]
+      }
+    ],
+    "kind": "colour"
+  }
+]

@@ -1,0 +1,43 @@
+{
+  "source_sha256": "590faaecf1c9a464f3efd781f43d12810d128e0193f3426684955c8f6df01805",
+  "dependencies": {
+    "scripts/benchmark/probe_observed_boundary_warm_bias.py": "590faaecf1c9a464f3efd781f43d12810d128e0193f3426684955c8f6df01805",
+    "tmp_work/paper_boundary_reference_bias_diagnostic_20261001/manifest.json": "cb61fe1178bf7032e7b457be4d3ef246dbbdf296f3979b9ffa3e6911f7242362",
+    "tmp_work/paper_boundary_reference_bias_diagnostic_20261001/complete.json": "083137bdf8a13a86dbd59f8af53221a7eaedaccc7180c3cb3e287c63220f4801",
+    "tmp_work/adaptive_paper_texture_scale_pilot_v2_20261001/manifest.json": "ba36650d7b0a9534610a118582e4f31ed7739627387792c991c91a9158d009a7",
+    "tmp_work/adaptive_paper_texture_scale_pilot_v2_20261001/complete.json": "b957225a5c852d7f320164e076957977c1682807299761dfac05d7ffd5d86c09"
+  },
+  "settings": {
+    "baseline": "frozen directional abstention77 + new4-books13 original-preserving candidates",
+    "masks_references_applied_texture_fixed": true,
+    "guide": "known-paper-only normalized Gaussian sigma32",
+    "bias": "boundary residual median minus other known residual median within64px",
+    "gate": "boundary pixels>=16, qualified ring>=256, boundary median b>=1, positive b bias>=1, boundary median a>=0",
+    "correction_limits": {
+      "L": [
+        0,
+        3
+      ],
+      "a": [
+        -1.5,
+        0
+      ],
+      "b": [
+        -1.5,
+        0
+      ]
+    },
+    "fade": "first inside pixel zero, linear to8px deeper",
+    "variants": [
+      "b_only",
+      "warm_Lab"
+    ],
+    "pages": 29,
+    "ROIs": 90,
+    "pixel_GT": false,
+    "development": true,
+    "new_DDRM": false,
+    "provenance": "guide and residual statistics read known raw pixels only; nonreferences can be poisoned",
+    "raw_gate": "not changed; previous diagnostic median-paper estimate not used for correction"
+  }
+}

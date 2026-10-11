@@ -121,7 +121,7 @@ def color_space_clustering(
     red_hsv_support_min: float = 0.05,  # 候補クラスタ中、絶対HSV基準で赤と判定される画素の最低割合
     morph_close_k: int = 3,       # クロージングカーネルサイズ（0で無効）
     morph_open_k: int = 1,        # オープニングカーネルサイズ（0で無効）
-    black_dilate_r: int = 7,      # 黒文字マスク膨張半径（文字近傍の劣化誤検出除去、0で無効）
+    black_dilate_r: int = 0,      # 黒文字マスク膨張半径（文字近傍の劣化誤検出除去、0で無効）
 ) -> CSCResult:
     """
     ACE補正済み画像に対してCSCを行い、4種類のマスクを返す。

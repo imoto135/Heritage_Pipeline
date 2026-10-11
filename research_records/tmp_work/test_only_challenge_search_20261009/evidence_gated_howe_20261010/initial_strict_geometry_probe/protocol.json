@@ -1,0 +1,69 @@
+{
+  "rule": {
+    "min_area": 16,
+    "max_target_dark_fraction": 0.15,
+    "max_csc_black_fraction": 0.02,
+    "gray_dark": 130,
+    "min_dark_support": 0.7,
+    "min_donor_contrast_gap": 20,
+    "ncc_min": 0.55,
+    "split_ncc_min": 0.35,
+    "split_shift_tolerance": 5,
+    "search_radius": 65,
+    "neighbor_step_radius": 2,
+    "context_min": 160,
+    "context_margin_strokes": 12,
+    "group_gap_strokes": 8,
+    "max_context_side": 512,
+    "support_radius_strokes": 2,
+    "contrast_sigma": 12,
+    "csc_unassigned_is_degradation": false,
+    "red_protected": true
+  },
+  "cases": [
+    {
+      "id": "07",
+      "page": "200021071_00033_2",
+      "source": "data/test/200021071/200021071_00033_2.jpg",
+      "source_sha256": "ccb0099adc3745cc6974aa7c7e51791c36e6575c0d3deb394dac64a62276c9e5",
+      "input_size": [
+        1968,
+        3264
+      ],
+      "red": "data/split_dataset_csc_mask_v2/test/200021071/200021071_00033_2/03_text_red.png",
+      "red_sha256": "ca76c880d9ac139b6524b740853f75b3ec8c19b5afb7fe7a5d0a84e95960fbfd",
+      "masks": {
+        "csc": {
+          "black": "data/split_dataset_csc_mask_v2/test/200021071/200021071_00033_2/02_text_black.png",
+          "black_sha256": "d1e25f571be87bd371b727148425a850bb98b820796db9ccfeda34c42aad9a8e",
+          "black_pixels": 329522
+        },
+        "sauvola": {
+          "black": "tmp_work/test_only_challenge_search_20261009/three_method_comparison/masks/200021071_00033_2/sauvola.png",
+          "black_sha256": "9217d299d73a9735f9f1a410beb3ba2e6cd6d7febc3e6d7144f85cdf0642d91d",
+          "black_pixels": 467072
+        },
+        "howe": {
+          "black": "tmp_work/test_only_challenge_search_20261009/three_method_comparison/masks/200021071_00033_2/howe.png",
+          "black_sha256": "c9c8dc65a3dda8e794e9de843f0a1ab564a18e9b8cae7c170b596f9bfb848b34",
+          "black_pixels": 419722
+        }
+      },
+      "origin": "six_challenge_fixed_review",
+      "roi_xywh": [
+        800,
+        750,
+        850,
+        900
+      ]
+    }
+  ],
+  "source_sha256": "952f0fe8678f6357936adfcdbe694bc0617b1ee463c1471f0343626d902808d9",
+  "status": "conditions_frozen_before_run",
+  "development_only": true,
+  "final_test": false,
+  "uses_manual_roi_for_selection": false,
+  "uses_manual_component_ids": false,
+  "display_rois_only": true,
+  "full_ddrm_multiclass_integration": false
+}

@@ -1,0 +1,67 @@
+{
+  "rule_y": 340,
+  "top_components": [
+    {
+      "id": 1,
+      "xywh": [
+        787,
+        127,
+        48,
+        23
+      ],
+      "area": 756,
+      "seeds": 744,
+      "peak": 8.590700149536133,
+      "top_contacts": 43,
+      "other_contacts": 0,
+      "eligible": true
+    },
+    {
+      "id": 2,
+      "xywh": [
+        809,
+        127,
+        110,
+        39
+      ],
+      "area": 2055,
+      "seeds": 1858,
+      "peak": 12.984498977661133,
+      "top_contacts": 67,
+      "other_contacts": 0,
+      "eligible": true
+    }
+  ],
+  "completed_components": [
+    {
+      "id": 5,
+      "xywh": [
+        785,
+        85,
+        53,
+        65
+      ],
+      "area": 1806,
+      "selected_overlap": 756,
+      "seeds": 744,
+      "peak": 14.387598037719727,
+      "outer_contacts": 0,
+      "accepted": true
+    },
+    {
+      "id": 8,
+      "xywh": [
+        809,
+        89,
+        110,
+        77
+      ],
+      "area": 3375,
+      "selected_overlap": 2055,
+      "seeds": 1859,
+      "peak": 13.999998092651367,
+      "outer_contacts": 0,
+      "accepted": true
+    }
+  ]
+}

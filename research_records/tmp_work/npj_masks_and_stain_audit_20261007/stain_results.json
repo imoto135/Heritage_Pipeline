@@ -1,0 +1,286 @@
+[
+  {
+    "id": "T01",
+    "page": "hnsd007_023",
+    "frame_xywh": [
+      682,
+      271,
+      768,
+      768
+    ],
+    "seconds": 5.641782912425697,
+    "official_loader_manual_tensor_equal": true,
+    "adapter_vs_direct_float_max": 5.364418029785156e-07,
+    "adapter_vs_direct_float_mean": 3.423853556228096e-08,
+    "adapter_CPU_GPU_input_float_max": 5.960464477539063e-08,
+    "save_image_vs_manual_quantization_max_255": 1,
+    "fresh_tiles_vs_previous_max_255": 0,
+    "fresh_tiles_vs_previous_changed_pixels": 0,
+    "CPU_GPU_max": null,
+    "official256": {
+      "raw_RGB_delta_255": [
+        0.08972238749265671,
+        2.6939406394958496,
+        1.4162405729293823
+      ],
+      "green_balance_delta_255": 1.9409605488181114,
+      "outside_0_1_fraction": 5.086263020833333e-06,
+      "input_range": [
+        0.09019608050584793,
+        0.8235294222831726
+      ],
+      "output_range": [
+        -5.861133575439453,
+        0.7696122527122498
+      ]
+    },
+    "native_whole": {
+      "raw_RGB_delta_255": [
+        0.4493328630924225,
+        3.2575972080230713,
+        1.6872180700302124
+      ],
+      "green_balance_delta_255": 2.1893598698079586,
+      "outside_0_1_fraction": 5.651403356481481e-07,
+      "input_range": [
+        0.05882352963089943,
+        0.8392156958580017
+      ],
+      "output_range": [
+        -5.4823174476623535,
+        0.7919569611549377
+      ]
+    },
+    "tiles": {
+      "raw_RGB_delta_255": [
+        0.9602803587913513,
+        3.438717842102051,
+        1.623441457748413
+      ],
+      "green_balance_delta_255": 2.146839201450348,
+      "outside_0_1_fraction": 0.0,
+      "input_range": [
+        0.05882352963089943,
+        0.8392156958580017
+      ],
+      "output_range": [
+        0.06332430988550186,
+        0.794434666633606
+      ]
+    },
+    "whole_vs_tiles_mean_255": 0.4812005383428186
+  },
+  {
+    "id": "N01",
+    "page": "200010454_00003_2",
+    "frame_xywh": [
+      148,
+      57,
+      768,
+      768
+    ],
+    "seconds": 10.285986113362014,
+    "official_loader_manual_tensor_equal": true,
+    "adapter_vs_direct_float_max": 1.430511474609375e-06,
+    "adapter_vs_direct_float_mean": 1.284529389522504e-07,
+    "adapter_CPU_GPU_input_float_max": 5.960464477539063e-08,
+    "save_image_vs_manual_quantization_max_255": 0,
+    "fresh_tiles_vs_previous_max_255": 0,
+    "fresh_tiles_vs_previous_changed_pixels": 0,
+    "CPU_GPU_max": 4.5299530029296875e-06,
+    "official256": {
+      "raw_RGB_delta_255": [
+        -3.443659543991089,
+        14.434450149536133,
+        18.754714965820312
+      ],
+      "green_balance_delta_255": 6.778915096074343,
+      "outside_0_1_fraction": 1.0172526041666666e-05,
+      "input_range": [
+        0.0470588244497776,
+        0.8784313797950745
+      ],
+      "output_range": [
+        -1.6727242469787598,
+        3.231322765350342
+      ]
+    },
+    "native_whole": {
+      "raw_RGB_delta_255": [
+        -4.022287368774414,
+        18.134511947631836,
+        23.263675689697266
+      ],
+      "green_balance_delta_255": 8.51365216076374,
+      "outside_0_1_fraction": 1.1302806712962962e-06,
+      "input_range": [
+        0.03529411926865578,
+        0.886274516582489
+      ],
+      "output_range": [
+        -0.4079888164997101,
+        2.271622657775879
+      ]
+    },
+    "tiles": {
+      "raw_RGB_delta_255": [
+        -4.0093841552734375,
+        18.34213638305664,
+        23.227310180664062
+      ],
+      "green_balance_delta_255": 8.733203429728746,
+      "outside_0_1_fraction": 0.0,
+      "input_range": [
+        0.03529411926865578,
+        0.886274516582489
+      ],
+      "output_range": [
+        0.04674610123038292,
+        0.8678503036499023
+      ]
+    },
+    "whole_vs_tiles_mean_255": 0.9245162189472467
+  },
+  {
+    "id": "N02",
+    "page": "200021071_00032_1",
+    "frame_xywh": [
+      400,
+      790,
+      768,
+      768
+    ],
+    "seconds": 5.386539464816451,
+    "official_loader_manual_tensor_equal": true,
+    "adapter_vs_direct_float_max": 1.0728836059570312e-06,
+    "adapter_vs_direct_float_mean": 7.088423359391527e-08,
+    "adapter_CPU_GPU_input_float_max": 5.960464477539063e-08,
+    "save_image_vs_manual_quantization_max_255": 1,
+    "fresh_tiles_vs_previous_max_255": 0,
+    "fresh_tiles_vs_previous_changed_pixels": 0,
+    "CPU_GPU_max": null,
+    "official256": {
+      "raw_RGB_delta_255": [
+        0.019269976764917374,
+        4.4775919914245605,
+        4.331276893615723
+      ],
+      "green_balance_delta_255": 2.302341819740832,
+      "outside_0_1_fraction": 1.0172526041666666e-05,
+      "input_range": [
+        0.10196078568696976,
+        0.9215686321258545
+      ],
+      "output_range": [
+        -2.101231336593628,
+        2.7095377445220947
+      ]
+    },
+    "native_whole": {
+      "raw_RGB_delta_255": [
+        -0.5337044596672058,
+        5.751497268676758,
+        5.170807838439941
+      ],
+      "green_balance_delta_255": 3.4329153411090374,
+      "outside_0_1_fraction": 1.1302806712962962e-06,
+      "input_range": [
+        0.10196078568696976,
+        0.9215686321258545
+      ],
+      "output_range": [
+        -1.9261523485183716,
+        2.2667219638824463
+      ]
+    },
+    "tiles": {
+      "raw_RGB_delta_255": [
+        -0.5764259696006775,
+        5.768446922302246,
+        5.147629261016846
+      ],
+      "green_balance_delta_255": 3.4829035587608814,
+      "outside_0_1_fraction": 0.0,
+      "input_range": [
+        0.10196078568696976,
+        0.9215686321258545
+      ],
+      "output_range": [
+        0.10761348158121109,
+        0.8968752026557922
+      ]
+    },
+    "whole_vs_tiles_mean_255": 0.6439252034761012
+  },
+  {
+    "id": "F41",
+    "page": "200020019_00082_2",
+    "frame_xywh": [
+      214,
+      548,
+      768,
+      768
+    ],
+    "seconds": 5.278914298862219,
+    "official_loader_manual_tensor_equal": true,
+    "adapter_vs_direct_float_max": 5.960464477539062e-07,
+    "adapter_vs_direct_float_mean": 3.79183049403764e-08,
+    "adapter_CPU_GPU_input_float_max": 5.960464477539063e-08,
+    "save_image_vs_manual_quantization_max_255": 0,
+    "fresh_tiles_vs_previous_max_255": 0,
+    "fresh_tiles_vs_previous_changed_pixels": 0,
+    "CPU_GPU_max": null,
+    "official256": {
+      "raw_RGB_delta_255": [
+        0.3155982792377472,
+        5.751065254211426,
+        3.570159435272217
+      ],
+      "green_balance_delta_255": 3.8081499561667442,
+      "outside_0_1_fraction": 6.103515625e-05,
+      "input_range": [
+        0.0,
+        0.8039215803146362
+      ],
+      "output_range": [
+        -3.2309491634368896,
+        0.8261600732803345
+      ]
+    },
+    "native_whole": {
+      "raw_RGB_delta_255": [
+        0.2779000401496887,
+        5.408441543579102,
+        3.3958799839019775
+      ],
+      "green_balance_delta_255": 3.571531902998686,
+      "outside_0_1_fraction": 4.8036928530092596e-05,
+      "input_range": [
+        0.0,
+        0.8980392217636108
+      ],
+      "output_range": [
+        -3.90864896774292,
+        0.8595786690711975
+      ]
+    },
+    "tiles": {
+      "raw_RGB_delta_255": [
+        0.8812763094902039,
+        5.8043413162231445,
+        3.6608994007110596
+      ],
+      "green_balance_delta_255": 3.5332470573484898,
+      "outside_0_1_fraction": 0.0,
+      "input_range": [
+        0.0,
+        0.8980392217636108
+      ],
+      "output_range": [
+        0.0,
+        0.8229848742485046
+      ]
+    },
+    "whole_vs_tiles_mean_255": 0.6095564633142203
+  }
+]

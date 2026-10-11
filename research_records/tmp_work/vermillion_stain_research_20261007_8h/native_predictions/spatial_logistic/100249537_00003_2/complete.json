@@ -1,0 +1,20 @@
+{
+  "page": "100249537_00003_2",
+  "name": "spatial_logistic",
+  "book": "100249537",
+  "role": "development",
+  "original": "data/train/100249537/100249537_00003_2.jpg",
+  "source_sha256": "557d28ea4800b88997e0c7da395b4171583533996508bc88088c0cb85a05ad87",
+  "model_sha256": "01fce47b0b720fee824508768678a94cb71f6ba784e0c9a5013afdafaca63e75",
+  "threshold": 0.5,
+  "script_sha256": "588fbd088eac4cdf6957f0f1fb1c5957ab38aabbba74d196a0c7011db0b5741c",
+  "mark_pixels": 1359975,
+  "seconds": 2.159778325818479,
+  "training": "92 tentative original-development points; no validation labels used",
+  "classifier_has_no_stain_head": true,
+  "no_full_pixel_GT": true,
+  "outputs": {
+    "mark_mask.png": "b554f813dfbbdf92c9a264642596c55bc04e546d38668435c61948ee94280237",
+    "mark_probability_preview.png": "62726e1c4688aa5385ac36fb1f659129c48b2e3ab00bd465f7be5b8a1dd11940"
+  }
+}

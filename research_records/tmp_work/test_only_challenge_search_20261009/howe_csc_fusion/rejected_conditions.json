@@ -1,0 +1,42 @@
+{
+  "conditions": [
+    {
+      "name": "Howe minus CSC degradation pixels",
+      "status": "rejected at mask review",
+      "reason": "07の表文字を削る。03の文字周辺も削れる。",
+      "roi_removed_pixels": {
+        "01": 292,
+        "02": 1732,
+        "03": 4114,
+        "04": 354,
+        "06": 694,
+        "07": 1800
+      }
+    },
+    {
+      "name": "small CSC-degradation components plus isolated round marks",
+      "status": "DDRM interrupted; partial outputs excluded from final comparison",
+      "reason": "02・03の小さな淡い文字線をCSC劣化として削る。"
+    },
+    {
+      "name": "CSC-supported isolated round marks v1",
+      "status": "DDRM interrupted; excluded from final comparison",
+      "reason": "01の曲線先端も丸い孤立成分と判定した。",
+      "faint_stroke_example": {
+        "page": "200010454_00016_2",
+        "xywh": [
+          1433,
+          1733,
+          8,
+          7
+        ]
+      }
+    },
+    {
+      "name": "CSC-supported isolated round marks v2",
+      "status": "DDRM completed: 3 new pages + 3 verified identical-mask reuses",
+      "reason": "近傍3筆画幅にHowe候補がある成分を保護。02・03・06は原寸全マスク一致。"
+    }
+  ],
+  "notes": "All labels are development review observations, not independently annotated pixel ground truth."
+}

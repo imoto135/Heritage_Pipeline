@@ -1,0 +1,112 @@
+{
+  "page": "200010454_00002_2",
+  "roi": "remote_brown",
+  "xywh": [
+    710,
+    200,
+    450,
+    330
+  ],
+  "profiles": 160,
+  "spaces": {
+    "rgb_additive": {
+      "status": "estimated",
+      "median_best_background_cv_mse": 9.263618294961901,
+      "median_best_ink_cv_mse": 7.381269915385743
+    },
+    "encoded_od": {
+      "status": "estimated",
+      "median_best_background_cv_mse": 46.70673602283679,
+      "median_best_ink_cv_mse": 19.409257219686154
+    },
+    "linear_srgb_od": {
+      "status": "estimated",
+      "median_best_background_cv_mse": 41.93427672922236,
+      "median_best_ink_cv_mse": 18.805238754809583
+    }
+  },
+  "scenarios": {
+    "restricted_background": {
+      "all": {
+        "ink_required": 17,
+        "ambiguous": 6,
+        "low_ink": 2,
+        "unexplained": 135
+      },
+      "v2_edit_locations": {
+        "ink_required": 12,
+        "ambiguous": 0,
+        "low_ink": 0,
+        "unexplained": 16
+      },
+      "v6_edit_locations": {
+        "ink_required": 12,
+        "ambiguous": 0,
+        "low_ink": 0,
+        "unexplained": 16
+      }
+    },
+    "colored_crease_allowed": {
+      "all": {
+        "ink_required": 12,
+        "ambiguous": 12,
+        "low_ink": 4,
+        "unexplained": 132
+      },
+      "v2_edit_locations": {
+        "ink_required": 8,
+        "ambiguous": 4,
+        "low_ink": 0,
+        "unexplained": 16
+      },
+      "v6_edit_locations": {
+        "ink_required": 8,
+        "ambiguous": 4,
+        "low_ink": 0,
+        "unexplained": 16
+      }
+    }
+  },
+  "original_v0_scenarios": {
+    "restricted_background": {
+      "all": {
+        "ink_required": 1,
+        "ambiguous": 1,
+        "low_ink": 2,
+        "unexplained": 156
+      },
+      "v2_edit_locations": {
+        "ink_required": 1,
+        "ambiguous": 0,
+        "low_ink": 0,
+        "unexplained": 27
+      },
+      "v6_edit_locations": {
+        "ink_required": 1,
+        "ambiguous": 0,
+        "low_ink": 0,
+        "unexplained": 27
+      }
+    },
+    "colored_crease_allowed": {
+      "all": {
+        "ink_required": 1,
+        "ambiguous": 2,
+        "low_ink": 2,
+        "unexplained": 155
+      },
+      "v2_edit_locations": {
+        "ink_required": 1,
+        "ambiguous": 1,
+        "low_ink": 0,
+        "unexplained": 26
+      },
+      "v6_edit_locations": {
+        "ink_required": 1,
+        "ambiguous": 1,
+        "low_ink": 0,
+        "unexplained": 26
+      }
+    }
+  }
+}

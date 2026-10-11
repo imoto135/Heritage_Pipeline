@@ -1,0 +1,21 @@
+{
+  "page": "200020019_00082_2",
+  "name": "region_spatial_logistic",
+  "book": "200020019",
+  "role": "development",
+  "original": "data/train/200020019/200020019_00082_2.jpg",
+  "source_sha256": "1202997f573d6dcdc461fda9941fa0889311ee31c34842f4b49c0c38d037847c",
+  "model_sha256": "c9ac4f91ad0bc662376c6fa47a402cc5a2d82c53fc4afb9496afd67a320e3301",
+  "threshold": 0.5,
+  "script_sha256": "7f7e895a1b9f0b4204025264c530e67f4e3c6c9fe523d4de3c0c632c67ddd212",
+  "mark_pixels": 528844,
+  "seconds": 1.9142890609800816,
+  "training_points": 924,
+  "training": "Tentative original-development points/regions; no validation labels used",
+  "classifier_has_no_stain_head": true,
+  "no_full_pixel_GT": true,
+  "outputs": {
+    "mark_mask.png": "00b3289d47ae9cb6bedec2849916cbc12af14d6da62465cba9f16701837a832f",
+    "mark_probability_preview.png": "b6e3c119a4b0eafcd28f26d0af4341340637920cf2b46614d8aa37ca0e7fd6ca"
+  }
+}

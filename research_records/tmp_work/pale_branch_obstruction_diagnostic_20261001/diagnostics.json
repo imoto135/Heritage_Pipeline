@@ -1,0 +1,59 @@
+{
+  "mask_changes": false,
+  "restoration": false,
+  "rows": [
+    {
+      "page": "200014685_00002_2",
+      "diagnostic_xywh": [
+        1570,
+        12,
+        120,
+        185
+      ],
+      "counts": {
+        "domain": 1384,
+        "guard": 11,
+        "warm_guard": 0,
+        "line_guard": 11,
+        "v6_red": 0,
+        "v6_extra": 0,
+        "fixed_core": 12,
+        "baseline_edit": 28,
+        "pale6_edit": 28,
+        "color_seed": 242,
+        "color_soft": 728,
+        "dark6": 1428,
+        "dark6_safe_unprotected_unedited": 1356
+      },
+      "original_sha256": "ece797d001ca46faf7973da61b631698776a9103a9efb7ba816b695ac418c59e",
+      "selected_after_outputs": true
+    },
+    {
+      "page": "200014685_00004_2",
+      "diagnostic_xywh": [
+        1770,
+        16,
+        190,
+        140
+      ],
+      "counts": {
+        "domain": 638,
+        "guard": 0,
+        "warm_guard": 0,
+        "line_guard": 0,
+        "v6_red": 0,
+        "v6_extra": 0,
+        "fixed_core": 0,
+        "baseline_edit": 115,
+        "pale6_edit": 121,
+        "color_seed": 2,
+        "color_soft": 179,
+        "dark6": 700,
+        "dark6_safe_unprotected_unedited": 523
+      },
+      "original_sha256": "ef4a6af2df2c04984ca47a356fad6a6d02713386be0f166213427895821fe92b",
+      "selected_after_outputs": true
+    }
+  ],
+  "source": "one-off original/features audit; ROI selected after outputs; not a new inference method"
+}

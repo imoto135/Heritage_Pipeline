@@ -1,0 +1,179 @@
+{
+  "N01": {
+    "bradley61": {},
+    "bradley_paper": {
+      "window": 221
+    },
+    "bradley61_t10": {},
+    "phansalkar61": {},
+    "phansalkar31": {},
+    "bg31_otsu": {
+      "otsu_threshold": 0.7011319994926453
+    },
+    "bg61_otsu": {
+      "otsu_threshold": 0.6935961246490479
+    },
+    "bg61_wolf": {
+      "window": 61,
+      "k": 0.5,
+      "global_min": 0.06060606241226196,
+      "global_max_std": 0.30973026156425476
+    },
+    "bg61_sauvola": {},
+    "bg61_nick": {},
+    "bg121_otsu": {
+      "otsu_threshold": 0.6821820735931396
+    },
+    "howe_terms": {
+      "canny_sigma": 0.6,
+      "canny_low_relative": 0.1,
+      "canny_high_relative": 0.4,
+      "canny_max_sobel_magnitude": 2.0545766353607178,
+      "canny_edge_pixels": 88251,
+      "background_bias_pixels": 21712,
+      "laplacian_min": -500.0,
+      "laplacian_max": 114.50000077486038,
+      "implementation": "Port of author IJDAR base energy, with skimage Canny normalized by maximum Sobel magnitude. MATLAB canny_old and automatic parameter tuning not reproduced.",
+      "seconds": 1.3762955700003658
+    },
+    "howe80": {
+      "c": 80,
+      "mincut_energy": 6297070393.396578,
+      "solver_flow": 6297070393.569364,
+      "foreground_before_post": 314807,
+      "foreground_after_post": 307779
+    },
+    "howe160": {
+      "c": 160,
+      "mincut_energy": 6297183181.403439,
+      "solver_flow": 6297183181.564048,
+      "foreground_before_post": 217795,
+      "foreground_after_post": 210815
+    },
+    "howe320": {
+      "c": 320,
+      "mincut_energy": 6297313297.403233,
+      "solver_flow": 6297313297.549107,
+      "foreground_before_post": 217227,
+      "foreground_after_post": 210299
+    }
+  },
+  "T01": {
+    "bradley61": {},
+    "bradley_paper": {
+      "window": 233
+    },
+    "bradley61_t10": {},
+    "phansalkar61": {},
+    "phansalkar31": {},
+    "bg31_otsu": {
+      "otsu_threshold": 0.7032470703125
+    },
+    "bg61_otsu": {
+      "otsu_threshold": 0.69385826587677
+    },
+    "bg61_wolf": {
+      "window": 61,
+      "k": 0.5,
+      "global_min": 0.17934782803058624,
+      "global_max_std": 0.3028828501701355
+    },
+    "bg61_sauvola": {},
+    "bg61_nick": {},
+    "bg121_otsu": {
+      "otsu_threshold": 0.6763318777084351
+    },
+    "howe_terms": {
+      "canny_sigma": 0.6,
+      "canny_low_relative": 0.1,
+      "canny_high_relative": 0.4,
+      "canny_max_sobel_magnitude": 1.3334378004074097,
+      "canny_edge_pixels": 167483,
+      "background_bias_pixels": 27317,
+      "laplacian_min": -500.0,
+      "laplacian_max": 66.9999960064888,
+      "implementation": "Port of author IJDAR base energy, with skimage Canny normalized by maximum Sobel magnitude. MATLAB canny_old and automatic parameter tuning not reproduced.",
+      "seconds": 1.8133400789993175
+    },
+    "howe80": {
+      "c": 80,
+      "mincut_energy": 7905122488.951294,
+      "solver_flow": 7905122489.193912,
+      "foreground_before_post": 701023,
+      "foreground_after_post": 687822
+    },
+    "howe160": {
+      "c": 160,
+      "mincut_energy": 7905336998.952138,
+      "solver_flow": 7905336999.144907,
+      "foreground_before_post": 691993,
+      "foreground_after_post": 678889
+    },
+    "howe320": {
+      "c": 320,
+      "mincut_energy": 7905706838.953333,
+      "solver_flow": 7905706839.091039,
+      "foreground_before_post": 692274,
+      "foreground_after_post": 679270
+    }
+  },
+  "N05": {
+    "bradley61": {},
+    "bradley_paper": {
+      "window": 223
+    },
+    "bradley61_t10": {},
+    "phansalkar61": {},
+    "phansalkar31": {},
+    "bg31_otsu": {
+      "otsu_threshold": 0.6905097365379333
+    },
+    "bg61_otsu": {
+      "otsu_threshold": 0.6792488098144531
+    },
+    "bg61_wolf": {
+      "window": 61,
+      "k": 0.5,
+      "global_min": 0.11229946464300156,
+      "global_max_std": 0.33378270268440247
+    },
+    "bg61_sauvola": {},
+    "bg61_nick": {},
+    "bg121_otsu": {
+      "otsu_threshold": 0.667755126953125
+    },
+    "howe_terms": {
+      "canny_sigma": 0.6,
+      "canny_low_relative": 0.1,
+      "canny_high_relative": 0.4,
+      "canny_max_sobel_magnitude": 1.8462910652160645,
+      "canny_edge_pixels": 80283,
+      "background_bias_pixels": 25755,
+      "laplacian_min": -500.0,
+      "laplacian_max": 129.00000751018524,
+      "implementation": "Port of author IJDAR base energy, with skimage Canny normalized by maximum Sobel magnitude. MATLAB canny_old and automatic parameter tuning not reproduced.",
+      "seconds": 1.421739768000407
+    },
+    "howe80": {
+      "c": 80,
+      "mincut_energy": 6279153814.362567,
+      "solver_flow": 6279153814.5202055,
+      "foreground_before_post": 212701,
+      "foreground_after_post": 205645
+    },
+    "howe160": {
+      "c": 160,
+      "mincut_energy": 6279291662.378287,
+      "solver_flow": 6279291662.523607,
+      "foreground_before_post": 193883,
+      "foreground_after_post": 186898
+    },
+    "howe320": {
+      "c": 320,
+      "mincut_energy": 6279435235.378375,
+      "solver_flow": 6279435235.50862,
+      "foreground_before_post": 192125,
+      "foreground_after_post": 185196
+    }
+  }
+}

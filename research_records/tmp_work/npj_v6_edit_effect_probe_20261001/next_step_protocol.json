@@ -1,0 +1,44 @@
+{
+  "status": "planned_after_completed_fixed_probe",
+  "completed": {
+    "additional_pages": 3,
+    "paired_probe_pages": 11,
+    "paired_probe_rois": 15,
+    "primary_artifact": "PNG"
+  },
+  "frozen_cases": [
+    "dense_stain",
+    "thin_black_water",
+    "brown_as_red",
+    "thin_black_loop",
+    "thin_black_text",
+    "warm_stroke",
+    "control_black",
+    "dense_stain_new",
+    "brown_false_red_new",
+    "hole_edge_new",
+    "control_text_new",
+    "brown_near_text",
+    "dark_text_control",
+    "faint_left_text",
+    "damage_control"
+  ],
+  "next_questions": [
+    "本文に接する汚れ・穴の濃い縁を編集対象に戻せるか。周囲の実筆画を対照にする。",
+    "編集対象に戻した汚れに、平坦な塗り跡・灰色点・筆画の消失を作らない復元ができるか。"
+  ],
+  "restoration_integration": [
+    "DDRMの既知・欠損／本文マスクとv6のprotect・hold・editの意味を明記した接続仕様を作る。v6 editを本文マスクとして直接渡さない。",
+    "旧npjの全工程再現と、同じ復元器でのマスク差比較を別の実験として記録する。",
+    "復元器・重み・乱数種・解像度・前後処理を対で固定し、最終画像の編集範囲外は原画素を維持する。"
+  ],
+  "acceptance": [
+    "thin_black_loop・faint_left_text・warm_strokeと本文対照で実筆画を消さない。",
+    "dense_stain_new・brown_near_text・hole_edge_new・damage_controlの誤保護が残るかを確認する。",
+    "dense_stain・brown_as_red・brown_false_red_newの塗り跡と紙面の質感を確認する。",
+    "固定15箇所を省略せず比較PNGで提示する。編集画素数を精度・除去率と呼ばない。",
+    "これらを調整に使ったら開発例と明記し、別冊の未使用ページで確認する。イラストページは主評価から除外する。"
+  ],
+  "method_thresholds_changed": false,
+  "new_method_implemented": false
+}

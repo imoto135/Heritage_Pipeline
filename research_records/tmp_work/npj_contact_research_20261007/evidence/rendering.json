@@ -1,0 +1,1024 @@
+{
+  "created": 1791373111.4223971,
+  "figures": [
+    {
+      "figure": "evidence/T01_full_native.png",
+      "panels": [
+        {
+          "source": "data/split_dataset/train/hnsd00000/hnsd007_023.jpg",
+          "xywh": [
+            812,
+            421,
+            450,
+            450
+          ],
+          "size": [
+            450,
+            450
+          ],
+          "label": "原画像",
+          "source_sha256": "41999e5b52d17e60ea068c9b629ffcce037dc27fcbb3a4f45f46a5063d7b22af",
+          "panel_canvas_xywh": [
+            16,
+            130,
+            450,
+            450
+          ],
+          "integer_scale": 1,
+          "native_copy": "evidence/native/T01_full_native/00.png"
+        },
+        {
+          "source": "tmp_work/npj_contact_research_20261007/full_page/output/baseline/hnsd007_023/result/hnsd007_023.png",
+          "xywh": [
+            812,
+            421,
+            450,
+            450
+          ],
+          "size": [
+            450,
+            450
+          ],
+          "label": "NPJ系基準",
+          "source_sha256": "50f8d8a04c2cf9cf916f4f2dec0af735ca79f3bd97d8f91e5f00275c270514ba",
+          "panel_canvas_xywh": [
+            490,
+            130,
+            450,
+            450
+          ],
+          "integer_scale": 1,
+          "native_copy": "evidence/native/T01_full_native/01.png"
+        },
+        {
+          "source": "tmp_work/npj_contact_research_20261007/full_page/output/sauvola/hnsd007_023/result/hnsd007_023.png",
+          "xywh": [
+            812,
+            421,
+            450,
+            450
+          ],
+          "size": [
+            450,
+            450
+          ],
+          "label": "Sauvolaマスク＋DDRM",
+          "source_sha256": "129d36c767d723fa247b0dd9c20b5f4424131bf6b84e9c5ea8f01fcdbe3efbe5",
+          "panel_canvas_xywh": [
+            964,
+            130,
+            450,
+            450
+          ],
+          "integer_scale": 1,
+          "native_copy": "evidence/native/T01_full_native/02.png"
+        },
+        {
+          "source": "tmp_work/npj_contact_research_20261007/full_local/T01/sauvola.png",
+          "xywh": [
+            812,
+            421,
+            450,
+            450
+          ],
+          "size": [
+            450,
+            450
+          ],
+          "label": "自動範囲＋局所二値化",
+          "source_sha256": "164e6b05854606a168445abf48cad71be48927d2fd1f1d0099df9ac8e3b46f5b",
+          "panel_canvas_xywh": [
+            1438,
+            130,
+            450,
+            450
+          ],
+          "integer_scale": 1,
+          "native_copy": "evidence/native/T01_full_native/03.png"
+        }
+      ]
+    },
+    {
+      "figure": "evidence/N01_full_native.png",
+      "panels": [
+        {
+          "source": "data/split_dataset/test/200010454/200010454_00003_2.jpg",
+          "xywh": [
+            428,
+            347,
+            190,
+            220
+          ],
+          "size": [
+            190,
+            220
+          ],
+          "label": "原画像",
+          "source_sha256": "67c1f8a762d442015f420a34512119163c3e4cb06307bb75567d086f119a246f",
+          "panel_canvas_xywh": [
+            16,
+            130,
+            380,
+            440
+          ],
+          "integer_scale": 2,
+          "native_copy": "evidence/native/N01_full_native/00.png"
+        },
+        {
+          "source": "tmp_work/npj_contact_research_20261007/full_followup/B/output/baseline/200010454_00003_2/result/200010454_00003_2.png",
+          "xywh": [
+            428,
+            347,
+            190,
+            220
+          ],
+          "size": [
+            190,
+            220
+          ],
+          "label": "NPJ系基準",
+          "source_sha256": "d8eda259033b04d15aa7f43249019594bd4fee55cc181c898911e148dcb1ba1e",
+          "panel_canvas_xywh": [
+            420,
+            130,
+            380,
+            440
+          ],
+          "integer_scale": 2,
+          "native_copy": "evidence/native/N01_full_native/01.png"
+        },
+        {
+          "source": "tmp_work/npj_contact_research_20261007/full_followup/B/output/sauvola/200010454_00003_2/result/200010454_00003_2.png",
+          "xywh": [
+            428,
+            347,
+            190,
+            220
+          ],
+          "size": [
+            190,
+            220
+          ],
+          "label": "Sauvolaマスク＋DDRM",
+          "source_sha256": "d0fb00826ecfc1b8080042b425ab03cdb655960039ce728acfa82c4fea5c00e7",
+          "panel_canvas_xywh": [
+            824,
+            130,
+            380,
+            440
+          ],
+          "integer_scale": 2,
+          "native_copy": "evidence/native/N01_full_native/02.png"
+        },
+        {
+          "source": "tmp_work/npj_contact_research_20261007/full_local/N01/sauvola.png",
+          "xywh": [
+            428,
+            347,
+            190,
+            220
+          ],
+          "size": [
+            190,
+            220
+          ],
+          "label": "自動範囲＋局所二値化",
+          "source_sha256": "956fdf5cbac70f988ac8247b2f7f4f5b5bce519fd9a913e25929dde9713c9167",
+          "panel_canvas_xywh": [
+            1228,
+            130,
+            380,
+            440
+          ],
+          "integer_scale": 2,
+          "native_copy": "evidence/native/N01_full_native/03.png"
+        }
+      ]
+    },
+    {
+      "figure": "evidence/F39_full_native.png",
+      "panels": [
+        {
+          "source": "data/split_dataset/train/200021086/200021086_00013_1.jpg",
+          "xywh": [
+            400,
+            2496,
+            420,
+            360
+          ],
+          "size": [
+            420,
+            360
+          ],
+          "label": "原画像",
+          "source_sha256": "888d7f1fe3a257cd4641670be47e6ac64ee4ffe1fcbef47705722c55fd0da268",
+          "panel_canvas_xywh": [
+            16,
+            130,
+            420,
+            360
+          ],
+          "integer_scale": 1,
+          "native_copy": "evidence/native/F39_full_native/00.png"
+        },
+        {
+          "source": "tmp_work/npj_contact_research_20261007/full_followup/C/output/baseline/200021086_00013_1/result/200021086_00013_1.png",
+          "xywh": [
+            400,
+            2496,
+            420,
+            360
+          ],
+          "size": [
+            420,
+            360
+          ],
+          "label": "NPJ系基準",
+          "source_sha256": "743018c059c1066d9925aaeb1e4bb830e516cf525fecb1391fe4e0c82fe14110",
+          "panel_canvas_xywh": [
+            460,
+            130,
+            420,
+            360
+          ],
+          "integer_scale": 1,
+          "native_copy": "evidence/native/F39_full_native/01.png"
+        },
+        {
+          "source": "tmp_work/npj_contact_research_20261007/full_followup/C/output/sauvola/200021086_00013_1/result/200021086_00013_1.png",
+          "xywh": [
+            400,
+            2496,
+            420,
+            360
+          ],
+          "size": [
+            420,
+            360
+          ],
+          "label": "Sauvolaマスク＋DDRM",
+          "source_sha256": "7b7f144e2dc243e7659004e5178dd86009ba016e4169af33366a7030ebc1c1cf",
+          "panel_canvas_xywh": [
+            904,
+            130,
+            420,
+            360
+          ],
+          "integer_scale": 1,
+          "native_copy": "evidence/native/F39_full_native/02.png"
+        },
+        {
+          "source": "tmp_work/npj_contact_research_20261007/full_local/F39/sauvola.png",
+          "xywh": [
+            400,
+            2496,
+            420,
+            360
+          ],
+          "size": [
+            420,
+            360
+          ],
+          "label": "自動範囲＋局所二値化",
+          "source_sha256": "c4872ead3f46bebe4c75768151f87dacb59c9dc1b1ecd7b90c5bbbd6e3877233",
+          "panel_canvas_xywh": [
+            1348,
+            130,
+            420,
+            360
+          ],
+          "integer_scale": 1,
+          "native_copy": "evidence/native/F39_full_native/03.png"
+        }
+      ]
+    },
+    {
+      "figure": "evidence/F48_full_native.png",
+      "panels": [
+        {
+          "source": "data/split_dataset/test/200021071/200021071_00070_2.jpg",
+          "xywh": [
+            1080,
+            1253,
+            420,
+            360
+          ],
+          "size": [
+            420,
+            360
+          ],
+          "label": "原画像",
+          "source_sha256": "87ee84aa57faaed5c36d33e3b13ec98157db048628b9a279e7607c597931b60e",
+          "panel_canvas_xywh": [
+            16,
+            130,
+            420,
+            360
+          ],
+          "integer_scale": 1,
+          "native_copy": "evidence/native/F48_full_native/00.png"
+        },
+        {
+          "source": "tmp_work/npj_contact_research_20261007/full_followup/C/output/baseline/200021071_00070_2/result/200021071_00070_2.png",
+          "xywh": [
+            1080,
+            1253,
+            420,
+            360
+          ],
+          "size": [
+            420,
+            360
+          ],
+          "label": "NPJ系基準",
+          "source_sha256": "af053197bfc328e520b4a92b5d49b9b596195337cec6b9691658ad720b1ea8ed",
+          "panel_canvas_xywh": [
+            460,
+            130,
+            420,
+            360
+          ],
+          "integer_scale": 1,
+          "native_copy": "evidence/native/F48_full_native/01.png"
+        },
+        {
+          "source": "tmp_work/npj_contact_research_20261007/full_followup/C/output/sauvola/200021071_00070_2/result/200021071_00070_2.png",
+          "xywh": [
+            1080,
+            1253,
+            420,
+            360
+          ],
+          "size": [
+            420,
+            360
+          ],
+          "label": "Sauvolaマスク＋DDRM",
+          "source_sha256": "d08b30cfc688961b105045d0ffe7ab17a43516fd8f5c708ffe3e518cce119574",
+          "panel_canvas_xywh": [
+            904,
+            130,
+            420,
+            360
+          ],
+          "integer_scale": 1,
+          "native_copy": "evidence/native/F48_full_native/02.png"
+        },
+        {
+          "source": "tmp_work/npj_contact_research_20261007/full_local/F48/sauvola.png",
+          "xywh": [
+            1080,
+            1253,
+            420,
+            360
+          ],
+          "size": [
+            420,
+            360
+          ],
+          "label": "自動範囲＋局所二値化",
+          "source_sha256": "cfbe7e22e01c08a2b1c4f4b02fbc2f5f2b3e180caed965cab293aedca99a8912",
+          "panel_canvas_xywh": [
+            1348,
+            130,
+            420,
+            360
+          ],
+          "integer_scale": 1,
+          "native_copy": "evidence/native/F48_full_native/03.png"
+        }
+      ]
+    },
+    {
+      "figure": "evidence/F62_full_native.png",
+      "panels": [
+        {
+          "source": "data/split_dataset/test/200010454/200010454_00003_1.jpg",
+          "xywh": [
+            1157,
+            300,
+            180,
+            270
+          ],
+          "size": [
+            180,
+            270
+          ],
+          "label": "原画像",
+          "source_sha256": "88e288025f013070950c638582d2812dc3e840cf550e0d4941e0167d9461a67e",
+          "panel_canvas_xywh": [
+            16,
+            130,
+            360,
+            540
+          ],
+          "integer_scale": 2,
+          "native_copy": "evidence/native/F62_full_native/00.png"
+        },
+        {
+          "source": "tmp_work/npj_contact_research_20261007/full_followup/C/output/baseline/200010454_00003_1/result/200010454_00003_1.png",
+          "xywh": [
+            1157,
+            300,
+            180,
+            270
+          ],
+          "size": [
+            180,
+            270
+          ],
+          "label": "NPJ系基準",
+          "source_sha256": "b91f523e620df650e369c9a6ca8255bed8fe7ff2f6434797394ac2ec54e6f506",
+          "panel_canvas_xywh": [
+            400,
+            130,
+            360,
+            540
+          ],
+          "integer_scale": 2,
+          "native_copy": "evidence/native/F62_full_native/01.png"
+        },
+        {
+          "source": "tmp_work/npj_contact_research_20261007/full_followup/C/output/sauvola/200010454_00003_1/result/200010454_00003_1.png",
+          "xywh": [
+            1157,
+            300,
+            180,
+            270
+          ],
+          "size": [
+            180,
+            270
+          ],
+          "label": "Sauvolaマスク＋DDRM",
+          "source_sha256": "a76a05b92dbbe9068b833560fa5555103cc0c2b0b98ee8ed382589ea79ce8dad",
+          "panel_canvas_xywh": [
+            784,
+            130,
+            360,
+            540
+          ],
+          "integer_scale": 2,
+          "native_copy": "evidence/native/F62_full_native/02.png"
+        },
+        {
+          "source": "tmp_work/npj_contact_research_20261007/full_local/F62/sauvola.png",
+          "xywh": [
+            1157,
+            300,
+            180,
+            270
+          ],
+          "size": [
+            180,
+            270
+          ],
+          "label": "自動範囲＋局所二値化",
+          "source_sha256": "297679d42a4de8a4ef124eb4d5a2b04a669efd6aa3c430f3124a22fd0db481fa",
+          "panel_canvas_xywh": [
+            1168,
+            130,
+            360,
+            540
+          ],
+          "integer_scale": 2,
+          "native_copy": "evidence/native/F62_full_native/03.png"
+        }
+      ]
+    },
+    {
+      "figure": "evidence/N05_thin_native.png",
+      "panels": [
+        {
+          "source": "tmp_work/npj_contact_research_20261007/real_models/N05/original.png",
+          "xywh": [
+            300,
+            165,
+            170,
+            245
+          ],
+          "size": [
+            170,
+            245
+          ],
+          "label": "原画像",
+          "source_sha256": "2b6eb0e9c09c4f3c07aa7f63a4fd2107a4a6dc86da2756635be44bc490d0fc09",
+          "panel_canvas_xywh": [
+            16,
+            130,
+            340,
+            490
+          ],
+          "integer_scale": 2,
+          "native_copy": "evidence/native/N05_thin_native/00.png"
+        },
+        {
+          "source": "tmp_work/npj_contact_research_20261007/real_models/N05/sauvola.png",
+          "xywh": [
+            300,
+            165,
+            170,
+            245
+          ],
+          "size": [
+            170,
+            245
+          ],
+          "label": "Sauvola",
+          "source_sha256": "55b7e9b7abfe1299388f5ac828210495997e694efdad08f88c28a36014befe5d",
+          "panel_canvas_xywh": [
+            380,
+            130,
+            340,
+            490
+          ],
+          "integer_scale": 2,
+          "native_copy": "evidence/native/N05_thin_native/01.png"
+        },
+        {
+          "source": "tmp_work/npj_contact_research_20261007/real_models/N05/docres.png",
+          "xywh": [
+            300,
+            165,
+            170,
+            245
+          ],
+          "size": [
+            170,
+            245
+          ],
+          "label": "DocRes",
+          "source_sha256": "176d847576c532f0eb82087a091d55862a56c71ed601595b6ffad08230d934d7",
+          "panel_canvas_xywh": [
+            744,
+            130,
+            340,
+            490
+          ],
+          "integer_scale": 2,
+          "native_copy": "evidence/native/N05_thin_native/02.png"
+        },
+        {
+          "source": "tmp_work/npj_contact_research_20261007/real_models/N05/residual.png",
+          "xywh": [
+            300,
+            165,
+            170,
+            245
+          ],
+          "size": [
+            170,
+            245
+          ],
+          "label": "RGB差分学習",
+          "source_sha256": "219a448624ca453e71308df35313ceaf4ccb8556b01f21b5806766aa17ebcec5",
+          "panel_canvas_xywh": [
+            1108,
+            130,
+            340,
+            490
+          ],
+          "integer_scale": 2,
+          "native_copy": "evidence/native/N05_thin_native/03.png"
+        },
+        {
+          "source": "tmp_work/npj_contact_research_20261007/real_models/N05/gain_od_regression.png",
+          "xywh": [
+            300,
+            165,
+            170,
+            245
+          ],
+          "size": [
+            170,
+            245
+          ],
+          "label": "濃度＋明るさ制約",
+          "source_sha256": "c2fe1ae4534dcce068d7358b3095a8f12da014b449fa73a63154e85438af7f96",
+          "panel_canvas_xywh": [
+            1472,
+            130,
+            340,
+            490
+          ],
+          "integer_scale": 2,
+          "native_copy": "evidence/native/N05_thin_native/04.png"
+        }
+      ]
+    },
+    {
+      "figure": "evidence/F67_thin_native.png",
+      "panels": [
+        {
+          "source": "tmp_work/npj_contact_research_20261007/real_models/F67/original.png",
+          "xywh": [
+            0,
+            0,
+            220,
+            460
+          ],
+          "size": [
+            220,
+            460
+          ],
+          "label": "原画像",
+          "source_sha256": "ce6145dfc86f3841fab6fe9c35abc469c30caf4bbdf7cca86755578ec94019d4",
+          "panel_canvas_xywh": [
+            16,
+            130,
+            220,
+            460
+          ],
+          "integer_scale": 1,
+          "native_copy": "evidence/native/F67_thin_native/00.png"
+        },
+        {
+          "source": "tmp_work/npj_contact_research_20261007/real_models/F67/sauvola.png",
+          "xywh": [
+            0,
+            0,
+            220,
+            460
+          ],
+          "size": [
+            220,
+            460
+          ],
+          "label": "Sauvola",
+          "source_sha256": "85f9b81d360f2764107e4e006524d811d555c479bda3b82250ab85a4965ae00f",
+          "panel_canvas_xywh": [
+            260,
+            130,
+            220,
+            460
+          ],
+          "integer_scale": 1,
+          "native_copy": "evidence/native/F67_thin_native/01.png"
+        },
+        {
+          "source": "tmp_work/npj_contact_research_20261007/real_models/F67/docres.png",
+          "xywh": [
+            0,
+            0,
+            220,
+            460
+          ],
+          "size": [
+            220,
+            460
+          ],
+          "label": "DocRes",
+          "source_sha256": "db43d591e1cbe249fc649c7190a8b5588bbe46cabaf9d307c04a95d988d4e208",
+          "panel_canvas_xywh": [
+            504,
+            130,
+            220,
+            460
+          ],
+          "integer_scale": 1,
+          "native_copy": "evidence/native/F67_thin_native/02.png"
+        },
+        {
+          "source": "tmp_work/npj_contact_research_20261007/real_models/F67/residual.png",
+          "xywh": [
+            0,
+            0,
+            220,
+            460
+          ],
+          "size": [
+            220,
+            460
+          ],
+          "label": "RGB差分学習",
+          "source_sha256": "db888444fabf2c0ae3241cdd5b687c6aacdc9aa912ea71f4403bbf9045d87b77",
+          "panel_canvas_xywh": [
+            748,
+            130,
+            220,
+            460
+          ],
+          "integer_scale": 1,
+          "native_copy": "evidence/native/F67_thin_native/03.png"
+        },
+        {
+          "source": "tmp_work/npj_contact_research_20261007/real_models/F67/gain_od_regression.png",
+          "xywh": [
+            0,
+            0,
+            220,
+            460
+          ],
+          "size": [
+            220,
+            460
+          ],
+          "label": "濃度＋明るさ制約",
+          "source_sha256": "938a85696a801ad39ddd1adeaaf27cdf38fc0b4dfff0f62b349b7d6866fdd0fc",
+          "panel_canvas_xywh": [
+            992,
+            130,
+            220,
+            460
+          ],
+          "integer_scale": 1,
+          "native_copy": "evidence/native/F67_thin_native/04.png"
+        }
+      ]
+    },
+    {
+      "figure": "evidence/N02_red_native.png",
+      "panels": [
+        {
+          "source": "tmp_work/npj_contact_research_20261007/red_filter_study/inputs/N02/200021071_00032_1.png",
+          "xywh": [
+            120,
+            100,
+            520,
+            560
+          ],
+          "size": [
+            520,
+            560
+          ],
+          "label": "原画像",
+          "source_sha256": "4a0059b40d8ef26ff0558dd9211612e4222443d1df2a0e3d8141d9e9ee84ea9c",
+          "panel_canvas_xywh": [
+            16,
+            130,
+            520,
+            560
+          ],
+          "integer_scale": 1,
+          "native_copy": "evidence/native/N02_red_native/00.png"
+        },
+        {
+          "source": "tmp_work/npj_contact_research_20261007/red_filter_study/output/saved_black_saved_red/200021071_00032_1/result/200021071_00032_1.png",
+          "xywh": [
+            120,
+            100,
+            520,
+            560
+          ],
+          "size": [
+            520,
+            560
+          ],
+          "label": "保存黒＋保存赤",
+          "source_sha256": "37b71d20368a5dd969c2498d3e010ed29bbbec925eb553ca35101388b87be1f7",
+          "panel_canvas_xywh": [
+            560,
+            130,
+            520,
+            560
+          ],
+          "integer_scale": 1,
+          "native_copy": "evidence/native/N02_red_native/01.png"
+        },
+        {
+          "source": "tmp_work/npj_contact_research_20261007/red_filter_study/output/saved_black_filtered_red/200021071_00032_1/result/200021071_00032_1.png",
+          "xywh": [
+            120,
+            100,
+            520,
+            560
+          ],
+          "size": [
+            520,
+            560
+          ],
+          "label": "保存黒＋絶対色赤",
+          "source_sha256": "cdca9f109a71307ac9978b7f36450c93a18cedad9f5bc96f241b2937656b6e5d",
+          "panel_canvas_xywh": [
+            1104,
+            130,
+            520,
+            560
+          ],
+          "integer_scale": 1,
+          "native_copy": "evidence/native/N02_red_native/02.png"
+        },
+        {
+          "source": "tmp_work/npj_contact_research_20261007/red_filter_study/output/sauvola_black_filtered_red/200021071_00032_1/result/200021071_00032_1.png",
+          "xywh": [
+            120,
+            100,
+            520,
+            560
+          ],
+          "size": [
+            520,
+            560
+          ],
+          "label": "Sauvola黒＋絶対色赤",
+          "source_sha256": "5537c905eac639d546fbb80da1e0e750875deddeea7ad591851e4006e1ad8567",
+          "panel_canvas_xywh": [
+            1648,
+            130,
+            520,
+            560
+          ],
+          "integer_scale": 1,
+          "native_copy": "evidence/native/N02_red_native/03.png"
+        }
+      ]
+    },
+    {
+      "figure": "evidence/N03_red_native.png",
+      "panels": [
+        {
+          "source": "tmp_work/npj_contact_research_20261007/red_filter_study/inputs/N03/200021071_00071_1.png",
+          "xywh": [
+            120,
+            100,
+            520,
+            560
+          ],
+          "size": [
+            520,
+            560
+          ],
+          "label": "原画像",
+          "source_sha256": "7fc1cb4ccb9e18d657f9d14dd8c19a831aeb84109881b7199b52d4deee5b3c67",
+          "panel_canvas_xywh": [
+            16,
+            130,
+            520,
+            560
+          ],
+          "integer_scale": 1,
+          "native_copy": "evidence/native/N03_red_native/00.png"
+        },
+        {
+          "source": "tmp_work/npj_contact_research_20261007/red_filter_study/output/saved_black_saved_red/200021071_00071_1/result/200021071_00071_1.png",
+          "xywh": [
+            120,
+            100,
+            520,
+            560
+          ],
+          "size": [
+            520,
+            560
+          ],
+          "label": "保存黒＋保存赤",
+          "source_sha256": "fd1e38c5d72a6898cac18946138f02064c7dd8367cb4b065462af9e8edc9d92e",
+          "panel_canvas_xywh": [
+            560,
+            130,
+            520,
+            560
+          ],
+          "integer_scale": 1,
+          "native_copy": "evidence/native/N03_red_native/01.png"
+        },
+        {
+          "source": "tmp_work/npj_contact_research_20261007/red_filter_study/output/saved_black_filtered_red/200021071_00071_1/result/200021071_00071_1.png",
+          "xywh": [
+            120,
+            100,
+            520,
+            560
+          ],
+          "size": [
+            520,
+            560
+          ],
+          "label": "保存黒＋絶対色赤",
+          "source_sha256": "46078dd3ce208b0bad44a87ebcd4eb605f7fb936ade08554271de31f82494334",
+          "panel_canvas_xywh": [
+            1104,
+            130,
+            520,
+            560
+          ],
+          "integer_scale": 1,
+          "native_copy": "evidence/native/N03_red_native/02.png"
+        },
+        {
+          "source": "tmp_work/npj_contact_research_20261007/red_filter_study/output/sauvola_black_filtered_red/200021071_00071_1/result/200021071_00071_1.png",
+          "xywh": [
+            120,
+            100,
+            520,
+            560
+          ],
+          "size": [
+            520,
+            560
+          ],
+          "label": "Sauvola黒＋絶対色赤",
+          "source_sha256": "80b01fa8374569c7006d0d7a9a3a124dc00f174fe4d8d6c33654c1fde4ccef36",
+          "panel_canvas_xywh": [
+            1648,
+            130,
+            520,
+            560
+          ],
+          "integer_scale": 1,
+          "native_copy": "evidence/native/N03_red_native/03.png"
+        }
+      ]
+    },
+    {
+      "figure": "evidence/F41_red_native.png",
+      "panels": [
+        {
+          "source": "tmp_work/npj_contact_research_20261007/red_filter_study/inputs/F41/200020019_00082_2.png",
+          "xywh": [
+            90,
+            180,
+            340,
+            390
+          ],
+          "size": [
+            340,
+            390
+          ],
+          "label": "原画像",
+          "source_sha256": "87218f1f61f7252fca838551259810ed04de5015d9513b31ff59d1a422954b2b",
+          "panel_canvas_xywh": [
+            16,
+            130,
+            340,
+            390
+          ],
+          "integer_scale": 1,
+          "native_copy": "evidence/native/F41_red_native/00.png"
+        },
+        {
+          "source": "tmp_work/npj_contact_research_20261007/red_filter_study/output/saved_black_saved_red/200020019_00082_2/result/200020019_00082_2.png",
+          "xywh": [
+            90,
+            180,
+            340,
+            390
+          ],
+          "size": [
+            340,
+            390
+          ],
+          "label": "保存黒＋保存赤",
+          "source_sha256": "43761802f99412feb2eb2269fd6aed540914f94c47299f4d097812efc5fd642f",
+          "panel_canvas_xywh": [
+            380,
+            130,
+            340,
+            390
+          ],
+          "integer_scale": 1,
+          "native_copy": "evidence/native/F41_red_native/01.png"
+        },
+        {
+          "source": "tmp_work/npj_contact_research_20261007/red_filter_study/output/saved_black_filtered_red/200020019_00082_2/result/200020019_00082_2.png",
+          "xywh": [
+            90,
+            180,
+            340,
+            390
+          ],
+          "size": [
+            340,
+            390
+          ],
+          "label": "保存黒＋絶対色赤",
+          "source_sha256": "1c9f0c067a8fe14e46147d0d561ad5a2b7cd2f6476821dab09abf1671631f37e",
+          "panel_canvas_xywh": [
+            744,
+            130,
+            340,
+            390
+          ],
+          "integer_scale": 1,
+          "native_copy": "evidence/native/F41_red_native/02.png"
+        },
+        {
+          "source": "tmp_work/npj_contact_research_20261007/red_filter_study/output/sauvola_black_filtered_red/200020019_00082_2/result/200020019_00082_2.png",
+          "xywh": [
+            90,
+            180,
+            340,
+            390
+          ],
+          "size": [
+            340,
+            390
+          ],
+          "label": "Sauvola黒＋絶対色赤",
+          "source_sha256": "338f3fd0b34a30f3b0496cf1799201902edca635f55e879f700339262165f4c5",
+          "panel_canvas_xywh": [
+            1108,
+            130,
+            340,
+            390
+          ],
+          "integer_scale": 1,
+          "native_copy": "evidence/native/F41_red_native/03.png"
+        }
+      ]
+    }
+  ],
+  "source_sha256": "a581964651f8cebe21d5ccb7a968c584ffe5bf194ba59ab9401571becb24ef47",
+  "all_panels_pixel_equal": true,
+  "integer_scaling_only": true
+}

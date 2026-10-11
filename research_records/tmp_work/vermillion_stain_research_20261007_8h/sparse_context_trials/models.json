@@ -1,0 +1,268 @@
+[
+  {
+    "name": "color_logistic",
+    "spatial": false,
+    "classifier": "logistic",
+    "features": [
+      "R",
+      "G",
+      "B",
+      "OD_R",
+      "OD_G",
+      "OD_B",
+      "relative_red_G",
+      "relative_red_B",
+      "Lab_a",
+      "Lab_b",
+      "saturation",
+      "Lab_L"
+    ],
+    "training_points": 92,
+    "development_book_holdout": [
+      {
+        "book": "200020019",
+        "train_points": 68,
+        "test_points": 24,
+        "mark_selected": 12,
+        "mark_points": 16,
+        "nonmark_selected": 0,
+        "nonmark_points": 8
+      },
+      {
+        "book": "200021086",
+        "train_points": 66,
+        "test_points": 26,
+        "mark_selected": 13,
+        "mark_points": 18,
+        "nonmark_selected": 3,
+        "nonmark_points": 8
+      },
+      {
+        "book": "200021763",
+        "train_points": 50,
+        "test_points": 42,
+        "mark_selected": 21,
+        "mark_points": 32,
+        "nonmark_selected": 2,
+        "nonmark_points": 10
+      }
+    ],
+    "model_sha256": "7eaac9408b9abc0cdbe265c528cdaeed3f28179c4ff5633ab85cb8337712343f",
+    "model_path": "/home/imoto/Heritage_Pipeline/tmp_work/vermillion_stain_research_20261007_8h/sparse_context_trials/color_logistic.pkl",
+    "training_on_tentative_labels": true
+  },
+  {
+    "name": "color_forest",
+    "spatial": false,
+    "classifier": "forest",
+    "features": [
+      "R",
+      "G",
+      "B",
+      "OD_R",
+      "OD_G",
+      "OD_B",
+      "relative_red_G",
+      "relative_red_B",
+      "Lab_a",
+      "Lab_b",
+      "saturation",
+      "Lab_L"
+    ],
+    "training_points": 92,
+    "development_book_holdout": [
+      {
+        "book": "200020019",
+        "train_points": 68,
+        "test_points": 24,
+        "mark_selected": 15,
+        "mark_points": 16,
+        "nonmark_selected": 3,
+        "nonmark_points": 8
+      },
+      {
+        "book": "200021086",
+        "train_points": 66,
+        "test_points": 26,
+        "mark_selected": 18,
+        "mark_points": 18,
+        "nonmark_selected": 6,
+        "nonmark_points": 8
+      },
+      {
+        "book": "200021763",
+        "train_points": 50,
+        "test_points": 42,
+        "mark_selected": 21,
+        "mark_points": 32,
+        "nonmark_selected": 1,
+        "nonmark_points": 10
+      }
+    ],
+    "model_sha256": "fd422972746f00d54e9ee801c0a5b9420584c40e88c7cfd62da85258c13046e1",
+    "model_path": "/home/imoto/Heritage_Pipeline/tmp_work/vermillion_stain_research_20261007_8h/sparse_context_trials/color_forest.pkl",
+    "training_on_tentative_labels": true,
+    "feature_importances": {
+      "R": 0.019959703172766366,
+      "G": 0.024996097207431286,
+      "B": 0.052827521151699634,
+      "OD_R": 0.046678327839278715,
+      "OD_G": 0.0983966642026401,
+      "OD_B": 0.11191685878134996,
+      "relative_red_G": 0.23512194111591964,
+      "relative_red_B": 0.1534082306382798,
+      "Lab_a": 0.08978012386356081,
+      "Lab_b": 0.035679696487095194,
+      "saturation": 0.10266922680839707,
+      "Lab_L": 0.02856560873158137
+    }
+  },
+  {
+    "name": "spatial_logistic",
+    "spatial": true,
+    "classifier": "logistic",
+    "features": [
+      "R",
+      "G",
+      "B",
+      "OD_R",
+      "OD_G",
+      "OD_B",
+      "relative_red_G",
+      "relative_red_B",
+      "Lab_a",
+      "Lab_b",
+      "saturation",
+      "Lab_L",
+      "chroma_mean_sigma1.0",
+      "chroma_band_sigma1.0",
+      "chroma_mean_sigma3.0",
+      "chroma_band_sigma3.0",
+      "chroma_mean_sigma8.0",
+      "chroma_band_sigma8.0",
+      "chroma_mean_sigma20.0",
+      "chroma_band_sigma20.0",
+      "multiscale_chroma_ridge",
+      "chroma_gradient"
+    ],
+    "training_points": 92,
+    "development_book_holdout": [
+      {
+        "book": "200020019",
+        "train_points": 68,
+        "test_points": 24,
+        "mark_selected": 16,
+        "mark_points": 16,
+        "nonmark_selected": 0,
+        "nonmark_points": 8
+      },
+      {
+        "book": "200021086",
+        "train_points": 66,
+        "test_points": 26,
+        "mark_selected": 14,
+        "mark_points": 18,
+        "nonmark_selected": 1,
+        "nonmark_points": 8
+      },
+      {
+        "book": "200021763",
+        "train_points": 50,
+        "test_points": 42,
+        "mark_selected": 32,
+        "mark_points": 32,
+        "nonmark_selected": 2,
+        "nonmark_points": 10
+      }
+    ],
+    "model_sha256": "01fce47b0b720fee824508768678a94cb71f6ba784e0c9a5013afdafaca63e75",
+    "model_path": "/home/imoto/Heritage_Pipeline/tmp_work/vermillion_stain_research_20261007_8h/sparse_context_trials/spatial_logistic.pkl",
+    "training_on_tentative_labels": true
+  },
+  {
+    "name": "spatial_forest",
+    "spatial": true,
+    "classifier": "forest",
+    "features": [
+      "R",
+      "G",
+      "B",
+      "OD_R",
+      "OD_G",
+      "OD_B",
+      "relative_red_G",
+      "relative_red_B",
+      "Lab_a",
+      "Lab_b",
+      "saturation",
+      "Lab_L",
+      "chroma_mean_sigma1.0",
+      "chroma_band_sigma1.0",
+      "chroma_mean_sigma3.0",
+      "chroma_band_sigma3.0",
+      "chroma_mean_sigma8.0",
+      "chroma_band_sigma8.0",
+      "chroma_mean_sigma20.0",
+      "chroma_band_sigma20.0",
+      "multiscale_chroma_ridge",
+      "chroma_gradient"
+    ],
+    "training_points": 92,
+    "development_book_holdout": [
+      {
+        "book": "200020019",
+        "train_points": 68,
+        "test_points": 24,
+        "mark_selected": 16,
+        "mark_points": 16,
+        "nonmark_selected": 2,
+        "nonmark_points": 8
+      },
+      {
+        "book": "200021086",
+        "train_points": 66,
+        "test_points": 26,
+        "mark_selected": 15,
+        "mark_points": 18,
+        "nonmark_selected": 3,
+        "nonmark_points": 8
+      },
+      {
+        "book": "200021763",
+        "train_points": 50,
+        "test_points": 42,
+        "mark_selected": 32,
+        "mark_points": 32,
+        "nonmark_selected": 0,
+        "nonmark_points": 10
+      }
+    ],
+    "model_sha256": "3467836a4d796b0ceecc1484a39776bbf34c9acf69f5138e83f827acf1cde271",
+    "model_path": "/home/imoto/Heritage_Pipeline/tmp_work/vermillion_stain_research_20261007_8h/sparse_context_trials/spatial_forest.pkl",
+    "training_on_tentative_labels": true,
+    "feature_importances": {
+      "R": 0.0015169879732588837,
+      "G": 0.004357275976805376,
+      "B": 0.011104988070986158,
+      "OD_R": 0.0033556468091025006,
+      "OD_G": 0.019287267268529685,
+      "OD_B": 0.03145451505478057,
+      "relative_red_G": 0.06277753806868135,
+      "relative_red_B": 0.059211371175854656,
+      "Lab_a": 0.031372004777494585,
+      "Lab_b": 0.0012898554933433106,
+      "saturation": 0.037492969945236106,
+      "Lab_L": 0.0028520150580114896,
+      "chroma_mean_sigma1.0": 0.04929407374451429,
+      "chroma_band_sigma1.0": 0.005438659658026366,
+      "chroma_mean_sigma3.0": 0.07223215501330812,
+      "chroma_band_sigma3.0": 0.017026095451649854,
+      "chroma_mean_sigma8.0": 0.2138783449265023,
+      "chroma_band_sigma8.0": 0.04997419175021769,
+      "chroma_mean_sigma20.0": 0.2134495174507297,
+      "chroma_band_sigma20.0": 0.06024599446305371,
+      "multiscale_chroma_ridge": 0.012393395803562057,
+      "chroma_gradient": 0.03999513606635127
+    }
+  }
+]

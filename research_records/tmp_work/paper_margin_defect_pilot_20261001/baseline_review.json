@@ -1,0 +1,161 @@
+{
+  "cases": [
+    {
+      "split": "val",
+      "book": "100249416",
+      "page": "100249416_00024_1",
+      "original": "data/split_dataset/val/100249416/100249416_00024_1.jpg",
+      "ace": "data/split_dataset_csc/val/100249416/100249416_00024_1.jpg",
+      "npj_input": "data/split_dataset_csc_mask/val/100249416/100249416_00024_1/00_input.png",
+      "npj_black": "data/split_dataset_csc_mask/val/100249416/100249416_00024_1/02_text_black.png",
+      "npj_red": "data/split_dataset_csc_mask/val/100249416/100249416_00024_1/03_text_red.png",
+      "npj_degradation": "data/split_dataset_csc_mask/val/100249416/100249416_00024_1/04_degradation.png",
+      "npj_background": "data/split_dataset_csc_mask/val/100249416/100249416_00024_1/05_background.png",
+      "review_status": "unreviewed",
+      "failure_type": "",
+      "roi_xywh": "",
+      "v6_status": "",
+      "observation": "",
+      "contains_illustration": false,
+      "evaluation_group": "new original-selected diagnostic pages; before v6 and candidate outputs",
+      "rois": [
+        {
+          "id": "new_margin_hole",
+          "title": "新しい冊の上余白の穴・裂け",
+          "xywh": [
+            580,
+            60,
+            480,
+            280
+          ],
+          "baseline_failure": true,
+          "baseline_observation": "原画像で本文と離れた不規則な欠損と濃い縁。物理原因は未確定。"
+        },
+        {
+          "id": "new_frame_text",
+          "title": "対照：穴の下の枠と本文",
+          "xywh": [
+            650,
+            320,
+            850,
+            350
+          ],
+          "baseline_failure": false,
+          "baseline_observation": "枠と墨筆画を保持する。"
+        }
+      ]
+    },
+    {
+      "split": "train",
+      "book": "brsk00000",
+      "page": "brsk003_003",
+      "original": "data/split_dataset/train/brsk00000/brsk003_003.jpg",
+      "ace": "data/split_dataset_csc/train/brsk00000/brsk003_003.jpg",
+      "npj_input": "data/split_dataset_csc_mask/train/brsk00000/brsk003_003/00_input.png",
+      "npj_black": "data/split_dataset_csc_mask/train/brsk00000/brsk003_003/02_text_black.png",
+      "npj_red": "data/split_dataset_csc_mask/train/brsk00000/brsk003_003/03_text_red.png",
+      "npj_degradation": "data/split_dataset_csc_mask/train/brsk00000/brsk003_003/04_degradation.png",
+      "npj_background": "data/split_dataset_csc_mask/train/brsk00000/brsk003_003/05_background.png",
+      "review_status": "thumbnail_reviewed",
+      "failure_type": "",
+      "roi_xywh": "",
+      "v6_status": "",
+      "observation": "",
+      "contains_illustration": false,
+      "evaluation_group": "new original-selected diagnostic pages; before v6 and candidate outputs",
+      "rois": [
+        {
+          "id": "new_uncertain_trace",
+          "title": "上余白の細い曲線：原因未確定",
+          "xywh": [
+            990,
+            170,
+            330,
+            300
+          ],
+          "baseline_failure": false,
+          "baseline_observation": "損傷か筆記か確定できず、正解損傷として数えない。"
+        },
+        {
+          "id": "new_brown_stamp",
+          "title": "対照：本文外の茶色い印影",
+          "xywh": [
+            2000,
+            390,
+            440,
+            380
+          ],
+          "baseline_failure": false,
+          "baseline_observation": "上余白でも明らかな印影がある。編集対象化しない。"
+        },
+        {
+          "id": "new_header_ink",
+          "title": "対照：余白内の見出しと囲み",
+          "xywh": [
+            1520,
+            530,
+            330,
+            420
+          ],
+          "baseline_failure": false,
+          "baseline_observation": "本文枠より上の墨筆記と囲みを保持する。"
+        }
+      ]
+    },
+    {
+      "split": "test",
+      "book": "200008003",
+      "page": "200008003_00004_2",
+      "original": "data/split_dataset/test/200008003/200008003_00004_2.jpg",
+      "ace": "data/split_dataset_csc/test/200008003/200008003_00004_2.jpg",
+      "npj_input": "data/split_dataset_csc_mask/test/200008003/200008003_00004_2/00_input.png",
+      "npj_black": "data/split_dataset_csc_mask/test/200008003/200008003_00004_2/02_text_black.png",
+      "npj_red": "data/split_dataset_csc_mask/test/200008003/200008003_00004_2/03_text_red.png",
+      "npj_degradation": "data/split_dataset_csc_mask/test/200008003/200008003_00004_2/04_degradation.png",
+      "npj_background": "data/split_dataset_csc_mask/test/200008003/200008003_00004_2/05_background.png",
+      "review_status": "thumbnail_reviewed",
+      "failure_type": "",
+      "roi_xywh": "",
+      "v6_status": "",
+      "observation": "",
+      "contains_illustration": false,
+      "evaluation_group": "new original-selected diagnostic pages; before v6 and candidate outputs",
+      "rois": [
+        {
+          "id": "new_blank_paper",
+          "title": "対照：白黒資料の上余白",
+          "xywh": [
+            500,
+            120,
+            800,
+            600
+          ],
+          "baseline_failure": false,
+          "baseline_observation": "大きな欠損は見られない。濃淡差の走査スコアを損傷正解にしない。"
+        },
+        {
+          "id": "new_mono_text",
+          "title": "対照：白黒資料の本文",
+          "xywh": [
+            900,
+            1400,
+            650,
+            650
+          ],
+          "baseline_failure": false,
+          "baseline_observation": "本文を保持する。"
+        }
+      ]
+    }
+  ],
+  "pages": 3,
+  "regions": 7,
+  "selection_before_v6": true,
+  "selection_before_candidate": true,
+  "pixel_GT": false,
+  "reviewer": "assistant original-only visual review",
+  "selection_dependencies": {
+    "tmp_work/paper_defect_screening_20261001/screening.json": "babc5ea627a59339eda9a3e45610334cfc705eb0b27228c5afec54b9c580402b",
+    "tmp_work/paper_defect_screening_20261001/original_followup_book.json": "c922a89195b351ed6385e4bcc259ed633aa89fba6ac534f7ce549629023533a0"
+  }
+}

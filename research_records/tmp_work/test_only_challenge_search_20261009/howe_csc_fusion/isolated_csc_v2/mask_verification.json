@@ -1,0 +1,38 @@
+{
+  "status": "passed",
+  "checks": [
+    {
+      "id": "01",
+      "roi_mask_unchanged": true,
+      "full_page_removed_pixels": 32
+    },
+    {
+      "id": "02",
+      "roi_mask_unchanged": true,
+      "full_page_removed_pixels": 0
+    },
+    {
+      "id": "03",
+      "roi_mask_unchanged": true,
+      "full_page_removed_pixels": 0
+    },
+    {
+      "id": "04",
+      "roi_mask_unchanged": false,
+      "full_page_removed_pixels": 910
+    },
+    {
+      "id": "06",
+      "roi_mask_unchanged": true,
+      "full_page_removed_pixels": 0
+    },
+    {
+      "id": "07",
+      "roi_mask_unchanged": true,
+      "full_page_removed_pixels": 391
+    }
+  ],
+  "previous_faint_stroke_tip_protected": true,
+  "no_black_pixels_added": true,
+  "red_overlap_pixels": 0
+}

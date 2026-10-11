@@ -1,0 +1,410 @@
+[
+  {
+    "id": "01",
+    "page": "200010454_00016_2",
+    "red_page_pixels": 0,
+    "red_roi_pixels": 0,
+    "red_matches_old": true,
+    "anchor": {
+      "recomputed": true,
+      "trace": {
+        "cluster_mean_a_s2": [
+          128.1766357421875,
+          128.78857421875,
+          129.16940307617188
+        ],
+        "cluster_mean_L": [
+          152.86209106445312,
+          24.560007095336914
+        ],
+        "cluster_mean_L_s2": [
+          2.6816506385803223,
+          35.61604690551758,
+          90.55703735351562
+        ],
+        "red_cluster": 2,
+        "black_cluster": 0
+      },
+      "ace_sha256": "dfdd55e57dc9a4ab606eb12ac960c985d2d53b68a9a346fc4decc88de4982120"
+    },
+    "methods": {
+      "csc": {
+        "black_pixels": 150185,
+        "same_as_previous_input": true,
+        "mask_sha256": {
+          "tmp_work/test_only_challenge_search_20261009/six_challenge_fixed_review/masks/csc/200010454_00016_2/03_text_red.png": "f3a0f84e23e5b7ae2a86aa24fbee94e7a16447cfc883e5f3ace9a5e8c3da3983",
+          "tmp_work/test_only_challenge_search_20261009/six_challenge_fixed_review/masks/csc/200010454_00016_2/02_text_black.png": "c3cb97fcf2054ebe72346f7843a31bed1cf747afa4de35461ad0b60d542a0bea"
+        }
+      },
+      "sauvola": {
+        "black_pixels": 177494,
+        "same_as_previous_input": true,
+        "mask_sha256": {
+          "tmp_work/test_only_challenge_search_20261009/six_challenge_fixed_review/masks/sauvola/200010454_00016_2/03_text_red.png": "f3a0f84e23e5b7ae2a86aa24fbee94e7a16447cfc883e5f3ace9a5e8c3da3983",
+          "tmp_work/test_only_challenge_search_20261009/six_challenge_fixed_review/masks/sauvola/200010454_00016_2/02_text_black.png": "dda4c476fb0b80a85bde02866e3b861793ae207d5a4d3f1392bc3d054c26d948"
+        }
+      },
+      "howe": {
+        "black_pixels": 189834,
+        "same_as_previous_input": true,
+        "mask_sha256": {
+          "tmp_work/test_only_challenge_search_20261009/six_challenge_fixed_review/masks/howe/200010454_00016_2/03_text_red.png": "f3a0f84e23e5b7ae2a86aa24fbee94e7a16447cfc883e5f3ace9a5e8c3da3983",
+          "tmp_work/test_only_challenge_search_20261009/six_challenge_fixed_review/masks/howe/200010454_00016_2/02_text_black.png": "c56ba8d8f7ea7c6530644b24bd83068afdd7c1ac43a1452360865b575ac23b7b"
+        }
+      }
+    },
+    "csc_extra_association_roi": {
+      "black": 0,
+      "red": 0,
+      "degradation": 292,
+      "background": 778
+    },
+    "howe_extra_roi_pixels": 8569,
+    "howe_extra_unassigned_roi_pixels": 7499,
+    "csc_unassigned_page_pixels": 59361,
+    "csc_overlap_page_pixels": 34,
+    "csc_masks_sha256": {
+      "data/split_dataset_csc_mask_v2/test/200010454/200010454_00016_2/02_text_black.png": "71eea2d63fde94175975e319f74e051bfaede4307c8c6da2b17bdc026fc8eed1",
+      "data/split_dataset_csc_mask_v2/test/200010454/200010454_00016_2/03_text_red.png": "952f54bea765751c31a2272dc7a5d89ec5d0f0f522595fa61c99b294aafa2d40",
+      "data/split_dataset_csc_mask_v2/test/200010454/200010454_00016_2/04_degradation.png": "0eca21c4bf57c204183a497ba51a807f7917aabb8e5ad2fc505ab7c989fc9565",
+      "data/split_dataset_csc_mask_v2/test/200010454/200010454_00016_2/05_background.png": "952a758583e52eda3547c77dadf7bf9441b4a1941bf821df9240fb3b7a0cd6a7"
+    }
+  },
+  {
+    "id": "02",
+    "page": "200015843_00107_1",
+    "red_page_pixels": 0,
+    "red_roi_pixels": 0,
+    "red_matches_old": true,
+    "anchor": {
+      "recomputed": true,
+      "trace": {
+        "cluster_mean_a_s2": [
+          130.91067504882812,
+          128.56056213378906,
+          130.63369750976562
+        ],
+        "cluster_mean_L": [
+          54.749427795410156,
+          174.67796325683594
+        ],
+        "cluster_mean_L_s2": [
+          33.83002853393555,
+          7.490941524505615,
+          110.15675354003906
+        ],
+        "red_cluster": 0,
+        "black_cluster": 1
+      },
+      "ace_sha256": "54a86b093b65cdfa3329aeebe85400878ce756998bda18401b767056155456f5"
+    },
+    "methods": {
+      "csc": {
+        "black_pixels": 425451,
+        "same_as_previous_input": true,
+        "mask_sha256": {
+          "tmp_work/test_only_challenge_search_20261009/six_challenge_fixed_review/masks/csc/200015843_00107_1/03_text_red.png": "3f26fdb8a380364c4b1adbaa5dcc3f23a4fe05b3cb06b192e5fbe4ba38e02906",
+          "tmp_work/test_only_challenge_search_20261009/six_challenge_fixed_review/masks/csc/200015843_00107_1/02_text_black.png": "c62bce7f8f51eb0c5c4bfb72536de3ddcec0b691bde3b659371e854ad52641b6"
+        }
+      },
+      "sauvola": {
+        "black_pixels": 821954,
+        "same_as_previous_input": true,
+        "mask_sha256": {
+          "tmp_work/test_only_challenge_search_20261009/six_challenge_fixed_review/masks/sauvola/200015843_00107_1/03_text_red.png": "3f26fdb8a380364c4b1adbaa5dcc3f23a4fe05b3cb06b192e5fbe4ba38e02906",
+          "tmp_work/test_only_challenge_search_20261009/six_challenge_fixed_review/masks/sauvola/200015843_00107_1/02_text_black.png": "65695e989e5f5a35df6683489b5d98369c3cf8f357a3669d1a6f17f80d251d65"
+        }
+      },
+      "howe": {
+        "black_pixels": 877826,
+        "same_as_previous_input": true,
+        "mask_sha256": {
+          "tmp_work/test_only_challenge_search_20261009/six_challenge_fixed_review/masks/howe/200015843_00107_1/03_text_red.png": "3f26fdb8a380364c4b1adbaa5dcc3f23a4fe05b3cb06b192e5fbe4ba38e02906",
+          "tmp_work/test_only_challenge_search_20261009/six_challenge_fixed_review/masks/howe/200015843_00107_1/02_text_black.png": "5ff07f209c9835fd83179b29ae6a98b6b3a125ce22e27af9f683dec4e1cddfac"
+        }
+      }
+    },
+    "csc_extra_association_roi": {
+      "black": 0,
+      "red": 0,
+      "degradation": 1732,
+      "background": 524
+    },
+    "howe_extra_roi_pixels": 43939,
+    "howe_extra_unassigned_roi_pixels": 41683,
+    "csc_unassigned_page_pixels": 635069,
+    "csc_overlap_page_pixels": 0,
+    "csc_masks_sha256": {
+      "data/split_dataset_csc_mask_v2/test/200015843/200015843_00107_1/02_text_black.png": "8b41bcfc37ecc2298ffe60b6765ba1e94f4ce477ab6317bbe15c60a60c860783",
+      "data/split_dataset_csc_mask_v2/test/200015843/200015843_00107_1/03_text_red.png": "ac9a5171aaecbb96a04f3089210255735e01d46f2ec0143ffc80b90bf579d082",
+      "data/split_dataset_csc_mask_v2/test/200015843/200015843_00107_1/04_degradation.png": "c471660aa1e80a842dd203d71c934d36bb14ff3a9a9a7f60271186a1bcfdc67a",
+      "data/split_dataset_csc_mask_v2/test/200015843/200015843_00107_1/05_background.png": "8ddeddbf894e53c97b9c7c4f998a1f2bb061217e1d24422c3ea86eda0aa1195a"
+    }
+  },
+  {
+    "id": "03",
+    "page": "200015843_00105_1",
+    "red_page_pixels": 1211,
+    "red_roi_pixels": 1211,
+    "red_matches_old": false,
+    "anchor": {
+      "recomputed": true,
+      "trace": {
+        "cluster_mean_a_s2": [
+          128.95816040039062,
+          132.86947631835938,
+          130.6562957763672
+        ],
+        "cluster_mean_L": [
+          170.77003479003906,
+          39.06233215332031
+        ],
+        "cluster_mean_L_s2": [
+          9.119104385375977,
+          83.751953125,
+          28.997051239013672
+        ],
+        "red_cluster": 1,
+        "black_cluster": 0
+      },
+      "ace_sha256": "4badbb7875871e15205957cc675daa60affd6d2ca866deae33f8382283d52fae"
+    },
+    "methods": {
+      "csc": {
+        "black_pixels": 375974,
+        "same_as_previous_input": false,
+        "mask_sha256": {
+          "tmp_work/test_only_challenge_search_20261009/six_challenge_fixed_review/masks/csc/200015843_00105_1/03_text_red.png": "d4d44be4bf8eac4872759d45b2c8230c942b27166900c7f5f881dfe646f5d683",
+          "tmp_work/test_only_challenge_search_20261009/six_challenge_fixed_review/masks/csc/200015843_00105_1/02_text_black.png": "b8cba44c6081162433ea7abe24b9c679f9e48de9eed165c68c2f0e0c950507e8"
+        }
+      },
+      "sauvola": {
+        "black_pixels": 868902,
+        "same_as_previous_input": false,
+        "mask_sha256": {
+          "tmp_work/test_only_challenge_search_20261009/six_challenge_fixed_review/masks/sauvola/200015843_00105_1/03_text_red.png": "d4d44be4bf8eac4872759d45b2c8230c942b27166900c7f5f881dfe646f5d683",
+          "tmp_work/test_only_challenge_search_20261009/six_challenge_fixed_review/masks/sauvola/200015843_00105_1/02_text_black.png": "98b29139bac723b079f266d9479d80924904ed414d1deff996528f98b5042602"
+        }
+      },
+      "howe": {
+        "black_pixels": 911359,
+        "same_as_previous_input": false,
+        "mask_sha256": {
+          "tmp_work/test_only_challenge_search_20261009/six_challenge_fixed_review/masks/howe/200015843_00105_1/03_text_red.png": "d4d44be4bf8eac4872759d45b2c8230c942b27166900c7f5f881dfe646f5d683",
+          "tmp_work/test_only_challenge_search_20261009/six_challenge_fixed_review/masks/howe/200015843_00105_1/02_text_black.png": "760ffdb2f689b5ae6b629b8e72dbfb64be361dc13feb39f9779985b5dde8c0c3"
+        }
+      }
+    },
+    "csc_extra_association_roi": {
+      "black": 0,
+      "red": 0,
+      "degradation": 4110,
+      "background": 1496
+    },
+    "howe_extra_roi_pixels": 53519,
+    "howe_extra_unassigned_roi_pixels": 47913,
+    "csc_unassigned_page_pixels": 528014,
+    "csc_overlap_page_pixels": 0,
+    "csc_masks_sha256": {
+      "data/split_dataset_csc_mask_v2/test/200015843/200015843_00105_1/02_text_black.png": "3fb6cb2e0f7cc1c9079547010336b87e38e8efc41c688f19bca055ce4f2fa6db",
+      "data/split_dataset_csc_mask_v2/test/200015843/200015843_00105_1/03_text_red.png": "6e40307f40e7ba9c08e2fb685a2c27926f1682150d4ca09d0d3a1ba6e36f3d10",
+      "data/split_dataset_csc_mask_v2/test/200015843/200015843_00105_1/04_degradation.png": "196b64f946081f27d9393b275a122b7c262e6670c6f5cd8fcc60f12d2919ddfb",
+      "data/split_dataset_csc_mask_v2/test/200015843/200015843_00105_1/05_background.png": "8cf6324436c1848e901de14ed94006e688eb91c25c42fcdb094e098e89ab607b"
+    }
+  },
+  {
+    "id": "04",
+    "page": "200021071_00032_1",
+    "red_page_pixels": 0,
+    "red_roi_pixels": 0,
+    "red_matches_old": true,
+    "anchor": {
+      "recomputed": true,
+      "trace": {
+        "cluster_mean_a_s2": [
+          128.8743133544922,
+          128.2068328857422,
+          126.63900756835938
+        ],
+        "cluster_mean_L": [
+          165.42396545410156,
+          73.09011840820312
+        ],
+        "cluster_mean_L_s2": [
+          53.32133865356445,
+          4.2193827629089355,
+          116.14395904541016
+        ],
+        "red_cluster": 0,
+        "black_cluster": 1
+      },
+      "ace_sha256": "da821a3d640cd17ad8946913694c2aa5203c648d8d9183d37bb25fdb6e695eb3"
+    },
+    "methods": {
+      "csc": {
+        "black_pixels": 210773,
+        "same_as_previous_input": true,
+        "mask_sha256": {
+          "tmp_work/test_only_challenge_search_20261009/six_challenge_fixed_review/masks/csc/200021071_00032_1/03_text_red.png": "681cc6bdb6ca05a21cbc303ff93379d2c7d98a01cfb670e6a79864adb75d2d31",
+          "tmp_work/test_only_challenge_search_20261009/six_challenge_fixed_review/masks/csc/200021071_00032_1/02_text_black.png": "ec1ff3663f2a4ce3839b687fa241a78a773c0e069fdb4df6527361d802ac0080"
+        }
+      },
+      "sauvola": {
+        "black_pixels": 260046,
+        "same_as_previous_input": true,
+        "mask_sha256": {
+          "tmp_work/test_only_challenge_search_20261009/six_challenge_fixed_review/masks/sauvola/200021071_00032_1/03_text_red.png": "681cc6bdb6ca05a21cbc303ff93379d2c7d98a01cfb670e6a79864adb75d2d31",
+          "tmp_work/test_only_challenge_search_20261009/six_challenge_fixed_review/masks/sauvola/200021071_00032_1/02_text_black.png": "8bbe81bb3eeaaf59838ebb226abb5b7b77e6ebfde88d847cdfc56fd082288c24"
+        }
+      },
+      "howe": {
+        "black_pixels": 246971,
+        "same_as_previous_input": true,
+        "mask_sha256": {
+          "tmp_work/test_only_challenge_search_20261009/six_challenge_fixed_review/masks/howe/200021071_00032_1/03_text_red.png": "681cc6bdb6ca05a21cbc303ff93379d2c7d98a01cfb670e6a79864adb75d2d31",
+          "tmp_work/test_only_challenge_search_20261009/six_challenge_fixed_review/masks/howe/200021071_00032_1/02_text_black.png": "4924f0df7058ed84b04529717fd899857aaba2005cf621d4ca97f488e7423f48"
+        }
+      }
+    },
+    "csc_extra_association_roi": {
+      "black": 0,
+      "red": 0,
+      "degradation": 354,
+      "background": 43
+    },
+    "howe_extra_roi_pixels": 3683,
+    "howe_extra_unassigned_roi_pixels": 3286,
+    "csc_unassigned_page_pixels": 250108,
+    "csc_overlap_page_pixels": 0,
+    "csc_masks_sha256": {
+      "data/split_dataset_csc_mask_v2/test/200021071/200021071_00032_1/02_text_black.png": "a0b4308fbd142198b5c46fc81b1f8af1ec5e69bf03fe737fcda740877273d63c",
+      "data/split_dataset_csc_mask_v2/test/200021071/200021071_00032_1/03_text_red.png": "efff6b440965e869b1c1ae068e2b9974e14600b241cce87f2b805b1b2e22f401",
+      "data/split_dataset_csc_mask_v2/test/200021071/200021071_00032_1/04_degradation.png": "cefd3032ae710c472eb7ab28631ab0fc828f4503a295f7c07f7873fc844a0366",
+      "data/split_dataset_csc_mask_v2/test/200021071/200021071_00032_1/05_background.png": "0d3a858fae4b6ea9f2af316f89732f87cb1fe40e1c1042cecf40b842b9b81048"
+    }
+  },
+  {
+    "id": "06",
+    "page": "200003803_00003_1",
+    "red_page_pixels": 0,
+    "red_roi_pixels": 0,
+    "red_matches_old": true,
+    "anchor": {
+      "reused": "tmp_work/test_only_challenge_search_20261009/red_detection_followup/200003803_00003_1/red_without_global_gate.png",
+      "sha256": "b48e88392f5fc5abc11c2bd3e54b247c9b13b88eb7bbc6d51e820e4807cd1564"
+    },
+    "methods": {
+      "csc": {
+        "black_pixels": 321646,
+        "same_as_previous_input": true,
+        "mask_sha256": {
+          "tmp_work/test_only_challenge_search_20261009/six_challenge_fixed_review/masks/csc/200003803_00003_1/03_text_red.png": "cd0364b78f9c4d77c9b0a89325bed6f7991759a59b5d8a0b4ebe342f974a5382",
+          "tmp_work/test_only_challenge_search_20261009/six_challenge_fixed_review/masks/csc/200003803_00003_1/02_text_black.png": "fd06b199e2d2111e814509ed3aa1770bb13b5179c761ad3bfb0c3b798e43b771"
+        }
+      },
+      "sauvola": {
+        "black_pixels": 450705,
+        "same_as_previous_input": true,
+        "mask_sha256": {
+          "tmp_work/test_only_challenge_search_20261009/six_challenge_fixed_review/masks/sauvola/200003803_00003_1/03_text_red.png": "cd0364b78f9c4d77c9b0a89325bed6f7991759a59b5d8a0b4ebe342f974a5382",
+          "tmp_work/test_only_challenge_search_20261009/six_challenge_fixed_review/masks/sauvola/200003803_00003_1/02_text_black.png": "608e9dd9e6c49cc93f7e402af95a8c969cb5a4fc03e6c4b878ea9cc3890d064a"
+        }
+      },
+      "howe": {
+        "black_pixels": 461959,
+        "same_as_previous_input": true,
+        "mask_sha256": {
+          "tmp_work/test_only_challenge_search_20261009/six_challenge_fixed_review/masks/howe/200003803_00003_1/03_text_red.png": "cd0364b78f9c4d77c9b0a89325bed6f7991759a59b5d8a0b4ebe342f974a5382",
+          "tmp_work/test_only_challenge_search_20261009/six_challenge_fixed_review/masks/howe/200003803_00003_1/02_text_black.png": "90c8a97d2e85ed8950dffa187189741812696da28246ba2751ed1b23305734b1"
+        }
+      }
+    },
+    "csc_extra_association_roi": {
+      "black": 0,
+      "red": 0,
+      "degradation": 694,
+      "background": 3
+    },
+    "howe_extra_roi_pixels": 2403,
+    "howe_extra_unassigned_roi_pixels": 1706,
+    "csc_unassigned_page_pixels": 264550,
+    "csc_overlap_page_pixels": 2,
+    "csc_masks_sha256": {
+      "data/split_dataset_csc_mask_v2/test/200003803/200003803_00003_1/02_text_black.png": "e0370e3f28e0dd9156b35c53cf3e88dd1f9d6c7a2803b9509fc52d054aae61bf",
+      "data/split_dataset_csc_mask_v2/test/200003803/200003803_00003_1/03_text_red.png": "3aa6930deeb00ba57efe1f1b81488f4854614ca1dd17946e9f6590d2b5a37808",
+      "data/split_dataset_csc_mask_v2/test/200003803/200003803_00003_1/04_degradation.png": "800d2ba221137e3cfebd35c9d53016353064ec4934af9347dae44cd8aa1241f6",
+      "data/split_dataset_csc_mask_v2/test/200003803/200003803_00003_1/05_background.png": "b038cb67bd0016981ec0de80a2fa0450bdd6f0acc61827ca2be42dc6985765c5"
+    }
+  },
+  {
+    "id": "07",
+    "page": "200021071_00033_2",
+    "red_page_pixels": 0,
+    "red_roi_pixels": 0,
+    "red_matches_old": true,
+    "anchor": {
+      "recomputed": true,
+      "trace": {
+        "cluster_mean_a_s2": [
+          126.3103256225586,
+          128.22845458984375,
+          129.93373107910156
+        ],
+        "cluster_mean_L": [
+          177.2144775390625,
+          71.1060791015625
+        ],
+        "cluster_mean_L_s2": [
+          117.74308776855469,
+          5.215935707092285,
+          46.98870086669922
+        ],
+        "red_cluster": 2,
+        "black_cluster": 1
+      },
+      "ace_sha256": "49af000ef9c26a5abf1c7afba046c7bd2b92d2faeb42984833adef22c2ccf612"
+    },
+    "methods": {
+      "csc": {
+        "black_pixels": 329522,
+        "same_as_previous_input": true,
+        "mask_sha256": {
+          "tmp_work/test_only_challenge_search_20261009/six_challenge_fixed_review/masks/csc/200021071_00033_2/03_text_red.png": "53d0b0ff97d82a0aeea3b78d78146821139ab4a24ea74f457aed00b9b58aa0d1",
+          "tmp_work/test_only_challenge_search_20261009/six_challenge_fixed_review/masks/csc/200021071_00033_2/02_text_black.png": "343ff8b16f4cf3408072815861b3302c0316503af09863582fc17ae9b7eec5d7"
+        }
+      },
+      "sauvola": {
+        "black_pixels": 467072,
+        "same_as_previous_input": true,
+        "mask_sha256": {
+          "tmp_work/test_only_challenge_search_20261009/six_challenge_fixed_review/masks/sauvola/200021071_00033_2/03_text_red.png": "53d0b0ff97d82a0aeea3b78d78146821139ab4a24ea74f457aed00b9b58aa0d1",
+          "tmp_work/test_only_challenge_search_20261009/six_challenge_fixed_review/masks/sauvola/200021071_00033_2/02_text_black.png": "9217d299d73a9735f9f1a410beb3ba2e6cd6d7febc3e6d7144f85cdf0642d91d"
+        }
+      },
+      "howe": {
+        "black_pixels": 419722,
+        "same_as_previous_input": true,
+        "mask_sha256": {
+          "tmp_work/test_only_challenge_search_20261009/six_challenge_fixed_review/masks/howe/200021071_00033_2/03_text_red.png": "53d0b0ff97d82a0aeea3b78d78146821139ab4a24ea74f457aed00b9b58aa0d1",
+          "tmp_work/test_only_challenge_search_20261009/six_challenge_fixed_review/masks/howe/200021071_00033_2/02_text_black.png": "c9c8dc65a3dda8e794e9de843f0a1ab564a18e9b8cae7c170b596f9bfb848b34"
+        }
+      }
+    },
+    "csc_extra_association_roi": {
+      "black": 0,
+      "red": 0,
+      "degradation": 1800,
+      "background": 50
+    },
+    "howe_extra_roi_pixels": 15671,
+    "howe_extra_unassigned_roi_pixels": 13821,
+    "csc_unassigned_page_pixels": 447853,
+    "csc_overlap_page_pixels": 0,
+    "csc_masks_sha256": {
+      "data/split_dataset_csc_mask_v2/test/200021071/200021071_00033_2/02_text_black.png": "d1e25f571be87bd371b727148425a850bb98b820796db9ccfeda34c42aad9a8e",
+      "data/split_dataset_csc_mask_v2/test/200021071/200021071_00033_2/03_text_red.png": "ca76c880d9ac139b6524b740853f75b3ec8c19b5afb7fe7a5d0a84e95960fbfd",
+      "data/split_dataset_csc_mask_v2/test/200021071/200021071_00033_2/04_degradation.png": "e712d12a2719184a1584e6eee5682b925f3e73c5b4642412affb92ddc6fa8f49",
+      "data/split_dataset_csc_mask_v2/test/200021071/200021071_00033_2/05_background.png": "e66240cfd03db9347c4e76d18c881f8dbcdcd5260f88e8e0db2084f7d002168f"
+    }
+  }
+]

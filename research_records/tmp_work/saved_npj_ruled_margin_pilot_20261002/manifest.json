@@ -1,0 +1,324 @@
+{
+  "settings": {
+    "scope": "Entire aligned original/reference frame; no ROI, book or page labels in infer",
+    "baseline": "Unmodified authentic saved npj; original/reference used for geometry, not replacement outside update",
+    "ruled_margin": {
+      "local_dark_contrast_L": 8,
+      "closing_kernel_native": 31,
+      "horizontal_length": "odd max(81, round(.15*width))",
+      "min_row_coverage": 0.65,
+      "row_group_gap": 9,
+      "max_rule_height_fraction": 0.07,
+      "min_rule_y_fraction": 0.35,
+      "min_lower_margin_fraction": 0.1,
+      "rule_halo_px": 8,
+      "require_above_ink_fraction": 0.01,
+      "require_below_less_ink": true
+    },
+    "broad_shadow": {
+      "estimator": "Unchanged prior bright-weighted paper_estimate",
+      "gaussian_sigma": 8,
+      "soft_L_drop": 5,
+      "seed_L_drop": 8,
+      "min_area": 128,
+      "min_seed": 32,
+      "min_peak_radius": 4,
+      "observed_npj_residual_L_drop": 12,
+      "min_residual_pixels": 32,
+      "min_residual_fraction": 0.03,
+      "min_paper_chroma_b": 5,
+      "frame_guard_px": 2
+    },
+    "narrow_guard": {
+      "sigmas": [
+        1.5,
+        3.0
+      ],
+      "response_min": 2,
+      "coherence_min": 0.8,
+      "local_dark_drop_min": 8,
+      "halo_px": 2
+    },
+    "mandatory": "Union of existing saved-input red and v6-specific extra hold; not all protect/hold",
+    "fill": "Same saved-npj 4-neighbour harmonic kernel; no pre-fill or model rerun",
+    "development": true,
+    "pixel_GT": false,
+    "automatic_adoption": false,
+    "limitations": [
+      "Known failure case influenced design; no independent generalization test",
+      "Rule geometry does not prove absence of margin writing",
+      "Original/reference and actual saved-input pixels differ on two frames",
+      "Inside writing frame intentionally not handled; shadows/creases may be natural"
+    ]
+  },
+  "cases": [
+    {
+      "id": "page_200019865",
+      "page": "200019865_00003_1",
+      "input": "tmp_work/ddrm_visual_check/input_200019865_00003_1/200019865_00003_1.jpg",
+      "reference_original": "data/test/200019865/200019865_00003_1.jpg",
+      "reference_xywh": null,
+      "saved_npj": "tmp_work/ddrm_visual_check/output_200019865_00003_1/200019865_00003_1/result/200019865_00003_1.png",
+      "baseline_label": "保存npj：ddrm_visual_check既存版",
+      "log": "tmp_work/ddrm_visual_check/run.log",
+      "selection_reason": "New page for this postprocessor; slender warm marks and text controls",
+      "illustration_page": false,
+      "rois": [
+        {
+          "id": "01_upper_slender_marks",
+          "title": "上余白の細い暖色跡",
+          "xywh": [
+            1270,
+            250,
+            550,
+            400
+          ],
+          "role": "damage_candidate_material_unconfirmed"
+        },
+        {
+          "id": "02_left_margin_marks",
+          "title": "左余白の線状跡",
+          "xywh": [
+            20,
+            850,
+            450,
+            900
+          ],
+          "role": "damage_candidate_material_unconfirmed"
+        },
+        {
+          "id": "03_faint_text_control",
+          "title": "薄い文字の対照",
+          "xywh": [
+            1200,
+            1050,
+            650,
+            650
+          ],
+          "role": "text_control"
+        }
+      ],
+      "input_shape": [
+        3191,
+        2113,
+        3
+      ],
+      "reference_input_exact": true,
+      "reference_input_mae": 0.0,
+      "reference_input_max_difference": 0
+    },
+    {
+      "id": "page_200017197",
+      "page": "200017197_00008_1",
+      "input": "tmp_work/trial_run/input/200017197_00008_1.png",
+      "reference_original": "data/makura_kiridashi/200017197_00008_1.png",
+      "reference_xywh": null,
+      "saved_npj": "tmp_work/trial_run/ddrm_out/200017197_00008_1/result/200017197_00008_1.png",
+      "baseline_label": "保存npj：trial_run既存版",
+      "log": "tmp_work/trial_run/ddrm_log.txt",
+      "selection_reason": "New page for this postprocessor; warm paper pattern is not labelled dirt",
+      "illustration_page": false,
+      "rois": [
+        {
+          "id": "04_warm_paper_pattern",
+          "title": "暖色の紙模様・汚れと断定しない",
+          "xywh": [
+            100,
+            30,
+            650,
+            380
+          ],
+          "role": "paper_pattern_control"
+        },
+        {
+          "id": "05_pattern_text_control",
+          "title": "紙模様上の文字対照",
+          "xywh": [
+            1100,
+            1400,
+            550,
+            600
+          ],
+          "role": "text_and_pattern_control"
+        },
+        {
+          "id": "06_lower_thin_text",
+          "title": "下部の細い筆画と紙模様",
+          "xywh": [
+            150,
+            2400,
+            700,
+            600
+          ],
+          "role": "text_and_pattern_control"
+        }
+      ],
+      "input_shape": [
+        3212,
+        2387,
+        3
+      ],
+      "reference_input_exact": false,
+      "reference_input_mae": 0.5696914830104883,
+      "reference_input_max_difference": 30
+    },
+    {
+      "id": "known_200010454_v2",
+      "page": "200010454_00002_2",
+      "input": "tmp_work/speed_test_single/input/200010454_00002_2.jpg",
+      "reference_original": "data/split_dataset/test/200010454/200010454_00002_2.jpg",
+      "reference_xywh": null,
+      "saved_npj": "tmp_work/speed_test_single/ddrm_out/200010454_00002_2/result/200010454_00002_2.png",
+      "baseline_label": "保存npj：CSC v2・同ページ追加対照",
+      "log": "tmp_work/speed_test_single/ddrm_run.log",
+      "selection_reason": "Known page and different saved version; seal negative control, not independent page",
+      "illustration_page": false,
+      "v6_cache": "tmp_work/warm_ink_hold_v6_20260930/200010454_00002_2",
+      "rois": [
+        {
+          "id": "07_red_seal_control",
+          "title": "朱印の対照・既知ページの別保存版",
+          "xywh": [
+            1330,
+            1800,
+            430,
+            550
+          ],
+          "role": "red_seal_control"
+        },
+        {
+          "id": "08_known_brown_stain",
+          "title": "既知の茶色い斑点・別保存版",
+          "xywh": [
+            730,
+            230,
+            180,
+            140
+          ],
+          "role": "known_damage_candidate"
+        },
+        {
+          "id": "09_known_dense_text",
+          "title": "既知の濃い筆画・別保存版",
+          "xywh": [
+            555,
+            335,
+            175,
+            160
+          ],
+          "role": "known_text_control"
+        }
+      ],
+      "input_shape": [
+        2365,
+        1784,
+        3
+      ],
+      "reference_input_exact": true,
+      "reference_input_mae": 0.0,
+      "reference_input_max_difference": 0
+    },
+    {
+      "id": "crop_hnsd",
+      "page": "hnsd001_011_crop",
+      "input": "tmp_work/mask_ablation_hnsd/input/hnsd001_011_crop.png",
+      "reference_original": "data/split_dataset/train/hnsd00000/hnsd001_011.jpg",
+      "reference_xywh": [
+        80,
+        2280,
+        620,
+        620
+      ],
+      "saved_npj": "tmp_work/mask_ablation_hnsd/output_v1/hnsd001_011_crop/result/hnsd001_011_crop.png",
+      "baseline_label": "保存npj：旧v1・濃淡の異なる保存入力",
+      "selection_reason": "Different saved input frame; clear dirt-like black mass intersects rule/text; reference pixels differ",
+      "illustration_page": false,
+      "rois": [
+        {
+          "id": "10_rule_crossing_dark_mass",
+          "title": "枠線に接する濃い塊",
+          "xywh": [
+            170,
+            300,
+            350,
+            210
+          ],
+          "role": "residual_damage_positive_candidate"
+        },
+        {
+          "id": "11_crop_text_control",
+          "title": "濃い文字と枠線の対照",
+          "xywh": [
+            30,
+            50,
+            160,
+            260
+          ],
+          "role": "text_rule_control"
+        },
+        {
+          "id": "12_crop_lower_paper",
+          "title": "下端の紙面対照",
+          "xywh": [
+            0,
+            520,
+            620,
+            100
+          ],
+          "role": "paper_control"
+        }
+      ],
+      "input_shape": [
+        620,
+        620,
+        3
+      ],
+      "reference_input_exact": false,
+      "reference_input_mae": 26.908911723898715,
+      "reference_input_max_difference": 88
+    }
+  ],
+  "dependencies": {
+    "scripts/benchmark/probe_saved_npj_ruled_margin.py": "93424b20f14333291ad19579685dcc67afe9d228e2c10282aff6f2277b0a6210",
+    "tmp_work/saved_npj_paper_followup_selection_20261002/selection.json": "91a9a9c79948e5cf39ed0a40f1e0f675848f2f23f3eb0cc6a7e67ff678d7b9c4",
+    "scripts/benchmark/build_npj_v6_comparison.py": "5d36d372404b4554d85bbb5f83e70a7171a1b77b330d651569f7f8bf18918e98",
+    "scripts/benchmark/package_saved_npj_role_separated_review.py": "53e9e94b29143a675c99846eca32da9862795378db2a137224a6b47a7e4cf85a",
+    "scripts/benchmark/package_saved_npj_inference_v6_review.py": "26f7cc82889ba37fcc628439536ac7907a0d0411ff91fcebaac9d48b1fc60c4a",
+    "scripts/benchmark/probe_saved_npj_role_separated_postprocess.py": "0a7cc6ea558b809a30d7c799c4d501bf86ec7b2a27dcb9ffd108a1325936a7ec",
+    "scripts/benchmark/probe_defect_context_preprocessing.py": "42ef25b24c73bb1c9443954e98b67fc7b1126ad8de4093aa3d4d514f21b2ed57",
+    "tmp_work/saved_npj_paper_only_followup_pilot_20261002/manifest.json": "0e8759431aca05a6ca82eda68b3f9fb3053cfe154beea97327abe676393374f0",
+    "tmp_work/saved_npj_paper_only_followup_pilot_20261002/complete.json": "a520f21e198af033372b2e462a1c0cf74c010ec47984f143ed1faf3b9d9d8d41",
+    "tmp_work/saved_npj_hnsd_input_scope_diagnostic_20261002/manifest.json": "9fd3ef64991429c9cd5c83e343c0f03159a4aa0c60c48eadf495dc5708b535e5",
+    "tmp_work/saved_npj_hnsd_input_scope_diagnostic_20261002/complete.json": "0ec70418da103f8407cdbc41a81acfa87aa0e39c11684b735bba0d5363ab5e19",
+    "tmp_work/ddrm_visual_check/input_200019865_00003_1/200019865_00003_1.jpg": "31b993f91a1ce6d4db18f435513a2c7d9b9169b9a5b42e1e16c59ec6516dae16",
+    "tmp_work/ddrm_visual_check/output_200019865_00003_1/200019865_00003_1/result/200019865_00003_1.png": "77bd3ecf29b5dc3197d283aecf734a522305f97f0451e102d7879c4de25a86c3",
+    "data/test/200019865/200019865_00003_1.jpg": "31b993f91a1ce6d4db18f435513a2c7d9b9169b9a5b42e1e16c59ec6516dae16",
+    "tmp_work/saved_npj_paper_only_followup_pilot_20261002/native/page_200019865/red.png": "95e698f68826c12c7563118003c0c587dd27e37a31ee70421ade8c531650c73b",
+    "tmp_work/saved_npj_paper_only_followup_pilot_20261002/native/page_200019865/extra.png": "95e698f68826c12c7563118003c0c587dd27e37a31ee70421ade8c531650c73b",
+    "tmp_work/saved_npj_paper_only_followup_pilot_20261002/native/page_200019865/protect.png": "0aaa947e76a9372864cf2c01332652e7a408f4f7ad68bf0a082d9b222f385536",
+    "tmp_work/saved_npj_paper_only_followup_pilot_20261002/native/page_200019865/hold.png": "8e2f44f37c9aba9b0d0a19213772b3675b72014f688f38defe5683a1061be292",
+    "tmp_work/trial_run/input/200017197_00008_1.png": "00e8c9071a3770ca50a53932bbb93b58000821c161e56fdc692b1db8bcc02766",
+    "tmp_work/trial_run/ddrm_out/200017197_00008_1/result/200017197_00008_1.png": "1c9fbc278ae0b9297184b0afd3dfd472c897ff3bf205719be2d6bf21c0272c26",
+    "data/makura_kiridashi/200017197_00008_1.png": "20dd67d30763e04ecadfebfcd58e28f751fcaaad82c81488ea96d343cba95955",
+    "tmp_work/saved_npj_paper_only_followup_pilot_20261002/native/page_200017197/red.png": "9f458d1c84dc8a968a2d5a990bee5f698f0d33288ec0f0a418152e72626a6eb9",
+    "tmp_work/saved_npj_paper_only_followup_pilot_20261002/native/page_200017197/extra.png": "9f458d1c84dc8a968a2d5a990bee5f698f0d33288ec0f0a418152e72626a6eb9",
+    "tmp_work/saved_npj_paper_only_followup_pilot_20261002/native/page_200017197/protect.png": "94c3d3a83a1f5af007e4bfc4becdf786250802939aa22bc61b5262f3b2dcb5bf",
+    "tmp_work/saved_npj_paper_only_followup_pilot_20261002/native/page_200017197/hold.png": "2b19309bdd17535b646cc74db3f552e4d11b1946845bd4a7ecf5e45b3c06c3d8",
+    "tmp_work/speed_test_single/input/200010454_00002_2.jpg": "177776f90fc08b12e2f59a37773ef433556f43ebe47c503c2d676595a08a60d1",
+    "tmp_work/speed_test_single/ddrm_out/200010454_00002_2/result/200010454_00002_2.png": "aa24528eefe3c11f1849e7212ff0ea5b3f0a7c1298c7bb8f17888ec0b26bc29e",
+    "data/split_dataset/test/200010454/200010454_00002_2.jpg": "177776f90fc08b12e2f59a37773ef433556f43ebe47c503c2d676595a08a60d1",
+    "tmp_work/saved_npj_paper_only_followup_pilot_20261002/native/known_200010454_v2/red.png": "2558f3bbe4691d1c4a7c502fd4068d8f576ac7660bfd1a14764059381626c0af",
+    "tmp_work/saved_npj_paper_only_followup_pilot_20261002/native/known_200010454_v2/extra.png": "42f2a3be2280120e730a94d64642434a059030aa2a9d4ed6b73f239ae11b0b81",
+    "tmp_work/saved_npj_paper_only_followup_pilot_20261002/native/known_200010454_v2/protect.png": "afcbfe26493d343bde1544c19373f73e465e2a6b98ef112781a7ffb97db989d8",
+    "tmp_work/saved_npj_paper_only_followup_pilot_20261002/native/known_200010454_v2/hold.png": "9fcd1bff26045ed4fde5fac9ae33ceee7b2af3b4bcfa497260c7c400835792cb",
+    "tmp_work/mask_ablation_hnsd/input/hnsd001_011_crop.png": "78e46d451a970f81c45ea11aaa4c7185b0921df01db1a3ebd0963055643a09d4",
+    "tmp_work/mask_ablation_hnsd/output_v1/hnsd001_011_crop/result/hnsd001_011_crop.png": "bf94b1b785f7da331ee3a16fdef635e2552ad03c018f9c1f44dd0cdb6a9d252c",
+    "data/split_dataset/train/hnsd00000/hnsd001_011.jpg": "22017c0af65c5f43560ff05cfcc15c6ed8f56b72e60a04a732d9c31b72f05731",
+    "tmp_work/saved_npj_paper_only_followup_pilot_20261002/native/crop_hnsd/red.png": "5e03efd9a3e992f01b10422ee7ff6a4afbe01e677b4ece02bfb99735a4f395d4",
+    "tmp_work/saved_npj_paper_only_followup_pilot_20261002/native/crop_hnsd/extra.png": "5e03efd9a3e992f01b10422ee7ff6a4afbe01e677b4ece02bfb99735a4f395d4",
+    "tmp_work/saved_npj_paper_only_followup_pilot_20261002/native/crop_hnsd/protect.png": "ef335e8ea1e3cc6ecc1391cc0b0a893a25951dc80a7cbdb9cd41f84d6b067626",
+    "tmp_work/saved_npj_paper_only_followup_pilot_20261002/native/crop_hnsd/hold.png": "416a0fd02cacddb99795a6cde8829306d4a1c12f1cc25262cd2b571959cbff85",
+    "tmp_work/saved_npj_ruled_margin_notes_20261002.md": "1f5dacfe3316aa6914dc5e19060bc1c2b22475842feeeb3cb8f4bf7b1df1bada"
+  },
+  "source_sha256": "93424b20f14333291ad19579685dcc67afe9d228e2c10282aff6f2277b0a6210"
+}

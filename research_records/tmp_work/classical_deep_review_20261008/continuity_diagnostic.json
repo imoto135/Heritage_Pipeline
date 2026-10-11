@@ -1,0 +1,270 @@
+{
+  "case": "N01",
+  "original_point_indices": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9
+  ],
+  "points_global_xy": [
+    [
+      493,
+      388
+    ],
+    [
+      491,
+      400
+    ],
+    [
+      488,
+      412
+    ],
+    [
+      484,
+      426
+    ],
+    [
+      481,
+      436
+    ],
+    [
+      475,
+      449
+    ],
+    [
+      469,
+      463
+    ],
+    [
+      469,
+      479
+    ],
+    [
+      470,
+      491
+    ],
+    [
+      472,
+      502
+    ]
+  ],
+  "connectivity": 8,
+  "scope": "Post-output exploratory check on previously frozen and audited centers along visible thin stroke. No new points, not full-stroke or dense GT accuracy.",
+  "records": [
+    {
+      "method": "wolf61",
+      "kept_points": 10,
+      "points": 10,
+      "component_labels_at_points": [
+        29,
+        34,
+        36,
+        36,
+        36,
+        36,
+        36,
+        36,
+        36,
+        36
+      ],
+      "distinct_foreground_components": 3,
+      "first_last_points_both_present_and_connected": false
+    },
+    {
+      "method": "sauvola61",
+      "kept_points": 10,
+      "points": 10,
+      "component_labels_at_points": [
+        42,
+        42,
+        42,
+        42,
+        42,
+        42,
+        42,
+        42,
+        42,
+        42
+      ],
+      "distinct_foreground_components": 1,
+      "first_last_points_both_present_and_connected": true
+    },
+    {
+      "method": "nick61",
+      "kept_points": 10,
+      "points": 10,
+      "component_labels_at_points": [
+        349,
+        349,
+        349,
+        349,
+        349,
+        349,
+        349,
+        349,
+        349,
+        349
+      ],
+      "distinct_foreground_components": 1,
+      "first_last_points_both_present_and_connected": true
+    },
+    {
+      "method": "bradley61",
+      "kept_points": 10,
+      "points": 10,
+      "component_labels_at_points": [
+        72,
+        72,
+        72,
+        72,
+        72,
+        72,
+        72,
+        72,
+        72,
+        72
+      ],
+      "distinct_foreground_components": 1,
+      "first_last_points_both_present_and_connected": true
+    },
+    {
+      "method": "phansalkar61",
+      "kept_points": 10,
+      "points": 10,
+      "component_labels_at_points": [
+        40,
+        40,
+        40,
+        40,
+        40,
+        40,
+        40,
+        40,
+        40,
+        40
+      ],
+      "distinct_foreground_components": 1,
+      "first_last_points_both_present_and_connected": true
+    },
+    {
+      "method": "bg61_otsu",
+      "kept_points": 10,
+      "points": 10,
+      "component_labels_at_points": [
+        45,
+        45,
+        45,
+        45,
+        45,
+        45,
+        45,
+        45,
+        45,
+        45
+      ],
+      "distinct_foreground_components": 1,
+      "first_last_points_both_present_and_connected": true
+    },
+    {
+      "method": "bg61_wolf",
+      "kept_points": 10,
+      "points": 10,
+      "component_labels_at_points": [
+        33,
+        38,
+        40,
+        40,
+        40,
+        40,
+        40,
+        40,
+        40,
+        40
+      ],
+      "distinct_foreground_components": 3,
+      "first_last_points_both_present_and_connected": false
+    },
+    {
+      "method": "bg61_sauvola",
+      "kept_points": 10,
+      "points": 10,
+      "component_labels_at_points": [
+        42,
+        42,
+        42,
+        42,
+        42,
+        42,
+        42,
+        42,
+        42,
+        42
+      ],
+      "distinct_foreground_components": 1,
+      "first_last_points_both_present_and_connected": true
+    },
+    {
+      "method": "howe80",
+      "kept_points": 10,
+      "points": 10,
+      "component_labels_at_points": [
+        18,
+        18,
+        18,
+        18,
+        18,
+        18,
+        18,
+        18,
+        18,
+        18
+      ],
+      "distinct_foreground_components": 1,
+      "first_last_points_both_present_and_connected": true
+    },
+    {
+      "method": "howe160",
+      "kept_points": 10,
+      "points": 10,
+      "component_labels_at_points": [
+        18,
+        18,
+        18,
+        18,
+        18,
+        18,
+        18,
+        18,
+        18,
+        18
+      ],
+      "distinct_foreground_components": 1,
+      "first_last_points_both_present_and_connected": true
+    },
+    {
+      "method": "howe320",
+      "kept_points": 10,
+      "points": 10,
+      "component_labels_at_points": [
+        18,
+        18,
+        18,
+        18,
+        18,
+        18,
+        18,
+        18,
+        18,
+        18
+      ],
+      "distinct_foreground_components": 1,
+      "first_last_points_both_present_and_connected": true
+    }
+  ]
+}

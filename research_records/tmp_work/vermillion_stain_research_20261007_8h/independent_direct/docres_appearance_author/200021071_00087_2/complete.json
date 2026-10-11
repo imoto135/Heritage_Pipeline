@@ -1,0 +1,26 @@
+{
+  "page": "200021071_00087_2",
+  "source_sha256": "8397b8551f05b9b415f5c1ef080959c43a2b2069c163c6037f71b64872f255b5",
+  "method": "docres_appearance_author",
+  "role": "prospective_japanese",
+  "book": "200021071",
+  "protocol_sha256": "4f876d008f2cede2f0f845d7bd6ef94e25e216525e6609d75b2dc914dca4c397",
+  "script_sha256": "200307899d62653af8b2feac83cb88ce6157ac2753fdd52d381a4befadb228bc",
+  "adapter_sha256": "01ea2f8636b4412a1aea7a47e9d56ea9c47254e0744ab91e44e24e368e2cb47d",
+  "source_identical_cache": false,
+  "resource_provenance": {
+    "resources": {
+      "/home/imoto/Heritage_Pipeline/tmp_work/npj_literature_models_20261002/repos/DocRes/models/restormer_arch.py": "4a6f50552cf21c016f3c38f0302ff9c9cea07a38111c219ef9e67279e60d6915",
+      "/home/imoto/Heritage_Pipeline/tmp_work/npj_literature_models_20261002/weights/docres_mirror.pkl": "1d6a89d754fe1e58ffd1865eab0ef3f03344798d39197b2d9a77ce4fbc8c02fd"
+    }
+  },
+  "seconds": 10.407617684453726,
+  "channels": "Stain input RGB; internal array BGR; PNG RGB; DocRes BGR tensor",
+  "exact_author_benchmark": false,
+  "docres_mirror_provenance": "Community mirror DaVinciCode/doctra-docres-main, hash agrees with second mirror; original OneDrive requires auth; author-copy identity not independently verified",
+  "no_pixel_or_reading_GT": true,
+  "outputs": {
+    "result.png": "ec254162d29250db07f6d73edabbdf7178edd7f1049264c69ac885cc63e1720b",
+    "prompt.png": "dc343e9e0193cd6b1a60179214f7e683be5a32d132acc6fb979a5b9019a50edc"
+  }
+}

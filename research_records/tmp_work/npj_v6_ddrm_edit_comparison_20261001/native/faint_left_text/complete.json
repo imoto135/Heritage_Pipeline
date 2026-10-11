@@ -1,0 +1,44 @@
+{
+  "diagnostics": {
+    "id": "faint_left_text",
+    "page": "200010454_00026_1",
+    "book": "200010454",
+    "xywh": [
+      180,
+      500,
+      450,
+      1000
+    ],
+    "context_xywh": [
+      116,
+      436,
+      578,
+      1128
+    ],
+    "baseline_failure": true,
+    "failure_type": "thin_black_edit",
+    "total_patches": 84,
+    "elapsed_seconds": 29.728068911470473,
+    "npj_edit_pixels": 20152,
+    "npj_changed_pixels": 20149,
+    "npj_nonedit_changed_pixels": 0,
+    "npj_sampled_patches": 80,
+    "npj_raw_nonedit_changed_pixels": 422344,
+    "v6_edit_pixels": 66,
+    "v6_changed_pixels": 66,
+    "v6_nonedit_changed_pixels": 0,
+    "v6_sampled_patches": 2,
+    "v6_raw_nonedit_changed_pixels": 20940
+  },
+  "outputs": {
+    "v6_raw.png": "5150a9052acc898d13a15262e8c38816fa3df47cc1366de67f9a91cb57ed98f0",
+    "npj_raw.png": "8278cc81e7666b6d88dc2c6849aaf177d806cfb4d36cc18a74be90256dcc32e0",
+    "npj_changed.png": "447c987d94332abf693ba7f56ad69137514fc43d835aef502a0bf26535a42f62",
+    "original.png": "bfe78c1bcc470a5d3604acbf71415d1abb7e3ed988816e2e97620ffd35c19898",
+    "npj_edit.png": "b6f79b683019f52bb98acc40db666f82a2e2804c78c58eea73e2e00da24e8efe",
+    "v6_edit.png": "c4a816d843e0c8f01cb22bc7b0e5024cea0985869683b763c2ba6137fd3df0b7",
+    "v6.png": "48b9bfdc420f0b314cbbdce0a959c978bc2e6b150f140d2b4c62d00fc60574bd",
+    "v6_changed.png": "c4a816d843e0c8f01cb22bc7b0e5024cea0985869683b763c2ba6137fd3df0b7",
+    "npj.png": "c6af60592ac2eb498c6646d0ca5fb6bf79a7dd9b6d3e1ead77eefab6a6519223"
+  }
+}

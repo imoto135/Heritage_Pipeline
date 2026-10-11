@@ -1,0 +1,1 @@
+const cs=[...document.querySelectorAll('[data-toggle]')];function update(){for(const c of cs)for(const f of document.querySelectorAll('figure[data-mode="'+c.dataset.toggle+'"]'))f.hidden=!c.checked;}cs.forEach(c=>c.addEventListener('change',update));document.querySelector('#native').addEventListener('change',e=>document.body.classList.toggle('native',e.target.checked));update();

@@ -1,0 +1,39 @@
+{
+  "parent_log": {
+    "id": "F04",
+    "method": "howe_grow5",
+    "seconds": 242.25,
+    "reused": false,
+    "command": [
+      "/home/imoto/miniconda3/envs/diffusion/bin/python",
+      "-B",
+      "/home/imoto/Heritage_Pipeline/tmp_work/npj_dirt_control_20261002/source_snapshot/ddrm_npj_v2/scripts/pipeline_ddrm.py",
+      "--input_dir",
+      "/home/imoto/Heritage_Pipeline/tmp_work/test_only_challenge_search_20261009/red_local_color_validation/inputs/200021063_00002_2",
+      "--output_dir",
+      "/home/imoto/Heritage_Pipeline/tmp_work/test_only_challenge_search_20261009/red_local_color_validation/outputs/howe_grow5",
+      "--tmp_dir",
+      "/home/imoto/Heritage_Pipeline/tmp_work/test_only_challenge_search_20261009/red_local_color_validation/infer_tmp/howe_grow5/200021063_00002_2",
+      "--mask_dir",
+      "/home/imoto/Heritage_Pipeline/tmp_work/test_only_challenge_search_20261009/red_local_color_validation/masks/howe_grow5",
+      "--ckpt",
+      "/home/imoto/Heritage_Pipeline/modules/stain_removal/experiments/model_char/model_char/ckpt_epoch0350.pth",
+      "--back_ground",
+      "/home/imoto/Heritage_Pipeline/modules/ddrm_npj_v2/background/isemonogatari.png",
+      "--device",
+      "cuda:0",
+      "--patch_size",
+      "128",
+      "--overlap",
+      "32",
+      "--shared_noise",
+      "--no_wandb"
+    ],
+    "output": "tmp_work/test_only_challenge_search_20261009/red_local_color_validation/outputs/howe_grow5/200021063_00002_2/result/200021063_00002_2.png",
+    "sha256": "1f68fec49e18f8d020f2bcd9a958240a22ddadf3162f0df088ff1d88431acfe6"
+  },
+  "parent_result_sha256": "1f68fec49e18f8d020f2bcd9a958240a22ddadf3162f0df088ff1d88431acfe6",
+  "parent_red_sha256": "7c5ca4421235b2d7183f8b27eb25e52c39f1b335ff7302228e11996f43595d88",
+  "new_red_sha256": "7c5ca4421235b2d7183f8b27eb25e52c39f1b335ff7302228e11996f43595d88",
+  "reason": "Identical raw Howe, red pixels, input and frozen DDRM; no new F04 inference needed"
+}

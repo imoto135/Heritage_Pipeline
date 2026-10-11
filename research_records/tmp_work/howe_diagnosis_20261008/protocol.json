@@ -1,0 +1,594 @@
+{
+  "cases": [
+    {
+      "id": "01_極細・薄い筆画",
+      "page": "200010454_00002_2",
+      "original": "data/split_dataset/test/200010454/200010454_00002_2.jpg",
+      "seed_xywh": [
+        1230,
+        500,
+        280,
+        650
+      ],
+      "reason": "筆画欠損",
+      "roi_xywh": [
+        1110,
+        500,
+        520,
+        650
+      ],
+      "source_sha256": "177776f90fc08b12e2f59a37773ef433556f43ebe47c503c2d676595a08a60d1",
+      "image_wh": [
+        1784,
+        2365
+      ],
+      "seed_id": "R_L01",
+      "category": "極細・薄い筆画",
+      "focus": "中央列の細い垂れ線と輪郭",
+      "detail_xywh": [
+        1320,
+        540,
+        230,
+        370
+      ],
+      "observation": "Sauvolaは細線を断片として残す。Wolfは中央の薄い線を大きく失う。Howeは上の垂れ線を保持するが、下の薄い輪郭には切れ目が残る。",
+      "limit": "3法で細線保持に差。Howeでも全ての薄い輪郭はつながらない。",
+      "judgment": "visible_stroke_loss",
+      "comparison": {
+        "path": "comparisons/01_極細・薄い筆画.png",
+        "panels": [
+          {
+            "method": "original",
+            "xywh": [
+              22,
+              146,
+              520,
+              650
+            ],
+            "scale": 1
+          },
+          {
+            "method": "sauvola",
+            "xywh": [
+              564,
+              146,
+              520,
+              650
+            ],
+            "scale": 1
+          },
+          {
+            "method": "wolf",
+            "xywh": [
+              22,
+              856,
+              520,
+              650
+            ],
+            "scale": 1
+          },
+          {
+            "method": "howe",
+            "xywh": [
+              564,
+              856,
+              520,
+              650
+            ],
+            "scale": 1
+          }
+        ],
+        "sha256": "9d758dd9378ea20f039b21f187be060be0cc580b9119315719704c443f712a14"
+      },
+      "detail": {
+        "path": "details/01_極細・薄い筆画_詳細2倍.png",
+        "panels": [
+          {
+            "method": "original",
+            "xywh": [
+              22,
+              146,
+              460,
+              740
+            ],
+            "scale": 2
+          },
+          {
+            "method": "sauvola",
+            "xywh": [
+              504,
+              146,
+              460,
+              740
+            ],
+            "scale": 2
+          },
+          {
+            "method": "wolf",
+            "xywh": [
+              22,
+              946,
+              460,
+              740
+            ],
+            "scale": 2
+          },
+          {
+            "method": "howe",
+            "xywh": [
+              504,
+              946,
+              460,
+              740
+            ],
+            "scale": 2
+          }
+        ],
+        "sha256": "2d13926f900e0930b286a2ff693e139eb6481739e7ad3819513423c2a5d838f0"
+      }
+    },
+    {
+      "id": "02_広い水染みと低コントラスト文字",
+      "page": "hnsd001_011",
+      "original": "data/split_dataset/train/hnsd00000/hnsd001_011.jpg",
+      "seed_xywh": [
+        220,
+        1620,
+        850,
+        760
+      ],
+      "reason": "水染みの中の薄い本文の欠損",
+      "roi_xywh": [
+        265,
+        1620,
+        760,
+        760
+      ],
+      "source_sha256": "22017c0af65c5f43560ff05cfcc15c6ed8f56b72e60a04a732d9c31b72f05731",
+      "image_wh": [
+        1857,
+        2903
+      ],
+      "seed_id": "D_thin_black_water",
+      "category": "広い水染みと低コントラスト文字",
+      "focus": "中央から左の薄い本文と、右の濃い本文",
+      "detail_xywh": [
+        580,
+        1800,
+        300,
+        350
+      ],
+      "observation": "濃い右列は3法とも比較的残る。中央・左の薄い文字は3法とも複数の部分が欠ける。Wolfの欠けが目立ち、Howeでも断片化が残る。",
+      "limit": "局所の数画素の切れ目より広い、文字全体の保持の問題。",
+      "judgment": "visible_stroke_loss",
+      "comparison": {
+        "path": "comparisons/02_広い水染みと低コントラスト文字.png",
+        "panels": [
+          {
+            "method": "original",
+            "xywh": [
+              22,
+              146,
+              760,
+              760
+            ],
+            "scale": 1
+          },
+          {
+            "method": "sauvola",
+            "xywh": [
+              804,
+              146,
+              760,
+              760
+            ],
+            "scale": 1
+          },
+          {
+            "method": "wolf",
+            "xywh": [
+              22,
+              966,
+              760,
+              760
+            ],
+            "scale": 1
+          },
+          {
+            "method": "howe",
+            "xywh": [
+              804,
+              966,
+              760,
+              760
+            ],
+            "scale": 1
+          }
+        ],
+        "sha256": "d1619f609e56b8c795ed9856b22f23ec809a156d46002ace38426a9b6953cd4f"
+      },
+      "detail": {
+        "path": "details/02_広い水染みと低コントラスト文字_詳細2倍.png",
+        "panels": [
+          {
+            "method": "original",
+            "xywh": [
+              22,
+              146,
+              600,
+              700
+            ],
+            "scale": 2
+          },
+          {
+            "method": "sauvola",
+            "xywh": [
+              644,
+              146,
+              600,
+              700
+            ],
+            "scale": 2
+          },
+          {
+            "method": "wolf",
+            "xywh": [
+              22,
+              906,
+              600,
+              700
+            ],
+            "scale": 2
+          },
+          {
+            "method": "howe",
+            "xywh": [
+              644,
+              906,
+              600,
+              700
+            ],
+            "scale": 2
+          }
+        ],
+        "sha256": "8b770425667bbd0d40aa1af3784161dd12d12d89193ff63449b5b0625133f12d"
+      }
+    },
+    {
+      "id": "03_本文に接触する濃い染み",
+      "page": "hnsd007_042",
+      "original": "data/split_dataset/train/hnsd00000/hnsd007_042.jpg",
+      "seed_xywh": [
+        900,
+        250,
+        320,
+        400
+      ],
+      "reason": "接触汚れ",
+      "roi_xywh": [
+        800,
+        190,
+        520,
+        520
+      ],
+      "source_sha256": "68315f7e551cb29695d9e830f09826eef92809409d4e9242290c5ed14f393afc",
+      "image_wh": [
+        1884,
+        2865
+      ],
+      "seed_id": "R_S01",
+      "category": "本文に接触する濃い染み",
+      "focus": "上の罫線から中央の字へ重なる染み",
+      "detail_xywh": [
+        970,
+        280,
+        250,
+        360
+      ],
+      "observation": "Sauvola・Wolfは染みの粒状像を本文の脇に残す。Howeは粒状像を減らす一方、染み下の中央筆画を途中で切り、上の字の一部を太くまとめる。",
+      "limit": "背景の除去と、接触部の細い筆画を残すことが両立していない。",
+      "judgment": "stain_ink_contact",
+      "comparison": {
+        "path": "comparisons/03_本文に接触する濃い染み.png",
+        "panels": [
+          {
+            "method": "original",
+            "xywh": [
+              22,
+              146,
+              520,
+              520
+            ],
+            "scale": 1
+          },
+          {
+            "method": "sauvola",
+            "xywh": [
+              564,
+              146,
+              520,
+              520
+            ],
+            "scale": 1
+          },
+          {
+            "method": "wolf",
+            "xywh": [
+              22,
+              726,
+              520,
+              520
+            ],
+            "scale": 1
+          },
+          {
+            "method": "howe",
+            "xywh": [
+              564,
+              726,
+              520,
+              520
+            ],
+            "scale": 1
+          }
+        ],
+        "sha256": "c5f270883fefc4e940c1587004e4a0ff90dcfa01e8270f981597b66d2c75ca7e"
+      },
+      "detail": {
+        "path": "details/03_本文に接触する濃い染み_詳細2倍.png",
+        "panels": [
+          {
+            "method": "original",
+            "xywh": [
+              22,
+              146,
+              500,
+              720
+            ],
+            "scale": 2
+          },
+          {
+            "method": "sauvola",
+            "xywh": [
+              544,
+              146,
+              500,
+              720
+            ],
+            "scale": 2
+          },
+          {
+            "method": "wolf",
+            "xywh": [
+              22,
+              926,
+              500,
+              720
+            ],
+            "scale": 2
+          },
+          {
+            "method": "howe",
+            "xywh": [
+              544,
+              926,
+              500,
+              720
+            ],
+            "scale": 2
+          }
+        ],
+        "sha256": "6c21cb214618f41de7303b29a27c59ac15a78b0a34185a23deca8d75b3e1d8e8"
+      }
+    },
+    {
+      "id": "04_墨と似た濃い斑点",
+      "page": "hnsd001_011",
+      "original": "data/split_dataset/train/hnsd00000/hnsd001_011.jpg",
+      "seed_xywh": [
+        400,
+        460,
+        400,
+        400
+      ],
+      "reason": "濃い茶色の斑点を墨と判定",
+      "roi_xywh": [
+        340,
+        400,
+        520,
+        520
+      ],
+      "source_sha256": "22017c0af65c5f43560ff05cfcc15c6ed8f56b72e60a04a732d9c31b72f05731",
+      "image_wh": [
+        1857,
+        2903
+      ],
+      "seed_id": "D_dense_stain",
+      "category": "墨と似た濃い斑点",
+      "focus": "本文の間にある楕円状の暗い斑点",
+      "detail_xywh": [
+        400,
+        540,
+        260,
+        270
+      ],
+      "observation": "原画像の濃い茶色の楕円は、Sauvola・Wolfでは黒い塊として残るが、Howeでは除去されている。前回の「3法とも残る」という記述は目視の誤りであり訂正する。斑点は本文の間にあるが、筆画そのものとは離れている。",
+      "limit": "Howeが斑点を除去できる成功対照。接触汚れや読解改善とは別に評価する。",
+      "judgment": "howe_stain_removal_success",
+      "comparison": {
+        "path": "comparisons/04_墨と似た濃い斑点.png",
+        "panels": [
+          {
+            "method": "original",
+            "xywh": [
+              22,
+              146,
+              520,
+              520
+            ],
+            "scale": 1
+          },
+          {
+            "method": "sauvola",
+            "xywh": [
+              564,
+              146,
+              520,
+              520
+            ],
+            "scale": 1
+          },
+          {
+            "method": "wolf",
+            "xywh": [
+              22,
+              726,
+              520,
+              520
+            ],
+            "scale": 1
+          },
+          {
+            "method": "howe",
+            "xywh": [
+              564,
+              726,
+              520,
+              520
+            ],
+            "scale": 1
+          }
+        ],
+        "sha256": "034e860ef4340a6a96c3f08f4f1b1da4b41322ed8e822e0342fb528dd6b02aca"
+      },
+      "detail": {
+        "path": "details/04_墨と似た濃い斑点_詳細2倍.png",
+        "panels": [
+          {
+            "method": "original",
+            "xywh": [
+              22,
+              146,
+              520,
+              540
+            ],
+            "scale": 2
+          },
+          {
+            "method": "sauvola",
+            "xywh": [
+              564,
+              146,
+              520,
+              540
+            ],
+            "scale": 2
+          },
+          {
+            "method": "wolf",
+            "xywh": [
+              22,
+              746,
+              520,
+              540
+            ],
+            "scale": 2
+          },
+          {
+            "method": "howe",
+            "xywh": [
+              564,
+              746,
+              520,
+              540
+            ],
+            "scale": 2
+          }
+        ],
+        "sha256": "696139920625e0cd4b5434b8beb719e39b5541bd22a8f17712c954ca8a480d01"
+      }
+    }
+  ],
+  "pages": [
+    "200010454_00002_2",
+    "hnsd001_011",
+    "hnsd007_042"
+  ],
+  "input": "Full native raw page; OpenCV RGB2GRAY /255. Crop after global processing.",
+  "auto": {
+    "author_algorithm": 3,
+    "c_values": [
+      19.999999999999996,
+      23.78414230005442,
+      28.2842712474619,
+      33.63585661014858,
+      40.0,
+      47.56828460010884,
+      56.568542494923825,
+      67.27171322029716,
+      79.99999999999997,
+      95.13656920021769,
+      113.13708498984766,
+      134.54342644059432,
+      159.99999999999994,
+      190.2731384004354,
+      226.27416997969533,
+      269.0868528811887,
+      319.99999999999994,
+      380.5462768008708,
+      452.5483399593907,
+      538.1737057623774,
+      639.9999999999999,
+      761.0925536017418,
+      905.0966799187815,
+      1076.347411524755,
+      1279.9999999999998,
+      1522.1851072034835,
+      1810.1933598375633,
+      2152.694823049508,
+      2560.0,
+      3044.3702144069675,
+      3620.3867196751266,
+      4305.389646099016,
+      5120.0
+    ],
+    "high_thresholds": [
+      0.25,
+      0.375,
+      0.5
+    ],
+    "tlo": 0.1,
+    "sigma": 0.6,
+    "rule": "Alg1 smoothed instability qrs criterion, Alg3 chooses low vs high output by lower mismatch to middle; strict < else high",
+    "reference": "https://www.science.smith.edu/~nhowe/research/code/"
+  },
+  "variants": [
+    "fixed c160 thi.4",
+    "pre_postprocessing",
+    "no_background_bias",
+    "no_edge_gating",
+    "data_only_c0",
+    "c40_thi.4",
+    "c80_thi.4",
+    "c320_thi.4",
+    "thi.25_c160",
+    "auto_Alg3_local_Canny"
+  ],
+  "interpretation": "Mechanism ablations are diagnostics, not proposed methods. No pixel GT or test accuracy. Selected known development pages.",
+  "unresolved": [
+    "No MATLAB/Octave runtime; canny_old numerical parity not established",
+    "OpenCV uint8 gray vs MATLAB rgb2gray not cross-runtime verified",
+    "Dynamic solver tie choices checked on tiny random grids, not original MATLAB full pages"
+  ],
+  "frozen_before_new_outputs": true,
+  "spot_probe": {
+    "page": "hnsd001_011",
+    "xywh": [
+      460,
+      590,
+      90,
+      60
+    ],
+    "role": "Previously inspected isolated nontext spot; not dense GT"
+  }
+}

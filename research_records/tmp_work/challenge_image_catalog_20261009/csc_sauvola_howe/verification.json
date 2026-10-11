@@ -1,0 +1,434 @@
+{
+  "selection_lock_sha256": "a73880fee9a189e930799140a0bfad9b3a3ca50ecda741de72ef9fa03a496599",
+  "output": "tmp_work/challenge_image_catalog_20261009/csc_sauvola_howe/7課題_CSC_Sauvola_Howe_比較.png",
+  "output_sha256": "a94a4afcff86e7c1e1cdba3f2986414bca1a277f5d23895b8d4e82b1307997b2",
+  "pixel_exact_panels": 28,
+  "cases": [
+    {
+      "id": "01",
+      "page": "200010454_00002_2",
+      "roi_xywh": [
+        1110,
+        500,
+        520,
+        650
+      ],
+      "panels": [
+        {
+          "method": "original",
+          "source": "data/split_dataset/test/200010454/200010454_00002_2.jpg",
+          "source_sha256": "177776f90fc08b12e2f59a37773ef433556f43ebe47c503c2d676595a08a60d1",
+          "canvas_xywh": [
+            28,
+            202,
+            520,
+            650
+          ]
+        },
+        {
+          "method": "csc",
+          "source": "data/split_dataset_csc_mask_v2/test/200010454/200010454_00002_2/02_text_black.png",
+          "source_sha256": "80fc8e3a7b20fc3b6eb635cf764fc220ad1f859b98ac03a9e7b655d691cca6db",
+          "canvas_xywh": [
+            818,
+            202,
+            520,
+            650
+          ]
+        },
+        {
+          "method": "sauvola",
+          "source": "tmp_work/classical_limits_by_category_20261008/masks/200010454_00002_2/sauvola.png",
+          "source_sha256": "48cbe6ab019135070019740417aca0be29ad3effe0cc883e7dd997915f6b5b6a",
+          "canvas_xywh": [
+            1608,
+            202,
+            520,
+            650
+          ]
+        },
+        {
+          "method": "howe",
+          "source": "tmp_work/classical_limits_by_category_20261008/masks/200010454_00002_2/howe.png",
+          "source_sha256": "0d5af3e008caab0f82b41a7249d6d0c9ad80529ded6539f6c7a16d740134a64d",
+          "canvas_xywh": [
+            2398,
+            202,
+            520,
+            650
+          ]
+        }
+      ],
+      "classical_mask_provenance": {
+        "status": "reused",
+        "method_settings": "Saved full-page masks"
+      }
+    },
+    {
+      "id": "02",
+      "page": "hnsd001_011",
+      "roi_xywh": [
+        265,
+        1620,
+        760,
+        760
+      ],
+      "panels": [
+        {
+          "method": "original",
+          "source": "data/split_dataset/train/hnsd00000/hnsd001_011.jpg",
+          "source_sha256": "22017c0af65c5f43560ff05cfcc15c6ed8f56b72e60a04a732d9c31b72f05731",
+          "canvas_xywh": [
+            28,
+            944,
+            760,
+            760
+          ]
+        },
+        {
+          "method": "csc",
+          "source": "data/split_dataset_csc_mask_v2/train/hnsd00000/hnsd001_011/02_text_black.png",
+          "source_sha256": "38c924c68f407eb8ef0f172011c8d0a71fd70af40c3b85e425e36d978790806e",
+          "canvas_xywh": [
+            818,
+            944,
+            760,
+            760
+          ]
+        },
+        {
+          "method": "sauvola",
+          "source": "tmp_work/classical_limits_by_category_20261008/masks/hnsd001_011/sauvola.png",
+          "source_sha256": "99fe8f06106294c9878452ccb11f170699a4125d88652aaa79acb506fb029d77",
+          "canvas_xywh": [
+            1608,
+            944,
+            760,
+            760
+          ]
+        },
+        {
+          "method": "howe",
+          "source": "tmp_work/classical_limits_by_category_20261008/masks/hnsd001_011/howe.png",
+          "source_sha256": "5080ec95fe2b53bfb3d5fb7073d821324a3d5f391faed6d8bb0115d576e4f60f",
+          "canvas_xywh": [
+            2398,
+            944,
+            760,
+            760
+          ]
+        }
+      ],
+      "classical_mask_provenance": {
+        "status": "reused",
+        "method_settings": "Saved full-page masks"
+      }
+    },
+    {
+      "id": "03",
+      "page": "hnsd007_042",
+      "roi_xywh": [
+        800,
+        190,
+        520,
+        520
+      ],
+      "panels": [
+        {
+          "method": "original",
+          "source": "data/split_dataset/train/hnsd00000/hnsd007_042.jpg",
+          "source_sha256": "68315f7e551cb29695d9e830f09826eef92809409d4e9242290c5ed14f393afc",
+          "canvas_xywh": [
+            28,
+            1796,
+            520,
+            520
+          ]
+        },
+        {
+          "method": "csc",
+          "source": "data/split_dataset_csc_mask_v2/train/hnsd00000/hnsd007_042/02_text_black.png",
+          "source_sha256": "32cd57c3b5be6be99a4fb8e5bab896bc674d2d2524dd33a3b84794803a645424",
+          "canvas_xywh": [
+            818,
+            1796,
+            520,
+            520
+          ]
+        },
+        {
+          "method": "sauvola",
+          "source": "tmp_work/classical_limits_by_category_20261008/masks/hnsd007_042/sauvola.png",
+          "source_sha256": "c0d5bc5bb3f47235b90746113e2b9af5a614ae606cb19390a093ead3d9240e8a",
+          "canvas_xywh": [
+            1608,
+            1796,
+            520,
+            520
+          ]
+        },
+        {
+          "method": "howe",
+          "source": "tmp_work/classical_limits_by_category_20261008/masks/hnsd007_042/howe.png",
+          "source_sha256": "4286d4d1de124f84d71cefb79a1d9b46f8eb5ba70e26f8357a9f9f050df49956",
+          "canvas_xywh": [
+            2398,
+            1796,
+            520,
+            520
+          ]
+        }
+      ],
+      "classical_mask_provenance": {
+        "status": "reused",
+        "method_settings": "Saved full-page masks"
+      }
+    },
+    {
+      "id": "04",
+      "page": "hnsd001_011",
+      "roi_xywh": [
+        340,
+        400,
+        520,
+        520
+      ],
+      "panels": [
+        {
+          "method": "original",
+          "source": "data/split_dataset/train/hnsd00000/hnsd001_011.jpg",
+          "source_sha256": "22017c0af65c5f43560ff05cfcc15c6ed8f56b72e60a04a732d9c31b72f05731",
+          "canvas_xywh": [
+            28,
+            2408,
+            520,
+            520
+          ]
+        },
+        {
+          "method": "csc",
+          "source": "data/split_dataset_csc_mask_v2/train/hnsd00000/hnsd001_011/02_text_black.png",
+          "source_sha256": "38c924c68f407eb8ef0f172011c8d0a71fd70af40c3b85e425e36d978790806e",
+          "canvas_xywh": [
+            818,
+            2408,
+            520,
+            520
+          ]
+        },
+        {
+          "method": "sauvola",
+          "source": "tmp_work/classical_limits_by_category_20261008/masks/hnsd001_011/sauvola.png",
+          "source_sha256": "99fe8f06106294c9878452ccb11f170699a4125d88652aaa79acb506fb029d77",
+          "canvas_xywh": [
+            1608,
+            2408,
+            520,
+            520
+          ]
+        },
+        {
+          "method": "howe",
+          "source": "tmp_work/classical_limits_by_category_20261008/masks/hnsd001_011/howe.png",
+          "source_sha256": "5080ec95fe2b53bfb3d5fb7073d821324a3d5f391faed6d8bb0115d576e4f60f",
+          "canvas_xywh": [
+            2398,
+            2408,
+            520,
+            520
+          ]
+        }
+      ],
+      "classical_mask_provenance": {
+        "status": "reused",
+        "method_settings": "Saved full-page masks"
+      }
+    },
+    {
+      "id": "05",
+      "page": "200021851_00007_2",
+      "roi_xywh": [
+        1635,
+        2175,
+        520,
+        520
+      ],
+      "panels": [
+        {
+          "method": "original",
+          "source": "data/split_dataset/val/200021851/200021851_00007_2.jpg",
+          "source_sha256": "75fdd5252ed78d47d9908060e5b315439068d0db8a53d241cf490d8ce8cd4aeb",
+          "canvas_xywh": [
+            28,
+            3020,
+            520,
+            520
+          ]
+        },
+        {
+          "method": "csc",
+          "source": "data/split_dataset_csc_mask_v2/val/200021851/200021851_00007_2/02_text_black.png",
+          "source_sha256": "5559dbb0b3ad278382e14d732846d378f38da6ec49b282efa09d9d0db3f5093c",
+          "canvas_xywh": [
+            818,
+            3020,
+            520,
+            520
+          ]
+        },
+        {
+          "method": "sauvola",
+          "source": "tmp_work/classical_limits_by_category_20261008/masks/200021851_00007_2/sauvola.png",
+          "source_sha256": "28b042c860e00bd8e413cb8df179436730596f64932ff637942e982b7b3cedc8",
+          "canvas_xywh": [
+            1608,
+            3020,
+            520,
+            520
+          ]
+        },
+        {
+          "method": "howe",
+          "source": "tmp_work/classical_limits_by_category_20261008/masks/200021851_00007_2/howe.png",
+          "source_sha256": "1940964402ed6235264400199455df0e1711742a26b91aed15232885bad9a3db",
+          "canvas_xywh": [
+            2398,
+            3020,
+            520,
+            520
+          ]
+        }
+      ],
+      "classical_mask_provenance": {
+        "status": "reused",
+        "method_settings": "Saved full-page masks"
+      }
+    },
+    {
+      "id": "06",
+      "page": "200003803_00003_1",
+      "roi_xywh": [
+        80,
+        95,
+        620,
+        530
+      ],
+      "panels": [
+        {
+          "method": "original",
+          "source": "data/test/200003803/200003803_00003_1.jpg",
+          "source_sha256": "3cc169f2ebad09fa9b312a0230c2357287f16a0a505f64ef3d00fd44dc39da53",
+          "canvas_xywh": [
+            28,
+            3632,
+            620,
+            530
+          ]
+        },
+        {
+          "method": "csc",
+          "source": "data/split_dataset_csc_mask_v2/test/200003803/200003803_00003_1/02_text_black.png",
+          "source_sha256": "e0370e3f28e0dd9156b35c53cf3e88dd1f9d6c7a2803b9509fc52d054aae61bf",
+          "canvas_xywh": [
+            818,
+            3632,
+            620,
+            530
+          ]
+        },
+        {
+          "method": "sauvola",
+          "source": "tmp_work/challenge_image_catalog_20261009/csc_sauvola_howe/new_full_page_masks/200003803_00003_1/sauvola.png",
+          "source_sha256": "608e9dd9e6c49cc93f7e402af95a8c969cb5a4fc03e6c4b878ea9cc3890d064a",
+          "canvas_xywh": [
+            1608,
+            3632,
+            620,
+            530
+          ]
+        },
+        {
+          "method": "howe",
+          "source": "tmp_work/challenge_image_catalog_20261009/csc_sauvola_howe/new_full_page_masks/200003803_00003_1/howe.png",
+          "source_sha256": "90c8a97d2e85ed8950dffa187189741812696da28246ba2751ed1b23305734b1",
+          "canvas_xywh": [
+            2398,
+            3632,
+            620,
+            530
+          ]
+        }
+      ],
+      "classical_mask_provenance": {
+        "status": "reused",
+        "method_settings": "Saved full-page masks"
+      }
+    },
+    {
+      "id": "07",
+      "page": "200021660_00028_1",
+      "roi_xywh": [
+        1093,
+        1723,
+        768,
+        768
+      ],
+      "panels": [
+        {
+          "method": "original",
+          "source": "data/split_dataset/val/200021660/200021660_00028_1.jpg",
+          "source_sha256": "716cc9b46f9f2ce021c7f4b58dbecc40eafc208da64538d0d20a5448546eea0e",
+          "canvas_xywh": [
+            28,
+            4254,
+            768,
+            768
+          ]
+        },
+        {
+          "method": "csc",
+          "source": "data/split_dataset_csc_mask_v2/val/200021660/200021660_00028_1/02_text_black.png",
+          "source_sha256": "1c0d67fafca0dde7343f3715ef6381e7c1538cf1db9740c070d50a384feca2b0",
+          "canvas_xywh": [
+            818,
+            4254,
+            768,
+            768
+          ]
+        },
+        {
+          "method": "sauvola",
+          "source": "tmp_work/challenge_image_catalog_20261009/csc_sauvola_howe/new_full_page_masks/200021660_00028_1/sauvola.png",
+          "source_sha256": "8cc6e9e53a278e95911cc8c283d82e6ccbc1a685fc029843b3b37ff44f241a18",
+          "canvas_xywh": [
+            1608,
+            4254,
+            768,
+            768
+          ]
+        },
+        {
+          "method": "howe",
+          "source": "tmp_work/challenge_image_catalog_20261009/csc_sauvola_howe/new_full_page_masks/200021660_00028_1/howe.png",
+          "source_sha256": "b9012d3b9df0fb120c8c117ef790da81ccd2fb4400ea0f24b017a65716740ca5",
+          "canvas_xywh": [
+            2398,
+            4254,
+            768,
+            768
+          ]
+        }
+      ],
+      "classical_mask_provenance": {
+        "status": "reused",
+        "method_settings": "Saved full-page masks"
+      }
+    }
+  ],
+  "notes": [
+    "CSC v2 is the stored ACE+CSC black-text mask, not raw-image-only input.",
+    "Sauvola and Howe use the native raw RGB converted to grayscale.",
+    "Howe is a local base-energy port with approximate Canny, not an exact MATLAB run.",
+    "06 and 07 classical masks are newly computed with the saved 01-05 settings."
+  ]
+}

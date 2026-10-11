@@ -1,0 +1,22 @@
+{
+  "log": "modules/stain_removal/wandb/run-20260616_180947-d4caxxvp/files/output.log",
+  "config": "modules/stain_removal/wandb/run-20260616_180947-d4caxxvp/files/config.yaml",
+  "log_sha256": "e81479a079668d3f649485f8f9a83279e61684690b93353b91dc22faa8a01e7a",
+  "config_sha256": "acc59d2dbd36176a3d3c983b4ec2f35e8e2343c7e0e5648c246653b7e31d1317",
+  "evidence_lines": [
+    "[2026-06-16 18:09:48,293] wandb run: patch-128px  url: https://wandb.ai/imotoyuichi-ritsumeikan-university/heritage-diffusion/runs/d4caxxvp",
+    "[2026-06-16 18:09:48,356] 学習画像数: 3878",
+    "[2026-06-17 07:01:44,168] チェックポイント保存: ./experiments/model_char/model_char/ckpt_epoch0350.pth",
+    "[2026-06-17 12:38:51,752] 学習完了。最終モデルを保存: ./experiments/model_char/model_char.pth"
+  ],
+  "publication_date": "2025-12-06",
+  "checkpoint_epoch": 350,
+  "checkpoint_global_step": 42350,
+  "training_images": 3878,
+  "conditional_training": false,
+  "num_res_blocks_per_downsample": 2,
+  "training_transform": "Resize144x144 -> RandomCrop128 -> horizontal flip -> normalize[-1,1]",
+  "inference_background_transform": "SingleDataset ToTensor[0,1], data_transform commented out",
+  "exact_paper_checkpoint_identity": false,
+  "training_transform_evidence": "Current corresponding source modules/stain_removal/src/train_common.py:48-55; exact training-time source snapshot not authenticated"
+}

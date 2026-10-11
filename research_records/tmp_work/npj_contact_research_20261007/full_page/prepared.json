@@ -1,0 +1,233 @@
+{
+  "selected": [
+    {
+      "id": "T00",
+      "detail_xywh": [
+        300,
+        150,
+        320,
+        400
+      ],
+      "priority": "高",
+      "group": "既知参照",
+      "title": "枠線から本文までシミが黒い塊になる",
+      "finding": "原画像で見えるシミ下の筆画が、出力では大きな黒い塊に覆われる。枠線にも接続する。",
+      "proposed_role": "元の提案例。比較基準として再利用する。",
+      "page": "hnsd007_042",
+      "book": "hnsd00000",
+      "crop_xywh": [
+        600,
+        100,
+        768,
+        768
+      ],
+      "page_detail_xywh": [
+        900,
+        250,
+        320,
+        400
+      ],
+      "source_kind": "2026-10-04の既存crop対照・今回再利用",
+      "source": {
+        "original": "data/split_dataset/train/hnsd00000/hnsd007_042.jpg",
+        "npj_black": "data/split_dataset_csc_mask/train/hnsd00000/hnsd007_042/02_text_black.png",
+        "npj_red": "data/split_dataset_csc_mask/train/hnsd00000/hnsd007_042/03_text_red.png",
+        "actual_input": "tmp_work/npj_manual_stain_oracle_20261004/input/hnsd007_042.png",
+        "output": "tmp_work/npj_manual_stain_oracle_20261004/output/hnsd007_042/result/hnsd007_042.png"
+      },
+      "source_sha256": {
+        "original": "68315f7e551cb29695d9e830f09826eef92809409d4e9242290c5ed14f393afc",
+        "npj_black": "005946c1505e4958f9dd4527a21ad4af2ba2d094ed63501511e8852599ffbe03",
+        "npj_red": "371fecd8850ceb72f93ec2731d493b1c5bbae3a3dd838fd32b22229ab39ebcd3",
+        "actual_input": "4682b1a2f04d379232da879de4a4135fd328fe98d45e19604cb5d2948749aaee",
+        "output": "207ca789f862ac839cc2a783d6975fc9c181f929a39642d602436efcdfe0e51a"
+      },
+      "comparison": "comparisons/T00.png",
+      "context": "contexts/T00.png",
+      "mask_diagnostic": "mask_diagnostics/T00.png"
+    },
+    {
+      "id": "T01",
+      "detail_xywh": [
+        130,
+        150,
+        450,
+        450
+      ],
+      "priority": "高",
+      "group": "追加・本文重なり",
+      "title": "複数の筆画を広い黒い塊が覆う",
+      "finding": "原画像では茶色いシミを横切る細い線・曲線が見えるが、出力では広い黒い塊に埋まり、隣の列とも接続する。",
+      "proposed_role": "追加例の第一候補。汚れと筆画を分ける処理の開発対象にする。",
+      "page": "hnsd007_023",
+      "book": "hnsd00000",
+      "crop_xywh": [
+        682,
+        271,
+        768,
+        768
+      ],
+      "page_detail_xywh": [
+        812,
+        421,
+        450,
+        450
+      ],
+      "source_kind": "2026-10-07の新規crop対照",
+      "source": {
+        "original": "data/split_dataset/train/hnsd00000/hnsd007_023.jpg",
+        "npj_black": "data/split_dataset_csc_mask/train/hnsd00000/hnsd007_023/02_text_black.png",
+        "npj_red": "data/split_dataset_csc_mask/train/hnsd00000/hnsd007_023/03_text_red.png",
+        "actual_input": "tmp_work/npj_contact_stain_search_20261007/inputs/T01/hnsd007_023.png",
+        "output": "tmp_work/npj_contact_stain_search_20261007/output/hnsd007_023/result/hnsd007_023.png"
+      },
+      "source_sha256": {
+        "original": "41999e5b52d17e60ea068c9b629ffcce037dc27fcbb3a4f45f46a5063d7b22af",
+        "npj_black": "ebd3b3ef4557fe0523ab6cd3bcebfa120f8a7f196672d815f0b3533fda922309",
+        "npj_red": "1184f50da7328831f68ee85b6be0695b11dad7ee54f9582913287562c0731543",
+        "actual_input": "9a997014e0a7705864fb0089fdf97500d48bd817480c15d3e8f0b7d0689ce46e",
+        "output": "20532956fa550bae4ffb43d3a27febd4f732139fbb2e442415ff259af531f6eb"
+      },
+      "comparison": "comparisons/T01.png",
+      "context": "contexts/T01.png",
+      "mask_diagnostic": "mask_diagnostics/T01.png"
+    },
+    {
+      "id": "T02",
+      "detail_xywh": [
+        120,
+        200,
+        440,
+        440
+      ],
+      "priority": "高",
+      "group": "追加・本文重なり",
+      "title": "2つのシミがそれぞれ本文を覆う",
+      "finding": "原画像の2つの茶色い範囲に見える筆画が、出力では大小2つの黒い塊に埋まる。正常な隣の列は概ね追える。",
+      "proposed_role": "大きさの違うシミと、変更しない隣接本文を同時に確認する主要例。",
+      "page": "hnsd007_025",
+      "book": "hnsd00000",
+      "crop_xywh": [
+        628,
+        204,
+        768,
+        768
+      ],
+      "page_detail_xywh": [
+        748,
+        404,
+        440,
+        440
+      ],
+      "source_kind": "2026-10-07の新規crop対照",
+      "source": {
+        "original": "data/split_dataset/train/hnsd00000/hnsd007_025.jpg",
+        "npj_black": "data/split_dataset_csc_mask/train/hnsd00000/hnsd007_025/02_text_black.png",
+        "npj_red": "data/split_dataset_csc_mask/train/hnsd00000/hnsd007_025/03_text_red.png",
+        "actual_input": "tmp_work/npj_contact_stain_search_20261007/inputs/T02/hnsd007_025.png",
+        "output": "tmp_work/npj_contact_stain_search_20261007/output/hnsd007_025/result/hnsd007_025.png"
+      },
+      "source_sha256": {
+        "original": "e2c7e9f8ad82774ed8aeb8f7579a5a15535c07e7c71234cb8f2b2d20fe90b450",
+        "npj_black": "2d4f8d2b4e3385b471a1aae8aac56bf3913adb14ed6a728f18e3168c83d2f597",
+        "npj_red": "1f11f6ad789f2a820ecd6a982661444576655efa494b4374be2bbc3eb80c3dcc",
+        "actual_input": "d4f7ee5a4b014e7ed10c52e606ead570e0d7eb204afba5e22b11f48ae3fe7a7c",
+        "output": "eaab12abc05703cc0f31bed1f841eae954fcef7a0551a21a80680276b7935fba"
+      },
+      "comparison": "comparisons/T02.png",
+      "context": "contexts/T02.png",
+      "mask_diagnostic": "mask_diagnostics/T02.png"
+    },
+    {
+      "id": "T03",
+      "detail_xywh": [
+        250,
+        180,
+        350,
+        480
+      ],
+      "priority": "高",
+      "group": "追加・本文重なり",
+      "title": "本文の横の小さい文字が埋もれる",
+      "finding": "シミの中の本文と、その右の小さい文字に見える線が出力では塊・断片に変わる。広い単一の塊だけでない失敗。",
+      "proposed_role": "小さい添え書きを守れるか確認する主要例。",
+      "page": "hnsd007_022",
+      "book": "hnsd00000",
+      "crop_xywh": [
+        392,
+        203,
+        768,
+        768
+      ],
+      "page_detail_xywh": [
+        642,
+        383,
+        350,
+        480
+      ],
+      "source_kind": "2026-10-07の新規crop対照",
+      "source": {
+        "original": "data/split_dataset/train/hnsd00000/hnsd007_022.jpg",
+        "npj_black": "data/split_dataset_csc_mask/train/hnsd00000/hnsd007_022/02_text_black.png",
+        "npj_red": "data/split_dataset_csc_mask/train/hnsd00000/hnsd007_022/03_text_red.png",
+        "actual_input": "tmp_work/npj_contact_stain_search_20261007/inputs/T03/hnsd007_022.png",
+        "output": "tmp_work/npj_contact_stain_search_20261007/output/hnsd007_022/result/hnsd007_022.png"
+      },
+      "source_sha256": {
+        "original": "7d8811bd447368b6da78d382a47ae9fc6e4ff03a5e25e6d838c5f7475b7b2caf",
+        "npj_black": "e2dc8610926b608b987e2de1d1bc2a31b84406c8375967f9f1803f9e4000dd39",
+        "npj_red": "d4014d073dd41b0c7b8fd6b4cfb51db37e8c23236f1ba41e1d495cdaf9eca173",
+        "actual_input": "646582da2cc8f9afd529055c922bb4814c6766746212b20e899d37f82cf254ba",
+        "output": "b3e05943dea6545f7fe1888d6e0c1ca1863df83e6873f01596f721df3379b56d"
+      },
+      "comparison": "comparisons/T03.png",
+      "context": "contexts/T03.png",
+      "mask_diagnostic": "mask_diagnostics/T03.png"
+    }
+  ],
+  "variants": [
+    "baseline",
+    "sauvola"
+  ],
+  "crop": false,
+  "resize": false,
+  "mask_variant": "saved CSC v1 versus global native Sauvola w61 k.2",
+  "red_mask": "unchanged saved source in both variants",
+  "seed": 999,
+  "timesteps": 20,
+  "patch": 128,
+  "overlap": 32,
+  "note": "local frozen NPJ-derived implementation, not a complete paper replay",
+  "baseline_source_code": {
+    "tmp_work/npj_dirt_control_20261002/source_snapshot/ddrm_npj_v2/datasets/celeba.py": "ae136695098b70ed6ed7e6140a2ad9ca717034e7bd8ddf8ec71d118baca34b5e",
+    "tmp_work/npj_dirt_control_20261002/source_snapshot/ddrm_npj_v2/datasets/__init__.py": "e120b14931f914e5fb1c3c64847d407178eb7ed4e378c27200f2abda56762954",
+    "tmp_work/npj_dirt_control_20261002/source_snapshot/ddrm_npj_v2/datasets/utils.py": "c1ff6203044ab3300156caa957bd9b2ddb092ce7ca84eb84354adce56b4679ed",
+    "tmp_work/npj_dirt_control_20261002/source_snapshot/ddrm_npj_v2/datasets/vision.py": "7e7a817dca0da5f91d438141ad93108b3d6319ff63300900916fa576577b1891",
+    "tmp_work/npj_dirt_control_20261002/source_snapshot/ddrm_npj_v2/datasets/imagenet_subset.py": "f9b8d31c653bb8d8518fb84a6bdff9bfde385fd9b5d0143de19909e679ccb601",
+    "tmp_work/npj_dirt_control_20261002/source_snapshot/ddrm_npj_v2/datasets/lsun.py": "0b0bfaa3ce8f82490725069c6a5f576cf6a05b88498241f20480c05506f20c0f",
+    "tmp_work/npj_dirt_control_20261002/source_snapshot/ddrm_npj_v2/functions/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "tmp_work/npj_dirt_control_20261002/source_snapshot/ddrm_npj_v2/functions/denoising.py": "6e59f0b2348b81e3b24e2e62c50047be5bda63cd6583822e3d09ba152beff74f",
+    "tmp_work/npj_dirt_control_20261002/source_snapshot/ddrm_npj_v2/functions/svd_replacement.py": "2d54c04de543558c0091d4e1db3e84be437a52e33af7c07bd5246e64af2f7cbc",
+    "tmp_work/npj_dirt_control_20261002/source_snapshot/ddrm_npj_v2/functions/ckpt_util.py": "7a9d0a26dbd8a753a128c673a6de236271f8749d2da874e5ad3152e6034b2d0e",
+    "tmp_work/npj_dirt_control_20261002/source_snapshot/ddrm_npj_v2/runners/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "tmp_work/npj_dirt_control_20261002/source_snapshot/ddrm_npj_v2/scripts/postprocess_flatfield.py": "537b19526fc44a56843498ca499590a387334136e4338f70e631b21e884965df",
+    "tmp_work/npj_dirt_control_20261002/source_snapshot/ddrm_npj_v2/scripts/generate_mask_csc.py": "c77d63315c46117a8a978634d2a5b04ad8aacef09b790d08653667e8950c74ff",
+    "tmp_work/npj_dirt_control_20261002/source_snapshot/ddrm_npj_v2/scripts/ace.py": "35f40c8397a4df8fc07e64ec61994b561ceefe922803e84d9046434d992b5146",
+    "tmp_work/npj_dirt_control_20261002/source_snapshot/ddrm_npj_v2/scripts/csc.py": "11815cbb82d6972644498db9c5a8879dfc7e104b14a2749e04fdf0198e19b22f",
+    "tmp_work/npj_dirt_control_20261002/source_snapshot/ddrm_npj_v2/scripts/postprocess_composite_stage.py": "cda3dff74420e03b5bb3b9827631512e4f7edd5ed56de249e66c85b580727dc3",
+    "tmp_work/npj_dirt_control_20261002/source_snapshot/ddrm_npj_v2/scripts/pipeline_ddrm.py": "bbc130a1761be21dfa7ff6d5ec9bc29e34155a56dfa405d91daa6a989a77f2ec",
+    "tmp_work/npj_dirt_control_20261002/source_snapshot/ddrm_npj_v2/scripts/pipeline_ddrm_page.py": "38d54734213e6b83b1e5271b94a0239baf803b590af334112e1e496c6d4c0a58",
+    "tmp_work/npj_dirt_control_20261002/source_snapshot/ddrm_npj_v2/codes/random_crop.py": "2b4df6582b1754652548960be66e7a4a668be1c6a1ec82cdf57580d3c72cc0e9",
+    "tmp_work/npj_dirt_control_20261002/source_snapshot/ddrm_npj_v2/codes/diffusion.py": "9ef760c426b51f6a345d0c750dd0dae04b8ad8b308d5b79b1d10c500c59080bf",
+    "tmp_work/npj_dirt_control_20261002/source_snapshot/ddrm_npj_v2/codes/OrigDataset.py": "33c6660f1ad97d045509f24865a7811b2a52f9f329172436e59fbc676070fd6c",
+    "tmp_work/npj_dirt_control_20261002/source_snapshot/ddrm_npj_v2/codes/Inpainting.py": "cc783e6f6b8e76c6352d39b51da04f4d4c6f1afbc7a167a2269e13a83cf2e12a",
+    "tmp_work/npj_dirt_control_20261002/source_snapshot/ddrm_npj_v2/codes/openai/nn.py": "d9547fb22b421a16dc079cb82a9d98630100b5e1b2a710d343f4d3f90b8661f3",
+    "tmp_work/npj_dirt_control_20261002/source_snapshot/ddrm_npj_v2/codes/openai/unet.py": "ceb81079066117455c71ced730a62ee3f23967e7a51271126340b59cb24069b7",
+    "tmp_work/npj_dirt_control_20261002/source_snapshot/ddrm_npj_v2/codes/openai_1ch/nn.py": "d9547fb22b421a16dc079cb82a9d98630100b5e1b2a710d343f4d3f90b8661f3",
+    "tmp_work/npj_dirt_control_20261002/source_snapshot/ddrm_npj_v2/codes/openai_1ch/unet.py": "ceb81079066117455c71ced730a62ee3f23967e7a51271126340b59cb24069b7"
+  },
+  "ckpt_sha256": "1a5decb747e34e8b51ccea96b598fe3c6ec0e7f7a6f8df6cffc3135d8281a7f3",
+  "paper_sha256": "2a96dbde5301415c593dc1d119410e7a077a6ac15ea3d8d8d5f8d4021dc3897c",
+  "source_sha256": "7dfd4abf53aa95e33e35ff93d0124fb557b694ce558d1291f0194c5c7057360e",
+  "created": 1791367156.0590897
+}

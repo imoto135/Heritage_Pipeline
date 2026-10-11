@@ -1,0 +1,163 @@
+{
+  "created_utc": "2026-10-09T09:40:32.321742+00:00",
+  "cases": [
+    {
+      "id": "V01",
+      "page": "200019865_00029_2",
+      "source": "data/test/200019865/200019865_00029_2.jpg",
+      "source_sha256": "b28d1c9846fe38d740592e75d92fe6093ca4684fd8cfe38cab862661617e8e29",
+      "input_size": [
+        2084,
+        3194
+      ],
+      "roi_xywh": [
+        400,
+        850,
+        750,
+        950
+      ],
+      "reason": "細い曲線・小さな濁点を含む本文",
+      "protect_rectangles_xywh": [
+        [
+          300,
+          650,
+          1600,
+          2200
+        ]
+      ]
+    },
+    {
+      "id": "V02",
+      "page": "200017458_00008_2",
+      "source": "data/test/200017458/200017458_00008_2.jpg",
+      "source_sha256": "bce015d36fba4ea779b276f2a2d1448d6b47566be44bad2958d04c4e5fd0b9a9",
+      "input_size": [
+        2134,
+        3259
+      ],
+      "roi_xywh": [
+        650,
+        900,
+        850,
+        900
+      ],
+      "reason": "染みと淡い像が重なる密な本文",
+      "protect_rectangles_xywh": [
+        [
+          170,
+          500,
+          1850,
+          2420
+        ]
+      ]
+    },
+    {
+      "id": "V03",
+      "page": "200018243_00004_1",
+      "source": "data/test/200018243/200018243_00004_1.jpg",
+      "source_sha256": "566172dc6bfb21c95f2d9c91702e6fb507ca6343984bbe79177d5076484a1833",
+      "input_size": [
+        2051,
+        3191
+      ],
+      "roi_xywh": [
+        1100,
+        140,
+        800,
+        780
+      ],
+      "reason": "上部余白の点と枠に近い本文",
+      "protect_rectangles_xywh": [
+        [
+          1050,
+          580,
+          900,
+          2200
+        ]
+      ]
+    },
+    {
+      "id": "V04",
+      "page": "200018243_00038_2",
+      "source": "data/test/200018243/200018243_00038_2.jpg",
+      "source_sha256": "ea593669b4ae979afb8ae53ccf549a028da1538e5a2b4261503fd5985e13c40f",
+      "input_size": [
+        2041,
+        3208
+      ],
+      "roi_xywh": [
+        50,
+        800,
+        750,
+        1600
+      ],
+      "reason": "本文が疎なページの独立した小さな印字",
+      "protect_rectangles_xywh": [
+        [
+          35,
+          840,
+          160,
+          1610
+        ],
+        [
+          1530,
+          500,
+          480,
+          2250
+        ]
+      ]
+    }
+  ],
+  "conditions_fixed_before_outputs": true,
+  "ddrm": {
+    "code": "tmp_work/npj_dirt_control_20261002/source_snapshot/ddrm_npj_v2/scripts/pipeline_ddrm.py",
+    "code_sha256": "bbc130a1761be21dfa7ff6d5ec9bc29e34155a56dfa405d91daa6a989a77f2ec",
+    "checkpoint": "modules/stain_removal/experiments/model_char/model_char/ckpt_epoch0350.pth",
+    "checkpoint_sha256": "1a5decb747e34e8b51ccea96b598fe3c6ec0e7f7a6f8df6cffc3135d8281a7f3",
+    "background": "modules/ddrm_npj_v2/background/isemonogatari.png",
+    "background_sha256": "2a96dbde5301415c593dc1d119410e7a077a6ac15ea3d8d8d5f8d4021dc3897c",
+    "seed": 999,
+    "timesteps": 20,
+    "patch_size": 128,
+    "overlap": 32,
+    "shared_noise": true,
+    "native_full_page": true
+  },
+  "sauvola": {
+    "window": 61,
+    "k": 0.2,
+    "R": 0.5
+  },
+  "howe": {
+    "c": 160,
+    "sigma": 0.6,
+    "low": 0.1,
+    "high": 0.4
+  },
+  "isolated_rule": {
+    "stroke_width": "2 * median foreground distance transform",
+    "support_min_area_stroke_squared": 16,
+    "support_min_csc_fraction": 0.1,
+    "degradation_max_area_stroke_squared": 8,
+    "degradation_min_fraction": 0.6,
+    "degradation_max_csc_fraction": 0.02,
+    "degradation_min_distance_strokes": 2,
+    "isolated_max_area_stroke_squared": 16,
+    "isolated_min_fill": 0.4,
+    "isolated_aspect_range": [
+      0.5,
+      2
+    ],
+    "isolated_min_distance_strokes": 12,
+    "degradation_components_removed": false,
+    "isolated_min_csc_fraction": 0.5,
+    "other_howe_ink_exclusion_margin_strokes": 3
+  },
+  "frozen_rule_protocol_sha256": "edea423996afa8a2462c5cc01b2d0b18c7ed436ddd14dd39ecb7b686d23a1b7c",
+  "regression": "all six original masks reproduced exactly",
+  "selection_scope": "three books absent from six development cases; source-only purpose selection, not random final test",
+  "prior_exposure": "Original thumbnails and other source-screening scores existed before this run; not a wholly unseen corpus",
+  "ground_truth": "No dense pixel GT. Protection rectangles are source-only review regions, not labels for every pixel",
+  "shared_stepwise_noise_guaranteed": false,
+  "script_sha256": "87dbb39e6163e9257795bfa98b8419fa8e4c612eb096471d05b53bfe071be6cd"
+}

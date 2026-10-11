@@ -1,0 +1,237 @@
+{
+  "purpose": "Development/regression improvement without training/manual GT; not an independent test",
+  "settings": {
+    "red_seed": {
+      "filtered_image": "3x3 median BGR; classification only",
+      "lab_a_min": 20.0,
+      "a_over_positive_b": 0.95,
+      "lightness_min": 20.0,
+      "saturation_min": 80,
+      "hue_max": 14,
+      "hue_min_wrap": 174,
+      "minimum_seed_pixels_per_old_component": 3
+    },
+    "red_component": {
+      "median_lightness_min": 25.0,
+      "growth": "whole prior red candidate component; original weak colors preserved"
+    },
+    "red_uncertain_context": {
+      "radius": 24.0,
+      "minimum_component_median_lightness": 25.0,
+      "rule": "unconfirmed old red component within radius of confirmed red is protected with unknown color"
+    },
+    "thin_extension": {
+      "radius": 2.0,
+      "support": "at least one of prior Sauvola scales; within radius of base ink or confirmed/contextual red"
+    },
+    "dense_stain": "reuse logged prior dense brown-evidence components; not new universal proof",
+    "edit_guard": {
+      "radius": 3.0,
+      "rule": "stain candidate outside protection guard and hold only"
+    },
+    "hold": "unconfirmed red (may overlap protection), scale disagreement outside protection except prior dense stain, prior dense hold, stain near protection",
+    "mask_semantics": "independent stain_candidate/protect/hold; edit_allowed disjoint from protect and hold",
+    "pixels": "native resolution; no automatic deletion; no fixed border cutoff"
+  },
+  "dependencies": {
+    "tmp_work/training_free_color_shape_20260930/manifest.json": "24a2cb0fd6d4fc0664edbb99db36f25c8e8cb6d136b1a4b4f2785bcf55e31ca2",
+    "tmp_work/npj_preprocess_review_20260930/manifest.json": "3b8f32a7f7b94f99f2aad3d02d4c90954eb87d703d06030a8f65fae6790b77fe",
+    "tmp_work/npj_preprocess_review_20260930/rois.json": "f705a69c905d5614fabfbcd4dbcc94d8dfee21ca9ab8b4a3f8c8aa2e75ac4005",
+    "tmp_work/training_free_preprocess_20260930/manifest.json": "c6038e594c7a28125c8552bb79786ddd1b7ca4253ffdaf75a85e58af46e48dbb",
+    "tmp_work/training_free_color_shape_20260930/hnsd001_011/original.png": "0d9c755b24158108e8b242b235536ef17b49bd5605c946ceed1b09547e64d411",
+    "tmp_work/training_free_color_shape_20260930/hnsd001_011/red_weak.png": "a8ee0d64b11dfb4ff53fd2d5f30b7d49342bf32211e66bca3280a61dfaa91f76",
+    "tmp_work/training_free_color_shape_20260930/hnsd001_011/brown_field.png": "7c259c4c79bd20fe6d130206739bf69c743aca21487da31a2ef01d419635d5f4",
+    "tmp_work/training_free_color_shape_20260930/hnsd001_011/color_shape/red.png": "ddd311f5ae61f734d04d743ba0ba85ac2d3ad9faaf0f0d8ed42399625a37f9bb",
+    "tmp_work/training_free_color_shape_20260930/hnsd001_011/color_shape/ink.png": "59b427f7ca1d6e2b5a5f8a9d26987179d4d2b4e25e0e92505e2aea04dd2da1ad",
+    "tmp_work/training_free_color_shape_20260930/hnsd001_011/color_shape/stain.png": "af202c0d31e9acfe072a13cdde01e6e94cea397882785759f469384f0c60a552",
+    "tmp_work/training_free_preprocess_20260930/hnsd001_011/sauvola_local/foreground.png": "5027958cd149403a43d7743a61e4c6f7e220dc74fa338612aeaafef7661bcf4f",
+    "tmp_work/training_free_preprocess_20260930/hnsd001_011/scale_votes.png": "58e672521b2570ed46f896ce60a765252451fc8a3ea14e023a6006e7c35a9dfd",
+    "tmp_work/training_free_color_shape_20260930/hnsd001_011/components.json": "7bad9eb539fc88dedc172d3f2267bfc3440559e65cb547723b409282fc9f4b66",
+    "tmp_work/training_free_color_shape_20260930/200010454_00002_2/original.png": "8805a59128a05467722bd0f0cdb1a133c2983c278b8d239bdb6cbf958a141900",
+    "tmp_work/training_free_color_shape_20260930/200010454_00002_2/red_weak.png": "4b806aca36dc8375bb429c1bee9730469efeccd8bfaf08726a08819979adbfe4",
+    "tmp_work/training_free_color_shape_20260930/200010454_00002_2/brown_field.png": "ec43c8af268231f09acadfd68bcd54b320ea644b4650202c710d0abf3a677052",
+    "tmp_work/training_free_color_shape_20260930/200010454_00002_2/color_shape/red.png": "6d29cf27439cfff83edbccd1a1ee1455271d5f8e5c43d3e4d418cb5509e0f297",
+    "tmp_work/training_free_color_shape_20260930/200010454_00002_2/color_shape/ink.png": "663f39d48246c5c64e53b66ab10d7fb519093148205f7535800038a7ec889b72",
+    "tmp_work/training_free_color_shape_20260930/200010454_00002_2/color_shape/stain.png": "0aa924739b3c6581567dc0ed60a47828acff6bd7ed5127fe55884b57e528e0d2",
+    "tmp_work/training_free_preprocess_20260930/200010454_00002_2/sauvola_local/foreground.png": "22a1c12fd4f26ca54b207b187c656e0eb5fd81c862afc39ffdf2310ab786ccc1",
+    "tmp_work/training_free_preprocess_20260930/200010454_00002_2/scale_votes.png": "f28952be44c0b3893cd4084ff7d19fabe28077aa95a3e84ef659fab29f8a96ec",
+    "tmp_work/training_free_color_shape_20260930/200010454_00002_2/components.json": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+    "tmp_work/training_free_color_shape_20260930/200017197_00008_0/original.png": "5496d4e4811c147a7305c538a0c2a3cd8443447b2d9e6e677ed25cb6d1b5a3bb",
+    "tmp_work/training_free_color_shape_20260930/200017197_00008_0/red_weak.png": "3fba8689ebf662c4179144f227f461a6860998389f6a24e94dda141f652082f4",
+    "tmp_work/training_free_color_shape_20260930/200017197_00008_0/brown_field.png": "22b41f6a738554a0a6837a4d47148f16248cfc6ef441e1cd1b6c97732a7879cb",
+    "tmp_work/training_free_color_shape_20260930/200017197_00008_0/color_shape/red.png": "1d8e1053af7578c0301ab1370ae5f078474771953b22bb8aa513ee18708dcb2b",
+    "tmp_work/training_free_color_shape_20260930/200017197_00008_0/color_shape/ink.png": "39d06d70d957aa6e3db6431adadde11c36fdc3e970ca60536305c40d819da605",
+    "tmp_work/training_free_color_shape_20260930/200017197_00008_0/color_shape/stain.png": "2902bb770982b16b037f0a3948c5975c7b0925f56b11d8f220efc5626a0ed139",
+    "tmp_work/training_free_preprocess_20260930/200017197_00008_0/sauvola_local/foreground.png": "9a353b91c7211492f6f4912f0631f7c67332368465ee714c564b5a0f1b44b441",
+    "tmp_work/training_free_preprocess_20260930/200017197_00008_0/scale_votes.png": "d1f76a933c47f9a708a55fb34f40bcc285f64843448769750b234228fac29c2d",
+    "tmp_work/training_free_color_shape_20260930/200017197_00008_0/components.json": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+    "tmp_work/training_free_color_shape_20260930/200018243_00003_2/original.png": "8db19164c7cbdc621ddab0a0cc1b57b5893390f1767157861e38595d897dc5ae",
+    "tmp_work/training_free_color_shape_20260930/200018243_00003_2/red_weak.png": "ecddc491020bcf86c51fa94c64e25ef2bef5f2dbfe983809155207384c007069",
+    "tmp_work/training_free_color_shape_20260930/200018243_00003_2/brown_field.png": "41fa5478fdeafc6e59c03fbac913b2b99a26fda7bb2650185a822eb05aff040d",
+    "tmp_work/training_free_color_shape_20260930/200018243_00003_2/color_shape/red.png": "a98cec0f78632a09a2fc7a190ab76ee0f38b99301623fbe2294de40642e42f24",
+    "tmp_work/training_free_color_shape_20260930/200018243_00003_2/color_shape/ink.png": "ed15ca4dcf25dd6bbeda7380d449c7f234e33b99052a3a3ce8708362936c5403",
+    "tmp_work/training_free_color_shape_20260930/200018243_00003_2/color_shape/stain.png": "93ca4dc652b774d105b7c70d302afecd43cc6435d2b203161629a56ff29c6b31",
+    "tmp_work/training_free_preprocess_20260930/200018243_00003_2/sauvola_local/foreground.png": "ed15ca4dcf25dd6bbeda7380d449c7f234e33b99052a3a3ce8708362936c5403",
+    "tmp_work/training_free_preprocess_20260930/200018243_00003_2/scale_votes.png": "4a5fb5d659ba309dfac4cb011704f838f9c04790189f90059777cc0d6e5fa929",
+    "tmp_work/training_free_color_shape_20260930/200018243_00003_2/components.json": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+    "tmp_work/training_free_fixed_check_20260930/manifest.json": "df70f599724b892b5ac85d7573a37842a06e554bce48826e2321c9547b028be7",
+    "tmp_work/training_free_fixed_check_20260930/input_review/manifest.json": "5aa8020c262698968cc721c5bfc9bc33e00e85fca346676e76ac77f29e70382b",
+    "tmp_work/training_free_fixed_check_20260930/input_review/rois.json": "b8a9b78135e3c973dbffe599708d838246b14ff5f2711d64010e8a95722c2315",
+    "tmp_work/training_free_fixed_check_20260930/pilot/manifest.json": "5f8b8ca5e7c2d237fb8a365235d270965a0868d78e3aaf7785f754a735e82d2c",
+    "tmp_work/training_free_fixed_check_20260930/200021660_00040_1/original.png": "6b28ca72f52804b83982e84efc5fb991106520f85d24edbbc7ca0bff8540bd15",
+    "tmp_work/training_free_fixed_check_20260930/200021660_00040_1/red_weak.png": "7f8fbc7c41050ee07b64b4bdcbf2735d08892576a7a923095606d24a61cd72fc",
+    "tmp_work/training_free_fixed_check_20260930/200021660_00040_1/brown_field.png": "337ab6219dd1e0cd2edf6578ca80d174af83fd82d866227b6fe146a1e7164213",
+    "tmp_work/training_free_fixed_check_20260930/200021660_00040_1/color_shape/red.png": "1760a2adbbffa314d601b69488689ebcc3b665c3fc4f36f57bb0ac0afb3a24cd",
+    "tmp_work/training_free_fixed_check_20260930/200021660_00040_1/color_shape/ink.png": "a81a16f874c95bfe96ca46e8ef6e6de0aeea686c87496e671cbe24a5bccd5a40",
+    "tmp_work/training_free_fixed_check_20260930/200021660_00040_1/color_shape/stain.png": "b8204360fb2c53957c50874cd1ded93e04888d80399683ba55cd073bc21d48d2",
+    "tmp_work/training_free_fixed_check_20260930/pilot/200021660_00040_1/sauvola_local/foreground.png": "215fe28d536facd36e790b349f589354c52b2eae148f023614ef9729631fbe0d",
+    "tmp_work/training_free_fixed_check_20260930/pilot/200021660_00040_1/scale_votes.png": "295204b1d0c58d01e333bbdef5c37bc928fe71b99ed053cb34af4ff3d3ab815b",
+    "tmp_work/training_free_fixed_check_20260930/200021660_00040_1/components.json": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+    "tmp_work/training_free_fixed_check_20260930/200021851_00019_2/original.png": "09d9bf3d25d1e44231bb07dd2c272bf533c9be54fc51ccba9954997707082693",
+    "tmp_work/training_free_fixed_check_20260930/200021851_00019_2/red_weak.png": "6d9d3acbd79591d21579852526cf04ab21ec769212dd5e4e0c3d1ee407f8f665",
+    "tmp_work/training_free_fixed_check_20260930/200021851_00019_2/brown_field.png": "0561d330194a02a7aaa75a87469684504fff96f779610976a1fef44ed031b7e1",
+    "tmp_work/training_free_fixed_check_20260930/200021851_00019_2/color_shape/red.png": "0d2a9b2ebbd27b7c340747ec778e633f5179956727cb513900901ef43f4f3862",
+    "tmp_work/training_free_fixed_check_20260930/200021851_00019_2/color_shape/ink.png": "0f9184fb8f494fdef1f2b9c0613266b6f82462468b175fb8ed296586308979e8",
+    "tmp_work/training_free_fixed_check_20260930/200021851_00019_2/color_shape/stain.png": "f455e7c6a8c36b6c8a6fd45bda0c4b392c9cbf0e04939a0e9368f49833f2ed7b",
+    "tmp_work/training_free_fixed_check_20260930/pilot/200021851_00019_2/sauvola_local/foreground.png": "bb67add4859dc2d55568cb5b35a04c44d2a8d1461f327d3eca898a92fb855cbc",
+    "tmp_work/training_free_fixed_check_20260930/pilot/200021851_00019_2/scale_votes.png": "15475e5abcc083dba902de878723e4f0407563030aaafbd56c2957642a196671",
+    "tmp_work/training_free_fixed_check_20260930/200021851_00019_2/components.json": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+    "tmp_work/training_free_fixed_check_20260930/200021869_00010_2/original.png": "2c71f8a52cba8bdf8abefec98fb2894db8f77d9ea3a1f377ba651afbef38c3d7",
+    "tmp_work/training_free_fixed_check_20260930/200021869_00010_2/red_weak.png": "c3fc6e1c237d0ac4d6e5ae5282fb47ccd686bc0fdd18de35e6c3a9b2dab51938",
+    "tmp_work/training_free_fixed_check_20260930/200021869_00010_2/brown_field.png": "5348cd1659d5576ed3e522e0e2351e49b0272793df3b5a0c7d2e8faaed9f1ece",
+    "tmp_work/training_free_fixed_check_20260930/200021869_00010_2/color_shape/red.png": "cfdd7fbff1428fb8f191b732e7b17f5c7e56115165c0ae8e20f0a8a37968df28",
+    "tmp_work/training_free_fixed_check_20260930/200021869_00010_2/color_shape/ink.png": "a3fa377457d453ffaff62c7abc4b25d668af62fd4924bdbea4a20463db2f1870",
+    "tmp_work/training_free_fixed_check_20260930/200021869_00010_2/color_shape/stain.png": "1dde8b3f624b5c92bad9728816b24889657372a4fb5129a45e2ac73f187fd766",
+    "tmp_work/training_free_fixed_check_20260930/pilot/200021869_00010_2/sauvola_local/foreground.png": "6ed9d14f8a502d10c2e7291d0e84b060fce076a21abaae1bff5ca3ce317d6e62",
+    "tmp_work/training_free_fixed_check_20260930/pilot/200021869_00010_2/scale_votes.png": "5c178b07140526034d113afd3af119d91d1373af02fb568d971a9abe6a95a828",
+    "tmp_work/training_free_fixed_check_20260930/200021869_00010_2/components.json": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+    "tmp_work/training_free_fixed_check_20260930/200022050_00010_1/original.png": "aaf53c99e472735822ef9aebc08a8efa2426f3d12c5a993ed22f87462877429a",
+    "tmp_work/training_free_fixed_check_20260930/200022050_00010_1/red_weak.png": "83800dc9b5db2ac6eea0e98d870225e485aa3e844715a63e77696c508b5ffa50",
+    "tmp_work/training_free_fixed_check_20260930/200022050_00010_1/brown_field.png": "f19d08337353592ce63ecbc32f1296a8440da723ddf3793b813e42660c345e86",
+    "tmp_work/training_free_fixed_check_20260930/200022050_00010_1/color_shape/red.png": "24322d355882c75d6af1a32c33d1dee0ffb5fa69d46d23161e6348cab0c7da64",
+    "tmp_work/training_free_fixed_check_20260930/200022050_00010_1/color_shape/ink.png": "5d11a2669309de5c3223c76db6b11c23fa8e4e6d278116d570a7bad6c130bcf1",
+    "tmp_work/training_free_fixed_check_20260930/200022050_00010_1/color_shape/stain.png": "e2d8d62404e894ea6a346bbcf32bbd358dcb245bd1f698762c06fd25fe42e421",
+    "tmp_work/training_free_fixed_check_20260930/pilot/200022050_00010_1/sauvola_local/foreground.png": "924854b4e432f3dbbfc1d79c592c4853a4e433afc8bbfde8a14cf2155db15e18",
+    "tmp_work/training_free_fixed_check_20260930/pilot/200022050_00010_1/scale_votes.png": "397f5f367e0c6856f928a55a3ad9151bbdfa84fccbbab68b90d8a7f030314f44",
+    "tmp_work/training_free_fixed_check_20260930/200022050_00010_1/components.json": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+    "tmp_work/training_free_fixed_check_20260930/200003803_00009_2/original.png": "552e5bb48af1eb0bb6012ea61aa8e519e89b7679c5a84a0159e479634cea492c",
+    "tmp_work/training_free_fixed_check_20260930/200003803_00009_2/red_weak.png": "7422ee252222aad0b8acc1a80d8e9255d8ffe229175579dd2e1c656e919544ff",
+    "tmp_work/training_free_fixed_check_20260930/200003803_00009_2/brown_field.png": "691b73e83e6be27c373c8fa7607dd240f686ef3dde70aa0233b164626580e163",
+    "tmp_work/training_free_fixed_check_20260930/200003803_00009_2/color_shape/red.png": "e3cdff6cfc20729baf668266fd0a7777a5895905368585e61d8bd3322747eeaa",
+    "tmp_work/training_free_fixed_check_20260930/200003803_00009_2/color_shape/ink.png": "594197f6be6a5deb6ed954991544e104c505ca470c65642b2a470f99c1e17776",
+    "tmp_work/training_free_fixed_check_20260930/200003803_00009_2/color_shape/stain.png": "a729562f59643f32bcbbf76d88c916b731df857a9bdbba65a96128f779bad147",
+    "tmp_work/training_free_fixed_check_20260930/pilot/200003803_00009_2/sauvola_local/foreground.png": "594197f6be6a5deb6ed954991544e104c505ca470c65642b2a470f99c1e17776",
+    "tmp_work/training_free_fixed_check_20260930/pilot/200003803_00009_2/scale_votes.png": "cd18f0ce7a6effe22354f0c1e9f009d9ff867e0452edb26c37563e7b7de9a3ac",
+    "tmp_work/training_free_fixed_check_20260930/200003803_00009_2/components.json": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+    "tmp_work/training_free_fixed_check_20260930/200019865_00075_2/original.png": "092d306e388630a373a3fce0dc7bf2c85a501fbeeaf30d45780d5f98ceb90fe3",
+    "tmp_work/training_free_fixed_check_20260930/200019865_00075_2/red_weak.png": "c08f77bcfcf1881735479aa51bc0d921e430a5a4986a4ddf031e1da1fdad667e",
+    "tmp_work/training_free_fixed_check_20260930/200019865_00075_2/brown_field.png": "8fd9c50bec8e8c7021d46ac94b951abe0c402f08cb34d3881d5d9240f851dc0d",
+    "tmp_work/training_free_fixed_check_20260930/200019865_00075_2/color_shape/red.png": "765fc14ba606f5838c5da3f58f9c840fb9b7fb1ee2c906eed34f0ada1d0dad59",
+    "tmp_work/training_free_fixed_check_20260930/200019865_00075_2/color_shape/ink.png": "4c7cfb4bcfc1b1b0090dd1146bb373c0aa695a5b355a81f183947b2116546f5f",
+    "tmp_work/training_free_fixed_check_20260930/200019865_00075_2/color_shape/stain.png": "c3459c656d61584ceccde395126c42f744d41c709b12017360c03749f6538d3c",
+    "tmp_work/training_free_fixed_check_20260930/pilot/200019865_00075_2/sauvola_local/foreground.png": "4c7cfb4bcfc1b1b0090dd1146bb373c0aa695a5b355a81f183947b2116546f5f",
+    "tmp_work/training_free_fixed_check_20260930/pilot/200019865_00075_2/scale_votes.png": "7b25bf812b14fad9eadcf702eb93529ca7af42351dda092d6d9d153fb4f877f3",
+    "tmp_work/training_free_fixed_check_20260930/200019865_00075_2/components.json": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+    "tmp_work/training_free_fixed_check_20260930/200021063_00021_1/original.png": "6dc6e2541e4d2e58c46ac4a323b1edc5e21046700121e755b0ccfc3c5715022e",
+    "tmp_work/training_free_fixed_check_20260930/200021063_00021_1/red_weak.png": "37d2c4dca81a20669131b43b4a5fd3e38e138c919d949552092902c11bf98096",
+    "tmp_work/training_free_fixed_check_20260930/200021063_00021_1/brown_field.png": "055cbcb2790075d1f2170d2a039b719724515531d6fdd03c1c042c67eab6ec2c",
+    "tmp_work/training_free_fixed_check_20260930/200021063_00021_1/color_shape/red.png": "8aa370da20229ee38a09821d814d8e37046562a265232ea0e7deb54297b64ecd",
+    "tmp_work/training_free_fixed_check_20260930/200021063_00021_1/color_shape/ink.png": "4e87c5445ac907a6fbb97ac7bee5597764ac144b065f55e4219f261381d47118",
+    "tmp_work/training_free_fixed_check_20260930/200021063_00021_1/color_shape/stain.png": "3fd992eacfb9dbe94168dfb337c16bc2ed57ad4d44745e8184abff2c1c147288",
+    "tmp_work/training_free_fixed_check_20260930/pilot/200021063_00021_1/sauvola_local/foreground.png": "4736ce0381d107e704cb75fc1091e27e9e6a9d52838ae6372b0c99939d739910",
+    "tmp_work/training_free_fixed_check_20260930/pilot/200021063_00021_1/scale_votes.png": "3ef10575651dbd10649657fcd270d802a71741ee630262f5770ff46c2942f2e4",
+    "tmp_work/training_free_fixed_check_20260930/200021063_00021_1/components.json": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+    "tmp_work/training_free_fixed_check_20260930/200021071_00079_2/original.png": "d615b486c6f5777ab74f0a1335aa717541f1d0829a58b5f87ece0f89c4854363",
+    "tmp_work/training_free_fixed_check_20260930/200021071_00079_2/red_weak.png": "1005d456e3f96010cbc5dfbef740a4b2cd5a6dd4b8f2e86fb020b78e03148be4",
+    "tmp_work/training_free_fixed_check_20260930/200021071_00079_2/brown_field.png": "76fcf75759f59a8caafa1050fdf13fe15ca6f64a627958c08947f6d3dd4175da",
+    "tmp_work/training_free_fixed_check_20260930/200021071_00079_2/color_shape/red.png": "7405ffd6bb59a51d101d471a48c3da24e65a1c73fe28351894b09e891daa4e0b",
+    "tmp_work/training_free_fixed_check_20260930/200021071_00079_2/color_shape/ink.png": "6f091a1d9aaced39c4c35100db9672844161e6cd139d2e107eabf839550cc3e9",
+    "tmp_work/training_free_fixed_check_20260930/200021071_00079_2/color_shape/stain.png": "b8bc7b8419407413227787e9c96783c2b40189a780f70f7827a876c165329c0d",
+    "tmp_work/training_free_fixed_check_20260930/pilot/200021071_00079_2/sauvola_local/foreground.png": "e0cbd7bb4c3933a780f0fc1ed52ddf252d64e795340ae6537f26762bc72ea0cc",
+    "tmp_work/training_free_fixed_check_20260930/pilot/200021071_00079_2/scale_votes.png": "ccde5609dda5a8777aec16ea38e78a863cab0a5a1caddd05380606a88ded722e",
+    "tmp_work/training_free_fixed_check_20260930/200021071_00079_2/components.json": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570"
+  },
+  "inputs": {
+    "data/train/hnsd00000/hnsd001_011.jpg": "22017c0af65c5f43560ff05cfcc15c6ed8f56b72e60a04a732d9c31b72f05731",
+    "data/test/200010454/200010454_00002_2.jpg": "177776f90fc08b12e2f59a37773ef433556f43ebe47c503c2d676595a08a60d1",
+    "data/makura_csc_mask/200017197_00008_0/00_original.png": "5496d4e4811c147a7305c538a0c2a3cd8443447b2d9e6e677ed25cb6d1b5a3bb",
+    "data/test/200018243/200018243_00003_2.jpg": "f1c8c26fea64d9511c462b9776198eadbf3481793b0e4ed397e9ba58aca45e6d",
+    "data/val/200021660/200021660_00040_1.jpg": "828a3f21b710303badf88c1e4247e41b4cef8f7b6b6cd1f1b8aad030729b9dfc",
+    "data/val/200021851/200021851_00019_2.jpg": "881392bf8ec09c82d9ee0df265bdcddcd90470b0fd0f57c53c7520e34fc46e96",
+    "data/val/200021869/200021869_00010_2.jpg": "90ffdf5a4d8ed77e99d69f1326384cb24b2d25be157a46277500208d0aad6360",
+    "data/val/200022050/200022050_00010_1.jpg": "ee3ac20a1877997517a9edc77a1418149c86de2e4a15467283bdbe542010487b",
+    "data/test/200003803/200003803_00009_2.jpg": "e998f3ec838e4706bdd93396e3ac4ccd46cb0528d2c5f074260f91ba7ade1c0f",
+    "data/test/200019865/200019865_00075_2.jpg": "f4cae55d9ef3da7ce1251935cd083c6cb79da74f8484cedcea3821f823777746",
+    "data/test/200021063/200021063_00021_1.jpg": "51ad2a814e1c0dc39d64b79188ec644aa51d272857186e8f157fbe843a78932e",
+    "data/test/200021071/200021071_00079_2.jpg": "7b757bb81196ba03b7ae4fa6baced69098c22828d60940c645e9c73a26ac0568"
+  },
+  "source_sha256": "8f106202a7259aa3f4420b6a828b4cbab69acc177640f43c21daa2bb5a5e70b4",
+  "viewer_template_sha256": "c6c27b9688c75668f28af4c3649508ba67cc67aa57bed92e676a4c7f41dbd665",
+  "versions": {
+    "python": "3.10.20 (main, Jun 11 2026, 15:17:37) [GCC 14.3.0]",
+    "opencv": "4.13.0",
+    "numpy": "1.26.4"
+  },
+  "cases": [
+    {
+      "id": "hnsd001_011",
+      "original": "data/train/hnsd00000/hnsd001_011.jpg",
+      "group": "initial_development"
+    },
+    {
+      "id": "200010454_00002_2",
+      "original": "data/test/200010454/200010454_00002_2.jpg",
+      "group": "initial_development"
+    },
+    {
+      "id": "200017197_00008_0",
+      "original": "data/makura_csc_mask/200017197_00008_0/00_original.png",
+      "group": "initial_development"
+    },
+    {
+      "id": "200018243_00003_2",
+      "original": "data/test/200018243/200018243_00003_2.jpg",
+      "group": "initial_development"
+    },
+    {
+      "id": "200021660_00040_1",
+      "original": "data/val/200021660/200021660_00040_1.jpg",
+      "group": "regression_development"
+    },
+    {
+      "id": "200021851_00019_2",
+      "original": "data/val/200021851/200021851_00019_2.jpg",
+      "group": "regression_development"
+    },
+    {
+      "id": "200021869_00010_2",
+      "original": "data/val/200021869/200021869_00010_2.jpg",
+      "group": "regression_development"
+    },
+    {
+      "id": "200022050_00010_1",
+      "original": "data/val/200022050/200022050_00010_1.jpg",
+      "group": "regression_development"
+    },
+    {
+      "id": "200003803_00009_2",
+      "original": "data/test/200003803/200003803_00009_2.jpg",
+      "group": "regression_development"
+    },
+    {
+      "id": "200019865_00075_2",
+      "original": "data/test/200019865/200019865_00075_2.jpg",
+      "group": "regression_development"
+    },
+    {
+      "id": "200021063_00021_1",
+      "original": "data/test/200021063/200021063_00021_1.jpg",
+      "group": "regression_development"
+    },
+    {
+      "id": "200021071_00079_2",
+      "original": "data/test/200021071/200021071_00079_2.jpg",
+      "group": "regression_development"
+    }
+  ]
+}

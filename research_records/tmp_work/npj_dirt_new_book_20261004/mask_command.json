@@ -1,0 +1,13 @@
+{
+  "command": [
+    "/home/imoto/miniconda3/envs/diffusion/bin/python",
+    "-B",
+    "/home/imoto/Heritage_Pipeline/tmp_work/npj_dirt_control_20261002/source_snapshot/ddrm_npj_v2/scripts/generate_mask_csc.py",
+    "--input_dir",
+    "/home/imoto/Heritage_Pipeline/tmp_work/npj_dirt_new_book_20261004/full_original",
+    "--output_dir",
+    "/home/imoto/Heritage_Pipeline/tmp_work/npj_dirt_new_book_20261004/full_npj_masks",
+    "--save_ace"
+  ],
+  "mask_scope": "Entire original page, then exact crop; new local classification not archived masks"
+}

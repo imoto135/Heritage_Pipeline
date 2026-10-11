@@ -1,0 +1,54 @@
+{
+  "status": "passed",
+  "design_suitable_for_historical_npj_superiority": false,
+  "prior_diagnostic_integrity": true,
+  "current_local_pipeline_source_checks": true,
+  "historical_input_exact_original": true,
+  "historical_saved_mask_version": "CSC v2",
+  "historical_run_fully_reproduced": false,
+  "normal_npj_vs_v6_effectiveness": "unconfirmed",
+  "records": [
+    {
+      "name": "01_black_stroke_baseline_check",
+      "page_xywh": [
+        1330,
+        855,
+        150,
+        135
+      ],
+      "old_v1_classes": {
+        "black": 1299,
+        "red": 3,
+        "degradation": 1548,
+        "background": 17400
+      },
+      "v6_edit_pixels": 0,
+      "saved_input_exact_original": true,
+      "saved_output_method": "Historical local DDRM with CSC v2 masks; not v1",
+      "saved_run_command": "Command being timed: \"conda run -n diffusion python scripts/pipeline_ddrm.py --input_dir /home/imoto/Heritage_Pipeline/tmp_work/speed_test_single/input --output_dir /home/imoto/Heritage_Pipeline/tmp_work/speed_test_single/ddrm_out_v2fix --mask_dir /home/imoto/Heritage_Pipeline/data/split_dataset_csc_mask_v2/test/200010454 --ckpt /home/imoto/Heritage_Pipeline/modules/stain_removal/experiments/model_char/model_char/ckpt_epoch0350.pth --back_ground ./background/isemonogatari.png --device cuda:0 --patch_size 128 --overlap 32 --no_wandb\"",
+      "saved_run_source_snapshot_available": false
+    },
+    {
+      "name": "02_faint_loop_baseline_check",
+      "page_xywh": [
+        1325,
+        710,
+        140,
+        145
+      ],
+      "old_v1_classes": {
+        "black": 390,
+        "red": 1,
+        "degradation": 1087,
+        "background": 18822
+      },
+      "v6_edit_pixels": 0,
+      "saved_input_exact_original": true,
+      "saved_output_method": "Historical local DDRM with CSC v2 masks; not v1",
+      "saved_run_command": "Command being timed: \"conda run -n diffusion python scripts/pipeline_ddrm.py --input_dir /home/imoto/Heritage_Pipeline/tmp_work/speed_test_single/input --output_dir /home/imoto/Heritage_Pipeline/tmp_work/speed_test_single/ddrm_out_v2fix --mask_dir /home/imoto/Heritage_Pipeline/data/split_dataset_csc_mask_v2/test/200010454 --ckpt /home/imoto/Heritage_Pipeline/modules/stain_removal/experiments/model_char/model_char/ckpt_epoch0350.pth --back_ground ./background/isemonogatari.png --device cuda:0 --patch_size 128 --overlap 32 --no_wandb\"",
+      "saved_run_source_snapshot_available": false
+    }
+  ],
+  "all_comparison_panels_exact": true,
+  "new_inference": false
+}

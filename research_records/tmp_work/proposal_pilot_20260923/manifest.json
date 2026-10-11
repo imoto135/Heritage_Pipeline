@@ -1,0 +1,51 @@
+{
+  "selected": [
+    "200017197_00070_1",
+    "200017197_00357_1"
+  ],
+  "selection": "First and last sorted current clean stems; exploratory, no outcome-based selection",
+  "seed": 999,
+  "inventory": {
+    "degraded/0.30": 20,
+    "stain_gt/0.30": 20,
+    "masks/0.30": 20,
+    "degraded/0.50": 20,
+    "stain_gt/0.50": 20,
+    "masks/0.50": 20,
+    "degraded/0.70": 20,
+    "stain_gt/0.70": 20,
+    "masks/0.70": 20,
+    "degraded/1.00": 20,
+    "stain_gt/1.00": 20,
+    "masks/1.00": 20
+  },
+  "hashes": {
+    "/home/imoto/Heritage_Pipeline/modules/ddrm_npj/scripts/csc.py": "4213d20062a6e835e6e10ae7399651718060e30ddf5c8d0177c26aa6c1872955",
+    "/home/imoto/Heritage_Pipeline/modules/ddrm_npj_v3/scripts/csc.py": "fc5a55b88ae0c90fda0c06508f510f15fde0d3913e47a444f650c7dce1a746ee",
+    "/home/imoto/Heritage_Pipeline/modules/ddrm_npj_v2/scripts/pipeline_ddrm.py": "bbc130a1761be21dfa7ff6d5ec9bc29e34155a56dfa405d91daa6a989a77f2ec",
+    "/home/imoto/Heritage_Pipeline/modules/ddnm_npj/scripts/pipeline_ddnm.py": "8ee296f2bebfb006509300ed9a23e244f23ed3c2ce5d1981ca28bccbe5a54c5e",
+    "/home/imoto/Heritage_Pipeline/modules/stain_removal/experiments/model_char/model_char/ckpt_epoch0350.pth": "1a5decb747e34e8b51ccea96b598fe3c6ec0e7f7a6f8df6cffc3135d8281a7f3",
+    "/home/imoto/Heritage_Pipeline/tmp_work/proposal_pilot_20260923/run_pilot.py": "9068d2ffee92dc964a327ebf386166bb74cbe83e940425810b6af09a66d74c57",
+    "/home/imoto/Heritage_Pipeline/tmp_work/makura_benchmark/clean/200017197_00070_1.png": "adba07916847f64377a980850209b753617f9ff29054f594151272bb5d5bd0b1",
+    "/home/imoto/Heritage_Pipeline/tmp_work/makura_benchmark/degraded/intensity_0.30/200017197_00070_1.png": "73ebc4762d1a6b837c56faaa358d6fdb8782b3ac2465e8763077daf631a4018c",
+    "/home/imoto/Heritage_Pipeline/tmp_work/makura_benchmark/stain_gt/intensity_0.30/200017197_00070_1.png": "0eea887eb9cf76955ee411a7279db9d52d72ef95c4f5875e0a3a2a251cde7f6e",
+    "/home/imoto/Heritage_Pipeline/tmp_work/makura_benchmark/masks/intensity_0.30/200017197_00070_1/00_input.png": "7efa268111e0568ba8348cc0ffb205deb529ec1b6acd6bfbccbf803a3373e7f8",
+    "/home/imoto/Heritage_Pipeline/tmp_work/makura_benchmark/degraded/intensity_1.00/200017197_00070_1.png": "c7154b51a49c94a0b736a3c9984a604a954e2278438149517464fd993ae9ef4e",
+    "/home/imoto/Heritage_Pipeline/tmp_work/makura_benchmark/stain_gt/intensity_1.00/200017197_00070_1.png": "0eea887eb9cf76955ee411a7279db9d52d72ef95c4f5875e0a3a2a251cde7f6e",
+    "/home/imoto/Heritage_Pipeline/tmp_work/makura_benchmark/masks/intensity_1.00/200017197_00070_1/00_input.png": "49ed357bb2d4dee1800f71086d0e735eb3140da07810bc451256e0f534ccbd17",
+    "/home/imoto/Heritage_Pipeline/tmp_work/makura_benchmark/clean/200017197_00357_1.png": "5ddd7c1dda1e6a9ca03840d29105cf143b0eb5da51f15563922408f5986b743d",
+    "/home/imoto/Heritage_Pipeline/tmp_work/makura_benchmark/degraded/intensity_0.30/200017197_00357_1.png": "a71211d5cead7eef30e30d787151e946f4dc0f8a74d57ffffc8f735d588160b1",
+    "/home/imoto/Heritage_Pipeline/tmp_work/makura_benchmark/stain_gt/intensity_0.30/200017197_00357_1.png": "f8301855b4e6faae0f2f7d0a6a418ef5b296b19074b0754ef8fd459996ffcdd0",
+    "/home/imoto/Heritage_Pipeline/tmp_work/makura_benchmark/masks/intensity_0.30/200017197_00357_1/00_input.png": "3cfec1dc93a0cfb5b385df816c19e815871a9f09b79a2f87b1bccab1b09f3201",
+    "/home/imoto/Heritage_Pipeline/tmp_work/makura_benchmark/degraded/intensity_1.00/200017197_00357_1.png": "585f16feb28e7a919df1af24f495918d71e4e1f131401b8381aea59130936d6a",
+    "/home/imoto/Heritage_Pipeline/tmp_work/makura_benchmark/stain_gt/intensity_1.00/200017197_00357_1.png": "f8301855b4e6faae0f2f7d0a6a418ef5b296b19074b0754ef8fd459996ffcdd0",
+    "/home/imoto/Heritage_Pipeline/tmp_work/makura_benchmark/masks/intensity_1.00/200017197_00357_1/00_input.png": "e420702ee4d2fe26da71871d0c06d16e9debef09d6df3aca3ef6408b1b1649e3"
+  },
+  "limitations": [
+    "Text mask is source grayscale<150 proxy, not manual GT",
+    "Uses stored ACE input; historical provenance not fully established",
+    "Original vs improved changes multiple CSC components",
+    "v15 pass2 reuses first input masks; frozen exploratory recipe",
+    "Single seed, two pages: no significance or generalization claim"
+  ]
+}

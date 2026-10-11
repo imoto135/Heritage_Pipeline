@@ -1,0 +1,175 @@
+{
+  "status": "passed",
+  "inherited_all_15_roi_checks": true,
+  "records": [
+    {
+      "name": "01_black_stroke_loss",
+      "case": "thin_black_loop",
+      "crop": [
+        40,
+        255,
+        150,
+        135
+      ],
+      "title": "黒筆画の欠落が大きい箇所",
+      "note": "中央の折れ・右へ伸びる筆画を比較。v6列は原画素を保持。",
+      "page": "200010454_00002_2",
+      "parent_xywh": [
+        1290,
+        600,
+        280,
+        600
+      ],
+      "page_xywh": [
+        1330,
+        855,
+        150,
+        135
+      ],
+      "scale": 4,
+      "changed_pixels": {
+        "npj": 1548,
+        "v6": 0
+      },
+      "v6_extra_hold_pixels": 0,
+      "v6_exact_original": true,
+      "panel_pixels_exact_integer_nearest": true
+    },
+    {
+      "name": "02_faint_loop_breaks",
+      "case": "thin_black_loop",
+      "crop": [
+        35,
+        110,
+        140,
+        145
+      ],
+      "title": "薄いループの途切れ",
+      "note": "左辺・下側・右上の細い線の連続性を比較。文字の読みは未確定。",
+      "page": "200010454_00002_2",
+      "parent_xywh": [
+        1290,
+        600,
+        280,
+        600
+      ],
+      "page_xywh": [
+        1325,
+        710,
+        140,
+        145
+      ],
+      "scale": 4,
+      "changed_pixels": {
+        "npj": 1087,
+        "v6": 0
+      },
+      "v6_extra_hold_pixels": 0,
+      "v6_exact_original": true,
+      "panel_pixels_exact_integer_nearest": true
+    },
+    {
+      "name": "03_warm_long_stroke",
+      "case": "warm_stroke",
+      "crop": [
+        40,
+        170,
+        305,
+        270
+      ],
+      "title": "赤褐色の長い払い",
+      "note": "左下へ伸びる線の端・途中の欠落と、周辺の灰色生成跡を比較。",
+      "page": "200021763_00002_2",
+      "parent_xywh": [
+        200,
+        2020,
+        490,
+        450
+      ],
+      "page_xywh": [
+        240,
+        2190,
+        305,
+        270
+      ],
+      "scale": 2,
+      "changed_pixels": {
+        "npj": 30904,
+        "v6": 3
+      },
+      "v6_extra_hold_pixels": 5425,
+      "v6_exact_original": false,
+      "panel_pixels_exact_integer_nearest": true
+    },
+    {
+      "name": "04_small_difference_control",
+      "case": "faint_left_text",
+      "crop": [
+        100,
+        100,
+        120,
+        160
+      ],
+      "title": "差が小さい別ページも保持",
+      "note": "この例ではnpjでも細い線が多く残る。明瞭な例だけで改善率を決めない。",
+      "page": "200010454_00026_1",
+      "parent_xywh": [
+        180,
+        500,
+        450,
+        1000
+      ],
+      "page_xywh": [
+        280,
+        600,
+        120,
+        160
+      ],
+      "scale": 4,
+      "changed_pixels": {
+        "npj": 2122,
+        "v6": 66
+      },
+      "v6_extra_hold_pixels": 0,
+      "v6_exact_original": false,
+      "panel_pixels_exact_integer_nearest": true
+    }
+  ],
+  "execution_verification": {
+    "status": "passed",
+    "DDRM": true,
+    "Telea_used": false,
+    "pages": 11,
+    "regions": 15,
+    "source_and_code_hashes_checked": true,
+    "native_pixels": true,
+    "outside_edit_unchanged": true,
+    "spatial_noise_coupled": true,
+    "pixel_GT": false,
+    "historical_npj_pipeline_reproduction": false,
+    "model_forward_calls_this_run": 18280,
+    "device": "cuda:0",
+    "torch_version": "2.1.0+cu118",
+    "cv2_version": "4.13.0",
+    "elapsed_seconds": 335.88339978829026
+  },
+  "repeat_verification": {
+    "status": "passed",
+    "same_mask_same_noise_exact_pixels": true,
+    "page": "hnsd001_011",
+    "patch_xy": [
+      336,
+      396
+    ]
+  },
+  "operator_verification": {
+    "status": "passed",
+    "svd_roundtrip": true,
+    "known_channel_indices": true,
+    "spatial_noise_coupling": true
+  },
+  "pixel_GT": false,
+  "human_stroke_confirmation": "pending",
+  "historical_npj_pipeline_reproduction": false,
+  "new_diffusion_inference": false
+}

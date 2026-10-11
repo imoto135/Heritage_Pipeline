@@ -1,0 +1,665 @@
+{
+  "cases": [
+    {
+      "page": "200010454_00003_2",
+      "book": "200010454",
+      "split": "test",
+      "original": "data/split_dataset/test/200010454/200010454_00003_2.jpg",
+      "original_size": [
+        1768,
+        2383
+      ],
+      "screen_size": [
+        1039,
+        1400
+      ],
+      "candidates": [
+        {
+          "score": 359.757,
+          "area": 2067,
+          "stroke_hint_pixels": 65,
+          "stroke_hint_density": 0.031446540880503145,
+          "thumb_xywh": [
+            286,
+            232,
+            53,
+            54
+          ],
+          "page_xywh": [
+            487,
+            395,
+            90,
+            92
+          ]
+        },
+        {
+          "score": 108.279,
+          "area": 750,
+          "stroke_hint_pixels": 37,
+          "stroke_hint_density": 0.04933333333333333,
+          "thumb_xywh": [
+            442,
+            169,
+            40,
+            26
+          ],
+          "page_xywh": [
+            752,
+            288,
+            68,
+            44
+          ]
+        },
+        {
+          "score": 94.85,
+          "area": 920,
+          "stroke_hint_pixels": 11,
+          "stroke_hint_density": 0.011956521739130435,
+          "thumb_xywh": [
+            517,
+            99,
+            35,
+            33
+          ],
+          "page_xywh": [
+            880,
+            169,
+            60,
+            56
+          ]
+        }
+      ],
+      "score": 359.757,
+      "review_id": "interim_22",
+      "crop_xywh": [
+        148,
+        57,
+        768,
+        768
+      ],
+      "source": {
+        "split": "test",
+        "book": "200010454",
+        "page": "200010454_00003_2",
+        "original": "data/split_dataset/test/200010454/200010454_00003_2.jpg",
+        "ace": "data/split_dataset_csc/test/200010454/200010454_00003_2.jpg",
+        "npj_input": "data/split_dataset_csc_mask/test/200010454/200010454_00003_2/00_input.png",
+        "npj_black": "data/split_dataset_csc_mask/test/200010454/200010454_00003_2/02_text_black.png",
+        "npj_red": "data/split_dataset_csc_mask/test/200010454/200010454_00003_2/03_text_red.png",
+        "npj_degradation": "data/split_dataset_csc_mask/test/200010454/200010454_00003_2/04_degradation.png",
+        "npj_background": "data/split_dataset_csc_mask/test/200010454/200010454_00003_2/05_background.png",
+        "review_status": "unreviewed",
+        "failure_type": "",
+        "roi_xywh": "",
+        "v6_status": "",
+        "observation": ""
+      },
+      "review_status": "not yet reviewed",
+      "id": "N01",
+      "reason": "細い曲線に茶色の円形跡が重なる",
+      "detail_xywh": [
+        120,
+        100,
+        520,
+        560
+      ],
+      "source_sha256": {
+        "original": "67c1f8a762d442015f420a34512119163c3e4cb06307bb75567d086f119a246f",
+        "npj_black": "eb9912c62c766975e8752c156536a577d1ae0ee1f5ec7e12647c0a7cda677cd4",
+        "npj_red": "895ab69ea45c1c3ae17a5e1fa1c2ac1253b35872251b555fd32eadf19ef4ec22"
+      },
+      "input": "tmp_work/npj_contact_research_20261007/new_cases/inputs/N01/200010454_00003_2.png"
+    },
+    {
+      "page": "200021071_00032_1",
+      "book": "200021071",
+      "split": "test",
+      "original": "data/split_dataset/test/200021071/200021071_00032_1.jpg",
+      "original_size": [
+        1974,
+        3257
+      ],
+      "screen_size": [
+        849,
+        1400
+      ],
+      "candidates": [
+        {
+          "score": 1368.58,
+          "area": 14405,
+          "stroke_hint_pixels": 232,
+          "stroke_hint_density": 0.016105518917042694,
+          "thumb_xywh": [
+            269,
+            413,
+            137,
+            183
+          ],
+          "page_xywh": [
+            625,
+            961,
+            319,
+            426
+          ]
+        },
+        {
+          "score": 188.666,
+          "area": 2917,
+          "stroke_hint_pixels": 40,
+          "stroke_hint_density": 0.013712718546451834,
+          "thumb_xywh": [
+            295,
+            157,
+            172,
+            95
+          ],
+          "page_xywh": [
+            686,
+            365,
+            400,
+            221
+          ]
+        },
+        {
+          "score": 78.469,
+          "area": 729,
+          "stroke_hint_pixels": 9,
+          "stroke_hint_density": 0.012345679012345678,
+          "thumb_xywh": [
+            557,
+            867,
+            32,
+            31
+          ],
+          "page_xywh": [
+            1295,
+            2017,
+            74,
+            72
+          ]
+        }
+      ],
+      "score": 1368.58,
+      "review_id": "interim_15",
+      "crop_xywh": [
+        400,
+        790,
+        768,
+        768
+      ],
+      "source": {
+        "split": "test",
+        "book": "200021071",
+        "page": "200021071_00032_1",
+        "original": "data/split_dataset/test/200021071/200021071_00032_1.jpg",
+        "ace": "data/split_dataset_csc/test/200021071/200021071_00032_1.jpg",
+        "npj_input": "data/split_dataset_csc_mask/test/200021071/200021071_00032_1/00_input.png",
+        "npj_black": "data/split_dataset_csc_mask/test/200021071/200021071_00032_1/02_text_black.png",
+        "npj_red": "data/split_dataset_csc_mask/test/200021071/200021071_00032_1/03_text_red.png",
+        "npj_degradation": "data/split_dataset_csc_mask/test/200021071/200021071_00032_1/04_degradation.png",
+        "npj_background": "data/split_dataset_csc_mask/test/200021071/200021071_00032_1/05_background.png",
+        "review_status": "unreviewed",
+        "failure_type": "",
+        "roi_xywh": "",
+        "v6_status": "",
+        "observation": ""
+      },
+      "review_status": "not yet reviewed",
+      "id": "N02",
+      "reason": "本文に茶色い跡が重なる",
+      "detail_xywh": [
+        120,
+        100,
+        520,
+        560
+      ],
+      "source_sha256": {
+        "original": "d8fe32dc777814394c58baacccfdea957e2ab0fe9c63c667b98fbdf35bcfba63",
+        "npj_black": "b27e3285be71e12f7fe6fa9b74af093e7ba5ace9160431ad8c62873851e330e1",
+        "npj_red": "8c5bc65f2feea2efaba5581f5fa58214131af5a80bd3de2ffb7df0b0fca8ae26"
+      },
+      "input": "tmp_work/npj_contact_research_20261007/new_cases/inputs/N02/200021071_00032_1.png"
+    },
+    {
+      "page": "200021071_00071_1",
+      "book": "200021071",
+      "split": "test",
+      "original": "data/split_dataset/test/200021071/200021071_00071_1.jpg",
+      "original_size": [
+        1969,
+        3255
+      ],
+      "screen_size": [
+        847,
+        1400
+      ],
+      "candidates": [
+        {
+          "score": 2767.539,
+          "area": 19366,
+          "stroke_hint_pixels": 819,
+          "stroke_hint_density": 0.04229061241350821,
+          "thumb_xywh": [
+            181,
+            465,
+            164,
+            236
+          ],
+          "page_xywh": [
+            421,
+            1081,
+            381,
+            549
+          ]
+        },
+        {
+          "score": 367.676,
+          "area": 2443,
+          "stroke_hint_pixels": 57,
+          "stroke_hint_density": 0.023331968890708144,
+          "thumb_xywh": [
+            182,
+            682,
+            68,
+            67
+          ],
+          "page_xywh": [
+            423,
+            1586,
+            158,
+            156
+          ]
+        },
+        {
+          "score": 366.112,
+          "area": 1276,
+          "stroke_hint_pixels": 167,
+          "stroke_hint_density": 0.13087774294670845,
+          "thumb_xywh": [
+            660,
+            773,
+            46,
+            58
+          ],
+          "page_xywh": [
+            1534,
+            1797,
+            107,
+            135
+          ]
+        }
+      ],
+      "score": 2767.539,
+      "review_id": "interim_10",
+      "crop_xywh": [
+        228,
+        972,
+        768,
+        768
+      ],
+      "source": {
+        "split": "test",
+        "book": "200021071",
+        "page": "200021071_00071_1",
+        "original": "data/split_dataset/test/200021071/200021071_00071_1.jpg",
+        "ace": "data/split_dataset_csc/test/200021071/200021071_00071_1.jpg",
+        "npj_input": "data/split_dataset_csc_mask/test/200021071/200021071_00071_1/00_input.png",
+        "npj_black": "data/split_dataset_csc_mask/test/200021071/200021071_00071_1/02_text_black.png",
+        "npj_red": "data/split_dataset_csc_mask/test/200021071/200021071_00071_1/03_text_red.png",
+        "npj_degradation": "data/split_dataset_csc_mask/test/200021071/200021071_00071_1/04_degradation.png",
+        "npj_background": "data/split_dataset_csc_mask/test/200021071/200021071_00071_1/05_background.png",
+        "review_status": "unreviewed",
+        "failure_type": "",
+        "roi_xywh": "",
+        "v6_status": "",
+        "observation": ""
+      },
+      "review_status": "not yet reviewed",
+      "id": "N03",
+      "reason": "薄い像とシミ・筆記材の確認が必要",
+      "detail_xywh": [
+        120,
+        100,
+        520,
+        560
+      ],
+      "source_sha256": {
+        "original": "75e5e7ff2f2ccd07ef5033dffe8595632ffeebc6b8e3473e94b14de1868099e7",
+        "npj_black": "6350d539ea640295d4d00e31222ccda996b27c4959610b5624601020ee2582fe",
+        "npj_red": "edf240d42b82af84eee0e657e82d9a8ac5d2a9b4d2ee32e9b7ec12af5407b6ae"
+      },
+      "input": "tmp_work/npj_contact_research_20261007/new_cases/inputs/N03/200021071_00071_1.png"
+    },
+    {
+      "page": "200019865_00074_1",
+      "book": "200019865",
+      "split": "test",
+      "original": "data/split_dataset/test/200019865/200019865_00074_1.jpg",
+      "original_size": [
+        2039,
+        3180
+      ],
+      "screen_size": [
+        898,
+        1400
+      ],
+      "candidates": [
+        {
+          "score": 929.767,
+          "area": 3320,
+          "stroke_hint_pixels": 429,
+          "stroke_hint_density": 0.1292168674698795,
+          "thumb_xywh": [
+            371,
+            387,
+            86,
+            67
+          ],
+          "page_xywh": [
+            842,
+            879,
+            195,
+            152
+          ]
+        },
+        {
+          "score": 295.518,
+          "area": 704,
+          "stroke_hint_pixels": 157,
+          "stroke_hint_density": 0.22301136363636365,
+          "thumb_xywh": [
+            442,
+            392,
+            36,
+            32
+          ],
+          "page_xywh": [
+            1004,
+            890,
+            82,
+            73
+          ]
+        },
+        {
+          "score": 46.667,
+          "area": 360,
+          "stroke_hint_pixels": 10,
+          "stroke_hint_density": 0.027777777777777776,
+          "thumb_xywh": [
+            659,
+            1201,
+            21,
+            27
+          ],
+          "page_xywh": [
+            1496,
+            2728,
+            48,
+            61
+          ]
+        }
+      ],
+      "score": 929.767,
+      "review_id": "interim_20",
+      "crop_xywh": [
+        556,
+        571,
+        768,
+        768
+      ],
+      "source": {
+        "split": "test",
+        "book": "200019865",
+        "page": "200019865_00074_1",
+        "original": "data/split_dataset/test/200019865/200019865_00074_1.jpg",
+        "ace": "data/split_dataset_csc/test/200019865/200019865_00074_1.jpg",
+        "npj_input": "data/split_dataset_csc_mask/test/200019865/200019865_00074_1/00_input.png",
+        "npj_black": "data/split_dataset_csc_mask/test/200019865/200019865_00074_1/02_text_black.png",
+        "npj_red": "data/split_dataset_csc_mask/test/200019865/200019865_00074_1/03_text_red.png",
+        "npj_degradation": "data/split_dataset_csc_mask/test/200019865/200019865_00074_1/04_degradation.png",
+        "npj_background": "data/split_dataset_csc_mask/test/200019865/200019865_00074_1/05_background.png",
+        "review_status": "unreviewed",
+        "failure_type": "",
+        "roi_xywh": "",
+        "v6_status": "",
+        "observation": ""
+      },
+      "review_status": "not yet reviewed",
+      "id": "N04",
+      "reason": "薄い茶色い範囲と本文・重なりの確認",
+      "detail_xywh": [
+        120,
+        100,
+        520,
+        560
+      ],
+      "source_sha256": {
+        "original": "bfb62768f43ce5884136e675859f5207b0a6b2b37925a7de09a3c18f40c864c8",
+        "npj_black": "6ec2ebb7cae5e01a039597b02f7e9c5bbb22cc2a6e07c4698de932641541ae4a",
+        "npj_red": "82b0d94843cbfadb57c77b83b061734149e47bcb66df4a7ca6a6a74adbfb48f1"
+      },
+      "input": "tmp_work/npj_contact_research_20261007/new_cases/inputs/N04/200019865_00074_1.png"
+    },
+    {
+      "page": "200010454_00021_1",
+      "book": "200010454",
+      "split": "test",
+      "original": "data/split_dataset/test/200010454/200010454_00021_1.jpg",
+      "original_size": [
+        1777,
+        2365
+      ],
+      "screen_size": [
+        1052,
+        1400
+      ],
+      "candidates": [
+        {
+          "score": 337.626,
+          "area": 6040,
+          "stroke_hint_pixels": 141,
+          "stroke_hint_density": 0.023344370860927152,
+          "thumb_xywh": [
+            898,
+            1070,
+            90,
+            246
+          ],
+          "page_xywh": [
+            1517,
+            1808,
+            152,
+            416
+          ]
+        },
+        {
+          "score": 29.604,
+          "area": 852,
+          "stroke_hint_pixels": 7,
+          "stroke_hint_density": 0.008215962441314555,
+          "thumb_xywh": [
+            965,
+            1002,
+            23,
+            60
+          ],
+          "page_xywh": [
+            1630,
+            1693,
+            39,
+            101
+          ]
+        }
+      ],
+      "score": 337.626,
+      "review_id": "interim_23",
+      "crop_xywh": [
+        1009,
+        1597,
+        768,
+        768
+      ],
+      "source": {
+        "split": "test",
+        "book": "200010454",
+        "page": "200010454_00021_1",
+        "original": "data/split_dataset/test/200010454/200010454_00021_1.jpg",
+        "ace": "data/split_dataset_csc/test/200010454/200010454_00021_1.jpg",
+        "npj_input": "data/split_dataset_csc_mask/test/200010454/200010454_00021_1/00_input.png",
+        "npj_black": "data/split_dataset_csc_mask/test/200010454/200010454_00021_1/02_text_black.png",
+        "npj_red": "data/split_dataset_csc_mask/test/200010454/200010454_00021_1/03_text_red.png",
+        "npj_degradation": "data/split_dataset_csc_mask/test/200010454/200010454_00021_1/04_degradation.png",
+        "npj_background": "data/split_dataset_csc_mask/test/200010454/200010454_00021_1/05_background.png",
+        "review_status": "unreviewed",
+        "failure_type": "",
+        "roi_xywh": "",
+        "v6_status": "",
+        "observation": ""
+      },
+      "review_status": "not yet reviewed",
+      "id": "N05",
+      "reason": "薄い筆画の正常対照",
+      "detail_xywh": [
+        120,
+        100,
+        520,
+        560
+      ],
+      "source_sha256": {
+        "original": "cc0e546948bc14c4f68849aede4a5c02453aabe55d3a3c5c14aa3a1e536aacae",
+        "npj_black": "aa2db671384fb23470d28ca4cc8804cc320cc1bfb45f6d75bddb393f977301d5",
+        "npj_red": "bab7fd5f93e51201b9a9cbad55593a0bf68fb1e0ce2be47b659263859a38c034"
+      },
+      "input": "tmp_work/npj_contact_research_20261007/new_cases/inputs/N05/200010454_00021_1.png"
+    },
+    {
+      "page": "200018243_00007_1",
+      "book": "200018243",
+      "split": "test",
+      "original": "data/split_dataset/test/200018243/200018243_00007_1.jpg",
+      "original_size": [
+        2038,
+        3202
+      ],
+      "screen_size": [
+        891,
+        1400
+      ],
+      "candidates": [
+        {
+          "score": 207.275,
+          "area": 635,
+          "stroke_hint_pixels": 139,
+          "stroke_hint_density": 0.2188976377952756,
+          "thumb_xywh": [
+            666,
+            790,
+            43,
+            30
+          ],
+          "page_xywh": [
+            1523,
+            1807,
+            98,
+            69
+          ]
+        },
+        {
+          "score": 87.473,
+          "area": 634,
+          "stroke_hint_pixels": 74,
+          "stroke_hint_density": 0.1167192429022082,
+          "thumb_xywh": [
+            400,
+            266,
+            21,
+            52
+          ],
+          "page_xywh": [
+            915,
+            608,
+            48,
+            119
+          ]
+        }
+      ],
+      "score": 207.275,
+      "review_id": "interim_26",
+      "crop_xywh": [
+        1188,
+        1458,
+        768,
+        768
+      ],
+      "source": {
+        "split": "test",
+        "book": "200018243",
+        "page": "200018243_00007_1",
+        "original": "data/split_dataset/test/200018243/200018243_00007_1.jpg",
+        "ace": "data/split_dataset_csc/test/200018243/200018243_00007_1.jpg",
+        "npj_input": "data/split_dataset_csc_mask/test/200018243/200018243_00007_1/00_input.png",
+        "npj_black": "data/split_dataset_csc_mask/test/200018243/200018243_00007_1/02_text_black.png",
+        "npj_red": "data/split_dataset_csc_mask/test/200018243/200018243_00007_1/03_text_red.png",
+        "npj_degradation": "data/split_dataset_csc_mask/test/200018243/200018243_00007_1/04_degradation.png",
+        "npj_background": "data/split_dataset_csc_mask/test/200018243/200018243_00007_1/05_background.png",
+        "review_status": "unreviewed",
+        "failure_type": "",
+        "roi_xywh": "",
+        "v6_status": "",
+        "observation": ""
+      },
+      "review_status": "not yet reviewed",
+      "id": "N06",
+      "reason": "茶色線と裏写り・材質不確定対照",
+      "detail_xywh": [
+        120,
+        100,
+        520,
+        560
+      ],
+      "source_sha256": {
+        "original": "f7d3b5fb42a780781e1ac047b3ce9db3587caadfa1baca35c7b1e27102550be0",
+        "npj_black": "1eef2861fc9565e50a4376084b9044a83bec21c1948ebd4315d4cf5a26e0c668",
+        "npj_red": "98ba9457e3a39582042a743a08a5cd59d81a28b96b501aa4a2fade124770ebc1"
+      },
+      "input": "tmp_work/npj_contact_research_20261007/new_cases/inputs/N06/200018243_00007_1.png"
+    }
+  ],
+  "source_sha256": "daa844dabcce43a04d99d83a74900292a6388d33e7e19ef706a44479204d57df",
+  "created": 1791367605.9028876,
+  "selected_before_new_case_inference": true,
+  "settings": "same frozen local NPJ-derived implementation seed999 20steps native768 patch128 overlap32",
+  "material_GT": false,
+  "reading_GT": false,
+  "all_prior_methods_fixed_before_new_outputs": true,
+  "code_hashes": {
+    "tmp_work/npj_dirt_control_20261002/source_snapshot/ddrm_npj_v2/datasets/celeba.py": "ae136695098b70ed6ed7e6140a2ad9ca717034e7bd8ddf8ec71d118baca34b5e",
+    "tmp_work/npj_dirt_control_20261002/source_snapshot/ddrm_npj_v2/datasets/__init__.py": "e120b14931f914e5fb1c3c64847d407178eb7ed4e378c27200f2abda56762954",
+    "tmp_work/npj_dirt_control_20261002/source_snapshot/ddrm_npj_v2/datasets/utils.py": "c1ff6203044ab3300156caa957bd9b2ddb092ce7ca84eb84354adce56b4679ed",
+    "tmp_work/npj_dirt_control_20261002/source_snapshot/ddrm_npj_v2/datasets/vision.py": "7e7a817dca0da5f91d438141ad93108b3d6319ff63300900916fa576577b1891",
+    "tmp_work/npj_dirt_control_20261002/source_snapshot/ddrm_npj_v2/datasets/imagenet_subset.py": "f9b8d31c653bb8d8518fb84a6bdff9bfde385fd9b5d0143de19909e679ccb601",
+    "tmp_work/npj_dirt_control_20261002/source_snapshot/ddrm_npj_v2/datasets/lsun.py": "0b0bfaa3ce8f82490725069c6a5f576cf6a05b88498241f20480c05506f20c0f",
+    "tmp_work/npj_dirt_control_20261002/source_snapshot/ddrm_npj_v2/functions/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "tmp_work/npj_dirt_control_20261002/source_snapshot/ddrm_npj_v2/functions/denoising.py": "6e59f0b2348b81e3b24e2e62c50047be5bda63cd6583822e3d09ba152beff74f",
+    "tmp_work/npj_dirt_control_20261002/source_snapshot/ddrm_npj_v2/functions/svd_replacement.py": "2d54c04de543558c0091d4e1db3e84be437a52e33af7c07bd5246e64af2f7cbc",
+    "tmp_work/npj_dirt_control_20261002/source_snapshot/ddrm_npj_v2/functions/ckpt_util.py": "7a9d0a26dbd8a753a128c673a6de236271f8749d2da874e5ad3152e6034b2d0e",
+    "tmp_work/npj_dirt_control_20261002/source_snapshot/ddrm_npj_v2/runners/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "tmp_work/npj_dirt_control_20261002/source_snapshot/ddrm_npj_v2/scripts/postprocess_flatfield.py": "537b19526fc44a56843498ca499590a387334136e4338f70e631b21e884965df",
+    "tmp_work/npj_dirt_control_20261002/source_snapshot/ddrm_npj_v2/scripts/generate_mask_csc.py": "c77d63315c46117a8a978634d2a5b04ad8aacef09b790d08653667e8950c74ff",
+    "tmp_work/npj_dirt_control_20261002/source_snapshot/ddrm_npj_v2/scripts/ace.py": "35f40c8397a4df8fc07e64ec61994b561ceefe922803e84d9046434d992b5146",
+    "tmp_work/npj_dirt_control_20261002/source_snapshot/ddrm_npj_v2/scripts/csc.py": "11815cbb82d6972644498db9c5a8879dfc7e104b14a2749e04fdf0198e19b22f",
+    "tmp_work/npj_dirt_control_20261002/source_snapshot/ddrm_npj_v2/scripts/postprocess_composite_stage.py": "cda3dff74420e03b5bb3b9827631512e4f7edd5ed56de249e66c85b580727dc3",
+    "tmp_work/npj_dirt_control_20261002/source_snapshot/ddrm_npj_v2/scripts/pipeline_ddrm.py": "bbc130a1761be21dfa7ff6d5ec9bc29e34155a56dfa405d91daa6a989a77f2ec",
+    "tmp_work/npj_dirt_control_20261002/source_snapshot/ddrm_npj_v2/scripts/pipeline_ddrm_page.py": "38d54734213e6b83b1e5271b94a0239baf803b590af334112e1e496c6d4c0a58",
+    "tmp_work/npj_dirt_control_20261002/source_snapshot/ddrm_npj_v2/codes/random_crop.py": "2b4df6582b1754652548960be66e7a4a668be1c6a1ec82cdf57580d3c72cc0e9",
+    "tmp_work/npj_dirt_control_20261002/source_snapshot/ddrm_npj_v2/codes/diffusion.py": "9ef760c426b51f6a345d0c750dd0dae04b8ad8b308d5b79b1d10c500c59080bf",
+    "tmp_work/npj_dirt_control_20261002/source_snapshot/ddrm_npj_v2/codes/OrigDataset.py": "33c6660f1ad97d045509f24865a7811b2a52f9f329172436e59fbc676070fd6c",
+    "tmp_work/npj_dirt_control_20261002/source_snapshot/ddrm_npj_v2/codes/Inpainting.py": "cc783e6f6b8e76c6352d39b51da04f4d4c6f1afbc7a167a2269e13a83cf2e12a",
+    "tmp_work/npj_dirt_control_20261002/source_snapshot/ddrm_npj_v2/codes/openai/nn.py": "d9547fb22b421a16dc079cb82a9d98630100b5e1b2a710d343f4d3f90b8661f3",
+    "tmp_work/npj_dirt_control_20261002/source_snapshot/ddrm_npj_v2/codes/openai/unet.py": "ceb81079066117455c71ced730a62ee3f23967e7a51271126340b59cb24069b7",
+    "tmp_work/npj_dirt_control_20261002/source_snapshot/ddrm_npj_v2/codes/openai_1ch/nn.py": "d9547fb22b421a16dc079cb82a9d98630100b5e1b2a710d343f4d3f90b8661f3",
+    "tmp_work/npj_dirt_control_20261002/source_snapshot/ddrm_npj_v2/codes/openai_1ch/unet.py": "ceb81079066117455c71ced730a62ee3f23967e7a51271126340b59cb24069b7"
+  },
+  "checkpoint_sha256": "1a5decb747e34e8b51ccea96b598fe3c6ec0e7f7a6f8df6cffc3135d8281a7f3",
+  "background_sha256": "2a96dbde5301415c593dc1d119410e7a077a6ac15ea3d8d8d5f8d4021dc3897c"
+}

@@ -1,0 +1,50 @@
+{
+  "cases": [
+    {
+      "id": "seal_control",
+      "xywh": [
+        20,
+        450,
+        550,
+        280
+      ],
+      "rule_changed_on_v6_keep": 11325,
+      "rule_removed_dark_on_v6_keep": 10931,
+      "v6_baseline_dark_in_roi": 28982,
+      "v6_applied_baseline_dark_in_roi": 0,
+      "v6_changed_in_roi": 0
+    },
+    {
+      "id": "wormhole",
+      "xywh": [
+        230,
+        150,
+        400,
+        420
+      ],
+      "rule_changed_on_v6_keep": 0,
+      "rule_removed_dark_on_v6_keep": 0,
+      "v6_baseline_dark_in_roi": 4144,
+      "v6_applied_baseline_dark_in_roi": 0,
+      "v6_changed_in_roi": 302
+    },
+    {
+      "id": "fresh_binding_mark",
+      "xywh": [
+        130,
+        120,
+        420,
+        300
+      ],
+      "rule_changed_on_v6_keep": 0,
+      "rule_removed_dark_on_v6_keep": 0,
+      "v6_baseline_dark_in_roi": 23429,
+      "v6_applied_baseline_dark_in_roi": 0,
+      "v6_changed_in_roi": 2337
+    }
+  ],
+  "gate": "Rejected lower-rule-only candidate: header/footer confusion visibly erases writing",
+  "physical_GT": false,
+  "labels": "Assistant visual review; failed writing role clear, dirt material not certified",
+  "npj_seal_loss": "The faint red seal is already absent from fresh npj baseline; not caused by postprocessing"
+}

@@ -1,0 +1,160 @@
+{
+  "margin": {
+    "rule_y": 444,
+    "rules": [
+      {
+        "x": 60,
+        "y": 444,
+        "width": 1964,
+        "height": 28,
+        "area_small": 2688
+      },
+      {
+        "x": 472,
+        "y": 480,
+        "width": 1488,
+        "height": 8,
+        "area_small": 395
+      }
+    ],
+    "components": [
+      {
+        "id": 1,
+        "xywh": [
+          1688,
+          129,
+          41,
+          94
+        ],
+        "area": 1267,
+        "brown_seed_pixels": 602,
+        "peak_radius": 8.787599563598633,
+        "touches_margin_boundary": true,
+        "accepted": false
+      },
+      {
+        "id": 8,
+        "xywh": [
+          1514,
+          141,
+          46,
+          42
+        ],
+        "area": 862,
+        "brown_seed_pixels": 2,
+        "peak_radius": 10.0,
+        "touches_margin_boundary": false,
+        "accepted": false
+      },
+      {
+        "id": 17,
+        "xywh": [
+          1255,
+          197,
+          15,
+          19
+        ],
+        "area": 132,
+        "brown_seed_pixels": 105,
+        "peak_radius": 4.0,
+        "touches_margin_boundary": false,
+        "accepted": false
+      },
+      {
+        "id": 29,
+        "xywh": [
+          1357,
+          291,
+          6,
+          5
+        ],
+        "area": 15,
+        "brown_seed_pixels": 6,
+        "peak_radius": 1.399999976158142,
+        "touches_margin_boundary": false,
+        "accepted": false
+      },
+      {
+        "id": 34,
+        "xywh": [
+          1360,
+          319,
+          4,
+          3
+        ],
+        "area": 7,
+        "brown_seed_pixels": 5,
+        "peak_radius": 1.399999976158142,
+        "touches_margin_boundary": false,
+        "accepted": false
+      },
+      {
+        "id": 42,
+        "xywh": [
+          1337,
+          393,
+          14,
+          14
+        ],
+        "area": 61,
+        "brown_seed_pixels": 36,
+        "peak_radius": 2.0,
+        "touches_margin_boundary": false,
+        "accepted": false
+      }
+    ]
+  },
+  "completion": {
+    "rule_y": 444,
+    "top_components": [
+      {
+        "id": 1,
+        "xywh": [
+          1688,
+          129,
+          41,
+          94
+        ],
+        "area": 1267,
+        "seeds": 602,
+        "peak": 8.787599563598633,
+        "top_contacts": 14,
+        "other_contacts": 0,
+        "eligible": true
+      }
+    ],
+    "completed_components": [
+      {
+        "id": 33,
+        "xywh": [
+          1688,
+          120,
+          41,
+          103
+        ],
+        "area": 1346,
+        "selected_overlap": 1267,
+        "seeds": 602,
+        "peak": 8.787599563598633,
+        "outer_contacts": 0,
+        "accepted": true
+      }
+    ]
+  },
+  "thin": [
+    {
+      "id": 17,
+      "xywh": [
+        1255,
+        197,
+        15,
+        19
+      ],
+      "area": 132,
+      "seeds": 105,
+      "peak": 4.0,
+      "newly_accepted": true
+    }
+  ],
+  "near8": []
+}

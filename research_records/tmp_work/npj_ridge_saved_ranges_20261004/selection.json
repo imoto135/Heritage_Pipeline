@@ -1,0 +1,436 @@
+{
+  "cases": [
+    {
+      "split": "test",
+      "book": "200018243",
+      "page": "200018243_00002_2",
+      "original": "data/split_dataset/test/200018243/200018243_00002_2.jpg",
+      "ace": "data/split_dataset_csc/test/200018243/200018243_00002_2.jpg",
+      "npj_input": "data/split_dataset_csc_mask/test/200018243/200018243_00002_2/00_input.png",
+      "npj_black": "data/split_dataset_csc_mask/test/200018243/200018243_00002_2/02_text_black.png",
+      "npj_red": "data/split_dataset_csc_mask/test/200018243/200018243_00002_2/03_text_red.png",
+      "npj_degradation": "data/split_dataset_csc_mask/test/200018243/200018243_00002_2/04_degradation.png",
+      "npj_background": "data/split_dataset_csc_mask/test/200018243/200018243_00002_2/05_background.png",
+      "review_status": "unreviewed",
+      "failure_type": "",
+      "roi_xywh": "",
+      "v6_status": "",
+      "observation": "",
+      "input": "tmp_work/bt_200018243_00002_2/input/200018243_00002_2.jpg",
+      "saved_npj": "tmp_work/bt_200018243_00002_2/ddrm_extref_out/200018243_00002_2/result/200018243_00002_2.png",
+      "roles": "tmp_work/npj_ridge_saved_ranges_20261004/classification/v6_masks/200018243_00002_2",
+      "baseline_label": "Actual saved external-reference local npj v2; historical source snapshot unavailable",
+      "id": "new_page_upper",
+      "xywh": [
+        90,
+        410,
+        768,
+        768
+      ],
+      "role": "writing_and_gray_secondary_image",
+      "rois": [],
+      "contains_illustration": false,
+      "new_page_for_ridge": true
+    },
+    {
+      "split": "test",
+      "book": "200018243",
+      "page": "200018243_00002_2",
+      "original": "data/split_dataset/test/200018243/200018243_00002_2.jpg",
+      "ace": "data/split_dataset_csc/test/200018243/200018243_00002_2.jpg",
+      "npj_input": "data/split_dataset_csc_mask/test/200018243/200018243_00002_2/00_input.png",
+      "npj_black": "data/split_dataset_csc_mask/test/200018243/200018243_00002_2/02_text_black.png",
+      "npj_red": "data/split_dataset_csc_mask/test/200018243/200018243_00002_2/03_text_red.png",
+      "npj_degradation": "data/split_dataset_csc_mask/test/200018243/200018243_00002_2/04_degradation.png",
+      "npj_background": "data/split_dataset_csc_mask/test/200018243/200018243_00002_2/05_background.png",
+      "review_status": "unreviewed",
+      "failure_type": "",
+      "roi_xywh": "",
+      "v6_status": "",
+      "observation": "",
+      "input": "tmp_work/bt_200018243_00002_2/input/200018243_00002_2.jpg",
+      "saved_npj": "tmp_work/bt_200018243_00002_2/ddrm_extref_out/200018243_00002_2/result/200018243_00002_2.png",
+      "roles": "tmp_work/npj_ridge_saved_ranges_20261004/classification/v6_masks/200018243_00002_2",
+      "baseline_label": "Actual saved external-reference local npj v2; historical source snapshot unavailable",
+      "id": "new_page_lower",
+      "xywh": [
+        1200,
+        2230,
+        768,
+        768
+      ],
+      "role": "thin_writing_and_gray_secondary_image",
+      "rois": [],
+      "contains_illustration": false,
+      "new_page_for_ridge": true
+    },
+    {
+      "split": "test",
+      "book": "200010454",
+      "page": "200010454_00002_2",
+      "original": "data/split_dataset/test/200010454/200010454_00002_2.jpg",
+      "ace": "data/split_dataset_csc/test/200010454/200010454_00002_2.jpg",
+      "npj_input": "data/split_dataset_csc_mask/test/200010454/200010454_00002_2/00_input.png",
+      "npj_black": "data/split_dataset_csc_mask/test/200010454/200010454_00002_2/02_text_black.png",
+      "npj_red": "data/split_dataset_csc_mask/test/200010454/200010454_00002_2/03_text_red.png",
+      "npj_degradation": "data/split_dataset_csc_mask/test/200010454/200010454_00002_2/04_degradation.png",
+      "npj_background": "data/split_dataset_csc_mask/test/200010454/200010454_00002_2/05_background.png",
+      "review_status": "baseline_and_v6_visually_reviewed",
+      "failure_type": "stain_as_red;thin_black_edit",
+      "roi_xywh": "{\"brown_as_red\": [710, 200, 450, 330], \"thin_black_loop\": [1290, 600, 280, 600]}",
+      "v6_status": "brown_as_red:improved;thin_black_loop:partial",
+      "observation": "茶色い斑点を朱インクと判定：この矩形の朱候補が1,336画素から0へ減り、茶色い斑点の主要部が編集候補へ移る。周囲の本文は保護される。 / 薄い黒筆画のループが編集候補に入る：矩形の編集候補は6,155画素から0になる。ループ周辺の筆画保護が増えるが、最も薄い左下の線は保護マスクにも断続的にしか入らない。誤編集の回避と、文字検出の回復を区別する。",
+      "id": "known_upper_stain",
+      "input": "tmp_work/speed_test_single/input/200010454_00002_2.jpg",
+      "box": null,
+      "saved_npj": "tmp_work/speed_test_single/ddrm_out/200010454_00002_2/result/200010454_00002_2.png",
+      "baseline_label": "保存npj：CSC v2・同ページ追加対照",
+      "roles": "tmp_work/saved_npj_paper_only_followup_pilot_20261002/native/known_200010454_v2",
+      "regions": [
+        {
+          "id": "07_red_seal_control",
+          "title": "朱印の対照・既知ページの別保存版",
+          "xywh": [
+            1330,
+            1800,
+            430,
+            550
+          ],
+          "role": "red_seal_control"
+        },
+        {
+          "id": "08_known_brown_stain",
+          "title": "既知の茶色い斑点・別保存版",
+          "xywh": [
+            730,
+            230,
+            180,
+            140
+          ],
+          "role": "known_damage_candidate"
+        },
+        {
+          "id": "09_known_dense_text",
+          "title": "既知の濃い筆画・別保存版",
+          "xywh": [
+            555,
+            335,
+            175,
+            160
+          ],
+          "role": "known_text_control"
+        }
+      ],
+      "illustration": false,
+      "input_reference_exact": true,
+      "shape": [
+        2365,
+        1784,
+        3
+      ],
+      "xywh": [
+        500,
+        100,
+        768,
+        768
+      ],
+      "role": "brown_spot_and_writing",
+      "rois": [],
+      "contains_illustration": false,
+      "new_page_for_ridge": false
+    },
+    {
+      "split": "test",
+      "book": "200019865",
+      "page": "200019865_00003_1",
+      "original": "data/test/200019865/200019865_00003_1.jpg",
+      "ace": "data/split_dataset_csc/test/200019865/200019865_00003_1.jpg",
+      "npj_input": "data/split_dataset_csc_mask/test/200019865/200019865_00003_1/00_input.png",
+      "npj_black": "data/split_dataset_csc_mask/test/200019865/200019865_00003_1/02_text_black.png",
+      "npj_red": "data/split_dataset_csc_mask/test/200019865/200019865_00003_1/03_text_red.png",
+      "npj_degradation": "data/split_dataset_csc_mask/test/200019865/200019865_00003_1/04_degradation.png",
+      "npj_background": "data/split_dataset_csc_mask/test/200019865/200019865_00003_1/05_background.png",
+      "review_status": "unreviewed",
+      "failure_type": "",
+      "roi_xywh": "",
+      "v6_status": "",
+      "observation": "",
+      "id": "known_left_marks",
+      "input": "tmp_work/ddrm_visual_check/input_200019865_00003_1/200019865_00003_1.jpg",
+      "box": null,
+      "saved_npj": "tmp_work/ddrm_visual_check/output_200019865_00003_1/200019865_00003_1/result/200019865_00003_1.png",
+      "baseline_label": "保存npj：ddrm_visual_check既存版",
+      "roles": "tmp_work/saved_npj_paper_only_followup_pilot_20261002/native/page_200019865",
+      "regions": [
+        {
+          "id": "01_upper_slender_marks",
+          "title": "上余白の細い暖色跡",
+          "xywh": [
+            1270,
+            250,
+            550,
+            400
+          ],
+          "role": "damage_candidate_material_unconfirmed"
+        },
+        {
+          "id": "02_left_margin_marks",
+          "title": "左余白の線状跡",
+          "xywh": [
+            20,
+            850,
+            450,
+            900
+          ],
+          "role": "damage_candidate_material_unconfirmed"
+        },
+        {
+          "id": "03_faint_text_control",
+          "title": "薄い文字の対照",
+          "xywh": [
+            1200,
+            1050,
+            650,
+            650
+          ],
+          "role": "text_control"
+        }
+      ],
+      "illustration": false,
+      "input_reference_exact": true,
+      "shape": [
+        3191,
+        2113,
+        3
+      ],
+      "xywh": [
+        0,
+        850,
+        768,
+        768
+      ],
+      "role": "slender_margin_marks_material_unconfirmed",
+      "rois": [],
+      "contains_illustration": false,
+      "new_page_for_ridge": false
+    },
+    {
+      "split": "test",
+      "book": "200019865",
+      "page": "200019865_00003_1",
+      "original": "data/test/200019865/200019865_00003_1.jpg",
+      "ace": "data/split_dataset_csc/test/200019865/200019865_00003_1.jpg",
+      "npj_input": "data/split_dataset_csc_mask/test/200019865/200019865_00003_1/00_input.png",
+      "npj_black": "data/split_dataset_csc_mask/test/200019865/200019865_00003_1/02_text_black.png",
+      "npj_red": "data/split_dataset_csc_mask/test/200019865/200019865_00003_1/03_text_red.png",
+      "npj_degradation": "data/split_dataset_csc_mask/test/200019865/200019865_00003_1/04_degradation.png",
+      "npj_background": "data/split_dataset_csc_mask/test/200019865/200019865_00003_1/05_background.png",
+      "review_status": "unreviewed",
+      "failure_type": "",
+      "roi_xywh": "",
+      "v6_status": "",
+      "observation": "",
+      "id": "known_right_writing",
+      "input": "tmp_work/ddrm_visual_check/input_200019865_00003_1/200019865_00003_1.jpg",
+      "box": null,
+      "saved_npj": "tmp_work/ddrm_visual_check/output_200019865_00003_1/200019865_00003_1/result/200019865_00003_1.png",
+      "baseline_label": "保存npj：ddrm_visual_check既存版",
+      "roles": "tmp_work/saved_npj_paper_only_followup_pilot_20261002/native/page_200019865",
+      "regions": [
+        {
+          "id": "01_upper_slender_marks",
+          "title": "上余白の細い暖色跡",
+          "xywh": [
+            1270,
+            250,
+            550,
+            400
+          ],
+          "role": "damage_candidate_material_unconfirmed"
+        },
+        {
+          "id": "02_left_margin_marks",
+          "title": "左余白の線状跡",
+          "xywh": [
+            20,
+            850,
+            450,
+            900
+          ],
+          "role": "damage_candidate_material_unconfirmed"
+        },
+        {
+          "id": "03_faint_text_control",
+          "title": "薄い文字の対照",
+          "xywh": [
+            1200,
+            1050,
+            650,
+            650
+          ],
+          "role": "text_control"
+        }
+      ],
+      "illustration": false,
+      "input_reference_exact": true,
+      "shape": [
+        3191,
+        2113,
+        3
+      ],
+      "xywh": [
+        1200,
+        1050,
+        768,
+        768
+      ],
+      "role": "faint_and_brown_writing",
+      "rois": [],
+      "contains_illustration": false,
+      "new_page_for_ridge": false
+    },
+    {
+      "split": "test",
+      "book": "200018243",
+      "page": "200018243_00003_2",
+      "original": "data/split_dataset/test/200018243/200018243_00003_2.jpg",
+      "ace": "data/split_dataset_csc/test/200018243/200018243_00003_2.jpg",
+      "npj_input": "data/split_dataset_csc_mask/test/200018243/200018243_00003_2/00_input.png",
+      "npj_black": "data/split_dataset_csc_mask/test/200018243/200018243_00003_2/02_text_black.png",
+      "npj_red": "data/split_dataset_csc_mask/test/200018243/200018243_00003_2/03_text_red.png",
+      "npj_degradation": "data/split_dataset_csc_mask/test/200018243/200018243_00003_2/04_degradation.png",
+      "npj_background": "data/split_dataset_csc_mask/test/200018243/200018243_00003_2/05_background.png",
+      "review_status": "thumbnail_reviewed",
+      "failure_type": "",
+      "roi_xywh": "",
+      "v6_status": "",
+      "observation": "",
+      "id": "known_lower_writing",
+      "input": "tmp_work/full_page_compare/input/200018243_00003_2.jpg",
+      "box": [
+        0,
+        0,
+        2073,
+        3203
+      ],
+      "saved_npj": "tmp_work/full_page_compare/ddrm_v1true_out/200018243_00003_2/result/200018243_00003_2.png",
+      "baseline_label": "保存npj：v1true・ページ出力",
+      "roles": "tmp_work/saved_npj_inference_v6_pilot_20261002/native/full_page",
+      "regions": [
+        {
+          "id": "old_05_page_faint_left",
+          "title": "左列の薄い筆画",
+          "xywh": [
+            170,
+            700,
+            235,
+            450
+          ]
+        },
+        {
+          "id": "old_06_page_faint_middle",
+          "title": "中央列の細い筆画",
+          "xywh": [
+            760,
+            1870,
+            220,
+            480
+          ]
+        },
+        {
+          "id": "old_07_page_dense_control",
+          "title": "右列の濃い筆画の対照",
+          "xywh": [
+            1510,
+            1650,
+            300,
+            440
+          ]
+        },
+        {
+          "id": "old_08_page_long_stroke",
+          "title": "左寄りの長い細線",
+          "xywh": [
+            440,
+            1850,
+            240,
+            650
+          ]
+        }
+      ],
+      "illustration": false,
+      "input_reference_exact": true,
+      "shape": [
+        3203,
+        2073,
+        3
+      ],
+      "xywh": [
+        300,
+        1820,
+        768,
+        768
+      ],
+      "role": "thin_writing_and_gray_secondary_image",
+      "rois": [],
+      "contains_illustration": false,
+      "new_page_for_ridge": false
+    }
+  ],
+  "dependencies": {
+    "data/split_dataset/test/200018243/200018243_00002_2.jpg": "684376939bc90652649c7529994f6c374b6ad0199b2c3eab61e3e701888a2d10",
+    "tmp_work/bt_200018243_00002_2/input/200018243_00002_2.jpg": "684376939bc90652649c7529994f6c374b6ad0199b2c3eab61e3e701888a2d10",
+    "tmp_work/bt_200018243_00002_2/ddrm_extref_out/200018243_00002_2/result/200018243_00002_2.png": "06939893f07c1bd341ec0b177fa894674b87d52883bf1a474678561ee4ebe9e7",
+    "data/split_dataset_csc_mask/test/200018243/200018243_00002_2/03_text_red.png": "626f49e7f8268b8944cff55fda3e1611e8c585baa8a3ffe16fd0b9f5bd8101b4",
+    "data/split_dataset/test/200010454/200010454_00002_2.jpg": "177776f90fc08b12e2f59a37773ef433556f43ebe47c503c2d676595a08a60d1",
+    "tmp_work/speed_test_single/input/200010454_00002_2.jpg": "177776f90fc08b12e2f59a37773ef433556f43ebe47c503c2d676595a08a60d1",
+    "tmp_work/speed_test_single/ddrm_out/200010454_00002_2/result/200010454_00002_2.png": "aa24528eefe3c11f1849e7212ff0ea5b3f0a7c1298c7bb8f17888ec0b26bc29e",
+    "data/split_dataset_csc_mask/test/200010454/200010454_00002_2/03_text_red.png": "ca7253770fc8ddc7ba01b62b10f609f1b0a38f7b0d754b223bb0482732a4fff7",
+    "tmp_work/saved_npj_paper_only_followup_pilot_20261002/native/known_200010454_v2/edit.png": "d07a0a4ae214999fb1a291b27683134271e3558b59746ffc922d527758aaa14c",
+    "tmp_work/saved_npj_paper_only_followup_pilot_20261002/native/known_200010454_v2/protect.png": "afcbfe26493d343bde1544c19373f73e465e2a6b98ef112781a7ffb97db989d8",
+    "tmp_work/saved_npj_paper_only_followup_pilot_20261002/native/known_200010454_v2/hold.png": "9fcd1bff26045ed4fde5fac9ae33ceee7b2af3b4bcfa497260c7c400835792cb",
+    "tmp_work/saved_npj_paper_only_followup_pilot_20261002/native/known_200010454_v2/red.png": "2558f3bbe4691d1c4a7c502fd4068d8f576ac7660bfd1a14764059381626c0af",
+    "tmp_work/saved_npj_paper_only_followup_pilot_20261002/native/known_200010454_v2/extra.png": "42f2a3be2280120e730a94d64642434a059030aa2a9d4ed6b73f239ae11b0b81",
+    "data/test/200019865/200019865_00003_1.jpg": "31b993f91a1ce6d4db18f435513a2c7d9b9169b9a5b42e1e16c59ec6516dae16",
+    "tmp_work/ddrm_visual_check/input_200019865_00003_1/200019865_00003_1.jpg": "31b993f91a1ce6d4db18f435513a2c7d9b9169b9a5b42e1e16c59ec6516dae16",
+    "tmp_work/ddrm_visual_check/output_200019865_00003_1/200019865_00003_1/result/200019865_00003_1.png": "77bd3ecf29b5dc3197d283aecf734a522305f97f0451e102d7879c4de25a86c3",
+    "data/split_dataset_csc_mask/test/200019865/200019865_00003_1/03_text_red.png": "301d1f6fbe0e133dafcd3a0238b7061ecfa27ff4d1e65e36cd630d2fe3a463ab",
+    "tmp_work/saved_npj_paper_only_followup_pilot_20261002/native/page_200019865/edit.png": "1f5ec18fbb3a39e36990b2288ee69622e12abdfcc3908062f93c48d4a7b214ab",
+    "tmp_work/saved_npj_paper_only_followup_pilot_20261002/native/page_200019865/protect.png": "0aaa947e76a9372864cf2c01332652e7a408f4f7ad68bf0a082d9b222f385536",
+    "tmp_work/saved_npj_paper_only_followup_pilot_20261002/native/page_200019865/hold.png": "8e2f44f37c9aba9b0d0a19213772b3675b72014f688f38defe5683a1061be292",
+    "tmp_work/saved_npj_paper_only_followup_pilot_20261002/native/page_200019865/red.png": "95e698f68826c12c7563118003c0c587dd27e37a31ee70421ade8c531650c73b",
+    "tmp_work/saved_npj_paper_only_followup_pilot_20261002/native/page_200019865/extra.png": "95e698f68826c12c7563118003c0c587dd27e37a31ee70421ade8c531650c73b",
+    "data/split_dataset/test/200018243/200018243_00003_2.jpg": "f1c8c26fea64d9511c462b9776198eadbf3481793b0e4ed397e9ba58aca45e6d",
+    "tmp_work/full_page_compare/input/200018243_00003_2.jpg": "f1c8c26fea64d9511c462b9776198eadbf3481793b0e4ed397e9ba58aca45e6d",
+    "tmp_work/full_page_compare/ddrm_v1true_out/200018243_00003_2/result/200018243_00003_2.png": "e8dfd431b073d2e43702955ed5cd565e70f90b7d58f92e47e756eb0d4c0c3acc",
+    "data/split_dataset_csc_mask/test/200018243/200018243_00003_2/03_text_red.png": "dddd1d0785437af2c087767f116fb193de2c890bc94d085ac7f74541c3b245ec",
+    "tmp_work/saved_npj_inference_v6_pilot_20261002/native/full_page/edit.png": "1cfa19d850c41163c46206a1e395344fa5fec18f5d9a57ce9ea54c0d5761f95b",
+    "tmp_work/saved_npj_inference_v6_pilot_20261002/native/full_page/protect.png": "16a39b3c31486b20ec64969be203f1ac95830e83d00f9d603b79b067506311f8",
+    "tmp_work/saved_npj_inference_v6_pilot_20261002/native/full_page/hold.png": "1b7d21ed98d0f33f7bc4b6e6a16b2b848b4755f42b39aca7cf1cb5d77b7d6363",
+    "tmp_work/saved_npj_inference_v6_pilot_20261002/native/full_page/red.png": "a98cec0f78632a09a2fc7a190ab76ee0f38b99301623fbe2294de40642e42f24",
+    "tmp_work/saved_npj_inference_v6_pilot_20261002/native/full_page/extra.png": "a98cec0f78632a09a2fc7a190ab76ee0f38b99301623fbe2294de40642e42f24",
+    "scripts/benchmark/validate_npj_ridge_saved_ranges.py": "d698158b347f0d2b153968bb54ceba085aec3607c725153457afe6b45f813fc7",
+    "scripts/benchmark/probe_npj_contact_dirt_guard.py": "7004bcb56800204e7c98aa9ec6f311630dbbe06149bd577aa5cbdcc9609d2dce",
+    "scripts/benchmark/probe_npj_contact_dirt_guard_v2.py": "3a78fe1f0750464edf276b35a1233f92f3fa092f8ddde61b2f17429e9236e19e",
+    "scripts/benchmark/probe_npj_colour_independent_ridge_guard.py": "3bcabc05592967becf0f38f05f96b00c0eee472adce7dd3e02789fb25de37ef7",
+    "scripts/benchmark/probe_npj_full_page_layout.py": "16a4b655a899c31a237ceadff1130bcb9e0772a6d5493448f8dca806b1a71bd2",
+    "scripts/benchmark/probe_npj_full_page_layout_v4.py": "c93c2c401d9019af1a6b8e33c0c2ac49b965086466f07f1cd5073bd42a7376b5",
+    "scripts/benchmark/probe_npj_dirt_clean_reference.py": "d5fc8578d35e863e62c9b574257762fa6737297b2b17bd006405ba607fd771fe",
+    "tmp_work/npj_colour_independent_ridge_20261004/complete.json": "0f3fda4bf092cecef61c3f143ad26d6bf68bcdc152228f58a95f3521f7d273fb",
+    "tmp_work/bt_200018243_00002_2/run_4patterns.sh": "27522be89e6da5642908d10c9b4ab039af2f64e83acdb29a4908cf482f6c531e",
+    "tmp_work/bt_200018243_00002_2/log_ddrm_extref.txt": "614ff1cc64a9b103cf661bbbeac5d0ac0afc375161dfbb06c7a56778ac031fdf"
+  },
+  "selection_before_policy_output": true,
+  "all_actual_saved_full_page_outputs": true,
+  "all_actual_inputs_match_original": true,
+  "no_new_diffusion_inference": true,
+  "one_new_page_three_known_pages": true,
+  "new_books": 0,
+  "pixel_GT": false,
+  "adopted": false,
+  "novelty": "New page for this fixed ridge policy plus new ranges in known pages; prior studies may include them",
+  "excluded_sources": {
+    "trial_run": "actual input differs from original",
+    "fidelity_pilot": "different masks/recipe and synthetic intensity variants; not pooled with these actual saved baselines"
+  }
+}

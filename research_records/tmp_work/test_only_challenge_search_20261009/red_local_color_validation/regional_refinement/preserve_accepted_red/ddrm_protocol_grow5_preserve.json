@@ -1,0 +1,78 @@
+{
+  "variant": "grow5_preserve",
+  "cases": [
+    {
+      "id": "F04",
+      "page": "200021063_00002_2",
+      "howe": {
+        "source": "tmp_work/test_only_challenge_search_20261009/fixed_holdout_validation/masks/howe/200021063_00002_2/02_text_black.png",
+        "sha256": "69414f59ae4cfaf72141a3dda29225f913660ede889a5b31a67474a3c5262c2e",
+        "saved_red_was_empty": true
+      },
+      "red_pixels": 35331,
+      "removed_howe_pixels": 20915,
+      "masks_sha256": {
+        "tmp_work/test_only_challenge_search_20261009/red_local_color_validation/regional_refinement/preserve_accepted_red/masks/howe_grow5_preserve/200021063_00002_2/03_text_red.png": "7c5ca4421235b2d7183f8b27eb25e52c39f1b335ff7302228e11996f43595d88",
+        "tmp_work/test_only_challenge_search_20261009/red_local_color_validation/regional_refinement/preserve_accepted_red/masks/howe_grow5_preserve/200021063_00002_2/02_text_black.png": "d478f81c1743df3f93aa1ac655b66aeea163ac474aa51cdf0ffbf8a40e733023"
+      }
+    },
+    {
+      "id": "R01",
+      "page": "200019865_00002_1",
+      "howe": {
+        "source": "tmp_work/test_only_challenge_search_20261009/red_retention_validation/scratch/200019865_00002_1/graph_output.bin",
+        "sha256": "5f2789be7b3605d57871ae4d7bbda5f01ec832ea3afc7689ffbf7f997cfe4cc2",
+        "saved_black_after_priority_match": true
+      },
+      "red_pixels": 48709,
+      "removed_howe_pixels": 19199,
+      "masks_sha256": {
+        "tmp_work/test_only_challenge_search_20261009/red_local_color_validation/regional_refinement/preserve_accepted_red/masks/howe_grow5_preserve/200019865_00002_1/03_text_red.png": "81315de46a00c27c54783eb917b73c7251cca8b6716e4d909989e79cd68e22b2",
+        "tmp_work/test_only_challenge_search_20261009/red_local_color_validation/regional_refinement/preserve_accepted_red/masks/howe_grow5_preserve/200019865_00002_1/02_text_black.png": "efaa2eb632969376c9ed010d6484acac78634a5a867af9fa7df9183999c41eb0"
+      }
+    },
+    {
+      "id": "R02",
+      "page": "200017458_00003_2",
+      "howe": {
+        "source": "tmp_work/test_only_challenge_search_20261009/red_retention_validation/scratch/200017458_00003_2/graph_output.bin",
+        "sha256": "167453bc683763d242de0830cf3d64b0fcf165f6a5358ebdb028ee43dcd504da",
+        "saved_black_after_priority_match": true
+      },
+      "red_pixels": 27885,
+      "removed_howe_pixels": 20104,
+      "masks_sha256": {
+        "tmp_work/test_only_challenge_search_20261009/red_local_color_validation/regional_refinement/preserve_accepted_red/masks/howe_grow5_preserve/200017458_00003_2/03_text_red.png": "785d371a8c3d6611b66e977754f47434c7dd3ef642a846310f8dd91d26a64434",
+        "tmp_work/test_only_challenge_search_20261009/red_local_color_validation/regional_refinement/preserve_accepted_red/masks/howe_grow5_preserve/200017458_00003_2/02_text_black.png": "c696fdba3f4bbd4e3a68390b72a8ce711d4b2c1e48409132ee089105682ee580"
+      }
+    },
+    {
+      "id": "R03",
+      "page": "200010454_00002_2",
+      "howe": {
+        "source": "tmp_work/test_only_challenge_search_20261009/red_retention_validation/scratch/200010454_00002_2/graph_output.bin",
+        "sha256": "58e583e4aec77e48c3eb0650506b4630c8d157acb96da94f1f90903252475000",
+        "saved_black_after_priority_match": true
+      },
+      "red_pixels": 22842,
+      "removed_howe_pixels": 16522,
+      "masks_sha256": {
+        "tmp_work/test_only_challenge_search_20261009/red_local_color_validation/regional_refinement/preserve_accepted_red/masks/howe_grow5_preserve/200010454_00002_2/03_text_red.png": "7dba80a9233dab3d4be42e8e60b4d68a9ae6a8e997275fb4fd51238a43313803",
+        "tmp_work/test_only_challenge_search_20261009/red_local_color_validation/regional_refinement/preserve_accepted_red/masks/howe_grow5_preserve/200010454_00002_2/02_text_black.png": "aac5a1a77ea7f64a3fa22fe4a4aa76370d8de920fd16cd682a30d7b6dbfe60e3"
+      }
+    }
+  ],
+  "source_protocol_sha256": "3df2bd0d25a73e862c246f160d21fba57c6657c2533b2a4e4b3633642250bd5e",
+  "pipeline_sha256": "bbc130a1761be21dfa7ff6d5ec9bc29e34155a56dfa405d91daa6a989a77f2ec",
+  "checkpoint_sha256": "1a5decb747e34e8b51ccea96b598fe3c6ec0e7f7a6f8df6cffc3135d8281a7f3",
+  "background_sha256": "2a96dbde5301415c593dc1d119410e7a077a6ac15ea3d8d8d5f8d4021dc3897c",
+  "parameters": {
+    "seed": 999,
+    "steps": 20,
+    "patch": 128,
+    "overlap": 32,
+    "shared_initial_noise": true
+  },
+  "red": "Copy original RGB after inference",
+  "stepwise_noise_matched_between_black_masks": false
+}

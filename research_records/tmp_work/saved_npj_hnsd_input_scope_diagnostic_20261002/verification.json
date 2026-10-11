@@ -1,0 +1,77 @@
+{
+  "status": "passed",
+  "records": [
+    {
+      "region": "whole_crop",
+      "xywh": [
+        0,
+        0,
+        620,
+        620
+      ],
+      "roles": {
+        "original_page": {
+          "edit": 753,
+          "hold": 1197,
+          "extra": 0,
+          "protect": 49156,
+          "red": 0
+        },
+        "reference_crop": {
+          "edit": 750,
+          "hold": 1178,
+          "extra": 0,
+          "protect": 49342,
+          "red": 0
+        },
+        "saved_crop": {
+          "edit": 0,
+          "hold": 3313,
+          "extra": 0,
+          "protect": 108757,
+          "red": 0
+        }
+      },
+      "figure": "whole_crop_scope_input_roles.png"
+    },
+    {
+      "region": "dark_mass",
+      "xywh": [
+        170,
+        300,
+        350,
+        210
+      ],
+      "roles": {
+        "original_page": {
+          "edit": 212,
+          "hold": 518,
+          "extra": 0,
+          "protect": 11894,
+          "red": 0
+        },
+        "reference_crop": {
+          "edit": 212,
+          "hold": 525,
+          "extra": 0,
+          "protect": 12016,
+          "red": 0
+        },
+        "saved_crop": {
+          "edit": 0,
+          "hold": 1075,
+          "extra": 0,
+          "protect": 31691,
+          "red": 0
+        }
+      },
+      "figure": "dark_mass_scope_input_roles.png"
+    }
+  ],
+  "page_reference_pixels_exact": true,
+  "reference_crop_pixels_exact": true,
+  "stored_crop_reuses_exact_frozen_followup_masks": true,
+  "thresholds_changed": false,
+  "restoration": false,
+  "pixel_GT": false
+}

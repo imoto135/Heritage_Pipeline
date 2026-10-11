@@ -1,0 +1,64 @@
+{
+  "scope": "Visual review of native ROIs, whole-page overviews, all selected-component source/mask contexts and available component DDRM comparisons. Not dense GT.",
+  "cases": [
+    {
+      "id": "F01",
+      "review_complete": true,
+      "howe_vs_csc": "主な本文と小さな傍記は両方式で概ね保持され、本文の差は小さい。",
+      "remaining_limit": "Howeは走査枠・黒帯付近の粒状像も多く拾う。",
+      "isolated_review": "30成分141画素の極小点を除去。本文確認矩形内の12画素を文字欠落とは同一視しない。主な傍記の字形は保持。"
+    },
+    {
+      "id": "F02",
+      "review_complete": true,
+      "howe_vs_csc": "HoweはCSCで断片化する細い本文の曲線を連続して保持する。",
+      "remaining_limit": "青灰色像の由来や裏移り残存量は画素正解がなく未定量。",
+      "isolated_review": "変更0。Howeと全ページの黒・赤マスクが同じため出力再利用。"
+    },
+    {
+      "id": "F03",
+      "review_complete": true,
+      "howe_vs_csc": "Howeは本文と上枠をCSCより連続して保持する。",
+      "remaining_limit": "上部の枝状像は両方式で黒く残る。紙面損傷の復元ではない。",
+      "isolated_review": "小点1成分57画素を除去するが、大きな枝状像は残る。本文確認矩形のマスク変更は0。"
+    },
+    {
+      "id": "F04",
+      "review_complete": true,
+      "howe_vs_csc": "CSCでは朱印がほぼ消え、Howeでは印影の形が黒く残る。本文はHoweの方が連続する箇所がある。",
+      "remaining_limit": "保存CSC赤が0画素のため朱色を保持できない。",
+      "isolated_review": "3成分118画素は朱印外の点。朱印の赤検出漏れは解決しない。"
+    },
+    {
+      "id": "F05",
+      "review_complete": true,
+      "howe_vs_csc": "主ROIでは両方式の本文は近い。全ページではHoweが下部の細い筆画をより連続して残す箇所がある。",
+      "remaining_limit": "文字に接触した粒状部分と走査枠・余白の細点が残る。",
+      "isolated_review": "27成分475画素を除去。余白の一部の点に効くが、群集した細点は残る。本文間の独立微小点の由来は未注釈。"
+    },
+    {
+      "id": "F06",
+      "review_complete": true,
+      "howe_vs_csc": "日付・署名の主な字形は両方式で保持。隣接本文の細い曲線はHoweの方が連続する箇所がある。",
+      "remaining_limit": "Howeは余白の細点も拾う。日付直下の独立点は汚れか記号か未確定。",
+      "isolated_review": "3成分205画素を除去。日付・署名の文字範囲のマスク変更は0。日付下の点75画素は汚れか記号か未確定として保留。"
+    }
+  ],
+  "unannotated_selected_points": [
+    {
+      "id": "F01",
+      "component_index": 17,
+      "note": "Extremely small separated point between text; source role unannotated"
+    },
+    {
+      "id": "F05",
+      "component_index": 23,
+      "note": "Small separated mark between text columns; source role unannotated"
+    },
+    {
+      "id": "F06",
+      "component_index": 2,
+      "note": "Point below date column; cannot certify dirt rather than a symbol without annotation"
+    }
+  ]
+}

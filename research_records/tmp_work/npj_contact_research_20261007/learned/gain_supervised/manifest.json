@@ -1,0 +1,21 @@
+{
+  "mode": "gain_supervised",
+  "steps": 8000,
+  "source_sha256": "6654c15a8ccce69bca04a57c9939c96812d60bb15dbdd436ae97abcab0bb910f",
+  "parent_source_sha256": "3fdccec0d7e5a960ff4bbbb978117061145044e11a266dbbb14bbfe4cd63636c",
+  "excluded_books": [
+    "100249371",
+    "200019865",
+    "100249537",
+    "100249416",
+    "200014740",
+    "200003076"
+  ],
+  "data_sha256": "dd69562fa922d6b0df677382834401f7d18bb4d041f88bb41b99582c6479d022",
+  "changes": "head initial bias -2, random .01 initialization, float32 gain, .2 supervised OD L1 auxiliary loss",
+  "reason": "first constrained gain run collapsed to zero gain; investigate optimization rather than declaring constraint impossible",
+  "loss": "RGB L1 + .25 gradient L1 + .2 known artificial OD L1",
+  "test_data_used": false,
+  "real_images_used": false,
+  "created": 1791367936.5383272
+}

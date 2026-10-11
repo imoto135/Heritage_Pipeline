@@ -1,0 +1,21 @@
+{
+  "page": "200025191_00004_2",
+  "name": "region_color_logistic",
+  "book": "200025191",
+  "role": "development",
+  "original": "data/train/200025191/200025191_00004_2.jpg",
+  "source_sha256": "28435ed05f9d48efa60f467c628616a3e5dc294642cab424e0014146494add7a",
+  "model_sha256": "362f746f5d6b3266c94004d578207634a4062a64c7555f320506beace2db1e9e",
+  "threshold": 0.5,
+  "script_sha256": "7f7e895a1b9f0b4204025264c530e67f4e3c6c9fe523d4de3c0c632c67ddd212",
+  "mark_pixels": 527645,
+  "seconds": 1.3692985624074936,
+  "training_points": 924,
+  "training": "Tentative original-development points/regions; no validation labels used",
+  "classifier_has_no_stain_head": true,
+  "no_full_pixel_GT": true,
+  "outputs": {
+    "mark_mask.png": "54618a8365112006788092e5fe2f54519a8b1bbf59aee82ff4d1de04bfcde4c9",
+    "mark_probability_preview.png": "efc1228649372abdd5f3828bfe13517d5619eed15d28ce14a2d0821df4366f4d"
+  }
+}

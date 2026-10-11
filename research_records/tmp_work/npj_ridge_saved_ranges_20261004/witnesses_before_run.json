@@ -1,0 +1,85 @@
+{
+  "regions": [
+    {
+      "id": "new_page_lower",
+      "name": "brown_point",
+      "xywh": [
+        460,
+        420,
+        140,
+        160
+      ],
+      "role": "brown_point_material_unconfirmed"
+    },
+    {
+      "id": "new_page_lower",
+      "name": "gray_residual",
+      "xywh": [
+        520,
+        180,
+        130,
+        140
+      ],
+      "role": "saved_gray_residual"
+    },
+    {
+      "id": "known_upper_stain",
+      "name": "brown_spot",
+      "xywh": [
+        230,
+        130,
+        180,
+        140
+      ],
+      "role": "visible_brown_spot"
+    },
+    {
+      "id": "known_upper_stain",
+      "name": "adjacent_writing",
+      "xywh": [
+        280,
+        265,
+        180,
+        240
+      ],
+      "role": "observed_writing"
+    },
+    {
+      "id": "known_left_marks",
+      "name": "slender_mark",
+      "xywh": [
+        150,
+        270,
+        180,
+        230
+      ],
+      "role": "slender_mark_material_unconfirmed"
+    },
+    {
+      "id": "known_right_writing",
+      "name": "writing_control",
+      "xywh": [
+        100,
+        100,
+        500,
+        500
+      ],
+      "role": "observed_writing"
+    },
+    {
+      "id": "known_lower_writing",
+      "name": "writing_control",
+      "xywh": [
+        100,
+        100,
+        500,
+        500
+      ],
+      "role": "observed_writing"
+    }
+  ],
+  "selected_before_policy_run": true,
+  "selected_from_original_and_saved_baseline": true,
+  "pixel_GT": false,
+  "no_roi_passed_to_policy": true
+}

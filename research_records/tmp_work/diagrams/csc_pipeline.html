@@ -1,0 +1,527 @@
+<title>CSC パイプライン（現行版）</title>
+<style>
+  :root {
+    --paper: #ece3d2;
+    --paper-2: #e2d7c1;
+    --ink: #241d12;
+    --ink-soft: #5a5041;
+    --line: #c9bb9e;
+    --card: #f6f0e4;
+    --card-border: #d9cbac;
+    --vermillion: #a8402a;
+    --vermillion-soft: #f1ddd3;
+    --ochre: #96702d;
+    --ochre-soft: #f0e3c7;
+    --slate-text: #453b28;
+    --gate-bg: #efe6d1;
+    --mono-tag: #7a6d51;
+    --shadow: 0 1px 2px rgba(36, 29, 18, 0.06), 0 6px 20px rgba(36, 29, 18, 0.05);
+  }
+
+  :root[data-theme="dark"] {
+    --paper: #1b160f;
+    --paper-2: #221b12;
+    --ink: #ecdfc2;
+    --ink-soft: #b7a988;
+    --line: #4a4130;
+    --card: #241d13;
+    --card-border: #4a4130;
+    --vermillion: #e07a5c;
+    --vermillion-soft: #3a2019;
+    --ochre: #d9b45c;
+    --ochre-soft: #362a14;
+    --slate-text: #d8cba9;
+    --gate-bg: #2a2216;
+    --mono-tag: #a6976f;
+    --shadow: 0 1px 2px rgba(0, 0, 0, 0.3), 0 8px 24px rgba(0, 0, 0, 0.35);
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --paper: #1b160f;
+      --paper-2: #221b12;
+      --ink: #ecdfc2;
+      --ink-soft: #b7a988;
+      --line: #4a4130;
+      --card: #241d13;
+      --card-border: #4a4130;
+      --vermillion: #e07a5c;
+      --vermillion-soft: #3a2019;
+      --ochre: #d9b45c;
+      --ochre-soft: #362a14;
+      --slate-text: #d8cba9;
+      --gate-bg: #2a2216;
+      --mono-tag: #a6976f;
+      --shadow: 0 1px 2px rgba(0, 0, 0, 0.3), 0 8px 24px rgba(0, 0, 0, 0.35);
+    }
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: "Hiragino Kaku Gothic ProN", "Yu Gothic", "Noto Sans JP", "Hiragino Sans", sans-serif;
+    line-height: 1.7;
+    padding: 48px 20px 80px;
+  }
+
+  .wrap { max-width: 860px; margin: 0 auto; }
+
+  header {
+    margin-bottom: 40px;
+    border-bottom: 1px solid var(--line);
+    padding-bottom: 24px;
+  }
+
+  .eyebrow {
+    font-family: "SF Mono", "Menlo", "Consolas", monospace;
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    color: var(--mono-tag);
+    text-transform: uppercase;
+  }
+
+  h1 {
+    font-family: "Hiragino Mincho ProN", "Yu Mincho", "Noto Serif JP", serif;
+    font-weight: 600;
+    font-size: clamp(26px, 4vw, 34px);
+    margin: 6px 0 8px;
+    text-wrap: balance;
+  }
+
+  .lede {
+    color: var(--ink-soft);
+    font-size: 15px;
+    max-width: 62ch;
+  }
+
+  .lede code {
+    font-family: "SF Mono", "Menlo", "Consolas", monospace;
+    font-size: 13px;
+    color: var(--slate-text);
+  }
+
+  /* ---- pipeline spine ---- */
+  .pipeline {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .connector {
+    width: 2px;
+    height: 28px;
+    background: var(--line);
+    margin: 0 auto;
+    position: relative;
+  }
+  .connector::after {
+    content: "";
+    position: absolute;
+    bottom: -1px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 7px solid var(--line);
+  }
+
+  .step {
+    background: var(--card);
+    border: 1px solid var(--card-border);
+    border-radius: 3px;
+    box-shadow: var(--shadow);
+    padding: 18px 22px;
+  }
+
+  .step-head {
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+
+  .step-num {
+    font-family: "SF Mono", "Menlo", "Consolas", monospace;
+    font-size: 12px;
+    color: var(--mono-tag);
+    letter-spacing: 0.04em;
+  }
+
+  .step-title {
+    font-weight: 700;
+    font-size: 17px;
+  }
+
+  .step-func {
+    font-family: "SF Mono", "Menlo", "Consolas", monospace;
+    font-size: 12px;
+    color: var(--mono-tag);
+    background: var(--paper-2);
+    border: 1px solid var(--card-border);
+    border-radius: 2px;
+    padding: 1px 6px;
+  }
+
+  .step-body {
+    margin-top: 8px;
+    font-size: 14.5px;
+    color: var(--slate-text);
+  }
+
+  .step-body .param {
+    font-family: "SF Mono", "Menlo", "Consolas", monospace;
+    font-size: 13px;
+    color: var(--ink);
+    background: var(--paper-2);
+    padding: 0 4px;
+    border-radius: 2px;
+  }
+
+  .rule-list {
+    margin: 10px 0 0;
+    padding-left: 18px;
+    font-size: 14px;
+  }
+  .rule-list li { margin: 3px 0; }
+
+  /* ---- gate branch (side-annotation) ---- */
+  .with-gate {
+    display: flex;
+    align-items: stretch;
+    gap: 0;
+  }
+  .with-gate .step { flex: 1 1 auto; }
+
+  .gate-link {
+    display: flex;
+    align-items: center;
+    flex: 0 0 auto;
+  }
+  .gate-link .h-line {
+    width: 26px;
+    height: 2px;
+    background: var(--line);
+  }
+
+  .gate {
+    flex: 0 0 250px;
+    background: var(--gate-bg);
+    border: 1px dashed var(--card-border);
+    border-radius: 3px;
+    padding: 14px 16px;
+    font-size: 13px;
+    color: var(--slate-text);
+  }
+  .gate-title {
+    font-weight: 700;
+    font-size: 13px;
+    color: var(--ink);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-bottom: 6px;
+  }
+  .gate-title .dot {
+    width: 7px; height: 7px; border-radius: 50%;
+    background: var(--vermillion);
+    flex: none;
+  }
+  .gate p { margin: 4px 0; }
+  .gate .verdict {
+    font-family: "SF Mono", "Menlo", "Consolas", monospace;
+    font-size: 12px;
+  }
+  .gate .yes { color: var(--vermillion); }
+  .gate .no { color: var(--ink-soft); }
+
+  @media (max-width: 640px) {
+    .with-gate { flex-direction: column; }
+    .gate-link { flex-direction: column; padding: 6px 0; }
+    .gate-link .h-line { width: 2px; height: 16px; }
+    .gate { flex-basis: auto; }
+  }
+
+  /* ---- output row ---- */
+  .outputs {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+    margin-top: 8px;
+  }
+  @media (max-width: 640px) {
+    .outputs { grid-template-columns: 1fr 1fr; }
+  }
+
+  .out-card {
+    border-radius: 3px;
+    padding: 14px 14px 12px;
+    background: var(--card);
+    border: 1px solid var(--card-border);
+    border-top: 3px solid var(--accent);
+    box-shadow: var(--shadow);
+  }
+  .out-card .fname {
+    font-family: "SF Mono", "Menlo", "Consolas", monospace;
+    font-size: 11.5px;
+    color: var(--mono-tag);
+  }
+  .out-card .label {
+    font-weight: 700;
+    font-size: 14.5px;
+    margin: 3px 0 6px;
+    color: var(--accent);
+  }
+  .out-card .desc {
+    font-size: 12.5px;
+    color: var(--slate-text);
+  }
+
+  .out-bg    { --accent: var(--ink-soft); }
+  .out-black { --accent: var(--ink); }
+  .out-red   { --accent: var(--vermillion); }
+  .out-deg   { --accent: var(--ochre); }
+
+  /* ---- footnotes ---- */
+  .findings {
+    margin-top: 56px;
+    padding-top: 28px;
+    border-top: 1px solid var(--line);
+  }
+  .findings h2 {
+    font-family: "Hiragino Mincho ProN", "Yu Mincho", "Noto Serif JP", serif;
+    font-size: 19px;
+    margin: 0 0 16px;
+  }
+  .finding {
+    display: grid;
+    grid-template-columns: 22px 1fr;
+    gap: 10px;
+    margin-bottom: 18px;
+    font-size: 14px;
+  }
+  .finding .mark {
+    width: 22px; height: 22px;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--paper);
+    background: var(--vermillion);
+    flex: none;
+    margin-top: 2px;
+  }
+  .finding:nth-child(2) .mark { background: var(--ochre); }
+  .finding b { color: var(--ink); }
+  .finding .metric {
+    font-family: "SF Mono", "Menlo", "Consolas", monospace;
+    font-size: 12.5px;
+    color: var(--slate-text);
+  }
+
+  .src {
+    margin-top: 40px;
+    font-size: 12px;
+    color: var(--mono-tag);
+    font-family: "SF Mono", "Menlo", "Consolas", monospace;
+  }
+</style>
+
+<div class="wrap">
+
+  <header>
+    <div class="eyebrow">modules/ddrm_npj_v3/scripts/csc.py</div>
+    <h1>CSC（Color Space Clustering）パイプライン</h1>
+    <p class="lede">
+      枕草子ベンチマーク・本番データセット双方で現在使われている版（v3）。
+      2段階のGMMクラスタリングで背景・黒文字・赤文字・劣化(シミ/裏写り)の4クラスに分け、
+      2つのゲート処理で誤検出を防いでいる。
+    </p>
+  </header>
+
+  <div class="pipeline">
+
+    <div class="step">
+      <div class="step-head">
+        <span class="step-num">IN</span>
+        <span class="step-title">生スキャン画像</span>
+      </div>
+      <div class="step-body">BGR uint8。ACE前は照明ムラ・黄ばみで色分布が偏っている。</div>
+    </div>
+
+    <div class="connector"></div>
+
+    <div class="step">
+      <div class="step-head">
+        <span class="step-num">01</span>
+        <span class="step-title">ACE（Automatic Color Equalization）</span>
+        <span class="step-func">automatic_color_equalization_torch()</span>
+      </div>
+      <div class="step-body">
+        Rizzi 2003方式。画素対全探索の代わりに<span class="param">n_samples=200</span>点のランダム参照でO(N²)を近似。
+        GPU(torch)実装で0.5〜1秒/枚（CPU版は64〜67秒/枚）。<span class="param">alpha=5.0</span>
+      </div>
+    </div>
+
+    <div class="connector"></div>
+
+    <div class="step">
+      <div class="step-head">
+        <span class="step-num">02</span>
+        <span class="step-title">Stage 1 — GMM(2クラス)</span>
+        <span class="step-func">_fit_gmm_clusters()</span>
+      </div>
+      <div class="step-body">
+        輝度特徴量のみ（Lab-L / Luv-L / grayの3次元）→ <b>背景 / 非背景</b>。
+        平均L値が高い方を背景と判定。外周<span class="param">border_margin_ratio=4%</span>は強制的に背景扱い（綴じ影・スキャン端対策）。
+      </div>
+    </div>
+
+    <div class="connector"></div>
+
+    <div class="step">
+      <div class="step-head">
+        <span class="step-num">03</span>
+        <span class="step-title">Stage 2 — GMM(3クラス)</span>
+        <span class="step-func">_fit_gmm_clusters()</span>
+      </div>
+      <div class="step-body">
+        非背景画素のみ、RGB+CIELab+CIELuv 9次元特徴量で3クラスに分割。
+        <ul class="rule-list">
+          <li>平均L値が最も低いクラスタ → <b>黒文字候補</b></li>
+          <li>残り2クラスタのうち平均a値が高い方 → <b>赤文字候補</b>（次段でゲート）</li>
+          <li>残り1クラスタ → <b>劣化候補</b>（シミ・裏写り）</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="connector"></div>
+
+    <div class="with-gate">
+      <div class="step">
+        <div class="step-head">
+          <span class="step-num">04</span>
+          <span class="step-title">赤文字ゲート</span>
+          <span class="step-func">_filter_red_candidate_by_component()</span>
+        </div>
+        <div class="step-body">
+          赤文字候補クラスタの平均a値が<span class="param">red_a_min=133</span>未満なら「朱印なし文献」として全て劣化のまま。
+          満たす場合は<b>連結成分ごと</b>に絶対HSV基準（<span class="param">hue≤12|≥168 & sat&gt;180</span>）で支持率を判定し、
+          <span class="param">red_hsv_support_min=0.05</span>未満の成分は劣化に残す。
+        </div>
+      </div>
+      <div class="gate-link"><div class="h-line"></div></div>
+      <div class="gate">
+        <div class="gate-title"><span class="dot"></span>なぜ2段階？</div>
+        <p><span class="verdict no">✕ ページ全体を1塊で判定</span> — 本物の朱印1つが平均を押し上げ、シミ由来の誤検出片(数百〜数千)を道連れで通過させる</p>
+        <p><span class="verdict yes">✓ 連結成分ごとに判定</span> — 朱印だけを残し、茶色いシミの誤検出を個別に除外できる</p>
+      </div>
+    </div>
+
+    <div class="connector"></div>
+
+    <div class="step">
+      <div class="step-head">
+        <span class="step-num">05</span>
+        <span class="step-title">モルフォロジー + 重複除去</span>
+        <span class="step-func">_apply_morphology()</span>
+      </div>
+      <div class="step-body">
+        黒文字・赤文字マスクに<span class="param">close(k=3)→open(k=1)</span>を適用（断片ストロークを繋ぎ孤立ノイズを除去）。
+        その後、劣化マスクから黒文字・赤文字領域を差し引く。
+      </div>
+    </div>
+
+    <div class="connector"></div>
+
+    <div class="with-gate">
+      <div class="step">
+        <div class="step-head">
+          <span class="step-num">06</span>
+          <span class="step-title">インク救済ゲート</span>
+          <span class="step-func">_rescue_ink_like_degradation()</span>
+        </div>
+        <div class="step-body">
+          劣化クラスタの連結成分のうち、<span class="param">gray平均&lt;90</span> かつ <span class="param">fill_ratio&lt;0.5</span>
+          （細長い=文字ストロークらしい形状）のものを黒文字側へ救済し、劣化マスクから除外する。
+        </div>
+      </div>
+      <div class="gate-link"><div class="h-line"></div></div>
+      <div class="gate">
+        <div class="gate-title"><span class="dot"></span>何を防いでいる？</div>
+        <p>Stage2は「最も暗いクラスタ=黒文字」で判定するため、濃淡に幅がある(かすれた)筆致は劣化クラスタに引きずり込まれやすい</p>
+        <p>本文のみの実ページで、黒文字と判定されるべき画素の<b>45〜75%</b>が誤って劣化に分類される例を確認</p>
+      </div>
+    </div>
+
+    <div class="connector"></div>
+
+    <div class="step" style="border-style:dashed; opacity:0.75;">
+      <div class="step-head">
+        <span class="step-num">—</span>
+        <span class="step-title">black_dilate_r（現在デフォルト無効）</span>
+      </div>
+      <div class="step-body">
+        黒文字周辺を膨張させ近傍の劣化誤検出を除外するオプション。<span class="param">7 → 0</span>に変更済み
+        （黒文字近傍の本物のインク画素が無条件に消える副作用があったため）。
+      </div>
+    </div>
+
+    <div class="connector"></div>
+
+    <div class="step" style="background:var(--paper-2); border-style:solid;">
+      <div class="step-head">
+        <span class="step-num">OUT</span>
+        <span class="step-title">4マスクを出力</span>
+      </div>
+      <div class="outputs">
+        <div class="out-card out-bg">
+          <div class="fname">05_background.png</div>
+          <div class="label">背景</div>
+          <div class="desc">白=背景クラス</div>
+        </div>
+        <div class="out-card out-black">
+          <div class="fname">02_text_black.png</div>
+          <div class="label">黒文字</div>
+          <div class="desc">黒=文字クラス（反転保存）</div>
+        </div>
+        <div class="out-card out-red">
+          <div class="fname">03_text_red.png</div>
+          <div class="label">赤文字</div>
+          <div class="desc">黒=文字クラス（反転保存）</div>
+        </div>
+        <div class="out-card out-deg">
+          <div class="fname">04_degradation.png</div>
+          <div class="label">劣化</div>
+          <div class="desc">白=劣化クラス（シミ・裏写り）</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="findings">
+    <h2>この版で修正済みの2つの弱点</h2>
+    <div class="finding">
+      <div class="mark">1</div>
+      <div>
+        <b>赤文字/劣化の相対評価設計の弱点</b> — 修士論文が説明する「劣化画素をGMM2クラスに分け、相対的な赤み指標で分離」という設計には絶対閾値がなく、
+        本物の朱印が無いページでも強制的に何かを赤と判定してしまう。連結成分単位の絶対HSV基準を追加して修正。
+        <div class="metric">誤検出成分: 10,578個 → 94個（テストページ実測）</div>
+      </div>
+    </div>
+    <div class="finding">
+      <div class="mark">2</div>
+      <div>
+        <b>Stage2の黒文字/劣化の濃淡誤分類</b> — 「最も暗いクラスタ→黒文字」という相対判定のため、かすれた筆致が劣化クラスタに引きずり込まれる。
+        gray/fill_ratioベースの救済ロジックで対策。
+        <div class="metric">本文のみのページで黒画素の45〜75%が誤分類される例を確認</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="src">Source: modules/ddrm_npj_v3/scripts/csc.py, ace.py — 2026-07-30時点</div>
+
+</div>

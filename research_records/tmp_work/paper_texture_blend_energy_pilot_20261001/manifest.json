@@ -1,0 +1,29 @@
+{
+  "settings": {
+    "pages": 29,
+    "ROIs": 90,
+    "fixed": "current mask, direction holds, applied, median-qualified paper, absolute24px donor quilt and source maps",
+    "control": "previous observed_Lab field and alpha recomposed exactly before changes",
+    "decomposition": "per connected selected component, reference-normalized finite9x9 Gaussian sigma1.2 of baseline/quilt L",
+    "tone": "same original alpha8 absolute Lab blend, including a/b",
+    "energy": "target variance=(1-beta)*var_baseline+beta*var_quilt; actual variance from weights and measured component covariance",
+    "gain": "sqrt(target/actual), clipped[1,sqrt2]; zero actual <=1e-12 uses1; statistical model, not a guaranteed output variance",
+    "beta": {
+      "energy8": "same alpha8",
+      "texture4_energy": "clip((distance-1)/4,0,1), zero without qualified24px donor"
+    },
+    "update": "same first inside pixel fixed and alpha>0 geometry as absolute trial",
+    "no_new_donors": true,
+    "no_new_noise": true,
+    "new_DDRM": false,
+    "pixel_GT": false,
+    "development": true
+  },
+  "dependencies": {
+    "scripts/benchmark/probe_paper_texture_blend_energy.py": "f199e7cf25d1f340a01bf89f2ab803040f052c27ec034f505983fde3434b332a",
+    "scripts/benchmark/probe_observed_absolute_paper_patches.py": "10ec86071397ece35886ab0245ea96c0fe401ca5431008f42a2f13d0b2cb044f",
+    "tmp_work/observed_absolute_paper_patches_pilot_20261001/manifest.json": "3caa4d62f2288c94692984bea39a43b375eb15e0e004d062f7de8ebe3758a2b1",
+    "tmp_work/observed_absolute_paper_patches_pilot_20261001/complete.json": "5a85cf590d496b1e42c8672a3282916ee7bd5fdf508c57357ef90a63751a8932"
+  },
+  "source_sha256": "f199e7cf25d1f340a01bf89f2ab803040f052c27ec034f505983fde3434b332a"
+}

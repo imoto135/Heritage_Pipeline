@@ -1,0 +1,373 @@
+{
+  "cases": [
+    {
+      "id": "fresh_lower_paper",
+      "original_and_baseline_exact": true,
+      "methods": {
+        "no_guard": {
+          "applied_pixels": 78031,
+          "changed_pixels": 77911,
+          "dark_to_bright_pixels": 54303,
+          "bright_green_in_applied": 0,
+          "mandatory_exact": true,
+          "outside_applied_exact": true,
+          "reference_selection_independently_recomputed": true
+        },
+        "ridge_guard": {
+          "applied_pixels": 806,
+          "changed_pixels": 795,
+          "dark_to_bright_pixels": 204,
+          "bright_green_in_applied": 0,
+          "mandatory_exact": true,
+          "outside_applied_exact": true,
+          "reference_selection_independently_recomputed": true
+        },
+        "ridge_and_colour": {
+          "applied_pixels": 424,
+          "changed_pixels": 421,
+          "dark_to_bright_pixels": 117,
+          "bright_green_in_applied": 0,
+          "mandatory_exact": true,
+          "outside_applied_exact": true,
+          "reference_selection_independently_recomputed": true
+        }
+      }
+    },
+    {
+      "id": "fresh_binding_mark",
+      "original_and_baseline_exact": true,
+      "methods": {
+        "no_guard": {
+          "applied_pixels": 47818,
+          "changed_pixels": 47678,
+          "dark_to_bright_pixels": 31844,
+          "bright_green_in_applied": 0,
+          "mandatory_exact": true,
+          "outside_applied_exact": true,
+          "reference_selection_independently_recomputed": true
+        },
+        "ridge_guard": {
+          "applied_pixels": 2956,
+          "changed_pixels": 2915,
+          "dark_to_bright_pixels": 1209,
+          "bright_green_in_applied": 0,
+          "mandatory_exact": true,
+          "outside_applied_exact": true,
+          "reference_selection_independently_recomputed": true
+        },
+        "ridge_and_colour": {
+          "applied_pixels": 2818,
+          "changed_pixels": 2781,
+          "dark_to_bright_pixels": 1197,
+          "bright_green_in_applied": 0,
+          "mandatory_exact": true,
+          "outside_applied_exact": true,
+          "reference_selection_independently_recomputed": true
+        }
+      }
+    },
+    {
+      "id": "wormhole",
+      "original_and_baseline_exact": true,
+      "methods": {
+        "no_guard": {
+          "applied_pixels": 5711,
+          "changed_pixels": 5701,
+          "dark_to_bright_pixels": 4208,
+          "bright_green_in_applied": 0,
+          "mandatory_exact": true,
+          "outside_applied_exact": true,
+          "reference_selection_independently_recomputed": true
+        },
+        "ridge_guard": {
+          "applied_pixels": 4073,
+          "changed_pixels": 4070,
+          "dark_to_bright_pixels": 3402,
+          "bright_green_in_applied": 0,
+          "mandatory_exact": true,
+          "outside_applied_exact": true,
+          "reference_selection_independently_recomputed": true
+        },
+        "ridge_and_colour": {
+          "applied_pixels": 4041,
+          "changed_pixels": 4038,
+          "dark_to_bright_pixels": 3402,
+          "bright_green_in_applied": 0,
+          "mandatory_exact": true,
+          "outside_applied_exact": true,
+          "reference_selection_independently_recomputed": true
+        }
+      }
+    },
+    {
+      "id": "seal_control",
+      "original_and_baseline_exact": true,
+      "methods": {
+        "no_guard": {
+          "applied_pixels": 502,
+          "changed_pixels": 498,
+          "dark_to_bright_pixels": 273,
+          "bright_green_in_applied": 0,
+          "mandatory_exact": true,
+          "outside_applied_exact": true,
+          "reference_selection_independently_recomputed": true
+        },
+        "ridge_guard": {
+          "applied_pixels": 0,
+          "changed_pixels": 0,
+          "dark_to_bright_pixels": 0,
+          "bright_green_in_applied": 0,
+          "mandatory_exact": true,
+          "outside_applied_exact": true,
+          "reference_selection_independently_recomputed": true
+        },
+        "ridge_and_colour": {
+          "applied_pixels": 0,
+          "changed_pixels": 0,
+          "dark_to_bright_pixels": 0,
+          "bright_green_in_applied": 0,
+          "mandatory_exact": true,
+          "outside_applied_exact": true,
+          "reference_selection_independently_recomputed": true
+        }
+      }
+    },
+    {
+      "id": "fresh_printed_text",
+      "original_and_baseline_exact": true,
+      "methods": {
+        "no_guard": {
+          "applied_pixels": 0,
+          "changed_pixels": 0,
+          "dark_to_bright_pixels": 0,
+          "bright_green_in_applied": 0,
+          "mandatory_exact": true,
+          "outside_applied_exact": true,
+          "reference_selection_independently_recomputed": true
+        },
+        "ridge_guard": {
+          "applied_pixels": 0,
+          "changed_pixels": 0,
+          "dark_to_bright_pixels": 0,
+          "bright_green_in_applied": 0,
+          "mandatory_exact": true,
+          "outside_applied_exact": true,
+          "reference_selection_independently_recomputed": true
+        },
+        "ridge_and_colour": {
+          "applied_pixels": 0,
+          "changed_pixels": 0,
+          "dark_to_bright_pixels": 0,
+          "bright_green_in_applied": 0,
+          "mandatory_exact": true,
+          "outside_applied_exact": true,
+          "reference_selection_independently_recomputed": true
+        }
+      }
+    },
+    {
+      "id": "unseen_lower_frame_mark",
+      "original_and_baseline_exact": true,
+      "methods": {
+        "no_guard": {
+          "applied_pixels": 0,
+          "changed_pixels": 0,
+          "dark_to_bright_pixels": 0,
+          "bright_green_in_applied": 0,
+          "mandatory_exact": true,
+          "outside_applied_exact": true,
+          "reference_selection_independently_recomputed": true
+        },
+        "ridge_guard": {
+          "applied_pixels": 0,
+          "changed_pixels": 0,
+          "dark_to_bright_pixels": 0,
+          "bright_green_in_applied": 0,
+          "mandatory_exact": true,
+          "outside_applied_exact": true,
+          "reference_selection_independently_recomputed": true
+        },
+        "ridge_and_colour": {
+          "applied_pixels": 0,
+          "changed_pixels": 0,
+          "dark_to_bright_pixels": 0,
+          "bright_green_in_applied": 0,
+          "mandatory_exact": true,
+          "outside_applied_exact": true,
+          "reference_selection_independently_recomputed": true
+        }
+      }
+    },
+    {
+      "id": "unseen_lower_binding_mark",
+      "original_and_baseline_exact": true,
+      "methods": {
+        "no_guard": {
+          "applied_pixels": 0,
+          "changed_pixels": 0,
+          "dark_to_bright_pixels": 0,
+          "bright_green_in_applied": 0,
+          "mandatory_exact": true,
+          "outside_applied_exact": true,
+          "reference_selection_independently_recomputed": true
+        },
+        "ridge_guard": {
+          "applied_pixels": 0,
+          "changed_pixels": 0,
+          "dark_to_bright_pixels": 0,
+          "bright_green_in_applied": 0,
+          "mandatory_exact": true,
+          "outside_applied_exact": true,
+          "reference_selection_independently_recomputed": true
+        },
+        "ridge_and_colour": {
+          "applied_pixels": 0,
+          "changed_pixels": 0,
+          "dark_to_bright_pixels": 0,
+          "bright_green_in_applied": 0,
+          "mandatory_exact": true,
+          "outside_applied_exact": true,
+          "reference_selection_independently_recomputed": true
+        }
+      }
+    },
+    {
+      "id": "saved_hnsd",
+      "original_and_baseline_exact": true,
+      "methods": {
+        "no_guard": {
+          "applied_pixels": 84833,
+          "changed_pixels": 84787,
+          "dark_to_bright_pixels": 59292,
+          "bright_green_in_applied": 0,
+          "mandatory_exact": true,
+          "outside_applied_exact": true,
+          "reference_selection_independently_recomputed": true
+        },
+        "ridge_guard": {
+          "applied_pixels": 8191,
+          "changed_pixels": 8185,
+          "dark_to_bright_pixels": 4600,
+          "bright_green_in_applied": 0,
+          "mandatory_exact": true,
+          "outside_applied_exact": true,
+          "reference_selection_independently_recomputed": true
+        },
+        "ridge_and_colour": {
+          "applied_pixels": 0,
+          "changed_pixels": 0,
+          "dark_to_bright_pixels": 0,
+          "bright_green_in_applied": 0,
+          "mandatory_exact": true,
+          "outside_applied_exact": true,
+          "reference_selection_independently_recomputed": true
+        }
+      }
+    },
+    {
+      "id": "page_200019865",
+      "original_and_baseline_exact": true,
+      "methods": {
+        "no_guard": {
+          "applied_pixels": 11073,
+          "changed_pixels": 11054,
+          "dark_to_bright_pixels": 7451,
+          "bright_green_in_applied": 0,
+          "mandatory_exact": true,
+          "outside_applied_exact": true,
+          "reference_selection_independently_recomputed": true
+        },
+        "ridge_guard": {
+          "applied_pixels": 99,
+          "changed_pixels": 98,
+          "dark_to_bright_pixels": 48,
+          "bright_green_in_applied": 0,
+          "mandatory_exact": true,
+          "outside_applied_exact": true,
+          "reference_selection_independently_recomputed": true
+        },
+        "ridge_and_colour": {
+          "applied_pixels": 82,
+          "changed_pixels": 82,
+          "dark_to_bright_pixels": 48,
+          "bright_green_in_applied": 0,
+          "mandatory_exact": true,
+          "outside_applied_exact": true,
+          "reference_selection_independently_recomputed": true
+        }
+      }
+    },
+    {
+      "id": "known_200010454_v2",
+      "original_and_baseline_exact": true,
+      "methods": {
+        "no_guard": {
+          "applied_pixels": 0,
+          "changed_pixels": 0,
+          "dark_to_bright_pixels": 0,
+          "bright_green_in_applied": 0,
+          "mandatory_exact": true,
+          "outside_applied_exact": true,
+          "reference_selection_independently_recomputed": true
+        },
+        "ridge_guard": {
+          "applied_pixels": 0,
+          "changed_pixels": 0,
+          "dark_to_bright_pixels": 0,
+          "bright_green_in_applied": 0,
+          "mandatory_exact": true,
+          "outside_applied_exact": true,
+          "reference_selection_independently_recomputed": true
+        },
+        "ridge_and_colour": {
+          "applied_pixels": 0,
+          "changed_pixels": 0,
+          "dark_to_bright_pixels": 0,
+          "bright_green_in_applied": 0,
+          "mandatory_exact": true,
+          "outside_applied_exact": true,
+          "reference_selection_independently_recomputed": true
+        }
+      }
+    },
+    {
+      "id": "old_full_page",
+      "original_and_baseline_exact": true,
+      "methods": {
+        "no_guard": {
+          "applied_pixels": 6415,
+          "changed_pixels": 6406,
+          "dark_to_bright_pixels": 4022,
+          "bright_green_in_applied": 0,
+          "mandatory_exact": true,
+          "outside_applied_exact": true,
+          "reference_selection_independently_recomputed": true
+        },
+        "ridge_guard": {
+          "applied_pixels": 106,
+          "changed_pixels": 104,
+          "dark_to_bright_pixels": 11,
+          "bright_green_in_applied": 0,
+          "mandatory_exact": true,
+          "outside_applied_exact": true,
+          "reference_selection_independently_recomputed": true
+        },
+        "ridge_and_colour": {
+          "applied_pixels": 0,
+          "changed_pixels": 0,
+          "dark_to_bright_pixels": 0,
+          "bright_green_in_applied": 0,
+          "mandatory_exact": true,
+          "outside_applied_exact": true,
+          "reference_selection_independently_recomputed": true
+        }
+      }
+    }
+  ],
+  "complete_planned_run": true,
+  "partial_run_due_to_out_of_bounds_control": false,
+  "source_dependencies_unchanged": true,
+  "native_masks_and_reference_audited": true,
+  "pixel_GT": false,
+  "adopted": false
+}

@@ -1,0 +1,132 @@
+{
+  "seed": 20261008,
+  "native_patch": 256,
+  "splits": {
+    "train": [
+      "100241706",
+      "200003803",
+      "200004107",
+      "200004148",
+      "200005798",
+      "200006665",
+      "200014740",
+      "200019865",
+      "200021063",
+      "200021712",
+      "200021869",
+      "brsk00000"
+    ],
+    "dev": [
+      "100249476",
+      "200008003",
+      "200021802",
+      "umgy00000"
+    ],
+    "test": [
+      "200003076",
+      "200018243",
+      "200021851",
+      "200021853",
+      "200022050"
+    ]
+  },
+  "samples_preview": [
+    {
+      "kind": "source_contrast_shape",
+      "mark_opacity": 0.13062159575576224,
+      "stain_opacity": 0.040787336996491376,
+      "same_color": false,
+      "seed": 20261008
+    },
+    {
+      "kind": "source_contrast_shape",
+      "mark_opacity": 0.11675453416744251,
+      "stain_opacity": 0.4099926949702306,
+      "same_color": false,
+      "seed": 20365737
+    },
+    {
+      "kind": "source_contrast_shape",
+      "mark_opacity": 0.518302793818837,
+      "stain_opacity": 0.4363899454643086,
+      "same_color": false,
+      "seed": 20470466
+    },
+    {
+      "kind": "punctuation",
+      "mark_opacity": 0.04093462771164496,
+      "stain_opacity": 0.14834166075890606,
+      "same_color": true,
+      "seed": 20575195
+    },
+    {
+      "kind": "seal",
+      "mark_opacity": 0.12020151418346478,
+      "stain_opacity": 0.1358648193956724,
+      "same_color": true,
+      "seed": 20679924
+    },
+    {
+      "kind": "punctuation",
+      "mark_opacity": 0.36817819733332396,
+      "stain_opacity": 0.45228323069776455,
+      "same_color": true,
+      "seed": 20784653
+    },
+    {
+      "kind": "line",
+      "mark_opacity": 0.0804034044932347,
+      "stain_opacity": 0.05547138984208072,
+      "same_color": true,
+      "seed": 20889382
+    },
+    {
+      "kind": "source_contrast_shape",
+      "mark_opacity": 0.16198479042881306,
+      "stain_opacity": 0.0911187130802556,
+      "same_color": false,
+      "seed": 20994111
+    },
+    {
+      "kind": "punctuation",
+      "mark_opacity": 0.3240818822992378,
+      "stain_opacity": 0.04874273934116737,
+      "same_color": true,
+      "seed": 21098840
+    },
+    {
+      "kind": "seal",
+      "mark_opacity": 0.7780872743082011,
+      "stain_opacity": 0.24937681408710782,
+      "same_color": true,
+      "seed": 21203569
+    },
+    {
+      "kind": "source_contrast_shape",
+      "mark_opacity": 0.1033433179734273,
+      "stain_opacity": 0.04717534111615081,
+      "same_color": false,
+      "seed": 21308298
+    },
+    {
+      "kind": "seal",
+      "mark_opacity": 0.10574666683610677,
+      "stain_opacity": 0.25604540955513594,
+      "same_color": true,
+      "seed": 21413027
+    }
+  ],
+  "source_patches_sha256": "dd69562fa922d6b0df677382834401f7d18bb4d041f88bb41b99582c6479d022",
+  "source_manifest_sha256": "b5a504dc037c05bef8c79edbfb123e61596a605d4081e98f0d176093b17891bb",
+  "synthetic_module_sha256": "cc3bd355d0414b5f490716fa45f244a67ceeb6b1c22806e4830e48afcfa528a1",
+  "GT": "Known digitally imposed mark and stain alpha layers only; shapes extracted from real contrast have no real ink GT",
+  "inputs": "RGB or RGB+input-estimated OD+input-estimated paper; never known clean/GT paper",
+  "real_validation_books_excluded": [
+    "100249416",
+    "200015779",
+    "200017458",
+    "200021637"
+  ],
+  "limitation": "Additive optical density is a controlled approximation, not verified physics of actual paper or red pigment",
+  "no_real_handwriting_GT": true
+}

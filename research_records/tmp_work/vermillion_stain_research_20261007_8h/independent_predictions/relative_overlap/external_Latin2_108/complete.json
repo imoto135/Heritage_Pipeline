@@ -1,0 +1,22 @@
+{
+  "name": "relative_overlap",
+  "page": "external_Latin2_108",
+  "book": "Latin2",
+  "role": "prospective_external",
+  "source_sha256": "b62502ce0aeb12f2e622870547b110c5ef1ee1aa93b9a5d19f4e1fe9985fcf89",
+  "resource_sha256": "cab717380cdd42485bdb78cba9e0afbbc7bae91878d544e85b43b9ebe7b59c77",
+  "protocol_sha256": "4f876d008f2cede2f0f845d7bd6ef94e25e216525e6609d75b2dc914dca4c397",
+  "script_sha256": "d1afa94d1dbccb16e01303d1866e9b247e8dd4b87543cf4eb9c3cbda92268280",
+  "native_inference_source_sha256": "04be92bef36d40cbb29da1ed410ea580e5112be110b1056d3d44e6d67531e903",
+  "threshold": 0.5,
+  "mark_pixels": 956996,
+  "seconds": 3.9008057257160544,
+  "not_for_training": true,
+  "no_pixel_or_reading_GT": true,
+  "outputs": {
+    "mark_mask.png": "5ef2f1f901e21d52467fe67012a9c7924118cc5b308d84a1fc0f570d81879eb4",
+    "mark_probability_preview.png": "78a5d16245c9209151c9ae0a929ff290dc0a9073b12427e909fade4d8b02053d",
+    "stain_probability_preview.png": "9cba329fa05921b9311671744714e6f98f5c4cf8f309870b782d8a43e4e5e64b",
+    "stain_mask.png": "f958a6c92dd0a7a8398dfc01883e0c67304bd6deda3562ca1ea3b123947fed70"
+  }
+}

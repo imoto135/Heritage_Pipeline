@@ -1,0 +1,51 @@
+{
+  "settings": {
+    "scope": "saved local DDRM output, only current edit intersect fixed top-margin band",
+    "mask_changes": false,
+    "DDRM_changes": false,
+    "original_in_edit_blending": false,
+    "paper_reference_gate": {
+      "context_px": 64,
+      "ring_inner_px": 3,
+      "ring_outer_px": 48,
+      "min_pixels": 256,
+      "min_L": 50,
+      "max_paper_L_drop": 4,
+      "min_paper_L_drop": -6,
+      "max_abs_delta_a": 2,
+      "max_abs_delta_b": 4,
+      "known_dark_guard_px": 4,
+      "max_gradient": 3,
+      "max_samples": 10000,
+      "robust_plane_iterations": 3
+    },
+    "reference": "adjacent unedited paper filtered by the same Lab/ink gates, no median-plane extrapolation",
+    "component_min_area": 64,
+    "min_boundary_pairs": 16,
+    "low_frequency_sigma_px": 12,
+    "boundary_error_smoothing_sigma_px": 8,
+    "boundary_scale_px": 6,
+    "max_L_offset": 6,
+    "max_ab_offset": 4,
+    "tone": "component median of known-paper minus generated adjacent pixel",
+    "boundary": "smooth known-paper minus generated low-frequency boundary bias, fading inward",
+    "combined": "tone first, then residual boundary bias",
+    "texture": "no texture synthesis",
+    "pixel_GT": false,
+    "training": false,
+    "restoration_recomputed": false,
+    "development": "second diagnostic after reviewing first; all 22 cases are development"
+  },
+  "dependencies": {
+    "scripts/benchmark/probe_adjacent_paper_boundary.py": "110abdf87d03e363f3098730ff640a4fb6934fb9acb9ec0ee3a311fd8b4af5d1",
+    "scripts/benchmark/probe_paper_tone_boundary.py": "df17434c209ef30ef823ab229113023df2d2503e296254faf8ccb096d2e6573c",
+    "tmp_work/paper_tone_boundary_pilot_20261001/manifest.json": "dc70afdee009093707b4117dfcbc9ce3f9e361670d0471c213f03f7a01018e5c",
+    "tmp_work/paper_tone_boundary_pilot_20261001/complete.json": "6637796e26236afd21504a198972f51823eaa0d1c85af94c9566fde740d9af48",
+    "tmp_work/paper_margin_defect_ddrm_20261001/manifest.json": "4144ebcec1bc15f2fbbf8d6bb9404974854aa55ea1139955eb2e74debdccc0e4",
+    "tmp_work/paper_margin_defect_ddrm_20261001/complete.json": "e80ed7bb006b9cdaac2918bc387f4ed98e5765cfeeaeb7936da25db1787eacf6"
+  },
+  "source_sha256": "110abdf87d03e363f3098730ff640a4fb6934fb9acb9ec0ee3a311fd8b4af5d1",
+  "pages": 14,
+  "regions": 22,
+  "selection": "same all 22 development ROIs; no outcome omission"
+}

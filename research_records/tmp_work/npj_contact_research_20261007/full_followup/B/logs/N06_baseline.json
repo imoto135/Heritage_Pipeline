@@ -1,0 +1,32 @@
+{
+  "id": "N06",
+  "page": "200018243_00007_1",
+  "variant": "baseline",
+  "seconds": 224.65793321374804,
+  "output": "tmp_work/npj_contact_research_20261007/full_followup/B/output/baseline/200018243_00007_1/result/200018243_00007_1.png",
+  "sha256": "52fedb91e6e7c6034a0dc4efef26b62aa2092ebc3b0802b569747273a554706b",
+  "command": [
+    "/home/imoto/miniconda3/envs/diffusion/bin/python",
+    "-B",
+    "/home/imoto/Heritage_Pipeline/tmp_work/npj_dirt_control_20261002/source_snapshot/ddrm_npj_v2/scripts/pipeline_ddrm.py",
+    "--input_dir",
+    "/home/imoto/Heritage_Pipeline/tmp_work/npj_contact_research_20261007/full_followup/B/inputs/baseline/N06",
+    "--output_dir",
+    "/home/imoto/Heritage_Pipeline/tmp_work/npj_contact_research_20261007/full_followup/B/output/baseline",
+    "--tmp_dir",
+    "/home/imoto/Heritage_Pipeline/tmp_work/npj_contact_research_20261007/full_followup/B/infer_tmp/N06_baseline",
+    "--mask_dir",
+    "/home/imoto/Heritage_Pipeline/tmp_work/npj_contact_research_20261007/full_followup/B/masks/baseline",
+    "--ckpt",
+    "/home/imoto/Heritage_Pipeline/modules/stain_removal/experiments/model_char/model_char/ckpt_epoch0350.pth",
+    "--back_ground",
+    "/home/imoto/Heritage_Pipeline/modules/ddrm_npj_v2/background/isemonogatari.png",
+    "--device",
+    "cuda:0",
+    "--patch_size",
+    "128",
+    "--overlap",
+    "32",
+    "--no_wandb"
+  ]
+}

@@ -1,0 +1,890 @@
+{
+  "cases": [
+    {
+      "case_id": "validation_00",
+      "page": "200021637_00003_2",
+      "book": "200021637",
+      "original": "data/val/200021637/200021637_00003_2.jpg",
+      "source_sha256": "8f1529dc441b3546249cb1931261d9401423923ae606b5bc7539b3f5b652d944",
+      "ROI": [
+        1160,
+        2320,
+        500,
+        460
+      ],
+      "name": "淡い印影と濃い朱印・茶色の折り目",
+      "role": "validation",
+      "category": "pale_seal",
+      "prior_history": "Original screened only in this session; project-wide prior usage not excluded",
+      "pixel_GT": false,
+      "source_manifest": "cases_frozen.json"
+    },
+    {
+      "case_id": "validation_01",
+      "page": "100249416_00002_2",
+      "book": "100249416",
+      "original": "data/val/100249416/100249416_00002_2.jpg",
+      "source_sha256": "31f4689eae8f8bc1c944000095d8850950bccafbae6816041b1ee46b113cd8fc",
+      "ROI": [
+        1570,
+        2480,
+        390,
+        380
+      ],
+      "name": "朱印と墨の交差",
+      "role": "validation",
+      "category": "seal_black_contact",
+      "prior_history": "Original screened only in this session; project-wide prior usage not excluded",
+      "pixel_GT": false,
+      "source_manifest": "cases_frozen.json"
+    },
+    {
+      "case_id": "validation_02",
+      "page": "100249416_00002_2",
+      "book": "100249416",
+      "original": "data/val/100249416/100249416_00002_2.jpg",
+      "source_sha256": "31f4689eae8f8bc1c944000095d8850950bccafbae6816041b1ee46b113cd8fc",
+      "ROI": [
+        1580,
+        1575,
+        390,
+        470
+      ],
+      "name": "茶色の場と墨印",
+      "role": "validation",
+      "category": "brown_negative",
+      "prior_history": "Original screened only in this session; project-wide prior usage not excluded",
+      "pixel_GT": false,
+      "source_manifest": "cases_frozen.json"
+    },
+    {
+      "case_id": "validation_03",
+      "page": "200017458_00003_2",
+      "book": "200017458",
+      "original": "data/test/200017458/200017458_00003_2.jpg",
+      "source_sha256": "dba458ff40c3944e93ccbda866a6683c4cdb6cc312576ec66dddfd5d9a0f5ac1",
+      "ROI": [
+        1830,
+        130,
+        280,
+        380
+      ],
+      "name": "赤褐色の朱印と紙の斑点",
+      "role": "validation",
+      "category": "seal",
+      "prior_history": "Original screened only in this session; project-wide prior usage not excluded",
+      "pixel_GT": false,
+      "source_manifest": "cases_frozen.json"
+    },
+    {
+      "case_id": "validation_04",
+      "page": "200017458_00003_2",
+      "book": "200017458",
+      "original": "data/test/200017458/200017458_00003_2.jpg",
+      "source_sha256": "dba458ff40c3944e93ccbda866a6683c4cdb6cc312576ec66dddfd5d9a0f5ac1",
+      "ROI": [
+        1590,
+        180,
+        240,
+        300
+      ],
+      "name": "朱印横の茶色の紙・斑点",
+      "role": "validation",
+      "category": "brown_negative",
+      "prior_history": "Original screened only in this session; project-wide prior usage not excluded",
+      "pixel_GT": false,
+      "source_manifest": "cases_frozen.json"
+    },
+    {
+      "case_id": "validation_05",
+      "page": "200015779_00089_2",
+      "book": "200015779",
+      "original": "data/train/200015779/200015779_00089_2.jpg",
+      "source_sha256": "cadc58d69497812b2a99065e399202d818255d759998b55e177def6b0b68a9d2",
+      "ROI": [
+        1730,
+        2700,
+        300,
+        400
+      ],
+      "name": "細い朱印と墨の近接",
+      "role": "validation",
+      "category": "seal",
+      "prior_history": "Original screened only in this session; project-wide prior usage not excluded",
+      "pixel_GT": false,
+      "source_manifest": "cases_frozen.json"
+    },
+    {
+      "case_id": "supplemental_known_book_06",
+      "page": "200010454_00012_1",
+      "book": "200010454",
+      "original": "data/test/200010454/200010454_00012_1.jpg",
+      "source_sha256": "44b26e75550a5011ce39b71197c1e7e2bd8e576a166241a95ce9afff4a26d259",
+      "ROI": [
+        1060,
+        500,
+        250,
+        260
+      ],
+      "name": "細い朱の傍線",
+      "role": "supplemental_known_book",
+      "category": "red_line",
+      "prior_history": "Original screened only in this session; project-wide prior usage not excluded",
+      "pixel_GT": false,
+      "source_manifest": "cases_frozen.json"
+    },
+    {
+      "case_id": "supplemental_known_book_07",
+      "page": "200010454_00012_1",
+      "book": "200010454",
+      "original": "data/test/200010454/200010454_00012_1.jpg",
+      "source_sha256": "44b26e75550a5011ce39b71197c1e7e2bd8e576a166241a95ce9afff4a26d259",
+      "ROI": [
+        1490,
+        680,
+        220,
+        260
+      ],
+      "name": "赤褐色の句点と墨",
+      "role": "supplemental_known_book",
+      "category": "red_punctuation",
+      "prior_history": "Original screened only in this session; project-wide prior usage not excluded",
+      "pixel_GT": false,
+      "source_manifest": "cases_frozen.json"
+    },
+    {
+      "case_id": "supplemental_known_book_08",
+      "page": "200010454_00006_2",
+      "book": "200010454",
+      "original": "data/test/200010454/200010454_00006_2.jpg",
+      "source_sha256": "065fb6a6055e9ec24dbb47e690c9672bf5506679ab5cad60924e79c330e2c3e7",
+      "ROI": [
+        1440,
+        620,
+        250,
+        270
+      ],
+      "name": "薄い朱の句点・小線",
+      "role": "supplemental_known_book",
+      "category": "red_punctuation",
+      "prior_history": "Original screened only in this session; project-wide prior usage not excluded",
+      "pixel_GT": false,
+      "source_manifest": "cases_frozen.json"
+    },
+    {
+      "case_id": "supplemental_known_book_09",
+      "page": "200010454_00006_2",
+      "book": "200010454",
+      "original": "data/test/200010454/200010454_00006_2.jpg",
+      "source_sha256": "065fb6a6055e9ec24dbb47e690c9672bf5506679ab5cad60924e79c330e2c3e7",
+      "ROI": [
+        1660,
+        370,
+        100,
+        500
+      ],
+      "name": "朱近傍の茶色の折り目",
+      "role": "supplemental_known_book",
+      "category": "brown_negative",
+      "prior_history": "Original screened only in this session; project-wide prior usage not excluded",
+      "pixel_GT": false,
+      "source_manifest": "cases_frozen.json"
+    },
+    {
+      "case_id": "supplemental_known_book_10",
+      "page": "200010454_00002_2",
+      "book": "200010454",
+      "original": "data/test/200010454/200010454_00002_2.jpg",
+      "source_sha256": "177776f90fc08b12e2f59a37773ef433556f43ebe47c503c2d676595a08a60d1",
+      "ROI": [
+        1655,
+        1810,
+        75,
+        195
+      ],
+      "name": "茶色の折り目・過去の誤保護診断",
+      "role": "supplemental_known_book",
+      "category": "brown_negative",
+      "prior_history": "Original screened only in this session; project-wide prior usage not excluded",
+      "pixel_GT": false,
+      "source_manifest": "cases_frozen.json"
+    },
+    {
+      "case": "external_00",
+      "page": "external_Latin14396_108",
+      "book": "Latin14396",
+      "original": "tmp_work/vermillion_stain_research_20261007_8h/external_originals/udiads/originals/U-DIADS-TL/U-DIADS-TL/Latin14396/img-Latin14396/test/108.jpg",
+      "source_sha256": "44cf4fd63fb49abc0a3181385fa52281ee2fafb77589e784602f4fbc935fc312",
+      "xywh_original": [
+        90,
+        530,
+        380,
+        280
+      ],
+      "description": "Small red initials among black Latin writing",
+      "kind": "observed_red",
+      "role": "external_qualitative_only",
+      "candidate_index": 7,
+      "no_method_predictions_seen": true,
+      "no_training_or_model_selection": true,
+      "no_expert_red_stain_GT": true,
+      "original_line_segmentation_split": "test",
+      "independent_of_local_Japanese_training": true,
+      "ROI": [
+        90,
+        530,
+        380,
+        280
+      ],
+      "case_id": "external_00",
+      "source_manifest": "external_originals/frozen_cases/cases_frozen.json"
+    },
+    {
+      "case": "external_01",
+      "page": "external_Latin14396_108",
+      "book": "Latin14396",
+      "original": "tmp_work/vermillion_stain_research_20261007_8h/external_originals/udiads/originals/U-DIADS-TL/U-DIADS-TL/Latin14396/img-Latin14396/test/108.jpg",
+      "source_sha256": "44cf4fd63fb49abc0a3181385fa52281ee2fafb77589e784602f4fbc935fc312",
+      "xywh_original": [
+        545,
+        120,
+        450,
+        260
+      ],
+      "description": "Faint red initials next to dark script",
+      "kind": "observed_red",
+      "role": "external_qualitative_only",
+      "candidate_index": 7,
+      "no_method_predictions_seen": true,
+      "no_training_or_model_selection": true,
+      "no_expert_red_stain_GT": true,
+      "original_line_segmentation_split": "test",
+      "independent_of_local_Japanese_training": true,
+      "ROI": [
+        545,
+        120,
+        450,
+        260
+      ],
+      "case_id": "external_01",
+      "source_manifest": "external_originals/frozen_cases/cases_frozen.json"
+    },
+    {
+      "case": "external_02",
+      "page": "external_Latin14396_275",
+      "book": "Latin14396",
+      "original": "tmp_work/vermillion_stain_research_20261007_8h/external_originals/udiads/originals/U-DIADS-TL/U-DIADS-TL/Latin14396/img-Latin14396/validation/275.jpg",
+      "source_sha256": "d903e3975788103774a9875b0dfb5244610f61063eea4b99ad5e6fe53ea94df7",
+      "xywh_original": [
+        350,
+        810,
+        430,
+        180
+      ],
+      "description": "Red and blue heading; blue must also remain",
+      "kind": "multiple_ink_control",
+      "role": "external_qualitative_only",
+      "candidate_index": 27,
+      "no_method_predictions_seen": true,
+      "no_training_or_model_selection": true,
+      "no_expert_red_stain_GT": true,
+      "original_line_segmentation_split": "validation",
+      "independent_of_local_Japanese_training": true,
+      "ROI": [
+        350,
+        810,
+        430,
+        180
+      ],
+      "case_id": "external_02",
+      "source_manifest": "external_originals/frozen_cases/cases_frozen.json"
+    },
+    {
+      "case": "external_03",
+      "page": "external_Latin14396_275",
+      "book": "Latin14396",
+      "original": "tmp_work/vermillion_stain_research_20261007_8h/external_originals/udiads/originals/U-DIADS-TL/U-DIADS-TL/Latin14396/img-Latin14396/validation/275.jpg",
+      "source_sha256": "d903e3975788103774a9875b0dfb5244610f61063eea4b99ad5e6fe53ea94df7",
+      "xywh_original": [
+        80,
+        1250,
+        240,
+        350
+      ],
+      "description": "Warm paper and folds without visible colored script",
+      "kind": "tentative_paper_negative",
+      "role": "external_qualitative_only",
+      "candidate_index": 27,
+      "no_method_predictions_seen": true,
+      "no_training_or_model_selection": true,
+      "no_expert_red_stain_GT": true,
+      "original_line_segmentation_split": "validation",
+      "independent_of_local_Japanese_training": true,
+      "ROI": [
+        80,
+        1250,
+        240,
+        350
+      ],
+      "case_id": "external_03",
+      "source_manifest": "external_originals/frozen_cases/cases_frozen.json"
+    },
+    {
+      "case": "external_04",
+      "page": "external_Latin2_128",
+      "book": "Latin2",
+      "original": "tmp_work/vermillion_stain_research_20261007_8h/external_originals/udiads/originals/U-DIADS-TL/U-DIADS-TL/Latin2/img-Latin2/test/128.jpg",
+      "source_sha256": "4da39994814b5e019fb510058dc67363268cf4df8d6ce410a829beba5f752669",
+      "xywh_original": [
+        500,
+        100,
+        210,
+        100
+      ],
+      "description": "Thin faded red heading on warm paper",
+      "kind": "observed_red",
+      "role": "external_qualitative_only",
+      "candidate_index": 33,
+      "no_method_predictions_seen": true,
+      "no_training_or_model_selection": true,
+      "no_expert_red_stain_GT": true,
+      "original_line_segmentation_split": "test",
+      "independent_of_local_Japanese_training": true,
+      "ROI": [
+        500,
+        100,
+        210,
+        100
+      ],
+      "case_id": "external_04",
+      "source_manifest": "external_originals/frozen_cases/cases_frozen.json"
+    },
+    {
+      "case": "external_05",
+      "page": "external_Latin2_128",
+      "book": "Latin2",
+      "original": "tmp_work/vermillion_stain_research_20261007_8h/external_originals/udiads/originals/U-DIADS-TL/U-DIADS-TL/Latin2/img-Latin2/test/128.jpg",
+      "source_sha256": "4da39994814b5e019fb510058dc67363268cf4df8d6ce410a829beba5f752669",
+      "xywh_original": [
+        15,
+        950,
+        120,
+        90
+      ],
+      "description": "Small pale red marginal numeral",
+      "kind": "observed_red",
+      "role": "external_qualitative_only",
+      "candidate_index": 33,
+      "no_method_predictions_seen": true,
+      "no_training_or_model_selection": true,
+      "no_expert_red_stain_GT": true,
+      "original_line_segmentation_split": "test",
+      "independent_of_local_Japanese_training": true,
+      "ROI": [
+        15,
+        950,
+        120,
+        90
+      ],
+      "case_id": "external_05",
+      "source_manifest": "external_originals/frozen_cases/cases_frozen.json"
+    },
+    {
+      "case": "external_06",
+      "page": "external_Latin2_128",
+      "book": "Latin2",
+      "original": "tmp_work/vermillion_stain_research_20261007_8h/external_originals/udiads/originals/U-DIADS-TL/U-DIADS-TL/Latin2/img-Latin2/test/128.jpg",
+      "source_sha256": "4da39994814b5e019fb510058dc67363268cf4df8d6ce410a829beba5f752669",
+      "xywh_original": [
+        520,
+        930,
+        120,
+        100
+      ],
+      "description": "Small red marginal numeral near brown body ink",
+      "kind": "observed_red",
+      "role": "external_qualitative_only",
+      "candidate_index": 33,
+      "no_method_predictions_seen": true,
+      "no_training_or_model_selection": true,
+      "no_expert_red_stain_GT": true,
+      "original_line_segmentation_split": "test",
+      "independent_of_local_Japanese_training": true,
+      "ROI": [
+        520,
+        930,
+        120,
+        100
+      ],
+      "case_id": "external_06",
+      "source_manifest": "external_originals/frozen_cases/cases_frozen.json"
+    },
+    {
+      "case": "external_07",
+      "page": "external_Latin2_128",
+      "book": "Latin2",
+      "original": "tmp_work/vermillion_stain_research_20261007_8h/external_originals/udiads/originals/U-DIADS-TL/U-DIADS-TL/Latin2/img-Latin2/test/128.jpg",
+      "source_sha256": "4da39994814b5e019fb510058dc67363268cf4df8d6ce410a829beba5f752669",
+      "xywh_original": [
+        120,
+        650,
+        430,
+        200
+      ],
+      "description": "Brown body writing is retained content, not unwanted stain",
+      "kind": "brown_ink_preservation_control",
+      "role": "external_qualitative_only",
+      "candidate_index": 33,
+      "no_method_predictions_seen": true,
+      "no_training_or_model_selection": true,
+      "no_expert_red_stain_GT": true,
+      "original_line_segmentation_split": "test",
+      "independent_of_local_Japanese_training": true,
+      "ROI": [
+        120,
+        650,
+        430,
+        200
+      ],
+      "case_id": "external_07",
+      "source_manifest": "external_originals/frozen_cases/cases_frozen.json"
+    },
+    {
+      "case": "external_08",
+      "page": "external_Syr341_224",
+      "book": "Syr341",
+      "original": "tmp_work/vermillion_stain_research_20261007_8h/external_originals/udiads/originals/U-DIADS-TL/U-DIADS-TL/Syr341/img-Syr341/test/224.jpg",
+      "source_sha256": "937dd7f19ce0ef67c4df61f2ad5bcca494e1406021b53b2d8abdab7b361190ba",
+      "xywh_original": [
+        210,
+        170,
+        340,
+        140
+      ],
+      "description": "Faded reddish/brown Syriac heading; pigment identity uncertain",
+      "kind": "ambiguous_ink",
+      "role": "external_qualitative_only",
+      "candidate_index": 64,
+      "no_method_predictions_seen": true,
+      "no_training_or_model_selection": true,
+      "no_expert_red_stain_GT": true,
+      "original_line_segmentation_split": "test",
+      "independent_of_local_Japanese_training": true,
+      "ROI": [
+        210,
+        170,
+        340,
+        140
+      ],
+      "case_id": "external_08",
+      "source_manifest": "external_originals/frozen_cases/cases_frozen.json"
+    },
+    {
+      "case": "external_09",
+      "page": "external_Syr341_224",
+      "book": "Syr341",
+      "original": "tmp_work/vermillion_stain_research_20261007_8h/external_originals/udiads/originals/U-DIADS-TL/U-DIADS-TL/Syr341/img-Syr341/test/224.jpg",
+      "source_sha256": "937dd7f19ce0ef67c4df61f2ad5bcca494e1406021b53b2d8abdab7b361190ba",
+      "xywh_original": [
+        580,
+        900,
+        310,
+        230
+      ],
+      "description": "Brown Syriac body writing is retained content",
+      "kind": "brown_ink_preservation_control",
+      "role": "external_qualitative_only",
+      "candidate_index": 64,
+      "no_method_predictions_seen": true,
+      "no_training_or_model_selection": true,
+      "no_expert_red_stain_GT": true,
+      "original_line_segmentation_split": "test",
+      "independent_of_local_Japanese_training": true,
+      "ROI": [
+        580,
+        900,
+        310,
+        230
+      ],
+      "case_id": "external_09",
+      "source_manifest": "external_originals/frozen_cases/cases_frozen.json"
+    },
+    {
+      "case": "external_10",
+      "page": "external_Syr341_224",
+      "book": "Syr341",
+      "original": "tmp_work/vermillion_stain_research_20261007_8h/external_originals/udiads/originals/U-DIADS-TL/U-DIADS-TL/Syr341/img-Syr341/test/224.jpg",
+      "source_sha256": "937dd7f19ce0ef67c4df61f2ad5bcca494e1406021b53b2d8abdab7b361190ba",
+      "xywh_original": [
+        20,
+        1250,
+        160,
+        420
+      ],
+      "description": "Discolored outer parchment/fold, tentative no annotation",
+      "kind": "tentative_paper_negative",
+      "role": "external_qualitative_only",
+      "candidate_index": 64,
+      "no_method_predictions_seen": true,
+      "no_training_or_model_selection": true,
+      "no_expert_red_stain_GT": true,
+      "original_line_segmentation_split": "test",
+      "independent_of_local_Japanese_training": true,
+      "ROI": [
+        20,
+        1250,
+        160,
+        420
+      ],
+      "case_id": "external_10",
+      "source_manifest": "external_originals/frozen_cases/cases_frozen.json"
+    },
+    {
+      "case": "external_11",
+      "page": "external_Syr341_039",
+      "book": "Syr341",
+      "original": "tmp_work/vermillion_stain_research_20261007_8h/external_originals/udiads/originals/U-DIADS-TL/U-DIADS-TL/Syr341/img-Syr341/validation/039.jpg",
+      "source_sha256": "c17759f64b9cdd8178c33542516228a0f213adc1eb471756e18cc137d83be227",
+      "xywh_original": [
+        780,
+        140,
+        420,
+        170
+      ],
+      "description": "Red Syriac heading on brown parchment",
+      "kind": "observed_red",
+      "role": "external_qualitative_only",
+      "candidate_index": 75,
+      "no_method_predictions_seen": true,
+      "no_training_or_model_selection": true,
+      "no_expert_red_stain_GT": true,
+      "original_line_segmentation_split": "validation",
+      "independent_of_local_Japanese_training": true,
+      "ROI": [
+        780,
+        140,
+        420,
+        170
+      ],
+      "case_id": "external_11",
+      "source_manifest": "external_originals/frozen_cases/cases_frozen.json"
+    },
+    {
+      "case": "external_12",
+      "page": "external_Syr341_039",
+      "book": "Syr341",
+      "original": "tmp_work/vermillion_stain_research_20261007_8h/external_originals/udiads/originals/U-DIADS-TL/U-DIADS-TL/Syr341/img-Syr341/validation/039.jpg",
+      "source_sha256": "c17759f64b9cdd8178c33542516228a0f213adc1eb471756e18cc137d83be227",
+      "xywh_original": [
+        1180,
+        700,
+        130,
+        450
+      ],
+      "description": "Brown parchment margin, tentative no annotation",
+      "kind": "tentative_paper_negative",
+      "role": "external_qualitative_only",
+      "candidate_index": 75,
+      "no_method_predictions_seen": true,
+      "no_training_or_model_selection": true,
+      "no_expert_red_stain_GT": true,
+      "original_line_segmentation_split": "validation",
+      "independent_of_local_Japanese_training": true,
+      "ROI": [
+        1180,
+        700,
+        130,
+        450
+      ],
+      "case_id": "external_12",
+      "source_manifest": "external_originals/frozen_cases/cases_frozen.json"
+    },
+    {
+      "case_id": "prospective_jp_00",
+      "page": "200014685_00002_2",
+      "book": "200014685",
+      "original": "data/train/200014685/200014685_00002_2.jpg",
+      "source_sha256": "ece797d001ca46faf7973da61b631698776a9103a9efb7ba816b695ac418c59e",
+      "ROI": [
+        1720,
+        2600,
+        300,
+        580
+      ],
+      "name": "非常に薄い縦長の印影",
+      "kind": "faint_seal",
+      "role": "prospective_japanese",
+      "origin": "Original-only secondary bright-core screen, no method outputs inspected",
+      "all_synthetic_bank_books_excluded": true,
+      "source_manifest": "prospective_cases/cases_frozen.json"
+    },
+    {
+      "case_id": "prospective_jp_01",
+      "page": "200021660_00003_2",
+      "book": "200021660",
+      "original": "data/val/200021660/200021660_00003_2.jpg",
+      "source_sha256": "5d9bdb3f3755fa79a9eebca5ade9bf9936fb97320713b203619dc24c106b6c3b",
+      "ROI": [
+        2180,
+        2760,
+        500,
+        900
+      ],
+      "name": "本文の外側の薄い印影",
+      "kind": "faint_seal",
+      "role": "prospective_japanese",
+      "origin": "Original-only secondary bright-core screen, no method outputs inspected",
+      "all_synthetic_bank_books_excluded": true,
+      "source_manifest": "prospective_cases/cases_frozen.json"
+    },
+    {
+      "case_id": "prospective_jp_02",
+      "page": "200021071_00003_2",
+      "book": "200021071",
+      "original": "data/test/200021071/200021071_00003_2.jpg",
+      "source_sha256": "f1d96a7bbf0cb19c895c273f553f33328312cdc19c4cfda05a5eacd36e7c3fef",
+      "ROI": [
+        1600,
+        1480,
+        320,
+        390
+      ],
+      "name": "小さい淡朱の円形印",
+      "kind": "small_faint_seal",
+      "role": "prospective_japanese",
+      "origin": "Original-only secondary bright-core screen, no method outputs inspected",
+      "all_synthetic_bank_books_excluded": true,
+      "source_manifest": "prospective_cases/cases_frozen.json"
+    },
+    {
+      "case_id": "prospective_jp_03",
+      "page": "200021071_00047_2",
+      "book": "200021071",
+      "original": "data/test/200021071/200021071_00047_2.jpg",
+      "source_sha256": "96f788078b2bbe944a8b06920d60eb7f0bd4efe60d8daa56e11d154a5ef0a69b",
+      "ROI": [
+        620,
+        1030,
+        400,
+        550
+      ],
+      "name": "墨本文に重なる褐色斑点／本文は保存",
+      "kind": "tentative_brown_nonmark_control",
+      "role": "prospective_japanese",
+      "origin": "Original-only secondary bright-core screen, no method outputs inspected",
+      "all_synthetic_bank_books_excluded": true,
+      "source_manifest": "prospective_cases/cases_frozen.json"
+    },
+    {
+      "case_id": "prospective_jp_04",
+      "page": "200021071_00087_2",
+      "book": "200021071",
+      "original": "data/test/200021071/200021071_00087_2.jpg",
+      "source_sha256": "8397b8551f05b9b415f5c1ef080959c43a2b2069c163c6037f71b64872f255b5",
+      "ROI": [
+        50,
+        1270,
+        400,
+        500
+      ],
+      "name": "褐色斑点と本文／本文は保存",
+      "kind": "tentative_brown_nonmark_control",
+      "role": "prospective_japanese",
+      "origin": "Original-only secondary bright-core screen, no method outputs inspected",
+      "all_synthetic_bank_books_excluded": true,
+      "source_manifest": "prospective_cases/cases_frozen.json"
+    },
+    {
+      "case_id": "prospective_external_00",
+      "page": "external_Latin2_079",
+      "book": "Latin2",
+      "original": "tmp_work/vermillion_stain_research_20261007_8h/external_originals/udiads/originals/U-DIADS-TL/U-DIADS-TL/Latin2/img-Latin2/test/079.jpg",
+      "source_sha256": "236b7ae5444685fbf3b49fb8ac0d6ba0ced8b6a08544dc0f57beae43c31204b6",
+      "ROI": [
+        190,
+        380,
+        115,
+        75
+      ],
+      "name": "左余白の細い赤い数記号",
+      "kind": "thin_red_note",
+      "role": "prospective_external",
+      "origin": "Original-only full-page inspection; no method outputs inspected",
+      "archive_entry": "U-DIADS-TL/U-DIADS-TL/Latin2/img-Latin2/test/079.jpg",
+      "candidate_index": 29,
+      "warning": "More cases from the existing Latin2 manuscript, not extra independent manuscripts",
+      "source_manifest": "prospective_cases/cases_frozen.json"
+    },
+    {
+      "case_id": "prospective_external_01",
+      "page": "external_Latin2_079",
+      "book": "Latin2",
+      "original": "tmp_work/vermillion_stain_research_20261007_8h/external_originals/udiads/originals/U-DIADS-TL/U-DIADS-TL/Latin2/img-Latin2/test/079.jpg",
+      "source_sha256": "236b7ae5444685fbf3b49fb8ac0d6ba0ced8b6a08544dc0f57beae43c31204b6",
+      "ROI": [
+        705,
+        125,
+        150,
+        65
+      ],
+      "name": "上部の細い赤い見出し",
+      "kind": "thin_red_heading",
+      "role": "prospective_external",
+      "origin": "Original-only full-page inspection; no method outputs inspected",
+      "archive_entry": "U-DIADS-TL/U-DIADS-TL/Latin2/img-Latin2/test/079.jpg",
+      "candidate_index": 29,
+      "warning": "More cases from the existing Latin2 manuscript, not extra independent manuscripts",
+      "source_manifest": "prospective_cases/cases_frozen.json"
+    },
+    {
+      "case_id": "prospective_external_02",
+      "page": "external_Latin2_079",
+      "book": "Latin2",
+      "original": "tmp_work/vermillion_stain_research_20261007_8h/external_originals/udiads/originals/U-DIADS-TL/U-DIADS-TL/Latin2/img-Latin2/test/079.jpg",
+      "source_sha256": "236b7ae5444685fbf3b49fb8ac0d6ba0ced8b6a08544dc0f57beae43c31204b6",
+      "ROI": [
+        720,
+        735,
+        100,
+        215
+      ],
+      "name": "本文間の小さい赤い数記号",
+      "kind": "thin_red_note",
+      "role": "prospective_external",
+      "origin": "Original-only full-page inspection; no method outputs inspected",
+      "archive_entry": "U-DIADS-TL/U-DIADS-TL/Latin2/img-Latin2/test/079.jpg",
+      "candidate_index": 29,
+      "warning": "More cases from the existing Latin2 manuscript, not extra independent manuscripts",
+      "source_manifest": "prospective_cases/cases_frozen.json"
+    },
+    {
+      "case_id": "prospective_external_03",
+      "page": "external_Latin2_079",
+      "book": "Latin2",
+      "original": "tmp_work/vermillion_stain_research_20261007_8h/external_originals/udiads/originals/U-DIADS-TL/U-DIADS-TL/Latin2/img-Latin2/test/079.jpg",
+      "source_sha256": "236b7ae5444685fbf3b49fb8ac0d6ba0ced8b6a08544dc0f57beae43c31204b6",
+      "ROI": [
+        100,
+        950,
+        105,
+        400
+      ],
+      "name": "文字のない褐色余白",
+      "kind": "tentative_paper_negative",
+      "role": "prospective_external",
+      "origin": "Original-only full-page inspection; no method outputs inspected",
+      "archive_entry": "U-DIADS-TL/U-DIADS-TL/Latin2/img-Latin2/test/079.jpg",
+      "candidate_index": 29,
+      "warning": "More cases from the existing Latin2 manuscript, not extra independent manuscripts",
+      "source_manifest": "prospective_cases/cases_frozen.json"
+    },
+    {
+      "case_id": "prospective_external_04",
+      "page": "external_Latin2_230",
+      "book": "Latin2",
+      "original": "tmp_work/vermillion_stain_research_20261007_8h/external_originals/udiads/originals/U-DIADS-TL/U-DIADS-TL/Latin2/img-Latin2/test/230.jpg",
+      "source_sha256": "c414fc193e173283b862e77cd1f5f1ca3b03925f673fa4e71c123b4be5d16f5f",
+      "ROI": [
+        530,
+        215,
+        105,
+        310
+      ],
+      "name": "本文間の赤い番号列",
+      "kind": "thin_red_note",
+      "role": "prospective_external",
+      "origin": "Original-only full-page inspection; no method outputs inspected",
+      "archive_entry": "U-DIADS-TL/U-DIADS-TL/Latin2/img-Latin2/test/230.jpg",
+      "candidate_index": 38,
+      "warning": "More cases from the existing Latin2 manuscript, not extra independent manuscripts",
+      "source_manifest": "prospective_cases/cases_frozen.json"
+    },
+    {
+      "case_id": "prospective_external_05",
+      "page": "external_Latin2_230",
+      "book": "Latin2",
+      "original": "tmp_work/vermillion_stain_research_20261007_8h/external_originals/udiads/originals/U-DIADS-TL/U-DIADS-TL/Latin2/img-Latin2/test/230.jpg",
+      "source_sha256": "c414fc193e173283b862e77cd1f5f1ca3b03925f673fa4e71c123b4be5d16f5f",
+      "ROI": [
+        25,
+        535,
+        90,
+        530
+      ],
+      "name": "折れのある外側余白の細い赤番号",
+      "kind": "thin_red_note",
+      "role": "prospective_external",
+      "origin": "Original-only full-page inspection; no method outputs inspected",
+      "archive_entry": "U-DIADS-TL/U-DIADS-TL/Latin2/img-Latin2/test/230.jpg",
+      "candidate_index": 38,
+      "warning": "More cases from the existing Latin2 manuscript, not extra independent manuscripts",
+      "source_manifest": "prospective_cases/cases_frozen.json"
+    },
+    {
+      "case_id": "prospective_external_06",
+      "page": "external_Latin2_108",
+      "book": "Latin2",
+      "original": "tmp_work/vermillion_stain_research_20261007_8h/external_originals/udiads/originals/U-DIADS-TL/U-DIADS-TL/Latin2/img-Latin2/validation/108.jpg",
+      "source_sha256": "b62502ce0aeb12f2e622870547b110c5ef1ee1aa93b9a5d19f4e1fe9985fcf89",
+      "ROI": [
+        530,
+        705,
+        125,
+        560
+      ],
+      "name": "本文間の淡い赤番号列",
+      "kind": "thin_red_note",
+      "role": "prospective_external",
+      "origin": "Original-only full-page inspection; no method outputs inspected",
+      "archive_entry": "U-DIADS-TL/U-DIADS-TL/Latin2/img-Latin2/validation/108.jpg",
+      "candidate_index": 50,
+      "warning": "More cases from the existing Latin2 manuscript, not extra independent manuscripts",
+      "source_manifest": "prospective_cases/cases_frozen.json"
+    },
+    {
+      "case_id": "prospective_external_07",
+      "page": "external_Latin2_108",
+      "book": "Latin2",
+      "original": "tmp_work/vermillion_stain_research_20261007_8h/external_originals/udiads/originals/U-DIADS-TL/U-DIADS-TL/Latin2/img-Latin2/validation/108.jpg",
+      "source_sha256": "b62502ce0aeb12f2e622870547b110c5ef1ee1aa93b9a5d19f4e1fe9985fcf89",
+      "ROI": [
+        530,
+        90,
+        170,
+        70
+      ],
+      "name": "淡い赤見出し",
+      "kind": "thin_red_heading",
+      "role": "prospective_external",
+      "origin": "Original-only full-page inspection; no method outputs inspected",
+      "archive_entry": "U-DIADS-TL/U-DIADS-TL/Latin2/img-Latin2/validation/108.jpg",
+      "candidate_index": 50,
+      "warning": "More cases from the existing Latin2 manuscript, not extra independent manuscripts",
+      "source_manifest": "prospective_cases/cases_frozen.json"
+    },
+    {
+      "case_id": "prospective_external_08",
+      "page": "external_Latin2_108",
+      "book": "Latin2",
+      "original": "tmp_work/vermillion_stain_research_20261007_8h/external_originals/udiads/originals/U-DIADS-TL/U-DIADS-TL/Latin2/img-Latin2/validation/108.jpg",
+      "source_sha256": "b62502ce0aeb12f2e622870547b110c5ef1ee1aa93b9a5d19f4e1fe9985fcf89",
+      "ROI": [
+        1140,
+        1640,
+        125,
+        265
+      ],
+      "name": "下側の褐色余白",
+      "kind": "tentative_paper_negative",
+      "role": "prospective_external",
+      "origin": "Original-only full-page inspection; no method outputs inspected",
+      "archive_entry": "U-DIADS-TL/U-DIADS-TL/Latin2/img-Latin2/validation/108.jpg",
+      "candidate_index": 50,
+      "warning": "More cases from the existing Latin2 manuscript, not extra independent manuscripts",
+      "source_manifest": "prospective_cases/cases_frozen.json"
+    }
+  ],
+  "utc": "2026-10-07T18:27:13.116755+00:00",
+  "protocol": "independent_evaluation_protocol_v2.json",
+  "scope": "This fit only; prior project book use not universally ruled out"
+}

@@ -1,0 +1,37 @@
+{
+  "status": "complete",
+  "sources_unchanged": true,
+  "frozen_parameters_unchanged": true,
+  "default_masks_unchanged": true,
+  "new_inferences": 1,
+  "excluded_components": [
+    44,
+    50,
+    51,
+    53
+  ],
+  "excluded_pixels": 515,
+  "development_only": true,
+  "artifacts_sha256": {
+    "tmp_work/test_only_challenge_search_20261009/bleed_local_review/検討結果.md": "0276153dcce419355ead9bdb6ee12ee0ad6d0ffa3ce6e34602b3980569ab2620",
+    "tmp_work/test_only_challenge_search_20261009/bleed_local_review/局所分類_確認済.json": "b70e303e756be6fe953b5836b3d02ceecf72c0af250ff523f60b5f5377b7dd1d",
+    "tmp_work/test_only_challenge_search_20261009/bleed_local_review/local_exclusion_trial/complete_visual_review.json": "f727de1af64da9671a811cbc8b1714b8478be91984ada28ad815f34f9b6378eb",
+    "tmp_work/test_only_challenge_search_20261009/bleed_local_review/07_残存8か所_分類と比較.png": "415040958f7ec139d8d3d282bb062c8f687e3bb12e8c5820925d0094f9424e31",
+    "tmp_work/test_only_challenge_search_20261009/bleed_local_review/next_mirror.png": "3fde42c925536d29056b7f3c7a274b2cbdd426854288381cd526af93d1abfdfd",
+    "tmp_work/test_only_challenge_search_20261009/bleed_local_review/upper_source.png": "f48de5037602e0c480b60a7ad8b85fa4f7f84785f02f25b74cd8770606d5e3ce",
+    "tmp_work/test_only_challenge_search_20261009/bleed_local_review/07_残存8か所_近隣ページ確認.png": "ac4d898ca8a3d38389d78707c0c8dd1a93f6e2aeb2cc1fc269fe2c06cdd1edf7",
+    "tmp_work/test_only_challenge_search_20261009/bleed_local_review/next_page_local_translation.png": "8a9306fe97cd9e2b6336a594177ace95e1e680aecccf6a597e04ab2b3ff46422",
+    "tmp_work/test_only_challenge_search_20261009/bleed_local_review/body_source.png": "8e7e8275a4e998fcdc584d6709f065ac0f77ac5a4eee4247ef6233034a1e0bca",
+    "tmp_work/test_only_challenge_search_20261009/bleed_local_review/07_次ページ対応_拡大比較.png": "dfba80e75581b678b797bf1afc9bb469c00a7f8b6403fef066eb8ced19f59d61",
+    "tmp_work/test_only_challenge_search_20261009/bleed_local_review/bleed_source.png": "69b8229bd510f067d04499f902edce72db0c38d9b447992608ff5f8d01b2bdd0",
+    "tmp_work/test_only_challenge_search_20261009/bleed_local_review/07_表文字と裏移り候補_対照比較.png": "58d995e3e89bdec669fbe5d54e28a602d8e8794796662b9c1bc0f64b86e19dfc",
+    "tmp_work/test_only_challenge_search_20261009/bleed_local_review/local_exclusion_trial/07_局所除外_DDRM比較.png": "51e276a02c536cc6e22056ad1567001bc08d86762d065808c12df60ee74aabc5",
+    "tmp_work/test_only_challenge_search_20261009/bleed_local_review/local_exclusion_trial/diagnostic_excluded_components.png": "ea28c2eac8872f550a7f6d62056c9be5c099ec487480f389549393370315c967",
+    "tmp_work/test_only_challenge_search_20261009/bleed_local_review/local_exclusion_trial/07_局所除外_全ページ比較.png": "c4441ec6bdc108e90592d9c1dcf4d04c91787c12dc78d11c8dd4705ad741cc1a"
+  },
+  "scripts_sha256": {
+    "review_bleed_local.py": "048c23baea3eeba16f7cf0e3083794d38c034903b85c93ddfd2e91e1de4d16eb",
+    "trial_bleed_local.py": "7ed1ebb1dfac1a31993060b5132f52bec47a2af0da14d943aa4f70b71dea3853",
+    "finalize_bleed_local.py": "111316268b27b79a912d714a78209e4d88350f0089509c3bad8565d9cd836ebf"
+  }
+}

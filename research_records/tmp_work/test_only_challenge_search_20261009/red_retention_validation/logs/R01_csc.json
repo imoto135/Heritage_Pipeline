@@ -1,0 +1,33 @@
+{
+  "id": "R01",
+  "method": "csc",
+  "seconds": 336.16,
+  "reused": false,
+  "command": [
+    "/home/imoto/miniconda3/envs/diffusion/bin/python",
+    "-B",
+    "/home/imoto/Heritage_Pipeline/tmp_work/npj_dirt_control_20261002/source_snapshot/ddrm_npj_v2/scripts/pipeline_ddrm.py",
+    "--input_dir",
+    "/home/imoto/Heritage_Pipeline/tmp_work/test_only_challenge_search_20261009/red_retention_validation/inputs/200019865_00002_1",
+    "--output_dir",
+    "/home/imoto/Heritage_Pipeline/tmp_work/test_only_challenge_search_20261009/red_retention_validation/outputs/csc",
+    "--tmp_dir",
+    "/home/imoto/Heritage_Pipeline/tmp_work/test_only_challenge_search_20261009/red_retention_validation/infer_tmp/csc/200019865_00002_1",
+    "--mask_dir",
+    "/home/imoto/Heritage_Pipeline/tmp_work/test_only_challenge_search_20261009/red_retention_validation/masks/csc",
+    "--ckpt",
+    "/home/imoto/Heritage_Pipeline/modules/stain_removal/experiments/model_char/model_char/ckpt_epoch0350.pth",
+    "--back_ground",
+    "/home/imoto/Heritage_Pipeline/modules/ddrm_npj_v2/background/isemonogatari.png",
+    "--device",
+    "cuda:0",
+    "--patch_size",
+    "128",
+    "--overlap",
+    "32",
+    "--shared_noise",
+    "--no_wandb"
+  ],
+  "output": "tmp_work/test_only_challenge_search_20261009/red_retention_validation/outputs/csc/200019865_00002_1/result/200019865_00002_1.png",
+  "sha256": "fc37cc13edc8c6e9da7f3ddcc86fcca97e5865cdbbb9e007c59837dbb7b61396"
+}

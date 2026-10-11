@@ -1,0 +1,24 @@
+{
+  "page": "100249376_00056_1",
+  "book": "100249376",
+  "role": "development",
+  "original": "/home/imoto/Heritage_Pipeline/data/train/100249376/100249376_00056_1.jpg",
+  "source_sha256": "58d356496a4bc7facbf5474648d15beb1234871cec9aebed6e02375249b67b92",
+  "method": "docres_binarization",
+  "seconds": 15.115618935786188,
+  "shape": [
+    2994,
+    2018,
+    3
+  ],
+  "finite": true,
+  "protocol_sha256": "fcdd1f4d087a75557c2fd0903dfc69df79c9b5b56f48618e078d8e7284b986ee",
+  "source_pixel_GT": false,
+  "inputs_have_no_masks_or_annotations": true,
+  "outputs": {
+    "result.png": "c2e21fcb314381b9b8ca31a0a60a77db1553431b85399fc6e21cee468d696351",
+    "background_probability.npy": "935a497761577db47e99d8b8f5ab0e13c948df5f90b4eb2a6dfcc44506f65c2f",
+    "prompt.png": "b17e5d26f06dc2f06c0e4c511953789e2f8dfccaa638b3db135a79447db4fcc6",
+    "ink_mask.png": "64559ebf179cbab9fc709af72dbbb7bcfe8ac1b73470df60486e86d902e66240"
+  }
+}

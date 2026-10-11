@@ -1,0 +1,1055 @@
+{
+  "regions": [
+    {
+      "frame": "page_200019865",
+      "id": "01_upper_slender_marks",
+      "title": "上余白の細い暖色跡",
+      "xywh": [
+        1270,
+        250,
+        550,
+        400
+      ],
+      "role": "damage_candidate_material_unconfirmed",
+      "mask_pixels": {
+        "protect": 378,
+        "hold": 850,
+        "red": 0,
+        "extra": 0,
+        "structural": 32719,
+        "docres": 366
+      },
+      "docres_high_confidence_background_pixels": 219479,
+      "structural_but_docres_background_pixels": 32390,
+      "stain_mean_abs_reference_delta": 1.9541969696969697,
+      "precision": false,
+      "pixel_GT": false
+    },
+    {
+      "frame": "page_200019865",
+      "id": "02_left_margin_marks",
+      "title": "左余白の線状跡",
+      "xywh": [
+        20,
+        850,
+        450,
+        900
+      ],
+      "role": "damage_candidate_material_unconfirmed",
+      "mask_pixels": {
+        "protect": 11474,
+        "hold": 462,
+        "red": 0,
+        "extra": 0,
+        "structural": 63321,
+        "docres": 10280
+      },
+      "docres_high_confidence_background_pixels": 393392,
+      "structural_but_docres_background_pixels": 56362,
+      "stain_mean_abs_reference_delta": 1.9389004115226338,
+      "precision": false,
+      "pixel_GT": false
+    },
+    {
+      "frame": "page_200019865",
+      "id": "03_faint_text_control",
+      "title": "薄い文字の対照",
+      "xywh": [
+        1200,
+        1050,
+        650,
+        650
+      ],
+      "role": "text_control",
+      "mask_pixels": {
+        "protect": 41872,
+        "hold": 768,
+        "red": 0,
+        "extra": 0,
+        "structural": 112279,
+        "docres": 33688
+      },
+      "docres_high_confidence_background_pixels": 386610,
+      "structural_but_docres_background_pixels": 85854,
+      "stain_mean_abs_reference_delta": 2.8753570019723864,
+      "precision": false,
+      "pixel_GT": false
+    },
+    {
+      "frame": "page_200017197",
+      "id": "04_warm_paper_pattern",
+      "title": "暖色の紙模様・汚れと断定しない",
+      "xywh": [
+        100,
+        30,
+        650,
+        380
+      ],
+      "role": "paper_pattern_control",
+      "mask_pixels": {
+        "protect": 134,
+        "hold": 0,
+        "red": 0,
+        "extra": 0,
+        "structural": 2585,
+        "docres": 123
+      },
+      "docres_high_confidence_background_pixels": 246856,
+      "structural_but_docres_background_pixels": 2491,
+      "stain_mean_abs_reference_delta": 28.953176788124157,
+      "precision": false,
+      "pixel_GT": false
+    },
+    {
+      "frame": "page_200017197",
+      "id": "05_pattern_text_control",
+      "title": "紙模様上の文字対照",
+      "xywh": [
+        1100,
+        1400,
+        550,
+        600
+      ],
+      "role": "text_and_pattern_control",
+      "mask_pixels": {
+        "protect": 25776,
+        "hold": 184,
+        "red": 0,
+        "extra": 0,
+        "structural": 25714,
+        "docres": 25089
+      },
+      "docres_high_confidence_background_pixels": 303393,
+      "structural_but_docres_background_pixels": 7967,
+      "stain_mean_abs_reference_delta": 23.731476767676767,
+      "precision": false,
+      "pixel_GT": false
+    },
+    {
+      "frame": "page_200017197",
+      "id": "06_lower_thin_text",
+      "title": "下部の細い筆画と紙模様",
+      "xywh": [
+        150,
+        2400,
+        700,
+        600
+      ],
+      "role": "text_and_pattern_control",
+      "mask_pixels": {
+        "protect": 32139,
+        "hold": 153,
+        "red": 0,
+        "extra": 0,
+        "structural": 36194,
+        "docres": 31108
+      },
+      "docres_high_confidence_background_pixels": 386919,
+      "structural_but_docres_background_pixels": 13636,
+      "stain_mean_abs_reference_delta": 23.929829365079364,
+      "precision": false,
+      "pixel_GT": false
+    },
+    {
+      "frame": "known_200010454_v2",
+      "id": "07_red_seal_control",
+      "title": "朱印の対照・既知ページの別保存版",
+      "xywh": [
+        1330,
+        1800,
+        430,
+        550
+      ],
+      "role": "red_seal_control",
+      "mask_pixels": {
+        "protect": 28151,
+        "hold": 884,
+        "red": 19555,
+        "extra": 14,
+        "structural": 47439,
+        "docres": 15810
+      },
+      "docres_high_confidence_background_pixels": 216842,
+      "structural_but_docres_background_pixels": 33816,
+      "stain_mean_abs_reference_delta": 11.939612403100774,
+      "precision": false,
+      "pixel_GT": false
+    },
+    {
+      "frame": "known_200010454_v2",
+      "id": "08_known_brown_stain",
+      "title": "既知の茶色い斑点・別保存版",
+      "xywh": [
+        730,
+        230,
+        180,
+        140
+      ],
+      "role": "known_damage_candidate",
+      "mask_pixels": {
+        "protect": 239,
+        "hold": 2,
+        "red": 0,
+        "extra": 0,
+        "structural": 2106,
+        "docres": 275
+      },
+      "docres_high_confidence_background_pixels": 24879,
+      "structural_but_docres_background_pixels": 1869,
+      "stain_mean_abs_reference_delta": 15.538650793650794,
+      "precision": false,
+      "pixel_GT": false
+    },
+    {
+      "frame": "known_200010454_v2",
+      "id": "09_known_dense_text",
+      "title": "既知の濃い筆画・別保存版",
+      "xywh": [
+        555,
+        335,
+        175,
+        160
+      ],
+      "role": "known_text_control",
+      "mask_pixels": {
+        "protect": 2888,
+        "hold": 0,
+        "red": 0,
+        "extra": 0,
+        "structural": 3757,
+        "docres": 2774
+      },
+      "docres_high_confidence_background_pixels": 25070,
+      "structural_but_docres_background_pixels": 2321,
+      "stain_mean_abs_reference_delta": 13.614940476190476,
+      "precision": false,
+      "pixel_GT": false
+    },
+    {
+      "frame": "crop_hnsd",
+      "id": "10_rule_crossing_dark_mass",
+      "title": "枠線に接する濃い塊",
+      "xywh": [
+        170,
+        300,
+        350,
+        210
+      ],
+      "role": "residual_damage_positive_candidate",
+      "mask_pixels": {
+        "protect": 31691,
+        "hold": 1075,
+        "red": 0,
+        "extra": 0,
+        "structural": 27762,
+        "docres": 6973
+      },
+      "docres_high_confidence_background_pixels": 63935,
+      "structural_but_docres_background_pixels": 23745,
+      "stain_mean_abs_reference_delta": 2.2233696145124715,
+      "precision": false,
+      "pixel_GT": false
+    },
+    {
+      "frame": "crop_hnsd",
+      "id": "11_crop_text_control",
+      "title": "濃い文字と枠線の対照",
+      "xywh": [
+        30,
+        50,
+        160,
+        260
+      ],
+      "role": "text_rule_control",
+      "mask_pixels": {
+        "protect": 10712,
+        "hold": 182,
+        "red": 0,
+        "extra": 0,
+        "structural": 10206,
+        "docres": 5768
+      },
+      "docres_high_confidence_background_pixels": 34789,
+      "structural_but_docres_background_pixels": 5358,
+      "stain_mean_abs_reference_delta": 3.6029887820512823,
+      "precision": false,
+      "pixel_GT": false
+    },
+    {
+      "frame": "crop_hnsd",
+      "id": "12_crop_lower_paper",
+      "title": "下端の紙面対照",
+      "xywh": [
+        0,
+        520,
+        620,
+        100
+      ],
+      "role": "paper_control",
+      "mask_pixels": {
+        "protect": 14362,
+        "hold": 338,
+        "red": 0,
+        "extra": 0,
+        "structural": 11054,
+        "docres": 0
+      },
+      "docres_high_confidence_background_pixels": 62000,
+      "structural_but_docres_background_pixels": 11054,
+      "stain_mean_abs_reference_delta": 3.4825967741935484,
+      "precision": false,
+      "pixel_GT": false
+    },
+    {
+      "frame": "old_upper_crop",
+      "id": "old_01_upper_faint_stroke",
+      "title": "上部の薄い筆画",
+      "xywh": [
+        190,
+        325,
+        180,
+        175
+      ],
+      "mask_pixels": {
+        "protect": 1526,
+        "hold": 21,
+        "red": 0,
+        "extra": 0,
+        "structural": 4262,
+        "docres": 1309
+      },
+      "docres_high_confidence_background_pixels": 29917,
+      "structural_but_docres_background_pixels": 3080,
+      "stain_mean_abs_reference_delta": 15.45099470899471,
+      "precision": false,
+      "pixel_GT": false
+    },
+    {
+      "frame": "old_upper_crop",
+      "id": "old_02_upper_dense_control",
+      "title": "濃い筆画の対照",
+      "xywh": [
+        5,
+        335,
+        175,
+        160
+      ],
+      "mask_pixels": {
+        "protect": 2888,
+        "hold": 0,
+        "red": 0,
+        "extra": 0,
+        "structural": 4602,
+        "docres": 2758
+      },
+      "docres_high_confidence_background_pixels": 25073,
+      "structural_but_docres_background_pixels": 2850,
+      "stain_mean_abs_reference_delta": 13.025083333333333,
+      "precision": false,
+      "pixel_GT": false
+    },
+    {
+      "frame": "old_upper_crop",
+      "id": "old_03_upper_brown_stain",
+      "title": "筆画の上方の茶色い斑点",
+      "xywh": [
+        180,
+        235,
+        160,
+        120
+      ],
+      "mask_pixels": {
+        "protect": 54,
+        "hold": 2,
+        "red": 0,
+        "extra": 0,
+        "structural": 1994,
+        "docres": 75
+      },
+      "docres_high_confidence_background_pixels": 19104,
+      "structural_but_docres_background_pixels": 1925,
+      "stain_mean_abs_reference_delta": 16.202395833333334,
+      "precision": false,
+      "pixel_GT": false
+    },
+    {
+      "frame": "old_upper_crop",
+      "id": "old_04_upper_pale_stain",
+      "title": "淡い茶色の広がり",
+      "xywh": [
+        330,
+        120,
+        150,
+        160
+      ],
+      "mask_pixels": {
+        "protect": 0,
+        "hold": 0,
+        "red": 0,
+        "extra": 0,
+        "structural": 1662,
+        "docres": 0
+      },
+      "docres_high_confidence_background_pixels": 24000,
+      "structural_but_docres_background_pixels": 1662,
+      "stain_mean_abs_reference_delta": 15.478944444444444,
+      "precision": false,
+      "pixel_GT": false
+    },
+    {
+      "frame": "old_full_page",
+      "id": "old_05_page_faint_left",
+      "title": "左列の薄い筆画",
+      "xywh": [
+        170,
+        700,
+        235,
+        450
+      ],
+      "mask_pixels": {
+        "protect": 9402,
+        "hold": 145,
+        "red": 0,
+        "extra": 0,
+        "structural": 22664,
+        "docres": 7956
+      },
+      "docres_high_confidence_background_pixels": 97396,
+      "structural_but_docres_background_pixels": 16300,
+      "stain_mean_abs_reference_delta": 2.9674011032308907,
+      "precision": false,
+      "pixel_GT": false
+    },
+    {
+      "frame": "old_full_page",
+      "id": "old_06_page_faint_middle",
+      "title": "中央列の細い筆画",
+      "xywh": [
+        760,
+        1870,
+        220,
+        480
+      ],
+      "mask_pixels": {
+        "protect": 9207,
+        "hold": 102,
+        "red": 0,
+        "extra": 0,
+        "structural": 19132,
+        "docres": 7805
+      },
+      "docres_high_confidence_background_pixels": 97386,
+      "structural_but_docres_background_pixels": 12338,
+      "stain_mean_abs_reference_delta": 2.448598484848485,
+      "precision": false,
+      "pixel_GT": false
+    },
+    {
+      "frame": "old_full_page",
+      "id": "old_07_page_dense_control",
+      "title": "右列の濃い筆画の対照",
+      "xywh": [
+        1510,
+        1650,
+        300,
+        440
+      ],
+      "mask_pixels": {
+        "protect": 13118,
+        "hold": 29,
+        "red": 0,
+        "extra": 0,
+        "structural": 19693,
+        "docres": 12090
+      },
+      "docres_high_confidence_background_pixels": 119421,
+      "structural_but_docres_background_pixels": 10579,
+      "stain_mean_abs_reference_delta": 1.3925681818181819,
+      "precision": false,
+      "pixel_GT": false
+    },
+    {
+      "frame": "old_full_page",
+      "id": "old_08_page_long_stroke",
+      "title": "左寄りの長い細線",
+      "xywh": [
+        440,
+        1850,
+        240,
+        650
+      ],
+      "mask_pixels": {
+        "protect": 12482,
+        "hold": 295,
+        "red": 0,
+        "extra": 0,
+        "structural": 23663,
+        "docres": 10466
+      },
+      "docres_high_confidence_background_pixels": 145015,
+      "structural_but_docres_background_pixels": 16092,
+      "stain_mean_abs_reference_delta": 2.374965811965812,
+      "precision": false,
+      "pixel_GT": false
+    }
+  ],
+  "inputs": [
+    {
+      "frame": "page_200019865",
+      "exact": true,
+      "reference_saved_input_MAE_255": 0.0
+    },
+    {
+      "frame": "page_200017197",
+      "exact": false,
+      "reference_saved_input_MAE_255": 0.5696914830104883
+    },
+    {
+      "frame": "known_200010454_v2",
+      "exact": true,
+      "reference_saved_input_MAE_255": 0.0
+    },
+    {
+      "frame": "crop_hnsd",
+      "exact": false,
+      "reference_saved_input_MAE_255": 26.908911723898715
+    },
+    {
+      "frame": "old_upper_crop",
+      "exact": true,
+      "reference_saved_input_MAE_255": 0.0
+    },
+    {
+      "frame": "old_full_page",
+      "exact": true,
+      "reference_saved_input_MAE_255": 0.0
+    }
+  ],
+  "rendering": [
+    {
+      "file": "overview_page_200019865.png",
+      "panels_exact": true,
+      "integer_nearest": false,
+      "display_size": [
+        540,
+        815
+      ]
+    },
+    {
+      "file": "01_upper_slender_marks.png",
+      "panels_exact": true,
+      "integer_nearest": true,
+      "display_size": [
+        550,
+        400
+      ]
+    },
+    {
+      "file": "mask_01_upper_slender_marks.png",
+      "panels_exact": true,
+      "integer_nearest": true,
+      "display_size": [
+        550,
+        400
+      ]
+    },
+    {
+      "file": "02_left_margin_marks.png",
+      "panels_exact": true,
+      "integer_nearest": true,
+      "display_size": [
+        450,
+        900
+      ]
+    },
+    {
+      "file": "mask_02_left_margin_marks.png",
+      "panels_exact": true,
+      "integer_nearest": true,
+      "display_size": [
+        450,
+        900
+      ]
+    },
+    {
+      "file": "03_faint_text_control.png",
+      "panels_exact": true,
+      "integer_nearest": true,
+      "display_size": [
+        650,
+        650
+      ]
+    },
+    {
+      "file": "mask_03_faint_text_control.png",
+      "panels_exact": true,
+      "integer_nearest": true,
+      "display_size": [
+        650,
+        650
+      ]
+    },
+    {
+      "file": "overview_page_200017197.png",
+      "panels_exact": true,
+      "integer_nearest": false,
+      "display_size": [
+        540,
+        727
+      ]
+    },
+    {
+      "file": "input_provenance_page_200017197.png",
+      "panels_exact": true,
+      "integer_nearest": false,
+      "display_size": [
+        540,
+        727
+      ]
+    },
+    {
+      "file": "matched_overview_page_200017197.png",
+      "panels_exact": true,
+      "integer_nearest": false,
+      "display_size": [
+        540,
+        727
+      ]
+    },
+    {
+      "file": "matched_04_warm_paper_pattern.png",
+      "panels_exact": true,
+      "integer_nearest": true,
+      "display_size": [
+        650,
+        380
+      ]
+    },
+    {
+      "file": "matched_05_pattern_text_control.png",
+      "panels_exact": true,
+      "integer_nearest": true,
+      "display_size": [
+        550,
+        600
+      ]
+    },
+    {
+      "file": "matched_06_lower_thin_text.png",
+      "panels_exact": true,
+      "integer_nearest": true,
+      "display_size": [
+        700,
+        600
+      ]
+    },
+    {
+      "file": "04_warm_paper_pattern.png",
+      "panels_exact": true,
+      "integer_nearest": true,
+      "display_size": [
+        650,
+        380
+      ]
+    },
+    {
+      "file": "mask_04_warm_paper_pattern.png",
+      "panels_exact": true,
+      "integer_nearest": true,
+      "display_size": [
+        650,
+        380
+      ]
+    },
+    {
+      "file": "05_pattern_text_control.png",
+      "panels_exact": true,
+      "integer_nearest": true,
+      "display_size": [
+        550,
+        600
+      ]
+    },
+    {
+      "file": "mask_05_pattern_text_control.png",
+      "panels_exact": true,
+      "integer_nearest": true,
+      "display_size": [
+        550,
+        600
+      ]
+    },
+    {
+      "file": "06_lower_thin_text.png",
+      "panels_exact": true,
+      "integer_nearest": true,
+      "display_size": [
+        700,
+        600
+      ]
+    },
+    {
+      "file": "mask_06_lower_thin_text.png",
+      "panels_exact": true,
+      "integer_nearest": true,
+      "display_size": [
+        700,
+        600
+      ]
+    },
+    {
+      "file": "overview_known_200010454_v2.png",
+      "panels_exact": true,
+      "integer_nearest": false,
+      "display_size": [
+        540,
+        716
+      ]
+    },
+    {
+      "file": "07_red_seal_control.png",
+      "panels_exact": true,
+      "integer_nearest": true,
+      "display_size": [
+        430,
+        550
+      ]
+    },
+    {
+      "file": "mask_07_red_seal_control.png",
+      "panels_exact": true,
+      "integer_nearest": true,
+      "display_size": [
+        430,
+        550
+      ]
+    },
+    {
+      "file": "08_known_brown_stain.png",
+      "panels_exact": true,
+      "integer_nearest": true,
+      "display_size": [
+        540,
+        420
+      ]
+    },
+    {
+      "file": "mask_08_known_brown_stain.png",
+      "panels_exact": true,
+      "integer_nearest": true,
+      "display_size": [
+        540,
+        420
+      ]
+    },
+    {
+      "file": "09_known_dense_text.png",
+      "panels_exact": true,
+      "integer_nearest": true,
+      "display_size": [
+        525,
+        480
+      ]
+    },
+    {
+      "file": "mask_09_known_dense_text.png",
+      "panels_exact": true,
+      "integer_nearest": true,
+      "display_size": [
+        525,
+        480
+      ]
+    },
+    {
+      "file": "overview_crop_hnsd.png",
+      "panels_exact": true,
+      "integer_nearest": false,
+      "display_size": [
+        540,
+        540
+      ]
+    },
+    {
+      "file": "input_provenance_crop_hnsd.png",
+      "panels_exact": true,
+      "integer_nearest": false,
+      "display_size": [
+        540,
+        540
+      ]
+    },
+    {
+      "file": "matched_overview_crop_hnsd.png",
+      "panels_exact": true,
+      "integer_nearest": false,
+      "display_size": [
+        540,
+        540
+      ]
+    },
+    {
+      "file": "matched_10_rule_crossing_dark_mass.png",
+      "panels_exact": true,
+      "integer_nearest": true,
+      "display_size": [
+        350,
+        210
+      ]
+    },
+    {
+      "file": "matched_11_crop_text_control.png",
+      "panels_exact": true,
+      "integer_nearest": true,
+      "display_size": [
+        480,
+        780
+      ]
+    },
+    {
+      "file": "matched_12_crop_lower_paper.png",
+      "panels_exact": true,
+      "integer_nearest": true,
+      "display_size": [
+        620,
+        100
+      ]
+    },
+    {
+      "file": "10_rule_crossing_dark_mass.png",
+      "panels_exact": true,
+      "integer_nearest": true,
+      "display_size": [
+        350,
+        210
+      ]
+    },
+    {
+      "file": "mask_10_rule_crossing_dark_mass.png",
+      "panels_exact": true,
+      "integer_nearest": true,
+      "display_size": [
+        350,
+        210
+      ]
+    },
+    {
+      "file": "11_crop_text_control.png",
+      "panels_exact": true,
+      "integer_nearest": true,
+      "display_size": [
+        480,
+        780
+      ]
+    },
+    {
+      "file": "mask_11_crop_text_control.png",
+      "panels_exact": true,
+      "integer_nearest": true,
+      "display_size": [
+        480,
+        780
+      ]
+    },
+    {
+      "file": "12_crop_lower_paper.png",
+      "panels_exact": true,
+      "integer_nearest": true,
+      "display_size": [
+        620,
+        100
+      ]
+    },
+    {
+      "file": "mask_12_crop_lower_paper.png",
+      "panels_exact": true,
+      "integer_nearest": true,
+      "display_size": [
+        620,
+        100
+      ]
+    },
+    {
+      "file": "tile_sensitivity_stain.png",
+      "panels_exact": true,
+      "integer_nearest": true,
+      "display_size": [
+        620,
+        620
+      ]
+    },
+    {
+      "file": "tile_sensitivity_docres.png",
+      "panels_exact": true,
+      "integer_nearest": true,
+      "display_size": [
+        620,
+        620
+      ]
+    },
+    {
+      "file": "overview_old_upper_crop.png",
+      "panels_exact": true,
+      "integer_nearest": false,
+      "display_size": [
+        540,
+        491
+      ]
+    },
+    {
+      "file": "old_01_upper_faint_stroke.png",
+      "panels_exact": true,
+      "integer_nearest": true,
+      "display_size": [
+        540,
+        525
+      ]
+    },
+    {
+      "file": "mask_old_01_upper_faint_stroke.png",
+      "panels_exact": true,
+      "integer_nearest": true,
+      "display_size": [
+        540,
+        525
+      ]
+    },
+    {
+      "file": "old_02_upper_dense_control.png",
+      "panels_exact": true,
+      "integer_nearest": true,
+      "display_size": [
+        525,
+        480
+      ]
+    },
+    {
+      "file": "mask_old_02_upper_dense_control.png",
+      "panels_exact": true,
+      "integer_nearest": true,
+      "display_size": [
+        525,
+        480
+      ]
+    },
+    {
+      "file": "old_03_upper_brown_stain.png",
+      "panels_exact": true,
+      "integer_nearest": true,
+      "display_size": [
+        640,
+        480
+      ]
+    },
+    {
+      "file": "mask_old_03_upper_brown_stain.png",
+      "panels_exact": true,
+      "integer_nearest": true,
+      "display_size": [
+        640,
+        480
+      ]
+    },
+    {
+      "file": "old_04_upper_pale_stain.png",
+      "panels_exact": true,
+      "integer_nearest": true,
+      "display_size": [
+        600,
+        640
+      ]
+    },
+    {
+      "file": "mask_old_04_upper_pale_stain.png",
+      "panels_exact": true,
+      "integer_nearest": true,
+      "display_size": [
+        600,
+        640
+      ]
+    },
+    {
+      "file": "overview_old_full_page.png",
+      "panels_exact": true,
+      "integer_nearest": false,
+      "display_size": [
+        540,
+        834
+      ]
+    },
+    {
+      "file": "old_05_page_faint_left.png",
+      "panels_exact": true,
+      "integer_nearest": true,
+      "display_size": [
+        470,
+        900
+      ]
+    },
+    {
+      "file": "mask_old_05_page_faint_left.png",
+      "panels_exact": true,
+      "integer_nearest": true,
+      "display_size": [
+        470,
+        900
+      ]
+    },
+    {
+      "file": "old_06_page_faint_middle.png",
+      "panels_exact": true,
+      "integer_nearest": true,
+      "display_size": [
+        440,
+        960
+      ]
+    },
+    {
+      "file": "mask_old_06_page_faint_middle.png",
+      "panels_exact": true,
+      "integer_nearest": true,
+      "display_size": [
+        440,
+        960
+      ]
+    },
+    {
+      "file": "old_07_page_dense_control.png",
+      "panels_exact": true,
+      "integer_nearest": true,
+      "display_size": [
+        600,
+        880
+      ]
+    },
+    {
+      "file": "mask_old_07_page_dense_control.png",
+      "panels_exact": true,
+      "integer_nearest": true,
+      "display_size": [
+        600,
+        880
+      ]
+    },
+    {
+      "file": "old_08_page_long_stroke.png",
+      "panels_exact": true,
+      "integer_nearest": true,
+      "display_size": [
+        240,
+        650
+      ]
+    },
+    {
+      "file": "mask_old_08_page_long_stroke.png",
+      "panels_exact": true,
+      "integer_nearest": true,
+      "display_size": [
+        240,
+        650
+      ]
+    }
+  ],
+  "count_note": "6 frames from 5 pages, all previously known development cases; 20 ROIs not documents",
+  "counts_are_precision": false,
+  "adopted": false
+}

@@ -1,0 +1,32 @@
+{
+  "settings": {
+    "scales_half_resolution": [
+      8.0,
+      16.0,
+      32.0
+    ],
+    "ring_radius_sigmas": 3.0,
+    "sampling_grid": 32,
+    "max_candidates": 600,
+    "minimum_score": 0.002,
+    "minimum_chromatic_contrast": 0.008,
+    "ROI_exclusion_native": 320,
+    "page_border_fraction": 0.05,
+    "blob_condition": "both Hessian eigenvalues negative; |hi| >= .3 |lo|",
+    "split": "same native 128px tile split as v3; candidates are not material labels",
+    "purpose": "Check separate-color premise after same-color morphology failures; no tuning from this diagnostic",
+    "pixel_GT": false,
+    "neural_training": false
+  },
+  "source_sha256": "f54f90ac8bedc8d1efb7625ce6c8ac9f942ae7391c9d7bd2376f764a990d9e5c",
+  "dependencies": {
+    "scripts/benchmark/probe_spatial_ink_decomposition.py": "f262390d0e397130226d90af229370cc6b30ca71774aa9365a3dffa0d39320b4",
+    "tmp_work/ink_background_spatial_pilot_v3_20260930/complete.json": "1a0fcf1671f41df135770d3a54bd08f9e3a450d9f2e3ad9a78ac234a77dbded8",
+    "tmp_work/warm_ink_hold_v6_20260930/200010454_00002_2/original.png": "8805a59128a05467722bd0f0cdb1a133c2983c278b8d239bdb6cbf958a141900",
+    "tmp_work/ink_background_spatial_pilot_v3_20260930/200010454_00002_2/initialization_samples.npz": "6527a4e39e8360ceec810c0e8c3537b5eced0cf521a4418084625fab657bbb3e",
+    "tmp_work/warm_ink_hold_v6_20260930/200021086_00032_2/original.png": "4eaca5a9238432e4f566adb883aabe36c11af38f82820beec963de1de1269bb4",
+    "tmp_work/ink_background_spatial_pilot_v3_20260930/200021086_00032_2/initialization_samples.npz": "99d0874cb6e2b33b9ae96d22f896f2b8705e02ccfa541143a5ce814a33665659",
+    "tmp_work/warm_ink_hold_v6_20260930/200021763_00002_2/original.png": "2309c24a7e5d08526dc002e1761640a0dbd36a58b9757a525d239f6992b84f19",
+    "tmp_work/ink_background_spatial_pilot_v3_20260930/200021763_00002_2/initialization_samples.npz": "7bd983b6e44b3ebc9941680a8ee39ae16606ee567d2329bb8d2c1c1716847933"
+  }
+}

@@ -1,0 +1,95 @@
+{
+  "settings": {
+    "models": [
+      [
+        "no_stain",
+        [],
+        0.0
+      ],
+      [
+        "blobs_low",
+        [
+          "blob4",
+          "blob8"
+        ],
+        0.001
+      ],
+      [
+        "creases_low",
+        [
+          "crease0",
+          "crease45",
+          "crease90",
+          "crease135"
+        ],
+        0.001
+      ],
+      [
+        "both_low",
+        [
+          "blob4",
+          "blob8",
+          "crease0",
+          "crease45",
+          "crease90",
+          "crease135"
+        ],
+        0.001
+      ],
+      [
+        "both_high",
+        [
+          "blob4",
+          "blob8",
+          "crease0",
+          "crease45",
+          "crease90",
+          "crease135"
+        ],
+        0.004
+      ]
+    ],
+    "observation": "frozen v3 half-resolution chromatic OD patches",
+    "ink_direction": "frozen v3 page median q, same for stain",
+    "background_lambda": 36.0,
+    "ink_graph_lambda": 1.0,
+    "ink_sparse": 0.004,
+    "stain": "nonnegative convolution coefficients, normalized symmetric kernels, zero boundary",
+    "blob_sigma_analysis": [
+      4.0,
+      8.0
+    ],
+    "crease_sigmas_analysis": [
+      16.0,
+      2.0
+    ],
+    "crease_angles_degrees": [
+      0,
+      45,
+      90,
+      135
+    ],
+    "kernel_radius_analysis": 48,
+    "max_iterations": 3000,
+    "kkt_relative_tolerance": 5e-05,
+    "background_solution": "exact Neumann graph inverse via orthonormal DCT, eliminated variable",
+    "candidate_density": 0.015,
+    "display_density_max": 0.2,
+    "pixel_GT": false,
+    "neural_training": false,
+    "edit_permission_generated": false,
+    "note": "Known development patches; material labels are hypotheses, not identifications"
+  },
+  "source_sha256": "23a1ab9baff3aec2e0b791b8470abd2ea1bf02ece60443313988a76a3b9e79ab",
+  "dependencies": {
+    "tmp_work/ink_stain_competition_v4_20260930/complete.json": "aeea96e8d5fe29172f2fcdc8a4f455ea21566bc1ec7e917e04700ff12d8ee4fc",
+    "scripts/benchmark/probe_competing_stain_decomposition.py": "4c7ced30d5bfbb275a00242c221e377af44dc4af6ee7b6457c22a0e41131625c",
+    "scripts/benchmark/probe_spatial_ink_decomposition.py": "f262390d0e397130226d90af229370cc6b30ca71774aa9365a3dffa0d39320b4"
+  },
+  "primary_source": "tmp_work/ink_stain_competition_v4_20260930",
+  "reason": "Some fits reached iteration cap; continue saved A and coefficients without changing objective or tolerance",
+  "max_additional_iterations": 4000,
+  "solver": "L-BFGS-B; same projected-gradient tolerance",
+  "warm_start": "saved float32 A and coefficients",
+  "protocol_saved_before_continuations": true
+}

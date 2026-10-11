@@ -1,0 +1,42 @@
+{
+  "dependencies": {
+    "tmp_work/npj_literature_models_20261002/repos/StainRestorer/models/StainRestorer.py": "d12181917d63a80bda21fa6a938baad561748b3b086478761eab0a67d5dba11a",
+    "tmp_work/npj_literature_models_20261002/weights/StainDoc.pth": "7cdbd674367535d4f429ef077030b930da2a460012fe8fc44d995ead2f7418ee",
+    "scripts/benchmark/run_npj_literature_matched_input_control.py": "1ee6babb3b8fac3e34db17a7b6d4ef2e635bce28ea66ed87775b95e04d632871",
+    "scripts/benchmark/run_npj_literature_models.py": "1fb608304a989abdcc367d434dd2b7fd77cb953e73de6f634730479bc11fde41",
+    "tmp_work/npj_literature_trial_20261002/selection.json": "a18403fef7a0c917687b7921bd491889f0302fbfedfb8f887c0ed33e23f76e46",
+    "tmp_work/npj_literature_trial_20261002/selection_complete.json": "4dc93c9d07d4c1fe0a4a843376f89eb2b2b5ebdb13bd43a2b579005b00134756",
+    "tmp_work/npj_literature_trial_20261002/inputs/page_200017197/saved_input.png": "2265d16fdd20a28b9bc4d345fc78c4dead6018e8b0851c01c227049ebcc2e63d",
+    "tmp_work/npj_literature_trial_20261002/inputs/crop_hnsd/saved_input.png": "78e46d451a970f81c45ea11aaa4c7185b0921df01db1a3ebd0963055643a09d4"
+  },
+  "settings": {
+    "native_resolution": true,
+    "resize": false,
+    "tile": 512,
+    "halo": 64,
+    "core": 384,
+    "padding": "reflect101 raw model input+prompt on frame boundary",
+    "blend": "disjoint cores, halo discarded",
+    "precision": "float32",
+    "tf32": false,
+    "model_architecture_changed": false,
+    "weights_changed": false,
+    "input": "actual historical saved npj input; matched input control only",
+    "output": "raw external method comparison, not adopted or pasted onto saved npj",
+    "pixel_GT": false,
+    "decoding": {
+      "stain": "first return element, clamp [0,1], RGB to BGR, round*255",
+      "docres": "softmax first 2 channels, argmax=1 is white background as author code"
+    },
+    "provenance": {
+      "stain": "Author GitHub release Weights/StainDoc.pth, not mark/seal weights",
+      "docres": "Community mirror DaVinciCode/doctra-docres-main, hash agrees with second mirror; original OneDrive requires auth; author-copy identity not independently verified"
+    },
+    "method": "stain",
+    "device": "cuda:0"
+  },
+  "frames": [
+    "page_200017197",
+    "crop_hnsd"
+  ]
+}

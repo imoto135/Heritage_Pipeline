@@ -1,0 +1,55 @@
+{
+  "mode": "residual",
+  "steps": 8000,
+  "batch": 12,
+  "optimizer": "AdamW 2e-4 cosine to2e-5",
+  "source_sha256": "3fdccec0d7e5a960ff4bbbb978117061145044e11a266dbbb14bbfe4cd63636c",
+  "data_sha256": "dd69562fa922d6b0df677382834401f7d18bb4d041f88bb41b99582c6479d022",
+  "excluded_books": [
+    "100249371",
+    "200019865",
+    "100249537",
+    "100249416",
+    "200014740",
+    "200003076"
+  ],
+  "train_patches": 384,
+  "dev_patches": 144,
+  "test_patches": 230,
+  "book_sets": {
+    "train": [
+      "100241706",
+      "200003803",
+      "200004107",
+      "200004148",
+      "200005798",
+      "200006665",
+      "200015779",
+      "200021063",
+      "200021712",
+      "200021869",
+      "brsk00000"
+    ],
+    "dev": [
+      "100249476",
+      "200008003",
+      "200021802",
+      "umgy00000"
+    ],
+    "test": [
+      "200010454",
+      "200017458",
+      "200018243",
+      "200021763",
+      "200021851",
+      "200021853",
+      "200022050"
+    ]
+  },
+  "identity_fraction": 0.25,
+  "loss": "L1 + .25 gradient L1; same for both modes",
+  "gain": "nonnegative RGB optical density /8 spatial grid, applied multiplicatively to observed pixels",
+  "residual": "unrestricted signed RGB residual, no gain constraint",
+  "real_data": "no real contact-stain input is used for training or checkpoint selection",
+  "created": 1791366902.3264904
+}

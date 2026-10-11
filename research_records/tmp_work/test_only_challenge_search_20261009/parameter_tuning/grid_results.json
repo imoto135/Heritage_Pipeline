@@ -1,0 +1,766 @@
+{
+  "status": "complete",
+  "role": "development tuning; not independent test accuracy",
+  "sauvola": {
+    "windows": [
+      31,
+      61,
+      101
+    ],
+    "k": [
+      0.1,
+      0.2,
+      0.3
+    ],
+    "R": 0.5
+  },
+  "howe": {
+    "c": [
+      80,
+      160,
+      320
+    ],
+    "canny_high_relative": [
+      0.25,
+      0.4,
+      0.5
+    ],
+    "canny_low_relative": 0.1,
+    "canny_sigma": 0.6,
+    "implementation": "local base-energy port, approximate Canny, no auto-tuning"
+  },
+  "cases": [
+    {
+      "id": "01",
+      "name": "200010454_00016_2",
+      "roi_xywh": [
+        570,
+        600,
+        750,
+        850
+      ],
+      "sauvola": {
+        "w31_k0.10": {
+          "path": "tmp_work/test_only_challenge_search_20261009/parameter_tuning/crops/sauvola/01/w31_k0.10.png",
+          "black_pixels": 42872,
+          "black_fraction": 0.06725
+        },
+        "w31_k0.20": {
+          "path": "tmp_work/test_only_challenge_search_20261009/parameter_tuning/crops/sauvola/01/w31_k0.20.png",
+          "black_pixels": 38044,
+          "black_fraction": 0.059677
+        },
+        "w31_k0.30": {
+          "path": "tmp_work/test_only_challenge_search_20261009/parameter_tuning/crops/sauvola/01/w31_k0.30.png",
+          "black_pixels": 33729,
+          "black_fraction": 0.052908
+        },
+        "w61_k0.10": {
+          "path": "tmp_work/test_only_challenge_search_20261009/parameter_tuning/crops/sauvola/01/w61_k0.10.png",
+          "black_pixels": 45323,
+          "black_fraction": 0.071095
+        },
+        "w61_k0.20": {
+          "path": "tmp_work/test_only_challenge_search_20261009/parameter_tuning/crops/sauvola/01/w61_k0.20.png",
+          "black_pixels": 39900,
+          "black_fraction": 0.062588
+        },
+        "w61_k0.30": {
+          "path": "tmp_work/test_only_challenge_search_20261009/parameter_tuning/crops/sauvola/01/w61_k0.30.png",
+          "black_pixels": 35222,
+          "black_fraction": 0.05525
+        },
+        "w101_k0.10": {
+          "path": "tmp_work/test_only_challenge_search_20261009/parameter_tuning/crops/sauvola/01/w101_k0.10.png",
+          "black_pixels": 46536,
+          "black_fraction": 0.072998
+        },
+        "w101_k0.20": {
+          "path": "tmp_work/test_only_challenge_search_20261009/parameter_tuning/crops/sauvola/01/w101_k0.20.png",
+          "black_pixels": 40704,
+          "black_fraction": 0.063849
+        },
+        "w101_k0.30": {
+          "path": "tmp_work/test_only_challenge_search_20261009/parameter_tuning/crops/sauvola/01/w101_k0.30.png",
+          "black_pixels": 35671,
+          "black_fraction": 0.055955
+        }
+      },
+      "howe": {
+        "edge0.25_c80": {
+          "path": "tmp_work/test_only_challenge_search_20261009/parameter_tuning/crops/howe/01/edge0.25_c80.png",
+          "black_pixels": 42774,
+          "black_fraction": 0.067096,
+          "edge_pixels": 88520,
+          "energy": 6276027186.4257345
+        },
+        "edge0.25_c160": {
+          "path": "tmp_work/test_only_challenge_search_20261009/parameter_tuning/crops/howe/01/edge0.25_c160.png",
+          "black_pixels": 42910,
+          "black_fraction": 0.06731,
+          "edge_pixels": 88520,
+          "energy": 6276115194.427478
+        },
+        "edge0.25_c320": {
+          "path": "tmp_work/test_only_challenge_search_20261009/parameter_tuning/crops/howe/01/edge0.25_c320.png",
+          "black_pixels": 42708,
+          "black_fraction": 0.066993,
+          "edge_pixels": 88520,
+          "energy": 6276250258.427069
+        },
+        "edge0.40_c80": {
+          "path": "tmp_work/test_only_challenge_search_20261009/parameter_tuning/crops/howe/01/edge0.40_c80.png",
+          "black_pixels": 42750,
+          "black_fraction": 0.067059,
+          "edge_pixels": 83692,
+          "energy": 6276053799.423079
+        },
+        "edge0.40_c160": {
+          "path": "tmp_work/test_only_challenge_search_20261009/parameter_tuning/crops/howe/01/edge0.40_c160.png",
+          "black_pixels": 42896,
+          "black_fraction": 0.067288,
+          "edge_pixels": 83692,
+          "energy": 6276136407.426481
+        },
+        "edge0.40_c320": {
+          "path": "tmp_work/test_only_challenge_search_20261009/parameter_tuning/crops/howe/01/edge0.40_c320.png",
+          "black_pixels": 42690,
+          "black_fraction": 0.066965,
+          "edge_pixels": 83692,
+          "energy": 6276267189.426178
+        },
+        "edge0.50_c80": {
+          "path": "tmp_work/test_only_challenge_search_20261009/parameter_tuning/crops/howe/01/edge0.50_c80.png",
+          "black_pixels": 42542,
+          "black_fraction": 0.066733,
+          "edge_pixels": 83289,
+          "energy": 6276066215.422828
+        },
+        "edge0.50_c160": {
+          "path": "tmp_work/test_only_challenge_search_20261009/parameter_tuning/crops/howe/01/edge0.50_c160.png",
+          "black_pixels": 42642,
+          "black_fraction": 0.066889,
+          "edge_pixels": 83289,
+          "energy": 6276149911.426208
+        },
+        "edge0.50_c320": {
+          "path": "tmp_work/test_only_challenge_search_20261009/parameter_tuning/crops/howe/01/edge0.50_c320.png",
+          "black_pixels": 42473,
+          "black_fraction": 0.066624,
+          "edge_pixels": 83289,
+          "energy": 6276280725.425921
+        }
+      }
+    },
+    {
+      "id": "02",
+      "name": "200015843_00107_1",
+      "roi_xywh": [
+        700,
+        1200,
+        850,
+        850
+      ],
+      "sauvola": {
+        "w31_k0.10": {
+          "path": "tmp_work/test_only_challenge_search_20261009/parameter_tuning/crops/sauvola/02/w31_k0.10.png",
+          "black_pixels": 114868,
+          "black_fraction": 0.158987
+        },
+        "w31_k0.20": {
+          "path": "tmp_work/test_only_challenge_search_20261009/parameter_tuning/crops/sauvola/02/w31_k0.20.png",
+          "black_pixels": 100511,
+          "black_fraction": 0.139116
+        },
+        "w31_k0.30": {
+          "path": "tmp_work/test_only_challenge_search_20261009/parameter_tuning/crops/sauvola/02/w31_k0.30.png",
+          "black_pixels": 86919,
+          "black_fraction": 0.120303
+        },
+        "w61_k0.10": {
+          "path": "tmp_work/test_only_challenge_search_20261009/parameter_tuning/crops/sauvola/02/w61_k0.10.png",
+          "black_pixels": 123425,
+          "black_fraction": 0.17083
+        },
+        "w61_k0.20": {
+          "path": "tmp_work/test_only_challenge_search_20261009/parameter_tuning/crops/sauvola/02/w61_k0.20.png",
+          "black_pixels": 108361,
+          "black_fraction": 0.149981
+        },
+        "w61_k0.30": {
+          "path": "tmp_work/test_only_challenge_search_20261009/parameter_tuning/crops/sauvola/02/w61_k0.30.png",
+          "black_pixels": 94878,
+          "black_fraction": 0.131319
+        },
+        "w101_k0.10": {
+          "path": "tmp_work/test_only_challenge_search_20261009/parameter_tuning/crops/sauvola/02/w101_k0.10.png",
+          "black_pixels": 127224,
+          "black_fraction": 0.176089
+        },
+        "w101_k0.20": {
+          "path": "tmp_work/test_only_challenge_search_20261009/parameter_tuning/crops/sauvola/02/w101_k0.20.png",
+          "black_pixels": 111785,
+          "black_fraction": 0.15472
+        },
+        "w101_k0.30": {
+          "path": "tmp_work/test_only_challenge_search_20261009/parameter_tuning/crops/sauvola/02/w101_k0.30.png",
+          "black_pixels": 98079,
+          "black_fraction": 0.135749
+        }
+      },
+      "howe": {
+        "edge0.25_c80": {
+          "path": "tmp_work/test_only_challenge_search_20261009/parameter_tuning/crops/howe/02/edge0.25_c80.png",
+          "black_pixels": 114478,
+          "black_fraction": 0.158447,
+          "edge_pixels": 356823,
+          "energy": 10203998278.064554
+        },
+        "edge0.25_c160": {
+          "path": "tmp_work/test_only_challenge_search_20261009/parameter_tuning/crops/howe/02/edge0.25_c160.png",
+          "black_pixels": 114478,
+          "black_fraction": 0.158447,
+          "edge_pixels": 356823,
+          "energy": 10204618494.066172
+        },
+        "edge0.25_c320": {
+          "path": "tmp_work/test_only_challenge_search_20261009/parameter_tuning/crops/howe/02/edge0.25_c320.png",
+          "black_pixels": 114286,
+          "black_fraction": 0.158181,
+          "edge_pixels": 356823,
+          "energy": 10205616355.0748
+        },
+        "edge0.40_c80": {
+          "path": "tmp_work/test_only_challenge_search_20261009/parameter_tuning/crops/howe/02/edge0.40_c80.png",
+          "black_pixels": 114276,
+          "black_fraction": 0.158167,
+          "edge_pixels": 310133,
+          "energy": 10204376046.072098
+        },
+        "edge0.40_c160": {
+          "path": "tmp_work/test_only_challenge_search_20261009/parameter_tuning/crops/howe/02/edge0.40_c160.png",
+          "black_pixels": 114150,
+          "black_fraction": 0.157993,
+          "edge_pixels": 310133,
+          "energy": 10204923073.076633
+        },
+        "edge0.40_c320": {
+          "path": "tmp_work/test_only_challenge_search_20261009/parameter_tuning/crops/howe/02/edge0.40_c320.png",
+          "black_pixels": 114047,
+          "black_fraction": 0.157851,
+          "edge_pixels": 310133,
+          "energy": 10205851222.088829
+        },
+        "edge0.50_c80": {
+          "path": "tmp_work/test_only_challenge_search_20261009/parameter_tuning/crops/howe/02/edge0.50_c80.png",
+          "black_pixels": 114024,
+          "black_fraction": 0.157819,
+          "edge_pixels": 288550,
+          "energy": 10204822005.102898
+        },
+        "edge0.50_c160": {
+          "path": "tmp_work/test_only_challenge_search_20261009/parameter_tuning/crops/howe/02/edge0.50_c160.png",
+          "black_pixels": 113620,
+          "black_fraction": 0.15726,
+          "edge_pixels": 288550,
+          "energy": 10205352222.113731
+        },
+        "edge0.50_c320": {
+          "path": "tmp_work/test_only_challenge_search_20261009/parameter_tuning/crops/howe/02/edge0.50_c320.png",
+          "black_pixels": 113355,
+          "black_fraction": 0.156893,
+          "edge_pixels": 288550,
+          "energy": 10206225001.124352
+        }
+      }
+    },
+    {
+      "id": "03",
+      "name": "200015843_00105_1",
+      "roi_xywh": [
+        750,
+        700,
+        850,
+        850
+      ],
+      "sauvola": {
+        "w31_k0.10": {
+          "path": "tmp_work/test_only_challenge_search_20261009/parameter_tuning/crops/sauvola/03/w31_k0.10.png",
+          "black_pixels": 121389,
+          "black_fraction": 0.168012
+        },
+        "w31_k0.20": {
+          "path": "tmp_work/test_only_challenge_search_20261009/parameter_tuning/crops/sauvola/03/w31_k0.20.png",
+          "black_pixels": 99108,
+          "black_fraction": 0.137174
+        },
+        "w31_k0.30": {
+          "path": "tmp_work/test_only_challenge_search_20261009/parameter_tuning/crops/sauvola/03/w31_k0.30.png",
+          "black_pixels": 84690,
+          "black_fraction": 0.117218
+        },
+        "w61_k0.10": {
+          "path": "tmp_work/test_only_challenge_search_20261009/parameter_tuning/crops/sauvola/03/w61_k0.10.png",
+          "black_pixels": 129062,
+          "black_fraction": 0.178633
+        },
+        "w61_k0.20": {
+          "path": "tmp_work/test_only_challenge_search_20261009/parameter_tuning/crops/sauvola/03/w61_k0.20.png",
+          "black_pixels": 107099,
+          "black_fraction": 0.148234
+        },
+        "w61_k0.30": {
+          "path": "tmp_work/test_only_challenge_search_20261009/parameter_tuning/crops/sauvola/03/w61_k0.30.png",
+          "black_pixels": 91975,
+          "black_fraction": 0.127301
+        },
+        "w101_k0.10": {
+          "path": "tmp_work/test_only_challenge_search_20261009/parameter_tuning/crops/sauvola/03/w101_k0.10.png",
+          "black_pixels": 133605,
+          "black_fraction": 0.18492
+        },
+        "w101_k0.20": {
+          "path": "tmp_work/test_only_challenge_search_20261009/parameter_tuning/crops/sauvola/03/w101_k0.20.png",
+          "black_pixels": 111356,
+          "black_fraction": 0.154126
+        },
+        "w101_k0.30": {
+          "path": "tmp_work/test_only_challenge_search_20261009/parameter_tuning/crops/sauvola/03/w101_k0.30.png",
+          "black_pixels": 95551,
+          "black_fraction": 0.132251
+        }
+      },
+      "howe": {
+        "edge0.25_c80": {
+          "path": "tmp_work/test_only_challenge_search_20261009/parameter_tuning/crops/howe/03/edge0.25_c80.png",
+          "black_pixels": 120915,
+          "black_fraction": 0.167356,
+          "edge_pixels": 334925,
+          "energy": 10345647627.520733
+        },
+        "edge0.25_c160": {
+          "path": "tmp_work/test_only_challenge_search_20261009/parameter_tuning/crops/howe/03/edge0.25_c160.png",
+          "black_pixels": 117718,
+          "black_fraction": 0.162931,
+          "edge_pixels": 334925,
+          "energy": 10346153194.524902
+        },
+        "edge0.25_c320": {
+          "path": "tmp_work/test_only_challenge_search_20261009/parameter_tuning/crops/howe/03/edge0.25_c320.png",
+          "black_pixels": 113728,
+          "black_fraction": 0.157409,
+          "edge_pixels": 334925,
+          "energy": 10346929716.53812
+        },
+        "edge0.40_c80": {
+          "path": "tmp_work/test_only_challenge_search_20261009/parameter_tuning/crops/howe/03/edge0.40_c80.png",
+          "black_pixels": 113499,
+          "black_fraction": 0.157092,
+          "edge_pixels": 271515,
+          "energy": 10346203238.550842
+        },
+        "edge0.40_c160": {
+          "path": "tmp_work/test_only_challenge_search_20261009/parameter_tuning/crops/howe/03/edge0.40_c160.png",
+          "black_pixels": 112494,
+          "black_fraction": 0.155701,
+          "edge_pixels": 271515,
+          "energy": 10346601159.552967
+        },
+        "edge0.40_c320": {
+          "path": "tmp_work/test_only_challenge_search_20261009/parameter_tuning/crops/howe/03/edge0.40_c320.png",
+          "black_pixels": 111234,
+          "black_fraction": 0.153957,
+          "edge_pixels": 271515,
+          "energy": 10347295441.565037
+        },
+        "edge0.50_c80": {
+          "path": "tmp_work/test_only_challenge_search_20261009/parameter_tuning/crops/howe/03/edge0.50_c80.png",
+          "black_pixels": 111031,
+          "black_fraction": 0.153676,
+          "edge_pixels": 252142,
+          "energy": 10346623448.587196
+        },
+        "edge0.50_c160": {
+          "path": "tmp_work/test_only_challenge_search_20261009/parameter_tuning/crops/howe/03/edge0.50_c160.png",
+          "black_pixels": 109321,
+          "black_fraction": 0.151309,
+          "edge_pixels": 252142,
+          "energy": 10347008330.598236
+        },
+        "edge0.50_c320": {
+          "path": "tmp_work/test_only_challenge_search_20261009/parameter_tuning/crops/howe/03/edge0.50_c320.png",
+          "black_pixels": 108049,
+          "black_fraction": 0.149549,
+          "edge_pixels": 252142,
+          "energy": 10347638869.608269
+        }
+      }
+    },
+    {
+      "id": "04",
+      "name": "200021071_00032_1",
+      "roi_xywh": [
+        550,
+        160,
+        800,
+        820
+      ],
+      "sauvola": {
+        "w31_k0.10": {
+          "path": "tmp_work/test_only_challenge_search_20261009/parameter_tuning/crops/sauvola/04/w31_k0.10.png",
+          "black_pixels": 19291,
+          "black_fraction": 0.029407
+        },
+        "w31_k0.20": {
+          "path": "tmp_work/test_only_challenge_search_20261009/parameter_tuning/crops/sauvola/04/w31_k0.20.png",
+          "black_pixels": 16770,
+          "black_fraction": 0.025564
+        },
+        "w31_k0.30": {
+          "path": "tmp_work/test_only_challenge_search_20261009/parameter_tuning/crops/sauvola/04/w31_k0.30.png",
+          "black_pixels": 15138,
+          "black_fraction": 0.023076
+        },
+        "w61_k0.10": {
+          "path": "tmp_work/test_only_challenge_search_20261009/parameter_tuning/crops/sauvola/04/w61_k0.10.png",
+          "black_pixels": 21860,
+          "black_fraction": 0.033323
+        },
+        "w61_k0.20": {
+          "path": "tmp_work/test_only_challenge_search_20261009/parameter_tuning/crops/sauvola/04/w61_k0.20.png",
+          "black_pixels": 18433,
+          "black_fraction": 0.028099
+        },
+        "w61_k0.30": {
+          "path": "tmp_work/test_only_challenge_search_20261009/parameter_tuning/crops/sauvola/04/w61_k0.30.png",
+          "black_pixels": 16542,
+          "black_fraction": 0.025216
+        },
+        "w101_k0.10": {
+          "path": "tmp_work/test_only_challenge_search_20261009/parameter_tuning/crops/sauvola/04/w101_k0.10.png",
+          "black_pixels": 24154,
+          "black_fraction": 0.03682
+        },
+        "w101_k0.20": {
+          "path": "tmp_work/test_only_challenge_search_20261009/parameter_tuning/crops/sauvola/04/w101_k0.20.png",
+          "black_pixels": 19551,
+          "black_fraction": 0.029803
+        },
+        "w101_k0.30": {
+          "path": "tmp_work/test_only_challenge_search_20261009/parameter_tuning/crops/sauvola/04/w101_k0.30.png",
+          "black_pixels": 17267,
+          "black_fraction": 0.026322
+        }
+      },
+      "howe": {
+        "edge0.25_c80": {
+          "path": "tmp_work/test_only_challenge_search_20261009/parameter_tuning/crops/howe/04/edge0.25_c80.png",
+          "black_pixels": 17648,
+          "black_fraction": 0.026902,
+          "edge_pixels": 90231,
+          "energy": 9607903948.26491
+        },
+        "edge0.25_c160": {
+          "path": "tmp_work/test_only_challenge_search_20261009/parameter_tuning/crops/howe/04/edge0.25_c160.png",
+          "black_pixels": 17518,
+          "black_fraction": 0.026704,
+          "edge_pixels": 90231,
+          "energy": 9607995198.263824
+        },
+        "edge0.25_c320": {
+          "path": "tmp_work/test_only_challenge_search_20261009/parameter_tuning/crops/howe/04/edge0.25_c320.png",
+          "black_pixels": 17435,
+          "black_fraction": 0.026578,
+          "edge_pixels": 90231,
+          "energy": 9608137052.26205
+        },
+        "edge0.40_c80": {
+          "path": "tmp_work/test_only_challenge_search_20261009/parameter_tuning/crops/howe/04/edge0.40_c80.png",
+          "black_pixels": 17445,
+          "black_fraction": 0.026593,
+          "edge_pixels": 78187,
+          "energy": 9607998813.258875
+        },
+        "edge0.40_c160": {
+          "path": "tmp_work/test_only_challenge_search_20261009/parameter_tuning/crops/howe/04/edge0.40_c160.png",
+          "black_pixels": 17448,
+          "black_fraction": 0.026598,
+          "edge_pixels": 78187,
+          "energy": 9608065128.258898
+        },
+        "edge0.40_c320": {
+          "path": "tmp_work/test_only_challenge_search_20261009/parameter_tuning/crops/howe/04/edge0.40_c320.png",
+          "black_pixels": 17406,
+          "black_fraction": 0.026534,
+          "edge_pixels": 78187,
+          "energy": 9608185287.258326
+        },
+        "edge0.50_c80": {
+          "path": "tmp_work/test_only_challenge_search_20261009/parameter_tuning/crops/howe/04/edge0.50_c80.png",
+          "black_pixels": 17423,
+          "black_fraction": 0.026559,
+          "edge_pixels": 75610,
+          "energy": 9608061997.256527
+        },
+        "edge0.50_c160": {
+          "path": "tmp_work/test_only_challenge_search_20261009/parameter_tuning/crops/howe/04/edge0.50_c160.png",
+          "black_pixels": 17426,
+          "black_fraction": 0.026564,
+          "edge_pixels": 75610,
+          "energy": 9608123389.256495
+        },
+        "edge0.50_c320": {
+          "path": "tmp_work/test_only_challenge_search_20261009/parameter_tuning/crops/howe/04/edge0.50_c320.png",
+          "black_pixels": 17406,
+          "black_fraction": 0.026534,
+          "edge_pixels": 75610,
+          "energy": 9608235596.256195
+        }
+      }
+    },
+    {
+      "id": "06",
+      "name": "200003803_00003_1",
+      "roi_xywh": [
+        80,
+        95,
+        620,
+        530
+      ],
+      "sauvola": {
+        "w31_k0.10": {
+          "path": "tmp_work/test_only_challenge_search_20261009/parameter_tuning/crops/sauvola/06/w31_k0.10.png",
+          "black_pixels": 10429,
+          "black_fraction": 0.031738
+        },
+        "w31_k0.20": {
+          "path": "tmp_work/test_only_challenge_search_20261009/parameter_tuning/crops/sauvola/06/w31_k0.20.png",
+          "black_pixels": 5446,
+          "black_fraction": 0.016573
+        },
+        "w31_k0.30": {
+          "path": "tmp_work/test_only_challenge_search_20261009/parameter_tuning/crops/sauvola/06/w31_k0.30.png",
+          "black_pixels": 4655,
+          "black_fraction": 0.014166
+        },
+        "w61_k0.10": {
+          "path": "tmp_work/test_only_challenge_search_20261009/parameter_tuning/crops/sauvola/06/w61_k0.10.png",
+          "black_pixels": 19779,
+          "black_fraction": 0.060192
+        },
+        "w61_k0.20": {
+          "path": "tmp_work/test_only_challenge_search_20261009/parameter_tuning/crops/sauvola/06/w61_k0.20.png",
+          "black_pixels": 6987,
+          "black_fraction": 0.021263
+        },
+        "w61_k0.30": {
+          "path": "tmp_work/test_only_challenge_search_20261009/parameter_tuning/crops/sauvola/06/w61_k0.30.png",
+          "black_pixels": 5216,
+          "black_fraction": 0.015873
+        },
+        "w101_k0.10": {
+          "path": "tmp_work/test_only_challenge_search_20261009/parameter_tuning/crops/sauvola/06/w101_k0.10.png",
+          "black_pixels": 21864,
+          "black_fraction": 0.066537
+        },
+        "w101_k0.20": {
+          "path": "tmp_work/test_only_challenge_search_20261009/parameter_tuning/crops/sauvola/06/w101_k0.20.png",
+          "black_pixels": 16742,
+          "black_fraction": 0.050949
+        },
+        "w101_k0.30": {
+          "path": "tmp_work/test_only_challenge_search_20261009/parameter_tuning/crops/sauvola/06/w101_k0.30.png",
+          "black_pixels": 6036,
+          "black_fraction": 0.018369
+        }
+      },
+      "howe": {
+        "edge0.25_c80": {
+          "path": "tmp_work/test_only_challenge_search_20261009/parameter_tuning/crops/howe/06/edge0.25_c80.png",
+          "black_pixels": 6210,
+          "black_fraction": 0.018898,
+          "edge_pixels": 154462,
+          "energy": 10362239769.250559
+        },
+        "edge0.25_c160": {
+          "path": "tmp_work/test_only_challenge_search_20261009/parameter_tuning/crops/howe/06/edge0.25_c160.png",
+          "black_pixels": 6223,
+          "black_fraction": 0.018938,
+          "edge_pixels": 154462,
+          "energy": 10362424077.265165
+        },
+        "edge0.25_c320": {
+          "path": "tmp_work/test_only_challenge_search_20261009/parameter_tuning/crops/howe/06/edge0.25_c320.png",
+          "black_pixels": 6223,
+          "black_fraction": 0.018938,
+          "edge_pixels": 154462,
+          "energy": 10362625597.263407
+        },
+        "edge0.40_c80": {
+          "path": "tmp_work/test_only_challenge_search_20261009/parameter_tuning/crops/howe/06/edge0.40_c80.png",
+          "black_pixels": 6184,
+          "black_fraction": 0.018819,
+          "edge_pixels": 146225,
+          "energy": 10362409307.251465
+        },
+        "edge0.40_c160": {
+          "path": "tmp_work/test_only_challenge_search_20261009/parameter_tuning/crops/howe/06/edge0.40_c160.png",
+          "black_pixels": 6197,
+          "black_fraction": 0.018859,
+          "edge_pixels": 146225,
+          "energy": 10362621384.268557
+        },
+        "edge0.40_c320": {
+          "path": "tmp_work/test_only_challenge_search_20261009/parameter_tuning/crops/howe/06/edge0.40_c320.png",
+          "black_pixels": 6197,
+          "black_fraction": 0.018859,
+          "edge_pixels": 146225,
+          "energy": 10362793178.269075
+        },
+        "edge0.50_c80": {
+          "path": "tmp_work/test_only_challenge_search_20261009/parameter_tuning/crops/howe/06/edge0.50_c80.png",
+          "black_pixels": 5954,
+          "black_fraction": 0.018119,
+          "edge_pixels": 140536,
+          "energy": 10362559574.259003
+        },
+        "edge0.50_c160": {
+          "path": "tmp_work/test_only_challenge_search_20261009/parameter_tuning/crops/howe/06/edge0.50_c160.png",
+          "black_pixels": 5967,
+          "black_fraction": 0.018159,
+          "edge_pixels": 140536,
+          "energy": 10362881518.27801
+        },
+        "edge0.50_c320": {
+          "path": "tmp_work/test_only_challenge_search_20261009/parameter_tuning/crops/howe/06/edge0.50_c320.png",
+          "black_pixels": 5967,
+          "black_fraction": 0.018159,
+          "edge_pixels": 140536,
+          "energy": 10363048388.27967
+        }
+      }
+    },
+    {
+      "id": "07",
+      "name": "200021071_00033_2",
+      "roi_xywh": [
+        800,
+        750,
+        850,
+        900
+      ],
+      "sauvola": {
+        "w31_k0.10": {
+          "path": "tmp_work/test_only_challenge_search_20261009/parameter_tuning/crops/sauvola/07/w31_k0.10.png",
+          "black_pixels": 90699,
+          "black_fraction": 0.118561
+        },
+        "w31_k0.20": {
+          "path": "tmp_work/test_only_challenge_search_20261009/parameter_tuning/crops/sauvola/07/w31_k0.20.png",
+          "black_pixels": 70817,
+          "black_fraction": 0.092571
+        },
+        "w31_k0.30": {
+          "path": "tmp_work/test_only_challenge_search_20261009/parameter_tuning/crops/sauvola/07/w31_k0.30.png",
+          "black_pixels": 63518,
+          "black_fraction": 0.08303
+        },
+        "w61_k0.10": {
+          "path": "tmp_work/test_only_challenge_search_20261009/parameter_tuning/crops/sauvola/07/w61_k0.10.png",
+          "black_pixels": 103286,
+          "black_fraction": 0.135014
+        },
+        "w61_k0.20": {
+          "path": "tmp_work/test_only_challenge_search_20261009/parameter_tuning/crops/sauvola/07/w61_k0.20.png",
+          "black_pixels": 78360,
+          "black_fraction": 0.102431
+        },
+        "w61_k0.30": {
+          "path": "tmp_work/test_only_challenge_search_20261009/parameter_tuning/crops/sauvola/07/w61_k0.30.png",
+          "black_pixels": 68992,
+          "black_fraction": 0.090186
+        },
+        "w101_k0.10": {
+          "path": "tmp_work/test_only_challenge_search_20261009/parameter_tuning/crops/sauvola/07/w101_k0.10.png",
+          "black_pixels": 116185,
+          "black_fraction": 0.151876
+        },
+        "w101_k0.20": {
+          "path": "tmp_work/test_only_challenge_search_20261009/parameter_tuning/crops/sauvola/07/w101_k0.20.png",
+          "black_pixels": 84983,
+          "black_fraction": 0.111089
+        },
+        "w101_k0.30": {
+          "path": "tmp_work/test_only_challenge_search_20261009/parameter_tuning/crops/sauvola/07/w101_k0.30.png",
+          "black_pixels": 72906,
+          "black_fraction": 0.095302
+        }
+      },
+      "howe": {
+        "edge0.25_c80": {
+          "path": "tmp_work/test_only_challenge_search_20261009/parameter_tuning/crops/howe/07/edge0.25_c80.png",
+          "black_pixels": 77246,
+          "black_fraction": 0.100975,
+          "edge_pixels": 155433,
+          "energy": 9606768933.515104
+        },
+        "edge0.25_c160": {
+          "path": "tmp_work/test_only_challenge_search_20261009/parameter_tuning/crops/howe/07/edge0.25_c160.png",
+          "black_pixels": 73918,
+          "black_fraction": 0.096625,
+          "edge_pixels": 155433,
+          "energy": 9606896187.512854
+        },
+        "edge0.25_c320": {
+          "path": "tmp_work/test_only_challenge_search_20261009/parameter_tuning/crops/howe/07/edge0.25_c320.png",
+          "black_pixels": 73263,
+          "black_fraction": 0.095769,
+          "edge_pixels": 155433,
+          "energy": 9607083769.512115
+        },
+        "edge0.40_c80": {
+          "path": "tmp_work/test_only_challenge_search_20261009/parameter_tuning/crops/howe/07/edge0.40_c80.png",
+          "black_pixels": 72851,
+          "black_fraction": 0.09523,
+          "edge_pixels": 134470,
+          "energy": 9606886555.50991
+        },
+        "edge0.40_c160": {
+          "path": "tmp_work/test_only_challenge_search_20261009/parameter_tuning/crops/howe/07/edge0.40_c160.png",
+          "black_pixels": 72501,
+          "black_fraction": 0.094773,
+          "edge_pixels": 134470,
+          "energy": 9606972233.510124
+        },
+        "edge0.40_c320": {
+          "path": "tmp_work/test_only_challenge_search_20261009/parameter_tuning/crops/howe/07/edge0.40_c320.png",
+          "black_pixels": 72371,
+          "black_fraction": 0.094603,
+          "edge_pixels": 134470,
+          "energy": 9607132050.51021
+        },
+        "edge0.50_c80": {
+          "path": "tmp_work/test_only_challenge_search_20261009/parameter_tuning/crops/howe/07/edge0.50_c80.png",
+          "black_pixels": 72371,
+          "black_fraction": 0.094603,
+          "edge_pixels": 131756,
+          "energy": 9606911284.509941
+        },
+        "edge0.50_c160": {
+          "path": "tmp_work/test_only_challenge_search_20261009/parameter_tuning/crops/howe/07/edge0.50_c160.png",
+          "black_pixels": 72002,
+          "black_fraction": 0.09412,
+          "edge_pixels": 131756,
+          "energy": 9606993506.510113
+        },
+        "edge0.50_c320": {
+          "path": "tmp_work/test_only_challenge_search_20261009/parameter_tuning/crops/howe/07/edge0.50_c320.png",
+          "black_pixels": 71902,
+          "black_fraction": 0.09399,
+          "edge_pixels": 131756,
+          "energy": 9607149016.510149
+        }
+      }
+    }
+  ]
+}

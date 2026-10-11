@@ -1,0 +1,43 @@
+{
+  "settings": {
+    "mask_fixed": true,
+    "applied_fixed": true,
+    "reference_fixed": true,
+    "baseline": "saved harmonic boundary_smooth image and float Lab field",
+    "boundary": "blend toward saved boundary_raw field inside first 8px; no new solve",
+    "donor": {
+      "patch_px": 24,
+      "stride_px": 8,
+      "max_candidates": 512,
+      "min_candidates": 4,
+      "gate": "entire patch inside saved known-paper reference",
+      "signal": "L minus reference-only Gaussian sigma6; subtract each patch mean; clip to +/-3 L"
+    },
+    "quilting": {
+      "overlap_px": 8,
+      "tile_stride_px": 16,
+      "first_patch": "median patch L residual standard deviation",
+      "cost": "overlap mean squared L error plus .02 times reuse count",
+      "seam": "row-wise minimum-error vertical and horizontal cuts; joint keep-old union",
+      "comparator": "identical selected donor sequence/placements with weighted overlap average"
+    },
+    "texture_feather": "zero at first inside pixel, full at distance>=5px",
+    "chroma_texture": false,
+    "random_noise": false,
+    "DDRM_residual": false,
+    "original_damage_blending": false,
+    "pixel_GT": false,
+    "training": false,
+    "inference": false,
+    "evaluation": "all previous 22 development ROIs; no semantic ROI-label gating"
+  },
+  "dependencies": {
+    "scripts/benchmark/probe_paper_seam_texture.py": "cd5bd2fd01175321c7c7e04b02cc25774a69c168e913dd57e7f5fdbaa9975003",
+    "scripts/benchmark/probe_known_paper_harmonic_fill_v2.py": "42869e62cd44ebb3a8454e7af3daf050baf280e408141b5624f65a4a0de38f95",
+    "tmp_work/known_paper_harmonic_fill_pilot_v2_20261001/manifest.json": "c7ebf6f335d7708549c6155744f5b7e442c1aaed018cf8a986789113661e3510",
+    "tmp_work/known_paper_harmonic_fill_pilot_v2_20261001/complete.json": "f8e1fd2005a689b579c8a87e0a2956905ae5bda954c41c6c813e19eb8316d2f6"
+  },
+  "source_sha256": "cd5bd2fd01175321c7c7e04b02cc25774a69c168e913dd57e7f5fdbaa9975003",
+  "pages": 14,
+  "regions": 22
+}

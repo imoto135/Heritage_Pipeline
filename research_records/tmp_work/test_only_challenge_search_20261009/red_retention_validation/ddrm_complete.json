@@ -1,0 +1,339 @@
+{
+  "results": [
+    {
+      "id": "R01",
+      "method": "csc",
+      "seconds": 336.16,
+      "reused": false,
+      "command": [
+        "/home/imoto/miniconda3/envs/diffusion/bin/python",
+        "-B",
+        "/home/imoto/Heritage_Pipeline/tmp_work/npj_dirt_control_20261002/source_snapshot/ddrm_npj_v2/scripts/pipeline_ddrm.py",
+        "--input_dir",
+        "/home/imoto/Heritage_Pipeline/tmp_work/test_only_challenge_search_20261009/red_retention_validation/inputs/200019865_00002_1",
+        "--output_dir",
+        "/home/imoto/Heritage_Pipeline/tmp_work/test_only_challenge_search_20261009/red_retention_validation/outputs/csc",
+        "--tmp_dir",
+        "/home/imoto/Heritage_Pipeline/tmp_work/test_only_challenge_search_20261009/red_retention_validation/infer_tmp/csc/200019865_00002_1",
+        "--mask_dir",
+        "/home/imoto/Heritage_Pipeline/tmp_work/test_only_challenge_search_20261009/red_retention_validation/masks/csc",
+        "--ckpt",
+        "/home/imoto/Heritage_Pipeline/modules/stain_removal/experiments/model_char/model_char/ckpt_epoch0350.pth",
+        "--back_ground",
+        "/home/imoto/Heritage_Pipeline/modules/ddrm_npj_v2/background/isemonogatari.png",
+        "--device",
+        "cuda:0",
+        "--patch_size",
+        "128",
+        "--overlap",
+        "32",
+        "--shared_noise",
+        "--no_wandb"
+      ],
+      "output": "tmp_work/test_only_challenge_search_20261009/red_retention_validation/outputs/csc/200019865_00002_1/result/200019865_00002_1.png",
+      "sha256": "fc37cc13edc8c6e9da7f3ddcc86fcca97e5865cdbbb9e007c59837dbb7b61396"
+    },
+    {
+      "id": "R01",
+      "method": "howe",
+      "seconds": 273.53,
+      "reused": false,
+      "command": [
+        "/home/imoto/miniconda3/envs/diffusion/bin/python",
+        "-B",
+        "/home/imoto/Heritage_Pipeline/tmp_work/npj_dirt_control_20261002/source_snapshot/ddrm_npj_v2/scripts/pipeline_ddrm.py",
+        "--input_dir",
+        "/home/imoto/Heritage_Pipeline/tmp_work/test_only_challenge_search_20261009/red_retention_validation/inputs/200019865_00002_1",
+        "--output_dir",
+        "/home/imoto/Heritage_Pipeline/tmp_work/test_only_challenge_search_20261009/red_retention_validation/outputs/howe",
+        "--tmp_dir",
+        "/home/imoto/Heritage_Pipeline/tmp_work/test_only_challenge_search_20261009/red_retention_validation/infer_tmp/howe/200019865_00002_1",
+        "--mask_dir",
+        "/home/imoto/Heritage_Pipeline/tmp_work/test_only_challenge_search_20261009/red_retention_validation/masks/howe",
+        "--ckpt",
+        "/home/imoto/Heritage_Pipeline/modules/stain_removal/experiments/model_char/model_char/ckpt_epoch0350.pth",
+        "--back_ground",
+        "/home/imoto/Heritage_Pipeline/modules/ddrm_npj_v2/background/isemonogatari.png",
+        "--device",
+        "cuda:0",
+        "--patch_size",
+        "128",
+        "--overlap",
+        "32",
+        "--shared_noise",
+        "--no_wandb"
+      ],
+      "output": "tmp_work/test_only_challenge_search_20261009/red_retention_validation/outputs/howe/200019865_00002_1/result/200019865_00002_1.png",
+      "sha256": "5c3780a3672d8dd54a7f57b8191eca835c61ae8b395ef9ef089f36e5479e3f71"
+    },
+    {
+      "id": "R02",
+      "method": "csc",
+      "seconds": 328.27,
+      "reused": false,
+      "command": [
+        "/home/imoto/miniconda3/envs/diffusion/bin/python",
+        "-B",
+        "/home/imoto/Heritage_Pipeline/tmp_work/npj_dirt_control_20261002/source_snapshot/ddrm_npj_v2/scripts/pipeline_ddrm.py",
+        "--input_dir",
+        "/home/imoto/Heritage_Pipeline/tmp_work/test_only_challenge_search_20261009/red_retention_validation/inputs/200017458_00003_2",
+        "--output_dir",
+        "/home/imoto/Heritage_Pipeline/tmp_work/test_only_challenge_search_20261009/red_retention_validation/outputs/csc",
+        "--tmp_dir",
+        "/home/imoto/Heritage_Pipeline/tmp_work/test_only_challenge_search_20261009/red_retention_validation/infer_tmp/csc/200017458_00003_2",
+        "--mask_dir",
+        "/home/imoto/Heritage_Pipeline/tmp_work/test_only_challenge_search_20261009/red_retention_validation/masks/csc",
+        "--ckpt",
+        "/home/imoto/Heritage_Pipeline/modules/stain_removal/experiments/model_char/model_char/ckpt_epoch0350.pth",
+        "--back_ground",
+        "/home/imoto/Heritage_Pipeline/modules/ddrm_npj_v2/background/isemonogatari.png",
+        "--device",
+        "cuda:1",
+        "--patch_size",
+        "128",
+        "--overlap",
+        "32",
+        "--shared_noise",
+        "--no_wandb"
+      ],
+      "output": "tmp_work/test_only_challenge_search_20261009/red_retention_validation/outputs/csc/200017458_00003_2/result/200017458_00003_2.png",
+      "sha256": "f400118b58314020a7cf04e986e934f91feb9694b6c2d84fd2c1a3d87f1a4b17"
+    },
+    {
+      "id": "R02",
+      "method": "howe",
+      "seconds": 314.29,
+      "reused": false,
+      "command": [
+        "/home/imoto/miniconda3/envs/diffusion/bin/python",
+        "-B",
+        "/home/imoto/Heritage_Pipeline/tmp_work/npj_dirt_control_20261002/source_snapshot/ddrm_npj_v2/scripts/pipeline_ddrm.py",
+        "--input_dir",
+        "/home/imoto/Heritage_Pipeline/tmp_work/test_only_challenge_search_20261009/red_retention_validation/inputs/200017458_00003_2",
+        "--output_dir",
+        "/home/imoto/Heritage_Pipeline/tmp_work/test_only_challenge_search_20261009/red_retention_validation/outputs/howe",
+        "--tmp_dir",
+        "/home/imoto/Heritage_Pipeline/tmp_work/test_only_challenge_search_20261009/red_retention_validation/infer_tmp/howe/200017458_00003_2",
+        "--mask_dir",
+        "/home/imoto/Heritage_Pipeline/tmp_work/test_only_challenge_search_20261009/red_retention_validation/masks/howe",
+        "--ckpt",
+        "/home/imoto/Heritage_Pipeline/modules/stain_removal/experiments/model_char/model_char/ckpt_epoch0350.pth",
+        "--back_ground",
+        "/home/imoto/Heritage_Pipeline/modules/ddrm_npj_v2/background/isemonogatari.png",
+        "--device",
+        "cuda:1",
+        "--patch_size",
+        "128",
+        "--overlap",
+        "32",
+        "--shared_noise",
+        "--no_wandb"
+      ],
+      "output": "tmp_work/test_only_challenge_search_20261009/red_retention_validation/outputs/howe/200017458_00003_2/result/200017458_00003_2.png",
+      "sha256": "d29dbf22c3314a3fd9cb7fd31da872185cd07da36bd8bcbd5d3e7e1a75381efe"
+    },
+    {
+      "id": "R03",
+      "method": "csc",
+      "seconds": 206.58,
+      "reused": false,
+      "command": [
+        "/home/imoto/miniconda3/envs/diffusion/bin/python",
+        "-B",
+        "/home/imoto/Heritage_Pipeline/tmp_work/npj_dirt_control_20261002/source_snapshot/ddrm_npj_v2/scripts/pipeline_ddrm.py",
+        "--input_dir",
+        "/home/imoto/Heritage_Pipeline/tmp_work/test_only_challenge_search_20261009/red_retention_validation/inputs/200010454_00002_2",
+        "--output_dir",
+        "/home/imoto/Heritage_Pipeline/tmp_work/test_only_challenge_search_20261009/red_retention_validation/outputs/csc",
+        "--tmp_dir",
+        "/home/imoto/Heritage_Pipeline/tmp_work/test_only_challenge_search_20261009/red_retention_validation/infer_tmp/csc/200010454_00002_2",
+        "--mask_dir",
+        "/home/imoto/Heritage_Pipeline/tmp_work/test_only_challenge_search_20261009/red_retention_validation/masks/csc",
+        "--ckpt",
+        "/home/imoto/Heritage_Pipeline/modules/stain_removal/experiments/model_char/model_char/ckpt_epoch0350.pth",
+        "--back_ground",
+        "/home/imoto/Heritage_Pipeline/modules/ddrm_npj_v2/background/isemonogatari.png",
+        "--device",
+        "cuda:0",
+        "--patch_size",
+        "128",
+        "--overlap",
+        "32",
+        "--shared_noise",
+        "--no_wandb"
+      ],
+      "output": "tmp_work/test_only_challenge_search_20261009/red_retention_validation/outputs/csc/200010454_00002_2/result/200010454_00002_2.png",
+      "sha256": "29c348896c922a925a186749127b34002986aa84a274ede89685034523e35dd7"
+    },
+    {
+      "id": "R03",
+      "method": "howe",
+      "seconds": 203.98,
+      "reused": false,
+      "command": [
+        "/home/imoto/miniconda3/envs/diffusion/bin/python",
+        "-B",
+        "/home/imoto/Heritage_Pipeline/tmp_work/npj_dirt_control_20261002/source_snapshot/ddrm_npj_v2/scripts/pipeline_ddrm.py",
+        "--input_dir",
+        "/home/imoto/Heritage_Pipeline/tmp_work/test_only_challenge_search_20261009/red_retention_validation/inputs/200010454_00002_2",
+        "--output_dir",
+        "/home/imoto/Heritage_Pipeline/tmp_work/test_only_challenge_search_20261009/red_retention_validation/outputs/howe",
+        "--tmp_dir",
+        "/home/imoto/Heritage_Pipeline/tmp_work/test_only_challenge_search_20261009/red_retention_validation/infer_tmp/howe/200010454_00002_2",
+        "--mask_dir",
+        "/home/imoto/Heritage_Pipeline/tmp_work/test_only_challenge_search_20261009/red_retention_validation/masks/howe",
+        "--ckpt",
+        "/home/imoto/Heritage_Pipeline/modules/stain_removal/experiments/model_char/model_char/ckpt_epoch0350.pth",
+        "--back_ground",
+        "/home/imoto/Heritage_Pipeline/modules/ddrm_npj_v2/background/isemonogatari.png",
+        "--device",
+        "cuda:0",
+        "--patch_size",
+        "128",
+        "--overlap",
+        "32",
+        "--shared_noise",
+        "--no_wandb"
+      ],
+      "output": "tmp_work/test_only_challenge_search_20261009/red_retention_validation/outputs/howe/200010454_00002_2/result/200010454_00002_2.png",
+      "sha256": "f2bb52946bfa674f78ddcc5c8e36e98da9a9fe03c49de3d6b5a9e1eadda363fb"
+    },
+    {
+      "id": "R02",
+      "method": "howe_no_red",
+      "seconds": 382.14,
+      "reused": false,
+      "command": [
+        "/home/imoto/miniconda3/envs/diffusion/bin/python",
+        "-B",
+        "/home/imoto/Heritage_Pipeline/tmp_work/npj_dirt_control_20261002/source_snapshot/ddrm_npj_v2/scripts/pipeline_ddrm.py",
+        "--input_dir",
+        "/home/imoto/Heritage_Pipeline/tmp_work/test_only_challenge_search_20261009/red_retention_validation/inputs/200017458_00003_2",
+        "--output_dir",
+        "/home/imoto/Heritage_Pipeline/tmp_work/test_only_challenge_search_20261009/red_retention_validation/outputs/howe_no_red",
+        "--tmp_dir",
+        "/home/imoto/Heritage_Pipeline/tmp_work/test_only_challenge_search_20261009/red_retention_validation/infer_tmp/howe_no_red/200017458_00003_2",
+        "--mask_dir",
+        "/home/imoto/Heritage_Pipeline/tmp_work/test_only_challenge_search_20261009/red_retention_validation/masks/howe_no_red",
+        "--ckpt",
+        "/home/imoto/Heritage_Pipeline/modules/stain_removal/experiments/model_char/model_char/ckpt_epoch0350.pth",
+        "--back_ground",
+        "/home/imoto/Heritage_Pipeline/modules/ddrm_npj_v2/background/isemonogatari.png",
+        "--device",
+        "cuda:1",
+        "--patch_size",
+        "128",
+        "--overlap",
+        "32",
+        "--shared_noise",
+        "--no_wandb"
+      ],
+      "output": "tmp_work/test_only_challenge_search_20261009/red_retention_validation/outputs/howe_no_red/200017458_00003_2/result/200017458_00003_2.png",
+      "sha256": "3070d7a21a603a4c5fe09365b73fe23250701a9dc109da2fc96b0f93c4bdf7c0"
+    },
+    {
+      "id": "R04",
+      "method": "csc",
+      "reused": true,
+      "reason": "full black/red masks, source and DDRM settings identical to original 06",
+      "output": "tmp_work/test_only_challenge_search_20261009/red_retention_validation/outputs/csc/200003803_00003_1/result/200003803_00003_1.png",
+      "sha256": "9db9907873c59d5a38921da95a226613da9c5e634d907b809e740a3e5da977b9"
+    },
+    {
+      "id": "R04",
+      "method": "howe",
+      "reused": true,
+      "reason": "full black/red masks, source and DDRM settings identical to original 06",
+      "output": "tmp_work/test_only_challenge_search_20261009/red_retention_validation/outputs/howe/200003803_00003_1/result/200003803_00003_1.png",
+      "sha256": "a809964a0135cf953870c75aaf79e22cb7a81c9939c391fcb56f6efa517aa3af"
+    }
+  ],
+  "red_source_copy_audit": [
+    {
+      "id": "R01",
+      "red_pixels": 35825,
+      "methods": {
+        "csc": {
+          "red_mask_source_rgb_changed_pixels": 0,
+          "output_sha256": "fc37cc13edc8c6e9da7f3ddcc86fcca97e5865cdbbb9e007c59837dbb7b61396"
+        },
+        "howe": {
+          "red_mask_source_rgb_changed_pixels": 0,
+          "output_sha256": "5c3780a3672d8dd54a7f57b8191eca835c61ae8b395ef9ef089f36e5479e3f71"
+        }
+      }
+    },
+    {
+      "id": "R02",
+      "red_pixels": 125662,
+      "methods": {
+        "csc": {
+          "red_mask_source_rgb_changed_pixels": 0,
+          "output_sha256": "f400118b58314020a7cf04e986e934f91feb9694b6c2d84fd2c1a3d87f1a4b17"
+        },
+        "howe": {
+          "red_mask_source_rgb_changed_pixels": 0,
+          "output_sha256": "d29dbf22c3314a3fd9cb7fd31da872185cd07da36bd8bcbd5d3e7e1a75381efe"
+        }
+      }
+    },
+    {
+      "id": "R03",
+      "red_pixels": 20432,
+      "methods": {
+        "csc": {
+          "red_mask_source_rgb_changed_pixels": 0,
+          "output_sha256": "29c348896c922a925a186749127b34002986aa84a274ede89685034523e35dd7"
+        },
+        "howe": {
+          "red_mask_source_rgb_changed_pixels": 0,
+          "output_sha256": "f2bb52946bfa674f78ddcc5c8e36e98da9a9fe03c49de3d6b5a9e1eadda363fb"
+        }
+      }
+    },
+    {
+      "id": "R04",
+      "red_pixels": 0,
+      "methods": {
+        "csc": {
+          "red_mask_source_rgb_changed_pixels": 0,
+          "output_sha256": "9db9907873c59d5a38921da95a226613da9c5e634d907b809e740a3e5da977b9"
+        },
+        "howe": {
+          "red_mask_source_rgb_changed_pixels": 0,
+          "output_sha256": "a809964a0135cf953870c75aaf79e22cb7a81c9939c391fcb56f6efa517aa3af"
+        }
+      }
+    }
+  ],
+  "red_on_off_control": {
+    "id": "R02",
+    "same_black_mask": true,
+    "outside_red_changed_pixels": 0,
+    "red_region_changed_pixels": 125662,
+    "external_recomposite_vs_pipeline_on_changed_pixels": 0,
+    "朱印": {
+      "xywh": [
+        1790,
+        80,
+        320,
+        620
+      ],
+      "red_mask_pixels": 22201,
+      "changed_output_pixels": 22201
+    },
+    "綴じ側": {
+      "xywh": [
+        70,
+        150,
+        200,
+        2800
+      ],
+      "red_mask_pixels": 101567,
+      "changed_output_pixels": 101567
+    }
+  },
+  "inputs_masks_unchanged": true,
+  "figure": "tmp_work/test_only_challenge_search_20261009/red_retention_validation/4例_CSC赤とHowe併用_DDRM比較.png",
+  "figure_sha256": "3bfed7fcf9ce7e47fd04a255e1a0c4ba3ba8e8cf3d20aaa2018fec33db467dc7"
+}

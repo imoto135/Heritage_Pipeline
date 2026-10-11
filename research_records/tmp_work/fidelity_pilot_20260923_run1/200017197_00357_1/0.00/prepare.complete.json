@@ -1,0 +1,32 @@
+{
+  "run_signature": "4ce7106531d7274fdc4a3a5a6f32fac86104745a97b54703479bc129cc2a1a45",
+  "command": [
+    "/home/imoto/miniconda3/envs/diffusion/bin/python",
+    "-B",
+    "/home/imoto/Heritage_Pipeline/scripts/benchmark/fidelity_stage.py",
+    "prepare",
+    "--input",
+    "/home/imoto/Heritage_Pipeline/tmp_work/fidelity_pilot_20260923_run1/200017197_00357_1/0.00/input/200017197_00357_1.png",
+    "--ace",
+    "/home/imoto/Heritage_Pipeline/data/makura_csc_mask/200017197_00357_1/00_input.png",
+    "--output",
+    "/home/imoto/Heritage_Pipeline/tmp_work/fidelity_pilot_20260923_run1/200017197_00357_1/0.00/prepared",
+    "--masks",
+    "/home/imoto/Heritage_Pipeline/tmp_work/fidelity_pilot_20260923_run1/200017197_00357_1/0.00/masks/200017197_00357_1",
+    "--rescue",
+    "on"
+  ],
+  "wall_seconds": 22.956770230084658,
+  "outputs": {
+    "/home/imoto/Heritage_Pipeline/tmp_work/fidelity_pilot_20260923_run1/200017197_00357_1/0.00/prepared/B0.png": "ec084bb20e009933d77b6ecd16d4ea37f86531be6b0370fbfc1ea09a6c869fa0",
+    "/home/imoto/Heritage_Pipeline/tmp_work/fidelity_pilot_20260923_run1/200017197_00357_1/0.00/prepared/P0.png": "b80be59e6f741361e2cb31c510172612776fd45181ad589e7dade2006364f498",
+    "/home/imoto/Heritage_Pipeline/tmp_work/fidelity_pilot_20260923_run1/200017197_00357_1/0.00/prepared/P1.png": "9d065fcc0cece8f248de22f6db699731ede94dc0a06325e0761872737190a2d1",
+    "/home/imoto/Heritage_Pipeline/tmp_work/fidelity_pilot_20260923_run1/200017197_00357_1/0.00/prepared/simple_hole.png": "308b2d5959ee283e6b070699e3b52337868b15900f3807f6c6bf36452fb42786",
+    "/home/imoto/Heritage_Pipeline/tmp_work/fidelity_pilot_20260923_run1/200017197_00357_1/0.00/prepared/refined_hole.png": "f6441b3b85e56483b27e0af4f919542ea3d5e644c4c6df5bde9f44d4293afd6d",
+    "/home/imoto/Heritage_Pipeline/tmp_work/fidelity_pilot_20260923_run1/200017197_00357_1/0.00/masks/200017197_00357_1/02_text_black.png": "3f40436c2e255dc12338a62d8e9658188100e597912ad52b18261a12be4b8777",
+    "/home/imoto/Heritage_Pipeline/tmp_work/fidelity_pilot_20260923_run1/200017197_00357_1/0.00/masks/200017197_00357_1/03_text_red.png": "4f54bc5f8732648d0e0bcdba0281567ec587b1d3039e2b372ac3e4c25d652dcb",
+    "/home/imoto/Heritage_Pipeline/tmp_work/fidelity_pilot_20260923_run1/200017197_00357_1/0.00/masks/200017197_00357_1/04_degradation.png": "47523712af69aa30c5e78c16c225fc194d66e28b657585fa24aa280391bb78e1",
+    "/home/imoto/Heritage_Pipeline/tmp_work/fidelity_pilot_20260923_run1/200017197_00357_1/0.00/masks/200017197_00357_1/05_background.png": "e3161b2c86f4c6998474fcb51f18e6e66a57df9a56edd7a8b27b938e63a1121c",
+    "/home/imoto/Heritage_Pipeline/tmp_work/fidelity_pilot_20260923_run1/200017197_00357_1/0.00/prepared/stage.json": "fce3359f820e1b08d4ed9285dd132d1c8d8be01b6ac68efe6813b76166a59e4f"
+  }
+}

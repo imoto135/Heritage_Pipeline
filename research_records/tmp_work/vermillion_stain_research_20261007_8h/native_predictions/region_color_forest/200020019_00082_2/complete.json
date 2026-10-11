@@ -1,0 +1,21 @@
+{
+  "page": "200020019_00082_2",
+  "name": "region_color_forest",
+  "book": "200020019",
+  "role": "development",
+  "original": "data/train/200020019/200020019_00082_2.jpg",
+  "source_sha256": "1202997f573d6dcdc461fda9941fa0889311ee31c34842f4b49c0c38d037847c",
+  "model_sha256": "4a557a24a1854bab3b2f2f6248a261e9572d6fa77f4b147a42f0b2a2cc741eac",
+  "threshold": 0.5,
+  "script_sha256": "7f7e895a1b9f0b4204025264c530e67f4e3c6c9fe523d4de3c0c632c67ddd212",
+  "mark_pixels": 291035,
+  "seconds": 7.508161830715835,
+  "training_points": 924,
+  "training": "Tentative original-development points/regions; no validation labels used",
+  "classifier_has_no_stain_head": true,
+  "no_full_pixel_GT": true,
+  "outputs": {
+    "mark_mask.png": "ea0e2d5a3ac24bcf0f3b2bf310179311246bca8224a5e002e20c7f07fb204199",
+    "mark_probability_preview.png": "376783038089d2fc4c364ce6b9f262e9335b71cfaa345d9f7d3fe38f80b5efbe"
+  }
+}

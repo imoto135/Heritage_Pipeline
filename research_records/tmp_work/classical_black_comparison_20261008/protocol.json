@@ -1,0 +1,112 @@
+{
+  "cases": [
+    {
+      "id": "N01",
+      "original": "data/split_dataset/test/200010454/200010454_00003_2.jpg",
+      "roi_xywh": [
+        428,
+        347,
+        190,
+        220
+      ],
+      "saved_v2": "data/split_dataset_csc_mask_v2/test/200010454/200010454_00003_2/02_text_black.png",
+      "saved_sauvola": "tmp_work/npj_contact_research_20261007/full_followup/B/masks/sauvola/200010454_00003_2/02_text_black.png",
+      "reason": "細い曲線と円形シミ：線の連続性とシミの誤検出",
+      "source_sha256": "67c1f8a762d442015f420a34512119163c3e4cb06307bb75567d086f119a246f",
+      "page_size": [
+        1768,
+        2383
+      ]
+    },
+    {
+      "id": "T01",
+      "original": "data/split_dataset/train/hnsd00000/hnsd007_023.jpg",
+      "roi_xywh": [
+        812,
+        421,
+        450,
+        450
+      ],
+      "saved_v2": "data/split_dataset_csc_mask_v2/train/hnsd00000/hnsd007_023/02_text_black.png",
+      "saved_sauvola": "tmp_work/npj_contact_research_20261007/full_page/masks/sauvola/hnsd007_023/02_text_black.png",
+      "reason": "広いシミと本文：筆画の欠落・太り・紙面ノイズ",
+      "source_sha256": "41999e5b52d17e60ea068c9b629ffcce037dc27fcbb3a4f45f46a5063d7b22af",
+      "page_size": [
+        1860,
+        2843
+      ]
+    },
+    {
+      "id": "N05",
+      "original": "data/split_dataset/test/200010454/200010454_00021_1.jpg",
+      "roi_xywh": [
+        1329,
+        1757,
+        280,
+        380
+      ],
+      "reason": "細い墨線の対照：細い線の保持と紙面の誤検出",
+      "source_sha256": "cc0e546948bc14c4f68849aede4a5c02453aabe55d3a3c5c14aa3a1e536aacae",
+      "page_size": [
+        1777,
+        2365
+      ]
+    }
+  ],
+  "selection": "Original-image inspection before new classical outputs; purposive development comparison.",
+  "input": "Full native page, common OpenCV RGB2GRAY; crop only after processing; no ACE, CLAHE, red overlay or DDRM.",
+  "gt": "No dense pixel GT. Any point labels are tentative original-only annotations, not expert transcription.",
+  "frozen_settings": {
+    "sauvola61": {
+      "window": 61,
+      "k": 0.2,
+      "R": 0.5
+    },
+    "wolf61": {
+      "window": 61,
+      "k": 0.5,
+      "global_statistics": "whole native page"
+    },
+    "nick61": {
+      "window": 61,
+      "k": -0.1,
+      "formula": "m + k sqrt(mean(I^2) - m^2 / window_area)"
+    },
+    "nick19": {
+      "window": 19,
+      "k": -0.1
+    },
+    "gatos_native": {
+      "initial_window": 61,
+      "k": 0.2,
+      "background_window": 181,
+      "q": 0.6,
+      "p1": 0.5,
+      "p2": 0.8,
+      "wiener_window": 3,
+      "upsampling": 1,
+      "postprocessing": "paper shrink/swell with dominant component height >=10; min odd window3"
+    },
+    "su2013_local": {
+      "gamma": 1,
+      "contrast_window": 3,
+      "threshold": "edge mean + edge std / 2",
+      "window": "nearest odd >= 2*estimated horizontal edge width",
+      "canny": "skimage sigma sqrt(2), automatic gradient 70th percentile high and low=.4*high",
+      "postprocessing": "paper Algorithm2 raster neighbor-pair relabel; remove isolated foreground pixels",
+      "limitation": "Local reconstruction, not author MATLAB p-code parity; reference [4] boundary logical operators not reproduced in full."
+    },
+    "controls": [
+      "global Otsu",
+      "Niblack61 k=-.2",
+      "saved CSC v2 where available"
+    ],
+    "sensitivity": [
+      "Sauvola31 k=.2",
+      "Sauvola91 k=.2",
+      "Sauvola61 k=.1",
+      "Wolf61 k=.2"
+    ]
+  },
+  "implementation_limits": "Gatos native M=1 variant and Su local reconstruction must be named as such. No paper-level superiority claims."
+}

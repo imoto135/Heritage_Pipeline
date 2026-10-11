@@ -1,0 +1,40 @@
+{
+  "stroke_width": 4.393799781799316,
+  "eligible_components": 0,
+  "groups": [],
+  "removed_pixels": 0,
+  "removed_components": 0,
+  "strict_geometry_removed_pixels": 0,
+  "strict_geometry_removed_components": 0,
+  "naive_csc_veto_removed_pixels": 9413,
+  "id": "F05",
+  "page": "200005798_00036_1",
+  "origin": "fixed_holdout_validation",
+  "neighbors": [
+    "data/test/200005798/200005798_00035_1.jpg",
+    "data/test/200005798/200005798_00035_2.jpg",
+    "data/test/200005798/200005798_00036_2.jpg",
+    "data/test/200005798/200005798_00037_1.jpg"
+  ],
+  "masks_unchanged": true,
+  "route_counts": {
+    "red": 0,
+    "text": 720608,
+    "background": 4989673,
+    "repair_candidate": 98053,
+    "unknown": 410976
+  },
+  "dependencies": {
+    "data/test/200005798/200005798_00036_1.jpg": "0d2955319c30660157c5f279d75205f6b65ef07bccbd2d105391dad85af8184c",
+    "tmp_work/test_only_challenge_search_20261009/fixed_holdout_validation/masks/howe/200005798_00036_1/02_text_black.png": "631233c76a6e785a49398be44cf96eb066fc852293a59cd1d036508e5a8c9f29",
+    "tmp_work/test_only_challenge_search_20261009/fixed_holdout_validation/masks/howe/200005798_00036_1/03_text_red.png": "bf07c8172ddfb10aba1c38cb2c96d0e95150e70f3ae664feb53c30b52b0c2bb3",
+    "data/split_dataset_csc_mask_v2/test/200005798/200005798_00036_1/02_text_black.png": "5c781c675e807c6ec04e8f0846cc32374e0a68a17af5225621a22c81de9a6414",
+    "data/split_dataset_csc_mask_v2/test/200005798/200005798_00036_1/04_degradation.png": "2d0bb60b51b224070b5e2ed53f117f6edc8625c1b28cbce94b88b0fa24a8c9e2",
+    "data/split_dataset_csc_mask_v2/test/200005798/200005798_00036_1/05_background.png": "02c51c2afcb2df1f47c494971f2b38b192c2e83b35cbb96a43acaee255e08f04",
+    "data/test/200005798/200005798_00035_1.jpg": "817e4fd3d787d69e171947500c84b95edb102c4754d9e522b54faab8bde034b4",
+    "data/test/200005798/200005798_00035_2.jpg": "d9c7ad49a73ec6ff53495d07777ecbbd85c4cd67c45c4fbe7f53f3309ada5306",
+    "data/test/200005798/200005798_00036_2.jpg": "2fd9768a9452071e0ef1f742cdd44f4e6a995780654931b53e19fd91c711d060",
+    "data/test/200005798/200005798_00037_1.jpg": "251a23a776e8b0a45aa53f28f0052c6aaa018f8b572d8d850b01314487e20135"
+  },
+  "seconds": 2.55
+}

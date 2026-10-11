@@ -1,0 +1,39 @@
+{
+  "settings": {
+    "scope": "only previously rejected top-touching components, full-page inference",
+    "old_top_band_fixed": true,
+    "original_top_only_touch": true,
+    "area_min": 128,
+    "area_max_fraction": 0.01,
+    "seed_min": 32,
+    "peak_radius_min": 6,
+    "max_side_fraction": 0.2,
+    "complete_top_guard_px": 16,
+    "bottom_rule_guard_px": 32,
+    "side_margin_fraction": 0.06,
+    "long_horizontal_width_fraction": 0.55,
+    "long_horizontal_guard_px": 8,
+    "support_L_drop": 10,
+    "support_L_max": 80,
+    "support_close_px": 3,
+    "grow_radius_px": 3,
+    "grow_L_drop": 4,
+    "conservation": "frozen warm anchor guard plus v6 red/extra; old edit union always retained",
+    "ablation": "release top touch inside old band vs trace same selected components into safe upper domain",
+    "ROI_gating": false,
+    "training": false,
+    "pixel_GT": false,
+    "development": true
+  },
+  "dependencies": {
+    "scripts/benchmark/probe_margin_top_completion.py": "7abb6287107d29e710425b94fd6024d9a218101bcaa806136d77a6a0c67b3e28",
+    "scripts/benchmark/probe_paper_margin_defects.py": "1de8589d43dc3d5899e202a7853f5e0ae1653cae8a3bfe91e5c837227f8f87d6",
+    "tmp_work/paper_margin_defect_pilot_20261001/candidate_manifest.json": "e5da8c0128a3e702ae62f3928c7983651ca5beabe0deec7cd0b3f93c7a2e3149",
+    "tmp_work/paper_margin_defect_pilot_20261001/candidate_complete.json": "e2207aa98e6e44469e740f23cc5ff55189de42ee7bbe7c51618ad60174055900"
+  },
+  "source_sha256": "7abb6287107d29e710425b94fd6024d9a218101bcaa806136d77a6a0c67b3e28",
+  "pages": 14,
+  "regions": 22,
+  "selection": "same all 22 development ROIs; no output-based selection",
+  "DDRM": false
+}

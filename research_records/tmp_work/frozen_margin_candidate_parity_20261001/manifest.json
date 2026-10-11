@@ -1,0 +1,42 @@
+{
+  "dependencies": {
+    "scripts/benchmark/frozen_margin_preprocessing_candidate.py": "3e8c31f39a1a9d3a153bbeafc55be52bde492fa3b564407ddbfcc88d9d5388c1",
+    "scripts/benchmark/verify_frozen_margin_candidate_parity.py": "050a9f940e2405437b1d0bbc21c8190cd7de546a47c990d44194e724037df373",
+    "scripts/benchmark/probe_paper_rim_lowfrequency_v2.py": "9d1dc0c515f79f86ab502b1a9dea03ea16fc0b42e670b602f5032fe3df0289c5",
+    "scripts/benchmark/probe_paper_margin_defects.py": "1de8589d43dc3d5899e202a7853f5e0ae1653cae8a3bfe91e5c837227f8f87d6",
+    "scripts/benchmark/probe_defect_context_anchors.py": "60b13ab23a2bd1d3c6439a8a8fe9fe20c1e2882a68d7b9c5e5f78360e37a7832",
+    "scripts/benchmark/probe_margin_top_completion.py": "7abb6287107d29e710425b94fd6024d9a218101bcaa806136d77a6a0c67b3e28",
+    "scripts/benchmark/probe_thin_margin_components.py": "b4d531a6bf83637c2536ce84b6c85fb0bf360c528ef5ffb4eb0e608908c15a33",
+    "scripts/benchmark/probe_anchored_pale_margin_masks.py": "b359b06026019688f4c444728de1df88c1d6fcf4bff617a40bb851163a35913e",
+    "scripts/benchmark/diagnose_unanchored_upper_cores.py": "c536f0f6e61accaa5ed82056bf8b415d2ea1501818dd5ebb133a45931a4d8005",
+    "scripts/benchmark/diagnose_directional_paper_candidates.py": "8df479da2e36924fec0ab5d9193d5a24394c92bff871f705c4b9b967fd7c6d79",
+    "tmp_work/full_upper_strong_mask_pilot_v2_20261001/manifest.json": "a2ac253184b69efb005685f939f4daa2b1afbfb7213052ffb85ff1890cc811b4",
+    "tmp_work/full_upper_strong_mask_pilot_v2_20261001/complete.json": "c68e33c5e708222f74c229c57197d2bb9f573a4b874cc96cedaf4ece40d4fd83",
+    "tmp_work/directional_paper_candidate_diagnostic_20261001/manifest.json": "2435e17759bf4505db19613a6ae7ad3c3097d8404c19e75e7b6146051b9cbf5e",
+    "tmp_work/directional_paper_candidate_diagnostic_20261001/complete.json": "1d72b23ac6ba15f347b34cd0517f1fd29b79a75157a8e6e16043c1a76c05b588"
+  },
+  "source_sha256": "050a9f940e2405437b1d0bbc21c8190cd7de546a47c990d44194e724037df373",
+  "settings": {
+    "thin_peak": 3.5,
+    "fragment_distance": 8,
+    "pale_drop": 6,
+    "new_upper_horizontal_ratio": 3,
+    "core_halo_radius": 6,
+    "halo_drop": 2,
+    "recursive": false,
+    "ROI_gating": false,
+    "direction_settings": {
+      "sigma": 1,
+      "reference": "retained unedited safe pixels",
+      "anisotropy": 0.55,
+      "shape_anisotropy": 0.8,
+      "alignment_degrees": 15,
+      "gradient_energy": 0.05,
+      "area_max_page_fraction": 0.01,
+      "max_side_short_page_fraction": 0.2
+    },
+    "development": true
+  },
+  "pages": 25,
+  "purpose": "exact array composition parity, not accuracy or independent evaluation"
+}

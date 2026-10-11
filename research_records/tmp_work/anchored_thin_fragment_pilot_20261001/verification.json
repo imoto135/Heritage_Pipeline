@@ -1,0 +1,47 @@
+{
+  "status": "passed",
+  "pages": 18,
+  "ROIs": 42,
+  "distance_levels": [
+    8,
+    16
+  ],
+  "no_recursive_chaining": true,
+  "outside_applied_changes": 0,
+  "outside_edit_changes": 0,
+  "all_nonreference_poison_cases": [
+    {
+      "id": "200021712_00082_1_component_16",
+      "mode": "near16"
+    },
+    {
+      "id": "200021712_00082_1_component_21",
+      "mode": "near16"
+    },
+    {
+      "id": "unseen_thin_crack",
+      "mode": "near8"
+    },
+    {
+      "id": "unseen_thin_crack",
+      "mode": "near16"
+    },
+    {
+      "id": "200017458_00004_2_component_7",
+      "mode": "near8"
+    },
+    {
+      "id": "200017458_00004_2_component_7",
+      "mode": "near16"
+    },
+    {
+      "id": "200017458_00004_2_component_13",
+      "mode": "near8"
+    },
+    {
+      "id": "200017458_00004_2_component_13",
+      "mode": "near16"
+    }
+  ],
+  "pixel_GT": false
+}

@@ -1,0 +1,830 @@
+       Document Binarization with Automatic Parameter Tuning
+                                             Nicholas R. Howe
+
+                                    Received: date / Accepted: date
+
+
+Abstract                                                      monochromatic ink on paper, and their meaning is
+                                                              embodied solely in the distribution of the ink, a pat-
+Document analysis systems often begin with bina-              tern that the binary document explicitly represents.
+rization as a first processing stage. Although numer-            Of course, inferring the correct binarization of a
+ous techniques for binarization have been proposed,           document from its color or grayscale representation
+the results produced can vary in quality and often            can prove challenging. Physical degradation of the
+prove sensitive to the settings of one or more control        document, adverse lighting or imaging conditions,
+parameters. This paper examines a promising ap-               and limitations on resolution can all conspire to ob-
+proach to binarization based upon simple principles,          scure the original pattern.1 To meet this challenge,
+and shows that its success depends most significantly         researchers have proposed many algorithms to bina-
+upon the values of two key parameters. It further de-         rize document images. Indeed, intense activity in
+scribes an automatic technique for setting these pa-          this field has made the Document Image Binariza-
+rameters in a manner that tunes them to the individ-          tion Contest (DIBCO) series one of the most popular
+ual image, yielding a final binarization algorithm that       competitions within the document analysis research
+can cut total error by one-third with respect to the          community, attracting seventeen entries in its most
+baseline version. The results of this method advance          recent iteration [19]. Nevertheless, the results from
+the state of the art on recent benchmarks.                    these contests reveal that there remains room for im-
+                                                              provement in the quality of automatic binarization.
+                                                                 This paper makes two related contributions to the
+1    Introduction                                             study of automatic document binarization. First, it
+                                                              describes a method that can achieve excellent results
+Physical documents in the real world exhibit a mul-
+                                                              on a wide variety of challenging document images.
+titude of colors and shadings, and the appearance
+                                                              Second, as a means to these results it investigates a
+of even a single document may vary widely depend-
+                                                              method to automatically determine the best parame-
+ing upon factors such as lighting, viewing angle, etc.
+                                                              ter values suited to each particular image. Automatic
+Digital reproductions of physical documents usually
+                                                              parameter estimation has received little research at-
+make use of a 24-bit color representation, or perhaps
+                                                              tention to date but offers two advantages when done
+8-bit grayscale. Such formats omit some of the infor-
+                                                              well: it makes the method easier to employ since the
+mation present in the original, but retain more than
+enough for most applications. Certain document pro-              1 Some ambiguity remains over how to define the ground
+cessing schemes go much further: they retain only             truth binarization. For instance, should an unintended ink spill
+a single bit per document pixel. Binary document              made by a scribe be included? For the record, stipulate that
+representations are very useful despite their low fi-         the ground truth should identify the set of all pixels at least
+                                                              50% covered with ink during the production of the document.
+delity because the information lost in binarization           In practice, the ground truth used on most benchmark datasets
+is more or less unrelated to the symbolic content of          probably does not correspond perfectly with this ideal, but
+the document. Most documents are produced using               represents the imperfect judgment of a human expert [4].
+
+
+                                                          1
+user doesn’t need to worry about finding the best              pixel window. Lelore and Bouchara [13] won DIBCO
+parameter settings, and it also improves the average           2011 with a technique that first uses coarse threshold-
+result because each image can use its own ideal value          ing to partition pixels into three groups: ink, back-
+instead of a single compromise setting that works ad-          ground, and unknown. Models describe the ink and
+equately but suboptimally for all images.                      background clusters, and guide decisions on the un-
+                                                               known pixels. The method also employs a higher
+1.1    Prior Work                                              resolution grid generated from the original image via
+                                                               linear interpolation.
+Before considering new approaches, it is worth sur-
+veying the history and development of binarization
+algorithms. Because most documents are printed in                 Several other ideas proposed in recent years pro-
+dark ink on light paper, many classic methods rely on          vide motivation for the base algorithm employed in
+thresholding the image intensity. Under ideal circum-          this paper. A number of projects have explored the
+stances, as noted by Otsu [17] a simple global thresh-         use of Markov random fields (MRF) for binarization
+old suffices to distinguish markings from the back-            [12, 18, 15, 11]. Inspired by the human visual sys-
+ground. In more difficult cases the overall intensity          tem, some work has employed center-surround filters
+may vary over the document, so that a single global            to identify areas that are darker than their local envi-
+threshold may simultaneously prove too high in some            ronment, and thus likely to be ink [23]. These play a
+areas and too low in others. Thus both Niblack [16]            role similar to that of the Laplacian filter used herein.
+and Sauvola and Pietikainen [21] have proposed lo-             Finally, various approaches have used edge detection
+cally adaptive techniques that adjust the threshold            to improve binarization results [10, 20]. Although
+used according to the mean and variance in some                these ideas have been explored separately, the spe-
+local region around each pixel. Although generally             cific combination used in this work appears particu-
+more accurate than Otsu for document images with               larly effective.
+varying intensities, locally adaptive thresholding can
+sometimes fail catastrophically in areas of low vari-
+ance, motivating hierarchical approaches such as the              Automatic estimation of appropriate parameter
+Decompose algorithm [7]. Adaptive thresholding also            settings for document binarization has received lim-
+presents the user with additional parameters to set,           ited attention to date. Gatos et. al. describe a
+relating to the size of the local region and to the rel-       parameter-free method that relies on detailed mod-
+ative importance of the local mean vs. its deviation           eling of the document background [9]. Dawoud de-
+as the local threshold is determined.                          scribes a method based upon cross section sequence
+   The winners of recent DIBCO events go beyond                that combines results at multiple threshold levels into
+locally adaptive thresholding. They achieve their re-          a single binarization [8]. Badekas and Papamarkos
+sults partially by using thresholds, but most also per-        [2] describe a method inspired by work on edge de-
+form modeling of the ink and background classes to             tection. Their technique first produces binarizations
+enable more accurate individual pixel classification.          over a range of parameter settings, and estimates a
+Lu et al. [14] model the document background via               ground truth via chi-square analysis on the cumula-
+an iterative polynomial smoothing, and then choose             tive votes of the multiple binarizations at each pixel.
+local thresholds based on detected text stroke edges.          It then iteratively narrows the parameter range un-
+This method won DIBCO 2009, and a revised ver-                 til unable to do so further, giving the final estimated
+sion tied as a winner of H-DIBCO 2010 (handwritten             best setting. Although the method described herein
+documents only). The second winner in 2010 was a               also begins by computing binarizations over a range
+method described by Bar-Yosef et al. [3] that grows            of parameter values, it differs by not attempting to
+foreground regions iteratively based upon local mod-           estimate a ground truth, and requires no further it-
+eling of the foreground and background within a 7×7            eration to choose the ideal parameter value.
+
+
+                                                           2
+2     Approach                                              relative to data fidelity will depend on the relative
+                                                            magnitudes of Lbij to Cij  h
+                                                                                         and Cijv
+                                                                                                  .
+The base approach to binarization used in this pa-             The label costs L0ij and L1ij should be invariant to
+per was introduced recently [11] and rests on three the local image illumination, and thus are taken from
+mutually supporting strategies. First, it defines the the Laplacian of the image intensity:
+target binarization as a labeling on pixels that mini-
+mizes a global energy function inspired by a Markov                                L0ij = ∇2 Iij                 (2)
+random field model. Second, in formulating the data-
+fidelity term of this energy it relies on the Laplacian                           L1ij = −∇2 Iij                 (3)
+of the image intensity to distinguish ink from back- Intuitively this will tend to separate ink from back-
+ground. This grants a crucial invariance to differences ground because the Laplacian measures the diver-
+in contrast and overall intensity. Third, it incorpo- gence of the gradient. It will thus be positive at in-
+rates edge discontinuities into the smoothness term of tensity valleys (ink) and negative at intensity peaks
+the global energy function, biasing ink boundaries to or plateaus (background). The data terms of the en-
+align with edges and allowing a stronger smoothness ergy function become a summation of the label-signed
+incentive over the rest of the image. The paragraphs Laplacian over all pixels in the image. For a particu-
+below explain each of these points in greater detail. lar component of ink or background, Green’s theorem
+   The global energy function operates on binariza- tells us that the summed Laplacian over all its pix-
+tions B, which label each pixel indexed by (i, j) as els is mathematically equivalent to the gradient flux
+either ink or background, Bij ∈ {0, 1}. The energy across its boundary. In other words, the energy con-
+takes on a typical additive form, with terms rep- tribution of each component is determined solely by
+resenting the fidelity of a particular labeling when what happens at its boundary. This makes intuitive
+compared to the intensity data, and other terms rep- sense but can cause trouble for components that in-
+resenting the smoothness or regularity of the solu- tersect the image edges: such regions can occasionally
+tion. In particular, the energy includes a cost L0ij be mislabeled because their entire natural boundary
+or L1ij capturing how well the label Bij chosen for is not visible, and thus their true energy contribution
+each pixel matches its appearance, and irregularity can only be estimated. In practice, this causes trou-
+          h       v
+costs Cij   and Cij  for each pixel whose label differs ble occasionally for noisy background areas that are
+respectively from those of its horizontal or vertical largely isolated from the rest of the document back-
+neighbor.                                                   ground by ink markings. Several potential solutions
+                    m X n
+                                                            exist. For example, one could simply fix L1ij to a
+                                                            large negative value for all pixels (i, j) on the image
+                  X         0
+                            Lij (1 − Bij ) + L1ij Bij
+                                                      
+      EI (B) =
+                  i=0 j=0
+                                                            border, under the assumption that all ink is framed
+                     m−1   n
+                                                            by background regions. Rather than committing to
+                                                            such a strong assumption, this work adopts a more
+                     XX
+                                 h
+                  +           Cij (Bij 6= Bi+1,j )
+                      i=0 j=0
+                                                            conservative strategy, looking for bright outlier pix-
+                       m n−1
+                                                            els and applying a fixed constant L1ij to them. This
+                                                        (1) still ensures that large background regions will receive
+                     X    X
+                                v
+                  +          Cij  (Bij 6= Bi,j+1 )
+                     i=0 j=0
+                                                            the proper label, while not preventing identification
+                                                            of ink pixels on the image boundary. To be precise,
+Assume that the Boolean expressions above evalu- modify L1ij for any pixels more than two standard
+                                                                           r
+ate to either 0 or 1 in the usual manner according deviations σij            brighter than the local mean µrij , as
+to their truth value. With this energy the optimal computed over nearby pixels weighted by a Gaussian
+binarization will tend to conform to the intensity of radius r. This may be viewed as an extremely con-
+contours while smoothing over small irregularities re- servative application of locally adaptive thresholding,
+sulting from noise sources. The degree of smoothing where only pixels most certain to be background are
+
+
+                                                         3
+labeled as such. In the equation below, φ will take            2.1    Parameters
+on a large negative value.
+                                                               The algorithm described above includes six free pa-
+                        2
+                              Iij ≤ µrij + 2σij
+                                             r                 rameters, of which only two strongly influence the bi-
+                 
+                     −∇ Iij
+        L1ij =                       r       r      (4)        narization outcome and require varying settings for
+                       φ      Iij > µij + 2σij
+                                                               different images. The four less important parame-
+   The neighbor mismatch penalties Cij  h        v
+                                           and Cij offer       ters can be set to a constant with negligible conse-
+the opportunity to employ the third strategy men-              quences for all images tested, either because they do
+tioned above, incorporating the Canny edge map.                not strongly influence the result or because the best
+(Recall that Canny [6] first smooths the image with a          value appears not to fluctuate much for different im-
+Gaussian filter of small radius σE , then finds edges at       ages. Thus finding automatic values for the two im-
+local directed maxima of the image gradient, choosing          portant parameters suffices to create a method that
+to retain only those edges selected using a hysteresis         can be applied as a “black box” with little or no pa-
+procedure with two thresholds thi and tlo .) The algo-         rameter testing required.
+rithm sets the mismatch penalties to a uniform value              Two of the less important parameters appear in
+c everywhere except between pixels where a Canny               Equation 4: r and φ. Of these, r must be large
+edge has identified a likely discontinuity. To be more         enough to encompass at least a few background pix-
+specific, Canny identifies pixels as edges, while Equa-        els, and thus should be set to some value larger than
+tion 1 requires locating discontinuities in the connec-        the expected stroke width. φ can be any sufficiently
+tions between pairs of pixels. To address this discrep-        negative value. No attempt is made to optimize these
+ancy, the formulation below zeros out the disconti-            parameters, and the experiments all use r = 20 and
+nuity penalty between Canny edge pixels and their              φ = −500, for images with grayscale intensity in
+brighter neighbors, effectively choosing to include the        the range from 0 to 255. The remaining less impor-
+Canny edge pixels within the inked area. The oppo-             tant parameters are two of the three that control the
+site choice would also be self-consistent, but would           Canny edge detection algorithm, namely the lower of
+inhibit detection of single pixel width strokes.               the two edge detection thresholds tlo and the radius
+                                                               of smoothing applied prior to edge detection σE . Bad
+                                                               values for these parameters can certainly hurt bina-
+               
+                0 if Eij ∧ (Iij < Ii+1,j )
+          h
+        Cij =     0 if Ei+1,j ∧ (Iij ≥ Ii+1,j )      (5)       rization quality, but fortunately the experiments will
+               
+                  c otherwise                                  show that there exists a uniform setting that works
+                                                               on all test images with near-optimal results.
+               
+                0      Eij ∧ Iij < Ii,j+1                        The two important parameters that remain inter-
+          v
+         Cij =   0      Ei,j+1 ∧ Iij ≥ Ii,j+1       (6)        act with each other to determine the final binariza-
+               
+                 c      otherwise                              tion result. Most crucial is c, whose magnitude de-
+                                                               termines the relative balance between data fidelity
+  The choice of constant discontinuity penalties ev-           and regularization. The high Canny edge detection
+erywhere except at edges deserves a note. One                  threshold thi matters most when c is large because
+might imagine using a penalty that varies continu-             the detection or nondetection of an edge can deter-
+ously according to the similarity in intensity between         mine whether an entire ink component appears or
+the neighbors. Empirically this approach seems less            disappears in the minimal energy solution. The high
+successful, perhaps because it actually gives little           Canny threshold plays a particularly important role
+guidance about the best precise location of the ink-           in images that exhibit ink bleeding through from the
+background transition: the intensity differences tend          opposite side of the paper: since the bled ink tends to
+to be fairly large everywhere within a few pixels of           have weaker edges, fortuitous thresholding can elim-
+the actual boundary, and thus it becomes too easy to           inate most of the false ink components.
+choose the wrong location.                                        Early experiments with this binarization scheme,
+
+
+                                                           4
+and indeed for most approaches to binarization, have           operator 6= converts to 0 or 1 in the customary fash-
+relied on choosing parameter values that work rea-             ion. As Figure 2 shows, the general shape of the
+sonably well across a wide range of images. This               instability curve is an intrinsic property of the im-
+can be achieved by searching for the best values on a          age that does not depend on the exact value of ν
+training set of images similar to the ones that will be        chosen; thus in most cases ξ can drop its subscript.
+used for testing, and yields good results [11]. How-           Histograms provide a useful analogy: although the
+ever, even globally optimal parameter values embody            details vary slightly, a histogram made using a suffi-
+some compromise on individual images, and tuning               cient number of samples from the same distribution
+the settings to the image can offer significant gains.         always takes on the general appearance of that dis-
+The next section explains how to do this.                      tribution for any reasonable choice of bin size. In-
+                                                               deed, the instability plots may be seen as histograms
+                                                               of pixel label transition events in respect to c, with
+2.2    Automatic Parameter Tuning
+                                                               logarithmically increasing bin sizes.
+To understand how the crucial c parameter can be set              Figure 3 shows as solid lines the instability plots for
+automatically, it is worthwhile to examine the behav-          several document images. Although the stable zone
+ior of the base binarization algorithm under a range           differs somewhat in appearance and location in each
+of different settings. Figure 1 shows the binarization         case, its nearly universal presence is striking. Yet in
+results on a small image patch for a logarithmically           hindsight, the observation of such a stable zone at
+increasing set of values. When c is very low, the bi-          middling c values should not offer such a surprise.
+narization looks like a simple sign operator on the            The twin peaks on either side arise from understand-
+Laplacian, with many small noisy components. As                able mechanisms that apply for all document images,
+c increases the noise components become more con-              and thus the absence of a stable zone for any particu-
+solidated and many disappear. For a range of mid-              lar image would arise from exceptional circumstances.
+dle values of c, the binarization stays fairly stable,            The c parameter controls the incentive for neigh-
+with only small changes as c increases. At the high-           boring patches to share the same label despite a data
+est values, the result becomes unstable again as large         fidelity term indicating otherwise. The left peak in
+ink components disappear, and occasionally join or             the instability curve appears at low levels of c, as it
+have voids filled in. As c goes to infinity, the bina-         becomes large enough to overcome small noise fluctu-
+rization will tend toward the majority label in each           ations and label most large homogeneous foreground
+edge-isolated component.                                       and background regions correctly. On the other hand,
+   The region of stable results at middle levels of c          the right peak appears when c becomes large enough
+is significant, and turns out to show up consistently          to force a uniform label even across regions of differ-
+on ink-and-paper documents with reasons subject to             ent underlying ground truth. Unless the noise am-
+explanation. To visualize the phenomenon, define the           plitude exceeds the contrast between foreground and
+normalized binarization instability ξν (c) in terms of         background, a zone of stability will normally separate
+∆(B c , B νc ) the fraction of pixels that change labels       the two. Furthermore, this stability zone coincides
+between two values of c differing by a factor ν.               with binarizations that adhere to the underlying im-
+                                                               age structure while ignoring noise. Figure 3 shows
+                          m X
+                            n
+                          X                                    as dotted lines the binarization error (based on the
+           ∆(B, B 0 ) =                      0
+                                    (Bij 6= Bij )   (7)
+                                                               F-measure, as defined in Equation 14 below), which
+                          i=0 j=0
+                                                               tends to reach a minimum at or near the lowest point
+                                                               in the instability curve. Computing the instability
+                           ∆(B c , B νc )
+             ξν (c) =                               (8)        curve does not require access to the ground truth, yet
+                        mn (ln(νc) − ln(c))
+                                                               observing the low point of the stable region reveals
+                          c
+In the equation above, Bij  is the binarization label at       a value of c that typically achieves low ground-truth
+pixel (i, j) using mismatch penalty c, and the Boolean         binarization error.
+
+
+                                                           5
+                    c = 5.00   c = 7.33    c = 10.7         c = 15.7    c = 23.1    c = 33.8
+
+
+
+
+                    c = 49.6   c = 72.7     c = 106         c = 156     c = 229      c = 336
+
+
+Figure 1: Binarization results for different values of c on one portion of a document image. A range of
+stability for intermediate c values corresponds to the most accurate result.
+
+
+                                                              The link between the instability minimum and the
+                                                           binarization error minimum is at heart merely an em-
+                                                           pirical observation, but the philosophical consider-
+                                                           ations just given provide justification for the belief
+                                                           that it will apply to most document images. The al-
+                                                           gorithms developed below rest upon two related hy-
+                                                           potheses, which the experiments in Section 3 largely
+                                                           bear out: First, the two instability peaks described
+                                                           above will reliably appear and can be consistently
+                                                           identified. Second, the point of maximum stability
+                                                           between the identified peaks will yield near-minimal
+                                                           binarization error. The truth of these hypotheses will
+                                                           depend upon the circumstances which produced a
+                                                           given document image. For example some documents
+                                                           include multiple types of markings at different con-
+                                                           trast levels, such as those where ink bleeds through
+                                                           from the reverse side. These may muddy the situa-
+                                                           tion by generating additional instability peaks, but
+Figure 2: Binarization instability measured with           in most cases the extra peaks don’t alter the result
+varying step factor in c and normalized by the log         greatly because they tend to be more diffuse and thus
+of the step factor. The shape (and thus the loca-          less prominent. Figure 5 below describes a few more
+tion of the minimum) depends very little on the step       difficult cases, including unusual images where the
+factor chosen.                                             optimal c varies widely across the page. Nevertheless
+                                                           the experiments indicate that such problems remain
+                                                           mostly limited to unusual situations.
+
+                                                             The parameter-setting technique for c summarized
+                                                           as Algorithm 1 computes curves like those in Figure 3
+                                                           and chooses c at the minimum point between the two
+
+
+                                                       6
+Figure 3: Binarization instability and error vs. c for the DIBCO 2009 and H-DIBCO 2010 images. The solid
+curve shows the fraction of the image area whose label changes between successive values of c. A vertical line
+identifies the value of c chosen by Algorithm 1 using this curve. The broken curve shows the error (difference
+from 1.0) of the the F-measure of the binarization. The horizontal axis shows c on a log scale. Images are
+given left to right in the order of Table 1.
+
+
+
+
+                                                      7
+peaks on either side. Minor parameter choices intro-         bleeding through from the back side of the document,
+duced here are the logarithmic separation between c          while retaining the sharper edges of ink shapes on
+values, the range of values to scan, and the amount of       the front side. Fortunately, the same stability crite-
+smoothing applied to the instability curve. Choosing         rion that guided the choice for c also serves to pick
+the logarithmic separation is somewhat equivalent to         a good value within the likely range for thi . Algo-
+choosing a histogram bin size; as Figure 2 demon-            rithm 2 details the exact technique used in the ex-
+strates, the exact step factor chosen does not matter        periments. Note that c and thi are set sequentially,
+so long as it is not so large as to obscure the im-          rather than at the same time. The algorithm com-
+portant minima and maxima, nor so small that there           putes the best value of c for each possible thi , and
+will often be no change observed from one value to           then chooses the (c, thi ) pair with greatest stability
+the next. The experiments herein use 4 points per            with respect to changes in thi . This simplifies each
+octave, or approximately ν = 1.19. The other two             step in the process and makes it easier to find a near-
+choices may also be made in ways that affect the             optimum solution.
+outcome minimally if at all. The range of c values
+scanned should be large enough to include any likely     Algorithm 2 Tune thi to image I given tlo , and σE
+optimum, and the smoothing should even out small           for i = 0 to 10 do
+fluctuations in the curve without altering the over-          τi ← 0.15 + 0.05i
+all shape significantly. The experiments in Section 3         ci ← T uneC(I, τi , tlo , σE ) {Algorithm 1}
+use a unit Gaussian for smoothing, and values of c            Bi ← Binarize(I, ci , thi , tlo , σE )
+ranging from 20 to 5120.                                   end for
+                                                           for i = 0 to 9 do
+Algorithm 1 Tune c to image I given thi , tlo , and           Di ← ∆(Bi , Bi+1 )
+σE                                                         end for
+  for i = 0 to 28 do                                       G0 , G1 , ..., G5 ← 0.02, 0.13, 0.35, 0.35, 0.13, 0.02
+     ci ← 40 · 2i/4                                        {Gaussian of radius 1}
+     Bi ← Binarize(I, ci , thi , tlo , σE )                D−3 , D−2 , D−1 ← D2 , D1 , D0
+  end for                                                  D10 , D11 , D12 ← D9 , D8 , D7
+  for i = 0 to 27 do                                       for i = 0P   to 10 do
+                                                                          5
+     Di ← ∆(Bi , Bi+1 )                                       Di0 ← j=0 Di+j−3 Gj
+  end for                                                  end for{D0 is now a smoothed version of D}
+  G0 , G1 , ..., G5 ← 0.02, 0.13, 0.35, 0.35, 0.13, 0.02   k ← arg min10          0
+                                                                             j=0 Dj
+  {Gaussian of radius 1}                                   thi ← τk
+  D−3 , D−2 , D−1 ← 0, 0, 0                                c ← ck
+  D28 , D29 , D30 ← 0, 0, 0
+  for i = 0P   to 28 do
+                 5
+     Di0 ← j=0 Di+j−3 Gj                                   Arguments given previously in this section sug-
+                 0
+  end for{D is now a smoothed version of D}              gested  reasons why a stability criterion might work
+                           0        0       0
+  q, r, s ← arg minq,r,s Dq − 2Dr + Ds : q < r < s       well for choosing c. It is less clear why the same ap-
+  c ← cr                                                 proach   works     for choosing an edge intensity thresh-
+                                                         old. Nevertheless a zone of stability with respect to
+                                                         both c and thi does seem to distinguish the best bi-
+  Picking c only partially solves the parameter- narizations, as illustrated in Figure 4 for several rep-
+setting problem, since the high Canny threshold re- resentative images. Although the location of the best
+mains to be chosen. This upper threshold on edge parameter setting varies widely between the images,
+detection rewards careful tuning, because properly each case displays a striking qualitative correlation
+chosen it can weed out the more diffuse edges of ink between the binarization error and the two-way sta-
+
+
+                                                         8
+                                                                      The first takes advantage of the fact that the bina-
+                                                                   rization result does not usually change substantially
+                                                                   between successive values of c. Data structures built
+                                                                   to minimize Equation 1 for one value of c can be
+                                                                   modified and reused with a similar c value, achieving
+                                                                   noticeable economies. This strategy, introduced by
+  H2009-T1         H2009-T2        P2009-T1       P2009-T2         Boykov and Kolmogorov [5], minimizes Equation 1
+                                                                   by finding the minimum cut on a graph derived from
+                                                                   the image. The method grows search trees from both
+Figure 4: Binarization instability (left in pair) and              the source and the sink of the image graph to help
+error (right in pair) visualized with respect to vary-             find augmenting paths, and it turns out that the trees
+ing values of c (vertical axis; logarithmic range from             grown for one value of c can be largely reused at
+20 to 5120) and thi (horizontal axis; linear range from            nearby values to realize significant time savings. Em-
+0.15 to 0.65) for four representative images. Despite              pirical tests of this implementation show that it can
+the very different patterns on display, the parameter              speed computation by a factor of fifteen or more. In
+neighborhoods with lower error coincide in each in-                other words, it computes all 33 trial binarizations re-
+stance with higher stability (both indicated by lighter            quired for one iteration of Algorithm 1 in little more
+shades). The converse does not always hold: the sec-               than the time that it would normally take to compute
+ond image shows two areas of stability, with only the              just two or three.
+more central one corresponding to low error. The                      The second modification relies on a heuristic trick,
+second, more peripheral stability zone is rejected by              and stems from the observation that the presence
+Algorithm 1.                                                       or absence of ink bleed-through significantly influ-
+                                                                   ences the optimal value of thi . Images showing bleed-
+bility, measured using the simple unnormalized for-                through typically require a larger thi to avoid identi-
+mula below.                                                        fying the spurious bled ink components as real. By
+                                                                   contrast, in images without bleed-through the algo-
+                            1                                      rithm achieves its best results with a lower thi , be-
+       ζν,τ (c, thi )   =     [∆(B c,thi , B νc,thi )
+                            4                                      cause this allows it to detect fainter edges. Thus it
+                            +∆(B c,thi , B c/ν,thi )               appears that an explicitly bimodal algorithm allowing
+                                                                   only two possible values {τ1 , τ2 } for thi might still
+                            +∆(B c,thi , B c,thi −τ )
+                                                                   perform well as compared with Algorithm 2, which
+                            +∆(B c,thi , B c,thi +τ )]   (9)       tests eleven. The experimental results below confirm
+                                                                   this hypothesis.
+Other DIBCO images not shown behave similarly.                        Detecting the presence or absence of bleed-through
+Full explanation of this phenomenon lies beyond the                in a document is a nontrivial task in the general case,
+scope of this paper, which merely observes and seeks               so it might seem impossible to determine which of
+to exploit the pattern.                                            even two candidate thi values to use. Fortunately, an
+                                                                   extension of the stability criterion provides a simple
+2.3    Computational Efficiency                                    heuristic that does fairly well empirically. In addition
+                                                                   to the two candidate values, Algorithm 3 computes
+Completing Algorithm 2 requires 363 trial binariza-                the binarization using their mean value τ0 = (τ1 +
+tion computations (33 candidates for c times 11 can-               τ2 )/2. This midpoint binarization can be compared
+didates for thi ) and thus runs much more slowly than              to the other two, and the closer is judged the more
+a single binarization with static parameter settings.              stable and thus selected for the final result.
+However, two modifications to the algorithm can sub-                  Algorithm 3 computes results for only three thi val-
+stantially mitigate the speed difference.                          ues and thus runs more than three times as fast as
+
+
+                                                               9
+Algorithm 2. The metaparameters τ1 and τ2 are cho-         onds per megapixel under the same conditions, while
+sen for best performance on a training set; analysis       a single execution of the base algorithm under static
+of the DIBCO 2009 and H-DIBCO 2010 image sets              parameters takes 2.12 seconds per megapixel.
+indicates that values of 0.25 and 0.50 respectively
+achieve the best results across the full set. (Using
+only 23 of the 24 images in cross-fold training occa-
+sionally yields other values.) Employing a training        2.4    Further Algorithmic Variants
+set to choose τ1 and τ2 diminishes the automatic na-
+ture of the full algorithm, but represents a tradeoff
+made in this particular algorithm for the sake of com-     For best results, many binarization methods compute
+putation speed.                                            an initial labeling using some base technique and then
+                                                           apply one or more postprocessing algorithms to im-
+                                                           prove it. For example, Su et al [22] remove com-
+Algorithm 3 Pick thi from {τ1 , τ2 } for image I given     ponents of three pixels or less. More complicated
+τ1 , τ2 , tlo , and σE                                     modeling and classification algorithms can identify
+   τ0 ← (τ1 + τ2 )/2                                       and remove noise components while retaining real ink
+   c0 ← T uneC(I, τ0 , tlo , σE )                          [1]. The unknown pixel classification of Lelore and
+   c1 ← T uneC(I, τ1 , tlo , σE )                          Bouchara [13] may also be viewed as post-processing
+   c2 ← T uneC(I, τ2 , tlo , σE )                          of a sort.
+   B0 ← Binarize(I, c0 , τ0 , tlo , σE )
+                                                              Similar techniques can be applied to the results
+   B1 ← Binarize(I, c1 , τ1 , tlo , σE )
+                                                           from the method described herein. Indeed, both
+   B2 ← Binarize(I, c2 , τ2 , tlo , σE )
+                                                           the three-pixel component filter and a more complex
+   D1 ← ∆(B0 , B1 )
+                                                           classification-based approach reminiscent of Agrawal
+   D2 ← ∆(B0 , B2 )
+                                                           & Doermann have been tested informally and found
+   if D1 < D2 then
+                                                           to reduce binarization error for the DIBCO test im-
+      thi ← τ1
+                                                           ages, relative to ground truth. Unfortunately gains
+   else
+                                                           in training can come at the potential cost of a loss
+      thi ← τ2
+                                                           of generality, in practice. This suspicion is borne out
+   end if
+                                                           by the DIBCO 2011 contest results. The two algo-
+                                                           rithms that ranked in first and second place according
+   These two innovations in combination mean that          to the contest scoring methodology perform very well
+a result originally requiring 363 trial binarizations to   on most of the test images, but fail severely on one or
+compute may be reached in the time required for just       two examples (PR6 and PR7). One might view this
+eight or nine. This is still slower than using static      as a form of overfitting the problem: these algorithms
+parameter values, but investing the extra time may         are specialized to do very well on images that match
+be worthwhile for more accurate results. Alternately,      the expectations of the designers, but cannot handle
+in situations where a number of similar documents          the full range of images that might be encountered “in
+must be binarized, the parameter tuning may be run         the wild”. This paper aims to develop binarization
+for a few trial pages to find appropriate values, which    techniques that work automatically and reliably on as
+are then set statically for the remainder of the set.      wide a range of images as possible. Thus the exper-
+   All the algorithms display more or less linear de-      iments eschew post-processing heuristics of the type
+pendance of computation time on the number of pix-         described above because they might decrease error on
+els in the image. Executing Algorithm 2 takes an av-       a given test set at the cost of generality. Such tricks
+erage of 892 seconds per megapixel on a 2.4 GHz Xeon       are nevertheless worth mentioning because they may
+processor running as a single thread (without paral-       prove useful in whenever the images to be binarized
+lelism). By contrast, Algorithm 3 runs in 18.1 sec-        are amenable.
+
+
+                                                         10
+3    Experimental Results                                defined in Equation 14, because its interpretation is
+                                                         simple and it serves as a proxy for the other measures
+The DIBCO events have provided a platform for side- of binarization quality. An F-measure of 100% repre-
+by-side comparison of different binarization results to sents perfection. In this paper the term error refers
+a ground truth created by a team of human referees. to the difference between the observed F-measure and
+Three contests have been held to date: two included a perfect 100% score.
+both handwritten and printed document images, and
+one consisted of just handwritten documents. Images                                2·R·P
+                                                                              F =                          (14)
+from the first two contests were used to develop the                                R+P
+algorithms described in this paper, with the third set where the recall R and precision P are defined in
+held out for post-hoc testing.                           terms of the number of true positive pixels NT P , the
+   A comprehensive survey of the parameter space has number of false positive pixels NF P , and the number
+been prepared for this paper, providing the context of false negative pixels FF N in the binarization B as
+necessary to evaluate the effectiveness of the auto- compared to ground truth G.
+matic parameter tuning algorithms. It samples the
+                                                                                     NT P
+4-dimensional parameter space on a regular grid, sur-                      R=                              (15)
+                                                                                 NT P + NF N
+rounding and including the region found to produce
+the best binarizations in prior work [11]. The specific                              NT P
+                                                                           P =                             (16)
+values tested for each parameter are:                                            NT P + NF P
+                                                           Table 1 summarizes binarization results on the
+   thi ∈ Thi ≡ {0.15, 0.20, 0.25, 0.30, 0.35, 0.40,      DIBCO 2009 and H-DIBCO 2010 images for various
+                     0.45, 0.50, 0.55, 0.60, 0.65}  (10) parameter-tuning algorithms. The static parameters
+                                                         for the experiments represented in this table are de-
+          tlo ∈ Tlo ≡ {0, 0.05, 0.10, 0.15, 0.20}   (11) termined in leave-one-out style. In other words, for
+     σE ∈ SE ≡ {0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9}  (12) the ith image, the computation uses whatever static
+                              i/4                        parameter setting would have given the best mean re-
+              c ∈ C ≡ {40 · 2 ki = 0..28}           (13)
+                                                         sult on the other 23 images. Table 1 shows the range
+   Results from the parameter survey can answer sev- of parameter values chosen via this technique for the
+eral interesting questions. They reveal both the best various algorithms. (Note that even algorithms with
+possible performance with a fixed set of parameters static parameter settings may show a range in Ta-
+over all images (static parameters), and the best pos- ble 1 if the static values computed differ for various
+sible performance in hindsight using the optimal pa- leave-one-out training folds.)
+rameter settings for each individual image (ideal pa-      The second column of the table gives the F-
+rameters). The difference between these two values measure when all parameters are static; this is the
+is the space where parameter-tuning algorithms op- baseline algorithm [11]. The third column gives the
+erate: they cannot aspire to do better than the ideal, result achieved with an oracle that knows the ideal
+although they may certainly do worse than the best values of c and thi for each image; this represents the
+static setting. If the difference between the static and best possible outcome achievable by tuning the two
+ideal numbers is small, then parameter tuning may parameters, but is not realizable in practice without
+not be worthwhile because any possible gains are lim- prior access to ground truth. The ideal parameter
+ited.                                                    settings reduce the overall error by more than one-
+   A number of different statistics can measure and third compared to static parameters, showing that
+compare the effectiveness of binarization algorithms. tuning methods have significant potential if they can
+The DIBCO events compute some half-dozen num- come close to this ideal. The table does not show
+bers, with four used to determine the winners. The results from an oracle that optimizes all four param-
+initial experiments herein focus on the F-measure, eters. If available, such an oracle could achieve a
+
+
+                                                      11
+mean F-measure of 95.3% across all 24 images, hardly
+more than the two-parameter oracle. This confirms
+the conjecture that tuning all four parameters offers Table 1: F-Measure for DIBCO 2009 and H-DIBCO
+little reward in exchange for the risk.                   2010 Images
+   The remaining columns show results for the various
+parameter-tuning strategies described in Section 2.          Image       Static Oracle Alg. 1 Alg. 2 Alg. 3
+Column four tunes c using Algorithm 1 and employs            H2009-T1 96.4       96.6      96.6     96.1     96.6
+static settings for thi , tlo , and σE . It does somewhat    H2009-T2 93.3       93.4      92.5     93.1     93.1
+better than the all-static settings, but still shows         H2009-1      92.7   95.9      95.4     95.8     95.8
+room for improvement. Column five tunes both c and           H2009-2      90.1   96.4      88.8     96.2     95.7
+thi using Algorithm 2 and employs static settings for        H2009-3      94.7   95.6      92.0     94.8     95.1
+                                                             H2009-4      92.1   94.7      93.9     94.6     94.5
+tlo , and σE . This method achieves 83% of the level
+                                                             H2009-5      86.5   92.7      91.9     92.3     92.6
+of improvement made by the oracle. The final col-
+                                                             H2010-1      93.7   96.2      95.0     95.4     96.0
+umn show the results of the two-state tuning for thi         H2010-2      89.0   96.1      95.4     95.7     95.4
+described in Algorithm 3. This method does nearly            H2010-3      94.4   94.7      93.3     94.7     94.7
+as well as the fully tuned thi , despite its much faster     H2010-4      92.9   94.4      93.5     93.8     93.9
+computation time.                                            H2010-5      92.9   96.5      96.1     96.5     96.4
+   Table 3 shows the results for the DIBCO 2011 im-          H2010-6      90.9   91.2      90.4     90.9     90.9
+ages, used as a hands-off test set. Unlike the previous      H2010-7      95.0   95.2      94.8     95.0     95.1
+table, these are not trained leave-one-out style. To         H2010-8      92.6   93.7      92.2     93.5     93.4
+ensure an unbiased test, the algorithms were fixed           H2010-9      92.6   93.8      92.9     92.1     93.5
+before any results were examined, and static param-          H2010-10     88.8   92.7      90.8     92.5     87.2
+                                                             P2009-T1 88.5       97.4      96.7     97.3     97.2
+eter values are set using the first two sets of contest
+                                                             P2009-T2 98.0       98.5      98.1     98.4     98.5
+images. The numbers here look more diverse because
+                                                             P2009-1      93.9   94.3      90.4     94.0     94.2
+some of the new images are more extreme and there-           P2009-2      96.8   96.9      96.8     96.8     96.9
+fore more challenging than the training images. How-         P2009-3      97.6   98.4      98.2     98.2     98.3
+ever, the general picture remains the same: tuning c         P2009-4      93.5   93.8      92.8     92.9     92.8
+gives better results than static parameter settings,         P2009-5      88.6   91.5      84.7     91.2     84.3
+and tuning both c and thi improves the binarization          Hand         92.3   94.7      93.3     94.3     94.1
+quality still further for most images. A few excep-          Print        93.9   95.8      93.9     95.6     94.6
+tions lower the overall average, particularly H2011-6.       All          92.7   95.0      93.5     94.7     94.3
+Close inspection of this case reveals that the stabil-
+ity curve for thi on this image contains two basins of
+stability, and the minimization criterion chooses the
+wrong one by a slight margin. The two-state tuning
+does not suffer from this problem, because it selects
+thi from a more constrained set of choices. In hind-
+sight this may be an unforeseen practical advantage               Table 2: Parameter Ranges for Table 1
+of Algorithm 3.                                                  Static Oracle     Tune c Tune thi         Dual
+   Despite the success of the tuning methods de-            c     160 47.6–1280 56.6–3044 80–1076 67.3–3044
+scribed, the best F-measure achieved by tuning still        thi 0.4 0.15–0.65 0.2–0.3 0.15–0.6 0.25 or 0.5
+lies farther from the oracular best for the DIBCO           tlo 0.1      0–0.2    0.1–0.15      0.1      0.1–0.15
+2011 images than in the experiments with earlier im-        σE 0.6      0.3–0.8    0.5–0.6      0.6       0.5–0.6
+ages. This reflects the diversity of the test set. Some
+of the images represent adverse examples for the sta-
+bility criterion advocated in this paper; the two worst
+
+                                                       12
+   Table 3: F-Measure for DIBCO 2011 Images
+
+  Image   Static Oracle Tune c Tune thi Dual
+  H2011-1 77.3    93.9   88.2    90.2   90.0
+  H2011-2 97.4    97.5   96.6    97.3   97.4
+  H2011-3 93.2    95.2   94.9    94.5   93.5
+  H2011-4 92.5    92.7   92.5    92.0   92.0
+  H2011-5 92.4    97.1   96.2    97.1   96.2
+  H2011-6 88.2    94.4   91.1    60.6   92.1
+  H2011-7 87.6    92.5   92.3    89.6   89.8
+  H2011-8 95.3    95.7   94.9    95.3   95.4
+  P2011-1 93.0    95.3   94.3    95.1   94.7
+  P2011-2 77.6    90.8   73.5    71.5   72.3
+  P2011-3 95.6    96.6   96.3    96.4   96.4
+  P2011-4 95.0    95.2   94.5    95.2   95.1
+  P2011-5 94.8    94.9   93.7    94.2   94.6
+  P2011-6 66.7    93.1   89.9    86.0   86.3
+  P2011-7 90.2    93.3   89.7    93.1   93.1
+  P2011-8 90.3    92.2   88.5    91.3   91.5
+  Hand     90.5   94.9   93.3    89.6   93.3
+  Print    87.9   93.9   90.0    90.3   90.5                      H2011-1                   P2011-2 (detail)
+  All      89.2   94.4   91.7    90.0   91.9
+
+
+
+appear in Figure 5.
+
+3.1    Comparison with Other Algo-
+       rithms
+Results available for the DIBCO 2011 image set make     Figure 5: The DIBCO 2011 test images contain sev-
+possible a quantitative comparison between the the      eral challenging examples. Both these images have
+algorithms developed herein and other recent work.      unusual stability curves. At left, the high-amplitude
+The DIBCO 2011 contest used three additional pri-       noise on the right side generates instability at values
+mary criteria in addition to the F-measure. Of          of c that are optimal for the rest of the page. At right,
+these, the peak signal-to-noise ratio (PSNR) corre-     the stability criterion chooses a c value that preserves
+lates fairly strongly with the F-measure. If B is the   the bleed-through ink.
+binarization and G the ground truth binary image,
+
+            P SN R = −10 log (∆(B, G))          (17)
+
+Misclassification penalty metric (MPM) penalizes er-
+rors according to their distance from the ink bound-
+ary. Define Dij as the distance of pixel (i, j) from
+this boundary in the ground truth.
+                Pm Pn
+                   i=0   j=0 Dij (Bij 6= Gij )
+      M P M = Pm Pn                              (18)
+                 2 i=0 j=0 Dij (1 − Gij )
+
+                                                       13
+Distance reciprocal distortion metric (DRD) at-           the DIBCO 2011 image set. The first section shows
+tempts to account for human perceptual salience by        selected entries from the contest (those that beat En-
+weighting errors according to pixel values in a local     try #11 on at least one measure), the second section
+5×5 neighborhood, using weight matrix W computed          shows other recent algorithms2 , and the third section
+as the normalized inverse distance.                       shows the algorithms described in this paper, trained
+                         m   n                            using the DIBCO 2009 and H-DIBCO 2010 images
+                  1 XX                                    for a fair comparison. The table gives the mean re-
+         DRD =               Γij (Bij 6= Gij )    (19)
+                  N8 i=0 j=0                              sult for each of the four metrics averaged across all
+                                                          the test images, and also the rank score total used to
+             2 2
+             X X                                          determine the DIBCO 2011 winner. For algorithms
+     Γij =               Whk (Bij 6= Gi+h,j+k )   (20)    not entered in the contest, the rank score is simulated
+             h=−2 k=−2                                    by treating the algorithm in question as an additional
+N8 divides G into 8 × 8 blocks and counts the num-        entrant, indicated with an asterisk in the table. Of
+ber that are non-uniform. Note that better bina-          course, adding a contestant changes the rank scores
+rizations will have higher F-measure and PSNR, but        of the actual entrants, making them worse whenever
+lower MPM and DRD. For further details on these           the new entry does better on an image. The modified
+metrics, please read the DIBCO 2011 contest report        scores of existing entries are not shown in the table,
+[19].                                                     but the information is accounted for in the parenthet-
+   Algorithm 3 is similar to entry #11 that was ac-       ical overall rank shown in the rightmost column. As
+tually submitted to the DIBCO 2011 contest. That          the table reveals, either of Algorithms 2 or 3 would
+entry was based on a less comprehensive survey of         have won the contest on rank scoring, and also easily
+the parameter space and thus differs in the setting       place first in mean score on each of the four quality
+of the static parameter values and in the range of c      measures as compared with all previous algorithms.
+values tested. Entry #11 nevertheless had the high-
+est mean F-measure across all the images, the lowest
+mean peak signal-to-noise ratio, the best mean mis-       4    Conclusion
+classification penalty metric, and the fifth-best dis-
+tance reciprocal distortion metric. Strangely, despite    Tuning parameters offers both risks and potential re-
+these successes, entry #11 ranked only third in the of-   wards. Choosing the parameter values that perform
+ficial DIBCO 2011 contest results, and the two other      best for a given image can lower binarization error by
+entries that placed first and second had mean scores      substantial amounts as compared with a static set-
+over the full image set that were uniformly worse         ting suitable for generic images. On the other hand,
+on all four measures. The scoring methodology of          poorly chosen parameter values can sabotage the re-
+the contest chose the winner based upon summed            sult: the potential losses in binarization quality gen-
+ranks over all images on various quality measures,        erally dwarf the potential gains. Thus one must be
+rather than directly on the mean metric scores. The       careful to tune only where there is reasonable confi-
+two higher-rated methods ranked well on most im-          dence of success.
+ages, and while they conversely showed extremely             This paper has introduced a stability heuristic cri-
+poor performance on a few of the printed documents        terion that helps to choose suitable parameter val-
+this ultimately had limited effect on the final score     ues for individual images. The approach hypothe-
+[19]. With rank-based scoring the comparison of one       sizes that good parameter values are marked by low
+method relative to another is affected by the per-        variability in the binarization solution with respect
+formance (and presence or absence) of all the other       to changes in the parameter values. This criterion
+methods in the contest.                                   leads to an algorithm that successfully picks good c
+   Table 4 compares the results of the algorithms de-        2 The numbers for Lelore & Bouchara exclude image PR6
+
+veloped in this paper with other recent methods on        because its results were not available.
+
+
+                                                         14
+                                              will apply to other approaches remains to be seen,
+Table 4: Algorithms compared by scores on the
+                                              and is a topic for future work. In any case, tun-
+DIBCO 2011 image set.
+                                              ing parameters with the algorithms described herein
+                       MPM DRD                substantially advances the current state of the art in
+ Method       F PSNR ×10−2 ×10−3 Ranks        document binarization, as evidenced by comparative
+                                              results on the DIBCO 2011 test images.
+ Entry 11 88.7 17.8     5.36  8.67    429 (3)
+ Entry 10 80.9 16.1 104.48 64.42 309 (1)
+ Entry 8     85.2 17.2 15.66 9.07     346 (2) Acknowledgment
+ Entry 3     85.1 16.4  5.88  8.09 649 (12)
+ Entry 4     85.2 16.6  6.28  4.43    489 (5) The author thanks those who kindly shared results or
+ Entry 6     83.6 16.7  8.08  4.57    470 (4) implementation details of their algorithms for com-
+ Entry 14 78.0 14.9     7.62  7.35 835 (17) parison purposes, including Basilis Gatos, Su Bolan,
+ Gatos [9] 84.3 16.3    6.39  6.08 663 (11)∗ and Frédéric Bouchara.
+ Lelore [12] 56.2 12.5  2.97 13.30 811 (17)∗
+ Lu [14]     79.7 15.5 39.67 21.47 579 (8)∗
+ Su [22]     87.8 17.7  5.38  4.65 435 (3)∗ References
+ Static      89.2 18.2  9.05  5.76 438 (3)∗
+ Alg. 1      91.7 19.2  4.43  3.40 322 (2)∗    [1] Agrawal, M., Doermann, D.: Stroke-like pattern
+ Alg. 2      90.0 19.1  3.89  3.78 323 (1)∗        noise removal in binary document images. In:
+ Alg. 3      91.7 19.3  3.87  3.48 317 (1)∗        International Conference on Document Analysis
+                                                   and Recognition, pp. 17–21 (2011)
+                                                           [2] Badekas, E., Papamarkos, N.: Estimation of
+                                                               proper parameter values for document binariza-
+values on all the images tested. A similar heuristic           tion. International Journal of Robotics and Au-
+applied to the choice of thi also chooses good param-          tomation, Vol. 24, No. 1, 2009 24(1), 66–78
+eter values in most cases, although serious failures           (2009)
+were observed with this technique for a handful of
+                                                           [3] Bar-Yosef, I., Beckman, I., Kedem, K., Din-
+cases. The most successful method tested uses the
+                                                               stein, I.: Binarization, character extraction, and
+stability criterion to choose c, and selects thi from a
+                                                               writer identification of historical Hebrew callig-
+constrained set of two possible values. This approach
+                                                               raphy documents. Int. J. Doc. Anal. Recognit.
+delivers a substantial fraction of the maximum gain
+                                                               9(2), 89–99 (2007)
+possible from tuning both parameters, and can be
+computed at about one eighth the speed of a simple         [4] Barney-Smith, E.: An analysis of binariza-
+binarization with static parameters. Reference code            tion ground truthing. In: Proceedings of the
+for the technique will be available on the author’s web        9th IAPR International Workshop on Document
+site.                                                          Analysis Systems, pp. 27–33. Boston (2010)
+  The parameter survey results make it clear that
+                                                           [5] Boykov, Y., Kolmogorov, V.: An experimen-
+for many images the tuning algorithms given herein
+                                                               tal comparison of min-cut/max-flow algorithms
+come close to maximizing the potential of the base
+                                                               for energy minimization in vision. IEEE Trans.
+binarization algorithm. Further improvements in re-
+                                                               on Pattern Analysis and Machine Intelligence
+sult quality will likely have to come through devel-
+                                                               26(9), 1124–1137 (2004)
+opment of new base algorithms. Some of these new
+algorithms may be application-specific, whereas this       [6] Canny, J.: A computational approach to edge
+work has striven for broad applicability. Whether              detection. IEEE Trans. on Pattern Analysis and
+the stability criterion that has proven so useful here         Machine Intelligence 8(6), 679–714 (1986)
+
+                                                      15
+ [7] Chen, Y., Leedham, D.: Decompose algorithm [17] Otsu, N.: A threshold selection method from
+     for thresholding degraded historical document           graylevel histogram. IEEE Trans. on System,
+     images. IEEE Proceedings on Vision, Image and           Man, Cybernetics 19(1), 62–66 (1978)
+     Signal Processing 152(6), 702–714 (2005)
+                                                        [18] Peng, X., Setlur, S., Govindaraju, V., Sitaram,
+ [8] Dawoud, A.: Iterative cross section sequence            R.: Markov random field based binarization for
+     graph for handwritten character segmentation.           hand-held devices captured document images.
+     IEEE Transactions on Image Processing 16(8),            In: Proceedings of the Seventh Indian Confer-
+     2150–2154 (2007)                                        ence on Computer Vision, Graphics and Image
+                                                             Processing, pp. 71–76 (2010)
+ [9] Gatos, B., Pratikakis, I., Perantonis, S.J.: Adap-
+     tive degraded document image binarization. [19] Pratikakis, I., Gatos, B., Ntirogiannis, K.: IC-
+     Pattern Recognition 39(3), 317–327 (2006)               DAR 2011 document image binarization contest
+                                                             (DIBCO 2011). In: International Conference on
+[10] Gatos, B., Pratikakis, I., Perantonis, S.J.: Im-        Document Analysis and Recognition, pp. 1506–
+     proved document image binarization by using a           1510 (2011)
+     combination of multiple binarization techniques
+     and adapted edge information. In: Interna- [20] Ramı́rez-Ortegón, M.A., Tapia, E., Ramı́rez-
+     tional Conference on Pattern Recognition, pp.           Ramı́rez, L.L., Rojas, R., Cuevas, E.: Transition
+     1–4 (2008)                                              pixel: A concept for binarization based on edge
+                                                             detection and gray-intensity histograms. Pattern
+[11] Howe, N.: A Laplacian energy for document               Recognition pp. 1233–1243 (2010)
+     binarization. In: International Conference on
+     Document Analysis and Recognition, pp. 6–10 [21] Sauvola, N., Pietikainen, M.: Adaptive docu-
+     (2011)                                                  ment image binarization. Pattern Recognition
+                                                             33(2), 225–236 (2000)
+[12] Lelore, T., Bouchara, F.: Document image bi-
+     narization using Markov field model. In: Inter- [22] Su, B., Lu, S., Tan, C.L.: Binarization of histor-
+     national Conference on Document Analysis and            ical document images using the local maximum
+     Recognition, pp. 551–555 (2009)                         and minimum. In: Proceedings of the 9th IAPR
+                                                             International Workshop on Document Analysis
+[13] Lelore, T., Bouchara, F.: Super-resolved bina-          Systems, pp. 159–166 (2010)
+     rization of text based on FAIR algorithm. In:
+     International Conference on Document Analysis [23] Vonikakis, V., Andreadis, I., Papamarkos, N.,
+     and Recognition, pp. 839–843 (2011)                     Gasteratos, A.: Adaptive document binariza-
+                                                             tion: A human vision approach. In: 2nd Inter-
+[14] Lu, S., Su, B., Tan, C.L.: Document image bina-         national Conference on Computer Vision Theory
+     rization using background estimation and stroke         and Applications, pp. 104–110. Barcelona (2007)
+     edges. International Journal on Document Anal-
+     ysis and Recognition 13(4), 303–314 (2010)
+[15] Mishra, A., Alahari, K., Jawahar, C.V.: An
+     MRF model for binarization of natural scene
+     text. In: International Conference on Document
+     Analysis and Recognition (2011)
+[16] Niblack, W.: An Introduction to Digital Im-
+     age Processing. Prentice-Hall, Englewood Cliffs,
+     New Jersey (1986)
+
+
+                                                        16
+

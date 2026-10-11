@@ -1,0 +1,11 @@
+{
+  "reason": "Literal manuscript Algorithm1 reconstruction estimates inter-stroke/column distances (30/47/137 px), too large for thin native strokes.",
+  "added_after_main_outputs": true,
+  "windows": [
+    19,
+    61
+  ],
+  "same_for_all_pages": true,
+  "changes": "Only local threshold window replaced; same contrast, Canny, threshold formula, postprocessing.",
+  "status": "Exploratory diagnostic; not author Su algorithm parity. Original automatic results preserved."
+}

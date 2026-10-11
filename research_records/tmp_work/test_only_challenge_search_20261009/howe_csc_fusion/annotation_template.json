@@ -1,0 +1,131 @@
+{
+  "purpose": "文字保持と不要像残存を別々に評価するための注釈設計。未記入。",
+  "status": "unannotated",
+  "coordinate_system": "native source-image xy; rectangles are xywh",
+  "classes": [
+    "front_black_ink",
+    "red_ink",
+    "bleedthrough",
+    "stain_or_spot",
+    "paper_damage",
+    "background",
+    "uncertain"
+  ],
+  "annotations": [],
+  "cases": [
+    {
+      "id": "01",
+      "source": "data/test/200010454/200010454_00016_2.jpg",
+      "sha256": "9a252f8305457507b1ac5e9d18c70be854a2aee28eaebf6607cea48bc3b9cb29",
+      "review_roi_xywh": [
+        570,
+        600,
+        750,
+        850
+      ],
+      "review_targets": [
+        {
+          "xywh": [
+            1405,
+            1705,
+            50,
+            50
+          ],
+          "reason": "前段の孤立成分条件で曲線先端を誤って選択。v2では保護。",
+          "label": null
+        }
+      ]
+    },
+    {
+      "id": "02",
+      "source": "data/test/200015843/200015843_00107_1.jpg",
+      "sha256": "4ffec2db86247ebcca99203e6e413d42a90e49740951ce0cb30cad02fcf9da20",
+      "review_roi_xywh": [
+        700,
+        1200,
+        850,
+        850
+      ],
+      "review_targets": []
+    },
+    {
+      "id": "03",
+      "source": "data/test/200015843/200015843_00105_1.jpg",
+      "sha256": "f2094b5180c377e666b00437d3adeb975b09cab6fee665c11893ad311eabf134",
+      "review_roi_xywh": [
+        750,
+        700,
+        850,
+        850
+      ],
+      "review_targets": []
+    },
+    {
+      "id": "04",
+      "source": "data/test/200021071/200021071_00032_1.jpg",
+      "sha256": "d8fe32dc777814394c58baacccfdea957e2ab0fe9c63c667b98fbdf35bcfba63",
+      "review_roi_xywh": [
+        550,
+        160,
+        800,
+        820
+      ],
+      "review_targets": [
+        {
+          "xywh": [
+            787,
+            200,
+            17,
+            15
+          ],
+          "reason": "開発事例で指定した孤立斑点の確認位置",
+          "label": null
+        },
+        {
+          "xywh": [
+            730,
+            235,
+            13,
+            13
+          ],
+          "reason": "開発事例で指定した孤立斑点の確認位置",
+          "label": null
+        },
+        {
+          "xywh": [
+            918,
+            396,
+            15,
+            15
+          ],
+          "reason": "開発事例で指定した孤立斑点の確認位置",
+          "label": null
+        }
+      ]
+    },
+    {
+      "id": "06",
+      "source": "data/test/200003803/200003803_00003_1.jpg",
+      "sha256": "3cc169f2ebad09fa9b312a0230c2357287f16a0a505f64ef3d00fd44dc39da53",
+      "review_roi_xywh": [
+        80,
+        95,
+        620,
+        530
+      ],
+      "review_targets": []
+    },
+    {
+      "id": "07",
+      "source": "data/test/200021071/200021071_00033_2.jpg",
+      "sha256": "ccb0099adc3745cc6974aa7c7e51791c36e6575c0d3deb394dac64a62276c9e5",
+      "review_roi_xywh": [
+        800,
+        750,
+        850,
+        900
+      ],
+      "review_targets": []
+    }
+  ]
+}

@@ -1,0 +1,218 @@
+[
+  {
+    "name": "region_color_logistic",
+    "spatial": false,
+    "classifier": "logistic",
+    "features": [
+      "R",
+      "G",
+      "B",
+      "OD_R",
+      "OD_G",
+      "OD_B",
+      "relative_red_G",
+      "relative_red_B",
+      "Lab_a",
+      "Lab_b",
+      "saturation",
+      "Lab_L"
+    ],
+    "training_points": 924,
+    "development_book_holdout": [
+      {
+        "book": "200020019",
+        "mark_selected": 3,
+        "mark_points": 16,
+        "nonmark_selected": 0,
+        "nonmark_samples": 264,
+        "label_status": "Tentative and correlated selected points/regions"
+      },
+      {
+        "book": "200021086",
+        "mark_selected": 18,
+        "mark_points": 18,
+        "nonmark_selected": 309,
+        "nonmark_samples": 328,
+        "label_status": "Tentative and correlated selected points/regions"
+      },
+      {
+        "book": "200021763",
+        "mark_selected": 18,
+        "mark_points": 32,
+        "nonmark_selected": 0,
+        "nonmark_samples": 266,
+        "label_status": "Tentative and correlated selected points/regions"
+      }
+    ],
+    "model_sha256": "362f746f5d6b3266c94004d578207634a4062a64c7555f320506beace2db1e9e",
+    "model_path": "/home/imoto/Heritage_Pipeline/tmp_work/vermillion_stain_research_20261007_8h/region_supported_trials/region_color_logistic.pkl",
+    "training_on_tentative_labels": true
+  },
+  {
+    "name": "region_color_forest",
+    "spatial": false,
+    "classifier": "forest",
+    "features": [
+      "R",
+      "G",
+      "B",
+      "OD_R",
+      "OD_G",
+      "OD_B",
+      "relative_red_G",
+      "relative_red_B",
+      "Lab_a",
+      "Lab_b",
+      "saturation",
+      "Lab_L"
+    ],
+    "training_points": 924,
+    "development_book_holdout": [
+      {
+        "book": "200020019",
+        "mark_selected": 12,
+        "mark_points": 16,
+        "nonmark_selected": 1,
+        "nonmark_samples": 264,
+        "label_status": "Tentative and correlated selected points/regions"
+      },
+      {
+        "book": "200021086",
+        "mark_selected": 11,
+        "mark_points": 18,
+        "nonmark_selected": 9,
+        "nonmark_samples": 328,
+        "label_status": "Tentative and correlated selected points/regions"
+      },
+      {
+        "book": "200021763",
+        "mark_selected": 20,
+        "mark_points": 32,
+        "nonmark_selected": 0,
+        "nonmark_samples": 266,
+        "label_status": "Tentative and correlated selected points/regions"
+      }
+    ],
+    "model_sha256": "4a557a24a1854bab3b2f2f6248a261e9572d6fa77f4b147a42f0b2a2cc741eac",
+    "model_path": "/home/imoto/Heritage_Pipeline/tmp_work/vermillion_stain_research_20261007_8h/region_supported_trials/region_color_forest.pkl",
+    "training_on_tentative_labels": true
+  },
+  {
+    "name": "region_spatial_logistic",
+    "spatial": true,
+    "classifier": "logistic",
+    "features": [
+      "R",
+      "G",
+      "B",
+      "OD_R",
+      "OD_G",
+      "OD_B",
+      "relative_red_G",
+      "relative_red_B",
+      "Lab_a",
+      "Lab_b",
+      "saturation",
+      "Lab_L",
+      "chroma_mean_sigma1.0",
+      "chroma_band_sigma1.0",
+      "chroma_mean_sigma3.0",
+      "chroma_band_sigma3.0",
+      "chroma_mean_sigma8.0",
+      "chroma_band_sigma8.0",
+      "chroma_mean_sigma20.0",
+      "chroma_band_sigma20.0",
+      "multiscale_chroma_ridge",
+      "chroma_gradient"
+    ],
+    "training_points": 924,
+    "development_book_holdout": [
+      {
+        "book": "200020019",
+        "mark_selected": 16,
+        "mark_points": 16,
+        "nonmark_selected": 23,
+        "nonmark_samples": 264,
+        "label_status": "Tentative and correlated selected points/regions"
+      },
+      {
+        "book": "200021086",
+        "mark_selected": 11,
+        "mark_points": 18,
+        "nonmark_selected": 1,
+        "nonmark_samples": 328,
+        "label_status": "Tentative and correlated selected points/regions"
+      },
+      {
+        "book": "200021763",
+        "mark_selected": 32,
+        "mark_points": 32,
+        "nonmark_selected": 266,
+        "nonmark_samples": 266,
+        "label_status": "Tentative and correlated selected points/regions"
+      }
+    ],
+    "model_sha256": "c9ac4f91ad0bc662376c6fa47a402cc5a2d82c53fc4afb9496afd67a320e3301",
+    "model_path": "/home/imoto/Heritage_Pipeline/tmp_work/vermillion_stain_research_20261007_8h/region_supported_trials/region_spatial_logistic.pkl",
+    "training_on_tentative_labels": true
+  },
+  {
+    "name": "region_spatial_forest",
+    "spatial": true,
+    "classifier": "forest",
+    "features": [
+      "R",
+      "G",
+      "B",
+      "OD_R",
+      "OD_G",
+      "OD_B",
+      "relative_red_G",
+      "relative_red_B",
+      "Lab_a",
+      "Lab_b",
+      "saturation",
+      "Lab_L",
+      "chroma_mean_sigma1.0",
+      "chroma_band_sigma1.0",
+      "chroma_mean_sigma3.0",
+      "chroma_band_sigma3.0",
+      "chroma_mean_sigma8.0",
+      "chroma_band_sigma8.0",
+      "chroma_mean_sigma20.0",
+      "chroma_band_sigma20.0",
+      "multiscale_chroma_ridge",
+      "chroma_gradient"
+    ],
+    "training_points": 924,
+    "development_book_holdout": [
+      {
+        "book": "200020019",
+        "mark_selected": 16,
+        "mark_points": 16,
+        "nonmark_selected": 5,
+        "nonmark_samples": 264,
+        "label_status": "Tentative and correlated selected points/regions"
+      },
+      {
+        "book": "200021086",
+        "mark_selected": 13,
+        "mark_points": 18,
+        "nonmark_selected": 2,
+        "nonmark_samples": 328,
+        "label_status": "Tentative and correlated selected points/regions"
+      },
+      {
+        "book": "200021763",
+        "mark_selected": 28,
+        "mark_points": 32,
+        "nonmark_selected": 0,
+        "nonmark_samples": 266,
+        "label_status": "Tentative and correlated selected points/regions"
+      }
+    ],
+    "model_sha256": "512191c0feecfbf55495c5e285a5e4c18c1d5c4fb981591ec3f3bc3bed9e987c",
+    "model_path": "/home/imoto/Heritage_Pipeline/tmp_work/vermillion_stain_research_20261007_8h/region_supported_trials/region_spatial_forest.pkl",
+    "training_on_tentative_labels": true
+  }
+]

@@ -1,0 +1,140 @@
+[
+  {
+    "frame": "known_200010454_v2",
+    "adapter_direct_RGB_equal": true,
+    "stats": [
+      {
+        "output": "native_final",
+        "mean_raw_RGB_delta_255": [
+          -3.28153395652771,
+          22.062898635864258,
+          23.83648109436035
+        ],
+        "mean_green_balance_change_255": 11.785449497401714,
+        "raw_outside_0_1_fraction": 1.0172526041666666e-05
+      },
+      {
+        "output": "native_coarse",
+        "mean_raw_RGB_delta_255": [
+          -3.5572292804718018,
+          21.91499137878418,
+          24.017269134521484
+        ],
+        "mean_green_balance_change_255": 11.684889793395996,
+        "raw_outside_0_1_fraction": 1.0172526041666666e-05
+      },
+      {
+        "output": "resized_final",
+        "mean_raw_RGB_delta_255": [
+          -1.889263391494751,
+          10.423761367797852,
+          12.933199882507324
+        ],
+        "mean_green_balance_change_255": 4.901786847040057,
+        "raw_outside_0_1_fraction": 1.0172526041666666e-05
+      },
+      {
+        "output": "resized_coarse",
+        "mean_raw_RGB_delta_255": [
+          -2.5460457801818848,
+          10.105731964111328,
+          13.100088119506836
+        ],
+        "mean_green_balance_change_255": 4.828706318512559,
+        "raw_outside_0_1_fraction": 1.0172526041666666e-05
+      }
+    ]
+  },
+  {
+    "frame": "old_upper_crop",
+    "adapter_direct_RGB_equal": true,
+    "stats": [
+      {
+        "output": "native_final",
+        "mean_raw_RGB_delta_255": [
+          -4.74813175201416,
+          15.804056167602539,
+          21.182151794433594
+        ],
+        "mean_green_balance_change_255": 7.586937937885523,
+        "raw_outside_0_1_fraction": 1.0172526041666666e-05
+      },
+      {
+        "output": "native_coarse",
+        "mean_raw_RGB_delta_255": [
+          -5.7760396003723145,
+          14.659255981445312,
+          21.077199935913086
+        ],
+        "mean_green_balance_change_255": 7.008713940158486,
+        "raw_outside_0_1_fraction": 1.0172526041666666e-05
+      },
+      {
+        "output": "resized_final",
+        "mean_raw_RGB_delta_255": [
+          -4.076442718505859,
+          13.482873916625977,
+          18.226295471191406
+        ],
+        "mean_green_balance_change_255": 6.407884480431676,
+        "raw_outside_0_1_fraction": 5.086263020833333e-06
+      },
+      {
+        "output": "resized_coarse",
+        "mean_raw_RGB_delta_255": [
+          -4.9686665534973145,
+          12.549277305603027,
+          18.064695358276367
+        ],
+        "mean_green_balance_change_255": 6.0012350510805845,
+        "raw_outside_0_1_fraction": 5.086263020833333e-06
+      }
+    ]
+  },
+  {
+    "frame": "crop_hnsd",
+    "adapter_direct_RGB_equal": true,
+    "stats": [
+      {
+        "output": "native_final",
+        "mean_raw_RGB_delta_255": [
+          -0.335645467042923,
+          2.9343135356903076,
+          1.9174363613128662
+        ],
+        "mean_green_balance_change_255": 2.143425797112286,
+        "raw_outside_0_1_fraction": 5.086263020833333e-06
+      },
+      {
+        "output": "native_coarse",
+        "mean_raw_RGB_delta_255": [
+          -0.5721551179885864,
+          3.459338426589966,
+          2.579348087310791
+        ],
+        "mean_green_balance_change_255": 2.4557505128905177,
+        "raw_outside_0_1_fraction": 5.086263020833333e-06
+      },
+      {
+        "output": "resized_final",
+        "mean_raw_RGB_delta_255": [
+          0.9856852889060974,
+          4.01680850982666,
+          1.7499128580093384
+        ],
+        "mean_green_balance_change_255": 2.649014317430556,
+        "raw_outside_0_1_fraction": 1.0172526041666666e-05
+      },
+      {
+        "output": "resized_coarse",
+        "mean_raw_RGB_delta_255": [
+          0.9599048495292664,
+          4.53986930847168,
+          2.4501068592071533
+        ],
+        "mean_green_balance_change_255": 2.834853082895279,
+        "raw_outside_0_1_fraction": 1.0172526041666666e-05
+      }
+    ]
+  }
+]

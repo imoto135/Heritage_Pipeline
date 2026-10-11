@@ -1,0 +1,58 @@
+{
+  "frame": "old_upper_crop",
+  "probability_source": "docres",
+  "components": [
+    {
+      "id": 42,
+      "xywh": [
+        284,
+        399,
+        5,
+        6
+      ],
+      "pixels": 12,
+      "anchor_components": [
+        2,
+        11
+      ],
+      "accepted": true,
+      "docres_mean_ink_probability": 0.00011624395847320557,
+      "selected_05": false,
+      "selected_09": false
+    },
+    {
+      "id": 56,
+      "xywh": [
+        250,
+        418,
+        2,
+        3
+      ],
+      "pixels": 5,
+      "anchor_components": [
+        2,
+        15
+      ],
+      "accepted": true,
+      "docres_mean_ink_probability": 0.997830069065094,
+      "selected_05": true,
+      "selected_09": true
+    }
+  ],
+  "counts": {
+    "ungated": 17,
+    "gate_05": 5,
+    "gate_09": 5,
+    "docres_ink": 7305,
+    "old_protection_disagreement": 325,
+    "red": 0,
+    "hold": 24,
+    "extra": 0,
+    "protect": 7818
+  },
+  "changed_pixels": {
+    "ungated_output": 17,
+    "gate_05_output": 5,
+    "gate_09_output": 5
+  }
+}

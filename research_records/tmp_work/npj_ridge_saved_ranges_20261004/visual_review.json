@@ -1,0 +1,61 @@
+{
+  "components": [
+    {
+      "id": "known_right_writing",
+      "component": 1,
+      "pixels": 13,
+      "observation": "Isolated small dot beside an observed dark stroke; main stroke unchanged in the displayed component"
+    },
+    {
+      "id": "known_right_writing",
+      "component": 2,
+      "pixels": 17,
+      "observation": "Isolated small dot near a stroke end; material unconfirmed"
+    },
+    {
+      "id": "known_lower_writing",
+      "component": 1,
+      "pixels": 55,
+      "observation": "Dark fragments adjoining an observed stroke and gray secondary image; whether all fragments are unwanted is unresolved"
+    },
+    {
+      "id": "known_lower_writing",
+      "component": 2,
+      "pixels": 22,
+      "observation": "Small dot close to a vertical stroke and gray secondary image; material unconfirmed"
+    }
+  ],
+  "all_candidate_changes_reviewed": true,
+  "no_new_large_stroke_loss_observed_in_these_four_components": true,
+  "all_stroke_preservation_proven": false,
+  "material_pixel_GT": false,
+  "previous_policy_ranges_disjoint": [
+    {
+      "current": "known_upper_stain",
+      "previous": "old_known_200010454_v2",
+      "overlap_pixels": 0
+    },
+    {
+      "current": "known_upper_stain",
+      "previous": "new_known_saved_red_seal",
+      "overlap_pixels": 0
+    },
+    {
+      "current": "known_left_marks",
+      "previous": "old_page_200019865",
+      "overlap_pixels": 0
+    },
+    {
+      "current": "known_right_writing",
+      "previous": "old_page_200019865",
+      "overlap_pixels": 0
+    },
+    {
+      "current": "known_lower_writing",
+      "previous": "old_old_full_page",
+      "overlap_pixels": 0
+    }
+  ],
+  "important_dirt_improvement_confirmed": false,
+  "adopted": false
+}

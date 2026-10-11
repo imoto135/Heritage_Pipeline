@@ -1,0 +1,35 @@
+{
+  "page": "200020019_00002_2",
+  "book": "200020019",
+  "name": "relative_pair_aug",
+  "role": "development",
+  "original": "data/train/200020019/200020019_00002_2.jpg",
+  "source_sha256": "5824181ca480ec7aa37251d7087fa3dc7ed0431d1bdbcc4b9123a491ba8bf9cb",
+  "checkpoint_sha256": "f9a617a9c6fbdac9771821bebf482a42ec13189571a5f8d5ac2403a7e27318f7",
+  "seconds": 2.876629720441997,
+  "shape": [
+    3076,
+    1853,
+    3
+  ],
+  "mark_pixels": 2336799,
+  "stain_pixels": 1588878,
+  "overlapping_predicted_layers": 756700,
+  "mark_probability_percentiles": [
+    2.0203823423298184e-12,
+    0.01564792636781931,
+    0.27269577980041504,
+    0.8757950812578201,
+    0.9993733763694763,
+    0.9999973773956299,
+    1.0
+  ],
+  "no_pixel_GT": true,
+  "probability_preview_quantized_not_used_for_masks": true,
+  "outputs": {
+    "mark_mask.png": "e3155623ec94e401a6c59f7dfaf60354868b87229dd5218ea0fc4b977e397652",
+    "mark_probability_preview.png": "bbb987e9c3f878a820346307195dea0fa159877b295c91f155bdb1f925abc91d",
+    "stain_probability_preview.png": "8b6a2f3956775e390688dab39367d1e7e3249d940b4c7f0525e2c23b55930593",
+    "stain_mask.png": "b53dc45010a215660bdc89a784ca0d8000e835d3701844b06e9eef2e1a020364"
+  }
+}

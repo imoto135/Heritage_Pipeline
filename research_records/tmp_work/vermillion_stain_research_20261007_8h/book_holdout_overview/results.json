@@ -1,0 +1,58 @@
+{
+  "rows": [
+    {
+      "label": "保存済みCSC v2",
+      "scope": "新規の暫定点で学習せず",
+      "selected_red": 30,
+      "red_points": 66,
+      "selected_paper": 0,
+      "paper_points": 26,
+      "source": "sparse_scores/initial_development/scores.json",
+      "source_sha256": "bf1281fcaa8b7a3f46c33d4806aa201c84b18e82039efa74855ae9e99be2af05"
+    },
+    {
+      "label": "CPU ACE＋CSC v2",
+      "scope": "新規の暫定点で学習せず",
+      "selected_red": 30,
+      "red_points": 66,
+      "selected_paper": 0,
+      "paper_points": 26,
+      "source": "sparse_scores/initial_development/scores.json",
+      "source_sha256": "bf1281fcaa8b7a3f46c33d4806aa201c84b18e82039efa74855ae9e99be2af05"
+    },
+    {
+      "label": "点と紙で学習したCNN",
+      "scope": "同じ3冊を学習に使用",
+      "selected_red": 66,
+      "red_points": 66,
+      "selected_paper": 0,
+      "paper_points": 26,
+      "source": "sparse_scores/weak_texture_development/scores.json",
+      "source_sha256": "6c1d2b1f29a6e382b2f9b1a51723e4f021df2fd6fc5e31824b00258859041744"
+    },
+    {
+      "label": "当該冊なしのCNN",
+      "scope": "冊ごとに学習から除外",
+      "selected_red": 46,
+      "red_points": 66,
+      "selected_paper": 3,
+      "paper_points": 26,
+      "source": "sparse_scores/leave_book_out_texture/scores.json",
+      "source_sha256": "8b78d4c457e59b6ad5b912e8087e0b6189bf6c746364fe73508b0331da03dbd4"
+    },
+    {
+      "label": "当該冊なしの森分類",
+      "scope": "冊ごとに学習から除外",
+      "selected_red": 57,
+      "red_points": 66,
+      "selected_paper": 1,
+      "paper_points": 26,
+      "source": "sparse_scores/leave_book_out_region_forest/scores.json",
+      "source_sha256": "2135a9639aa925f866329c6b61505b7db0c11933686755a0ede0167efe1a9056"
+    }
+  ],
+  "points_sha256": "7ebaf076b01f8a579a54e53c9466125ee3db42621e7bd967dd62f783b7c7a2d3",
+  "source_sha256": "daee54e80b93826ce81ee8c4ba8fe4db486eb86d58723dbae82f766b25ac2a84",
+  "expert_GT": false,
+  "representative_pixel_accuracy": false
+}

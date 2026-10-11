@@ -1,0 +1,78 @@
+{
+  "margin": {
+    "rule_y": 296,
+    "rules": [
+      {
+        "x": 124,
+        "y": 296,
+        "width": 1608,
+        "height": 24,
+        "area_small": 1805
+      }
+    ],
+    "components": [
+      {
+        "id": 3,
+        "xywh": [
+          1059,
+          162,
+          18,
+          59
+        ],
+        "area": 438,
+        "brown_seed_pixels": 59,
+        "peak_radius": 6.590699672698975,
+        "touches_margin_boundary": false,
+        "accepted": true
+      },
+      {
+        "id": 4,
+        "xywh": [
+          661,
+          164,
+          29,
+          52
+        ],
+        "area": 761,
+        "brown_seed_pixels": 63,
+        "peak_radius": 8.393799781799316,
+        "touches_margin_boundary": false,
+        "accepted": true
+      }
+    ]
+  },
+  "completion": {
+    "rule_y": 296,
+    "top_components": [],
+    "completed_components": []
+  },
+  "thin": [
+    {
+      "id": 3,
+      "xywh": [
+        1059,
+        162,
+        18,
+        59
+      ],
+      "area": 438,
+      "seeds": 59,
+      "peak": 6.590699672698975,
+      "newly_accepted": false
+    },
+    {
+      "id": 4,
+      "xywh": [
+        661,
+        164,
+        29,
+        52
+      ],
+      "area": 761,
+      "seeds": 63,
+      "peak": 8.393799781799316,
+      "newly_accepted": false
+    }
+  ],
+  "near8": []
+}

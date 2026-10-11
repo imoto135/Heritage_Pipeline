@@ -1,0 +1,78 @@
+{
+  "variant": "grow5_region",
+  "cases": [
+    {
+      "id": "F04",
+      "page": "200021063_00002_2",
+      "howe": {
+        "source": "tmp_work/test_only_challenge_search_20261009/fixed_holdout_validation/masks/howe/200021063_00002_2/02_text_black.png",
+        "sha256": "69414f59ae4cfaf72141a3dda29225f913660ede889a5b31a67474a3c5262c2e",
+        "saved_red_was_empty": true
+      },
+      "red_pixels": 35331,
+      "removed_howe_pixels": 20915,
+      "masks_sha256": {
+        "tmp_work/test_only_challenge_search_20261009/red_local_color_validation/regional_refinement/masks/howe_grow5_region/200021063_00002_2/03_text_red.png": "7c5ca4421235b2d7183f8b27eb25e52c39f1b335ff7302228e11996f43595d88",
+        "tmp_work/test_only_challenge_search_20261009/red_local_color_validation/regional_refinement/masks/howe_grow5_region/200021063_00002_2/02_text_black.png": "d478f81c1743df3f93aa1ac655b66aeea163ac474aa51cdf0ffbf8a40e733023"
+      }
+    },
+    {
+      "id": "R01",
+      "page": "200019865_00002_1",
+      "howe": {
+        "source": "tmp_work/test_only_challenge_search_20261009/red_retention_validation/scratch/200019865_00002_1/graph_output.bin",
+        "sha256": "5f2789be7b3605d57871ae4d7bbda5f01ec832ea3afc7689ffbf7f997cfe4cc2",
+        "saved_black_after_priority_match": true
+      },
+      "red_pixels": 44275,
+      "removed_howe_pixels": 18471,
+      "masks_sha256": {
+        "tmp_work/test_only_challenge_search_20261009/red_local_color_validation/regional_refinement/masks/howe_grow5_region/200019865_00002_1/03_text_red.png": "c68eed7d24d592e2031303985b16f72e7a4560c20d4dab02024d7bbb818df33d",
+        "tmp_work/test_only_challenge_search_20261009/red_local_color_validation/regional_refinement/masks/howe_grow5_region/200019865_00002_1/02_text_black.png": "698fdf0c7d25c4f25581caf5963e6f5a84280447755e1b5aa9dec871498980ca"
+      }
+    },
+    {
+      "id": "R02",
+      "page": "200017458_00003_2",
+      "howe": {
+        "source": "tmp_work/test_only_challenge_search_20261009/red_retention_validation/scratch/200017458_00003_2/graph_output.bin",
+        "sha256": "167453bc683763d242de0830cf3d64b0fcf165f6a5358ebdb028ee43dcd504da",
+        "saved_black_after_priority_match": true
+      },
+      "red_pixels": 25754,
+      "removed_howe_pixels": 19048,
+      "masks_sha256": {
+        "tmp_work/test_only_challenge_search_20261009/red_local_color_validation/regional_refinement/masks/howe_grow5_region/200017458_00003_2/03_text_red.png": "fa2cc491a73a1c733ec7e6e9a5595f94fd45d6c6e5b1ec7d779a9ee6ce7b1ac7",
+        "tmp_work/test_only_challenge_search_20261009/red_local_color_validation/regional_refinement/masks/howe_grow5_region/200017458_00003_2/02_text_black.png": "82e7d03968d6a253ade26c4f7b2def3c6daf799d41182558863d7ef5203eab45"
+      }
+    },
+    {
+      "id": "R03",
+      "page": "200010454_00002_2",
+      "howe": {
+        "source": "tmp_work/test_only_challenge_search_20261009/red_retention_validation/scratch/200010454_00002_2/graph_output.bin",
+        "sha256": "58e583e4aec77e48c3eb0650506b4630c8d157acb96da94f1f90903252475000",
+        "saved_black_after_priority_match": true
+      },
+      "red_pixels": 20929,
+      "removed_howe_pixels": 15585,
+      "masks_sha256": {
+        "tmp_work/test_only_challenge_search_20261009/red_local_color_validation/regional_refinement/masks/howe_grow5_region/200010454_00002_2/03_text_red.png": "499bcb9665481d19182657aea82437da45ea573573ef2acc72be849f71957487",
+        "tmp_work/test_only_challenge_search_20261009/red_local_color_validation/regional_refinement/masks/howe_grow5_region/200010454_00002_2/02_text_black.png": "6675eab18600428000bd507fb99b3c1256e91ac18ecd38f336326fd968eea144"
+      }
+    }
+  ],
+  "source_protocol_sha256": "97cf17ccc5a9f963088390c733046913e8eca0a9916cb19d07f8f333a1ecf88b",
+  "pipeline_sha256": "bbc130a1761be21dfa7ff6d5ec9bc29e34155a56dfa405d91daa6a989a77f2ec",
+  "checkpoint_sha256": "1a5decb747e34e8b51ccea96b598fe3c6ec0e7f7a6f8df6cffc3135d8281a7f3",
+  "background_sha256": "2a96dbde5301415c593dc1d119410e7a077a6ac15ea3d8d8d5f8d4021dc3897c",
+  "parameters": {
+    "seed": 999,
+    "steps": 20,
+    "patch": 128,
+    "overlap": 32,
+    "shared_initial_noise": true
+  },
+  "red": "Copy original RGB after inference",
+  "stepwise_noise_matched_between_black_masks": false
+}

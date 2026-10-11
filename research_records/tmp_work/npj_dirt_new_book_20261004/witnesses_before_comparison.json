@@ -1,0 +1,67 @@
+{
+  "regions": {
+    "new_warm_upper_loss": {
+      "defect_and_rule": [
+        70,
+        0,
+        330,
+        290
+      ],
+      "text_control": [
+        60,
+        340,
+        380,
+        350
+      ]
+    },
+    "new_warm_lower_loss": {
+      "defect_and_rule": [
+        50,
+        470,
+        470,
+        280
+      ],
+      "text_control": [
+        40,
+        80,
+        360,
+        300
+      ]
+    },
+    "new_warm_faint_writing": {
+      "text_control": [
+        100,
+        100,
+        350,
+        400
+      ]
+    },
+    "new_gray_binding_mark": {
+      "unconfirmed_binding_mark": [
+        450,
+        450,
+        290,
+        290
+      ]
+    },
+    "new_gray_writing": {
+      "text_control": [
+        80,
+        80,
+        500,
+        500
+      ]
+    },
+    "known_saved_red_seal": {
+      "actual_seal_and_text_control": [
+        150,
+        70,
+        430,
+        520
+      ]
+    }
+  },
+  "selected_before_any_restoration_policy_output": true,
+  "classification": "Original-only visual region labels, NOT pixel GT. Damage boxes may include genuine writing and rules.",
+  "no_roi_passed_to_policy_functions": true
+}

@@ -1,0 +1,30 @@
+{
+  "page": "external_Latin14396_275",
+  "source_sha256": "d903e3975788103774a9875b0dfb5244610f61063eea4b99ad5e6fe53ea94df7",
+  "protocol_sha256": "4f876d008f2cede2f0f845d7bd6ef94e25e216525e6609d75b2dc914dca4c397",
+  "script_sha256": "c37b6264bbc047a04a26ecc929a0ba2db2330bda998db60bc1e39ebfe8e5d81e",
+  "csc_source_sha256": "11815cbb82d6972644498db9c5a8879dfc7e104b14a2749e04fdf0198e19b22f",
+  "ace_source_sha256": "35f40c8397a4df8fc07e64ec61994b561ceefe922803e84d9046434d992b5146",
+  "fixed_settings": {
+    "ACE_alpha": 5.0,
+    "ACE_n_samples": 200,
+    "ACE_seed": 0,
+    "CSC_seed": 42,
+    "max_samples": 50000,
+    "border_margin_ratio": 0.04
+  },
+  "local_v2_not_verified_original_paper": true,
+  "reused_verified_source_identical_cache": false,
+  "counts": {
+    "red": 14583,
+    "black": 164432,
+    "stain": 137936
+  },
+  "seconds": 196.56734288018197,
+  "outputs": {
+    "red_mask.png": "87d0c3d524617a31c2c1f71155a9206e99a0368df106b59b6fd07b9aaa46cd73",
+    "stain_mask.png": "26b07157075cd9b06f124809988a2d1ccb9992680bf42bd5152c6c9666bb3add",
+    "black_mask.png": "df2307d247de2e16a1930975438a49d4c63d9a93d3e25d01e60e00dbec620986",
+    "ace.png": "f63504438b364c05b304f18811ded6f3e84ef9d32d6bbda9c46407f31304d6dc"
+  }
+}

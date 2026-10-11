@@ -1,0 +1,138 @@
+{
+  "created_utc": "2026-10-09T10:26:44.448058+00:00",
+  "cases": [
+    {
+      "id": "R01",
+      "page": "200019865_00002_1",
+      "source": "data/test/200019865/200019865_00002_1.jpg",
+      "source_sha256": "66e59afbf085f7b0a21219683f91d852356f6612a61b627f10b6fb19664f5cec",
+      "input_size": [
+        2124,
+        3208
+      ],
+      "roi_xywh": [
+        1350,
+        100,
+        650,
+        650
+      ],
+      "controls_xywh": {
+        "black_text": [
+          950,
+          1000,
+          800,
+          1000
+        ]
+      },
+      "reason": "濃淡のある二つの朱印"
+    },
+    {
+      "id": "R02",
+      "page": "200017458_00003_2",
+      "source": "data/test/200017458/200017458_00003_2.jpg",
+      "source_sha256": "dba458ff40c3944e93ccbda866a6683c4cdb6cc312576ec66dddfd5d9a0f5ac1",
+      "input_size": [
+        2178,
+        3254
+      ],
+      "roi_xywh": [
+        1790,
+        80,
+        320,
+        620
+      ],
+      "controls_xywh": {
+        "brown_binding": [
+          70,
+          150,
+          200,
+          2800
+        ],
+        "black_text": [
+          650,
+          900,
+          850,
+          900
+        ]
+      },
+      "reason": "明瞭な朱印と茶色い綴じ側領域"
+    },
+    {
+      "id": "R03",
+      "page": "200010454_00002_2",
+      "source": "data/test/200010454/200010454_00002_2.jpg",
+      "source_sha256": "177776f90fc08b12e2f59a37773ef433556f43ebe47c503c2d676595a08a60d1",
+      "input_size": [
+        1784,
+        2365
+      ],
+      "roi_xywh": [
+        1220,
+        1830,
+        520,
+        480
+      ],
+      "controls_xywh": {
+        "black_text": [
+          650,
+          800,
+          700,
+          800
+        ]
+      },
+      "reason": "墨と重なる朱印と別の小朱印"
+    },
+    {
+      "id": "R04",
+      "page": "200003803_00003_1",
+      "source": "data/test/200003803/200003803_00003_1.jpg",
+      "source_sha256": "3cc169f2ebad09fa9b312a0230c2357287f16a0a505f64ef3d00fd44dc39da53",
+      "input_size": [
+        2174,
+        3187
+      ],
+      "roi_xywh": [
+        200,
+        100,
+        750,
+        550
+      ],
+      "controls_xywh": {
+        "black_text": [
+          700,
+          900,
+          800,
+          1000
+        ]
+      },
+      "reason": "既存06の淡い赤印状の像"
+    }
+  ],
+  "ddrm": {
+    "code": "tmp_work/npj_dirt_control_20261002/source_snapshot/ddrm_npj_v2/scripts/pipeline_ddrm.py",
+    "code_sha256": "bbc130a1761be21dfa7ff6d5ec9bc29e34155a56dfa405d91daa6a989a77f2ec",
+    "checkpoint": "modules/stain_removal/experiments/model_char/model_char/ckpt_epoch0350.pth",
+    "checkpoint_sha256": "1a5decb747e34e8b51ccea96b598fe3c6ec0e7f7a6f8df6cffc3135d8281a7f3",
+    "background": "modules/ddrm_npj_v2/background/isemonogatari.png",
+    "background_sha256": "2a96dbde5301415c593dc1d119410e7a077a6ac15ea3d8d8d5f8d4021dc3897c",
+    "seed": 999,
+    "timesteps": 20,
+    "patch_size": 128,
+    "overlap": 32,
+    "shared_noise": true,
+    "native_full_page": true
+  },
+  "howe": {
+    "c": 160,
+    "sigma": 0.6,
+    "low": 0.1,
+    "high": 0.4
+  },
+  "black_red_priority": "Remove all saved CSC-red pixels from both CSC and Howe black masks",
+  "saved_red_unchanged": true,
+  "selection_scope": "Source-selected test examples, saved red inspected before new Howe/DDRM; not unbiased GT accuracy",
+  "red_off_control": "R02: identical priority-resolved Howe black, red PNG all white; only final overlay differs",
+  "shared_stepwise_noise_guaranteed_between_black_methods": false,
+  "red_off_same_black_and_inputs": true,
+  "script_sha256": "a18bf344105149dc49cc992f7c8b8bfce7222f9ce35558c6c5a61f651d421ed6"
+}

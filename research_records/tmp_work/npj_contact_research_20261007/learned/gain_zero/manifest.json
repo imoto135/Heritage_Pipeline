@@ -1,0 +1,22 @@
+{
+  "mode": "gain_zero",
+  "steps": 8000,
+  "source_sha256": "5f44c023157efa470a7ca315ce0dc7c18042d1b6d91ff0233be3d81d3126055e",
+  "parent_source_sha256": "3fdccec0d7e5a960ff4bbbb978117061145044e11a266dbbb14bbfe4cd63636c",
+  "excluded_books": [
+    "100249371",
+    "200019865",
+    "100249537",
+    "100249416",
+    "200014740",
+    "200003076"
+  ],
+  "data_sha256": "dd69562fa922d6b0df677382834401f7d18bb4d041f88bb41b99582c6479d022",
+  "changes": "exactly identity initialization: zero head, tanh/clamp positive OD, float32 gain; no auxiliary OD loss",
+  "hypothesis": "nonzero sigmoid gain initially changes the majority intact pixels, driving the head into saturation before localization is learned",
+  "hypothesis_not_proven": true,
+  "loss": "same RGB L1 + .25 gradient L1 as original residual/gain runs",
+  "test_data_used": false,
+  "real_images_used": false,
+  "created": 1791368368.8636105
+}

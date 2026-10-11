@@ -1,0 +1,26 @@
+{
+  "page": "external_Latin2_079",
+  "source_sha256": "236b7ae5444685fbf3b49fb8ac0d6ba0ced8b6a08544dc0f57beae43c31204b6",
+  "method": "docres_appearance_author",
+  "role": "prospective_external",
+  "book": "Latin2",
+  "protocol_sha256": "4f876d008f2cede2f0f845d7bd6ef94e25e216525e6609d75b2dc914dca4c397",
+  "script_sha256": "200307899d62653af8b2feac83cb88ce6157ac2753fdd52d381a4befadb228bc",
+  "adapter_sha256": "01ea2f8636b4412a1aea7a47e9d56ea9c47254e0744ab91e44e24e368e2cb47d",
+  "source_identical_cache": false,
+  "resource_provenance": {
+    "resources": {
+      "/home/imoto/Heritage_Pipeline/tmp_work/npj_literature_models_20261002/repos/DocRes/models/restormer_arch.py": "4a6f50552cf21c016f3c38f0302ff9c9cea07a38111c219ef9e67279e60d6915",
+      "/home/imoto/Heritage_Pipeline/tmp_work/npj_literature_models_20261002/weights/docres_mirror.pkl": "1d6a89d754fe1e58ffd1865eab0ef3f03344798d39197b2d9a77ce4fbc8c02fd"
+    }
+  },
+  "seconds": 5.10270800627768,
+  "channels": "Stain input RGB; internal array BGR; PNG RGB; DocRes BGR tensor",
+  "exact_author_benchmark": false,
+  "docres_mirror_provenance": "Community mirror DaVinciCode/doctra-docres-main, hash agrees with second mirror; original OneDrive requires auth; author-copy identity not independently verified",
+  "no_pixel_or_reading_GT": true,
+  "outputs": {
+    "result.png": "625007c2dd91ac0f3b95b7dfb258ce405483068ddf03ebdca4d78666bbe8327e",
+    "prompt.png": "34122fc8f71c86a89ce7f7cd5df4e5cf068ba82f663e490fc8cede82e64f6a02"
+  }
+}

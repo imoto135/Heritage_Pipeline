@@ -1,0 +1,35 @@
+{
+  "official_repo": "https://github.com/CXH-Research/StainRestorer",
+  "official_weight_url": "https://github.com/CXH-Research/StainRestorer/releases/download/Weights/StainDoc.pth",
+  "head": "f25239eb0ea817ce04bdfc2a3209157aa2e7998a",
+  "release_tag": "d412f865e10bf3546c39664464cefafb017d4280",
+  "files": {
+    "models/StainRestorer.py": {
+      "release_vs_current_equal": true,
+      "old_used_vs_current_equal": true,
+      "sha256": "d12181917d63a80bda21fa6a938baad561748b3b086478761eab0a67d5dba11a"
+    },
+    "data/dataset_RGB.py": {
+      "release_vs_current_equal": true,
+      "old_used_vs_current_equal": true,
+      "sha256": "68be999c7fc9ae2dd6af4710b78464356e4946e8b7886b2cab1090f0347f8d8c"
+    },
+    "train.py": {
+      "release_vs_current_equal": true,
+      "old_used_vs_current_equal": true,
+      "sha256": "ca25da28f58374e49b27858bacc070d86ad6f16b95629dae348d9851ba690c46"
+    },
+    "config.yml": {
+      "release_vs_current_equal": true,
+      "old_used_vs_current_equal": true,
+      "sha256": "f54c509783732121d646500d69905df3508aafb78a9103b025ccf6ce4b5ac141"
+    },
+    "utils/utils.py": {
+      "release_vs_current_equal": true,
+      "old_used_vs_current_equal": true,
+      "sha256": "c6e7ba106e1f7eaab4d5f68fa7f7edfb434ce70a82e34ce6dbec5f251b60737a"
+    }
+  },
+  "weight_sha256": "7cdbd674367535d4f429ef077030b930da2a460012fe8fc44d995ead2f7418ee",
+  "fresh_weight_matches_previous": true
+}

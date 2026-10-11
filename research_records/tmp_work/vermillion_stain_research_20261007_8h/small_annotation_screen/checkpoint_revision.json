@@ -1,0 +1,8 @@
+{
+  "original_source_sha256": "16787d7ea67305f4e995ca5561f36a48597eaf26d193e39a898fe5349e224fb1",
+  "resumed_source_sha256": "d4a32657c345220b912866b96e0b0688e93e40f49b7ad2470d1565502ff7da01",
+  "original_source_reconstructed_and_exact_hash_verified": true,
+  "scoring_algorithm_and_parameters_unchanged": true,
+  "changes": "Per-page JSONL checkpoint persistence, deterministic final original-path order; existing manifest preserved",
+  "cause": "Original parent process was terminal; eight orphan workers were verified and stopped before restart"
+}

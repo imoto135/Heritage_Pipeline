@@ -1,0 +1,54 @@
+{
+  "purpose": "Exploratory visual review; not manual ground truth or a representative benchmark",
+  "baseline": "Local frozen ddrm_npj v1; exact reproduction of published results is not established",
+  "ace": {
+    "implementation": "v1 CPU; recomputed from source, native resolution",
+    "alpha": 5.0,
+    "n_samples": 200,
+    "seed": 0
+  },
+  "csc": {
+    "seed": 42,
+    "max_samples": 50000,
+    "border_margin_ratio": 0.04,
+    "v3_ink_rescue_by_lightness": true
+  },
+  "source_hashes": {
+    "modules/ddrm_npj/scripts/ace.py": "35f40c8397a4df8fc07e64ec61994b561ceefe922803e84d9046434d992b5146",
+    "modules/ddrm_npj/scripts/csc.py": "4213d20062a6e835e6e10ae7399651718060e30ddf5c8d0177c26aa6c1872955",
+    "modules/ddrm_npj_v3/scripts/csc.py": "fc5a55b88ae0c90fda0c06508f510f15fde0d3913e47a444f650c7dce1a746ee"
+  },
+  "selection": "Four previously investigated diagnostic pages; selected for known failure mechanisms",
+  "cases": [
+    {
+      "id": "hnsd001_011",
+      "title": "水染み・紙のムラとACE",
+      "original": "data/train/hnsd00000/hnsd001_011.jpg",
+      "legacy_ace": "data/split_dataset_csc/train/hnsd00000/hnsd001_011.jpg"
+    },
+    {
+      "id": "200010454_00002_2",
+      "title": "朱印と茶色い汚れの分離",
+      "original": "data/test/200010454/200010454_00002_2.jpg",
+      "legacy_ace": "data/split_dataset_csc/test/200010454/200010454_00002_2.jpg"
+    },
+    {
+      "id": "200017197_00008_0",
+      "title": "濃淡のある筆画・細い線",
+      "original": "data/makura_csc_mask/200017197_00008_0/00_original.png",
+      "legacy_ace": "data/makura_csc_mask/200017197_00008_0/00_input.png"
+    },
+    {
+      "id": "200018243_00003_2",
+      "title": "本文・朱書・裏写りの混在",
+      "original": "data/test/200018243/200018243_00003_2.jpg",
+      "legacy_ace": null
+    }
+  ],
+  "inputs": {
+    "data/train/hnsd00000/hnsd001_011.jpg": "22017c0af65c5f43560ff05cfcc15c6ed8f56b72e60a04a732d9c31b72f05731",
+    "data/test/200010454/200010454_00002_2.jpg": "177776f90fc08b12e2f59a37773ef433556f43ebe47c503c2d676595a08a60d1",
+    "data/makura_csc_mask/200017197_00008_0/00_original.png": "5496d4e4811c147a7305c538a0c2a3cd8443447b2d9e6e677ed25cb6d1b5a3bb",
+    "data/test/200018243/200018243_00003_2.jpg": "f1c8c26fea64d9511c462b9776198eadbf3481793b0e4ed397e9ba58aca45e6d"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "checkpoint": "Fixed last.pth at 12000 steps as primary; best.pth only logged training diagnostic",
+  "checkpoints_frozen_before_any_real_outputs": true,
+  "seed": 20261010,
+  "test_background_books": "Separate prior source-bank test books",
+  "samples_per_condition": 768,
+  "conditions": [
+    "overlapping colors",
+    "overlapping colors + folds/dots stress"
+  ],
+  "genuine_real_stain_GT": false,
+  "source_sha256": "68ca960e4638bb3ab9675501b275cf35bf83d47bfedcc451eaec061a80183bb5"
+}

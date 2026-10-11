@@ -1,0 +1,29 @@
+{
+  "status": "passed",
+  "pages": 4,
+  "ROIs": 13,
+  "nonreference_poison": [
+    {
+      "id": "directional_diagonal_paper",
+      "mode": "npj"
+    },
+    {
+      "id": "directional_gray_top",
+      "mode": "npj"
+    },
+    {
+      "id": "directional_gray_fold",
+      "mode": "npj"
+    },
+    {
+      "id": "directional_black_spot",
+      "mode": "npj"
+    }
+  ],
+  "unapplied_original": true,
+  "hold_original": true,
+  "outside_hold_exact_candidate": true,
+  "reference_unchanged_for_hold": true,
+  "new_DDRM": false,
+  "pixel_GT": false
+}

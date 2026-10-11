@@ -1,0 +1,2969 @@
+{
+  "cases": [
+    {
+      "id": "new_warm_upper_loss",
+      "page": "200021925_00007_1",
+      "role": "visible_paper_loss_and_frame_and_writing",
+      "layout": {
+        "chosen": null,
+        "supported_frames": 0,
+        "horizontal_lines": 23,
+        "vertical_lines": 73,
+        "horizontal_groups": 2,
+        "vertical_groups": 7
+      },
+      "methods": {
+        "v6": {
+          "update": 13,
+          "applied": 0,
+          "changed": 0,
+          "dark_to_bright": 0,
+          "bright_green_in_applied": 0,
+          "reference_L_threshold": 74.09228515625,
+          "solves": [
+            {
+              "component": 1,
+              "pixels": 1,
+              "boundary_pairs": 4,
+              "applied": false
+            },
+            {
+              "component": 2,
+              "pixels": 7,
+              "boundary_pairs": 14,
+              "applied": false
+            },
+            {
+              "component": 3,
+              "pixels": 5,
+              "boundary_pairs": 10,
+              "applied": false
+            }
+          ],
+          "mandatory_and_outside_applied_exact": true,
+          "poison_invariant": true
+        },
+        "full_page_layout": {
+          "update": 0,
+          "applied": 0,
+          "changed": 0,
+          "dark_to_bright": 0,
+          "bright_green_in_applied": 0,
+          "reference_L_threshold": 100.0,
+          "solves": [],
+          "mandatory_and_outside_applied_exact": true,
+          "poison_invariant": true
+        },
+        "contact_guard": {
+          "update": 377,
+          "applied": 0,
+          "changed": 0,
+          "dark_to_bright": 0,
+          "bright_green_in_applied": 0,
+          "reference_L_threshold": 74.04345703125,
+          "solves": [
+            {
+              "component": 1,
+              "pixels": 21,
+              "boundary_pairs": 9,
+              "applied": false
+            },
+            {
+              "component": 2,
+              "pixels": 2,
+              "boundary_pairs": 0,
+              "applied": false
+            },
+            {
+              "component": 3,
+              "pixels": 4,
+              "boundary_pairs": 0,
+              "applied": false
+            },
+            {
+              "component": 4,
+              "pixels": 1,
+              "boundary_pairs": 0,
+              "applied": false
+            },
+            {
+              "component": 5,
+              "pixels": 54,
+              "boundary_pairs": 15,
+              "applied": false
+            },
+            {
+              "component": 6,
+              "pixels": 18,
+              "boundary_pairs": 0,
+              "applied": false
+            },
+            {
+              "component": 7,
+              "pixels": 5,
+              "boundary_pairs": 0,
+              "applied": false
+            },
+            {
+              "component": 8,
+              "pixels": 16,
+              "boundary_pairs": 12,
+              "applied": false
+            },
+            {
+              "component": 9,
+              "pixels": 1,
+              "boundary_pairs": 1,
+              "applied": false
+            },
+            {
+              "component": 10,
+              "pixels": 15,
+              "boundary_pairs": 11,
+              "applied": false
+            },
+            {
+              "component": 11,
+              "pixels": 6,
+              "boundary_pairs": 7,
+              "applied": false
+            },
+            {
+              "component": 12,
+              "pixels": 1,
+              "boundary_pairs": 2,
+              "applied": false
+            },
+            {
+              "component": 13,
+              "pixels": 8,
+              "boundary_pairs": 6,
+              "applied": false
+            },
+            {
+              "component": 14,
+              "pixels": 1,
+              "boundary_pairs": 2,
+              "applied": false
+            },
+            {
+              "component": 15,
+              "pixels": 1,
+              "boundary_pairs": 2,
+              "applied": false
+            },
+            {
+              "component": 16,
+              "pixels": 2,
+              "boundary_pairs": 2,
+              "applied": false
+            },
+            {
+              "component": 17,
+              "pixels": 9,
+              "boundary_pairs": 3,
+              "applied": false
+            },
+            {
+              "component": 18,
+              "pixels": 1,
+              "boundary_pairs": 2,
+              "applied": false
+            },
+            {
+              "component": 19,
+              "pixels": 1,
+              "boundary_pairs": 1,
+              "applied": false
+            },
+            {
+              "component": 20,
+              "pixels": 6,
+              "boundary_pairs": 4,
+              "applied": false
+            },
+            {
+              "component": 21,
+              "pixels": 1,
+              "boundary_pairs": 3,
+              "applied": false
+            },
+            {
+              "component": 22,
+              "pixels": 1,
+              "boundary_pairs": 0,
+              "applied": false
+            },
+            {
+              "component": 23,
+              "pixels": 1,
+              "boundary_pairs": 0,
+              "applied": false
+            },
+            {
+              "component": 24,
+              "pixels": 2,
+              "boundary_pairs": 1,
+              "applied": false
+            },
+            {
+              "component": 25,
+              "pixels": 7,
+              "boundary_pairs": 0,
+              "applied": false
+            },
+            {
+              "component": 26,
+              "pixels": 4,
+              "boundary_pairs": 5,
+              "applied": false
+            },
+            {
+              "component": 27,
+              "pixels": 10,
+              "boundary_pairs": 8,
+              "applied": false
+            },
+            {
+              "component": 28,
+              "pixels": 2,
+              "boundary_pairs": 1,
+              "applied": false
+            },
+            {
+              "component": 29,
+              "pixels": 1,
+              "boundary_pairs": 2,
+              "applied": false
+            },
+            {
+              "component": 30,
+              "pixels": 6,
+              "boundary_pairs": 6,
+              "applied": false
+            },
+            {
+              "component": 31,
+              "pixels": 1,
+              "boundary_pairs": 0,
+              "applied": false
+            },
+            {
+              "component": 32,
+              "pixels": 1,
+              "boundary_pairs": 1,
+              "applied": false
+            },
+            {
+              "component": 33,
+              "pixels": 3,
+              "boundary_pairs": 1,
+              "applied": false
+            },
+            {
+              "component": 34,
+              "pixels": 13,
+              "boundary_pairs": 9,
+              "applied": false
+            },
+            {
+              "component": 35,
+              "pixels": 2,
+              "boundary_pairs": 4,
+              "applied": false
+            },
+            {
+              "component": 36,
+              "pixels": 1,
+              "boundary_pairs": 3,
+              "applied": false
+            },
+            {
+              "component": 37,
+              "pixels": 1,
+              "boundary_pairs": 0,
+              "applied": false
+            },
+            {
+              "component": 38,
+              "pixels": 2,
+              "boundary_pairs": 1,
+              "applied": false
+            },
+            {
+              "component": 39,
+              "pixels": 16,
+              "boundary_pairs": 2,
+              "applied": false
+            },
+            {
+              "component": 40,
+              "pixels": 1,
+              "boundary_pairs": 2,
+              "applied": false
+            },
+            {
+              "component": 41,
+              "pixels": 1,
+              "boundary_pairs": 1,
+              "applied": false
+            },
+            {
+              "component": 42,
+              "pixels": 15,
+              "boundary_pairs": 8,
+              "applied": false
+            },
+            {
+              "component": 43,
+              "pixels": 6,
+              "boundary_pairs": 2,
+              "applied": false
+            },
+            {
+              "component": 44,
+              "pixels": 1,
+              "boundary_pairs": 1,
+              "applied": false
+            },
+            {
+              "component": 45,
+              "pixels": 8,
+              "boundary_pairs": 3,
+              "applied": false
+            },
+            {
+              "component": 46,
+              "pixels": 11,
+              "boundary_pairs": 9,
+              "applied": false
+            },
+            {
+              "component": 47,
+              "pixels": 1,
+              "boundary_pairs": 0,
+              "applied": false
+            },
+            {
+              "component": 48,
+              "pixels": 7,
+              "boundary_pairs": 5,
+              "applied": false
+            },
+            {
+              "component": 49,
+              "pixels": 2,
+              "boundary_pairs": 3,
+              "applied": false
+            },
+            {
+              "component": 50,
+              "pixels": 3,
+              "boundary_pairs": 4,
+              "applied": false
+            },
+            {
+              "component": 51,
+              "pixels": 2,
+              "boundary_pairs": 2,
+              "applied": false
+            },
+            {
+              "component": 52,
+              "pixels": 3,
+              "boundary_pairs": 4,
+              "applied": false
+            },
+            {
+              "component": 53,
+              "pixels": 3,
+              "boundary_pairs": 3,
+              "applied": false
+            },
+            {
+              "component": 54,
+              "pixels": 29,
+              "boundary_pairs": 6,
+              "applied": false
+            },
+            {
+              "component": 55,
+              "pixels": 1,
+              "boundary_pairs": 0,
+              "applied": false
+            },
+            {
+              "component": 56,
+              "pixels": 1,
+              "boundary_pairs": 1,
+              "applied": false
+            },
+            {
+              "component": 57,
+              "pixels": 1,
+              "boundary_pairs": 0,
+              "applied": false
+            },
+            {
+              "component": 58,
+              "pixels": 1,
+              "boundary_pairs": 0,
+              "applied": false
+            },
+            {
+              "component": 59,
+              "pixels": 1,
+              "boundary_pairs": 0,
+              "applied": false
+            },
+            {
+              "component": 60,
+              "pixels": 2,
+              "boundary_pairs": 0,
+              "applied": false
+            },
+            {
+              "component": 61,
+              "pixels": 3,
+              "boundary_pairs": 0,
+              "applied": false
+            },
+            {
+              "component": 62,
+              "pixels": 7,
+              "boundary_pairs": 1,
+              "applied": false
+            },
+            {
+              "component": 63,
+              "pixels": 1,
+              "boundary_pairs": 0,
+              "applied": false
+            },
+            {
+              "component": 64,
+              "pixels": 4,
+              "boundary_pairs": 0,
+              "applied": false
+            },
+            {
+              "component": 65,
+              "pixels": 1,
+              "boundary_pairs": 0,
+              "applied": false
+            },
+            {
+              "component": 66,
+              "pixels": 11,
+              "boundary_pairs": 1,
+              "applied": false
+            },
+            {
+              "component": 67,
+              "pixels": 2,
+              "boundary_pairs": 0,
+              "applied": false
+            }
+          ],
+          "mandatory_and_outside_applied_exact": true,
+          "poison_invariant": true
+        }
+      },
+      "additional_applied": 0,
+      "original_only_selection": true
+    },
+    {
+      "id": "new_warm_lower_loss",
+      "page": "200021925_00007_1",
+      "role": "visible_paper_loss_contacting_writing_and_rule",
+      "layout": {
+        "chosen": null,
+        "supported_frames": 0,
+        "horizontal_lines": 23,
+        "vertical_lines": 73,
+        "horizontal_groups": 2,
+        "vertical_groups": 7
+      },
+      "methods": {
+        "v6": {
+          "update": 5,
+          "applied": 0,
+          "changed": 0,
+          "dark_to_bright": 0,
+          "bright_green_in_applied": 0,
+          "reference_L_threshold": 74.086181640625,
+          "solves": [
+            {
+              "component": 1,
+              "pixels": 1,
+              "boundary_pairs": 4,
+              "applied": false
+            },
+            {
+              "component": 2,
+              "pixels": 2,
+              "boundary_pairs": 6,
+              "applied": false
+            },
+            {
+              "component": 3,
+              "pixels": 2,
+              "boundary_pairs": 6,
+              "applied": false
+            }
+          ],
+          "mandatory_and_outside_applied_exact": true,
+          "poison_invariant": true
+        },
+        "full_page_layout": {
+          "update": 0,
+          "applied": 0,
+          "changed": 0,
+          "dark_to_bright": 0,
+          "bright_green_in_applied": 0,
+          "reference_L_threshold": 100.0,
+          "solves": [],
+          "mandatory_and_outside_applied_exact": true,
+          "poison_invariant": true
+        },
+        "contact_guard": {
+          "update": 357,
+          "applied": 37,
+          "changed": 37,
+          "dark_to_bright": 15,
+          "bright_green_in_applied": 0,
+          "reference_L_threshold": 74.086181640625,
+          "solves": [
+            {
+              "component": 1,
+              "pixels": 1,
+              "boundary_pairs": 0,
+              "applied": false
+            },
+            {
+              "component": 2,
+              "pixels": 5,
+              "boundary_pairs": 0,
+              "applied": false
+            },
+            {
+              "component": 3,
+              "pixels": 2,
+              "boundary_pairs": 1,
+              "applied": false
+            },
+            {
+              "component": 4,
+              "pixels": 1,
+              "boundary_pairs": 1,
+              "applied": false
+            },
+            {
+              "component": 5,
+              "pixels": 2,
+              "boundary_pairs": 0,
+              "applied": false
+            },
+            {
+              "component": 6,
+              "pixels": 39,
+              "boundary_pairs": 6,
+              "applied": false
+            },
+            {
+              "component": 7,
+              "pixels": 4,
+              "boundary_pairs": 1,
+              "applied": false
+            },
+            {
+              "component": 8,
+              "pixels": 3,
+              "boundary_pairs": 3,
+              "applied": false
+            },
+            {
+              "component": 9,
+              "pixels": 1,
+              "boundary_pairs": 2,
+              "applied": false
+            },
+            {
+              "component": 10,
+              "pixels": 1,
+              "boundary_pairs": 2,
+              "applied": false
+            },
+            {
+              "component": 11,
+              "pixels": 6,
+              "boundary_pairs": 4,
+              "applied": false
+            },
+            {
+              "component": 12,
+              "pixels": 4,
+              "boundary_pairs": 3,
+              "applied": false
+            },
+            {
+              "component": 13,
+              "pixels": 9,
+              "boundary_pairs": 3,
+              "applied": false
+            },
+            {
+              "component": 14,
+              "pixels": 1,
+              "boundary_pairs": 2,
+              "applied": false
+            },
+            {
+              "component": 15,
+              "pixels": 2,
+              "boundary_pairs": 0,
+              "applied": false
+            },
+            {
+              "component": 16,
+              "pixels": 3,
+              "boundary_pairs": 0,
+              "applied": false
+            },
+            {
+              "component": 17,
+              "pixels": 16,
+              "boundary_pairs": 7,
+              "applied": false
+            },
+            {
+              "component": 18,
+              "pixels": 1,
+              "boundary_pairs": 2,
+              "applied": false
+            },
+            {
+              "component": 19,
+              "pixels": 10,
+              "boundary_pairs": 7,
+              "applied": false
+            },
+            {
+              "component": 20,
+              "pixels": 2,
+              "boundary_pairs": 3,
+              "applied": false
+            },
+            {
+              "component": 21,
+              "pixels": 1,
+              "boundary_pairs": 0,
+              "applied": false
+            },
+            {
+              "component": 22,
+              "pixels": 5,
+              "boundary_pairs": 7,
+              "applied": false
+            },
+            {
+              "component": 23,
+              "pixels": 1,
+              "boundary_pairs": 0,
+              "applied": false
+            },
+            {
+              "component": 24,
+              "pixels": 2,
+              "boundary_pairs": 0,
+              "applied": false
+            },
+            {
+              "component": 25,
+              "pixels": 1,
+              "boundary_pairs": 0,
+              "applied": false
+            },
+            {
+              "component": 26,
+              "pixels": 9,
+              "boundary_pairs": 6,
+              "applied": false
+            },
+            {
+              "component": 27,
+              "pixels": 1,
+              "boundary_pairs": 0,
+              "applied": false
+            },
+            {
+              "component": 28,
+              "pixels": 3,
+              "boundary_pairs": 4,
+              "applied": false
+            },
+            {
+              "component": 29,
+              "pixels": 1,
+              "boundary_pairs": 3,
+              "applied": false
+            },
+            {
+              "component": 30,
+              "pixels": 8,
+              "boundary_pairs": 2,
+              "applied": false
+            },
+            {
+              "component": 31,
+              "pixels": 2,
+              "boundary_pairs": 0,
+              "applied": false
+            },
+            {
+              "component": 32,
+              "pixels": 2,
+              "boundary_pairs": 0,
+              "applied": false
+            },
+            {
+              "component": 33,
+              "pixels": 1,
+              "boundary_pairs": 0,
+              "applied": false
+            },
+            {
+              "component": 34,
+              "pixels": 2,
+              "boundary_pairs": 1,
+              "applied": false
+            },
+            {
+              "component": 35,
+              "pixels": 2,
+              "boundary_pairs": 1,
+              "applied": false
+            },
+            {
+              "component": 36,
+              "pixels": 7,
+              "boundary_pairs": 1,
+              "applied": false
+            },
+            {
+              "component": 37,
+              "pixels": 2,
+              "boundary_pairs": 0,
+              "applied": false
+            },
+            {
+              "component": 38,
+              "pixels": 25,
+              "boundary_pairs": 0,
+              "applied": false
+            },
+            {
+              "component": 39,
+              "pixels": 1,
+              "boundary_pairs": 0,
+              "applied": false
+            },
+            {
+              "component": 40,
+              "pixels": 11,
+              "boundary_pairs": 5,
+              "applied": false
+            },
+            {
+              "component": 41,
+              "pixels": 1,
+              "boundary_pairs": 0,
+              "applied": false
+            },
+            {
+              "component": 42,
+              "pixels": 1,
+              "boundary_pairs": 0,
+              "applied": false
+            },
+            {
+              "component": 43,
+              "pixels": 4,
+              "boundary_pairs": 0,
+              "applied": false
+            },
+            {
+              "component": 44,
+              "pixels": 6,
+              "boundary_pairs": 4,
+              "applied": false
+            },
+            {
+              "component": 45,
+              "pixels": 3,
+              "boundary_pairs": 3,
+              "applied": false
+            },
+            {
+              "component": 46,
+              "pixels": 23,
+              "boundary_pairs": 6,
+              "applied": false
+            },
+            {
+              "component": 47,
+              "pixels": 3,
+              "boundary_pairs": 3,
+              "applied": false
+            },
+            {
+              "component": 48,
+              "pixels": 7,
+              "boundary_pairs": 2,
+              "applied": false
+            },
+            {
+              "component": 49,
+              "pixels": 1,
+              "boundary_pairs": 0,
+              "applied": false
+            },
+            {
+              "component": 50,
+              "pixels": 2,
+              "boundary_pairs": 2,
+              "applied": false
+            },
+            {
+              "component": 51,
+              "pixels": 6,
+              "boundary_pairs": 0,
+              "applied": false
+            },
+            {
+              "component": 52,
+              "pixels": 1,
+              "boundary_pairs": 0,
+              "applied": false
+            },
+            {
+              "component": 53,
+              "pixels": 6,
+              "boundary_pairs": 0,
+              "applied": false
+            },
+            {
+              "component": 54,
+              "pixels": 7,
+              "boundary_pairs": 8,
+              "applied": false
+            },
+            {
+              "component": 55,
+              "pixels": 1,
+              "boundary_pairs": 2,
+              "applied": false
+            },
+            {
+              "component": 56,
+              "pixels": 37,
+              "boundary_pairs": 16,
+              "applied": true,
+              "max_residual": 2.5579538487363607e-13,
+              "reference_BGR_min": [
+                184.98079481440263,
+                202.36805232473958,
+                213.43617293754107
+              ],
+              "reference_BGR_max": [
+                186.09233476006492,
+                203.19909723558783,
+                214.53423997486135
+              ]
+            },
+            {
+              "component": 57,
+              "pixels": 2,
+              "boundary_pairs": 0,
+              "applied": false
+            },
+            {
+              "component": 58,
+              "pixels": 4,
+              "boundary_pairs": 4,
+              "applied": false
+            },
+            {
+              "component": 59,
+              "pixels": 1,
+              "boundary_pairs": 1,
+              "applied": false
+            },
+            {
+              "component": 60,
+              "pixels": 9,
+              "boundary_pairs": 5,
+              "applied": false
+            },
+            {
+              "component": 61,
+              "pixels": 3,
+              "boundary_pairs": 2,
+              "applied": false
+            },
+            {
+              "component": 62,
+              "pixels": 5,
+              "boundary_pairs": 2,
+              "applied": false
+            },
+            {
+              "component": 63,
+              "pixels": 6,
+              "boundary_pairs": 4,
+              "applied": false
+            },
+            {
+              "component": 64,
+              "pixels": 3,
+              "boundary_pairs": 0,
+              "applied": false
+            },
+            {
+              "component": 65,
+              "pixels": 4,
+              "boundary_pairs": 5,
+              "applied": false
+            },
+            {
+              "component": 66,
+              "pixels": 2,
+              "boundary_pairs": 2,
+              "applied": false
+            },
+            {
+              "component": 67,
+              "pixels": 2,
+              "boundary_pairs": 3,
+              "applied": false
+            },
+            {
+              "component": 68,
+              "pixels": 2,
+              "boundary_pairs": 1,
+              "applied": false
+            },
+            {
+              "component": 69,
+              "pixels": 1,
+              "boundary_pairs": 0,
+              "applied": false
+            },
+            {
+              "component": 70,
+              "pixels": 4,
+              "boundary_pairs": 3,
+              "applied": false
+            }
+          ],
+          "mandatory_and_outside_applied_exact": true,
+          "poison_invariant": true
+        }
+      },
+      "additional_applied": 37,
+      "original_only_selection": true
+    },
+    {
+      "id": "new_warm_faint_writing",
+      "page": "200021925_00004_1",
+      "role": "faint_writing_and_folded_paper_control",
+      "layout": {
+        "chosen": {
+          "box": [
+            105,
+            212,
+            2566,
+            1855
+          ],
+          "corners": [
+            [
+              113.11435146258353,
+              220.5
+            ],
+            [
+              2565.5336613328154,
+              220.5
+            ],
+            [
+              2523.6146555728774,
+              1828.0685623598913
+            ],
+            [
+              126.932153443532,
+              1848.8748180625437
+            ]
+          ],
+          "lines": [
+            [
+              113,
+              220,
+              2566,
+              220
+            ],
+            [
+              127,
+              1849,
+              2524,
+              1828
+            ],
+            [
+              113,
+              220,
+              127,
+              1849
+            ],
+            [
+              2566,
+              220,
+              2524,
+              1828
+            ]
+          ],
+          "support_fraction": [
+            0.9845024469820555,
+            0.9995828118481435,
+            1.0,
+            0.970771144278607
+          ],
+          "ink_inside": 0.2452030473575771,
+          "score": 3995937.0,
+          "grouped": true,
+          "raw_support_members": [
+            [
+              792,
+              212,
+              2252,
+              212
+            ],
+            [
+              105,
+              213,
+              2459,
+              213
+            ],
+            [
+              106,
+              214,
+              2497,
+              214
+            ],
+            [
+              106,
+              215,
+              2522,
+              215
+            ],
+            [
+              107,
+              216,
+              2523,
+              216
+            ],
+            [
+              107,
+              217,
+              2524,
+              217
+            ],
+            [
+              108,
+              218,
+              2524,
+              218
+            ],
+            [
+              108,
+              219,
+              2524,
+              219
+            ],
+            [
+              109,
+              220,
+              2525,
+              220
+            ],
+            [
+              109,
+              221,
+              2525,
+              221
+            ],
+            [
+              108,
+              222,
+              2524,
+              222
+            ],
+            [
+              107,
+              223,
+              2524,
+              223
+            ],
+            [
+              107,
+              224,
+              2524,
+              224
+            ],
+            [
+              107,
+              225,
+              2524,
+              225
+            ],
+            [
+              107,
+              226,
+              2524,
+              226
+            ],
+            [
+              107,
+              227,
+              2524,
+              227
+            ],
+            [
+              108,
+              228,
+              2523,
+              228
+            ],
+            [
+              108,
+              229,
+              2523,
+              229
+            ],
+            [
+              1302,
+              1832,
+              2520,
+              1821
+            ],
+            [
+              1296,
+              1833,
+              2535,
+              1822
+            ],
+            [
+              110,
+              1844,
+              2534,
+              1823
+            ],
+            [
+              110,
+              1845,
+              2505,
+              1824
+            ],
+            [
+              110,
+              1846,
+              2503,
+              1825
+            ],
+            [
+              110,
+              1847,
+              2503,
+              1826
+            ],
+            [
+              110,
+              1848,
+              2535,
+              1827
+            ],
+            [
+              111,
+              1849,
+              2533,
+              1828
+            ],
+            [
+              111,
+              1850,
+              2533,
+              1829
+            ],
+            [
+              112,
+              1851,
+              2533,
+              1830
+            ],
+            [
+              113,
+              1852,
+              2532,
+              1831
+            ],
+            [
+              113,
+              1853,
+              2531,
+              1832
+            ],
+            [
+              114,
+              1854,
+              2204,
+              1836
+            ],
+            [
+              114,
+              1855,
+              1927,
+              1839
+            ],
+            [
+              376,
+              1854,
+              1786,
+              1842
+            ],
+            [
+              111,
+              925,
+              119,
+              1856
+            ],
+            [
+              110,
+              693,
+              120,
+              1863
+            ],
+            [
+              111,
+              617,
+              121,
+              1862
+            ],
+            [
+              111,
+              476,
+              123,
+              1860
+            ],
+            [
+              109,
+              207,
+              124,
+              1859
+            ],
+            [
+              110,
+              207,
+              124,
+              1849
+            ],
+            [
+              111,
+              206,
+              125,
+              1859
+            ],
+            [
+              112,
+              206,
+              126,
+              1858
+            ],
+            [
+              113,
+              206,
+              127,
+              1858
+            ],
+            [
+              114,
+              207,
+              128,
+              1858
+            ],
+            [
+              115,
+              207,
+              128,
+              1739
+            ],
+            [
+              117,
+              206,
+              125,
+              1164
+            ],
+            [
+              118,
+              226,
+              126,
+              1147
+            ],
+            [
+              118,
+              206,
+              126,
+              1142
+            ],
+            [
+              119,
+              206,
+              126,
+              1065
+            ],
+            [
+              121,
+              207,
+              125,
+              722
+            ],
+            [
+              120,
+              206,
+              125,
+              726
+            ],
+            [
+              2569,
+              222,
+              2548,
+              828
+            ],
+            [
+              2536,
+              1250,
+              2523,
+              1748
+            ],
+            [
+              2567,
+              85,
+              2547,
+              840
+            ],
+            [
+              2546,
+              904,
+              2524,
+              1775
+            ],
+            [
+              2569,
+              85,
+              2525,
+              1774
+            ],
+            [
+              2538,
+              1279,
+              2521,
+              1933
+            ],
+            [
+              2539,
+              1319,
+              2523,
+              1932
+            ],
+            [
+              2540,
+              1321,
+              2524,
+              1932
+            ],
+            [
+              2541,
+              1331,
+              2526,
+              1934
+            ],
+            [
+              2567,
+              87,
+              2557,
+              685
+            ]
+          ],
+          "fitted_box_before_observed_span": [
+            113,
+            220,
+            2566,
+            1849
+          ],
+          "envelope_includes_complete_horizontal_observations": true
+        },
+        "supported_frames": 2,
+        "horizontal_lines": 33,
+        "vertical_lines": 61,
+        "horizontal_groups": 2,
+        "vertical_groups": 5
+      },
+      "methods": {
+        "v6": {
+          "update": 114,
+          "applied": 83,
+          "changed": 71,
+          "dark_to_bright": 0,
+          "bright_green_in_applied": 0,
+          "reference_L_threshold": 74.09228515625,
+          "solves": [
+            {
+              "component": 1,
+              "pixels": 2,
+              "boundary_pairs": 6,
+              "applied": false
+            },
+            {
+              "component": 2,
+              "pixels": 2,
+              "boundary_pairs": 6,
+              "applied": false
+            },
+            {
+              "component": 3,
+              "pixels": 10,
+              "boundary_pairs": 16,
+              "applied": true,
+              "max_residual": 1.4210854715202004e-13,
+              "reference_BGR_min": [
+                185.20949593393124,
+                205.06248040294273,
+                216.35975498598992
+              ],
+              "reference_BGR_max": [
+                185.5210496208843,
+                206.08396051195786,
+                217.1828678081087
+              ]
+            },
+            {
+              "component": 4,
+              "pixels": 4,
+              "boundary_pairs": 10,
+              "applied": false
+            },
+            {
+              "component": 5,
+              "pixels": 1,
+              "boundary_pairs": 4,
+              "applied": false
+            },
+            {
+              "component": 6,
+              "pixels": 8,
+              "boundary_pairs": 14,
+              "applied": false
+            },
+            {
+              "component": 7,
+              "pixels": 29,
+              "boundary_pairs": 26,
+              "applied": true,
+              "max_residual": 1.7053025658242404e-13,
+              "reference_BGR_min": [
+                184.7998617009611,
+                203.7589287716391,
+                215.36254000651377
+              ],
+              "reference_BGR_max": [
+                187.12249130919872,
+                204.83068496198692,
+                216.26186864679116
+              ]
+            },
+            {
+              "component": 8,
+              "pixels": 29,
+              "boundary_pairs": 30,
+              "applied": true,
+              "max_residual": 2.2737367544323206e-13,
+              "reference_BGR_min": [
+                186.76060890972482,
+                205.13638604897548,
+                217.2536911377515
+              ],
+              "reference_BGR_max": [
+                188.01264939490343,
+                206.5708808747622,
+                218.16673299035375
+              ]
+            },
+            {
+              "component": 9,
+              "pixels": 1,
+              "boundary_pairs": 4,
+              "applied": false
+            },
+            {
+              "component": 10,
+              "pixels": 2,
+              "boundary_pairs": 6,
+              "applied": false
+            },
+            {
+              "component": 11,
+              "pixels": 15,
+              "boundary_pairs": 22,
+              "applied": true,
+              "max_residual": 1.9895196601282805e-13,
+              "reference_BGR_min": [
+                186.54197863695825,
+                203.06718685568566,
+                214.82178029837155
+              ],
+              "reference_BGR_max": [
+                187.79809234950773,
+                204.05018725075524,
+                215.7717677904844
+              ]
+            },
+            {
+              "component": 12,
+              "pixels": 11,
+              "boundary_pairs": 14,
+              "applied": false
+            }
+          ],
+          "mandatory_and_outside_applied_exact": true,
+          "poison_invariant": true
+        },
+        "full_page_layout": {
+          "update": 0,
+          "applied": 0,
+          "changed": 0,
+          "dark_to_bright": 0,
+          "bright_green_in_applied": 0,
+          "reference_L_threshold": 100.0,
+          "solves": [],
+          "mandatory_and_outside_applied_exact": true,
+          "poison_invariant": true
+        },
+        "contact_guard": {
+          "update": 898,
+          "applied": 74,
+          "changed": 74,
+          "dark_to_bright": 29,
+          "bright_green_in_applied": 0,
+          "reference_L_threshold": 74.06787109375,
+          "solves": [
+            {
+              "component": 1,
+              "pixels": 5,
+              "boundary_pairs": 0,
+              "applied": false
+            },
+            {
+              "component": 2,
+              "pixels": 23,
+              "boundary_pairs": 9,
+              "applied": false
+            },
+            {
+              "component": 3,
+              "pixels": 1,
+              "boundary_pairs": 0,
+              "applied": false
+            },
+            {
+              "component": 4,
+              "pixels": 2,
+              "boundary_pairs": 0,
+              "applied": false
+            },
+            {
+              "component": 5,
+              "pixels": 3,
+              "boundary_pairs": 0,
+              "applied": false
+            },
+            {
+              "component": 6,
+              "pixels": 10,
+              "boundary_pairs": 4,
+              "applied": false
+            },
+            {
+              "component": 7,
+              "pixels": 1,
+              "boundary_pairs": 1,
+              "applied": false
+            },
+            {
+              "component": 8,
+              "pixels": 1,
+              "boundary_pairs": 1,
+              "applied": false
+            },
+            {
+              "component": 9,
+              "pixels": 1,
+              "boundary_pairs": 2,
+              "applied": false
+            },
+            {
+              "component": 10,
+              "pixels": 2,
+              "boundary_pairs": 0,
+              "applied": false
+            },
+            {
+              "component": 11,
+              "pixels": 12,
+              "boundary_pairs": 0,
+              "applied": false
+            },
+            {
+              "component": 12,
+              "pixels": 2,
+              "boundary_pairs": 0,
+              "applied": false
+            },
+            {
+              "component": 13,
+              "pixels": 1,
+              "boundary_pairs": 1,
+              "applied": false
+            },
+            {
+              "component": 14,
+              "pixels": 1,
+              "boundary_pairs": 2,
+              "applied": false
+            },
+            {
+              "component": 15,
+              "pixels": 50,
+              "boundary_pairs": 14,
+              "applied": false
+            },
+            {
+              "component": 16,
+              "pixels": 1,
+              "boundary_pairs": 0,
+              "applied": false
+            },
+            {
+              "component": 17,
+              "pixels": 4,
+              "boundary_pairs": 0,
+              "applied": false
+            },
+            {
+              "component": 18,
+              "pixels": 1,
+              "boundary_pairs": 1,
+              "applied": false
+            },
+            {
+              "component": 19,
+              "pixels": 1,
+              "boundary_pairs": 2,
+              "applied": false
+            },
+            {
+              "component": 20,
+              "pixels": 14,
+              "boundary_pairs": 4,
+              "applied": false
+            },
+            {
+              "component": 21,
+              "pixels": 2,
+              "boundary_pairs": 0,
+              "applied": false
+            },
+            {
+              "component": 22,
+              "pixels": 14,
+              "boundary_pairs": 6,
+              "applied": false
+            },
+            {
+              "component": 23,
+              "pixels": 1,
+              "boundary_pairs": 0,
+              "applied": false
+            },
+            {
+              "component": 24,
+              "pixels": 2,
+              "boundary_pairs": 0,
+              "applied": false
+            },
+            {
+              "component": 25,
+              "pixels": 2,
+              "boundary_pairs": 2,
+              "applied": false
+            },
+            {
+              "component": 26,
+              "pixels": 1,
+              "boundary_pairs": 0,
+              "applied": false
+            },
+            {
+              "component": 27,
+              "pixels": 7,
+              "boundary_pairs": 2,
+              "applied": false
+            },
+            {
+              "component": 28,
+              "pixels": 2,
+              "boundary_pairs": 2,
+              "applied": false
+            },
+            {
+              "component": 29,
+              "pixels": 8,
+              "boundary_pairs": 0,
+              "applied": false
+            },
+            {
+              "component": 30,
+              "pixels": 1,
+              "boundary_pairs": 0,
+              "applied": false
+            },
+            {
+              "component": 31,
+              "pixels": 2,
+              "boundary_pairs": 0,
+              "applied": false
+            },
+            {
+              "component": 32,
+              "pixels": 1,
+              "boundary_pairs": 1,
+              "applied": false
+            },
+            {
+              "component": 33,
+              "pixels": 8,
+              "boundary_pairs": 3,
+              "applied": false
+            },
+            {
+              "component": 34,
+              "pixels": 1,
+              "boundary_pairs": 1,
+              "applied": false
+            },
+            {
+              "component": 35,
+              "pixels": 51,
+              "boundary_pairs": 13,
+              "applied": false
+            },
+            {
+              "component": 36,
+              "pixels": 7,
+              "boundary_pairs": 7,
+              "applied": false
+            },
+            {
+              "component": 37,
+              "pixels": 1,
+              "boundary_pairs": 0,
+              "applied": false
+            },
+            {
+              "component": 38,
+              "pixels": 11,
+              "boundary_pairs": 10,
+              "applied": false
+            },
+            {
+              "component": 39,
+              "pixels": 4,
+              "boundary_pairs": 0,
+              "applied": false
+            },
+            {
+              "component": 40,
+              "pixels": 1,
+              "boundary_pairs": 0,
+              "applied": false
+            },
+            {
+              "component": 41,
+              "pixels": 19,
+              "boundary_pairs": 7,
+              "applied": false
+            },
+            {
+              "component": 42,
+              "pixels": 1,
+              "boundary_pairs": 0,
+              "applied": false
+            },
+            {
+              "component": 43,
+              "pixels": 1,
+              "boundary_pairs": 0,
+              "applied": false
+            },
+            {
+              "component": 44,
+              "pixels": 3,
+              "boundary_pairs": 3,
+              "applied": false
+            },
+            {
+              "component": 45,
+              "pixels": 5,
+              "boundary_pairs": 0,
+              "applied": false
+            },
+            {
+              "component": 46,
+              "pixels": 1,
+              "boundary_pairs": 0,
+              "applied": false
+            },
+            {
+              "component": 47,
+              "pixels": 34,
+              "boundary_pairs": 8,
+              "applied": false
+            },
+            {
+              "component": 48,
+              "pixels": 1,
+              "boundary_pairs": 0,
+              "applied": false
+            },
+            {
+              "component": 49,
+              "pixels": 1,
+              "boundary_pairs": 0,
+              "applied": false
+            },
+            {
+              "component": 50,
+              "pixels": 1,
+              "boundary_pairs": 0,
+              "applied": false
+            },
+            {
+              "component": 51,
+              "pixels": 1,
+              "boundary_pairs": 0,
+              "applied": false
+            },
+            {
+              "component": 52,
+              "pixels": 1,
+              "boundary_pairs": 0,
+              "applied": false
+            },
+            {
+              "component": 53,
+              "pixels": 1,
+              "boundary_pairs": 0,
+              "applied": false
+            },
+            {
+              "component": 54,
+              "pixels": 1,
+              "boundary_pairs": 1,
+              "applied": false
+            },
+            {
+              "component": 55,
+              "pixels": 10,
+              "boundary_pairs": 6,
+              "applied": false
+            },
+            {
+              "component": 56,
+              "pixels": 8,
+              "boundary_pairs": 0,
+              "applied": false
+            },
+            {
+              "component": 57,
+              "pixels": 4,
+              "boundary_pairs": 0,
+              "applied": false
+            },
+            {
+              "component": 58,
+              "pixels": 1,
+              "boundary_pairs": 0,
+              "applied": false
+            },
+            {
+              "component": 59,
+              "pixels": 1,
+              "boundary_pairs": 0,
+              "applied": false
+            },
+            {
+              "component": 60,
+              "pixels": 1,
+              "boundary_pairs": 0,
+              "applied": false
+            },
+            {
+              "component": 61,
+              "pixels": 3,
+              "boundary_pairs": 2,
+              "applied": false
+            },
+            {
+              "component": 62,
+              "pixels": 5,
+              "boundary_pairs": 0,
+              "applied": false
+            },
+            {
+              "component": 63,
+              "pixels": 3,
+              "boundary_pairs": 0,
+              "applied": false
+            },
+            {
+              "component": 64,
+              "pixels": 2,
+              "boundary_pairs": 2,
+              "applied": false
+            },
+            {
+              "component": 65,
+              "pixels": 7,
+              "boundary_pairs": 0,
+              "applied": false
+            },
+            {
+              "component": 66,
+              "pixels": 1,
+              "boundary_pairs": 2,
+              "applied": false
+            },
+            {
+              "component": 67,
+              "pixels": 9,
+              "boundary_pairs": 0,
+              "applied": false
+            },
+            {
+              "component": 68,
+              "pixels": 1,
+              "boundary_pairs": 0,
+              "applied": false
+            },
+            {
+              "component": 69,
+              "pixels": 2,
+              "boundary_pairs": 0,
+              "applied": false
+            },
+            {
+              "component": 70,
+              "pixels": 48,
+              "boundary_pairs": 11,
+              "applied": false
+            },
+            {
+              "component": 71,
+              "pixels": 1,
+              "boundary_pairs": 2,
+              "applied": false
+            },
+            {
+              "component": 72,
+              "pixels": 4,
+              "boundary_pairs": 4,
+              "applied": false
+            },
+            {
+              "component": 73,
+              "pixels": 2,
+              "boundary_pairs": 3,
+              "applied": false
+            },
+            {
+              "component": 74,
+              "pixels": 1,
+              "boundary_pairs": 1,
+              "applied": false
+            },
+            {
+              "component": 75,
+              "pixels": 1,
+              "boundary_pairs": 0,
+              "applied": false
+            },
+            {
+              "component": 76,
+              "pixels": 3,
+              "boundary_pairs": 2,
+              "applied": false
+            },
+            {
+              "component": 77,
+              "pixels": 4,
+              "boundary_pairs": 0,
+              "applied": false
+            },
+            {
+              "component": 78,
+              "pixels": 15,
+              "boundary_pairs": 1,
+              "applied": false
+            },
+            {
+              "component": 79,
+              "pixels": 25,
+              "boundary_pairs": 5,
+              "applied": false
+            },
+            {
+              "component": 80,
+              "pixels": 6,
+              "boundary_pairs": 6,
+              "applied": false
+            },
+            {
+              "component": 81,
+              "pixels": 23,
+              "boundary_pairs": 0,
+              "applied": false
+            },
+            {
+              "component": 82,
+              "pixels": 1,
+              "boundary_pairs": 0,
+              "applied": false
+            },
+            {
+              "component": 83,
+              "pixels": 1,
+              "boundary_pairs": 2,
+              "applied": false
+            },
+            {
+              "component": 84,
+              "pixels": 1,
+              "boundary_pairs": 0,
+              "applied": false
+            },
+            {
+              "component": 85,
+              "pixels": 6,
+              "boundary_pairs": 0,
+              "applied": false
+            },
+            {
+              "component": 86,
+              "pixels": 1,
+              "boundary_pairs": 0,
+              "applied": false
+            },
+            {
+              "component": 87,
+              "pixels": 2,
+              "boundary_pairs": 2,
+              "applied": false
+            },
+            {
+              "component": 88,
+              "pixels": 7,
+              "boundary_pairs": 5,
+              "applied": false
+            },
+            {
+              "component": 89,
+              "pixels": 1,
+              "boundary_pairs": 0,
+              "applied": false
+            },
+            {
+              "component": 90,
+              "pixels": 4,
+              "boundary_pairs": 2,
+              "applied": false
+            },
+            {
+              "component": 91,
+              "pixels": 3,
+              "boundary_pairs": 0,
+              "applied": false
+            },
+            {
+              "component": 92,
+              "pixels": 5,
+              "boundary_pairs": 0,
+              "applied": false
+            },
+            {
+              "component": 93,
+              "pixels": 1,
+              "boundary_pairs": 0,
+              "applied": false
+            },
+            {
+              "component": 94,
+              "pixels": 1,
+              "boundary_pairs": 2,
+              "applied": false
+            },
+            {
+              "component": 95,
+              "pixels": 1,
+              "boundary_pairs": 2,
+              "applied": false
+            },
+            {
+              "component": 96,
+              "pixels": 1,
+              "boundary_pairs": 0,
+              "applied": false
+            },
+            {
+              "component": 97,
+              "pixels": 1,
+              "boundary_pairs": 0,
+              "applied": false
+            },
+            {
+              "component": 98,
+              "pixels": 1,
+              "boundary_pairs": 0,
+              "applied": false
+            },
+            {
+              "component": 99,
+              "pixels": 1,
+              "boundary_pairs": 0,
+              "applied": false
+            },
+            {
+              "component": 100,
+              "pixels": 1,
+              "boundary_pairs": 0,
+              "applied": false
+            },
+            {
+              "component": 101,
+              "pixels": 6,
+              "boundary_pairs": 4,
+              "applied": false
+            },
+            {
+              "component": 102,
+              "pixels": 1,
+              "boundary_pairs": 0,
+              "applied": false
+            },
+            {
+              "component": 103,
+              "pixels": 1,
+              "boundary_pairs": 0,
+              "applied": false
+            },
+            {
+              "component": 104,
+              "pixels": 11,
+              "boundary_pairs": 6,
+              "applied": false
+            },
+            {
+              "component": 105,
+              "pixels": 2,
+              "boundary_pairs": 1,
+              "applied": false
+            },
+            {
+              "component": 106,
+              "pixels": 1,
+              "boundary_pairs": 0,
+              "applied": false
+            },
+            {
+              "component": 107,
+              "pixels": 5,
+              "boundary_pairs": 0,
+              "applied": false
+            },
+            {
+              "component": 108,
+              "pixels": 1,
+              "boundary_pairs": 0,
+              "applied": false
+            },
+            {
+              "component": 109,
+              "pixels": 1,
+              "boundary_pairs": 2,
+              "applied": false
+            },
+            {
+              "component": 110,
+              "pixels": 1,
+              "boundary_pairs": 0,
+              "applied": false
+            },
+            {
+              "component": 111,
+              "pixels": 2,
+              "boundary_pairs": 0,
+              "applied": false
+            },
+            {
+              "component": 112,
+              "pixels": 15,
+              "boundary_pairs": 9,
+              "applied": false
+            },
+            {
+              "component": 113,
+              "pixels": 1,
+              "boundary_pairs": 1,
+              "applied": false
+            },
+            {
+              "component": 114,
+              "pixels": 18,
+              "boundary_pairs": 3,
+              "applied": false
+            },
+            {
+              "component": 115,
+              "pixels": 2,
+              "boundary_pairs": 0,
+              "applied": false
+            },
+            {
+              "component": 116,
+              "pixels": 1,
+              "boundary_pairs": 2,
+              "applied": false
+            },
+            {
+              "component": 117,
+              "pixels": 1,
+              "boundary_pairs": 0,
+              "applied": false
+            },
+            {
+              "component": 118,
+              "pixels": 4,
+              "boundary_pairs": 4,
+              "applied": false
+            },
+            {
+              "component": 119,
+              "pixels": 17,
+              "boundary_pairs": 15,
+              "applied": false
+            },
+            {
+              "component": 120,
+              "pixels": 8,
+              "boundary_pairs": 12,
+              "applied": false
+            },
+            {
+              "component": 121,
+              "pixels": 1,
+              "boundary_pairs": 0,
+              "applied": false
+            },
+            {
+              "component": 122,
+              "pixels": 1,
+              "boundary_pairs": 0,
+              "applied": false
+            },
+            {
+              "component": 123,
+              "pixels": 1,
+              "boundary_pairs": 0,
+              "applied": false
+            },
+            {
+              "component": 124,
+              "pixels": 1,
+              "boundary_pairs": 2,
+              "applied": false
+            },
+            {
+              "component": 125,
+              "pixels": 22,
+              "boundary_pairs": 27,
+              "applied": true,
+              "max_residual": 1.7053025658242404e-13,
+              "reference_BGR_min": [
+                190.2121686556529,
+                208.47309858092402,
+                217.2608027490058
+              ],
+              "reference_BGR_max": [
+                191.94181187850444,
+                210.06721767425503,
+                220.17198397947712
+              ]
+            },
+            {
+              "component": 126,
+              "pixels": 5,
+              "boundary_pairs": 0,
+              "applied": false
+            },
+            {
+              "component": 127,
+              "pixels": 1,
+              "boundary_pairs": 0,
+              "applied": false
+            },
+            {
+              "component": 128,
+              "pixels": 1,
+              "boundary_pairs": 0,
+              "applied": false
+            },
+            {
+              "component": 129,
+              "pixels": 1,
+              "boundary_pairs": 0,
+              "applied": false
+            },
+            {
+              "component": 130,
+              "pixels": 17,
+              "boundary_pairs": 0,
+              "applied": false
+            },
+            {
+              "component": 131,
+              "pixels": 13,
+              "boundary_pairs": 7,
+              "applied": false
+            },
+            {
+              "component": 132,
+              "pixels": 1,
+              "boundary_pairs": 0,
+              "applied": false
+            },
+            {
+              "component": 133,
+              "pixels": 9,
+              "boundary_pairs": 0,
+              "applied": false
+            },
+            {
+              "component": 134,
+              "pixels": 1,
+              "boundary_pairs": 0,
+              "applied": false
+            },
+            {
+              "component": 135,
+              "pixels": 8,
+              "boundary_pairs": 6,
+              "applied": false
+            },
+            {
+              "component": 136,
+              "pixels": 1,
+              "boundary_pairs": 0,
+              "applied": false
+            },
+            {
+              "component": 137,
+              "pixels": 3,
+              "boundary_pairs": 1,
+              "applied": false
+            },
+            {
+              "component": 138,
+              "pixels": 6,
+              "boundary_pairs": 3,
+              "applied": false
+            },
+            {
+              "component": 139,
+              "pixels": 33,
+              "boundary_pairs": 0,
+              "applied": false
+            },
+            {
+              "component": 140,
+              "pixels": 5,
+              "boundary_pairs": 2,
+              "applied": false
+            },
+            {
+              "component": 141,
+              "pixels": 1,
+              "boundary_pairs": 0,
+              "applied": false
+            },
+            {
+              "component": 142,
+              "pixels": 8,
+              "boundary_pairs": 7,
+              "applied": false
+            },
+            {
+              "component": 143,
+              "pixels": 12,
+              "boundary_pairs": 7,
+              "applied": false
+            },
+            {
+              "component": 144,
+              "pixels": 4,
+              "boundary_pairs": 6,
+              "applied": false
+            },
+            {
+              "component": 145,
+              "pixels": 16,
+              "boundary_pairs": 11,
+              "applied": false
+            },
+            {
+              "component": 146,
+              "pixels": 1,
+              "boundary_pairs": 0,
+              "applied": false
+            },
+            {
+              "component": 147,
+              "pixels": 1,
+              "boundary_pairs": 2,
+              "applied": false
+            },
+            {
+              "component": 148,
+              "pixels": 52,
+              "boundary_pairs": 17,
+              "applied": true,
+              "max_residual": 2.8421709430404007e-13,
+              "reference_BGR_min": [
+                186.24078515828018,
+                202.00842917196826,
+                213.3059677866988
+              ],
+              "reference_BGR_max": [
+                187.08847534487322,
+                203.95966225264613,
+                214.7177374153231
+              ]
+            },
+            {
+              "component": 149,
+              "pixels": 1,
+              "boundary_pairs": 0,
+              "applied": false
+            },
+            {
+              "component": 150,
+              "pixels": 7,
+              "boundary_pairs": 0,
+              "applied": false
+            }
+          ],
+          "mandatory_and_outside_applied_exact": true,
+          "poison_invariant": true
+        }
+      },
+      "additional_applied": 74,
+      "original_only_selection": true
+    },
+    {
+      "id": "new_gray_binding_mark",
+      "page": "200004148_00062_1",
+      "role": "monochrome_binding_mark_and_lower_rule",
+      "layout": {
+        "chosen": null,
+        "supported_frames": 0,
+        "horizontal_lines": 58,
+        "vertical_lines": 213,
+        "horizontal_groups": 3,
+        "vertical_groups": 11
+      },
+      "methods": {
+        "v6": {
+          "update": 0,
+          "applied": 0,
+          "changed": 0,
+          "dark_to_bright": 0,
+          "bright_green_in_applied": 0,
+          "reference_L_threshold": 74.32421875,
+          "solves": [],
+          "mandatory_and_outside_applied_exact": true,
+          "poison_invariant": true
+        },
+        "full_page_layout": {
+          "update": 0,
+          "applied": 0,
+          "changed": 0,
+          "dark_to_bright": 0,
+          "bright_green_in_applied": 0,
+          "reference_L_threshold": 100.0,
+          "solves": [],
+          "mandatory_and_outside_applied_exact": true,
+          "poison_invariant": true
+        },
+        "contact_guard": {
+          "update": 0,
+          "applied": 0,
+          "changed": 0,
+          "dark_to_bright": 0,
+          "bright_green_in_applied": 0,
+          "reference_L_threshold": 74.427978515625,
+          "solves": [],
+          "mandatory_and_outside_applied_exact": true,
+          "poison_invariant": true
+        }
+      },
+      "additional_applied": 0,
+      "original_only_selection": true
+    },
+    {
+      "id": "new_gray_writing",
+      "page": "200004148_00062_1",
+      "role": "monochrome_writing_control",
+      "layout": {
+        "chosen": null,
+        "supported_frames": 0,
+        "horizontal_lines": 58,
+        "vertical_lines": 213,
+        "horizontal_groups": 3,
+        "vertical_groups": 11
+      },
+      "methods": {
+        "v6": {
+          "update": 0,
+          "applied": 0,
+          "changed": 0,
+          "dark_to_bright": 0,
+          "bright_green_in_applied": 0,
+          "reference_L_threshold": 74.080078125,
+          "solves": [],
+          "mandatory_and_outside_applied_exact": true,
+          "poison_invariant": true
+        },
+        "full_page_layout": {
+          "update": 0,
+          "applied": 0,
+          "changed": 0,
+          "dark_to_bright": 0,
+          "bright_green_in_applied": 0,
+          "reference_L_threshold": 100.0,
+          "solves": [],
+          "mandatory_and_outside_applied_exact": true,
+          "poison_invariant": true
+        },
+        "contact_guard": {
+          "update": 0,
+          "applied": 0,
+          "changed": 0,
+          "dark_to_bright": 0,
+          "bright_green_in_applied": 0,
+          "reference_L_threshold": 74.09228515625,
+          "solves": [],
+          "mandatory_and_outside_applied_exact": true,
+          "poison_invariant": true
+        }
+      },
+      "additional_applied": 0,
+      "original_only_selection": true
+    },
+    {
+      "id": "known_saved_red_seal",
+      "page": "200010454_00002_2",
+      "role": "known_actual_saved_npj_red_seal_control",
+      "layout": {
+        "chosen": null,
+        "supported_frames": 0,
+        "horizontal_lines": 7,
+        "vertical_lines": 9,
+        "horizontal_groups": 1,
+        "vertical_groups": 1
+      },
+      "methods": {
+        "v6": {
+          "update": 902,
+          "applied": 861,
+          "changed": 749,
+          "dark_to_bright": 0,
+          "bright_green_in_applied": 0,
+          "reference_L_threshold": 73.18896484375,
+          "solves": [
+            {
+              "component": 1,
+              "pixels": 100,
+              "boundary_pairs": 82,
+              "applied": true,
+              "max_residual": 2.8421709430404007e-13,
+              "reference_BGR_min": [
+                179.5893183518563,
+                199.20660241193062,
+                211.37214384554272
+              ],
+              "reference_BGR_max": [
+                182.20453711017365,
+                201.5896925058259,
+                213.54735623394734
+              ]
+            },
+            {
+              "component": 2,
+              "pixels": 24,
+              "boundary_pairs": 26,
+              "applied": true,
+              "max_residual": 2.5579538487363607e-13,
+              "reference_BGR_min": [
+                180.68163173100297,
+                199.57722489153548,
+                211.58830074864747
+              ],
+              "reference_BGR_max": [
+                182.67054599753567,
+                201.03440324454692,
+                213.06443392015817
+              ]
+            },
+            {
+              "component": 3,
+              "pixels": 39,
+              "boundary_pairs": 48,
+              "applied": true,
+              "max_residual": 2.5579538487363607e-13,
+              "reference_BGR_min": [
+                178.88259219903296,
+                198.3905363046773,
+                210.26483896054626
+              ],
+              "reference_BGR_max": [
+                181.50661216678313,
+                199.51673611479248,
+                211.50543174804858
+              ]
+            },
+            {
+              "component": 4,
+              "pixels": 2,
+              "boundary_pairs": 6,
+              "applied": false
+            },
+            {
+              "component": 5,
+              "pixels": 5,
+              "boundary_pairs": 10,
+              "applied": false
+            },
+            {
+              "component": 6,
+              "pixels": 100,
+              "boundary_pairs": 72,
+              "applied": true,
+              "max_residual": 2.5579538487363607e-13,
+              "reference_BGR_min": [
+                178.04561172052712,
+                197.2443635192078,
+                209.77182464250694
+              ],
+              "reference_BGR_max": [
+                181.64187922587058,
+                199.56184005195215,
+                211.8575433025365
+              ]
+            },
+            {
+              "component": 7,
+              "pixels": 5,
+              "boundary_pairs": 12,
+              "applied": false
+            },
+            {
+              "component": 8,
+              "pixels": 22,
+              "boundary_pairs": 31,
+              "applied": true,
+              "max_residual": 1.4210854715202004e-13,
+              "reference_BGR_min": [
+                178.8637263549692,
+                197.90182579567548,
+                209.95604192630205
+              ],
+              "reference_BGR_max": [
+                181.02647737028786,
+                199.01006927579573,
+                211.40312852425185
+              ]
+            },
+            {
+              "component": 9,
+              "pixels": 34,
+              "boundary_pairs": 34,
+              "applied": true,
+              "max_residual": 1.7053025658242404e-13,
+              "reference_BGR_min": [
+                178.19272703909488,
+                196.62525123057347,
+                209.08341245996834
+              ],
+              "reference_BGR_max": [
+                180.27285930423682,
+                198.57797509767346,
+                210.51284995703364
+              ]
+            },
+            {
+              "component": 10,
+              "pixels": 4,
+              "boundary_pairs": 10,
+              "applied": false
+            },
+            {
+              "component": 11,
+              "pixels": 16,
+              "boundary_pairs": 30,
+              "applied": true,
+              "max_residual": 1.7053025658242404e-13,
+              "reference_BGR_min": [
+                178.58007359030978,
+                197.56414875301903,
+                209.982934809351
+              ],
+              "reference_BGR_max": [
+                180.0830110687499,
+                198.56666055601107,
+                210.69942783010723
+              ]
+            },
+            {
+              "component": 12,
+              "pixels": 2,
+              "boundary_pairs": 6,
+              "applied": false
+            },
+            {
+              "component": 13,
+              "pixels": 4,
+              "boundary_pairs": 10,
+              "applied": false
+            },
+            {
+              "component": 14,
+              "pixels": 17,
+              "boundary_pairs": 24,
+              "applied": true,
+              "max_residual": 1.7053025658242404e-13,
+              "reference_BGR_min": [
+                179.5932461213918,
+                197.95944420649306,
+                208.17114457608145
+              ],
+              "reference_BGR_max": [
+                180.5151621922879,
+                198.38239138744527,
+                209.0336051235638
+              ]
+            },
+            {
+              "component": 15,
+              "pixels": 12,
+              "boundary_pairs": 20,
+              "applied": true,
+              "max_residual": 1.4210854715202004e-13,
+              "reference_BGR_min": [
+                178.242949750172,
+                197.08333903194222,
+                209.5029763229641
+              ],
+              "reference_BGR_max": [
+                180.32027927790915,
+                199.53990238749213,
+                211.60131825766643
+              ]
+            },
+            {
+              "component": 16,
+              "pixels": 4,
+              "boundary_pairs": 10,
+              "applied": false
+            },
+            {
+              "component": 17,
+              "pixels": 1,
+              "boundary_pairs": 4,
+              "applied": false
+            },
+            {
+              "component": 18,
+              "pixels": 2,
+              "boundary_pairs": 6,
+              "applied": false
+            },
+            {
+              "component": 19,
+              "pixels": 165,
+              "boundary_pairs": 126,
+              "applied": true,
+              "max_residual": 2.5579538487363607e-13,
+              "reference_BGR_min": [
+                178.7643609655157,
+                197.3310237942385,
+                210.28115610102697
+              ],
+              "reference_BGR_max": [
+                184.43850221971093,
+                201.49932969721087,
+                213.69711734055014
+              ]
+            },
+            {
+              "component": 20,
+              "pixels": 76,
+              "boundary_pairs": 42,
+              "applied": true,
+              "max_residual": 2.2737367544323206e-13,
+              "reference_BGR_min": [
+                177.9778504685552,
+                197.0428312342601,
+                209.1649969180805
+              ],
+              "reference_BGR_max": [
+                182.82601990671753,
+                200.13275800728582,
+                211.79468263210768
+              ]
+            },
+            {
+              "component": 21,
+              "pixels": 69,
+              "boundary_pairs": 72,
+              "applied": true,
+              "max_residual": 1.9895196601282805e-13,
+              "reference_BGR_min": [
+                181.47032405283906,
+                200.28451257104595,
+                212.0424483432571
+              ],
+              "reference_BGR_max": [
+                182.7399183728737,
+                201.779040882637,
+                213.2954582261244
+              ]
+            },
+            {
+              "component": 22,
+              "pixels": 144,
+              "boundary_pairs": 126,
+              "applied": true,
+              "max_residual": 3.410605131648481e-13,
+              "reference_BGR_min": [
+                180.23544928848202,
+                199.00282814496097,
+                211.1145688713277
+              ],
+              "reference_BGR_max": [
+                184.35923798184962,
+                201.2365119342036,
+                213.2177833182169
+              ]
+            },
+            {
+              "component": 23,
+              "pixels": 5,
+              "boundary_pairs": 12,
+              "applied": false
+            },
+            {
+              "component": 24,
+              "pixels": 43,
+              "boundary_pairs": 60,
+              "applied": true,
+              "max_residual": 1.7053025658242404e-13,
+              "reference_BGR_min": [
+                177.16031381539378,
+                195.78220680813385,
+                208.083369870096
+              ],
+              "reference_BGR_max": [
+                179.34260714301334,
+                197.45547782540493,
+                209.86981316206095
+              ]
+            },
+            {
+              "component": 25,
+              "pixels": 1,
+              "boundary_pairs": 4,
+              "applied": false
+            },
+            {
+              "component": 26,
+              "pixels": 2,
+              "boundary_pairs": 6,
+              "applied": false
+            },
+            {
+              "component": 27,
+              "pixels": 2,
+              "boundary_pairs": 6,
+              "applied": false
+            },
+            {
+              "component": 28,
+              "pixels": 2,
+              "boundary_pairs": 6,
+              "applied": false
+            }
+          ],
+          "mandatory_and_outside_applied_exact": true,
+          "poison_invariant": true
+        },
+        "full_page_layout": {
+          "update": 0,
+          "applied": 0,
+          "changed": 0,
+          "dark_to_bright": 0,
+          "bright_green_in_applied": 0,
+          "reference_L_threshold": 100.0,
+          "solves": [],
+          "mandatory_and_outside_applied_exact": true,
+          "poison_invariant": true
+        },
+        "contact_guard": {
+          "update": 0,
+          "applied": 0,
+          "changed": 0,
+          "dark_to_bright": 0,
+          "bright_green_in_applied": 0,
+          "reference_L_threshold": 73.158447265625,
+          "solves": [],
+          "mandatory_and_outside_applied_exact": true,
+          "poison_invariant": true
+        }
+      },
+      "additional_applied": 0,
+      "original_only_selection": true
+    }
+  ]
+}

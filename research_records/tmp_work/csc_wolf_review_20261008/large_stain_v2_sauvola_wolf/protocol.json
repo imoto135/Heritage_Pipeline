@@ -1,0 +1,80 @@
+{
+  "case": "T01",
+  "roi_xywh": [
+    760,
+    360,
+    600,
+    600
+  ],
+  "order": [
+    "original",
+    "csc_v2",
+    "sauvola61",
+    "wolf61"
+  ],
+  "rationale": "Entire large stain and surrounding text, expanded from previous 450x450 ROI.",
+  "new_inference": false,
+  "parameters_unchanged": true,
+  "display_scale": 1,
+  "csc_input": "Saved CSC v2 mask with ACE preprocessing.",
+  "classical_input": "Saved full-page masks from raw RGB-to-gray input.",
+  "source_paths": {
+    "original": "data/split_dataset/train/hnsd00000/hnsd007_023.jpg",
+    "csc_v2": "data/split_dataset_csc_mask_v2/train/hnsd00000/hnsd007_023/02_text_black.png",
+    "sauvola61": "tmp_work/classical_black_comparison_20261008/masks/T01/sauvola61.png",
+    "wolf61": "tmp_work/classical_black_comparison_20261008/masks/T01/wolf61.png"
+  },
+  "source_sha256": {
+    "original": "41999e5b52d17e60ea068c9b629ffcce037dc27fcbb3a4f45f46a5063d7b22af",
+    "csc_v2": "b96834418ece51c159af9b19fecbc4c33fdad718fb07d9997dc3f5a5db8a3609",
+    "sauvola61": "9f2eefd2eca3afd3467456bfdb26b6f74374a0a872bf5eff50b54dd132e55428",
+    "wolf61": "0d76c4e6def59fa2f1e981f7d22dd8f0833e0d1bb5ab4881add198971b2645e1"
+  },
+  "verification": {
+    "source_hashes_unchanged": true,
+    "source_hashes_match_previous_protocol": true,
+    "mask_polarity": "0 foreground / 255 background",
+    "display_pixels_match_crops": true,
+    "saved_crops_match_sources": true
+  },
+  "panels": [
+    {
+      "method": "original",
+      "canvas_xywh": [
+        24,
+        162,
+        600,
+        600
+      ]
+    },
+    {
+      "method": "csc_v2",
+      "canvas_xywh": [
+        648,
+        162,
+        600,
+        600
+      ]
+    },
+    {
+      "method": "sauvola61",
+      "canvas_xywh": [
+        24,
+        830,
+        600,
+        600
+      ]
+    },
+    {
+      "method": "wolf61",
+      "canvas_xywh": [
+        648,
+        830,
+        600,
+        600
+      ]
+    }
+  ],
+  "figure_sha256": "61275aaa9b958cfafe9def0763c0cb3ceda077ed17c0f73a180c70b8a9b270ef",
+  "source_script_sha256": "3ead7cf8a7bb55be77893966e0ea9a401acf38f29484da6fbba82a85ba6a1e69"
+}

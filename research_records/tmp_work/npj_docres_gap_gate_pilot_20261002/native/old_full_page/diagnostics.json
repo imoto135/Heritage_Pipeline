@@ -1,0 +1,148 @@
+{
+  "frame": "old_full_page",
+  "probability_source": "docres",
+  "components": [
+    {
+      "id": 41,
+      "xywh": [
+        450,
+        188,
+        2,
+        3
+      ],
+      "pixels": 4,
+      "anchor_components": [
+        2,
+        4
+      ],
+      "accepted": true,
+      "docres_mean_ink_probability": 7.894635200500488e-05,
+      "selected_05": false,
+      "selected_09": false
+    },
+    {
+      "id": 325,
+      "xywh": [
+        1538,
+        712,
+        3,
+        2
+      ],
+      "pixels": 4,
+      "anchor_components": [
+        189,
+        241
+      ],
+      "accepted": true,
+      "docres_mean_ink_probability": 0.9132830947637558,
+      "selected_05": true,
+      "selected_09": true
+    },
+    {
+      "id": 367,
+      "xywh": [
+        97,
+        739,
+        3,
+        6
+      ],
+      "pixels": 10,
+      "anchor_components": [
+        262,
+        267
+      ],
+      "accepted": true,
+      "docres_mean_ink_probability": 0.013037103414535522,
+      "selected_05": false,
+      "selected_09": false
+    },
+    {
+      "id": 562,
+      "xywh": [
+        441,
+        1184,
+        2,
+        2
+      ],
+      "pixels": 3,
+      "anchor_components": [
+        522,
+        564
+      ],
+      "accepted": true,
+      "docres_mean_ink_probability": 0.0005584160486857096,
+      "selected_05": false,
+      "selected_09": false
+    },
+    {
+      "id": 742,
+      "xywh": [
+        103,
+        1478,
+        1,
+        3
+      ],
+      "pixels": 3,
+      "anchor_components": [
+        262,
+        768
+      ],
+      "accepted": true,
+      "docres_mean_ink_probability": 0.00010283788045247395,
+      "selected_05": false,
+      "selected_09": false
+    },
+    {
+      "id": 1092,
+      "xywh": [
+        465,
+        2137,
+        3,
+        2
+      ],
+      "pixels": 3,
+      "anchor_components": [
+        1132,
+        1156
+      ],
+      "accepted": true,
+      "docres_mean_ink_probability": 0.00015678008397420248,
+      "selected_05": false,
+      "selected_09": false
+    },
+    {
+      "id": 1100,
+      "xywh": [
+        465,
+        2143,
+        2,
+        2
+      ],
+      "pixels": 2,
+      "anchor_components": [
+        1132,
+        1156
+      ],
+      "accepted": true,
+      "docres_mean_ink_probability": 3.421306610107422e-05,
+      "selected_05": false,
+      "selected_09": false
+    }
+  ],
+  "counts": {
+    "ungated": 29,
+    "gate_05": 4,
+    "gate_09": 4,
+    "docres_ink": 487530,
+    "old_protection_disagreement": 79155,
+    "red": 0,
+    "hold": 43276,
+    "extra": 0,
+    "protect": 550128
+  },
+  "changed_pixels": {
+    "ungated_output": 29,
+    "gate_05_output": 4,
+    "gate_09_output": 4
+  }
+}

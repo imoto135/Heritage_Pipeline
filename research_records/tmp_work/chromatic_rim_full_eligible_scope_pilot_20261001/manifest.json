@@ -1,0 +1,31 @@
+{
+  "settings": {
+    "pages": 29,
+    "ROIs": 90,
+    "classification": "same whole-page frozen candidate, direction holds, chromatic6px unheld-core addition",
+    "numerical_context_px": 64,
+    "comparison": "current saved output, retained-applied plus rim6, full old eligible, full old eligible plus rim6",
+    "original_eligible": "whole-page saved effective eligible with original direction hold removed",
+    "rim_eligible": "original eligible OR frozen unheld-core chromatic6 addition",
+    "reference": "same old known-paper, minus rim added for rim arm; held pixels never become references",
+    "restorer": "same16-pair64-area raw/smooth boundary8 and old24px fineL seam",
+    "fallback": "retain current baseline when new solve unsupported; preserve all previous applied pixels",
+    "new_scope": "previously unfilled eligible pixels may become accepted; record separately from rim additions",
+    "full_page_colour_solve": false,
+    "colour_gap_or_absolute_patch_or_energy": false,
+    "new_DDRM": false,
+    "pixel_GT": false,
+    "development": true
+  },
+  "dependencies": {
+    "scripts/benchmark/probe_chromatic_rim_full_eligible_scope.py": "3b8f5e7e4783227565e83b9e46bda545b8da9c059c065d8246dd75b2e621e4cf",
+    "scripts/benchmark/probe_paper_boundary_pair_gate_v2.py": "8cfbe50a192ad12e0254a9bcff31271f357717fa88845df7b78820fc511580fe",
+    "tmp_work/chromatic_rim_reference_gap_factorial_pilot_20261001/manifest.json": "f5a8f0b587610456a694c6c93f3e9b1f6cc8f1c3ce9eab3837f4845179ae7286",
+    "tmp_work/chromatic_rim_reference_gap_factorial_pilot_20261001/complete.json": "8837fa216b8ded91cdcd92972ec661ef97c8bac614f6d4beec689471b134e7bf",
+    "tmp_work/directional_paper_abstention_pilot_20261001/manifest.json": "895656d6c55577222bc2aedc08463bc29bd6fad103aabc87c48456b9c078a774",
+    "tmp_work/directional_paper_abstention_pilot_20261001/complete.json": "d982c62abe490e18ffcd102f9a15751c4e9050ef6ce2a19e5d52cf24a2e88c63",
+    "tmp_work/unseen_directional_margin_validation_20261001/paper_fill/manifest.json": "c3f9b9a33d2fb589d7abe9b4920626298ce2c4d7dbd887397fc76cfd7c003f87",
+    "tmp_work/unseen_directional_margin_validation_20261001/paper_fill/complete.json": "4f9d5c862f9cba3a0d3eda107797301efc2b800a02665a635cef7dc630ceaedc"
+  },
+  "source_sha256": "3b8f5e7e4783227565e83b9e46bda545b8da9c059c065d8246dd75b2e621e4cf"
+}

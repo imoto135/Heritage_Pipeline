@@ -1,0 +1,1652 @@
+{
+  "source_sha256": "79b75e2e137e7bd98d7160e2ea9acfdf1dd6cf0acc1f90d6876ac21e9d37b6df",
+  "original_only": true,
+  "excluded_books": [
+    "100241706",
+    "100249371",
+    "100249376",
+    "100249416",
+    "100249476",
+    "100249537",
+    "200003076",
+    "200003803",
+    "200006663",
+    "200008003",
+    "200010454",
+    "200014740",
+    "200015779",
+    "200017197",
+    "200017458",
+    "200018243",
+    "200019865",
+    "200020019",
+    "200021063",
+    "200021071",
+    "200021086",
+    "200021644",
+    "200021660",
+    "200021712",
+    "200021763",
+    "200021802",
+    "200021851",
+    "200021853",
+    "200021869",
+    "200022050",
+    "200025191",
+    "brsk00000",
+    "hnsd00000"
+  ],
+  "rejected_pages": [
+    "200014685_00009_2",
+    "200015843_00103_1",
+    "200021637_00019_2",
+    "umgy007_011"
+  ],
+  "screened_pages": 1832,
+  "candidates": [
+    {
+      "page": "200008316_00126_2",
+      "book": "200008316",
+      "split": "train",
+      "original": "data/split_dataset/train/200008316/200008316_00126_2.jpg",
+      "score": 1278.8999999999999,
+      "candidates": [
+        {
+          "xywh": [
+            515,
+            45,
+            111,
+            98
+          ],
+          "area": 3654,
+          "peak": 12.5906982421875,
+          "warm_seeds": 0,
+          "kind": "neutral_dark",
+          "score": 1278.8999999999999
+        },
+        {
+          "xywh": [
+            363,
+            71,
+            96,
+            62
+          ],
+          "area": 2801,
+          "peak": 13.39689826965332,
+          "warm_seeds": 0,
+          "kind": "neutral_dark",
+          "score": 980.3499999999999
+        },
+        {
+          "xywh": [
+            455,
+            79,
+            63,
+            52
+          ],
+          "area": 1264,
+          "peak": 8.0,
+          "warm_seeds": 0,
+          "kind": "neutral_dark",
+          "score": 442.4
+        },
+        {
+          "xywh": [
+            320,
+            80,
+            38,
+            42
+          ],
+          "area": 759,
+          "peak": 9.590700149536133,
+          "warm_seeds": 0,
+          "kind": "neutral_dark",
+          "score": 265.65
+        },
+        {
+          "xywh": [
+            436,
+            78,
+            17,
+            27
+          ],
+          "area": 288,
+          "peak": 7.796899795532227,
+          "warm_seeds": 0,
+          "kind": "neutral_dark",
+          "score": 100.8
+        },
+        {
+          "xywh": [
+            300,
+            78,
+            20,
+            29
+          ],
+          "area": 223,
+          "peak": 5.393799781799316,
+          "warm_seeds": 0,
+          "kind": "neutral_dark",
+          "score": 78.05
+        },
+        {
+          "xywh": [
+            55,
+            89,
+            5,
+            6
+          ],
+          "area": 15,
+          "peak": 1.399999976158142,
+          "warm_seeds": 0,
+          "kind": "neutral_dark",
+          "score": 5.25
+        },
+        {
+          "xywh": [
+            328,
+            167,
+            3,
+            5
+          ],
+          "area": 8,
+          "peak": 1.0,
+          "warm_seeds": 0,
+          "kind": "neutral_dark",
+          "score": 2.8
+        }
+      ],
+      "size_reduced": [
+        715,
+        1069
+      ],
+      "rule_y_reduced": 185,
+      "original_only": true
+    },
+    {
+      "page": "200008316_00020_1",
+      "book": "200008316",
+      "split": "train",
+      "original": "data/split_dataset/train/200008316/200008316_00020_1.jpg",
+      "score": 1217.3,
+      "candidates": [
+        {
+          "xywh": [
+            295,
+            57,
+            106,
+            81
+          ],
+          "area": 3478,
+          "peak": 10.590700149536133,
+          "warm_seeds": 0,
+          "kind": "neutral_dark",
+          "score": 1217.3
+        },
+        {
+          "xywh": [
+            153,
+            65,
+            14,
+            17
+          ],
+          "area": 162,
+          "peak": 5.0,
+          "warm_seeds": 0,
+          "kind": "neutral_dark",
+          "score": 56.699999999999996
+        },
+        {
+          "xywh": [
+            470,
+            114,
+            4,
+            8
+          ],
+          "area": 14,
+          "peak": 1.399999976158142,
+          "warm_seeds": 0,
+          "kind": "neutral_dark",
+          "score": 4.8999999999999995
+        }
+      ],
+      "size_reduced": [
+        709,
+        1066
+      ],
+      "rule_y_reduced": 183,
+      "original_only": true
+    },
+    {
+      "page": "200004107_00033_1",
+      "book": "200004107",
+      "split": "test",
+      "original": "data/split_dataset/test/200004107/200004107_00033_1.jpg",
+      "score": 606.1999999999999,
+      "candidates": [
+        {
+          "xywh": [
+            368,
+            119,
+            84,
+            44
+          ],
+          "area": 1732,
+          "peak": 4.393799781799316,
+          "warm_seeds": 0,
+          "kind": "neutral_dark",
+          "score": 606.1999999999999
+        },
+        {
+          "xywh": [
+            408,
+            72,
+            47,
+            47
+          ],
+          "area": 912,
+          "peak": 4.996899604797363,
+          "warm_seeds": 0,
+          "kind": "neutral_dark",
+          "score": 319.2
+        },
+        {
+          "xywh": [
+            65,
+            66,
+            38,
+            40
+          ],
+          "area": 809,
+          "peak": 3.59689998626709,
+          "warm_seeds": 0,
+          "kind": "neutral_dark",
+          "score": 283.15
+        },
+        {
+          "xywh": [
+            226,
+            108,
+            50,
+            58
+          ],
+          "area": 795,
+          "peak": 5.393799781799316,
+          "warm_seeds": 0,
+          "kind": "neutral_dark",
+          "score": 278.25
+        },
+        {
+          "xywh": [
+            106,
+            66,
+            36,
+            45
+          ],
+          "area": 745,
+          "peak": 4.393799781799316,
+          "warm_seeds": 0,
+          "kind": "neutral_dark",
+          "score": 260.75
+        },
+        {
+          "xywh": [
+            324,
+            53,
+            38,
+            42
+          ],
+          "area": 669,
+          "peak": 3.59689998626709,
+          "warm_seeds": 0,
+          "kind": "neutral_dark",
+          "score": 234.14999999999998
+        },
+        {
+          "xywh": [
+            235,
+            34,
+            41,
+            45
+          ],
+          "area": 654,
+          "peak": 4.199999809265137,
+          "warm_seeds": 0,
+          "kind": "neutral_dark",
+          "score": 228.89999999999998
+        },
+        {
+          "xywh": [
+            191,
+            107,
+            37,
+            40
+          ],
+          "area": 639,
+          "peak": 4.199999809265137,
+          "warm_seeds": 0,
+          "kind": "neutral_dark",
+          "score": 223.64999999999998
+        },
+        {
+          "xywh": [
+            146,
+            63,
+            42,
+            43
+          ],
+          "area": 624,
+          "peak": 3.196899890899658,
+          "warm_seeds": 0,
+          "kind": "neutral_dark",
+          "score": 218.39999999999998
+        },
+        {
+          "xywh": [
+            329,
+            99,
+            30,
+            42
+          ],
+          "area": 579,
+          "peak": 5.793799877166748,
+          "warm_seeds": 0,
+          "kind": "neutral_dark",
+          "score": 202.64999999999998
+        }
+      ],
+      "size_reduced": [
+        497,
+        740
+      ],
+      "rule_y_reduced": 175,
+      "original_only": true
+    },
+    {
+      "page": "200004107_00028_1",
+      "book": "200004107",
+      "split": "test",
+      "original": "data/split_dataset/test/200004107/200004107_00028_1.jpg",
+      "score": 570.5,
+      "candidates": [
+        {
+          "xywh": [
+            202,
+            49,
+            49,
+            98
+          ],
+          "area": 1630,
+          "peak": 4.996899604797363,
+          "warm_seeds": 0,
+          "kind": "neutral_dark",
+          "score": 570.5
+        },
+        {
+          "xywh": [
+            245,
+            66,
+            43,
+            92
+          ],
+          "area": 1321,
+          "peak": 3.59689998626709,
+          "warm_seeds": 0,
+          "kind": "neutral_dark",
+          "score": 462.34999999999997
+        },
+        {
+          "xywh": [
+            417,
+            101,
+            44,
+            35
+          ],
+          "area": 944,
+          "peak": 6.590699672698975,
+          "warm_seeds": 0,
+          "kind": "neutral_dark",
+          "score": 330.4
+        },
+        {
+          "xywh": [
+            93,
+            72,
+            37,
+            56
+          ],
+          "area": 837,
+          "peak": 5.0,
+          "warm_seeds": 0,
+          "kind": "neutral_dark",
+          "score": 292.95
+        },
+        {
+          "xywh": [
+            369,
+            53,
+            47,
+            45
+          ],
+          "area": 815,
+          "peak": 3.59689998626709,
+          "warm_seeds": 0,
+          "kind": "neutral_dark",
+          "score": 285.25
+        },
+        {
+          "xywh": [
+            288,
+            90,
+            42,
+            35
+          ],
+          "area": 775,
+          "peak": 5.196899890899658,
+          "warm_seeds": 0,
+          "kind": "neutral_dark",
+          "score": 271.25
+        },
+        {
+          "xywh": [
+            285,
+            58,
+            51,
+            37
+          ],
+          "area": 689,
+          "peak": 4.393799781799316,
+          "warm_seeds": 0,
+          "kind": "neutral_dark",
+          "score": 241.14999999999998
+        },
+        {
+          "xywh": [
+            333,
+            60,
+            38,
+            43
+          ],
+          "area": 680,
+          "peak": 4.0,
+          "warm_seeds": 0,
+          "kind": "neutral_dark",
+          "score": 237.99999999999997
+        },
+        {
+          "xywh": [
+            139,
+            101,
+            32,
+            37
+          ],
+          "area": 622,
+          "peak": 5.196899890899658,
+          "warm_seeds": 0,
+          "kind": "neutral_dark",
+          "score": 217.7
+        },
+        {
+          "xywh": [
+            52,
+            74,
+            42,
+            41
+          ],
+          "area": 504,
+          "peak": 4.0,
+          "warm_seeds": 0,
+          "kind": "neutral_dark",
+          "score": 176.39999999999998
+        }
+      ],
+      "size_reduced": [
+        494,
+        736
+      ],
+      "rule_y_reduced": 183,
+      "original_only": true
+    },
+    {
+      "page": "200005798_00092_2",
+      "book": "200005798",
+      "split": "test",
+      "original": "data/split_dataset/test/200005798/200005798_00092_2.jpg",
+      "score": 423.5,
+      "candidates": [
+        {
+          "xywh": [
+            239,
+            90,
+            78,
+            38
+          ],
+          "area": 1210,
+          "peak": 3.59689998626709,
+          "warm_seeds": 0,
+          "kind": "neutral_dark",
+          "score": 423.5
+        },
+        {
+          "xywh": [
+            327,
+            84,
+            86,
+            43
+          ],
+          "area": 1161,
+          "peak": 3.196899890899658,
+          "warm_seeds": 0,
+          "kind": "neutral_dark",
+          "score": 406.34999999999997
+        },
+        {
+          "xywh": [
+            89,
+            91,
+            59,
+            37
+          ],
+          "area": 636,
+          "peak": 3.0,
+          "warm_seeds": 0,
+          "kind": "neutral_dark",
+          "score": 222.6
+        },
+        {
+          "xywh": [
+            162,
+            96,
+            49,
+            27
+          ],
+          "area": 386,
+          "peak": 2.196899890899658,
+          "warm_seeds": 0,
+          "kind": "neutral_dark",
+          "score": 135.1
+        },
+        {
+          "xywh": [
+            443,
+            73,
+            18,
+            37
+          ],
+          "area": 204,
+          "peak": 2.196899890899658,
+          "warm_seeds": 0,
+          "kind": "neutral_dark",
+          "score": 71.39999999999999
+        },
+        {
+          "xywh": [
+            414,
+            89,
+            31,
+            27
+          ],
+          "area": 202,
+          "peak": 2.0,
+          "warm_seeds": 0,
+          "kind": "neutral_dark",
+          "score": 70.69999999999999
+        },
+        {
+          "xywh": [
+            278,
+            120,
+            23,
+            24
+          ],
+          "area": 192,
+          "peak": 2.0,
+          "warm_seeds": 0,
+          "kind": "neutral_dark",
+          "score": 67.19999999999999
+        },
+        {
+          "xywh": [
+            148,
+            98,
+            18,
+            42
+          ],
+          "area": 177,
+          "peak": 2.0,
+          "warm_seeds": 0,
+          "kind": "neutral_dark",
+          "score": 61.949999999999996
+        },
+        {
+          "xywh": [
+            424,
+            109,
+            17,
+            28
+          ],
+          "area": 164,
+          "peak": 2.799999952316284,
+          "warm_seeds": 0,
+          "kind": "neutral_dark",
+          "score": 57.4
+        },
+        {
+          "xywh": [
+            222,
+            102,
+            23,
+            20
+          ],
+          "area": 117,
+          "peak": 2.196899890899658,
+          "warm_seeds": 0,
+          "kind": "neutral_dark",
+          "score": 40.949999999999996
+        }
+      ],
+      "size_reduced": [
+        505,
+        775
+      ],
+      "rule_y_reduced": 162,
+      "original_only": true
+    },
+    {
+      "page": "umgy002_006",
+      "book": "umgy00000",
+      "split": "train",
+      "original": "data/split_dataset/train/umgy00000/umgy002_006.jpg",
+      "score": 355.25,
+      "candidates": [
+        {
+          "xywh": [
+            341,
+            105,
+            47,
+            50
+          ],
+          "area": 1015,
+          "peak": 5.393799781799316,
+          "warm_seeds": 0,
+          "kind": "neutral_dark",
+          "score": 355.25
+        },
+        {
+          "xywh": [
+            242,
+            99,
+            18,
+            55
+          ],
+          "area": 458,
+          "peak": 4.0,
+          "warm_seeds": 0,
+          "kind": "neutral_dark",
+          "score": 160.29999999999998
+        },
+        {
+          "xywh": [
+            311,
+            84,
+            27,
+            37
+          ],
+          "area": 309,
+          "peak": 2.196899890899658,
+          "warm_seeds": 0,
+          "kind": "neutral_dark",
+          "score": 108.14999999999999
+        },
+        {
+          "xywh": [
+            366,
+            88,
+            20,
+            21
+          ],
+          "area": 207,
+          "peak": 3.59689998626709,
+          "warm_seeds": 0,
+          "kind": "neutral_dark",
+          "score": 72.44999999999999
+        },
+        {
+          "xywh": [
+            313,
+            99,
+            16,
+            24
+          ],
+          "area": 154,
+          "peak": 3.0,
+          "warm_seeds": 0,
+          "kind": "neutral_dark",
+          "score": 53.9
+        },
+        {
+          "xywh": [
+            41,
+            279,
+            25,
+            7
+          ],
+          "area": 98,
+          "peak": 3.0,
+          "warm_seeds": 0,
+          "kind": "neutral_dark",
+          "score": 34.3
+        },
+        {
+          "xywh": [
+            135,
+            301,
+            8,
+            28
+          ],
+          "area": 97,
+          "peak": 2.0,
+          "warm_seeds": 0,
+          "kind": "neutral_dark",
+          "score": 33.949999999999996
+        },
+        {
+          "xywh": [
+            298,
+            106,
+            10,
+            20
+          ],
+          "area": 88,
+          "peak": 2.196899890899658,
+          "warm_seeds": 0,
+          "kind": "neutral_dark",
+          "score": 30.799999999999997
+        },
+        {
+          "xywh": [
+            371,
+            155,
+            13,
+            12
+          ],
+          "area": 88,
+          "peak": 2.196899890899658,
+          "warm_seeds": 0,
+          "kind": "neutral_dark",
+          "score": 30.799999999999997
+        },
+        {
+          "xywh": [
+            132,
+            199,
+            43,
+            7
+          ],
+          "area": 84,
+          "peak": 1.399999976158142,
+          "warm_seeds": 0,
+          "kind": "neutral_dark",
+          "score": 29.4
+        }
+      ],
+      "size_reduced": [
+        438,
+        720
+      ],
+      "rule_y_reduced": 368,
+      "original_only": true
+    },
+    {
+      "page": "200004148_00043_2",
+      "book": "200004148",
+      "split": "train",
+      "original": "data/split_dataset/train/200004148/200004148_00043_2.jpg",
+      "score": 303.45,
+      "candidates": [
+        {
+          "xywh": [
+            335,
+            116,
+            64,
+            55
+          ],
+          "area": 867,
+          "peak": 5.196899890899658,
+          "warm_seeds": 0,
+          "kind": "neutral_dark",
+          "score": 303.45
+        },
+        {
+          "xywh": [
+            156,
+            170,
+            14,
+            14
+          ],
+          "area": 62,
+          "peak": 2.0,
+          "warm_seeds": 0,
+          "kind": "neutral_dark",
+          "score": 21.7
+        },
+        {
+          "xywh": [
+            75,
+            212,
+            11,
+            17
+          ],
+          "area": 57,
+          "peak": 2.0,
+          "warm_seeds": 0,
+          "kind": "neutral_dark",
+          "score": 19.95
+        },
+        {
+          "xywh": [
+            381,
+            260,
+            11,
+            10
+          ],
+          "area": 56,
+          "peak": 2.0,
+          "warm_seeds": 0,
+          "kind": "neutral_dark",
+          "score": 19.599999999999998
+        },
+        {
+          "xywh": [
+            100,
+            217,
+            9,
+            12
+          ],
+          "area": 47,
+          "peak": 2.0,
+          "warm_seeds": 0,
+          "kind": "neutral_dark",
+          "score": 16.45
+        },
+        {
+          "xywh": [
+            103,
+            242,
+            11,
+            9
+          ],
+          "area": 41,
+          "peak": 1.399999976158142,
+          "warm_seeds": 0,
+          "kind": "neutral_dark",
+          "score": 14.35
+        },
+        {
+          "xywh": [
+            395,
+            262,
+            12,
+            8
+          ],
+          "area": 39,
+          "peak": 1.399999976158142,
+          "warm_seeds": 0,
+          "kind": "neutral_dark",
+          "score": 13.649999999999999
+        },
+        {
+          "xywh": [
+            41,
+            231,
+            11,
+            7
+          ],
+          "area": 37,
+          "peak": 1.0,
+          "warm_seeds": 0,
+          "kind": "neutral_dark",
+          "score": 12.95
+        },
+        {
+          "xywh": [
+            393,
+            268,
+            11,
+            9
+          ],
+          "area": 36,
+          "peak": 1.399999976158142,
+          "warm_seeds": 0,
+          "kind": "neutral_dark",
+          "score": 12.6
+        },
+        {
+          "xywh": [
+            91,
+            214,
+            10,
+            12
+          ],
+          "area": 33,
+          "peak": 1.0,
+          "warm_seeds": 0,
+          "kind": "neutral_dark",
+          "score": 11.549999999999999
+        }
+      ],
+      "size_reduced": [
+        444,
+        727
+      ],
+      "rule_y_reduced": 346,
+      "original_only": true
+    },
+    {
+      "page": "200005798_00085_1",
+      "book": "200005798",
+      "split": "test",
+      "original": "data/split_dataset/test/200005798/200005798_00085_1.jpg",
+      "score": 192.5,
+      "candidates": [
+        {
+          "xywh": [
+            169,
+            72,
+            38,
+            96
+          ],
+          "area": 550,
+          "peak": 3.59689998626709,
+          "warm_seeds": 0,
+          "kind": "neutral_dark",
+          "score": 192.5
+        },
+        {
+          "xywh": [
+            85,
+            129,
+            41,
+            29
+          ],
+          "area": 396,
+          "peak": 3.196899890899658,
+          "warm_seeds": 0,
+          "kind": "neutral_dark",
+          "score": 138.6
+        },
+        {
+          "xywh": [
+            39,
+            104,
+            33,
+            44
+          ],
+          "area": 312,
+          "peak": 2.196899890899658,
+          "warm_seeds": 0,
+          "kind": "neutral_dark",
+          "score": 109.19999999999999
+        },
+        {
+          "xywh": [
+            38,
+            34,
+            23,
+            29
+          ],
+          "area": 229,
+          "peak": 4.0,
+          "warm_seeds": 0,
+          "kind": "neutral_dark",
+          "score": 80.14999999999999
+        },
+        {
+          "xywh": [
+            37,
+            81,
+            17,
+            25
+          ],
+          "area": 142,
+          "peak": 3.196899890899658,
+          "warm_seeds": 0,
+          "kind": "neutral_dark",
+          "score": 49.699999999999996
+        },
+        {
+          "xywh": [
+            42,
+            64,
+            19,
+            15
+          ],
+          "area": 68,
+          "peak": 2.0,
+          "warm_seeds": 0,
+          "kind": "neutral_dark",
+          "score": 23.799999999999997
+        },
+        {
+          "xywh": [
+            432,
+            76,
+            15,
+            9
+          ],
+          "area": 68,
+          "peak": 3.0,
+          "warm_seeds": 0,
+          "kind": "neutral_dark",
+          "score": 23.799999999999997
+        },
+        {
+          "xywh": [
+            48,
+            147,
+            8,
+            11
+          ],
+          "area": 42,
+          "peak": 2.196899890899658,
+          "warm_seeds": 0,
+          "kind": "neutral_dark",
+          "score": 14.7
+        },
+        {
+          "xywh": [
+            69,
+            83,
+            11,
+            28
+          ],
+          "area": 34,
+          "peak": 1.0,
+          "warm_seeds": 0,
+          "kind": "neutral_dark",
+          "score": 11.899999999999999
+        },
+        {
+          "xywh": [
+            368,
+            151,
+            3,
+            5
+          ],
+          "area": 11,
+          "peak": 1.399999976158142,
+          "warm_seeds": 0,
+          "kind": "neutral_dark",
+          "score": 3.8499999999999996
+        }
+      ],
+      "size_reduced": [
+        497,
+        780
+      ],
+      "rule_y_reduced": 181,
+      "original_only": true
+    },
+    {
+      "page": "200014685_00015_2",
+      "book": "200014685",
+      "split": "train",
+      "original": "data/split_dataset/train/200014685/200014685_00015_2.jpg",
+      "score": 145.0,
+      "candidates": [
+        {
+          "xywh": [
+            159,
+            68,
+            29,
+            16
+          ],
+          "area": 145,
+          "peak": 3.196899890899658,
+          "warm_seeds": 6,
+          "kind": "warm_supported",
+          "score": 145.0
+        },
+        {
+          "xywh": [
+            195,
+            75,
+            9,
+            8
+          ],
+          "area": 31,
+          "peak": 2.0,
+          "warm_seeds": 3,
+          "kind": "warm_supported",
+          "score": 31.0
+        },
+        {
+          "xywh": [
+            210,
+            72,
+            9,
+            8
+          ],
+          "area": 29,
+          "peak": 2.0,
+          "warm_seeds": 3,
+          "kind": "warm_supported",
+          "score": 29.0
+        },
+        {
+          "xywh": [
+            245,
+            74,
+            6,
+            5
+          ],
+          "area": 19,
+          "peak": 2.0,
+          "warm_seeds": 3,
+          "kind": "warm_supported",
+          "score": 19.0
+        }
+      ],
+      "size_reduced": [
+        511,
+        810
+      ],
+      "rule_y_reduced": 93,
+      "original_only": true
+    },
+    {
+      "page": "200014685_00009_1",
+      "book": "200014685",
+      "split": "train",
+      "original": "data/split_dataset/train/200014685/200014685_00009_1.jpg",
+      "score": 106.0,
+      "candidates": [
+        {
+          "xywh": [
+            75,
+            43,
+            15,
+            17
+          ],
+          "area": 106,
+          "peak": 2.799999952316284,
+          "warm_seeds": 8,
+          "kind": "warm_supported",
+          "score": 106.0
+        },
+        {
+          "xywh": [
+            60,
+            41,
+            4,
+            15
+          ],
+          "area": 36,
+          "peak": 2.0,
+          "warm_seeds": 0,
+          "kind": "neutral_dark",
+          "score": 12.6
+        },
+        {
+          "xywh": [
+            69,
+            72,
+            7,
+            5
+          ],
+          "area": 18,
+          "peak": 1.399999976158142,
+          "warm_seeds": 1,
+          "kind": "neutral_dark",
+          "score": 6.3
+        }
+      ],
+      "size_reduced": [
+        516,
+        809
+      ],
+      "rule_y_reduced": 91,
+      "original_only": true
+    },
+    {
+      "page": "200004148_00016_1",
+      "book": "200004148",
+      "split": "train",
+      "original": "data/split_dataset/train/200004148/200004148_00016_1.jpg",
+      "score": 91.69999999999999,
+      "candidates": [
+        {
+          "xywh": [
+            263,
+            38,
+            32,
+            21
+          ],
+          "area": 262,
+          "peak": 4.0,
+          "warm_seeds": 0,
+          "kind": "neutral_dark",
+          "score": 91.69999999999999
+        },
+        {
+          "xywh": [
+            304,
+            48,
+            9,
+            8
+          ],
+          "area": 34,
+          "peak": 1.399999976158142,
+          "warm_seeds": 0,
+          "kind": "neutral_dark",
+          "score": 11.899999999999999
+        },
+        {
+          "xywh": [
+            400,
+            65,
+            5,
+            5
+          ],
+          "area": 16,
+          "peak": 2.0,
+          "warm_seeds": 0,
+          "kind": "neutral_dark",
+          "score": 5.6
+        },
+        {
+          "xywh": [
+            264,
+            55,
+            6,
+            5
+          ],
+          "area": 14,
+          "peak": 1.399999976158142,
+          "warm_seeds": 0,
+          "kind": "neutral_dark",
+          "score": 4.8999999999999995
+        }
+      ],
+      "size_reduced": [
+        455,
+        728
+      ],
+      "rule_y_reduced": 82,
+      "original_only": true
+    },
+    {
+      "page": "200003967_00024_2",
+      "book": "200003967",
+      "split": "train",
+      "original": "data/split_dataset/train/200003967/200003967_00024_2.jpg",
+      "score": 76.64999999999999,
+      "candidates": [
+        {
+          "xywh": [
+            386,
+            115,
+            17,
+            22
+          ],
+          "area": 219,
+          "peak": 5.0,
+          "warm_seeds": 0,
+          "kind": "neutral_dark",
+          "score": 76.64999999999999
+        }
+      ],
+      "size_reduced": [
+        470,
+        746
+      ],
+      "rule_y_reduced": 169,
+      "original_only": true
+    },
+    {
+      "page": "200003967_00036_2",
+      "book": "200003967",
+      "split": "train",
+      "original": "data/split_dataset/train/200003967/200003967_00036_2.jpg",
+      "score": 69.64999999999999,
+      "candidates": [
+        {
+          "xywh": [
+            209,
+            94,
+            17,
+            20
+          ],
+          "area": 199,
+          "peak": 4.199999809265137,
+          "warm_seeds": 0,
+          "kind": "neutral_dark",
+          "score": 69.64999999999999
+        },
+        {
+          "xywh": [
+            169,
+            118,
+            20,
+            20
+          ],
+          "area": 182,
+          "peak": 3.196899890899658,
+          "warm_seeds": 0,
+          "kind": "neutral_dark",
+          "score": 63.699999999999996
+        },
+        {
+          "xywh": [
+            172,
+            96,
+            16,
+            19
+          ],
+          "area": 152,
+          "peak": 2.799999952316284,
+          "warm_seeds": 0,
+          "kind": "neutral_dark",
+          "score": 53.199999999999996
+        },
+        {
+          "xywh": [
+            229,
+            112,
+            21,
+            14
+          ],
+          "area": 125,
+          "peak": 2.0,
+          "warm_seeds": 0,
+          "kind": "neutral_dark",
+          "score": 43.75
+        },
+        {
+          "xywh": [
+            230,
+            93,
+            16,
+            19
+          ],
+          "area": 123,
+          "peak": 3.0,
+          "warm_seeds": 0,
+          "kind": "neutral_dark",
+          "score": 43.05
+        },
+        {
+          "xywh": [
+            211,
+            114,
+            10,
+            18
+          ],
+          "area": 123,
+          "peak": 3.0,
+          "warm_seeds": 0,
+          "kind": "neutral_dark",
+          "score": 43.05
+        },
+        {
+          "xywh": [
+            193,
+            114,
+            12,
+            19
+          ],
+          "area": 113,
+          "peak": 2.799999952316284,
+          "warm_seeds": 0,
+          "kind": "neutral_dark",
+          "score": 39.55
+        },
+        {
+          "xywh": [
+            191,
+            97,
+            14,
+            14
+          ],
+          "area": 85,
+          "peak": 2.799999952316284,
+          "warm_seeds": 0,
+          "kind": "neutral_dark",
+          "score": 29.749999999999996
+        },
+        {
+          "xywh": [
+            194,
+            135,
+            11,
+            13
+          ],
+          "area": 51,
+          "peak": 1.399999976158142,
+          "warm_seeds": 0,
+          "kind": "neutral_dark",
+          "score": 17.849999999999998
+        },
+        {
+          "xywh": [
+            202,
+            103,
+            4,
+            6
+          ],
+          "area": 14,
+          "peak": 1.399999976158142,
+          "warm_seeds": 0,
+          "kind": "neutral_dark",
+          "score": 4.8999999999999995
+        }
+      ],
+      "size_reduced": [
+        464,
+        752
+      ],
+      "rule_y_reduced": 168,
+      "original_only": true
+    },
+    {
+      "page": "umgy012_013",
+      "book": "umgy00000",
+      "split": "train",
+      "original": "data/split_dataset/train/umgy00000/umgy012_013.jpg",
+      "score": 67.0,
+      "candidates": [
+        {
+          "xywh": [
+            296,
+            32,
+            13,
+            16
+          ],
+          "area": 67,
+          "peak": 2.799999952316284,
+          "warm_seeds": 4,
+          "kind": "warm_supported",
+          "score": 67.0
+        }
+      ],
+      "size_reduced": [
+        436,
+        728
+      ],
+      "rule_y_reduced": 87,
+      "original_only": true
+    },
+    {
+      "page": "200005598_00003_2",
+      "book": "200005598",
+      "split": "val",
+      "original": "data/split_dataset/val/200005598/200005598_00003_2.jpg",
+      "score": 57.05,
+      "candidates": [
+        {
+          "xywh": [
+            424,
+            81,
+            12,
+            31
+          ],
+          "area": 163,
+          "peak": 3.0,
+          "warm_seeds": 0,
+          "kind": "neutral_dark",
+          "score": 57.05
+        },
+        {
+          "xywh": [
+            295,
+            89,
+            15,
+            11
+          ],
+          "area": 105,
+          "peak": 4.199999809265137,
+          "warm_seeds": 0,
+          "kind": "neutral_dark",
+          "score": 36.75
+        }
+      ],
+      "size_reduced": [
+        466,
+        726
+      ],
+      "rule_y_reduced": 122,
+      "original_only": true
+    },
+    {
+      "page": "200005598_00048_2",
+      "book": "200005598",
+      "split": "val",
+      "original": "data/split_dataset/val/200005598/200005598_00048_2.jpg",
+      "score": 29.749999999999996,
+      "candidates": [
+        {
+          "xywh": [
+            280,
+            54,
+            11,
+            13
+          ],
+          "area": 85,
+          "peak": 4.199999809265137,
+          "warm_seeds": 0,
+          "kind": "neutral_dark",
+          "score": 29.749999999999996
+        },
+        {
+          "xywh": [
+            86,
+            46,
+            5,
+            4
+          ],
+          "area": 13,
+          "peak": 1.399999976158142,
+          "warm_seeds": 0,
+          "kind": "neutral_dark",
+          "score": 4.55
+        }
+      ],
+      "size_reduced": [
+        464,
+        729
+      ],
+      "rule_y_reduced": 132,
+      "original_only": true
+    },
+    {
+      "page": "200021637_00010_1",
+      "book": "200021637",
+      "split": "val",
+      "original": "data/split_dataset/val/200021637/200021637_00010_1.jpg",
+      "score": 24.0,
+      "candidates": [
+        {
+          "xywh": [
+            428,
+            47,
+            2,
+            16
+          ],
+          "area": 24,
+          "peak": 1.0,
+          "warm_seeds": 24,
+          "kind": "warm_supported",
+          "score": 24.0
+        },
+        {
+          "xywh": [
+            428,
+            38,
+            2,
+            8
+          ],
+          "area": 11,
+          "peak": 1.0,
+          "warm_seeds": 11,
+          "kind": "warm_supported",
+          "score": 11.0
+        }
+      ],
+      "size_reduced": [
+        467,
+        714
+      ],
+      "rule_y_reduced": 72,
+      "original_only": true
+    },
+    {
+      "page": "200021637_00003_1",
+      "book": "200021637",
+      "split": "val",
+      "original": "data/split_dataset/val/200021637/200021637_00003_1.jpg",
+      "score": 2.8,
+      "candidates": [
+        {
+          "xywh": [
+            352,
+            40,
+            5,
+            3
+          ],
+          "area": 8,
+          "peak": 1.0,
+          "warm_seeds": 1,
+          "kind": "neutral_dark",
+          "score": 2.8
+        },
+        {
+          "xywh": [
+            368,
+            40,
+            5,
+            3
+          ],
+          "area": 8,
+          "peak": 1.0,
+          "warm_seeds": 0,
+          "kind": "neutral_dark",
+          "score": 2.8
+        }
+      ],
+      "size_reduced": [
+        444,
+        717
+      ],
+      "rule_y_reduced": 56,
+      "original_only": true
+    }
+  ],
+  "dependencies": {
+    "tmp_work/npj_failure_collection_20261001/page_inventory.csv": "8dfe741bc4181daca0ad2fe0c1efc0ea435fb6ef3ddedc8a3b6ee850c13f8146",
+    "tmp_work/unseen_thin_margin_validation_20261001/baseline_review.json": "0166ec84cc0c2d0db96c9ef69c1f4c747124b54d2ba6b3cd444194dc6f32cb40"
+  },
+  "screening_parameters_only": true,
+  "no_v6_or_candidate_output_seen": true,
+  "scores_not_GT": true,
+  "visual_filter_required": true
+}

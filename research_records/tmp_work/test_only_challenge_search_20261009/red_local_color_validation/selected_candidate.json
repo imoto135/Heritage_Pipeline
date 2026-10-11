@@ -1,0 +1,26 @@
+{
+  "status": "next_development_candidate",
+  "method": "Preserve accepted CSC red and add local color coverage",
+  "final_test": false,
+  "howe_unchanged": true,
+  "global_csc_defaults_unchanged": true,
+  "parameters": {
+    "radius": 5,
+    "weak_a": 2,
+    "strong_a": 8,
+    "strong_fraction": 0.05,
+    "min_seed_pixels": 8,
+    "region_seed_radius": 16,
+    "region_min_seed_pixels": 128,
+    "preserve": "Original CSC red intersect accepted strong-seed regions, union local red"
+  },
+  "protocol": "tmp_work/test_only_challenge_search_20261009/red_local_color_validation/regional_refinement/preserve_accepted_red/protocol.json",
+  "protocol_sha256": "3df2bd0d25a73e862c246f160d21fba57c6657c2533b2a4e4b3633642250bd5e",
+  "final_review": "tmp_work/test_only_challenge_search_20261009/red_local_color_validation/regional_refinement/preserve_accepted_red/final_review.json",
+  "final_review_sha256": "fd46b6319b1557aeaca03797f6cbf6a38233323f0c38251a0742ad421f46cddb",
+  "comparison": "tmp_work/test_only_challenge_search_20261009/red_local_color_validation/regional_refinement/preserve_accepted_red/4朱印_既存赤保持と局所補完_DDRM比較.png",
+  "report": "tmp_work/test_only_challenge_search_20261009/red_local_color_validation/regional_refinement/preserve_accepted_red/検討結果.md",
+  "final_outputs": 4,
+  "mask_audit_pages": 10,
+  "remaining": "Black dots and very faint missed seal strokes remain; transfer to unused sources not yet verified"
+}

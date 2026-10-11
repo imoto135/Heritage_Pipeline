@@ -1,0 +1,121 @@
+{
+  "purpose": "Exploratory fixed probes on already studied development pages",
+  "provenance": "Positions selected from original-only coordinate grids; contact points pre-existing; prior method outputs had already been viewed.",
+  "caveat": "Not blinded, dense pixel GT, ink material GT, expert transcription, or independent generalization evidence.",
+  "unknown_case": "02 water-stained faint characters remain visually ambiguous; no positive labels asserted here.",
+  "source_files": {
+    "01": {
+      "page": "200010454_00002_2",
+      "original": "data/split_dataset/test/200010454/200010454_00002_2.jpg",
+      "sha256": "177776f90fc08b12e2f59a37773ef433556f43ebe47c503c2d676595a08a60d1"
+    },
+    "03": {
+      "page": "hnsd007_042",
+      "original": "data/split_dataset/train/hnsd00000/hnsd007_042.jpg",
+      "sha256": "68315f7e551cb29695d9e830f09826eef92809409d4e9242290c5ed14f393afc"
+    },
+    "04": {
+      "page": "hnsd001_011",
+      "original": "data/split_dataset/train/hnsd00000/hnsd001_011.jpg",
+      "sha256": "22017c0af65c5f43560ff05cfcc15c6ed8f56b72e60a04a732d9c31b72f05731"
+    }
+  },
+  "probes": [
+    {
+      "id": "thin_01",
+      "case": "01",
+      "role": "visibly thin original stroke",
+      "points_xy": [
+        [
+          1407,
+          600
+        ],
+        [
+          1401,
+          613
+        ],
+        [
+          1398,
+          625
+        ],
+        [
+          1404,
+          640
+        ],
+        [
+          1409,
+          652
+        ],
+        [
+          1411,
+          662
+        ]
+      ],
+      "radius": 2,
+      "corridor_radius": 5,
+      "note": "Approximate centerline traced on 01_original_grid.png; faint lower continuation excluded."
+    },
+    {
+      "id": "contact_03",
+      "case": "03",
+      "role": "visible stroke crossing the stained region",
+      "points_xy": [
+        [
+          1133,
+          495
+        ],
+        [
+          1125,
+          505
+        ],
+        [
+          1113,
+          511
+        ],
+        [
+          1105,
+          518
+        ],
+        [
+          1105,
+          525
+        ],
+        [
+          1110,
+          530
+        ],
+        [
+          1102,
+          535
+        ],
+        [
+          1094,
+          542
+        ],
+        [
+          1093,
+          549
+        ],
+        [
+          1098,
+          555
+        ]
+      ],
+      "radius": 2,
+      "corridor_radius": 8,
+      "note": "Reuses the previously frozen contact-stroke probe; not new independent annotation."
+    },
+    {
+      "id": "spot_04",
+      "case": "04",
+      "role": "isolated nontext brown spot",
+      "box_xywh": [
+        462,
+        592,
+        78,
+        48
+      ],
+      "note": "Rectangular probe around the isolated spot on 04_original_grid.png; includes paper around spot, excludes nearby writing."
+    }
+  ]
+}

@@ -1,0 +1,75 @@
+{
+  "id": "R02",
+  "page": "200017458_00003_2",
+  "roi_xywh": [
+    1790,
+    80,
+    320,
+    620
+  ],
+  "dependencies": {
+    "data/split_dataset_csc_mask/test/200017458/200017458_00003_2/03_text_red.png": "002c264cdb31e354085adfccedd39e1175ce5d81cada3f8dbb45f744b9a420eb",
+    "data/split_dataset_csc_mask/test/200017458/200017458_00003_2/02_text_black.png": "b5a34e8aa327792af6fd14d1e5a04b4447948804cb84237b257a1e4d3c53f39d",
+    "data/split_dataset_csc_mask/test/200017458/200017458_00003_2/05_background.png": "24c84505091dbe171ac175feb2affe5d35eee4d23e6772f0d91b8743d5239527",
+    "data/split_dataset_csc_mask/test/200017458/200017458_00003_2/00_input.png": "7e959bc86ac99459ceaa335148d6fec3ef8b2cdc605a38112735f46fe08d372c",
+    "data/split_dataset_csc_mask/test/200017458/200017458_00003_2/04_degradation.png": "38e2a0685bffa72f1e3ec4381ed06291d97cc4eb549317b669f7947bad556a44",
+    "data/split_dataset_csc_mask_v2/test/200017458/200017458_00003_2/03_text_red.png": "8697d0d092e35dae8cf489429f8eb43e52ffd94cbb545a8460b16147bf6337df",
+    "data/split_dataset_csc_mask_v2/test/200017458/200017458_00003_2/02_text_black.png": "20d2ee3d0016e6a533d6b49962b6102ff641965f660c5c5080b017bd2a016bac",
+    "data/split_dataset_csc_mask_v2/test/200017458/200017458_00003_2/05_background.png": "6fa93b56bc100aff8a5b1df7f0f6a8b73c48556ba532a483faca72ff038242f2",
+    "data/split_dataset_csc_mask_v2/test/200017458/200017458_00003_2/00_input.png": "7e959bc86ac99459ceaa335148d6fec3ef8b2cdc605a38112735f46fe08d372c",
+    "data/split_dataset_csc_mask_v2/test/200017458/200017458_00003_2/04_degradation.png": "3054697cb6edcf81cdc59e3a45d47959195c5328ee732a031ab46a9bac8c0af9"
+  },
+  "saved": {
+    "v1": {
+      "roi_pixels": {
+        "background": 143350,
+        "black": 12658,
+        "red": 30111,
+        "degradation": 12281
+      },
+      "red_page_pixels": 52485,
+      "ace_matches_v2": true
+    },
+    "v2": {
+      "roi_pixels": {
+        "background": 161267,
+        "black": 10441,
+        "red": 22201,
+        "degradation": 2732
+      },
+      "red_page_pixels": 125662,
+      "ace_matches_v2": true
+    }
+  },
+  "v1_recompute": null,
+  "v2_recompute": {
+    "trace": {
+      "cluster_mean_a_s2": [
+        134.6525115966797,
+        128.10693359375,
+        129.47738647460938
+      ],
+      "cluster_mean_L": [
+        165.71913146972656,
+        47.81272888183594
+      ],
+      "cluster_mean_L_s2": [
+        41.346351623535156,
+        8.87289810180664,
+        96.00712585449219
+      ],
+      "red_cluster": 0,
+      "black_cluster": 1
+    },
+    "saved_red_disagreement": 0
+  },
+  "component_filter_implementation": "Vectorized identical HSV component support; deterministic sample equivalence and whole-page saved-red equivalence checked",
+  "candidate": {
+    "roi_pixels": 22428,
+    "kept_roi_pixels": 22201,
+    "kept_page_pixels": 125662,
+    "added_page_pixels": 0,
+    "removed_page_pixels": 0,
+    "brown_binding_pixels": 101567
+  }
+}

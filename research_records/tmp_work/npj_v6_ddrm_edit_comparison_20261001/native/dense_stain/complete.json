@@ -1,0 +1,44 @@
+{
+  "diagnostics": {
+    "id": "dense_stain",
+    "page": "hnsd001_011",
+    "book": "hnsd00000",
+    "xywh": [
+      400,
+      460,
+      400,
+      400
+    ],
+    "context_xywh": [
+      336,
+      396,
+      528,
+      528
+    ],
+    "baseline_failure": true,
+    "failure_type": "stain_as_ink",
+    "total_patches": 36,
+    "elapsed_seconds": 16.62537484243512,
+    "npj_edit_pixels": 14009,
+    "npj_changed_pixels": 14005,
+    "npj_nonedit_changed_pixels": 0,
+    "npj_sampled_patches": 36,
+    "npj_raw_nonedit_changed_pixels": 145285,
+    "v6_edit_pixels": 3356,
+    "v6_changed_pixels": 3356,
+    "v6_nonedit_changed_pixels": 0,
+    "v6_sampled_patches": 6,
+    "v6_raw_nonedit_changed_pixels": 46563
+  },
+  "outputs": {
+    "v6_raw.png": "16479eb780b3f8a0f8ec57b4bc75b5b9d7edb94dd9b90e3775fc74739356978e",
+    "npj_raw.png": "4ae1bfd71e8c29c7bb2f488bccfe9cea6d92f2174a71054e6fac448eba88ce99",
+    "npj_changed.png": "24b003874788b73313a85b498e28d4d44973c750750c358813cc8e4fe81dcc8c",
+    "original.png": "5ab0e99aa55e4df936ef873f1a71173f4d12a1cf6cdeadb5429ac2648970c412",
+    "npj_edit.png": "1261817a7649fcef9b138c80b6f480820f2cea9605d85283425b4f709163d7dc",
+    "v6_edit.png": "f34578adc8713a391a8645a39a4498e94c7528bbcf329a57f1268918e11c2b25",
+    "v6.png": "ba4fc875c3f90bec5c3f9bc33ba6d15cd99a84bb0915bb569e9e6039616a83bb",
+    "v6_changed.png": "f34578adc8713a391a8645a39a4498e94c7528bbcf329a57f1268918e11c2b25",
+    "npj.png": "8aeb82936edb319446020c9cf256b7b3b1a16a76dca75c4020abe8d594afb374"
+  }
+}

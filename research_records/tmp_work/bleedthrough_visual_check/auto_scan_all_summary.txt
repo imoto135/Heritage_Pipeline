@@ -1,0 +1,91 @@
+ALL_DONE elapsed=598sec
+--- 200004107 ---
+  offset=-2, side=1: 4件
+  offset=+0, side=1: 3件
+  offset=-1, side=2: 3件
+  offset=+1, side=2: 3件
+
+近傍丁 dice - ランダム対照 dice の平均差分: 0.0200（正なら近傍丁の方がランダムより一致度が高い＝仮説を支持。ただし文字ページは列構造が規則的なので、対照群でもある程度のDiceが出ること自体は起こりうる）
+
+CSV保存: /home/imoto/Heritage_Pipeline/tmp_work/text_bleedthrough_verify/200004107/summary.csv
+--- 200005798 ---
+  offset=-1, side=2: 10件
+  offset=-2, side=1: 10件
+  offset=+1, side=2: 9件
+  offset=+0, side=2: 7件
+
+近傍丁 dice - ランダム対照 dice の平均差分: 0.0087（正なら近傍丁の方がランダムより一致度が高い＝仮説を支持。ただし文字ページは列構造が規則的なので、対照群でもある程度のDiceが出ること自体は起こりうる）
+
+CSV保存: /home/imoto/Heritage_Pipeline/tmp_work/text_bleedthrough_verify/200005798/summary.csv
+--- 200008003 ---
+  offset=+0, side=2: 3件
+  offset=-1, side=1: 3件
+  offset=+2, side=2: 2件
+  offset=+2, side=1: 2件
+
+近傍丁 dice - ランダム対照 dice の平均差分: 0.0154（正なら近傍丁の方がランダムより一致度が高い＝仮説を支持。ただし文字ページは列構造が規則的なので、対照群でもある程度のDiceが出ること自体は起こりうる）
+
+CSV保存: /home/imoto/Heritage_Pipeline/tmp_work/text_bleedthrough_verify/200008003/summary.csv
+--- 200010454 ---
+  offset=-2, side=1: 4件
+  offset=-2, side=2: 4件
+  offset=+0, side=2: 3件
+  offset=+0, side=1: 1件
+
+近傍丁 dice - ランダム対照 dice の平均差分: 0.0130（正なら近傍丁の方がランダムより一致度が高い＝仮説を支持。ただし文字ページは列構造が規則的なので、対照群でもある程度のDiceが出ること自体は起こりうる）
+
+CSV保存: /home/imoto/Heritage_Pipeline/tmp_work/text_bleedthrough_verify/200010454/summary.csv
+--- 200015843 ---
+  offset=-2, side=1: 4件
+  offset=-2, side=2: 4件
+  offset=+2, side=1: 3件
+  offset=-1, side=1: 2件
+
+近傍丁 dice - ランダム対照 dice の平均差分: 0.0420（正なら近傍丁の方がランダムより一致度が高い＝仮説を支持。ただし文字ページは列構造が規則的なので、対照群でもある程度のDiceが出ること自体は起こりうる）
+
+CSV保存: /home/imoto/Heritage_Pipeline/tmp_work/text_bleedthrough_verify/200015843/summary.csv
+--- 200017458 ---
+  offset=+1, side=1: 10件
+  offset=+1, side=2: 2件
+  offset=-2, side=2: 2件
+  offset=+2, side=2: 1件
+
+近傍丁 dice - ランダム対照 dice の平均差分: 0.0347（正なら近傍丁の方がランダムより一致度が高い＝仮説を支持。ただし文字ページは列構造が規則的なので、対照群でもある程度のDiceが出ること自体は起こりうる）
+
+CSV保存: /home/imoto/Heritage_Pipeline/tmp_work/text_bleedthrough_verify/200017458/summary.csv
+--- 200018243 ---
+=== 200018243 集計（7件中、最良候補が近傍丁だったもの: 6件, 85.7%）===
+近傍丁が勝った場合の (offset, side) 分布:
+  offset=+1, side=1: 3件
+  offset=-1, side=2: 3件
+
+近傍丁 dice - ランダム対照 dice の平均差分: 0.1451（正なら近傍丁の方がランダムより一致度が高い＝仮説を支持。ただし文字ページは列構造が規則的なので、対照群でもある程度のDiceが出ること自体は起こりうる）
+
+CSV保存: /home/imoto/Heritage_Pipeline/tmp_work/text_bleedthrough_verify/200018243/summary.csv
+--- 200019865 ---
+  offset=+2, side=2: 1件
+  offset=-2, side=2: 1件
+  offset=-1, side=1: 1件
+  offset=-2, side=1: 1件
+
+近傍丁 dice - ランダム対照 dice の平均差分: 0.0775（正なら近傍丁の方がランダムより一致度が高い＝仮説を支持。ただし文字ページは列構造が規則的なので、対照群でもある程度のDiceが出ること自体は起こりうる）
+
+CSV保存: /home/imoto/Heritage_Pipeline/tmp_work/text_bleedthrough_verify/200019865/summary.csv
+--- 200021063 ---
+  offset=-2, side=1: 1件
+  offset=+2, side=1: 1件
+  offset=+0, side=1: 1件
+  offset=-2, side=2: 1件
+
+近傍丁 dice - ランダム対照 dice の平均差分: 0.0249（正なら近傍丁の方がランダムより一致度が高い＝仮説を支持。ただし文字ページは列構造が規則的なので、対照群でもある程度のDiceが出ること自体は起こりうる）
+
+CSV保存: /home/imoto/Heritage_Pipeline/tmp_work/text_bleedthrough_verify/200021063/summary.csv
+--- 200021071 ---
+=== 200021071 集計（6件中、最良候補が近傍丁だったもの: 6件, 100.0%）===
+近傍丁が勝った場合の (offset, side) 分布:
+  offset=+1, side=1: 4件
+  offset=-1, side=2: 2件
+
+近傍丁 dice - ランダム対照 dice の平均差分: 0.1169（正なら近傍丁の方がランダムより一致度が高い＝仮説を支持。ただし文字ページは列構造が規則的なので、対照群でもある程度のDiceが出ること自体は起こりうる）
+
+CSV保存: /home/imoto/Heritage_Pipeline/tmp_work/text_bleedthrough_verify/200021071/summary.csv

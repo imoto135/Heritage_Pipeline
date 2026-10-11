@@ -1,0 +1,78 @@
+{
+  "variant": "grow5",
+  "cases": [
+    {
+      "id": "F04",
+      "page": "200021063_00002_2",
+      "howe": {
+        "source": "tmp_work/test_only_challenge_search_20261009/fixed_holdout_validation/masks/howe/200021063_00002_2/02_text_black.png",
+        "sha256": "69414f59ae4cfaf72141a3dda29225f913660ede889a5b31a67474a3c5262c2e",
+        "saved_red_was_empty": true
+      },
+      "red_pixels": 35331,
+      "removed_howe_pixels": 20915,
+      "masks_sha256": {
+        "tmp_work/test_only_challenge_search_20261009/red_local_color_validation/masks/howe_grow5/200021063_00002_2/03_text_red.png": "7c5ca4421235b2d7183f8b27eb25e52c39f1b335ff7302228e11996f43595d88",
+        "tmp_work/test_only_challenge_search_20261009/red_local_color_validation/masks/howe_grow5/200021063_00002_2/02_text_black.png": "d478f81c1743df3f93aa1ac655b66aeea163ac474aa51cdf0ffbf8a40e733023"
+      }
+    },
+    {
+      "id": "R01",
+      "page": "200019865_00002_1",
+      "howe": {
+        "source": "tmp_work/test_only_challenge_search_20261009/red_retention_validation/scratch/200019865_00002_1/graph_output.bin",
+        "sha256": "5f2789be7b3605d57871ae4d7bbda5f01ec832ea3afc7689ffbf7f997cfe4cc2",
+        "saved_black_after_priority_match": true
+      },
+      "red_pixels": 44485,
+      "removed_howe_pixels": 18551,
+      "masks_sha256": {
+        "tmp_work/test_only_challenge_search_20261009/red_local_color_validation/masks/howe_grow5/200019865_00002_1/03_text_red.png": "549d0bb0dc48b39fefb0276ca74ce1f73b16cbd08519f2a1609c0585415fa9f6",
+        "tmp_work/test_only_challenge_search_20261009/red_local_color_validation/masks/howe_grow5/200019865_00002_1/02_text_black.png": "07a32157080e7f192c7298736917e4423c532f0c2353439b4b3f935100c6fbb4"
+      }
+    },
+    {
+      "id": "R02",
+      "page": "200017458_00003_2",
+      "howe": {
+        "source": "tmp_work/test_only_challenge_search_20261009/red_retention_validation/scratch/200017458_00003_2/graph_output.bin",
+        "sha256": "167453bc683763d242de0830cf3d64b0fcf165f6a5358ebdb028ee43dcd504da",
+        "saved_black_after_priority_match": true
+      },
+      "red_pixels": 27970,
+      "removed_howe_pixels": 19201,
+      "masks_sha256": {
+        "tmp_work/test_only_challenge_search_20261009/red_local_color_validation/masks/howe_grow5/200017458_00003_2/03_text_red.png": "96f6bcf82bb1d3a30f1e06d9debc23e271d75fb2f36b1e03e7bc273e51dd29f9",
+        "tmp_work/test_only_challenge_search_20261009/red_local_color_validation/masks/howe_grow5/200017458_00003_2/02_text_black.png": "158a6eea0142b918db4e11fe0511409585c0f6fa5ce5fa6e875a8eef85663ffb"
+      }
+    },
+    {
+      "id": "R03",
+      "page": "200010454_00002_2",
+      "howe": {
+        "source": "tmp_work/test_only_challenge_search_20261009/red_retention_validation/scratch/200010454_00002_2/graph_output.bin",
+        "sha256": "58e583e4aec77e48c3eb0650506b4630c8d157acb96da94f1f90903252475000",
+        "saved_black_after_priority_match": true
+      },
+      "red_pixels": 22206,
+      "removed_howe_pixels": 16557,
+      "masks_sha256": {
+        "tmp_work/test_only_challenge_search_20261009/red_local_color_validation/masks/howe_grow5/200010454_00002_2/03_text_red.png": "ffdb11252bac039016dcaad141c2980ff5173a809450c83c7019531b0357da2e",
+        "tmp_work/test_only_challenge_search_20261009/red_local_color_validation/masks/howe_grow5/200010454_00002_2/02_text_black.png": "1ab6dccea2becd41a8c788d499fdc1b7e52fe0397e4d20a807fa8954071d3d60"
+      }
+    }
+  ],
+  "source_protocol_sha256": "862eba043ede3877a30de00b8e898454c44ba2e83a2e85a6fa79313382ab6afe",
+  "pipeline_sha256": "bbc130a1761be21dfa7ff6d5ec9bc29e34155a56dfa405d91daa6a989a77f2ec",
+  "checkpoint_sha256": "1a5decb747e34e8b51ccea96b598fe3c6ec0e7f7a6f8df6cffc3135d8281a7f3",
+  "background_sha256": "2a96dbde5301415c593dc1d119410e7a077a6ac15ea3d8d8d5f8d4021dc3897c",
+  "parameters": {
+    "seed": 999,
+    "steps": 20,
+    "patch": 128,
+    "overlap": 32,
+    "shared_initial_noise": true
+  },
+  "red": "Copy original RGB after inference",
+  "stepwise_noise_matched_between_black_masks": false
+}

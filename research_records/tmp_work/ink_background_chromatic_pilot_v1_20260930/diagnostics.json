@@ -1,0 +1,550 @@
+[
+  {
+    "page": "200010454_00002_2",
+    "roi": "near_seal_brown",
+    "xywh": [
+      1655,
+      1810,
+      75,
+      195
+    ],
+    "profiles": 52,
+    "spaces": {
+      "rgb_additive": {
+        "status": "estimated",
+        "median_best_background_cv_mse": 4.630114989737589,
+        "median_best_ink_cv_mse": 2.2775212346573186
+      },
+      "encoded_od": {
+        "status": "estimated",
+        "median_best_background_cv_mse": 8.222263228130274,
+        "median_best_ink_cv_mse": 3.3917554857990773
+      },
+      "linear_srgb_od": {
+        "status": "estimated",
+        "median_best_background_cv_mse": 9.365408896866887,
+        "median_best_ink_cv_mse": 4.009629707908877
+      }
+    },
+    "scenarios": {
+      "restricted_background": {
+        "all": {
+          "ink_required": 17,
+          "ambiguous": 7,
+          "low_ink": 2,
+          "unexplained": 26
+        },
+        "v2_edit_locations": {
+          "ink_required": 2,
+          "ambiguous": 0,
+          "low_ink": 0,
+          "unexplained": 3
+        },
+        "v6_edit_locations": {
+          "ink_required": 2,
+          "ambiguous": 0,
+          "low_ink": 0,
+          "unexplained": 3
+        }
+      },
+      "colored_crease_allowed": {
+        "all": {
+          "ink_required": 10,
+          "ambiguous": 14,
+          "low_ink": 3,
+          "unexplained": 25
+        },
+        "v2_edit_locations": {
+          "ink_required": 2,
+          "ambiguous": 0,
+          "low_ink": 0,
+          "unexplained": 3
+        },
+        "v6_edit_locations": {
+          "ink_required": 2,
+          "ambiguous": 0,
+          "low_ink": 0,
+          "unexplained": 3
+        }
+      }
+    },
+    "original_v0_scenarios": {
+      "restricted_background": {
+        "all": {
+          "ink_required": 2,
+          "ambiguous": 0,
+          "low_ink": 1,
+          "unexplained": 49
+        },
+        "v2_edit_locations": {
+          "ink_required": 0,
+          "ambiguous": 0,
+          "low_ink": 0,
+          "unexplained": 5
+        },
+        "v6_edit_locations": {
+          "ink_required": 0,
+          "ambiguous": 0,
+          "low_ink": 0,
+          "unexplained": 5
+        }
+      },
+      "colored_crease_allowed": {
+        "all": {
+          "ink_required": 2,
+          "ambiguous": 0,
+          "low_ink": 1,
+          "unexplained": 49
+        },
+        "v2_edit_locations": {
+          "ink_required": 0,
+          "ambiguous": 0,
+          "low_ink": 0,
+          "unexplained": 5
+        },
+        "v6_edit_locations": {
+          "ink_required": 0,
+          "ambiguous": 0,
+          "low_ink": 0,
+          "unexplained": 5
+        }
+      }
+    }
+  },
+  {
+    "page": "200010454_00002_2",
+    "roi": "remote_brown",
+    "xywh": [
+      710,
+      200,
+      450,
+      330
+    ],
+    "profiles": 160,
+    "spaces": {
+      "rgb_additive": {
+        "status": "estimated",
+        "median_best_background_cv_mse": 9.263618294961901,
+        "median_best_ink_cv_mse": 7.381269915385743
+      },
+      "encoded_od": {
+        "status": "estimated",
+        "median_best_background_cv_mse": 46.70673602283679,
+        "median_best_ink_cv_mse": 19.409257219686154
+      },
+      "linear_srgb_od": {
+        "status": "estimated",
+        "median_best_background_cv_mse": 41.93427672922236,
+        "median_best_ink_cv_mse": 18.805238754809583
+      }
+    },
+    "scenarios": {
+      "restricted_background": {
+        "all": {
+          "ink_required": 17,
+          "ambiguous": 6,
+          "low_ink": 2,
+          "unexplained": 135
+        },
+        "v2_edit_locations": {
+          "ink_required": 12,
+          "ambiguous": 0,
+          "low_ink": 0,
+          "unexplained": 16
+        },
+        "v6_edit_locations": {
+          "ink_required": 12,
+          "ambiguous": 0,
+          "low_ink": 0,
+          "unexplained": 16
+        }
+      },
+      "colored_crease_allowed": {
+        "all": {
+          "ink_required": 12,
+          "ambiguous": 12,
+          "low_ink": 4,
+          "unexplained": 132
+        },
+        "v2_edit_locations": {
+          "ink_required": 8,
+          "ambiguous": 4,
+          "low_ink": 0,
+          "unexplained": 16
+        },
+        "v6_edit_locations": {
+          "ink_required": 8,
+          "ambiguous": 4,
+          "low_ink": 0,
+          "unexplained": 16
+        }
+      }
+    },
+    "original_v0_scenarios": {
+      "restricted_background": {
+        "all": {
+          "ink_required": 1,
+          "ambiguous": 1,
+          "low_ink": 2,
+          "unexplained": 156
+        },
+        "v2_edit_locations": {
+          "ink_required": 1,
+          "ambiguous": 0,
+          "low_ink": 0,
+          "unexplained": 27
+        },
+        "v6_edit_locations": {
+          "ink_required": 1,
+          "ambiguous": 0,
+          "low_ink": 0,
+          "unexplained": 27
+        }
+      },
+      "colored_crease_allowed": {
+        "all": {
+          "ink_required": 1,
+          "ambiguous": 2,
+          "low_ink": 2,
+          "unexplained": 155
+        },
+        "v2_edit_locations": {
+          "ink_required": 1,
+          "ambiguous": 1,
+          "low_ink": 0,
+          "unexplained": 26
+        },
+        "v6_edit_locations": {
+          "ink_required": 1,
+          "ambiguous": 1,
+          "low_ink": 0,
+          "unexplained": 26
+        }
+      }
+    }
+  },
+  {
+    "page": "200021086_00032_2",
+    "roi": "faint_stamp",
+    "xywh": [
+      680,
+      620,
+      430,
+      330
+    ],
+    "profiles": 160,
+    "spaces": {
+      "rgb_additive": {
+        "status": "estimated",
+        "median_best_background_cv_mse": 51.026491084576556,
+        "median_best_ink_cv_mse": 9.11049369619999
+      },
+      "encoded_od": {
+        "status": "estimated",
+        "median_best_background_cv_mse": 61.89287802752389,
+        "median_best_ink_cv_mse": 10.169925432031743
+      },
+      "linear_srgb_od": {
+        "status": "estimated",
+        "median_best_background_cv_mse": 69.37223406729537,
+        "median_best_ink_cv_mse": 11.069804875279258
+      }
+    },
+    "scenarios": {
+      "restricted_background": {
+        "all": {
+          "ink_required": 3,
+          "ambiguous": 0,
+          "low_ink": 0,
+          "unexplained": 157
+        },
+        "v2_edit_locations": {
+          "ink_required": 0,
+          "ambiguous": 0,
+          "low_ink": 0,
+          "unexplained": 3
+        },
+        "v6_edit_locations": {
+          "ink_required": 0,
+          "ambiguous": 0,
+          "low_ink": 0,
+          "unexplained": 0
+        }
+      },
+      "colored_crease_allowed": {
+        "all": {
+          "ink_required": 3,
+          "ambiguous": 0,
+          "low_ink": 0,
+          "unexplained": 157
+        },
+        "v2_edit_locations": {
+          "ink_required": 0,
+          "ambiguous": 0,
+          "low_ink": 0,
+          "unexplained": 3
+        },
+        "v6_edit_locations": {
+          "ink_required": 0,
+          "ambiguous": 0,
+          "low_ink": 0,
+          "unexplained": 0
+        }
+      }
+    },
+    "original_v0_scenarios": {
+      "restricted_background": {
+        "all": {
+          "ink_required": 2,
+          "ambiguous": 0,
+          "low_ink": 0,
+          "unexplained": 158
+        },
+        "v2_edit_locations": {
+          "ink_required": 0,
+          "ambiguous": 0,
+          "low_ink": 0,
+          "unexplained": 3
+        },
+        "v6_edit_locations": {
+          "ink_required": 0,
+          "ambiguous": 0,
+          "low_ink": 0,
+          "unexplained": 0
+        }
+      },
+      "colored_crease_allowed": {
+        "all": {
+          "ink_required": 2,
+          "ambiguous": 0,
+          "low_ink": 0,
+          "unexplained": 158
+        },
+        "v2_edit_locations": {
+          "ink_required": 0,
+          "ambiguous": 0,
+          "low_ink": 0,
+          "unexplained": 3
+        },
+        "v6_edit_locations": {
+          "ink_required": 0,
+          "ambiguous": 0,
+          "low_ink": 0,
+          "unexplained": 0
+        }
+      }
+    }
+  },
+  {
+    "page": "200021763_00002_2",
+    "roi": "long_tail",
+    "xywh": [
+      200,
+      2020,
+      490,
+      450
+    ],
+    "profiles": 160,
+    "spaces": {
+      "rgb_additive": {
+        "status": "missing_pigment_direction"
+      },
+      "encoded_od": {
+        "status": "missing_pigment_direction"
+      },
+      "linear_srgb_od": {
+        "status": "missing_pigment_direction"
+      }
+    },
+    "scenarios": {
+      "restricted_background": {
+        "all": {
+          "ink_required": 0,
+          "ambiguous": 0,
+          "low_ink": 0,
+          "unexplained": 160
+        },
+        "v2_edit_locations": {
+          "ink_required": 0,
+          "ambiguous": 0,
+          "low_ink": 0,
+          "unexplained": 64
+        },
+        "v6_edit_locations": {
+          "ink_required": 0,
+          "ambiguous": 0,
+          "low_ink": 0,
+          "unexplained": 1
+        }
+      },
+      "colored_crease_allowed": {
+        "all": {
+          "ink_required": 0,
+          "ambiguous": 0,
+          "low_ink": 0,
+          "unexplained": 160
+        },
+        "v2_edit_locations": {
+          "ink_required": 0,
+          "ambiguous": 0,
+          "low_ink": 0,
+          "unexplained": 64
+        },
+        "v6_edit_locations": {
+          "ink_required": 0,
+          "ambiguous": 0,
+          "low_ink": 0,
+          "unexplained": 1
+        }
+      }
+    },
+    "original_v0_scenarios": {
+      "restricted_background": {
+        "all": {
+          "ink_required": 0,
+          "ambiguous": 0,
+          "low_ink": 0,
+          "unexplained": 160
+        },
+        "v2_edit_locations": {
+          "ink_required": 0,
+          "ambiguous": 0,
+          "low_ink": 0,
+          "unexplained": 64
+        },
+        "v6_edit_locations": {
+          "ink_required": 0,
+          "ambiguous": 0,
+          "low_ink": 0,
+          "unexplained": 1
+        }
+      },
+      "colored_crease_allowed": {
+        "all": {
+          "ink_required": 0,
+          "ambiguous": 0,
+          "low_ink": 0,
+          "unexplained": 160
+        },
+        "v2_edit_locations": {
+          "ink_required": 0,
+          "ambiguous": 0,
+          "low_ink": 0,
+          "unexplained": 64
+        },
+        "v6_edit_locations": {
+          "ink_required": 0,
+          "ambiguous": 0,
+          "low_ink": 0,
+          "unexplained": 1
+        }
+      }
+    }
+  },
+  {
+    "page": "200021763_00002_2",
+    "roi": "upper_writing",
+    "xywh": [
+      190,
+      1080,
+      520,
+      290
+    ],
+    "profiles": 160,
+    "spaces": {
+      "rgb_additive": {
+        "status": "missing_pigment_direction"
+      },
+      "encoded_od": {
+        "status": "missing_pigment_direction"
+      },
+      "linear_srgb_od": {
+        "status": "missing_pigment_direction"
+      }
+    },
+    "scenarios": {
+      "restricted_background": {
+        "all": {
+          "ink_required": 0,
+          "ambiguous": 0,
+          "low_ink": 0,
+          "unexplained": 160
+        },
+        "v2_edit_locations": {
+          "ink_required": 0,
+          "ambiguous": 0,
+          "low_ink": 0,
+          "unexplained": 57
+        },
+        "v6_edit_locations": {
+          "ink_required": 0,
+          "ambiguous": 0,
+          "low_ink": 0,
+          "unexplained": 12
+        }
+      },
+      "colored_crease_allowed": {
+        "all": {
+          "ink_required": 0,
+          "ambiguous": 0,
+          "low_ink": 0,
+          "unexplained": 160
+        },
+        "v2_edit_locations": {
+          "ink_required": 0,
+          "ambiguous": 0,
+          "low_ink": 0,
+          "unexplained": 57
+        },
+        "v6_edit_locations": {
+          "ink_required": 0,
+          "ambiguous": 0,
+          "low_ink": 0,
+          "unexplained": 12
+        }
+      }
+    },
+    "original_v0_scenarios": {
+      "restricted_background": {
+        "all": {
+          "ink_required": 0,
+          "ambiguous": 0,
+          "low_ink": 0,
+          "unexplained": 160
+        },
+        "v2_edit_locations": {
+          "ink_required": 0,
+          "ambiguous": 0,
+          "low_ink": 0,
+          "unexplained": 57
+        },
+        "v6_edit_locations": {
+          "ink_required": 0,
+          "ambiguous": 0,
+          "low_ink": 0,
+          "unexplained": 12
+        }
+      },
+      "colored_crease_allowed": {
+        "all": {
+          "ink_required": 0,
+          "ambiguous": 0,
+          "low_ink": 0,
+          "unexplained": 160
+        },
+        "v2_edit_locations": {
+          "ink_required": 0,
+          "ambiguous": 0,
+          "low_ink": 0,
+          "unexplained": 57
+        },
+        "v6_edit_locations": {
+          "ink_required": 0,
+          "ambiguous": 0,
+          "low_ink": 0,
+          "unexplained": 12
+        }
+      }
+    }
+  }
+]

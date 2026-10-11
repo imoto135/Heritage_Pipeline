@@ -1,0 +1,23 @@
+{
+  "page": "external_Latin14396_275",
+  "source_sha256": "d903e3975788103774a9875b0dfb5244610f61063eea4b99ad5e6fe53ea94df7",
+  "method": "stain",
+  "role": "external_qualitative_only",
+  "book": "Latin14396",
+  "protocol_sha256": "4f876d008f2cede2f0f845d7bd6ef94e25e216525e6609d75b2dc914dca4c397",
+  "script_sha256": "200307899d62653af8b2feac83cb88ce6157ac2753fdd52d381a4befadb228bc",
+  "adapter_sha256": "01ea2f8636b4412a1aea7a47e9d56ea9c47254e0744ab91e44e24e368e2cb47d",
+  "source_identical_cache": true,
+  "resource_provenance": {
+    "cached_complete_sha256": "ee6ac7abcc2a3aa62d649650f0629168e0a1fdd4bc99b750b13ef9f2645a295f",
+    "prior_protocol_sha256": "509c321f550a0b0a0d840f88ab93a80c801fbb69dd3088d4bdb5567f722b5934"
+  },
+  "seconds": 0.0763166667893529,
+  "channels": "Stain input RGB; internal array BGR; PNG RGB; DocRes BGR tensor",
+  "exact_author_benchmark": false,
+  "docres_mirror_provenance": "Community mirror DaVinciCode/doctra-docres-main, hash agrees with second mirror; original OneDrive requires auth; author-copy identity not independently verified",
+  "no_pixel_or_reading_GT": true,
+  "outputs": {
+    "result.png": "1182eecaf35461dfa883ad16974d59e9adf71aa0aebe1fba1a840b59740ef85c"
+  }
+}

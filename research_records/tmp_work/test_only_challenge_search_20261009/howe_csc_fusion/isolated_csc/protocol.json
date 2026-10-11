@@ -1,0 +1,115 @@
+{
+  "rule": {
+    "stroke_width": "2 * median foreground distance transform",
+    "support_min_area_stroke_squared": 16,
+    "support_min_csc_fraction": 0.1,
+    "degradation_max_area_stroke_squared": 8,
+    "degradation_min_fraction": 0.6,
+    "degradation_max_csc_fraction": 0.02,
+    "degradation_min_distance_strokes": 2,
+    "isolated_max_area_stroke_squared": 16,
+    "isolated_min_fill": 0.4,
+    "isolated_aspect_range": [
+      0.5,
+      2
+    ],
+    "isolated_min_distance_strokes": 12
+  },
+  "rois_xywh": {
+    "01": [
+      570,
+      600,
+      750,
+      850
+    ],
+    "02": [
+      700,
+      1200,
+      850,
+      850
+    ],
+    "03": [
+      750,
+      700,
+      850,
+      850
+    ],
+    "04": [
+      550,
+      160,
+      800,
+      820
+    ],
+    "06": [
+      80,
+      95,
+      620,
+      530
+    ],
+    "07": [
+      800,
+      750,
+      850,
+      900
+    ]
+  },
+  "dependencies": {
+    "data/test/200010454/200010454_00016_2.jpg": "9a252f8305457507b1ac5e9d18c70be854a2aee28eaebf6607cea48bc3b9cb29",
+    "tmp_work/test_only_challenge_search_20261009/three_method_comparison/masks/200010454_00016_2/howe.png": "c56ba8d8f7ea7c6530644b24bd83068afdd7c1ac43a1452360865b575ac23b7b",
+    "data/split_dataset_csc_mask_v2/test/200010454/200010454_00016_2/02_text_black.png": "71eea2d63fde94175975e319f74e051bfaede4307c8c6da2b17bdc026fc8eed1",
+    "data/split_dataset_csc_mask_v2/test/200010454/200010454_00016_2/03_text_red.png": "952f54bea765751c31a2272dc7a5d89ec5d0f0f522595fa61c99b294aafa2d40",
+    "data/split_dataset_csc_mask_v2/test/200010454/200010454_00016_2/04_degradation.png": "0eca21c4bf57c204183a497ba51a807f7917aabb8e5ad2fc505ab7c989fc9565",
+    "data/split_dataset_csc_mask_v2/test/200010454/200010454_00016_2/05_background.png": "952a758583e52eda3547c77dadf7bf9441b4a1941bf821df9240fb3b7a0cd6a7",
+    "data/test/200015843/200015843_00107_1.jpg": "4ffec2db86247ebcca99203e6e413d42a90e49740951ce0cb30cad02fcf9da20",
+    "tmp_work/test_only_challenge_search_20261009/three_method_comparison/masks/200015843_00107_1/howe.png": "5ff07f209c9835fd83179b29ae6a98b6b3a125ce22e27af9f683dec4e1cddfac",
+    "data/split_dataset_csc_mask_v2/test/200015843/200015843_00107_1/02_text_black.png": "8b41bcfc37ecc2298ffe60b6765ba1e94f4ce477ab6317bbe15c60a60c860783",
+    "data/split_dataset_csc_mask_v2/test/200015843/200015843_00107_1/03_text_red.png": "ac9a5171aaecbb96a04f3089210255735e01d46f2ec0143ffc80b90bf579d082",
+    "data/split_dataset_csc_mask_v2/test/200015843/200015843_00107_1/04_degradation.png": "c471660aa1e80a842dd203d71c934d36bb14ff3a9a9a7f60271186a1bcfdc67a",
+    "data/split_dataset_csc_mask_v2/test/200015843/200015843_00107_1/05_background.png": "8ddeddbf894e53c97b9c7c4f998a1f2bb061217e1d24422c3ea86eda0aa1195a",
+    "data/test/200015843/200015843_00105_1.jpg": "f2094b5180c377e666b00437d3adeb975b09cab6fee665c11893ad311eabf134",
+    "tmp_work/test_only_challenge_search_20261009/three_method_comparison/masks/200015843_00105_1/howe.png": "5eeca929628a9430ceda6e5637dff38e9d35ce4ebc07dd274ebef8206d8d5854",
+    "data/split_dataset_csc_mask_v2/test/200015843/200015843_00105_1/02_text_black.png": "3fb6cb2e0f7cc1c9079547010336b87e38e8efc41c688f19bca055ce4f2fa6db",
+    "data/split_dataset_csc_mask_v2/test/200015843/200015843_00105_1/03_text_red.png": "6e40307f40e7ba9c08e2fb685a2c27926f1682150d4ca09d0d3a1ba6e36f3d10",
+    "data/split_dataset_csc_mask_v2/test/200015843/200015843_00105_1/04_degradation.png": "196b64f946081f27d9393b275a122b7c262e6670c6f5cd8fcc60f12d2919ddfb",
+    "data/split_dataset_csc_mask_v2/test/200015843/200015843_00105_1/05_background.png": "8cf6324436c1848e901de14ed94006e688eb91c25c42fcdb094e098e89ab607b",
+    "data/test/200021071/200021071_00032_1.jpg": "d8fe32dc777814394c58baacccfdea957e2ab0fe9c63c667b98fbdf35bcfba63",
+    "tmp_work/test_only_challenge_search_20261009/three_method_comparison/masks/200021071_00032_1/howe.png": "4924f0df7058ed84b04529717fd899857aaba2005cf621d4ca97f488e7423f48",
+    "data/split_dataset_csc_mask_v2/test/200021071/200021071_00032_1/02_text_black.png": "a0b4308fbd142198b5c46fc81b1f8af1ec5e69bf03fe737fcda740877273d63c",
+    "data/split_dataset_csc_mask_v2/test/200021071/200021071_00032_1/03_text_red.png": "efff6b440965e869b1c1ae068e2b9974e14600b241cce87f2b805b1b2e22f401",
+    "data/split_dataset_csc_mask_v2/test/200021071/200021071_00032_1/04_degradation.png": "cefd3032ae710c472eb7ab28631ab0fc828f4503a295f7c07f7873fc844a0366",
+    "data/split_dataset_csc_mask_v2/test/200021071/200021071_00032_1/05_background.png": "0d3a858fae4b6ea9f2af316f89732f87cb1fe40e1c1042cecf40b842b9b81048",
+    "data/test/200003803/200003803_00003_1.jpg": "3cc169f2ebad09fa9b312a0230c2357287f16a0a505f64ef3d00fd44dc39da53",
+    "tmp_work/test_only_challenge_search_20261009/three_method_comparison/masks/200003803_00003_1/howe.png": "90c8a97d2e85ed8950dffa187189741812696da28246ba2751ed1b23305734b1",
+    "data/split_dataset_csc_mask_v2/test/200003803/200003803_00003_1/02_text_black.png": "e0370e3f28e0dd9156b35c53cf3e88dd1f9d6c7a2803b9509fc52d054aae61bf",
+    "data/split_dataset_csc_mask_v2/test/200003803/200003803_00003_1/03_text_red.png": "3aa6930deeb00ba57efe1f1b81488f4854614ca1dd17946e9f6590d2b5a37808",
+    "data/split_dataset_csc_mask_v2/test/200003803/200003803_00003_1/04_degradation.png": "800d2ba221137e3cfebd35c9d53016353064ec4934af9347dae44cd8aa1241f6",
+    "data/split_dataset_csc_mask_v2/test/200003803/200003803_00003_1/05_background.png": "b038cb67bd0016981ec0de80a2fa0450bdd6f0acc61827ca2be42dc6985765c5",
+    "data/test/200021071/200021071_00033_2.jpg": "ccb0099adc3745cc6974aa7c7e51791c36e6575c0d3deb394dac64a62276c9e5",
+    "tmp_work/test_only_challenge_search_20261009/three_method_comparison/masks/200021071_00033_2/howe.png": "c9c8dc65a3dda8e794e9de843f0a1ab564a18e9b8cae7c170b596f9bfb848b34",
+    "data/split_dataset_csc_mask_v2/test/200021071/200021071_00033_2/02_text_black.png": "d1e25f571be87bd371b727148425a850bb98b820796db9ccfeda34c42aad9a8e",
+    "data/split_dataset_csc_mask_v2/test/200021071/200021071_00033_2/03_text_red.png": "ca76c880d9ac139b6524b740853f75b3ec8c19b5afb7fe7a5d0a84e95960fbfd",
+    "data/split_dataset_csc_mask_v2/test/200021071/200021071_00033_2/04_degradation.png": "e712d12a2719184a1584e6eee5682b925f3e73c5b4642412affb92ddc6fa8f49",
+    "data/split_dataset_csc_mask_v2/test/200021071/200021071_00033_2/05_background.png": "e66240cfd03db9347c4e76d18c881f8dbcdcd5260f88e8e0db2084f7d002168f"
+  },
+  "scope": "development trial; only round isolated components with CSC black fraction >= 0.5; no pixel labels",
+  "source_sha256": "02ad89e0c5b3f8c14261ab00359791f9d54964d589a81cdfc41685208106883c",
+  "regenerated_masks_exact_match": true,
+  "candidate_rule": {
+    "stroke_width": "2 * median foreground distance transform",
+    "support_min_area_stroke_squared": 16,
+    "support_min_csc_fraction": 0.1,
+    "degradation_max_area_stroke_squared": 8,
+    "degradation_min_fraction": 0.6,
+    "degradation_max_csc_fraction": 0.02,
+    "degradation_min_distance_strokes": 2,
+    "isolated_max_area_stroke_squared": 16,
+    "isolated_min_fill": 0.4,
+    "isolated_aspect_range": [
+      0.5,
+      2
+    ],
+    "isolated_min_distance_strokes": 12,
+    "degradation_components_removed": false,
+    "isolated_min_csc_fraction": 0.5
+  }
+}

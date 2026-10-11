@@ -1,0 +1,46 @@
+{
+  "page": "200021063_00002_2",
+  "roi_xywh": [
+    1650,
+    2500,
+    400,
+    620
+  ],
+  "csc_code": "tmp_work/npj_dirt_control_20261002/source_snapshot/ddrm_npj_v2/scripts/csc.py",
+  "csc_sha256": "11815cbb82d6972644498db9c5a8879dfc7e104b14a2749e04fdf0198e19b22f",
+  "ace_input_sha256": "23f684ae1c8a2d605c1b291b93fd4ca22efcc6e7b8b9db661fcadc396d5bf500",
+  "saved_red_sha256": "ef4d52ec83c0a405e43960bdfc79b618970896fc723f2f4010ee70a1450c5bba",
+  "parameters": {
+    "seed": 42,
+    "max_samples": 50000,
+    "border_margin_ratio": 0.04,
+    "red_a_min": 133,
+    "red_hsv_support_min": 0.05,
+    "morph_close_k": 3,
+    "morph_open_k": 1,
+    "black_dilate_r": 0
+  },
+  "saved_red_pixels": 0,
+  "recomputed_red_pixels": 0,
+  "recomputed_roi_red_pixels": 0,
+  "saved_recomputed_disagreement": 0,
+  "recomputed_saved_black_disagreement": 0,
+  "intermediate_trace": {
+    "stage1_nonbackground_roi_pixels": 30268,
+    "stage2_mean_L": [
+      34.652523040771484,
+      89.06362915039062,
+      8.40950870513916
+    ],
+    "stage2_mean_a": [
+      132.65013122558594,
+      128.45266723632812,
+      128.08270263671875
+    ],
+    "red_cluster": 0,
+    "black_cluster": 2
+  },
+  "diagnostic_script_sha256": "59c2ed7c447fc91fa0d9a531279c6e591cfb128f7209dd1f22abf7f614342829",
+  "used_in_frozen_inference": false,
+  "limitation": "Diagnostic of frozen implementation defaults on saved ACE. Saved-mask generation settings are not assumed identical."
+}

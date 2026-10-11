@@ -1,0 +1,37 @@
+{
+  "settings": {
+    "pages": 29,
+    "ROIs": 90,
+    "mask": "frozen chromatic all-core6, source core minus fixed direction hold, one pass",
+    "added": "saved all6 added AND within frozen6 ellipse of unheld original core AND outside original hold",
+    "guards": "saved chromatic domain and ink/warm guards unchanged; no ROI gating",
+    "hold": "same original full-page hold; do not use held core as new rim source",
+    "baseline": "same current effective applied and known-paper, independently full-float recomputation verified",
+    "rim_restorer": "same16-pair raw/smooth colour plus old24px fine L quilt; new known=old known minus added",
+    "retain": "previous physical applied/field retained when rim re-solve unsupported",
+    "gap3": "same virtual gap3 colour restorer on the physical applied retained after that mask; this geometry fixed for the gap arm",
+    "fine_texture": "each mask uses the same fineL before/after gap; old-field fallback disclosed",
+    "gap3_control": "no-rim arm reuses already verified frozen gap3 output",
+    "new4": "previous full-page accepted core0: no new chromatic additions",
+    "absolute_patches_or_energy_combined": false,
+    "new_DDRM": false,
+    "pixel_GT": false,
+    "development": true
+  },
+  "dependencies": {
+    "scripts/benchmark/probe_chromatic_rim_reference_gap_factorial.py": "a805ea547e5e889f0047716fac3137612280f4d855074a953a772af245d77852",
+    "scripts/benchmark/probe_chromatic_core_rims.py": "e46184f2f7b282e5d35decbf158d8b05deb5fbd8755ec068406500548bf0280e",
+    "scripts/benchmark/probe_paper_boundary_pair_gate_v2.py": "8cfbe50a192ad12e0254a9bcff31271f357717fa88845df7b78820fc511580fe",
+    "tmp_work/observed_absolute_paper_patches_pilot_20261001/manifest.json": "3caa4d62f2288c94692984bea39a43b375eb15e0e004d062f7de8ebe3758a2b1",
+    "tmp_work/observed_absolute_paper_patches_pilot_20261001/complete.json": "5a85cf590d496b1e42c8672a3282916ee7bd5fdf508c57357ef90a63751a8932",
+    "tmp_work/chromatic_core_rim_mask_pilot_20261001/manifest.json": "fd09c8e78c42fe9c54b230dbdbe2fd6616517a531028cd387a801738a19a3792",
+    "tmp_work/chromatic_core_rim_mask_pilot_20261001/complete.json": "5648b658180551df6f5a994142f2f43acb3d8632bde139ea9ea54b1a7d53310c",
+    "tmp_work/chromatic_repair_outline_diagnostic_20261001/manifest.json": "df7bf69a1931fe87f426b986f64f46e201dae65cbd74bd6c29ee2a2bb1666972",
+    "tmp_work/chromatic_repair_outline_diagnostic_20261001/complete.json": "6306aa7dc903de48609690a149e57f5fa863f7699498383b9f6beee05991c28c",
+    "tmp_work/paper_colour_virtual_reference_gap_pilot_20261001/manifest.json": "dd3ea082738ad7c297d929b3d5506256569339336f60267483c3efdecd5a676c",
+    "tmp_work/paper_colour_virtual_reference_gap_pilot_20261001/complete.json": "4a2607cd3d13dff2ca7fefdcddd3eef4e3404f5942e134ab0f8e2726afc7951c",
+    "tmp_work/directional_paper_restorer_recomputation_20261001/manifest.json": "ad3399d4b30e9c110e51c538c75ea079704ef9dda8a84fbea25f1a5cc388a91a",
+    "tmp_work/directional_paper_restorer_recomputation_20261001/complete.json": "49370993c0f8a4adee67a2f1eb7d58ec20a6aa05bd69e67609b3d7eb6953b27a"
+  },
+  "source_sha256": "a805ea547e5e889f0047716fac3137612280f4d855074a953a772af245d77852"
+}

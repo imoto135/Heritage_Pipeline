@@ -1,0 +1,402 @@
+{
+  "pages": [
+    {
+      "page": "hnsd001_011",
+      "additional_pixels": 0,
+      "new_components": 0
+    },
+    {
+      "page": "200010454_00002_2",
+      "additional_pixels": 0,
+      "new_components": 0
+    },
+    {
+      "page": "200003803_00009_2",
+      "additional_pixels": 0,
+      "new_components": 0
+    },
+    {
+      "page": "200021763_00002_2",
+      "additional_pixels": 0,
+      "new_components": 0
+    },
+    {
+      "page": "200021869_00010_2",
+      "additional_pixels": 0,
+      "new_components": 0
+    },
+    {
+      "page": "hnsd007_042",
+      "additional_pixels": 0,
+      "new_components": 0
+    },
+    {
+      "page": "100249476_00003_1",
+      "additional_pixels": 0,
+      "new_components": 0
+    },
+    {
+      "page": "200021712_00082_1",
+      "additional_pixels": 3331,
+      "new_components": 5
+    },
+    {
+      "page": "200021869_00014_2",
+      "additional_pixels": 0,
+      "new_components": 0
+    },
+    {
+      "page": "200010454_00026_1",
+      "additional_pixels": 0,
+      "new_components": 0
+    },
+    {
+      "page": "200014740_00065_2",
+      "additional_pixels": 0,
+      "new_components": 0
+    },
+    {
+      "page": "100249416_00024_1",
+      "additional_pixels": 0,
+      "new_components": 0
+    },
+    {
+      "page": "brsk003_003",
+      "additional_pixels": 0,
+      "new_components": 0
+    },
+    {
+      "page": "200008003_00004_2",
+      "additional_pixels": 0,
+      "new_components": 0
+    },
+    {
+      "page": "200017458_00004_2",
+      "additional_pixels": 1335,
+      "new_components": 3
+    },
+    {
+      "page": "200021802_00015_1",
+      "additional_pixels": 0,
+      "new_components": 0
+    },
+    {
+      "page": "100241706_00034_1",
+      "additional_pixels": 0,
+      "new_components": 0
+    },
+    {
+      "page": "200015779_00075_2",
+      "additional_pixels": 0,
+      "new_components": 0
+    }
+  ],
+  "new_components": [
+    {
+      "page": "200021712_00082_1",
+      "component": {
+        "id": 16,
+        "xywh": [
+          552,
+          207,
+          22,
+          26
+        ],
+        "area": 202,
+        "seeds": 113,
+        "peak": 4.0,
+        "newly_accepted": true
+      },
+      "review": "unclassified appearance; no damage/ink GT"
+    },
+    {
+      "page": "200021712_00082_1",
+      "component": {
+        "id": 21,
+        "xywh": [
+          593,
+          217,
+          46,
+          38
+        ],
+        "area": 460,
+        "seeds": 125,
+        "peak": 4.996899604797363,
+        "newly_accepted": true
+      },
+      "review": "unclassified appearance; no damage/ink GT"
+    },
+    {
+      "page": "200021712_00082_1",
+      "component": {
+        "id": 28,
+        "xywh": [
+          363,
+          240,
+          22,
+          12
+        ],
+        "area": 138,
+        "seeds": 110,
+        "peak": 3.59689998626709,
+        "newly_accepted": true
+      },
+      "review": "unclassified appearance; no damage/ink GT"
+    },
+    {
+      "page": "200021712_00082_1",
+      "component": {
+        "id": 36,
+        "xywh": [
+          2053,
+          253,
+          27,
+          50
+        ],
+        "area": 422,
+        "seeds": 72,
+        "peak": 4.996899604797363,
+        "newly_accepted": true
+      },
+      "review": "unclassified appearance; no damage/ink GT"
+    },
+    {
+      "page": "200021712_00082_1",
+      "component": {
+        "id": 160,
+        "xywh": [
+          1147,
+          534,
+          29,
+          29
+        ],
+        "area": 200,
+        "seeds": 199,
+        "peak": 3.59689998626709,
+        "newly_accepted": true
+      },
+      "review": "unclassified appearance; no damage/ink GT"
+    },
+    {
+      "page": "200017458_00004_2",
+      "component": {
+        "id": 7,
+        "xywh": [
+          593,
+          143,
+          22,
+          26
+        ],
+        "area": 151,
+        "seeds": 107,
+        "peak": 4.0,
+        "newly_accepted": true
+      },
+      "review": "unclassified appearance; no damage/ink GT"
+    },
+    {
+      "page": "200017458_00004_2",
+      "component": {
+        "id": 13,
+        "xywh": [
+          610,
+          166,
+          41,
+          53
+        ],
+        "area": 365,
+        "seeds": 317,
+        "peak": 4.393799781799316,
+        "newly_accepted": true
+      },
+      "review": "unclassified appearance; no damage/ink GT"
+    },
+    {
+      "page": "200017458_00004_2",
+      "component": {
+        "id": 45,
+        "xywh": [
+          1545,
+          322,
+          21,
+          17
+        ],
+        "area": 191,
+        "seeds": 60,
+        "peak": 5.0,
+        "newly_accepted": true
+      },
+      "review": "unclassified appearance; no damage/ink GT"
+    }
+  ],
+  "boundary_coverage": [
+    {
+      "id": "brown_false_red_new",
+      "component": 1,
+      "area": 124,
+      "boundary_pairs": 13,
+      "distinct_reference_pixels": 10,
+      "reference_bbox": [
+        559,
+        247,
+        18,
+        4
+      ],
+      "component_xywh": [
+        558,
+        248,
+        19,
+        10
+      ],
+      "quadrants": [
+        2,
+        8,
+        0,
+        0
+      ],
+      "boundary_L_min": 85.101318359375,
+      "boundary_L_max": 87.98828125,
+      "known_reference_pixels": 171560,
+      "donor_patch_count": 100
+    },
+    {
+      "id": "unseen_brown_spot",
+      "component": 1,
+      "area": 5081,
+      "boundary_pairs": 12,
+      "distinct_reference_pixels": 9,
+      "reference_bbox": [
+        232,
+        106,
+        43,
+        109
+      ],
+      "component_xywh": [
+        194,
+        101,
+        81,
+        113
+      ],
+      "quadrants": [
+        0,
+        7,
+        1,
+        1
+      ],
+      "boundary_L_min": 65.93017578125,
+      "boundary_L_max": 67.6025390625,
+      "known_reference_pixels": 123796,
+      "donor_patch_count": 512
+    },
+    {
+      "id": "unseen_fold",
+      "component": 1,
+      "area": 107,
+      "boundary_pairs": 9,
+      "distinct_reference_pixels": 8,
+      "reference_bbox": [
+        96,
+        223,
+        18,
+        8
+      ],
+      "component_xywh": [
+        90,
+        223,
+        23,
+        7
+      ],
+      "quadrants": [
+        0,
+        3,
+        2,
+        3
+      ],
+      "boundary_L_min": 70.806884765625,
+      "boundary_L_max": 71.74072265625,
+      "known_reference_pixels": 187679,
+      "donor_patch_count": 504
+    },
+    {
+      "id": "unseen_fold",
+      "component": 2,
+      "area": 118,
+      "boundary_pairs": 11,
+      "distinct_reference_pixels": 8,
+      "reference_bbox": [
+        128,
+        240,
+        11,
+        10
+      ],
+      "component_xywh": [
+        118,
+        240,
+        24,
+        17
+      ],
+      "quadrants": [
+        2,
+        4,
+        0,
+        2
+      ],
+      "boundary_L_min": 71.00830078125,
+      "boundary_L_max": 71.929931640625,
+      "known_reference_pixels": 187679,
+      "donor_patch_count": 504
+    }
+  ],
+  "harmonic_residuals": [
+    {
+      "id": "brown_false_red_new",
+      "field": "boundary_raw",
+      "residual": 2.288818359375e-05
+    },
+    {
+      "id": "brown_false_red_new",
+      "field": "boundary_smooth",
+      "residual": 2.288818359375e-05
+    },
+    {
+      "id": "unseen_brown_spot",
+      "field": "boundary_raw",
+      "residual": 2.288818359375e-05
+    },
+    {
+      "id": "unseen_brown_spot",
+      "field": "boundary_smooth",
+      "residual": 2.288818359375e-05
+    },
+    {
+      "id": "unseen_fold",
+      "field": "boundary_raw",
+      "residual": 2.288818359375e-05
+    },
+    {
+      "id": "unseen_fold",
+      "field": "boundary_smooth",
+      "residual": 2.288818359375e-05
+    }
+  ],
+  "observed_texture": [
+    {
+      "id": "brown_false_red_new",
+      "pixels": 348,
+      "average_error": 0.0,
+      "distinct_donors": 4
+    },
+    {
+      "id": "unseen_brown_spot",
+      "pixels": 5081,
+      "average_error": 0.0,
+      "distinct_donors": 27
+    },
+    {
+      "id": "unseen_fold",
+      "pixels": 8873,
+      "average_error": 0.0,
+      "distinct_donors": 60
+    }
+  ]
+}

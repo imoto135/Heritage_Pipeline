@@ -1,0 +1,16 @@
+{
+  "status": "passed",
+  "frozen_output_hashes_checked": 114,
+  "dependency_hashes_checked": 12,
+  "density_range_reproduced": true,
+  "original_pilot_modified": false,
+  "numerical_solver_checks": {
+    "gradient_matches_finite_difference": true,
+    "nonnegative_density": true,
+    "synthetic_curve_has_larger_density_than_paper": true,
+    "synthetic_solver_converged": true,
+    "objective_monotone": true
+  },
+  "browser_rendering_tested": false,
+  "accuracy_evaluated": false
+}

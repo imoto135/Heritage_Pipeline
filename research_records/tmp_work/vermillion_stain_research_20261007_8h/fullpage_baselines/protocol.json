@@ -1,0 +1,35 @@
+{
+  "native_resolution": true,
+  "mask_storage": "white=positive class; pipeline separately uses black=target",
+  "sauvola": {
+    "window": 61,
+    "k": 0.2,
+    "R": 0.5,
+    "border": "REFLECT_101"
+  },
+  "CSC": "Local v1/v2, not verified authentic paper implementation",
+  "ace": {
+    "alpha": 5.0,
+    "n_samples": 200,
+    "seed": 0
+  },
+  "csc": {
+    "seed": 42,
+    "max_samples": 50000,
+    "border_margin_ratio": 0.04
+  },
+  "thresholds": "Fixed exploratory heuristics before new outputs; no novelty claim for ridge/color combination",
+  "method_settings": {
+    "hsv_strict": "h<=12 or>=168,S>180",
+    "hsv_loose": "h<=25 or>=168,S>=30,V>=30",
+    "relative_chroma": "input-estimated OD G-R>=.012,B-R>=.012,R>=G",
+    "relative_ridge": "relative_chroma & within2px of Hessian ridge(min(dG,dB))>=.004; sigma1,2,4,8"
+  },
+  "source_sha256": {
+    "modules/ddrm_npj/scripts/csc.py": "4213d20062a6e835e6e10ae7399651718060e30ddf5c8d0177c26aa6c1872955",
+    "tmp_work/npj_dirt_control_20261002/source_snapshot/ddrm_npj_v2/scripts/csc.py": "11815cbb82d6972644498db9c5a8879dfc7e104b14a2749e04fdf0198e19b22f",
+    "modules/ddrm_npj/scripts/ace.py": "35f40c8397a4df8fc07e64ec61994b561ceefe922803e84d9046434d992b5146",
+    "tmp_work/vermillion_stain_research_20261007_8h/prepare_fullpage_baselines.py": "40a75e44dfe2ddece07d640fe859b2f1927813c945885580868fc34e788a4e3b"
+  },
+  "cases_sha256": "cdfbb6e6a55e0cf138884caae04b900939430426cb0290c4f314f25b54264272"
+}

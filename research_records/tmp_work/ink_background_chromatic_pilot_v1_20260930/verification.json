@@ -1,0 +1,20 @@
+{
+  "status": "passed",
+  "pages": 3,
+  "diagnostic_rectangles": 5,
+  "source_dependencies_unchanged": true,
+  "v0_original_samples_geometry_parity": true,
+  "pigment_not_reestimated": true,
+  "numerical_checks": {
+    "shared_scalar_texture_cancels": true,
+    "known_pigment_recovered_after_texture": true,
+    "colored_crease_remains_ambiguous": true
+  },
+  "finite_nonnegative_estimates": true,
+  "local_viewer_links_checked": true,
+  "browser_rendering_tested": false,
+  "dense_edit_mask_created": false,
+  "pixel_GT": false,
+  "neural_training": false,
+  "independent_accuracy_test": false
+}

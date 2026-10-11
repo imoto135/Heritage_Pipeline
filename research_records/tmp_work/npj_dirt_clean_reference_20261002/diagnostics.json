@@ -1,0 +1,163 @@
+{
+  "cases": [
+    {
+      "id": "current_control",
+      "update_pixels": 56891,
+      "applied_pixels": 56886,
+      "held_pixels": 5,
+      "reference_pixels": 77365,
+      "used_reference_pixels": 1681,
+      "reference_L_threshold": 73.94580078125,
+      "changed_pixels": 55227,
+      "update_dark_L_lt30_before": 18689,
+      "update_dark_L_lt30_after": 0,
+      "solves": [
+        {
+          "component": 1,
+          "pixels": 56886,
+          "boundary_pairs": 2209,
+          "applied": true,
+          "max_residual": 1.2505552149377763e-12,
+          "reference_BGR_min": [
+            177.25942411605521,
+            197.8045851983547,
+            199.99795091172234
+          ],
+          "reference_BGR_max": [
+            197.40579011966554,
+            239.83528455783164,
+            223.10984306311332
+          ]
+        },
+        {
+          "component": 2,
+          "pixels": 1,
+          "boundary_pairs": 4,
+          "applied": false
+        },
+        {
+          "component": 3,
+          "pixels": 1,
+          "boundary_pairs": 4,
+          "applied": false
+        },
+        {
+          "component": 4,
+          "pixels": 2,
+          "boundary_pairs": 6,
+          "applied": false
+        },
+        {
+          "component": 5,
+          "pixels": 1,
+          "boundary_pairs": 4,
+          "applied": false
+        }
+      ],
+      "outside_update_exact": true,
+      "nonmargin_exact": true,
+      "mandatory_exact": true,
+      "excluded_boundary_poison_invariant": true,
+      "below_rule_dark_before": 18995,
+      "below_rule_dark_after": 306
+    },
+    {
+      "id": "historical_saved",
+      "update_pixels": 56891,
+      "applied_pixels": 56886,
+      "held_pixels": 5,
+      "reference_pixels": 77365,
+      "used_reference_pixels": 1681,
+      "reference_L_threshold": 73.94580078125,
+      "changed_pixels": 55227,
+      "update_dark_L_lt30_before": 18689,
+      "update_dark_L_lt30_after": 0,
+      "solves": [
+        {
+          "component": 1,
+          "pixels": 56886,
+          "boundary_pairs": 2209,
+          "applied": true,
+          "max_residual": 1.2505552149377763e-12,
+          "reference_BGR_min": [
+            177.25942411605521,
+            197.8045851983547,
+            199.99795091172234
+          ],
+          "reference_BGR_max": [
+            197.40579011966554,
+            239.83528455783164,
+            223.10984306311332
+          ]
+        },
+        {
+          "component": 2,
+          "pixels": 1,
+          "boundary_pairs": 4,
+          "applied": false
+        },
+        {
+          "component": 3,
+          "pixels": 1,
+          "boundary_pairs": 4,
+          "applied": false
+        },
+        {
+          "component": 4,
+          "pixels": 2,
+          "boundary_pairs": 6,
+          "applied": false
+        },
+        {
+          "component": 5,
+          "pixels": 1,
+          "boundary_pairs": 4,
+          "applied": false
+        }
+      ],
+      "outside_update_exact": true,
+      "nonmargin_exact": true,
+      "mandatory_exact": true,
+      "excluded_boundary_poison_invariant": true,
+      "below_rule_dark_before": 18995,
+      "below_rule_dark_after": 306
+    }
+  ],
+  "preservation_controls": [
+    {
+      "id": "crop_hnsd",
+      "xywh": [
+        30,
+        50,
+        160,
+        260
+      ],
+      "changed_pixels": 0,
+      "fixed_mask_noop": true
+    },
+    {
+      "id": "known_200010454_v2",
+      "xywh": [
+        1330,
+        1800,
+        430,
+        550
+      ],
+      "changed_pixels": 0,
+      "fixed_mask_noop": true
+    },
+    {
+      "id": "page_200017197",
+      "xywh": [
+        100,
+        30,
+        650,
+        380
+      ],
+      "changed_pixels": 0,
+      "fixed_mask_noop": true
+    }
+  ],
+  "raw_control_exact_to_historical_output": true,
+  "independent_positive_cases": 1
+}

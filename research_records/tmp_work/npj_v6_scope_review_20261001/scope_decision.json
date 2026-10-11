@@ -1,0 +1,23 @@
+{
+  "source": "User review on 2026-10-01",
+  "primary_task": "Text and vermilion ink on text pages; illustration pages excluded",
+  "excluded_pages": [
+    {
+      "id": "200021644_00003_1",
+      "reason": "Colored illustration page; explicitly exclude illustration pages"
+    },
+    {
+      "id": "200021637_00003_2",
+      "reason": "Page contains an ink illustration; retain damage/stamp observations only as reference diagnostics"
+    }
+  ],
+  "original_selection_and_outputs_preserved": true,
+  "retrospective_scope_change": true,
+  "main_findings": [
+    "Paper loss/damage edges remain protected by both methods",
+    "Illustration mis-edit is outside the revised primary scope",
+    "Replacing npj is not justified by the latest six-page comparison alone"
+  ],
+  "next_step": "Establish whether specific npj failures materially harm reconstruction before further method changes",
+  "threshold_changes": false
+}

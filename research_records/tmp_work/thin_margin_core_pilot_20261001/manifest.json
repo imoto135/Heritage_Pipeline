@@ -1,0 +1,29 @@
+{
+  "settings": {
+    "change": "dark-core peak >=3.5 instead of >=6 only",
+    "other_component_gates": "area128, brownseed32, size and old-band boundary unchanged",
+    "growth": "existing 6px halo and Ldrop>=2; existing complete/rim edits retained",
+    "preservation": "same safe domain, warm anchors, red/extra, long lines",
+    "full_page": true,
+    "ROI_gating": false,
+    "development_pages": 18,
+    "development_ROIs": 34,
+    "new_four_books_now_development": true,
+    "pixel_GT": false,
+    "restoration": false
+  },
+  "dependencies": {
+    "scripts/benchmark/probe_thin_margin_components.py": "b4d531a6bf83637c2536ce84b6c85fb0bf360c528ef5ffb4eb0e608908c15a33",
+    "scripts/benchmark/probe_paper_rim_lowfrequency_v2.py": "9d1dc0c515f79f86ab502b1a9dea03ea16fc0b42e670b602f5032fe3df0289c5",
+    "scripts/benchmark/probe_paper_margin_defects.py": "1de8589d43dc3d5899e202a7853f5e0ae1653cae8a3bfe91e5c837227f8f87d6",
+    "tmp_work/paper_rim_lowfrequency_pilot_v2_20261001/manifest.json": "43da1f33ab2d0dff8875032beee07488f5f38c7bbfbd2162c02a82b8b97bd849",
+    "tmp_work/paper_rim_lowfrequency_pilot_v2_20261001/complete.json": "2bef6d266f244528396be1ed5fc8deb9cf14116cf3589c079da21cda27220dc6",
+    "tmp_work/unseen_margin_validation_20261001/fixed_masks/manifest.json": "847a4b0afbd55e3d02bf8a607aa40ec839b8a51a16b299ec27d07c6b0ef284ca",
+    "tmp_work/unseen_margin_validation_20261001/fixed_masks/complete.json": "28c39362961d003f21e7c425c04f7fe5716c899dfd5713f7bf85613dd7a55d7a",
+    "tmp_work/npj_failure_collection_20261001/baseline_review.json": "7efc7a8ab6b97b8a3938d0b0d83345e60a8e65b15858daa316bc37897741571c",
+    "tmp_work/npj_failure_followup_20261001/baseline_review.json": "5e461705429068cf28b57332f0cf90ae89ad785a06336a6fc96f083f2a9537ad",
+    "tmp_work/paper_margin_defect_pilot_20261001/baseline_review.json": "eca49aee1621cccb1cae61c0677be5021909ef378bc5b4470e46457d41633da2",
+    "tmp_work/unseen_margin_validation_20261001/baseline_review.json": "7baa2abd21ccdc2ee6af19299d0410eefc7736b4b7f25a38742321b415586dcd"
+  },
+  "source_sha256": "b4d531a6bf83637c2536ce84b6c85fb0bf360c528ef5ffb4eb0e608908c15a33"
+}

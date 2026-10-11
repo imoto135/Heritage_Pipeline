@@ -1,0 +1,23 @@
+{
+  "status": "passed",
+  "initialization_without_CSC_masks": true,
+  "source_and_dependencies_unchanged": true,
+  "original_native_crops_unchanged": true,
+  "pages": 3,
+  "completed_rois": 5,
+  "expected_rois": 5,
+  "all_solvers_converged": true,
+  "numerical_checks": {
+    "gradient_matches_finite_difference": true,
+    "nonnegative_density": true,
+    "synthetic_curve_has_larger_density_than_paper": true,
+    "synthetic_solver_converged": true,
+    "objective_monotone": true
+  },
+  "local_viewer_links_checked": true,
+  "browser_rendering_tested": false,
+  "pixel_GT": false,
+  "neural_training": false,
+  "edit_permission_generated": false,
+  "analysis_downsample": 2
+}

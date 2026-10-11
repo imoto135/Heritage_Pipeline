@@ -1,0 +1,24 @@
+{
+  "name": "relative_pointwise",
+  "config": {
+    "mode": "relative",
+    "training": "overlap",
+    "paired": false,
+    "consistency": 0.0,
+    "pointwise": true
+  },
+  "steps": 12000,
+  "batch": 8,
+  "optimizer": "AdamW lr2e-4 weight_decay1e-4",
+  "seed": 413,
+  "synthetic_seed": 20261008,
+  "width": 16,
+  "real_training": "None: no labels from real red or brown masks",
+  "synthetic_training": "Two known, potentially overlapping digital layers",
+  "training_source_sha256": "5195558455713e9bc99204e17bb82f37d53b58e2c988624e5ecfda9311fab92f",
+  "synthesis_source_sha256": "0b5706470026f9775a36ac2083516513a01b8a92e41acfd8a1136fb519493bb7",
+  "effective_images_per_step": 8,
+  "compute_matching": "Paired aug and paired consistency have identical geometry/colors/BCE exposures; other ablations have different exposure counts",
+  "checkpoint_selection": "Highest harmonic mean of synthetic dev mark/stain F1 only; no real validation inspection",
+  "start_utc": "2026-10-07T15:18:09.531715+00:00"
+}

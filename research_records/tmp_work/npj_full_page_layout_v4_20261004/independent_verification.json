@@ -1,0 +1,138 @@
+{
+  "cases": [
+    {
+      "id": "fresh_lower_paper",
+      "source_crop_and_baseline_exact": true,
+      "envelope_independently_reconstructed": true,
+      "mandatory_exact": true,
+      "reference_roles_disjoint": true,
+      "outside_applied_and_kept_exact": true,
+      "panels_independently_verified": true,
+      "changes_on_black_protect_or_hold": 0,
+      "whole_frame_changes": 0,
+      "applied_pixels": 0
+    },
+    {
+      "id": "fresh_binding_mark",
+      "source_crop_and_baseline_exact": true,
+      "envelope_independently_reconstructed": true,
+      "mandatory_exact": true,
+      "reference_roles_disjoint": true,
+      "outside_applied_and_kept_exact": true,
+      "panels_independently_verified": true,
+      "changes_on_black_protect_or_hold": 0,
+      "whole_frame_changes": 0,
+      "applied_pixels": 0
+    },
+    {
+      "id": "wormhole",
+      "source_crop_and_baseline_exact": true,
+      "envelope_independently_reconstructed": true,
+      "mandatory_exact": true,
+      "reference_roles_disjoint": true,
+      "outside_applied_and_kept_exact": true,
+      "panels_independently_verified": true,
+      "changes_on_black_protect_or_hold": 7856,
+      "whole_frame_changes": 15085,
+      "applied_pixels": 15825
+    },
+    {
+      "id": "seal_control",
+      "source_crop_and_baseline_exact": true,
+      "envelope_independently_reconstructed": true,
+      "mandatory_exact": true,
+      "reference_roles_disjoint": true,
+      "outside_applied_and_kept_exact": true,
+      "panels_independently_verified": true,
+      "changes_on_black_protect_or_hold": 0,
+      "whole_frame_changes": 0,
+      "applied_pixels": 0
+    },
+    {
+      "id": "fresh_printed_text",
+      "source_crop_and_baseline_exact": true,
+      "envelope_independently_reconstructed": true,
+      "mandatory_exact": true,
+      "reference_roles_disjoint": true,
+      "outside_applied_and_kept_exact": true,
+      "panels_independently_verified": true,
+      "changes_on_black_protect_or_hold": 0,
+      "whole_frame_changes": 0,
+      "applied_pixels": 0
+    },
+    {
+      "id": "unseen_lower_frame_mark",
+      "source_crop_and_baseline_exact": true,
+      "envelope_independently_reconstructed": true,
+      "mandatory_exact": true,
+      "reference_roles_disjoint": true,
+      "outside_applied_and_kept_exact": true,
+      "panels_independently_verified": true,
+      "changes_on_black_protect_or_hold": 0,
+      "whole_frame_changes": 0,
+      "applied_pixels": 0
+    },
+    {
+      "id": "unseen_lower_binding_mark",
+      "source_crop_and_baseline_exact": true,
+      "envelope_independently_reconstructed": true,
+      "mandatory_exact": true,
+      "reference_roles_disjoint": true,
+      "outside_applied_and_kept_exact": true,
+      "panels_independently_verified": true,
+      "changes_on_black_protect_or_hold": 0,
+      "whole_frame_changes": 0,
+      "applied_pixels": 0
+    },
+    {
+      "id": "saved_hnsd",
+      "source_crop_and_baseline_exact": true,
+      "envelope_independently_reconstructed": true,
+      "mandatory_exact": true,
+      "reference_roles_disjoint": true,
+      "outside_applied_and_kept_exact": true,
+      "panels_independently_verified": true,
+      "changes_on_black_protect_or_hold": 4211,
+      "whole_frame_changes": 58483,
+      "applied_pixels": 60493
+    }
+  ],
+  "focus": {
+    "wormhole": {
+      "crop_xywh": [
+        230,
+        150,
+        400,
+        420
+      ],
+      "filename": "focus_wormhole_rim.png",
+      "previous_changes": 0,
+      "current_changes": 14373
+    },
+    "seal_control": {
+      "crop_xywh": [
+        20,
+        450,
+        550,
+        280
+      ],
+      "filename": "focus_body_preservation.png",
+      "previous_changes": 43424,
+      "current_changes": 0
+    }
+  },
+  "no_new_diffusion_inference": true,
+  "no_stroke_generation": true,
+  "previous_processing_checks": {
+    "interior_and_mandatory_exact": true,
+    "outside_applied_exact": true,
+    "panels_exact": true,
+    "excluded_reference_poison_invariant": true,
+    "thresholds_fixed_before_run": true,
+    "no_stroke_generation": true,
+    "pixel_GT": false
+  },
+  "source_dependencies_unchanged": true,
+  "independent_test": false,
+  "pixel_GT": false
+}

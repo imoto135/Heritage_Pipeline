@@ -1,0 +1,19 @@
+{
+  "created": 1791370363.1199105,
+  "domains": [
+    "chromatic_field",
+    "micro_speckles",
+    "opaque_overlay"
+  ],
+  "source_sha256": "03c186474d31bda4eda5cef869e0f23904d532dd9f1d768d15b3bda6a91e8b67",
+  "seed": 92341,
+  "prescribed_before_augmented_weights_review": true,
+  "OOD_not_used_for_training_or_checkpoint_selection": true,
+  "limits": "new synthetic mechanisms on existing held-out source groups; no true clean historical images or reading GT",
+  "formulae": {
+    "chromatic_field": "spatial RGB optical-density variation",
+    "micro_speckles": "24 Gaussian radius1..3px multiplicative spots",
+    "opaque_overlay": "alpha mixture with brown RGB[.65,.46,.29], can brighten ink and darken paper"
+  },
+  "scope": "test the assumptions of nonnegative smooth optical-density correction, not a claim of real physical stain modeling"
+}

@@ -1,0 +1,15 @@
+{
+  "identity_BGR_RGB_PNG_exact": true,
+  "StainRestorer_direct_old_adapter_max_float_error": 0.0,
+  "resources": {
+    "/home/imoto/Heritage_Pipeline/tmp_work/npj_literature_models_20261002/repos/StainRestorer/models/StainRestorer.py": "d12181917d63a80bda21fa6a938baad561748b3b086478761eab0a67d5dba11a",
+    "/home/imoto/Heritage_Pipeline/tmp_work/npj_literature_models_20261002/weights/StainDoc.pth": "7cdbd674367535d4f429ef077030b930da2a460012fe8fc44d995ead2f7418ee"
+  },
+  "script_sha256": "26a815066964e209c29fe4627221054d311f340f57cb9526d17fc4baa48ac0d7",
+  "new_adapter_sha256": "01ea2f8636b4412a1aea7a47e9d56ea9c47254e0744ab91e44e24e368e2cb47d",
+  "old_adapter_sha256": "1fb608304a989abdcc367d434dd2b7fd77cb953e73de6f634730479bc11fde41",
+  "author_appearance_precision_note": "Float16 author-geometry forward, float32 output conversion before uint8 truncation. Author code truncates a float16 NumPy array; exact bitwise author benchmark equality is not claimed.",
+  "docres_weights": "Community mirror, agreed hash against second mirror; identity to author OneDrive copy not independently established",
+  "task": "New thin-red/brown comparison, not official paired benchmark reproduction",
+  "real_GT": false
+}

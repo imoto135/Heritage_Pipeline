@@ -1,0 +1,1046 @@
+{
+  "created": 1791373119.7470849,
+  "key": [
+    {
+      "set": "A",
+      "question": "Q01",
+      "id": "F59",
+      "page": "200025191_00013_1",
+      "method": "docres",
+      "image": "set_A/Q01.png",
+      "page_xywh": [
+        1192,
+        1420,
+        420,
+        400
+      ],
+      "source": "tmp_work/npj_contact_research_20261007/real_models/F59/docres.png",
+      "source_roi": [
+        100,
+        200,
+        420,
+        400
+      ],
+      "source_sha256": "fb9c0e3ef979c21e75dcf344fd07c42c231d56e4b0ba9a09b57e2aca5ad47e0e",
+      "role": "control"
+    },
+    {
+      "set": "B",
+      "question": "Q01",
+      "id": "F59",
+      "page": "200025191_00013_1",
+      "method": "original",
+      "image": "set_B/Q01.png",
+      "page_xywh": [
+        1192,
+        1420,
+        420,
+        400
+      ],
+      "source": "data/split_dataset/train/200025191/200025191_00013_1.jpg",
+      "source_roi": [
+        1192,
+        1420,
+        420,
+        400
+      ],
+      "source_sha256": "0e558fc968defde577a53131fa15be669253576e7989edc2140204958dd1fb4b",
+      "role": "control"
+    },
+    {
+      "set": "C",
+      "question": "Q01",
+      "id": "F59",
+      "page": "200025191_00013_1",
+      "method": "npj_baseline",
+      "image": "set_C/Q01.png",
+      "page_xywh": [
+        1192,
+        1420,
+        420,
+        400
+      ],
+      "source": "tmp_work/npj_contact_research_20261007/full_followup/C/output/baseline/200025191_00013_1/result/200025191_00013_1.png",
+      "source_roi": [
+        1192,
+        1420,
+        420,
+        400
+      ],
+      "source_sha256": "f093926de2ca522cba388938d9c585233ff22d0d4ec2e9327e227fbadeee7447",
+      "role": "control"
+    },
+    {
+      "set": "D",
+      "question": "Q01",
+      "id": "F59",
+      "page": "200025191_00013_1",
+      "method": "sauvola_mask_ddrm",
+      "image": "set_D/Q01.png",
+      "page_xywh": [
+        1192,
+        1420,
+        420,
+        400
+      ],
+      "source": "tmp_work/npj_contact_research_20261007/full_followup/C/output/sauvola/200025191_00013_1/result/200025191_00013_1.png",
+      "source_roi": [
+        1192,
+        1420,
+        420,
+        400
+      ],
+      "source_sha256": "72a98f12db5263dfd497eebfb955eb17765d4b5057f6964f9ba7f0fa9e96a825",
+      "role": "control"
+    },
+    {
+      "set": "E",
+      "question": "Q01",
+      "id": "F59",
+      "page": "200025191_00013_1",
+      "method": "automatic_local",
+      "image": "set_E/Q01.png",
+      "page_xywh": [
+        1192,
+        1420,
+        420,
+        400
+      ],
+      "source": "tmp_work/npj_contact_research_20261007/full_local/F59/sauvola.png",
+      "source_roi": [
+        1192,
+        1420,
+        420,
+        400
+      ],
+      "source_sha256": "17b71d2e54a56e4085e8c3fb5114a4b5b0515cf6464aba066573992cad5d9315",
+      "role": "control"
+    },
+    {
+      "set": "A",
+      "question": "Q02",
+      "id": "F39",
+      "page": "200021086_00013_1",
+      "method": "original",
+      "image": "set_A/Q02.png",
+      "page_xywh": [
+        400,
+        2476,
+        420,
+        400
+      ],
+      "source": "data/split_dataset/train/200021086/200021086_00013_1.jpg",
+      "source_roi": [
+        400,
+        2476,
+        420,
+        400
+      ],
+      "source_sha256": "888d7f1fe3a257cd4641670be47e6ac64ee4ffe1fcbef47705722c55fd0da268",
+      "role": "contact_candidate"
+    },
+    {
+      "set": "B",
+      "question": "Q02",
+      "id": "F39",
+      "page": "200021086_00013_1",
+      "method": "npj_baseline",
+      "image": "set_B/Q02.png",
+      "page_xywh": [
+        400,
+        2476,
+        420,
+        400
+      ],
+      "source": "tmp_work/npj_contact_research_20261007/full_followup/C/output/baseline/200021086_00013_1/result/200021086_00013_1.png",
+      "source_roi": [
+        400,
+        2476,
+        420,
+        400
+      ],
+      "source_sha256": "743018c059c1066d9925aaeb1e4bb830e516cf525fecb1391fe4e0c82fe14110",
+      "role": "contact_candidate"
+    },
+    {
+      "set": "C",
+      "question": "Q02",
+      "id": "F39",
+      "page": "200021086_00013_1",
+      "method": "sauvola_mask_ddrm",
+      "image": "set_C/Q02.png",
+      "page_xywh": [
+        400,
+        2476,
+        420,
+        400
+      ],
+      "source": "tmp_work/npj_contact_research_20261007/full_followup/C/output/sauvola/200021086_00013_1/result/200021086_00013_1.png",
+      "source_roi": [
+        400,
+        2476,
+        420,
+        400
+      ],
+      "source_sha256": "7b7f144e2dc243e7659004e5178dd86009ba016e4169af33366a7030ebc1c1cf",
+      "role": "contact_candidate"
+    },
+    {
+      "set": "D",
+      "question": "Q02",
+      "id": "F39",
+      "page": "200021086_00013_1",
+      "method": "automatic_local",
+      "image": "set_D/Q02.png",
+      "page_xywh": [
+        400,
+        2476,
+        420,
+        400
+      ],
+      "source": "tmp_work/npj_contact_research_20261007/full_local/F39/sauvola.png",
+      "source_roi": [
+        400,
+        2476,
+        420,
+        400
+      ],
+      "source_sha256": "c4872ead3f46bebe4c75768151f87dacb59c9dc1b1ecd7b90c5bbbd6e3877233",
+      "role": "contact_candidate"
+    },
+    {
+      "set": "E",
+      "question": "Q02",
+      "id": "F39",
+      "page": "200021086_00013_1",
+      "method": "docres",
+      "image": "set_E/Q02.png",
+      "page_xywh": [
+        400,
+        2476,
+        420,
+        400
+      ],
+      "source": "tmp_work/npj_contact_research_20261007/real_models/F39/docres.png",
+      "source_roi": [
+        100,
+        200,
+        420,
+        400
+      ],
+      "source_sha256": "7a02fffe183499dd9448d0f68d71ca87dcde977d4a3342b8a1c728c4803c2525",
+      "role": "contact_candidate"
+    },
+    {
+      "set": "A",
+      "question": "Q03",
+      "id": "F48",
+      "page": "200021071_00070_2",
+      "method": "npj_baseline",
+      "image": "set_A/Q03.png",
+      "page_xywh": [
+        1080,
+        1233,
+        420,
+        400
+      ],
+      "source": "tmp_work/npj_contact_research_20261007/full_followup/C/output/baseline/200021071_00070_2/result/200021071_00070_2.png",
+      "source_roi": [
+        1080,
+        1233,
+        420,
+        400
+      ],
+      "source_sha256": "af053197bfc328e520b4a92b5d49b9b596195337cec6b9691658ad720b1ea8ed",
+      "role": "contact_candidate"
+    },
+    {
+      "set": "B",
+      "question": "Q03",
+      "id": "F48",
+      "page": "200021071_00070_2",
+      "method": "sauvola_mask_ddrm",
+      "image": "set_B/Q03.png",
+      "page_xywh": [
+        1080,
+        1233,
+        420,
+        400
+      ],
+      "source": "tmp_work/npj_contact_research_20261007/full_followup/C/output/sauvola/200021071_00070_2/result/200021071_00070_2.png",
+      "source_roi": [
+        1080,
+        1233,
+        420,
+        400
+      ],
+      "source_sha256": "d08b30cfc688961b105045d0ffe7ab17a43516fd8f5c708ffe3e518cce119574",
+      "role": "contact_candidate"
+    },
+    {
+      "set": "C",
+      "question": "Q03",
+      "id": "F48",
+      "page": "200021071_00070_2",
+      "method": "automatic_local",
+      "image": "set_C/Q03.png",
+      "page_xywh": [
+        1080,
+        1233,
+        420,
+        400
+      ],
+      "source": "tmp_work/npj_contact_research_20261007/full_local/F48/sauvola.png",
+      "source_roi": [
+        1080,
+        1233,
+        420,
+        400
+      ],
+      "source_sha256": "cfbe7e22e01c08a2b1c4f4b02fbc2f5f2b3e180caed965cab293aedca99a8912",
+      "role": "contact_candidate"
+    },
+    {
+      "set": "D",
+      "question": "Q03",
+      "id": "F48",
+      "page": "200021071_00070_2",
+      "method": "docres",
+      "image": "set_D/Q03.png",
+      "page_xywh": [
+        1080,
+        1233,
+        420,
+        400
+      ],
+      "source": "tmp_work/npj_contact_research_20261007/real_models/F48/docres.png",
+      "source_roi": [
+        100,
+        200,
+        420,
+        400
+      ],
+      "source_sha256": "9c8556bbd7e2a3695c7dd1208bfb3dc91dca09bd4111fe4f48a4e8d362e56e08",
+      "role": "contact_candidate"
+    },
+    {
+      "set": "E",
+      "question": "Q03",
+      "id": "F48",
+      "page": "200021071_00070_2",
+      "method": "original",
+      "image": "set_E/Q03.png",
+      "page_xywh": [
+        1080,
+        1233,
+        420,
+        400
+      ],
+      "source": "data/split_dataset/test/200021071/200021071_00070_2.jpg",
+      "source_roi": [
+        1080,
+        1233,
+        420,
+        400
+      ],
+      "source_sha256": "87ee84aa57faaed5c36d33e3b13ec98157db048628b9a279e7607c597931b60e",
+      "role": "contact_candidate"
+    },
+    {
+      "set": "A",
+      "question": "Q04",
+      "id": "N01",
+      "page": "200010454_00003_2",
+      "method": "sauvola_mask_ddrm",
+      "image": "set_A/Q04.png",
+      "page_xywh": [
+        428,
+        347,
+        190,
+        220
+      ],
+      "source": "tmp_work/npj_contact_research_20261007/full_followup/B/output/sauvola/200010454_00003_2/result/200010454_00003_2.png",
+      "source_roi": [
+        428,
+        347,
+        190,
+        220
+      ],
+      "source_sha256": "d0fb00826ecfc1b8080042b425ab03cdb655960039ce728acfa82c4fea5c00e7",
+      "role": "contact_candidate"
+    },
+    {
+      "set": "B",
+      "question": "Q04",
+      "id": "N01",
+      "page": "200010454_00003_2",
+      "method": "automatic_local",
+      "image": "set_B/Q04.png",
+      "page_xywh": [
+        428,
+        347,
+        190,
+        220
+      ],
+      "source": "tmp_work/npj_contact_research_20261007/full_local/N01/sauvola.png",
+      "source_roi": [
+        428,
+        347,
+        190,
+        220
+      ],
+      "source_sha256": "956fdf5cbac70f988ac8247b2f7f4f5b5bce519fd9a913e25929dde9713c9167",
+      "role": "contact_candidate"
+    },
+    {
+      "set": "C",
+      "question": "Q04",
+      "id": "N01",
+      "page": "200010454_00003_2",
+      "method": "docres",
+      "image": "set_C/Q04.png",
+      "page_xywh": [
+        428,
+        347,
+        190,
+        220
+      ],
+      "source": "tmp_work/npj_contact_research_20261007/real_models/N01/docres.png",
+      "source_roi": [
+        280,
+        290,
+        190,
+        220
+      ],
+      "source_sha256": "7153b1c3ffdd10b9d4be059b419cd575fd0f8bcd4014a33a61c2a56d1be1d5e6",
+      "role": "contact_candidate"
+    },
+    {
+      "set": "D",
+      "question": "Q04",
+      "id": "N01",
+      "page": "200010454_00003_2",
+      "method": "original",
+      "image": "set_D/Q04.png",
+      "page_xywh": [
+        428,
+        347,
+        190,
+        220
+      ],
+      "source": "data/split_dataset/test/200010454/200010454_00003_2.jpg",
+      "source_roi": [
+        428,
+        347,
+        190,
+        220
+      ],
+      "source_sha256": "67c1f8a762d442015f420a34512119163c3e4cb06307bb75567d086f119a246f",
+      "role": "contact_candidate"
+    },
+    {
+      "set": "E",
+      "question": "Q04",
+      "id": "N01",
+      "page": "200010454_00003_2",
+      "method": "npj_baseline",
+      "image": "set_E/Q04.png",
+      "page_xywh": [
+        428,
+        347,
+        190,
+        220
+      ],
+      "source": "tmp_work/npj_contact_research_20261007/full_followup/B/output/baseline/200010454_00003_2/result/200010454_00003_2.png",
+      "source_roi": [
+        428,
+        347,
+        190,
+        220
+      ],
+      "source_sha256": "d8eda259033b04d15aa7f43249019594bd4fee55cc181c898911e148dcb1ba1e",
+      "role": "contact_candidate"
+    },
+    {
+      "set": "A",
+      "question": "Q05",
+      "id": "F62",
+      "page": "200010454_00003_1",
+      "method": "automatic_local",
+      "image": "set_A/Q05.png",
+      "page_xywh": [
+        1157,
+        300,
+        180,
+        270
+      ],
+      "source": "tmp_work/npj_contact_research_20261007/full_local/F62/sauvola.png",
+      "source_roi": [
+        1157,
+        300,
+        180,
+        270
+      ],
+      "source_sha256": "297679d42a4de8a4ef124eb4d5a2b04a669efd6aa3c430f3124a22fd0db481fa",
+      "role": "contact_candidate"
+    },
+    {
+      "set": "B",
+      "question": "Q05",
+      "id": "F62",
+      "page": "200010454_00003_1",
+      "method": "docres",
+      "image": "set_B/Q05.png",
+      "page_xywh": [
+        1157,
+        300,
+        180,
+        270
+      ],
+      "source": "tmp_work/npj_contact_research_20261007/real_models/F62/docres.png",
+      "source_roi": [
+        560,
+        300,
+        180,
+        270
+      ],
+      "source_sha256": "d4553392c2143c53b9dc0d6a302f8eb45028498f491d05408779b9c6aaf64b02",
+      "role": "contact_candidate"
+    },
+    {
+      "set": "C",
+      "question": "Q05",
+      "id": "F62",
+      "page": "200010454_00003_1",
+      "method": "original",
+      "image": "set_C/Q05.png",
+      "page_xywh": [
+        1157,
+        300,
+        180,
+        270
+      ],
+      "source": "data/split_dataset/test/200010454/200010454_00003_1.jpg",
+      "source_roi": [
+        1157,
+        300,
+        180,
+        270
+      ],
+      "source_sha256": "88e288025f013070950c638582d2812dc3e840cf550e0d4941e0167d9461a67e",
+      "role": "contact_candidate"
+    },
+    {
+      "set": "D",
+      "question": "Q05",
+      "id": "F62",
+      "page": "200010454_00003_1",
+      "method": "npj_baseline",
+      "image": "set_D/Q05.png",
+      "page_xywh": [
+        1157,
+        300,
+        180,
+        270
+      ],
+      "source": "tmp_work/npj_contact_research_20261007/full_followup/C/output/baseline/200010454_00003_1/result/200010454_00003_1.png",
+      "source_roi": [
+        1157,
+        300,
+        180,
+        270
+      ],
+      "source_sha256": "b91f523e620df650e369c9a6ca8255bed8fe7ff2f6434797394ac2ec54e6f506",
+      "role": "contact_candidate"
+    },
+    {
+      "set": "E",
+      "question": "Q05",
+      "id": "F62",
+      "page": "200010454_00003_1",
+      "method": "sauvola_mask_ddrm",
+      "image": "set_E/Q05.png",
+      "page_xywh": [
+        1157,
+        300,
+        180,
+        270
+      ],
+      "source": "tmp_work/npj_contact_research_20261007/full_followup/C/output/sauvola/200010454_00003_1/result/200010454_00003_1.png",
+      "source_roi": [
+        1157,
+        300,
+        180,
+        270
+      ],
+      "source_sha256": "a76a05b92dbbe9068b833560fa5555103cc0c2b0b98ee8ed382589ea79ce8dad",
+      "role": "contact_candidate"
+    },
+    {
+      "set": "A",
+      "question": "Q06",
+      "id": "F67",
+      "page": "200018243_00024_2",
+      "method": "docres",
+      "image": "set_A/Q06.png",
+      "page_xywh": [
+        1363,
+        1544,
+        420,
+        400
+      ],
+      "source": "tmp_work/npj_contact_research_20261007/real_models/F67/docres.png",
+      "source_roi": [
+        100,
+        200,
+        420,
+        400
+      ],
+      "source_sha256": "db43d591e1cbe249fc649c7190a8b5588bbe46cabaf9d307c04a95d988d4e208",
+      "role": "control"
+    },
+    {
+      "set": "B",
+      "question": "Q06",
+      "id": "F67",
+      "page": "200018243_00024_2",
+      "method": "original",
+      "image": "set_B/Q06.png",
+      "page_xywh": [
+        1363,
+        1544,
+        420,
+        400
+      ],
+      "source": "data/split_dataset/test/200018243/200018243_00024_2.jpg",
+      "source_roi": [
+        1363,
+        1544,
+        420,
+        400
+      ],
+      "source_sha256": "5ed8ee3ae7d6e341639fe5a7b635a2e88ff8b1a2173936b56b4887cd4b10127b",
+      "role": "control"
+    },
+    {
+      "set": "C",
+      "question": "Q06",
+      "id": "F67",
+      "page": "200018243_00024_2",
+      "method": "npj_baseline",
+      "image": "set_C/Q06.png",
+      "page_xywh": [
+        1363,
+        1544,
+        420,
+        400
+      ],
+      "source": "tmp_work/npj_contact_research_20261007/full_followup/C/output/baseline/200018243_00024_2/result/200018243_00024_2.png",
+      "source_roi": [
+        1363,
+        1544,
+        420,
+        400
+      ],
+      "source_sha256": "189a0edb349f28e316852467286248a4ff5759892d0e176599a6f7423964b833",
+      "role": "control"
+    },
+    {
+      "set": "D",
+      "question": "Q06",
+      "id": "F67",
+      "page": "200018243_00024_2",
+      "method": "sauvola_mask_ddrm",
+      "image": "set_D/Q06.png",
+      "page_xywh": [
+        1363,
+        1544,
+        420,
+        400
+      ],
+      "source": "tmp_work/npj_contact_research_20261007/full_followup/C/output/sauvola/200018243_00024_2/result/200018243_00024_2.png",
+      "source_roi": [
+        1363,
+        1544,
+        420,
+        400
+      ],
+      "source_sha256": "238f0d1cdff78d6c43bc719e1c323269449992d26e6f6cd732369b54e3a09a8a",
+      "role": "control"
+    },
+    {
+      "set": "E",
+      "question": "Q06",
+      "id": "F67",
+      "page": "200018243_00024_2",
+      "method": "automatic_local",
+      "image": "set_E/Q06.png",
+      "page_xywh": [
+        1363,
+        1544,
+        420,
+        400
+      ],
+      "source": "tmp_work/npj_contact_research_20261007/full_local/F67/sauvola.png",
+      "source_roi": [
+        1363,
+        1544,
+        420,
+        400
+      ],
+      "source_sha256": "3201635da5be29928f340df3a1ffc4e0caad92c652cad8065f63897b34be49d8",
+      "role": "control"
+    },
+    {
+      "set": "A",
+      "question": "Q07",
+      "id": "F65",
+      "page": "200025191_00008_1",
+      "method": "original",
+      "image": "set_A/Q07.png",
+      "page_xywh": [
+        136,
+        243,
+        420,
+        400
+      ],
+      "source": "data/split_dataset/train/200025191/200025191_00008_1.jpg",
+      "source_roi": [
+        136,
+        243,
+        420,
+        400
+      ],
+      "source_sha256": "bf8ed5012ad7002caaea545db3cf38bf37c5ab2ee7bcff408393095b14721f54",
+      "role": "control"
+    },
+    {
+      "set": "B",
+      "question": "Q07",
+      "id": "F65",
+      "page": "200025191_00008_1",
+      "method": "npj_baseline",
+      "image": "set_B/Q07.png",
+      "page_xywh": [
+        136,
+        243,
+        420,
+        400
+      ],
+      "source": "tmp_work/npj_contact_research_20261007/full_followup/C/output/baseline/200025191_00008_1/result/200025191_00008_1.png",
+      "source_roi": [
+        136,
+        243,
+        420,
+        400
+      ],
+      "source_sha256": "d47dc3d5ff6483e3162cf5d2c1b693902358869a59291036ff92f5b9714b7afd",
+      "role": "control"
+    },
+    {
+      "set": "C",
+      "question": "Q07",
+      "id": "F65",
+      "page": "200025191_00008_1",
+      "method": "sauvola_mask_ddrm",
+      "image": "set_C/Q07.png",
+      "page_xywh": [
+        136,
+        243,
+        420,
+        400
+      ],
+      "source": "tmp_work/npj_contact_research_20261007/full_followup/C/output/sauvola/200025191_00008_1/result/200025191_00008_1.png",
+      "source_roi": [
+        136,
+        243,
+        420,
+        400
+      ],
+      "source_sha256": "7e5b49439645042b6b81742c4431ce7fc957e90c197e45a66cfc15a9d69c4919",
+      "role": "control"
+    },
+    {
+      "set": "D",
+      "question": "Q07",
+      "id": "F65",
+      "page": "200025191_00008_1",
+      "method": "automatic_local",
+      "image": "set_D/Q07.png",
+      "page_xywh": [
+        136,
+        243,
+        420,
+        400
+      ],
+      "source": "tmp_work/npj_contact_research_20261007/full_local/F65/sauvola.png",
+      "source_roi": [
+        136,
+        243,
+        420,
+        400
+      ],
+      "source_sha256": "0a535c3e31aa57d45b9239a245c9b76068fa88bb67a09cecd923058564640ee0",
+      "role": "control"
+    },
+    {
+      "set": "E",
+      "question": "Q07",
+      "id": "F65",
+      "page": "200025191_00008_1",
+      "method": "docres",
+      "image": "set_E/Q07.png",
+      "page_xywh": [
+        136,
+        243,
+        420,
+        400
+      ],
+      "source": "tmp_work/npj_contact_research_20261007/real_models/F65/docres.png",
+      "source_roi": [
+        100,
+        200,
+        420,
+        400
+      ],
+      "source_sha256": "5fea9a6de7ebac88dae64f12a5b2fdb33da4505ec19f52683035ec754d16f8b7",
+      "role": "control"
+    },
+    {
+      "set": "A",
+      "question": "Q08",
+      "id": "T03",
+      "page": "hnsd007_022",
+      "method": "npj_baseline",
+      "image": "set_A/Q08.png",
+      "page_xywh": [
+        642,
+        383,
+        350,
+        480
+      ],
+      "source": "tmp_work/npj_contact_research_20261007/full_page/output/baseline/hnsd007_022/result/hnsd007_022.png",
+      "source_roi": [
+        642,
+        383,
+        350,
+        480
+      ],
+      "source_sha256": "2d231c7c78941473dc50591580372985084564583763aa13221ff25af8a1527a",
+      "role": "contact_candidate"
+    },
+    {
+      "set": "B",
+      "question": "Q08",
+      "id": "T03",
+      "page": "hnsd007_022",
+      "method": "sauvola_mask_ddrm",
+      "image": "set_B/Q08.png",
+      "page_xywh": [
+        642,
+        383,
+        350,
+        480
+      ],
+      "source": "tmp_work/npj_contact_research_20261007/full_page/output/sauvola/hnsd007_022/result/hnsd007_022.png",
+      "source_roi": [
+        642,
+        383,
+        350,
+        480
+      ],
+      "source_sha256": "f33ba6cae8fd2f50e05a78afae910c345db52115a0db01adf4416ea8780fb8cf",
+      "role": "contact_candidate"
+    },
+    {
+      "set": "C",
+      "question": "Q08",
+      "id": "T03",
+      "page": "hnsd007_022",
+      "method": "automatic_local",
+      "image": "set_C/Q08.png",
+      "page_xywh": [
+        642,
+        383,
+        350,
+        480
+      ],
+      "source": "tmp_work/npj_contact_research_20261007/full_local/T03/sauvola.png",
+      "source_roi": [
+        642,
+        383,
+        350,
+        480
+      ],
+      "source_sha256": "23195a5a066f0bfa3bcd5ad0dcce804b814171032dfb3378fe12a4977d84046a",
+      "role": "contact_candidate"
+    },
+    {
+      "set": "D",
+      "question": "Q08",
+      "id": "T03",
+      "page": "hnsd007_022",
+      "method": "docres",
+      "image": "set_D/Q08.png",
+      "page_xywh": [
+        642,
+        383,
+        350,
+        480
+      ],
+      "source": "tmp_work/npj_contact_research_20261007/real_models/T03/docres.png",
+      "source_roi": [
+        250,
+        180,
+        350,
+        480
+      ],
+      "source_sha256": "6a3384128f1cbcb9f90c7f3f958994896ba2b5ddb1b2fbb629cfd88fca5ec771",
+      "role": "contact_candidate"
+    },
+    {
+      "set": "E",
+      "question": "Q08",
+      "id": "T03",
+      "page": "hnsd007_022",
+      "method": "original",
+      "image": "set_E/Q08.png",
+      "page_xywh": [
+        642,
+        383,
+        350,
+        480
+      ],
+      "source": "data/split_dataset/train/hnsd00000/hnsd007_022.jpg",
+      "source_roi": [
+        642,
+        383,
+        350,
+        480
+      ],
+      "source_sha256": "7d8811bd447368b6da78d382a47ae9fc6e4ff03a5e25e6d838c5f7475b7b2caf",
+      "role": "contact_candidate"
+    },
+    {
+      "set": "A",
+      "question": "Q09",
+      "id": "T01",
+      "page": "hnsd007_023",
+      "method": "sauvola_mask_ddrm",
+      "image": "set_A/Q09.png",
+      "page_xywh": [
+        812,
+        421,
+        450,
+        450
+      ],
+      "source": "tmp_work/npj_contact_research_20261007/full_page/output/sauvola/hnsd007_023/result/hnsd007_023.png",
+      "source_roi": [
+        812,
+        421,
+        450,
+        450
+      ],
+      "source_sha256": "129d36c767d723fa247b0dd9c20b5f4424131bf6b84e9c5ea8f01fcdbe3efbe5",
+      "role": "contact_candidate"
+    },
+    {
+      "set": "B",
+      "question": "Q09",
+      "id": "T01",
+      "page": "hnsd007_023",
+      "method": "automatic_local",
+      "image": "set_B/Q09.png",
+      "page_xywh": [
+        812,
+        421,
+        450,
+        450
+      ],
+      "source": "tmp_work/npj_contact_research_20261007/full_local/T01/sauvola.png",
+      "source_roi": [
+        812,
+        421,
+        450,
+        450
+      ],
+      "source_sha256": "164e6b05854606a168445abf48cad71be48927d2fd1f1d0099df9ac8e3b46f5b",
+      "role": "contact_candidate"
+    },
+    {
+      "set": "C",
+      "question": "Q09",
+      "id": "T01",
+      "page": "hnsd007_023",
+      "method": "docres",
+      "image": "set_C/Q09.png",
+      "page_xywh": [
+        812,
+        421,
+        450,
+        450
+      ],
+      "source": "tmp_work/npj_contact_research_20261007/real_models/T01/docres.png",
+      "source_roi": [
+        130,
+        150,
+        450,
+        450
+      ],
+      "source_sha256": "8c3cbfcf2a49850ddeb7269993b7462245e17f2deaf17a6eac6bd568e9079533",
+      "role": "contact_candidate"
+    },
+    {
+      "set": "D",
+      "question": "Q09",
+      "id": "T01",
+      "page": "hnsd007_023",
+      "method": "original",
+      "image": "set_D/Q09.png",
+      "page_xywh": [
+        812,
+        421,
+        450,
+        450
+      ],
+      "source": "data/split_dataset/train/hnsd00000/hnsd007_023.jpg",
+      "source_roi": [
+        812,
+        421,
+        450,
+        450
+      ],
+      "source_sha256": "41999e5b52d17e60ea068c9b629ffcce037dc27fcbb3a4f45f46a5063d7b22af",
+      "role": "contact_candidate"
+    },
+    {
+      "set": "E",
+      "question": "Q09",
+      "id": "T01",
+      "page": "hnsd007_023",
+      "method": "npj_baseline",
+      "image": "set_E/Q09.png",
+      "page_xywh": [
+        812,
+        421,
+        450,
+        450
+      ],
+      "source": "tmp_work/npj_contact_research_20261007/full_page/output/baseline/hnsd007_023/result/hnsd007_023.png",
+      "source_roi": [
+        812,
+        421,
+        450,
+        450
+      ],
+      "source_sha256": "50f8d8a04c2cf9cf916f4f2dec0af735ca79f3bd97d8f91e5f00275c270514ba",
+      "role": "contact_candidate"
+    }
+  ],
+  "source_sha256": "9abe70e1d2725556a8d02f3118c0622d85ba99323c1e4381310267614e1f1a41",
+  "GT_transcription": false,
+  "reading_evaluation_completed": false,
+  "counterbalance": "cyclic across5sets with shuffled case/method order; each set sees each location only once",
+  "perfect_method_blinding": false,
+  "all_panels_native": true
+}

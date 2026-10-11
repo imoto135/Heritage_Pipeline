@@ -1,0 +1,56 @@
+{
+  "stroke_width": 4.393799781799316,
+  "eligible_components": 1,
+  "groups": [
+    {
+      "group": 1,
+      "components": [
+        841
+      ],
+      "context_xywh": [
+        284,
+        2698,
+        160,
+        160
+      ],
+      "matches": [],
+      "selected_components": [],
+      "decision": "hold_single_component"
+    }
+  ],
+  "removed_pixels": 0,
+  "removed_components": 0,
+  "strict_geometry_removed_pixels": 0,
+  "strict_geometry_removed_components": 0,
+  "naive_csc_veto_removed_pixels": 14062,
+  "id": "F02",
+  "page": "200021063_00007_1",
+  "origin": "fixed_holdout_validation",
+  "neighbors": [
+    "data/test/200021063/200021063_00006_1.jpg",
+    "data/test/200021063/200021063_00006_2.jpg",
+    "data/test/200021063/200021063_00007_2.jpg",
+    "data/test/200021063/200021063_00008_1.jpg"
+  ],
+  "masks_unchanged": true,
+  "route_counts": {
+    "red": 0,
+    "text": 918757,
+    "background": 5150733,
+    "repair_candidate": 56232,
+    "unknown": 315511
+  },
+  "dependencies": {
+    "data/test/200021063/200021063_00007_1.jpg": "5b67654ae0bb73ec9dc3c243c253a0841b85d848d3b10130432d7d8e8201f86b",
+    "tmp_work/test_only_challenge_search_20261009/fixed_holdout_validation/masks/howe/200021063_00007_1/02_text_black.png": "ba1b6f5e443f1fbb3c37a72f0eb6600dfc7cc9d089e30b4414a61c7fff18f42a",
+    "tmp_work/test_only_challenge_search_20261009/fixed_holdout_validation/masks/howe/200021063_00007_1/03_text_red.png": "0f311564198189531dd4d4fbf0e1312efa6e9de3f73626e01e253cdaa1f01959",
+    "data/split_dataset_csc_mask_v2/test/200021063/200021063_00007_1/02_text_black.png": "9751bd44e45ca665f279366df1b53c5d8b26a2e3733e50bd2ce1562dd30cbf68",
+    "data/split_dataset_csc_mask_v2/test/200021063/200021063_00007_1/04_degradation.png": "cd301a5ae2d290d135a44e23fd54dedd48acacaae8c8da342cb1fcad6a386fdb",
+    "data/split_dataset_csc_mask_v2/test/200021063/200021063_00007_1/05_background.png": "8e146a3ba427a0a3823df13cbfcdeb85e897f1aaf5450e0ec51fcdbf0b12d321",
+    "data/test/200021063/200021063_00006_1.jpg": "403290ae9a3f30a28536bea63e29784da07bd707dd986f7349f20439d2b4e5f5",
+    "data/test/200021063/200021063_00006_2.jpg": "7084ea151d5087b267c07fb2cf262abe0dc0a9360b0d6a6c7a7802d50ec7289f",
+    "data/test/200021063/200021063_00007_2.jpg": "d7cae93d27d356c2dbcf6a5e7ef8cbfaca639aa1c70bb096d6f90ee592ef8bce",
+    "data/test/200021063/200021063_00008_1.jpg": "05f27a99405a02640cb5311e91876aa5e74560783b85c928bf7d2bf53a2d07b0"
+  },
+  "seconds": 2.84
+}

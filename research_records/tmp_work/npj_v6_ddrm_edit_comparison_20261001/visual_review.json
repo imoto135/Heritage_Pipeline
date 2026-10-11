@@ -1,0 +1,129 @@
+{
+  "summary": "薄い輪状筆画では、npj側で筆画の消失・変形が起こり、v6側では編集を回避して原形を保つ。赤褐色の長い筆画にも同じ傾向がある。ただし、別ページの細い本文では差が小さい例もあり、一律の改善率にはしない。\n\n本文・枠につながる茶色い汚れ、本文に接する茶色い部分、穴・裂けの濃い縁は両方で残る。孤立した汚れはv6で編集できても明るい塗り跡・境界が残る。本文対照もnpj側では筆画周縁に生成による変形が見える一方、v6側はほぼ原画像を維持する。この保守性は紙面の影・ムラを残すことにもつながる。",
+  "findings": [
+    {
+      "id": "dense_stain",
+      "page": "hnsd001_011",
+      "baseline_failure": true,
+      "verdict": "fill_artifact",
+      "short_observation": "v6は中心を編集できるが、明るい塗り跡と境界が残る。",
+      "observation": "npj側は濃い中心を残す。v6側は中心を明るくするが、平坦な面と細い茶色の境界が残り、自然な紙面の復元とは言えない。"
+    },
+    {
+      "id": "thin_black_water",
+      "page": "hnsd001_011",
+      "baseline_failure": true,
+      "verdict": "stroke_change_avoided_stain_retained",
+      "short_observation": "v6は薄い本文を維持する一方、水染みも残る。",
+      "observation": "npj側は薄い本文の一部・筆画周辺に消失や生成された形が出る。v6側の変更は10画素で原状をほぼ維持するが、水染み・紙面のムラも維持する。"
+    },
+    {
+      "id": "brown_as_red",
+      "page": "200010454_00002_2",
+      "baseline_failure": true,
+      "verdict": "fill_artifact",
+      "short_observation": "v6は茶色い中心を編集するが、明るい塗り跡が残る。",
+      "observation": "npj側は茶色い中心を残す。v6側は中心を編集するが、紙面との境界と明るい塗り跡が残る。"
+    },
+    {
+      "id": "thin_black_loop",
+      "page": "200010454_00002_2",
+      "baseline_failure": true,
+      "verdict": "stroke_preservation",
+      "short_observation": "npj側で筆画が消失・変形。v6側は原画像と完全一致。",
+      "observation": "npj側では細い輪状筆画が途切れ、中程度の濃さの筆画にも欠落・生成による変形が出る。v6側は編集候補0で矩形内の出力が原画像と完全一致し、原形を保持する。"
+    },
+    {
+      "id": "thin_black_text",
+      "page": "200003803_00009_2",
+      "baseline_failure": false,
+      "verdict": "control_change_avoided",
+      "short_observation": "本文対照：v6は原形をほぼ維持。npj側に生成による変形。",
+      "observation": "主要な本文は両方で残るが、npj側では細い線や筆画周辺に生成による変形が見える。v6側は2画素の変更で原形をほぼ維持する。灰色成分が裏写りか影かは未確定。"
+    },
+    {
+      "id": "warm_stroke",
+      "page": "200021763_00002_2",
+      "baseline_failure": true,
+      "verdict": "stroke_preservation",
+      "short_observation": "v6は赤褐色の長い筆画を維持。npj側に欠落・灰色の生成。",
+      "observation": "npj側は長い赤褐色筆画の端部・周縁を欠落させ、周囲に灰色の線状成分も生成する。v6側は保留により長い線を維持する。朱の確定分類や消えた文字の復元成功とは言わない。"
+    },
+    {
+      "id": "control_black",
+      "page": "200021869_00010_2",
+      "baseline_failure": false,
+      "verdict": "control_change_avoided",
+      "short_observation": "本文対照：v6はほぼ維持。npj側は周縁・内側を変形。",
+      "observation": "主要な濃い本文は両方で残るが、npj側には周縁や文字の内側で灰色線・塗り跡が出る。v6側は4画素のみ変更して原形をほぼ維持する。"
+    },
+    {
+      "id": "dense_stain_new",
+      "page": "hnsd007_042",
+      "baseline_failure": true,
+      "verdict": "stain_retained",
+      "short_observation": "本文・枠とつながる汚れは両方で残る。",
+      "observation": "茶色い塊の中心は両方で残る。npj側には編集領域と残存汚れの境界が出る。v6側は39画素のみ変更し、汚れの除去には至らない。"
+    },
+    {
+      "id": "brown_false_red_new",
+      "page": "100249476_00003_1",
+      "baseline_failure": true,
+      "verdict": "fill_artifact_and_stain_retained",
+      "short_observation": "v6は一部を編集するが、広い薄茶色と塗り跡が残る。",
+      "observation": "v6側は茶色い領域の一部を明るくするが、紙面の色ムラ・塗り跡が残り、左端付近に灰色の生成成分も見える。広い薄茶色の染みは残る。"
+    },
+    {
+      "id": "hole_edge_new",
+      "page": "200021712_00082_1",
+      "baseline_failure": true,
+      "verdict": "damage_retained",
+      "short_observation": "穴の濃い縁は両方で残る。npj側には細い生成跡。",
+      "observation": "両方とも濃い縁は残る。npj側は周縁の一部を消して細い線状の生成跡を作る。v6側は644画素を変更するが、損傷修復には至らない。"
+    },
+    {
+      "id": "control_text_new",
+      "page": "200021712_00082_1",
+      "baseline_failure": false,
+      "verdict": "control_change_avoided",
+      "short_observation": "本文対照：v6は原画像と完全一致。npj側は文字周囲を変形。",
+      "observation": "v6側は編集候補0で矩形全体が原画像と完全一致する。npj側は主要筆画を残すが、周囲の影や薄い線に生成による形の変化が見られる。"
+    },
+    {
+      "id": "brown_near_text",
+      "page": "200021869_00014_2",
+      "baseline_failure": true,
+      "verdict": "stain_or_damage_retained",
+      "short_observation": "本文に接する茶色い中心は両方で残る。",
+      "observation": "npj側は茶色い部分の周囲を変えるが濃い中心を残す。v6側も中心は保護・保留されたまま残る。汚れか損傷かの原因は画像だけでは未確定。"
+    },
+    {
+      "id": "dark_text_control",
+      "page": "200021869_00014_2",
+      "baseline_failure": false,
+      "verdict": "control_change_avoided",
+      "short_observation": "本文対照：v6はほぼ維持。npj側には文字内側の生成跡。",
+      "observation": "濃い主要筆画は両方で残るが、npj側では内側や周縁に生成による線・色ムラが出る。v6側は43画素のみ変更して原形をほぼ維持する。"
+    },
+    {
+      "id": "faint_left_text",
+      "page": "200010454_00026_1",
+      "baseline_failure": true,
+      "verdict": "small_difference",
+      "short_observation": "この別ページの差は小さい。v6は薄い筆画をほぼ維持。",
+      "observation": "この矩形ではnpj側でも主要筆画と多くの細い線が残り、薄い端部・周囲に一部変化が見える。v6側は66画素の変更でほぼ原状を維持する。輪状筆画の例ほど明瞭な差ではない。"
+    },
+    {
+      "id": "damage_control",
+      "page": "200014740_00065_2",
+      "baseline_failure": true,
+      "verdict": "damage_retained",
+      "short_observation": "別冊の穴・裂けの濃い縁は両方で残る。",
+      "observation": "npj側は紙の損傷の周縁と一部の本文周辺を変えるが濃い縁は残る。v6側は116画素のみ変更し、紙の損傷の修復には至らない。"
+    }
+  ],
+  "reviewer": "assistant_visual_review",
+  "pixel_GT": false,
+  "human_confirmation_pending": true,
+  "representative_accuracy": false
+}

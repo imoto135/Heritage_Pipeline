@@ -1,0 +1,20 @@
+{
+  "recipe": "fidelity_v1",
+  "black_fraction": 0.0405994985520768,
+  "csc_seed": 42,
+  "lightness_rescue": "on",
+  "mask_fractions": {
+    "black": 0.0405994985520768,
+    "red": 0.0,
+    "degradation": 0.011885728387865306,
+    "background": 0.9475291503944554
+  },
+  "mask_overlap_pixels": 103,
+  "inpaint_radius": 15,
+  "dilation_kernel": 5,
+  "tone_normalization": false,
+  "text_gain": 1.0,
+  "residual_sweep": false,
+  "stage": "prepare",
+  "elapsed_seconds": 20.853181013837457
+}

@@ -1,0 +1,47 @@
+{
+  "case": {
+    "id": "F04",
+    "page": "200021063_00002_2",
+    "source": "data/test/200021063/200021063_00002_2.jpg",
+    "input_size": [
+      2069,
+      3161
+    ]
+  },
+  "methods": [
+    {
+      "method": "howe_local_red",
+      "black_pixels": 836509,
+      "red_pixels": 19717,
+      "red_howe_overlap_removed": 17169,
+      "masks_sha256": {
+        "tmp_work/test_only_challenge_search_20261009/red_detection_followup/masks/howe_local_red/200021063_00002_2/03_text_red.png": "53d98ed2cac6730b04a418204c7602b58acfae3842e25508899c92018bd7d50c",
+        "tmp_work/test_only_challenge_search_20261009/red_detection_followup/masks/howe_local_red/200021063_00002_2/02_text_black.png": "53dd756124c0815485ff90228ac35598c3ac91bfe4ab6612acdc0e0ca507f4fe"
+      }
+    },
+    {
+      "method": "howe_v1_red",
+      "black_pixels": 841715,
+      "red_pixels": 39686,
+      "red_howe_overlap_removed": 11963,
+      "masks_sha256": {
+        "tmp_work/test_only_challenge_search_20261009/red_detection_followup/masks/howe_v1_red/200021063_00002_2/03_text_red.png": "a95f75a802def333af4523ec1afb7f6a7f17bb5eacd172488c921ad84dae4db6",
+        "tmp_work/test_only_challenge_search_20261009/red_detection_followup/masks/howe_v1_red/200021063_00002_2/02_text_black.png": "1532a29d73922994702eb3b0ce7fc4950537db83c9df5fe88dcea9f2b9bd66b5"
+      }
+    }
+  ],
+  "howe_raw_reused": "tmp_work/test_only_challenge_search_20261009/fixed_holdout_validation/masks/howe/200021063_00002_2/02_text_black.png",
+  "howe_raw_sha256": "69414f59ae4cfaf72141a3dda29225f913660ede889a5b31a67474a3c5262c2e",
+  "input_sha256": "5f3d987a099149ea73332ab7420b22dd5e93d3b9908c34d3f8ee210966a25fe7",
+  "checkpoint_sha256": "1a5decb747e34e8b51ccea96b598fe3c6ec0e7f7a6f8df6cffc3135d8281a7f3",
+  "pipeline_sha256": "bbc130a1761be21dfa7ff6d5ec9bc29e34155a56dfa405d91daa6a989a77f2ec",
+  "background_sha256": "2a96dbde5301415c593dc1d119410e7a077a6ac15ea3d8d8d5f8d4021dc3897c",
+  "parameters": {
+    "seed": 999,
+    "steps": 20,
+    "patch": 128,
+    "overlap": 32,
+    "shared_initial_noise": true
+  },
+  "limitations": "Exploratory F04 comparison. Different black masks do not guarantee identical stepwise random noise. Red pixels copy original RGB; no seal reconstruction."
+}

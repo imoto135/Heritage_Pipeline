@@ -1,0 +1,69 @@
+{
+  "target": "200021660_00028_1",
+  "target_source_sha256": "716cc9b46f9f2ce021c7f4b58dbecc40eafc208da64538d0d20a5448546eea0e",
+  "target_mask_sha256": "1c0d67fafca0dde7343f3715ef6381e7c1538cf1db9740c070d50a384feca2b0",
+  "roi_xywh": [
+    1093,
+    1723,
+    768,
+    768
+  ],
+  "method": "CSC v2 front-text mask dilated 3x3; OpenCV Telea inpaint radius 9; Gaussian residual sigma 35 minus sigma 4; mirrored candidate resized to target page; half-size TM_CCOEFF_NORMED over +/-180 native pixels",
+  "results": [
+    {
+      "page": "200021660_00027_1",
+      "source_sha256": "d59de8392ebcd290d34174d63f761f2cb1903cbfa444d62b526838c412185713",
+      "correlation": 0.187657,
+      "shift_xy": [
+        -14,
+        -102
+      ]
+    },
+    {
+      "page": "200021660_00027_2",
+      "source_sha256": "98f6c330a22534f42c9dfd36f1fe30b898269624a69effdf69a32f37bcd9caed",
+      "correlation": 0.463222,
+      "shift_xy": [
+        2,
+        -26
+      ]
+    },
+    {
+      "page": "200021660_00028_2",
+      "source_sha256": "d37d54857a1590472be7176362f9a2de0e04584daa42685e011c3013740f5645",
+      "correlation": 0.072169,
+      "shift_xy": [
+        180,
+        22
+      ]
+    },
+    {
+      "page": "200021660_00029_1",
+      "source_sha256": "d7c09014a2a63acd06d470893ffb10cf2040fa9269ade68ba200af82a873b4fc",
+      "correlation": 0.061378,
+      "shift_xy": [
+        -102,
+        -20
+      ]
+    },
+    {
+      "page": "200021660_00029_2",
+      "source_sha256": "58f760ffdb3c971f8d84035e88cc91170b9133686b9a2a6c2d09955985aee098",
+      "correlation": 0.076792,
+      "shift_xy": [
+        10,
+        28
+      ]
+    },
+    {
+      "page": "200021660_00030_1",
+      "source_sha256": "76873d668c204385e6eb2a6c963d0d95c6d8937807e32bceba7a125372a22ebf",
+      "correlation": 0.191152,
+      "shift_xy": [
+        -36,
+        148
+      ]
+    }
+  ],
+  "interpretation": "The immediately preceding 00027_2 image is a much stronger source match than other tested neighboring pages. This supports show-through from the reverse/adjacent leaf; it does not establish pixelwise text/ghost ground truth."
+}

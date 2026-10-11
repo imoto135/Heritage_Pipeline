@@ -1,0 +1,324 @@
+{
+  "results": [
+    {
+      "id": "N01",
+      "method": "su_fixed19",
+      "seconds": 1.488047637998534,
+      "details": {
+        "alpha": 0.17743679287377745,
+        "gamma": 1,
+        "contrast_otsu": 0.17151138186454773,
+        "canny_high": 0.038287673890590665,
+        "canny_low": 0.015315069556236266,
+        "edge_pixels": 80802,
+        "estimated_horizontal_edge_width": 47,
+        "threshold_window": 19,
+        "edge_pair_samples": 22185,
+        "window_override": 19,
+        "initial_pixels": 272855,
+        "final_pixels": 256109,
+        "implementation_limit": "Canny uses skimage with automatic thresholds; final removal implements isolated pixels, not every boundary logical operator referenced in the paper. Author MATLAB p-code not executed."
+      }
+    },
+    {
+      "id": "N01",
+      "method": "su_fixed61",
+      "seconds": 1.4516297970003507,
+      "details": {
+        "alpha": 0.17743679287377745,
+        "gamma": 1,
+        "contrast_otsu": 0.17151138186454773,
+        "canny_high": 0.038287673890590665,
+        "canny_low": 0.015315069556236266,
+        "edge_pixels": 80802,
+        "estimated_horizontal_edge_width": 47,
+        "threshold_window": 61,
+        "edge_pair_samples": 22185,
+        "window_override": 61,
+        "initial_pixels": 318942,
+        "final_pixels": 301831,
+        "implementation_limit": "Canny uses skimage with automatic thresholds; final removal implements isolated pixels, not every boundary logical operator referenced in the paper. Author MATLAB p-code not executed."
+      }
+    },
+    {
+      "id": "T01",
+      "method": "su_fixed19",
+      "seconds": 1.989037979999921,
+      "details": {
+        "alpha": 0.23854236787883565,
+        "gamma": 1,
+        "contrast_otsu": 0.12326637655496597,
+        "canny_high": 0.07177857756614685,
+        "canny_low": 0.02871143102645874,
+        "edge_pixels": 155948,
+        "estimated_horizontal_edge_width": 30,
+        "threshold_window": 19,
+        "edge_pair_samples": 45393,
+        "window_override": 19,
+        "initial_pixels": 702236,
+        "final_pixels": 667750,
+        "implementation_limit": "Canny uses skimage with automatic thresholds; final removal implements isolated pixels, not every boundary logical operator referenced in the paper. Author MATLAB p-code not executed."
+      }
+    },
+    {
+      "id": "T01",
+      "method": "su_fixed61",
+      "seconds": 2.0115345819995127,
+      "details": {
+        "alpha": 0.23854236787883565,
+        "gamma": 1,
+        "contrast_otsu": 0.12326637655496597,
+        "canny_high": 0.07177857756614685,
+        "canny_low": 0.02871143102645874,
+        "edge_pixels": 155948,
+        "estimated_horizontal_edge_width": 30,
+        "threshold_window": 61,
+        "edge_pair_samples": 45393,
+        "window_override": 61,
+        "initial_pixels": 921978,
+        "final_pixels": 884505,
+        "implementation_limit": "Canny uses skimage with automatic thresholds; final removal implements isolated pixels, not every boundary logical operator referenced in the paper. Author MATLAB p-code not executed."
+      }
+    },
+    {
+      "id": "N05",
+      "method": "su_fixed19",
+      "seconds": 1.3957328540000162,
+      "details": {
+        "alpha": 0.1762102750944905,
+        "gamma": 1,
+        "contrast_otsu": 0.1856270432472229,
+        "canny_high": 0.03378542065620422,
+        "canny_low": 0.01351416826248169,
+        "edge_pixels": 74882,
+        "estimated_horizontal_edge_width": 137,
+        "threshold_window": 19,
+        "edge_pair_samples": 21079,
+        "window_override": 19,
+        "initial_pixels": 233552,
+        "final_pixels": 217845,
+        "implementation_limit": "Canny uses skimage with automatic thresholds; final removal implements isolated pixels, not every boundary logical operator referenced in the paper. Author MATLAB p-code not executed."
+      }
+    },
+    {
+      "id": "N05",
+      "method": "su_fixed61",
+      "seconds": 1.4223017519998393,
+      "details": {
+        "alpha": 0.1762102750944905,
+        "gamma": 1,
+        "contrast_otsu": 0.1856270432472229,
+        "canny_high": 0.03378542065620422,
+        "canny_low": 0.01351416826248169,
+        "edge_pixels": 74882,
+        "estimated_horizontal_edge_width": 137,
+        "threshold_window": 61,
+        "edge_pair_samples": 21079,
+        "window_override": 61,
+        "initial_pixels": 237698,
+        "final_pixels": 222233,
+        "implementation_limit": "Canny uses skimage with automatic thresholds; final removal implements isolated pixels, not every boundary logical operator referenced in the paper. Author MATLAB p-code not executed."
+      }
+    }
+  ],
+  "panels": [
+    {
+      "path": "figures/N01_Su幅推定の診断.png",
+      "sha256": "d5d0aa25f80eecb013cd158d0c289380891f35381f6c1baf0d757f650d7c1262",
+      "placements": [
+        {
+          "method": "original",
+          "xywh": [
+            22,
+            150,
+            570,
+            660
+          ],
+          "integer_scale": 3
+        },
+        {
+          "method": "sauvola61",
+          "xywh": [
+            614,
+            150,
+            570,
+            660
+          ],
+          "integer_scale": 3
+        },
+        {
+          "method": "su2013_local",
+          "xywh": [
+            1206,
+            150,
+            570,
+            660
+          ],
+          "integer_scale": 3
+        },
+        {
+          "method": "su_fixed19",
+          "xywh": [
+            22,
+            877,
+            570,
+            660
+          ],
+          "integer_scale": 3
+        },
+        {
+          "method": "su_fixed61",
+          "xywh": [
+            614,
+            877,
+            570,
+            660
+          ],
+          "integer_scale": 3
+        },
+        {
+          "method": "gatos_initial",
+          "xywh": [
+            1206,
+            877,
+            570,
+            660
+          ],
+          "integer_scale": 3
+        }
+      ]
+    },
+    {
+      "path": "figures/T01_Su幅推定の診断.png",
+      "sha256": "7513d4cd3e05167993eeb7cb47705c026b41db09d215bf55f2d666078effc0b5",
+      "placements": [
+        {
+          "method": "original",
+          "xywh": [
+            22,
+            150,
+            450,
+            450
+          ],
+          "integer_scale": 1
+        },
+        {
+          "method": "sauvola61",
+          "xywh": [
+            494,
+            150,
+            450,
+            450
+          ],
+          "integer_scale": 1
+        },
+        {
+          "method": "su2013_local",
+          "xywh": [
+            966,
+            150,
+            450,
+            450
+          ],
+          "integer_scale": 1
+        },
+        {
+          "method": "su_fixed19",
+          "xywh": [
+            22,
+            667,
+            450,
+            450
+          ],
+          "integer_scale": 1
+        },
+        {
+          "method": "su_fixed61",
+          "xywh": [
+            494,
+            667,
+            450,
+            450
+          ],
+          "integer_scale": 1
+        },
+        {
+          "method": "gatos_initial",
+          "xywh": [
+            966,
+            667,
+            450,
+            450
+          ],
+          "integer_scale": 1
+        }
+      ]
+    },
+    {
+      "path": "figures/N05_Su幅推定の診断.png",
+      "sha256": "bf095953f29256dac69d368ff16fb55cc02909fec49a728fc299a65bc9c4be29",
+      "placements": [
+        {
+          "method": "original",
+          "xywh": [
+            22,
+            150,
+            560,
+            760
+          ],
+          "integer_scale": 2
+        },
+        {
+          "method": "sauvola61",
+          "xywh": [
+            604,
+            150,
+            560,
+            760
+          ],
+          "integer_scale": 2
+        },
+        {
+          "method": "su2013_local",
+          "xywh": [
+            1186,
+            150,
+            560,
+            760
+          ],
+          "integer_scale": 2
+        },
+        {
+          "method": "su_fixed19",
+          "xywh": [
+            22,
+            977,
+            560,
+            760
+          ],
+          "integer_scale": 2
+        },
+        {
+          "method": "su_fixed61",
+          "xywh": [
+            604,
+            977,
+            560,
+            760
+          ],
+          "integer_scale": 2
+        },
+        {
+          "method": "gatos_initial",
+          "xywh": [
+            1186,
+            977,
+            560,
+            760
+          ],
+          "integer_scale": 2
+        }
+      ]
+    }
+  ]
+}

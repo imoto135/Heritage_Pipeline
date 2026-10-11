@@ -1,0 +1,33 @@
+{
+  "cases": [
+    {
+      "id": "V01",
+      "preserved_howe_mask_pixels": 421498,
+      "changed_preserved_pixel_rgb": 0,
+      "baseline_preserved_pixels_above_gray128": 0,
+      "candidate_preserved_pixels_above_gray128": 0
+    },
+    {
+      "id": "V02",
+      "preserved_howe_mask_pixels": 692238,
+      "changed_preserved_pixel_rgb": 50,
+      "baseline_preserved_pixels_above_gray128": 0,
+      "candidate_preserved_pixels_above_gray128": 0
+    },
+    {
+      "id": "V03",
+      "preserved_howe_mask_pixels": 363137,
+      "changed_preserved_pixel_rgb": 0,
+      "baseline_preserved_pixels_above_gray128": 0,
+      "candidate_preserved_pixels_above_gray128": 0
+    },
+    {
+      "id": "V04",
+      "preserved_howe_mask_pixels": 298720,
+      "changed_preserved_pixel_rgb": 0,
+      "baseline_preserved_pixels_above_gray128": 0,
+      "candidate_preserved_pixels_above_gray128": 0
+    }
+  ],
+  "interpretation": "Checks preservation of retained Howe foreground in output; does not establish text ground truth or total character recall"
+}

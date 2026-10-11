@@ -1,0 +1,270 @@
+{
+  "cases": 3,
+  "methods_per_case": 20,
+  "figures": 27,
+  "runtimes": [
+    {
+      "id": "N01",
+      "method": "bradley61",
+      "seconds": 0.09277177299918549
+    },
+    {
+      "id": "N01",
+      "method": "bradley_paper",
+      "seconds": 0.09415759000148682
+    },
+    {
+      "id": "N01",
+      "method": "bradley61_t10",
+      "seconds": 0.0943787149990385
+    },
+    {
+      "id": "N01",
+      "method": "phansalkar61",
+      "seconds": 0.14858403799917141
+    },
+    {
+      "id": "N01",
+      "method": "phansalkar31",
+      "seconds": 0.14812075400004687
+    },
+    {
+      "id": "N01",
+      "method": "bg31_otsu",
+      "seconds": 0.07657295299941325
+    },
+    {
+      "id": "N01",
+      "method": "bg61_otsu",
+      "seconds": 0.07106763999945542
+    },
+    {
+      "id": "N01",
+      "method": "bg61_wolf",
+      "seconds": 0.1479464790008933
+    },
+    {
+      "id": "N01",
+      "method": "bg61_sauvola",
+      "seconds": 0.13659015099983662
+    },
+    {
+      "id": "N01",
+      "method": "bg61_nick",
+      "seconds": 0.1439871000002313
+    },
+    {
+      "id": "N01",
+      "method": "bg121_otsu",
+      "seconds": 0.07713534799950139
+    },
+    {
+      "id": "N01",
+      "method": "howe80",
+      "seconds": 3.70476630200028
+    },
+    {
+      "id": "N01",
+      "method": "howe160",
+      "seconds": 4.311497644001065
+    },
+    {
+      "id": "N01",
+      "method": "howe320",
+      "seconds": 3.653491925000708
+    },
+    {
+      "id": "T01",
+      "method": "bradley61",
+      "seconds": 0.1446766649987694
+    },
+    {
+      "id": "T01",
+      "method": "bradley_paper",
+      "seconds": 0.14389039900015632
+    },
+    {
+      "id": "T01",
+      "method": "bradley61_t10",
+      "seconds": 0.14441104299839935
+    },
+    {
+      "id": "T01",
+      "method": "phansalkar61",
+      "seconds": 0.21296426499975496
+    },
+    {
+      "id": "T01",
+      "method": "phansalkar31",
+      "seconds": 0.2053342569997767
+    },
+    {
+      "id": "T01",
+      "method": "bg31_otsu",
+      "seconds": 0.10596903699843097
+    },
+    {
+      "id": "T01",
+      "method": "bg61_otsu",
+      "seconds": 0.11576242100090894
+    },
+    {
+      "id": "T01",
+      "method": "bg61_wolf",
+      "seconds": 0.2097710289999668
+    },
+    {
+      "id": "T01",
+      "method": "bg61_sauvola",
+      "seconds": 0.19587158499962243
+    },
+    {
+      "id": "T01",
+      "method": "bg61_nick",
+      "seconds": 0.21444773599978362
+    },
+    {
+      "id": "T01",
+      "method": "bg121_otsu",
+      "seconds": 0.11736679800014826
+    },
+    {
+      "id": "T01",
+      "method": "howe80",
+      "seconds": 3.849292463999518
+    },
+    {
+      "id": "T01",
+      "method": "howe160",
+      "seconds": 4.070031528000982
+    },
+    {
+      "id": "T01",
+      "method": "howe320",
+      "seconds": 4.452325529000518
+    },
+    {
+      "id": "N05",
+      "method": "bradley61",
+      "seconds": 0.08627459599847498
+    },
+    {
+      "id": "N05",
+      "method": "bradley_paper",
+      "seconds": 0.08973496200087538
+    },
+    {
+      "id": "N05",
+      "method": "bradley61_t10",
+      "seconds": 0.09040677200027858
+    },
+    {
+      "id": "N05",
+      "method": "phansalkar61",
+      "seconds": 0.137122995000027
+    },
+    {
+      "id": "N05",
+      "method": "phansalkar31",
+      "seconds": 0.1354938479998964
+    },
+    {
+      "id": "N05",
+      "method": "bg31_otsu",
+      "seconds": 0.07234393100043235
+    },
+    {
+      "id": "N05",
+      "method": "bg61_otsu",
+      "seconds": 0.07130032299937739
+    },
+    {
+      "id": "N05",
+      "method": "bg61_wolf",
+      "seconds": 0.1389788829983445
+    },
+    {
+      "id": "N05",
+      "method": "bg61_sauvola",
+      "seconds": 0.12998045999847818
+    },
+    {
+      "id": "N05",
+      "method": "bg61_nick",
+      "seconds": 0.14200520899976254
+    },
+    {
+      "id": "N05",
+      "method": "bg121_otsu",
+      "seconds": 0.07053732899839815
+    },
+    {
+      "id": "N05",
+      "method": "howe80",
+      "seconds": 3.3854425369991077
+    },
+    {
+      "id": "N05",
+      "method": "howe160",
+      "seconds": 3.2516384579994337
+    },
+    {
+      "id": "N05",
+      "method": "howe320",
+      "seconds": 3.9045639649993973
+    }
+  ],
+  "verification": {
+    "graphcut_exhaustive_energy_checks": [
+      {
+        "shape": [
+          2,
+          3
+        ],
+        "enumerated_labelings": 64,
+        "exact_energy": 20.492061306101597
+      },
+      {
+        "shape": [
+          3,
+          3
+        ],
+        "enumerated_labelings": 512,
+        "exact_energy": 31.020127885678264
+      }
+    ],
+    "local_statistics_direct_check": true,
+    "phansalkar_direct_formula_check": true,
+    "uniform_paper_checks": true
+  },
+  "source_hashes_unchanged": true,
+  "source_sha256": {
+    "data/split_dataset/test/200010454/200010454_00003_2.jpg": "67c1f8a762d442015f420a34512119163c3e4cb06307bb75567d086f119a246f",
+    "tmp_work/classical_black_comparison_20261008/masks/N01/wolf61.png": "954c7ffdf5715dc38aa687fba4f889ce3995855c9c0e1d137d78fc28522db097",
+    "tmp_work/classical_black_comparison_20261008/masks/N01/sauvola61.png": "03c98cfcd10b35067835806f7de26e4f9668b5bc65efd995f99fe40f3599ced1",
+    "tmp_work/classical_black_comparison_20261008/masks/N01/nick61.png": "347ab48372a64db36fc6571d7ec58f262b4f856405cece668df4a833881eaa8b",
+    "tmp_work/classical_black_comparison_20261008/masks/N01/nick19.png": "9a364b2e9082cbc7a07823d27b6ddcab35c56e9bc881171dec87371f9144bb93",
+    "tmp_work/classical_black_comparison_20261008/masks/N01/gatos_native.png": "910a296c330b142ae7b07f559452605ceed605682fecf90c12a359193e1ba084",
+    "tmp_work/classical_black_comparison_20261008/masks/N01/su2013_local.png": "8de96d8ba6ec61dfaabb67a15d25fc3a420182d4b2d46987d8e2b2890c12ea49",
+    "data/split_dataset/train/hnsd00000/hnsd007_023.jpg": "41999e5b52d17e60ea068c9b629ffcce037dc27fcbb3a4f45f46a5063d7b22af",
+    "tmp_work/classical_black_comparison_20261008/masks/T01/wolf61.png": "0d76c4e6def59fa2f1e981f7d22dd8f0833e0d1bb5ab4881add198971b2645e1",
+    "tmp_work/classical_black_comparison_20261008/masks/T01/sauvola61.png": "9f2eefd2eca3afd3467456bfdb26b6f74374a0a872bf5eff50b54dd132e55428",
+    "tmp_work/classical_black_comparison_20261008/masks/T01/nick61.png": "323213cf0c3a31bb246d7ed1be0b7ec155a18eadbb7bcd62982628cac66979f0",
+    "tmp_work/classical_black_comparison_20261008/masks/T01/nick19.png": "ed637094e542b3eabdddfa341784193ad70f90f796cb59329b61c409580942ad",
+    "tmp_work/classical_black_comparison_20261008/masks/T01/gatos_native.png": "f235c53c3f15031d463d332a8a6549ecb8cd8925e558bcd65674804a9eaa012e",
+    "tmp_work/classical_black_comparison_20261008/masks/T01/su2013_local.png": "bfebbfe4214a60167bd5366077b4241a0bb1a2f7b32fa7b3e92dfb3aaa57e4f4",
+    "data/split_dataset/test/200010454/200010454_00021_1.jpg": "cc0e546948bc14c4f68849aede4a5c02453aabe55d3a3c5c14aa3a1e536aacae",
+    "tmp_work/classical_black_comparison_20261008/masks/N05/wolf61.png": "18ff18cc9a5299ef873f5786fb99072b126dfc42bba3ee7ccca487572ec078ba",
+    "tmp_work/classical_black_comparison_20261008/masks/N05/sauvola61.png": "a33722f7efff6d0124c408516cb7e250b4b70ac40d3ee38370c227eb8c137785",
+    "tmp_work/classical_black_comparison_20261008/masks/N05/nick61.png": "e1f6ee071ac58ad75dc2989312b501c6f1b95c8b1bfdadff79eb2530a05d32c5",
+    "tmp_work/classical_black_comparison_20261008/masks/N05/nick19.png": "4e762b31015190640135e92633870218769c022f2437bdb019964544129a45a9",
+    "tmp_work/classical_black_comparison_20261008/masks/N05/gatos_native.png": "d236f9cdcec8e9b0572c94fc7230086dac2c0bf3962b362f055e5acf49eb0d97",
+    "tmp_work/classical_black_comparison_20261008/masks/N05/su2013_local.png": "bd2b3265e8981ac1be144542293f8e8c2c481cca7ebff1fe7c6dedbcea1106b7"
+  },
+  "source_script_sha256": "6992dca33c907aa6a187495b064b97f1b4cf174e64b82da036bb993c68e1f5d0",
+  "graphcut_adapter_sha256": "ad21ff552c882d4d48f64f89c8c98137ce891d300ad399f40ed281a600a5c828",
+  "graphcut_executable_sha256": "2c26f655019335c224c315e1a2444b7189e6faca7407f6076a0e8597a504e250",
+  "protocol_sha256": "d8944bc035843a0cb1eedc449258dddf7899e0de888ac824e1e1396a6ba727fc",
+  "annotation_sha256": "ecca51215f6a9efbb8ae471d55dcf3074bc19227813e54710bf273d664ce91ac",
+  "annotation_audit_sha256": "31f3b0b5a84e75d0303783b1e8c0ec68d5d197a4d4d874344d11eb336cfcaedd"
+}

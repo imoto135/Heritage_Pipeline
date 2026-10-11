@@ -1,0 +1,13 @@
+{
+  "source_sha256": "668e2f8d715ce3c32a234dfdd1fbd02f554486a5aa389d4c9e1425f5309cba70",
+  "dependencies": {
+    "scripts/benchmark/frozen_margin_preprocessing_candidate.py": "3e8c31f39a1a9d3a153bbeafc55be52bde492fa3b564407ddbfcc88d9d5388c1",
+    "scripts/benchmark/probe_paper_margin_defects.py": "1de8589d43dc3d5899e202a7853f5e0ae1653cae8a3bfe91e5c837227f8f87d6",
+    "scripts/benchmark/probe_defect_context_preprocessing.py": "42ef25b24c73bb1c9443954e98b67fc7b1126ad8de4093aa3d4d514f21b2ed57",
+    "scripts/benchmark/probe_defect_context_anchors.py": "60b13ab23a2bd1d3c6439a8a8fe9fe20c1e2882a68d7b9c5e5f78360e37a7832",
+    "scripts/benchmark/verify_margin_original_feature_recomputation.py": "668e2f8d715ce3c32a234dfdd1fbd02f554486a5aa389d4c9e1425f5309cba70"
+  },
+  "pages": 25,
+  "recomputation": "second.infer(original,v6), no cached feature loader",
+  "pixel_GT": false
+}

@@ -1,0 +1,52 @@
+{
+  "purpose": "Selected paired-image visual observations; neither transcription GT nor material diagnosis nor success-rate annotation",
+  "reviewer": "Codex visual inspection",
+  "reading_evaluation_completed": false,
+  "observations": [
+    {
+      "id": "N01",
+      "figure": "evidence/N01_full_native.png",
+      "observation": "Original curves cross a brown circular stain. NPJ-derived baseline produces a black clump; shared Sauvola-mask DDRM reduces it. Automatic local replacement leaves a rim."
+    },
+    {
+      "id": "F48",
+      "figure": "evidence/F48_full_native.png",
+      "observation": "Sauvola-mask DDRM reduces distorted black fragments near characters, while broad brown overlay remains. Automatic local output remains close to baseline in this crop."
+    },
+    {
+      "id": "F59",
+      "figure": "full_comparisons/F59.png",
+      "observation": "Near-stain control: small fragments remain near writing; automatic local output shows little visible effect. Reading significance untested."
+    },
+    {
+      "id": "F60",
+      "figure": "full_comparisons/F60.png",
+      "observation": "Small brown mark becomes a black fragment and persists in both full-page DDRM conditions and local output. Candidate, not a demonstrated removal success."
+    },
+    {
+      "id": "F62",
+      "figure": "evidence/F62_full_native.png",
+      "observation": "Text-contact black clump is reduced with shared Sauvola-mask DDRM; small dark residue remains. Automatic local output leaves disconnected fragments. Wider full_comparisons/F62.png also shows a spurious black line near the upper page edge in the Sauvola condition."
+    },
+    {
+      "id": "F65",
+      "figure": "full_comparisons/F65.png",
+      "observation": "Main visible thin curves survive both full-page conditions. Visual comparison cannot establish correct readings or fine stroke preservation."
+    },
+    {
+      "id": "F47",
+      "figure": "full_comparisons/F47.png",
+      "observation": "Near-stain control: small clump near but separated from writing is reduced with Sauvola-mask DDRM; local output keeps much of the baseline residue."
+    },
+    {
+      "id": "N05",
+      "figure": "evidence/N05_thin_native.png",
+      "observation": "Main thin curves survive binary methods. This case does not demonstrate major reading damage from binarization."
+    },
+    {
+      "id": "F67",
+      "figure": "full_comparisons/F67.png",
+      "observation": "Small interlinear annotations and main curves remain visible in both full-page conditions. This visual control does not establish transcription accuracy."
+    }
+  ]
+}

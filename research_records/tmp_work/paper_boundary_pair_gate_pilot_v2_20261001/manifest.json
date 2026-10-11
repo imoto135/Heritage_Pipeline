@@ -1,0 +1,28 @@
+{
+  "settings": {
+    "change": "minimum adjacent known-paper boundary pairs 16 -> 8",
+    "component_area_min": 64,
+    "mask_and_reference_fixed": true,
+    "previous_filled_pixels_preserved": true,
+    "added_scope": "only components not accepted at 16 but accepted at 8",
+    "guidance_texture": "same existing raw/smooth harmonic boundary blend and known-paper L seams",
+    "old14_baseline": "saved rim output, with saved DDRM elsewhere",
+    "new4_baseline": "saved rim paper-only output, with original elsewhere",
+    "development": true,
+    "pages": 18,
+    "ROIs": 34,
+    "new4_now_development": true,
+    "DDRM": false,
+    "pixel_GT": false
+  },
+  "dependencies": {
+    "scripts/benchmark/probe_paper_boundary_pair_gate_v2.py": "8cfbe50a192ad12e0254a9bcff31271f357717fa88845df7b78820fc511580fe",
+    "scripts/benchmark/probe_known_paper_harmonic_fill_v2.py": "42869e62cd44ebb3a8454e7af3daf050baf280e408141b5624f65a4a0de38f95",
+    "scripts/benchmark/probe_paper_seam_texture.py": "cd5bd2fd01175321c7c7e04b02cc25774a69c168e913dd57e7f5fdbaa9975003",
+    "tmp_work/paper_rim_lowfrequency_pilot_v2_20261001/manifest.json": "43da1f33ab2d0dff8875032beee07488f5f38c7bbfbd2162c02a82b8b97bd849",
+    "tmp_work/paper_rim_lowfrequency_pilot_v2_20261001/complete.json": "2bef6d266f244528396be1ed5fc8deb9cf14116cf3589c079da21cda27220dc6",
+    "tmp_work/unseen_margin_validation_20261001/paper_fill/manifest.json": "ae44036744b782a6db937f749146d415cf530fba181b28061927bcddf997cecc",
+    "tmp_work/unseen_margin_validation_20261001/paper_fill/complete.json": "4539d4bcca59cc8dc9dd7567409f5c5cd82552910779edf813be83c1e6a8d41b"
+  },
+  "source_sha256": "8cfbe50a192ad12e0254a9bcff31271f357717fa88845df7b78820fc511580fe"
+}

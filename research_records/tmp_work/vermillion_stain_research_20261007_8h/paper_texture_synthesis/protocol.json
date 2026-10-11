@@ -1,0 +1,143 @@
+{
+  "preview_info": [
+    {
+      "kind": "source_contrast_shape",
+      "mark_opacity": 0.6375785868656835,
+      "stain_opacity": 0.43282730162005867,
+      "same_color": false,
+      "seed": 20261013,
+      "paper_texture_region_index": 12,
+      "paper_negative_source_book": "200020019",
+      "real_paper_texture": true,
+      "real_clean_stain_GT": false
+    },
+    {
+      "kind": "source_contrast_shape",
+      "mark_opacity": 0.5666964022872977,
+      "stain_opacity": 0.14098209035180667,
+      "same_color": false,
+      "seed": 20365742,
+      "paper_texture_region_index": 10,
+      "paper_negative_source_book": "200020019",
+      "real_paper_texture": true,
+      "real_clean_stain_GT": false
+    },
+    {
+      "kind": "text",
+      "mark_opacity": 0.061693088762883326,
+      "stain_opacity": 0.45769541320000784,
+      "same_color": false,
+      "seed": 20470471,
+      "paper_texture_region_index": 3,
+      "paper_negative_source_book": "200021763",
+      "real_paper_texture": true,
+      "real_clean_stain_GT": false
+    },
+    {
+      "kind": "seal",
+      "mark_opacity": 0.04425687591577242,
+      "stain_opacity": 0.30913294587193757,
+      "same_color": false,
+      "seed": 20575200,
+      "paper_texture_region_index": 0,
+      "paper_negative_source_book": "200021763",
+      "real_paper_texture": true,
+      "real_clean_stain_GT": false
+    },
+    {
+      "kind": "line",
+      "mark_opacity": 0.05322917220543497,
+      "stain_opacity": 0.2300019904640164,
+      "same_color": false,
+      "seed": 20679929,
+      "paper_texture_region_index": 12,
+      "paper_negative_source_book": "200020019",
+      "real_paper_texture": true,
+      "real_clean_stain_GT": false
+    },
+    {
+      "kind": "source_contrast_shape",
+      "mark_opacity": 0.04568126658368011,
+      "stain_opacity": 0.10317195735277677,
+      "same_color": false,
+      "seed": 20784658,
+      "paper_texture_region_index": 7,
+      "paper_negative_source_book": "200021086",
+      "real_paper_texture": true,
+      "real_clean_stain_GT": false
+    },
+    {
+      "kind": "punctuation",
+      "mark_opacity": 0.5333829038744344,
+      "stain_opacity": 0.051646726237831904,
+      "same_color": false,
+      "seed": 20889387,
+      "paper_texture_region_index": 9,
+      "paper_negative_source_book": "200020019",
+      "real_paper_texture": true,
+      "real_clean_stain_GT": false
+    },
+    {
+      "kind": "source_contrast_shape",
+      "mark_opacity": 0.10207059360859741,
+      "stain_opacity": 0.06178875227759485,
+      "same_color": true,
+      "seed": 20994116,
+      "paper_texture_region_index": 10,
+      "paper_negative_source_book": "200020019",
+      "real_paper_texture": true,
+      "real_clean_stain_GT": false
+    },
+    {
+      "kind": "source_contrast_shape",
+      "mark_opacity": 0.3660528100671394,
+      "stain_opacity": 0.5782683624247632,
+      "same_color": true,
+      "seed": 21098845,
+      "paper_texture_region_index": 0,
+      "paper_negative_source_book": "200021763",
+      "real_paper_texture": true,
+      "real_clean_stain_GT": false
+    },
+    {
+      "kind": "source_contrast_shape",
+      "mark_opacity": 0.1459917234788006,
+      "stain_opacity": 0.040092360229430996,
+      "same_color": false,
+      "seed": 21203574,
+      "paper_texture_region_index": 2,
+      "paper_negative_source_book": "200021763",
+      "real_paper_texture": true,
+      "real_clean_stain_GT": false
+    },
+    {
+      "kind": "source_contrast_shape",
+      "mark_opacity": 0.04633219589299288,
+      "stain_opacity": 0.03715364470708496,
+      "same_color": true,
+      "seed": 21308303,
+      "paper_texture_region_index": 8,
+      "paper_negative_source_book": "200021086",
+      "real_paper_texture": true,
+      "real_clean_stain_GT": false
+    },
+    {
+      "kind": "seal",
+      "mark_opacity": 0.07000920999667949,
+      "stain_opacity": 0.18928260797068028,
+      "same_color": true,
+      "seed": 21413032,
+      "paper_texture_region_index": 8,
+      "paper_negative_source_book": "200021086",
+      "real_paper_texture": true,
+      "real_clean_stain_GT": false
+    }
+  ],
+  "paper_regions_sha256": "3a8474f07d75e2c71ec6076055e7ec6b4622a70882a1d2ae610d298e5ce4bf82",
+  "script_sha256": "f9ae721bd50c3fbd435ac5c553bd39170dd7c16885cd3b566581928cf9d5180f",
+  "semantic_supervision": "Known added mark support; underlying paper has tentative no-red labels only",
+  "no_real_positive_mark_GT": true,
+  "no_definitive_real_stain_GT": true,
+  "augmentation": "Reflected native paper texture + small channel and brightness changes",
+  "validation_paper_books_excluded": true
+}

@@ -1,0 +1,422 @@
+{
+  "cases": [
+    {
+      "id": "new_warm_upper_loss",
+      "original_and_baseline_exact": true,
+      "archived_or_new_mask_crop_exact": true,
+      "mandatory_recomputed": true,
+      "frame_interior_reconstructed": true,
+      "methods": {
+        "v6": {
+          "changed": 0,
+          "applied": 0,
+          "reference_and_solver_recomputed": true,
+          "poison_invariant": true,
+          "mandatory_and_outside_applied_exact": true
+        },
+        "full_page_layout": {
+          "changed": 0,
+          "applied": 0,
+          "reference_and_solver_recomputed": true,
+          "poison_invariant": true,
+          "mandatory_and_outside_applied_exact": true
+        },
+        "contact_guard": {
+          "changed": 0,
+          "applied": 0,
+          "reference_and_solver_recomputed": true,
+          "poison_invariant": true,
+          "mandatory_and_outside_applied_exact": true
+        }
+      },
+      "combination_exact": true,
+      "panels_verified": true
+    },
+    {
+      "id": "new_warm_lower_loss",
+      "original_and_baseline_exact": true,
+      "archived_or_new_mask_crop_exact": true,
+      "mandatory_recomputed": true,
+      "frame_interior_reconstructed": true,
+      "methods": {
+        "v6": {
+          "changed": 0,
+          "applied": 0,
+          "reference_and_solver_recomputed": true,
+          "poison_invariant": true,
+          "mandatory_and_outside_applied_exact": true
+        },
+        "full_page_layout": {
+          "changed": 0,
+          "applied": 0,
+          "reference_and_solver_recomputed": true,
+          "poison_invariant": true,
+          "mandatory_and_outside_applied_exact": true
+        },
+        "contact_guard": {
+          "changed": 37,
+          "applied": 37,
+          "reference_and_solver_recomputed": true,
+          "poison_invariant": true,
+          "mandatory_and_outside_applied_exact": true
+        }
+      },
+      "combination_exact": true,
+      "panels_verified": true
+    },
+    {
+      "id": "new_warm_faint_writing",
+      "original_and_baseline_exact": true,
+      "archived_or_new_mask_crop_exact": true,
+      "mandatory_recomputed": true,
+      "frame_interior_reconstructed": true,
+      "methods": {
+        "v6": {
+          "changed": 71,
+          "applied": 83,
+          "reference_and_solver_recomputed": true,
+          "poison_invariant": true,
+          "mandatory_and_outside_applied_exact": true
+        },
+        "full_page_layout": {
+          "changed": 0,
+          "applied": 0,
+          "reference_and_solver_recomputed": true,
+          "poison_invariant": true,
+          "mandatory_and_outside_applied_exact": true
+        },
+        "contact_guard": {
+          "changed": 74,
+          "applied": 74,
+          "reference_and_solver_recomputed": true,
+          "poison_invariant": true,
+          "mandatory_and_outside_applied_exact": true
+        }
+      },
+      "combination_exact": true,
+      "panels_verified": true
+    },
+    {
+      "id": "new_gray_binding_mark",
+      "original_and_baseline_exact": true,
+      "archived_or_new_mask_crop_exact": true,
+      "mandatory_recomputed": true,
+      "frame_interior_reconstructed": true,
+      "methods": {
+        "v6": {
+          "changed": 0,
+          "applied": 0,
+          "reference_and_solver_recomputed": true,
+          "poison_invariant": true,
+          "mandatory_and_outside_applied_exact": true
+        },
+        "full_page_layout": {
+          "changed": 0,
+          "applied": 0,
+          "reference_and_solver_recomputed": true,
+          "poison_invariant": true,
+          "mandatory_and_outside_applied_exact": true
+        },
+        "contact_guard": {
+          "changed": 0,
+          "applied": 0,
+          "reference_and_solver_recomputed": true,
+          "poison_invariant": true,
+          "mandatory_and_outside_applied_exact": true
+        }
+      },
+      "combination_exact": true,
+      "panels_verified": true
+    },
+    {
+      "id": "new_gray_writing",
+      "original_and_baseline_exact": true,
+      "archived_or_new_mask_crop_exact": true,
+      "mandatory_recomputed": true,
+      "frame_interior_reconstructed": true,
+      "methods": {
+        "v6": {
+          "changed": 0,
+          "applied": 0,
+          "reference_and_solver_recomputed": true,
+          "poison_invariant": true,
+          "mandatory_and_outside_applied_exact": true
+        },
+        "full_page_layout": {
+          "changed": 0,
+          "applied": 0,
+          "reference_and_solver_recomputed": true,
+          "poison_invariant": true,
+          "mandatory_and_outside_applied_exact": true
+        },
+        "contact_guard": {
+          "changed": 0,
+          "applied": 0,
+          "reference_and_solver_recomputed": true,
+          "poison_invariant": true,
+          "mandatory_and_outside_applied_exact": true
+        }
+      },
+      "combination_exact": true,
+      "panels_verified": true
+    },
+    {
+      "id": "known_saved_red_seal",
+      "original_and_baseline_exact": true,
+      "archived_or_new_mask_crop_exact": true,
+      "mandatory_recomputed": true,
+      "frame_interior_reconstructed": true,
+      "methods": {
+        "v6": {
+          "changed": 749,
+          "applied": 861,
+          "reference_and_solver_recomputed": true,
+          "poison_invariant": true,
+          "mandatory_and_outside_applied_exact": true
+        },
+        "full_page_layout": {
+          "changed": 0,
+          "applied": 0,
+          "reference_and_solver_recomputed": true,
+          "poison_invariant": true,
+          "mandatory_and_outside_applied_exact": true
+        },
+        "contact_guard": {
+          "changed": 0,
+          "applied": 0,
+          "reference_and_solver_recomputed": true,
+          "poison_invariant": true,
+          "mandatory_and_outside_applied_exact": true
+        }
+      },
+      "combination_exact": true,
+      "panels_verified": true
+    }
+  ],
+  "regions": [
+    {
+      "id": "new_warm_upper_loss",
+      "role": "defect_and_rule",
+      "xywh": [
+        70,
+        0,
+        330,
+        290
+      ],
+      "filename": "new_warm_upper_loss_defect_and_rule.png",
+      "changed": {
+        "v6": 0,
+        "full_page_layout": 0,
+        "contact_guard": 0,
+        "combined": 0
+      }
+    },
+    {
+      "id": "new_warm_upper_loss",
+      "role": "text_control",
+      "xywh": [
+        60,
+        340,
+        380,
+        350
+      ],
+      "filename": "new_warm_upper_loss_text_control.png",
+      "changed": {
+        "v6": 0,
+        "full_page_layout": 0,
+        "contact_guard": 0,
+        "combined": 0
+      }
+    },
+    {
+      "id": "new_warm_lower_loss",
+      "role": "defect_and_rule",
+      "xywh": [
+        50,
+        470,
+        470,
+        280
+      ],
+      "filename": "new_warm_lower_loss_defect_and_rule.png",
+      "changed": {
+        "v6": 0,
+        "full_page_layout": 0,
+        "contact_guard": 0,
+        "combined": 0
+      }
+    },
+    {
+      "id": "new_warm_lower_loss",
+      "role": "text_control",
+      "xywh": [
+        40,
+        80,
+        360,
+        300
+      ],
+      "filename": "new_warm_lower_loss_text_control.png",
+      "changed": {
+        "v6": 0,
+        "full_page_layout": 0,
+        "contact_guard": 0,
+        "combined": 0
+      }
+    },
+    {
+      "id": "new_warm_faint_writing",
+      "role": "text_control",
+      "xywh": [
+        100,
+        100,
+        350,
+        400
+      ],
+      "filename": "new_warm_faint_writing_text_control.png",
+      "changed": {
+        "v6": 32,
+        "full_page_layout": 0,
+        "contact_guard": 0,
+        "combined": 0
+      }
+    },
+    {
+      "id": "new_gray_binding_mark",
+      "role": "unconfirmed_binding_mark",
+      "xywh": [
+        450,
+        450,
+        290,
+        290
+      ],
+      "filename": "new_gray_binding_mark_unconfirmed_binding_mark.png",
+      "changed": {
+        "v6": 0,
+        "full_page_layout": 0,
+        "contact_guard": 0,
+        "combined": 0
+      }
+    },
+    {
+      "id": "new_gray_writing",
+      "role": "text_control",
+      "xywh": [
+        80,
+        80,
+        500,
+        500
+      ],
+      "filename": "new_gray_writing_text_control.png",
+      "changed": {
+        "v6": 0,
+        "full_page_layout": 0,
+        "contact_guard": 0,
+        "combined": 0
+      }
+    },
+    {
+      "id": "known_saved_red_seal",
+      "role": "actual_seal_and_text_control",
+      "xywh": [
+        150,
+        70,
+        430,
+        520
+      ],
+      "filename": "known_saved_red_seal_actual_seal_and_text_control.png",
+      "changed": {
+        "v6": 648,
+        "full_page_layout": 0,
+        "contact_guard": 0,
+        "combined": 0
+      }
+    }
+  ],
+  "all_combination_changed_components": [
+    {
+      "id": "new_warm_lower_loss",
+      "component": 1,
+      "bbox": [
+        650,
+        446,
+        10,
+        9
+      ],
+      "changed_pixels": 37,
+      "display_xywh": [
+        615,
+        411,
+        80,
+        79
+      ],
+      "filename": "new_warm_lower_loss_all_change_01.png",
+      "original_Lab_median": [
+        58.795166015625,
+        6.46875,
+        7.234375
+      ],
+      "original_ridge_guard_overlap": 0,
+      "warm_anchored_guard_overlap": 0,
+      "fixed_v6_protect_or_hold_overlap": 25,
+      "full_csc_black_overlap": 15
+    },
+    {
+      "id": "new_warm_faint_writing",
+      "component": 1,
+      "bbox": [
+        12,
+        548,
+        2,
+        21
+      ],
+      "changed_pixels": 22,
+      "display_xywh": [
+        0,
+        513,
+        49,
+        91
+      ],
+      "filename": "new_warm_faint_writing_all_change_01.png",
+      "original_Lab_median": [
+        88.6016845703125,
+        3.265625,
+        6.1328125
+      ],
+      "original_ridge_guard_overlap": 0,
+      "warm_anchored_guard_overlap": 0,
+      "fixed_v6_protect_or_hold_overlap": 0,
+      "full_csc_black_overlap": 0
+    },
+    {
+      "id": "new_warm_faint_writing",
+      "component": 2,
+      "bbox": [
+        50,
+        751,
+        10,
+        11
+      ],
+      "changed_pixels": 52,
+      "display_xywh": [
+        15,
+        716,
+        80,
+        52
+      ],
+      "filename": "new_warm_faint_writing_all_change_02.png",
+      "original_Lab_median": [
+        54.0313720703125,
+        9.6875,
+        8.25
+      ],
+      "original_ridge_guard_overlap": 0,
+      "warm_anchored_guard_overlap": 0,
+      "fixed_v6_protect_or_hold_overlap": 45,
+      "full_csc_black_overlap": 29
+    }
+  ],
+  "adopted": false,
+  "pixel_GT": false,
+  "independent_model_test": false,
+  "no_threshold_changes": true,
+  "no_stroke_generation": true
+}

@@ -1,0 +1,132 @@
+{
+  "frozen_sha256": "52256de91d2b3055b4effca15ec8a641b280b2b9c348e56a9edc55ae4ad9119a",
+  "input": "Previously saved full-page masks; no new inference or parameter search",
+  "mask_sha256": {
+    "tmp_work/howe_diagnosis_20261008/masks/200010454_00002_2/sauvola.png": "48cbe6ab019135070019740417aca0be29ad3effe0cc883e7dd997915f6b5b6a",
+    "tmp_work/howe_diagnosis_20261008/masks/200010454_00002_2/fixed.png": "0d5af3e008caab0f82b41a7249d6d0c9ad80529ded6539f6c7a16d740134a64d",
+    "tmp_work/howe_diagnosis_20261008/masks/200010454_00002_2/auto.png": "06d0875e4e9094d3086709a3b6cb34f21e921bd6af47468c546677ddff7e7186",
+    "tmp_work/howe_diagnosis_20261008/masks/200010454_00002_2/thi025_c160.png": "489f66148ab71600c05883cfa92406549294191915e7c1ba6802f037318583a5",
+    "tmp_work/howe_diagnosis_20261008/masks/hnsd007_042/sauvola.png": "c0d5bc5bb3f47235b90746113e2b9af5a614ae606cb19390a093ead3d9240e8a",
+    "tmp_work/howe_diagnosis_20261008/masks/hnsd007_042/fixed.png": "4286d4d1de124f84d71cefb79a1d9b46f8eb5ba70e26f8357a9f9f050df49956",
+    "tmp_work/howe_diagnosis_20261008/masks/hnsd007_042/auto.png": "d382389a08bc95c978753f02152056dc8a5cc90af6f4d105bb0ac322ea7882d3",
+    "tmp_work/howe_diagnosis_20261008/masks/hnsd007_042/thi025_c160.png": "a40d912e956dda558ad9cd619c7368bdcd9e268e6fbe6f21c1f094212faf9ed5",
+    "tmp_work/howe_diagnosis_20261008/masks/hnsd001_011/sauvola.png": "99fe8f06106294c9878452ccb11f170699a4125d88652aaa79acb506fb029d77",
+    "tmp_work/howe_diagnosis_20261008/masks/hnsd001_011/fixed.png": "5080ec95fe2b53bfb3d5fb7073d821324a3d5f391faed6d8bb0115d576e4f60f",
+    "tmp_work/howe_diagnosis_20261008/masks/hnsd001_011/auto.png": "f9c0e3ad227493016586d4bca7aa12ff1fd2dd9d06844e75dbcd2e13c8d836e5",
+    "tmp_work/howe_diagnosis_20261008/masks/hnsd001_011/thi025_c160.png": "6400a9bf06a240262257760fcb413d43ebd26f92cffe86e6f4c630dcd95b1372"
+  },
+  "rows": [
+    {
+      "probe": "thin_01",
+      "page": "200010454_00002_2",
+      "method": "sauvola",
+      "exact_points_retained": 1,
+      "near_points_retained": 5,
+      "points_total": 6,
+      "path_near_foreground_fraction": 1.0,
+      "note": "Proximity to black pixels only; this does not establish connected or correct lettering."
+    },
+    {
+      "probe": "thin_01",
+      "page": "200010454_00002_2",
+      "method": "fixed",
+      "exact_points_retained": 3,
+      "near_points_retained": 5,
+      "points_total": 6,
+      "path_near_foreground_fraction": 1.0,
+      "note": "Proximity to black pixels only; this does not establish connected or correct lettering."
+    },
+    {
+      "probe": "thin_01",
+      "page": "200010454_00002_2",
+      "method": "auto",
+      "exact_points_retained": 3,
+      "near_points_retained": 5,
+      "points_total": 6,
+      "path_near_foreground_fraction": 1.0,
+      "note": "Proximity to black pixels only; this does not establish connected or correct lettering."
+    },
+    {
+      "probe": "thin_01",
+      "page": "200010454_00002_2",
+      "method": "thi025_c160",
+      "exact_points_retained": 3,
+      "near_points_retained": 5,
+      "points_total": 6,
+      "path_near_foreground_fraction": 1.0,
+      "note": "Proximity to black pixels only; this does not establish connected or correct lettering."
+    },
+    {
+      "probe": "contact_03",
+      "page": "hnsd007_042",
+      "method": "sauvola",
+      "exact_points_retained": 9,
+      "near_points_retained": 10,
+      "points_total": 10,
+      "path_near_foreground_fraction": 1.0,
+      "note": "Proximity to black pixels only; this does not establish connected or correct lettering."
+    },
+    {
+      "probe": "contact_03",
+      "page": "hnsd007_042",
+      "method": "fixed",
+      "exact_points_retained": 3,
+      "near_points_retained": 3,
+      "points_total": 10,
+      "path_near_foreground_fraction": 0.425,
+      "note": "Proximity to black pixels only; this does not establish connected or correct lettering."
+    },
+    {
+      "probe": "contact_03",
+      "page": "hnsd007_042",
+      "method": "auto",
+      "exact_points_retained": 0,
+      "near_points_retained": 0,
+      "points_total": 10,
+      "path_near_foreground_fraction": 0.0,
+      "note": "Proximity to black pixels only; this does not establish connected or correct lettering."
+    },
+    {
+      "probe": "contact_03",
+      "page": "hnsd007_042",
+      "method": "thi025_c160",
+      "exact_points_retained": 9,
+      "near_points_retained": 10,
+      "points_total": 10,
+      "path_near_foreground_fraction": 1.0,
+      "note": "Proximity to black pixels only; this does not establish connected or correct lettering."
+    },
+    {
+      "probe": "spot_04",
+      "page": "hnsd001_011",
+      "method": "sauvola",
+      "black_pixels": 2688,
+      "area": 3744,
+      "note": "Black area of one selected nontext patch; no dense stain outline."
+    },
+    {
+      "probe": "spot_04",
+      "page": "hnsd001_011",
+      "method": "fixed",
+      "black_pixels": 0,
+      "area": 3744,
+      "note": "Black area of one selected nontext patch; no dense stain outline."
+    },
+    {
+      "probe": "spot_04",
+      "page": "hnsd001_011",
+      "method": "auto",
+      "black_pixels": 0,
+      "area": 3744,
+      "note": "Black area of one selected nontext patch; no dense stain outline."
+    },
+    {
+      "probe": "spot_04",
+      "page": "hnsd001_011",
+      "method": "thi025_c160",
+      "black_pixels": 2868,
+      "area": 3744,
+      "note": "Black area of one selected nontext patch; no dense stain outline."
+    }
+  ]
+}

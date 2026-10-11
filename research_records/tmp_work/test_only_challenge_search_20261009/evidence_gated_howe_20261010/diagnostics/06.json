@@ -1,0 +1,213 @@
+{
+  "stroke_width": 4.393799781799316,
+  "eligible_components": 3,
+  "groups": [
+    {
+      "group": 1,
+      "components": [
+        2
+      ],
+      "context_xywh": [
+        0,
+        124,
+        160,
+        160
+      ],
+      "matches": [],
+      "selected_components": [],
+      "decision": "hold_single_component"
+    },
+    {
+      "group": 2,
+      "components": [
+        164,
+        170
+      ],
+      "context_xywh": [
+        1935,
+        1692,
+        160,
+        160
+      ],
+      "matches": [
+        {
+          "reference": "data/test/200003803/200003803_00002_1.jpg",
+          "ncc": 0.10114701837301254,
+          "shift": [
+            -23,
+            39
+          ],
+          "parts": [
+            {
+              "ncc": 0.14181450009346008,
+              "shift": [
+                -17,
+                15
+              ]
+            },
+            {
+              "ncc": 0.11789287626743317,
+              "shift": [
+                -18,
+                -65
+              ]
+            }
+          ],
+          "consistent": false
+        },
+        {
+          "reference": "data/test/200003803/200003803_00002_2.jpg",
+          "ncc": 0.24832065403461456,
+          "shift": [
+            -5,
+            -6
+          ],
+          "parts": [
+            {
+              "ncc": 0.40267255902290344,
+              "shift": [
+                -5,
+                -6
+              ]
+            },
+            {
+              "ncc": 0.32049381732940674,
+              "shift": [
+                -52,
+                -49
+              ]
+            }
+          ],
+          "consistent": false
+        },
+        {
+          "reference": "data/test/200003803/200003803_00003_2.jpg",
+          "ncc": 0.23538151383399963,
+          "shift": [
+            -13,
+            30
+          ],
+          "parts": [
+            {
+              "ncc": 0.30423635244369507,
+              "shift": [
+                -13,
+                22
+              ]
+            },
+            {
+              "ncc": 0.3405521512031555,
+              "shift": [
+                -10,
+                37
+              ]
+            }
+          ],
+          "consistent": false
+        },
+        {
+          "reference": "data/test/200003803/200003803_00004_1.jpg",
+          "ncc": 0.24675242602825165,
+          "shift": [
+            -51,
+            -13
+          ],
+          "parts": [
+            {
+              "ncc": 0.31181707978248596,
+              "shift": [
+                -39,
+                -48
+              ]
+            },
+            {
+              "ncc": 0.33960625529289246,
+              "shift": [
+                -65,
+                -23
+              ]
+            }
+          ],
+          "consistent": false
+        }
+      ],
+      "selected_components": [],
+      "component_decisions": [
+        {
+          "component": 164,
+          "xywh": [
+            2012,
+            1746,
+            11,
+            5
+          ],
+          "area": 35,
+          "csc_fractions": {
+            "csc": 0.0,
+            "red": 0.0,
+            "dark": 0.08571428571428572,
+            "degradation": 0.5714285714285714,
+            "background": 0.11428571428571428,
+            "unassigned": 0.3142857142857143
+          },
+          "decision": "hold_no_verified_correspondence"
+        },
+        {
+          "component": 170,
+          "xywh": [
+            2005,
+            1770,
+            20,
+            27
+          ],
+          "area": 206,
+          "csc_fractions": {
+            "csc": 0.0,
+            "red": 0.0,
+            "dark": 0.02912621359223301,
+            "degradation": 0.8592233009708737,
+            "background": 0.1407766990291262,
+            "unassigned": 0.0
+          },
+          "decision": "hold_no_verified_correspondence"
+        }
+      ],
+      "decision": "hold"
+    }
+  ],
+  "removed_pixels": 0,
+  "removed_components": 0,
+  "strict_geometry_removed_pixels": 0,
+  "strict_geometry_removed_components": 0,
+  "naive_csc_veto_removed_pixels": 3734,
+  "id": "06",
+  "page": "200003803_00003_1",
+  "origin": "six_challenge_fixed_review",
+  "neighbors": [
+    "data/test/200003803/200003803_00002_1.jpg",
+    "data/test/200003803/200003803_00002_2.jpg",
+    "data/test/200003803/200003803_00003_2.jpg",
+    "data/test/200003803/200003803_00004_1.jpg"
+  ],
+  "masks_unchanged": true,
+  "route_counts": {
+    "red": 0,
+    "text": 461959,
+    "background": 6072650,
+    "repair_candidate": 177347,
+    "unknown": 216582
+  },
+  "dependencies": {
+    "data/test/200003803/200003803_00003_1.jpg": "3cc169f2ebad09fa9b312a0230c2357287f16a0a505f64ef3d00fd44dc39da53",
+    "tmp_work/test_only_challenge_search_20261009/six_challenge_fixed_review/masks/howe/200003803_00003_1/02_text_black.png": "90c8a97d2e85ed8950dffa187189741812696da28246ba2751ed1b23305734b1",
+    "tmp_work/test_only_challenge_search_20261009/six_challenge_fixed_review/masks/howe/200003803_00003_1/03_text_red.png": "cd0364b78f9c4d77c9b0a89325bed6f7991759a59b5d8a0b4ebe342f974a5382",
+    "data/split_dataset_csc_mask_v2/test/200003803/200003803_00003_1/02_text_black.png": "e0370e3f28e0dd9156b35c53cf3e88dd1f9d6c7a2803b9509fc52d054aae61bf",
+    "data/split_dataset_csc_mask_v2/test/200003803/200003803_00003_1/04_degradation.png": "800d2ba221137e3cfebd35c9d53016353064ec4934af9347dae44cd8aa1241f6",
+    "data/split_dataset_csc_mask_v2/test/200003803/200003803_00003_1/05_background.png": "b038cb67bd0016981ec0de80a2fa0450bdd6f0acc61827ca2be42dc6985765c5",
+    "data/test/200003803/200003803_00002_1.jpg": "d840c9e1b0cb91fe994fd9b8ca6575b5efb2c1bf5b8c44697cfcf2689ee97e31",
+    "data/test/200003803/200003803_00002_2.jpg": "475e3ed9c2425f48c4b1d41efa984241021b709cbcbaeafe7ae42b92921d0a15",
+    "data/test/200003803/200003803_00003_2.jpg": "8b5f86b472b7761b2808dfce750d32f158981ddf49160d7c0946709cd094412c",
+    "data/test/200003803/200003803_00004_1.jpg": "432322e653807414f4ff2046534a2efdda8152f771ee153e0f203c1410dfc7e5"
+  },
+  "seconds": 2.86
+}

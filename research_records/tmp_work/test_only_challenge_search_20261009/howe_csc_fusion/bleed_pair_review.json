@@ -1,0 +1,21 @@
+{
+  "target": "data/test/200021071/200021071_00033_2.jpg",
+  "source": "data/test/200021071/200021071_00033_1.jpg",
+  "transform": "horizontal mirror + resize to target dimensions; registration not completed",
+  "roi_xywh": [
+    800,
+    750,
+    850,
+    900
+  ],
+  "pixel_ground_truth": false,
+  "no_mask_removal_based_on_pair": true,
+  "dependencies": {
+    "data/test/200021071/200021071_00033_2.jpg": "ccb0099adc3745cc6974aa7c7e51791c36e6575c0d3deb394dac64a62276c9e5",
+    "data/test/200021071/200021071_00033_1.jpg": "ca52cdbec46300276600de1b44d659e2d9faf2b45009ea64adecf020cd8a05d9",
+    "data/split_dataset_csc_mask_v2/test/200021071/200021071_00033_1/02_text_black.png": "bcf8b800bb3981ce17cd3c8273c45a995975384692f2614feba5aa32a7029545",
+    "data/split_dataset_csc_mask_v2/test/200021071/200021071_00033_2/02_text_black.png": "d1e25f571be87bd371b727148425a850bb98b820796db9ccfeda34c42aad9a8e",
+    "tmp_work/test_only_challenge_search_20261009/three_method_comparison/masks/200021071_00033_2/howe.png": "c9c8dc65a3dda8e794e9de843f0a1ab564a18e9b8cae7c170b596f9bfb848b34"
+  },
+  "figure": "tmp_work/test_only_challenge_search_20261009/howe_csc_fusion/07_裏面対応とHowe追加候補.png"
+}

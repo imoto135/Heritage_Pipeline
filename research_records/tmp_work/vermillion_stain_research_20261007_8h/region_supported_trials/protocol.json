@@ -1,0 +1,25 @@
+{
+  "created_from_development_only": true,
+  "source_sha256": "327ad4c12f1c04bc3325d19a4d1c35863e66d2727bed2cececd5a62699b8ad3d",
+  "training_books": [
+    "200020019",
+    "200021086",
+    "200021763"
+  ],
+  "positive_points": 66,
+  "original_points": 92,
+  "paper_negative_regions": 13,
+  "paper_negative_samples": 832,
+  "seed": 761,
+  "correlated_samples": "832 sampled negatives are only 13 small regions in 3 books; not 832 independent annotations",
+  "annotation_status": "Tentative Codex original visual labels; not expert reviewed",
+  "never_use_validation_books": [
+    "100249416",
+    "200015779",
+    "200017458",
+    "200021637"
+  ],
+  "threshold": 0.5,
+  "fixed_hyperparameters": "Same as sparse point classifiers: logistic C1/balanced; forest256/depth5/leaf2/balanced",
+  "book_holdout": "Known development books only; any improvement is exploratory"
+}

@@ -1,0 +1,354 @@
+{
+  "reviewer": "assistant provisional visual inspection",
+  "pixel_GT": false,
+  "independent_validation": false,
+  "adopted": false,
+  "sampler_or_weight_changes": false,
+  "cases": [
+    {
+      "id": "dense_stain",
+      "page": "hnsd001_011",
+      "xywh": [
+        400,
+        460,
+        400,
+        400
+      ],
+      "baseline_failure": true,
+      "v1_added_pixels": 103,
+      "v2_added_pixels": 35,
+      "v6_changed_pixels": 3356,
+      "candidate_changed_pixels": 3391,
+      "mask_review": "追加は周縁35画素。中心はv6で既に編集対象。",
+      "restoration_review": "明るい平坦な塗り跡・境界が残る。解決と数えない。"
+    },
+    {
+      "id": "thin_black_water",
+      "page": "hnsd001_011",
+      "xywh": [
+        220,
+        1620,
+        850,
+        760
+      ],
+      "baseline_failure": true,
+      "v1_added_pixels": 0,
+      "v2_added_pixels": 0,
+      "v6_changed_pixels": 10,
+      "candidate_changed_pixels": 10,
+      "mask_review": "ROI内追加0。",
+      "restoration_review": "v6と同一出力。薄い本文を維持するが影・水染みは残る。"
+    },
+    {
+      "id": "brown_as_red",
+      "page": "200010454_00002_2",
+      "xywh": [
+        710,
+        200,
+        450,
+        330
+      ],
+      "baseline_failure": true,
+      "v1_added_pixels": 0,
+      "v2_added_pixels": 0,
+      "v6_changed_pixels": 3661,
+      "candidate_changed_pixels": 3661,
+      "mask_review": "ROI内追加0。",
+      "restoration_review": "v6と同一出力。既存の編集境界・色差が残る。"
+    },
+    {
+      "id": "thin_black_loop",
+      "page": "200010454_00002_2",
+      "xywh": [
+        1290,
+        600,
+        280,
+        600
+      ],
+      "baseline_failure": true,
+      "v1_added_pixels": 0,
+      "v2_added_pixels": 0,
+      "v6_changed_pixels": 0,
+      "candidate_changed_pixels": 0,
+      "mask_review": "ROI内追加0。",
+      "restoration_review": "v6と同じ原画素。npj側の消失・変形を避ける状態を維持。"
+    },
+    {
+      "id": "thin_black_text",
+      "page": "200003803_00009_2",
+      "xywh": [
+        600,
+        960,
+        900,
+        900
+      ],
+      "baseline_failure": false,
+      "v1_added_pixels": 172,
+      "v2_added_pixels": 63,
+      "v6_changed_pixels": 2,
+      "candidate_changed_pixels": 65,
+      "mask_review": "本文対照に63画素追加。完全な無変更ではない。",
+      "restoration_review": "主要筆画は概観で維持。小さな変更の正誤は未判定。"
+    },
+    {
+      "id": "warm_stroke",
+      "page": "200021763_00002_2",
+      "xywh": [
+        200,
+        2020,
+        490,
+        450
+      ],
+      "baseline_failure": true,
+      "v1_added_pixels": 5195,
+      "v2_added_pixels": 81,
+      "v6_changed_pixels": 386,
+      "candidate_changed_pixels": 467,
+      "mask_review": "v1では実筆画も編集候補化。v2の追加は5,195→81画素。",
+      "restoration_review": "主要な暖色筆画を概観で維持。残る81画素の正誤は未判定。"
+    },
+    {
+      "id": "control_black",
+      "page": "200021869_00010_2",
+      "xywh": [
+        377,
+        604,
+        512,
+        512
+      ],
+      "baseline_failure": false,
+      "v1_added_pixels": 279,
+      "v2_added_pixels": 35,
+      "v6_changed_pixels": 4,
+      "candidate_changed_pixels": 39,
+      "mask_review": "本文対照に35画素追加。",
+      "restoration_review": "主要筆画は概観で維持。小さな変更の正誤は未判定。"
+    },
+    {
+      "id": "dense_stain_new",
+      "page": "hnsd007_042",
+      "xywh": [
+        930,
+        240,
+        350,
+        440
+      ],
+      "baseline_failure": true,
+      "v1_added_pixels": 0,
+      "v2_added_pixels": 0,
+      "v6_changed_pixels": 39,
+      "candidate_changed_pixels": 39,
+      "mask_review": "濃い黄褐色・オリーブ色部分に追加0。色差条件の対象外。",
+      "restoration_review": "v6と同一出力。本文・枠に重なる汚れは残り、未解決。"
+    },
+    {
+      "id": "brown_false_red_new",
+      "page": "100249476_00003_1",
+      "xywh": [
+        120,
+        70,
+        650,
+        360
+      ],
+      "baseline_failure": true,
+      "v1_added_pixels": 13497,
+      "v2_added_pixels": 12411,
+      "v6_changed_pixels": 15576,
+      "candidate_changed_pixels": 27988,
+      "mask_review": "紙面上端の茶色い部分に12,411画素追加。",
+      "restoration_review": "新しい暗い線・文字状の断片が発生。広い色ムラも残り、復元成功と数えない。"
+    },
+    {
+      "id": "hole_edge_new",
+      "page": "200021712_00082_1",
+      "xywh": [
+        1300,
+        150,
+        400,
+        420
+      ],
+      "baseline_failure": true,
+      "v1_added_pixels": 6407,
+      "v2_added_pixels": 4960,
+      "v6_changed_pixels": 644,
+      "candidate_changed_pixels": 5605,
+      "mask_review": "文字のない穴周辺の濃い部分を4,960画素、編集側に戻す。",
+      "restoration_review": "濃い中心は薄くなるが茶色い縁・不均一な塗り跡が残る。自然な修復は未達。"
+    },
+    {
+      "id": "control_text_new",
+      "page": "200021712_00082_1",
+      "xywh": [
+        600,
+        1400,
+        420,
+        580
+      ],
+      "baseline_failure": false,
+      "v1_added_pixels": 287,
+      "v2_added_pixels": 24,
+      "v6_changed_pixels": 0,
+      "candidate_changed_pixels": 24,
+      "mask_review": "本文対照に24画素追加。",
+      "restoration_review": "主要筆画は概観で維持。小さな変更の正誤は未判定。"
+    },
+    {
+      "id": "brown_near_text",
+      "page": "200021869_00014_2",
+      "xywh": [
+        940,
+        1580,
+        550,
+        420
+      ],
+      "baseline_failure": true,
+      "v1_added_pixels": 16102,
+      "v2_added_pixels": 15426,
+      "v6_changed_pixels": 1357,
+      "candidate_changed_pixels": 16783,
+      "mask_review": "茶色い部分に15,426画素追加。直下の黒い横画は保護。",
+      "restoration_review": "茶色い中心に原画像で確認できない文字状の線を生成。復元成功と数えない。"
+    },
+    {
+      "id": "dark_text_control",
+      "page": "200021869_00014_2",
+      "xywh": [
+        500,
+        400,
+        550,
+        600
+      ],
+      "baseline_failure": false,
+      "v1_added_pixels": 113,
+      "v2_added_pixels": 35,
+      "v6_changed_pixels": 43,
+      "candidate_changed_pixels": 78,
+      "mask_review": "本文対照に35画素追加。",
+      "restoration_review": "主要筆画は概観で維持。小さな変更の正誤は未判定。"
+    },
+    {
+      "id": "faint_left_text",
+      "page": "200010454_00026_1",
+      "xywh": [
+        180,
+        500,
+        450,
+        1000
+      ],
+      "baseline_failure": true,
+      "v1_added_pixels": 0,
+      "v2_added_pixels": 0,
+      "v6_changed_pixels": 66,
+      "candidate_changed_pixels": 66,
+      "mask_review": "ROI内追加0。",
+      "restoration_review": "v6と同一出力。元の薄い本文を維持。"
+    },
+    {
+      "id": "damage_control",
+      "page": "200014740_00065_2",
+      "xywh": [
+        700,
+        120,
+        650,
+        350
+      ],
+      "baseline_failure": true,
+      "v1_added_pixels": 601,
+      "v2_added_pixels": 310,
+      "v6_changed_pixels": 116,
+      "candidate_changed_pixels": 426,
+      "mask_review": "損傷の周縁310画素を追加。濃い中性の縁は保護が残る。",
+      "restoration_review": "大きな損傷の線はほぼ残る。未解決。このIDは対照でなく問題例。"
+    }
+  ],
+  "whole_pages": [
+    {
+      "page": "hnsd001_011",
+      "width": 1857,
+      "height": 2903,
+      "v6_edit_pixels": 16189,
+      "added_pixels": 36,
+      "added_fraction": 6.677956122489297e-06
+    },
+    {
+      "page": "200010454_00002_2",
+      "width": 1784,
+      "height": 2365,
+      "v6_edit_pixels": 12553,
+      "added_pixels": 644,
+      "added_fraction": 0.00015263701779501132
+    },
+    {
+      "page": "200003803_00009_2",
+      "width": 2127,
+      "height": 3215,
+      "v6_edit_pixels": 33360,
+      "added_pixels": 11088,
+      "added_fraction": 0.0016214544393676504
+    },
+    {
+      "page": "200021763_00002_2",
+      "width": 2769,
+      "height": 4438,
+      "v6_edit_pixels": 6674,
+      "added_pixels": 8532,
+      "added_fraction": 0.0006942894933297919
+    },
+    {
+      "page": "200021869_00010_2",
+      "width": 2109,
+      "height": 3072,
+      "v6_edit_pixels": 11945,
+      "added_pixels": 6076,
+      "added_fraction": 0.0009378210447289394
+    },
+    {
+      "page": "hnsd007_042",
+      "width": 1884,
+      "height": 2865,
+      "v6_edit_pixels": 6736,
+      "added_pixels": 292,
+      "added_fraction": 5.4097516331150904e-05
+    },
+    {
+      "page": "100249476_00003_1",
+      "width": 1842,
+      "height": 2918,
+      "v6_edit_pixels": 60484,
+      "added_pixels": 125344,
+      "added_fraction": 0.023320004852132745
+    },
+    {
+      "page": "200021712_00082_1",
+      "width": 2350,
+      "height": 3900,
+      "v6_edit_pixels": 47777,
+      "added_pixels": 336882,
+      "added_fraction": 0.03675744680851064
+    },
+    {
+      "page": "200021869_00014_2",
+      "width": 2149,
+      "height": 3114,
+      "v6_edit_pixels": 14300,
+      "added_pixels": 21264,
+      "added_fraction": 0.003177532051023418
+    },
+    {
+      "page": "200010454_00026_1",
+      "width": 1777,
+      "height": 2377,
+      "v6_edit_pixels": 21248,
+      "added_pixels": 166,
+      "added_fraction": 3.9299903004998424e-05
+    },
+    {
+      "page": "200014740_00065_2",
+      "width": 2037,
+      "height": 3093,
+      "v6_edit_pixels": 30950,
+      "added_pixels": 4726,
+      "added_fraction": 0.0007501062227231396
+    }
+  ]
+}

@@ -1,0 +1,47 @@
+{
+  "status": "passed",
+  "records": [
+    {
+      "frame": "upper_crop",
+      "paper_update_pixels": 4754,
+      "stroke_update_pixels": 17,
+      "accepted_gap_components": 2,
+      "changed_pixels": {
+        "paper_only": 4564,
+        "stroke_only": 17,
+        "combined": 4581
+      },
+      "harmonic_residual": 5.400124791776761e-13
+    },
+    {
+      "frame": "full_page",
+      "paper_update_pixels": 6582,
+      "stroke_update_pixels": 29,
+      "accepted_gap_components": 7,
+      "changed_pixels": {
+        "paper_only": 5784,
+        "stroke_only": 29,
+        "combined": 5813
+      },
+      "harmonic_residual": 4.547473508864641e-13
+    }
+  ],
+  "solver_checks": {
+    "linear_paper_exact": true,
+    "unknown_value_invariance": true,
+    "pixels": 99,
+    "max_residual": 2.8421709430404007e-13,
+    "min_solution": 165.00000000000003,
+    "max_solution": 197.0
+  },
+  "paper_old_unknown_values_ignored": true,
+  "update_roles_disjoint": true,
+  "outside_updates_exact_saved_npj": true,
+  "red_hold_extra_exact_saved_npj": true,
+  "stroke_only_does_not_brighten_pixels": true,
+  "npj_rerun": false,
+  "diffusion_rerun": false,
+  "pixel_GT": false,
+  "independent_effectiveness": false,
+  "adopted": false
+}

@@ -1,0 +1,382 @@
+{
+  "settings": {
+    "scope": "Entire historical saved input frame; no ROI coordinates or page id enter detection",
+    "baseline": "Authentic saved npj, not rerun",
+    "candidate": "Unchanged prior anchored short-gap detector, same role masks and thresholds",
+    "docres": "Existing frozen binarization background probability from same historical input",
+    "thresholds": [
+      0.5,
+      0.9
+    ],
+    "gating": "Retain complete previously accepted component if mean ink probability >= threshold",
+    "primary_threshold": 0.9,
+    "rendering": "Same scalar original grayscale/local closed grayscale ratio on saved npj for all conditions",
+    "paper_kernel": 17,
+    "ratio_max": 1,
+    "paper_update": false,
+    "red_hold_extra_update": false,
+    "diffusion_rerun": false,
+    "model_rerun": false,
+    "new_pixels_from_docres": false,
+    "pixel_GT": false,
+    "adopted": false,
+    "selection": "6 known development frames / 5 pages / same 20 ROI; no independent evaluation",
+    "interpretation": "Probe false-gap rejection, not complete text protection or dirt-removal solution",
+    "threshold_selection": "Conventional .5 and .9; probabilities on known examples inspected before experiment; not blind"
+  },
+  "dependencies": {
+    "tmp_work/npj_literature_trial_20261002/docres/manifest.json": "890c8c021a8c0910f37a7579a3e95e89cff1d4e9ed8f51d6b623dfbe183251ae",
+    "tmp_work/npj_literature_trial_20261002/docres/complete.json": "6e245c2c7b43bc3c9de2789b0bd4361b7c3f18f5149eeb4eedf9bc341392703f",
+    "tmp_work/npj_literature_trial_20261002/matched_docres/manifest.json": "31e76c93ab80d5724f44eecdce850cf0763d51a04c38a1ece6bb04f06a936864",
+    "tmp_work/npj_literature_trial_20261002/matched_docres/complete.json": "2c5f73c7715578a2db2af5d8623868ee533b40d629543aed0121e91387ed38f3",
+    "scripts/benchmark/probe_npj_docres_gap_gate.py": "74f2dbcc42b2c7f5b57330a3e53b62c45edc8273362b488bdf3ed871ae14461a",
+    "scripts/benchmark/probe_saved_npj_role_separated_postprocess.py": "0a7cc6ea558b809a30d7c799c4d501bf86ec7b2a27dcb9ffd108a1325936a7ec",
+    "scripts/benchmark/build_npj_v6_comparison.py": "5d36d372404b4554d85bbb5f83e70a7171a1b77b330d651569f7f8bf18918e98",
+    "scripts/benchmark/package_saved_npj_inference_v6_review.py": "26f7cc82889ba37fcc628439536ac7907a0d0411ff91fcebaac9d48b1fc60c4a",
+    "tmp_work/npj_literature_trial_20261002/selection.json": "a18403fef7a0c917687b7921bd491889f0302fbfedfb8f887c0ed33e23f76e46",
+    "tmp_work/npj_literature_trial_20261002/selection_complete.json": "4dc93c9d07d4c1fe0a4a843376f89eb2b2b5ebdb13bd43a2b579005b00134756"
+  },
+  "frames": [
+    {
+      "id": "page_200019865",
+      "page": "200019865_00003_1",
+      "input": "tmp_work/ddrm_visual_check/input_200019865_00003_1/200019865_00003_1.jpg",
+      "original": "data/test/200019865/200019865_00003_1.jpg",
+      "box": null,
+      "saved_npj": "tmp_work/ddrm_visual_check/output_200019865_00003_1/200019865_00003_1/result/200019865_00003_1.png",
+      "baseline_label": "保存npj：ddrm_visual_check既存版",
+      "roles": "tmp_work/saved_npj_paper_only_followup_pilot_20261002/native/page_200019865",
+      "regions": [
+        {
+          "id": "01_upper_slender_marks",
+          "title": "上余白の細い暖色跡",
+          "xywh": [
+            1270,
+            250,
+            550,
+            400
+          ],
+          "role": "damage_candidate_material_unconfirmed"
+        },
+        {
+          "id": "02_left_margin_marks",
+          "title": "左余白の線状跡",
+          "xywh": [
+            20,
+            850,
+            450,
+            900
+          ],
+          "role": "damage_candidate_material_unconfirmed"
+        },
+        {
+          "id": "03_faint_text_control",
+          "title": "薄い文字の対照",
+          "xywh": [
+            1200,
+            1050,
+            650,
+            650
+          ],
+          "role": "text_control"
+        }
+      ],
+      "illustration": false,
+      "input_reference_exact": true,
+      "shape": [
+        3191,
+        2113,
+        3
+      ]
+    },
+    {
+      "id": "page_200017197",
+      "page": "200017197_00008_1",
+      "input": "tmp_work/trial_run/input/200017197_00008_1.png",
+      "original": "data/makura_kiridashi/200017197_00008_1.png",
+      "box": null,
+      "saved_npj": "tmp_work/trial_run/ddrm_out/200017197_00008_1/result/200017197_00008_1.png",
+      "baseline_label": "保存npj：trial_run既存版",
+      "roles": "tmp_work/saved_npj_paper_only_followup_pilot_20261002/native/page_200017197",
+      "regions": [
+        {
+          "id": "04_warm_paper_pattern",
+          "title": "暖色の紙模様・汚れと断定しない",
+          "xywh": [
+            100,
+            30,
+            650,
+            380
+          ],
+          "role": "paper_pattern_control"
+        },
+        {
+          "id": "05_pattern_text_control",
+          "title": "紙模様上の文字対照",
+          "xywh": [
+            1100,
+            1400,
+            550,
+            600
+          ],
+          "role": "text_and_pattern_control"
+        },
+        {
+          "id": "06_lower_thin_text",
+          "title": "下部の細い筆画と紙模様",
+          "xywh": [
+            150,
+            2400,
+            700,
+            600
+          ],
+          "role": "text_and_pattern_control"
+        }
+      ],
+      "illustration": false,
+      "input_reference_exact": false,
+      "shape": [
+        3212,
+        2387,
+        3
+      ]
+    },
+    {
+      "id": "known_200010454_v2",
+      "page": "200010454_00002_2",
+      "input": "tmp_work/speed_test_single/input/200010454_00002_2.jpg",
+      "original": "data/split_dataset/test/200010454/200010454_00002_2.jpg",
+      "box": null,
+      "saved_npj": "tmp_work/speed_test_single/ddrm_out/200010454_00002_2/result/200010454_00002_2.png",
+      "baseline_label": "保存npj：CSC v2・同ページ追加対照",
+      "roles": "tmp_work/saved_npj_paper_only_followup_pilot_20261002/native/known_200010454_v2",
+      "regions": [
+        {
+          "id": "07_red_seal_control",
+          "title": "朱印の対照・既知ページの別保存版",
+          "xywh": [
+            1330,
+            1800,
+            430,
+            550
+          ],
+          "role": "red_seal_control"
+        },
+        {
+          "id": "08_known_brown_stain",
+          "title": "既知の茶色い斑点・別保存版",
+          "xywh": [
+            730,
+            230,
+            180,
+            140
+          ],
+          "role": "known_damage_candidate"
+        },
+        {
+          "id": "09_known_dense_text",
+          "title": "既知の濃い筆画・別保存版",
+          "xywh": [
+            555,
+            335,
+            175,
+            160
+          ],
+          "role": "known_text_control"
+        }
+      ],
+      "illustration": false,
+      "input_reference_exact": true,
+      "shape": [
+        2365,
+        1784,
+        3
+      ]
+    },
+    {
+      "id": "crop_hnsd",
+      "page": "hnsd001_011_crop",
+      "input": "tmp_work/mask_ablation_hnsd/input/hnsd001_011_crop.png",
+      "original": "data/split_dataset/train/hnsd00000/hnsd001_011.jpg",
+      "box": [
+        80,
+        2280,
+        620,
+        620
+      ],
+      "saved_npj": "tmp_work/mask_ablation_hnsd/output_v1/hnsd001_011_crop/result/hnsd001_011_crop.png",
+      "baseline_label": "保存npj：旧v1・濃淡の異なる保存入力",
+      "roles": "tmp_work/saved_npj_paper_only_followup_pilot_20261002/native/crop_hnsd",
+      "regions": [
+        {
+          "id": "10_rule_crossing_dark_mass",
+          "title": "枠線に接する濃い塊",
+          "xywh": [
+            170,
+            300,
+            350,
+            210
+          ],
+          "role": "residual_damage_positive_candidate"
+        },
+        {
+          "id": "11_crop_text_control",
+          "title": "濃い文字と枠線の対照",
+          "xywh": [
+            30,
+            50,
+            160,
+            260
+          ],
+          "role": "text_rule_control"
+        },
+        {
+          "id": "12_crop_lower_paper",
+          "title": "下端の紙面対照",
+          "xywh": [
+            0,
+            520,
+            620,
+            100
+          ],
+          "role": "paper_control"
+        }
+      ],
+      "illustration": false,
+      "input_reference_exact": false,
+      "shape": [
+        620,
+        620,
+        3
+      ]
+    },
+    {
+      "id": "old_upper_crop",
+      "page": "200010454_00002_2",
+      "input": "tmp_work/mask_ablation_200010454_selfref/input/200010454_00002_2_crop.png",
+      "original": "data/split_dataset/test/200010454/200010454_00002_2.jpg",
+      "box": [
+        550,
+        0,
+        550,
+        500
+      ],
+      "saved_npj": "tmp_work/mask_ablation_200010454_selfref/output_v1/200010454_00002_2_crop/result/200010454_00002_2_crop.png",
+      "baseline_label": "保存npj：旧v1マスク・selfref",
+      "roles": "tmp_work/saved_npj_inference_v6_pilot_20261002/native/upper_crop",
+      "regions": [
+        {
+          "id": "old_01_upper_faint_stroke",
+          "title": "上部の薄い筆画",
+          "xywh": [
+            190,
+            325,
+            180,
+            175
+          ]
+        },
+        {
+          "id": "old_02_upper_dense_control",
+          "title": "濃い筆画の対照",
+          "xywh": [
+            5,
+            335,
+            175,
+            160
+          ]
+        },
+        {
+          "id": "old_03_upper_brown_stain",
+          "title": "筆画の上方の茶色い斑点",
+          "xywh": [
+            180,
+            235,
+            160,
+            120
+          ]
+        },
+        {
+          "id": "old_04_upper_pale_stain",
+          "title": "淡い茶色の広がり",
+          "xywh": [
+            330,
+            120,
+            150,
+            160
+          ]
+        }
+      ],
+      "illustration": false,
+      "input_reference_exact": true,
+      "shape": [
+        500,
+        550,
+        3
+      ]
+    },
+    {
+      "id": "old_full_page",
+      "page": "200018243_00003_2",
+      "input": "tmp_work/full_page_compare/input/200018243_00003_2.jpg",
+      "original": "data/split_dataset/test/200018243/200018243_00003_2.jpg",
+      "box": [
+        0,
+        0,
+        2073,
+        3203
+      ],
+      "saved_npj": "tmp_work/full_page_compare/ddrm_v1true_out/200018243_00003_2/result/200018243_00003_2.png",
+      "baseline_label": "保存npj：v1true・ページ出力",
+      "roles": "tmp_work/saved_npj_inference_v6_pilot_20261002/native/full_page",
+      "regions": [
+        {
+          "id": "old_05_page_faint_left",
+          "title": "左列の薄い筆画",
+          "xywh": [
+            170,
+            700,
+            235,
+            450
+          ]
+        },
+        {
+          "id": "old_06_page_faint_middle",
+          "title": "中央列の細い筆画",
+          "xywh": [
+            760,
+            1870,
+            220,
+            480
+          ]
+        },
+        {
+          "id": "old_07_page_dense_control",
+          "title": "右列の濃い筆画の対照",
+          "xywh": [
+            1510,
+            1650,
+            300,
+            440
+          ]
+        },
+        {
+          "id": "old_08_page_long_stroke",
+          "title": "左寄りの長い細線",
+          "xywh": [
+            440,
+            1850,
+            240,
+            650
+          ]
+        }
+      ],
+      "illustration": false,
+      "input_reference_exact": true,
+      "shape": [
+        3203,
+        2073,
+        3
+      ]
+    }
+  ]
+}

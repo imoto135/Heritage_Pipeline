@@ -1,0 +1,204 @@
+{
+  "cases": 3,
+  "records": 44,
+  "checks": {
+    "local_moments_checked_against_direct_windows": true,
+    "uniform_paper_checks_passed": true
+  },
+  "sauvola_parity": [
+    {
+      "id": "N01",
+      "saved_sauvola_difference_pixels": 0
+    },
+    {
+      "id": "T01",
+      "saved_sauvola_difference_pixels": 0
+    }
+  ],
+  "runtimes": [
+    {
+      "id": "N01",
+      "method": "sauvola61",
+      "seconds": 0.07088629600002605
+    },
+    {
+      "id": "N01",
+      "method": "wolf61",
+      "seconds": 0.07371636900097656
+    },
+    {
+      "id": "N01",
+      "method": "nick61",
+      "seconds": 0.06516328699945007
+    },
+    {
+      "id": "N01",
+      "method": "nick19",
+      "seconds": 0.06073127499985276
+    },
+    {
+      "id": "N01",
+      "method": "gatos_native",
+      "seconds": 0.5524127730004693
+    },
+    {
+      "id": "N01",
+      "method": "su2013_local",
+      "seconds": 1.1622711500003788
+    },
+    {
+      "id": "N01",
+      "method": "sauvola31",
+      "seconds": 0.060926677000679774
+    },
+    {
+      "id": "N01",
+      "method": "sauvola91",
+      "seconds": 0.06315695599914761
+    },
+    {
+      "id": "N01",
+      "method": "sauvola61_k01",
+      "seconds": 0.059240081000098144
+    },
+    {
+      "id": "N01",
+      "method": "wolf61_k02",
+      "seconds": 0.06855391900171526
+    },
+    {
+      "id": "N01",
+      "method": "otsu",
+      "seconds": 0.04254209099963191
+    },
+    {
+      "id": "N01",
+      "method": "niblack61",
+      "seconds": 0.10705157999836956
+    },
+    {
+      "id": "T01",
+      "method": "sauvola61",
+      "seconds": 0.08567250600026455
+    },
+    {
+      "id": "T01",
+      "method": "wolf61",
+      "seconds": 0.09320710000065446
+    },
+    {
+      "id": "T01",
+      "method": "nick61",
+      "seconds": 0.09443279299921414
+    },
+    {
+      "id": "T01",
+      "method": "nick19",
+      "seconds": 0.08585507799944025
+    },
+    {
+      "id": "T01",
+      "method": "gatos_native",
+      "seconds": 0.6853670059990691
+    },
+    {
+      "id": "T01",
+      "method": "su2013_local",
+      "seconds": 1.7101138600010017
+    },
+    {
+      "id": "T01",
+      "method": "sauvola31",
+      "seconds": 0.08054282100056298
+    },
+    {
+      "id": "T01",
+      "method": "sauvola91",
+      "seconds": 0.08177736499965249
+    },
+    {
+      "id": "T01",
+      "method": "sauvola61_k01",
+      "seconds": 0.08073002099990845
+    },
+    {
+      "id": "T01",
+      "method": "wolf61_k02",
+      "seconds": 0.09289823299877753
+    },
+    {
+      "id": "T01",
+      "method": "otsu",
+      "seconds": 0.053858265999224386
+    },
+    {
+      "id": "T01",
+      "method": "niblack61",
+      "seconds": 0.14132833700023184
+    },
+    {
+      "id": "N05",
+      "method": "sauvola61",
+      "seconds": 0.05985772699932568
+    },
+    {
+      "id": "N05",
+      "method": "wolf61",
+      "seconds": 0.06780181599970092
+    },
+    {
+      "id": "N05",
+      "method": "nick61",
+      "seconds": 0.06464870499985409
+    },
+    {
+      "id": "N05",
+      "method": "nick19",
+      "seconds": 0.061151915999289486
+    },
+    {
+      "id": "N05",
+      "method": "gatos_native",
+      "seconds": 4.081641582999509
+    },
+    {
+      "id": "N05",
+      "method": "su2013_local",
+      "seconds": 1.1871353690003161
+    },
+    {
+      "id": "N05",
+      "method": "sauvola31",
+      "seconds": 0.05665367499932472
+    },
+    {
+      "id": "N05",
+      "method": "sauvola91",
+      "seconds": 0.059274215998812
+    },
+    {
+      "id": "N05",
+      "method": "sauvola61_k01",
+      "seconds": 0.05932619699888164
+    },
+    {
+      "id": "N05",
+      "method": "wolf61_k02",
+      "seconds": 0.07005396699969424
+    },
+    {
+      "id": "N05",
+      "method": "otsu",
+      "seconds": 0.04031857700101682
+    },
+    {
+      "id": "N05",
+      "method": "niblack61",
+      "seconds": 0.10191240799940715
+    }
+  ],
+  "input_hashes_unchanged": true,
+  "protocol_sha256": "c422f37c685fe07302f1bd4805718d31e2f5e47992d43e48e60646a84d2d1c5f",
+  "annotation_sha256": "ecca51215f6a9efbb8ae471d55dcf3074bc19227813e54710bf273d664ce91ac",
+  "source_sha256": "3a496b552304301817a2f71818a38798161d31e3d0c66391b0dc1fc79c07dce6"
+}

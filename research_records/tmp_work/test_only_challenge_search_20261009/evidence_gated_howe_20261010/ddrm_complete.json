@@ -1,0 +1,163 @@
+{
+  "results": [
+    {
+      "id": "01",
+      "method": "automatic",
+      "reused": true,
+      "output": "tmp_work/test_only_challenge_search_20261009/evidence_gated_howe_20261010/outputs/automatic/200010454_00016_2/result/200010454_00016_2.png",
+      "sha256": "e60b866c7278dab1ddb58318ea74d58e93dfa4dcf2f1b5d516da4575632da876",
+      "reason": "Identical black/red inputs with unchanged frozen inference settings",
+      "baseline": "tmp_work/test_only_challenge_search_20261009/six_challenge_fixed_review/outputs/howe/200010454_00016_2/result/200010454_00016_2.png",
+      "baseline_sha256": "e60b866c7278dab1ddb58318ea74d58e93dfa4dcf2f1b5d516da4575632da876",
+      "removed_pixels": 0
+    },
+    {
+      "id": "02",
+      "method": "automatic",
+      "reused": true,
+      "output": "tmp_work/test_only_challenge_search_20261009/evidence_gated_howe_20261010/outputs/automatic/200015843_00107_1/result/200015843_00107_1.png",
+      "sha256": "7117198a28f6f778d3480252b9625fb5a7183ec688356099ec9374c7324dca27",
+      "reason": "Identical black/red inputs with unchanged frozen inference settings",
+      "baseline": "tmp_work/test_only_challenge_search_20261009/six_challenge_fixed_review/outputs/howe/200015843_00107_1/result/200015843_00107_1.png",
+      "baseline_sha256": "7117198a28f6f778d3480252b9625fb5a7183ec688356099ec9374c7324dca27",
+      "removed_pixels": 0
+    },
+    {
+      "id": "03",
+      "method": "automatic",
+      "reused": true,
+      "output": "tmp_work/test_only_challenge_search_20261009/evidence_gated_howe_20261010/outputs/automatic/200015843_00105_1/result/200015843_00105_1.png",
+      "sha256": "bbd5389b9c916a8788c4a58e4de85c37965048b505f964ee8c18a3a05872b8c7",
+      "reason": "Identical black/red inputs with unchanged frozen inference settings",
+      "baseline": "tmp_work/test_only_challenge_search_20261009/six_challenge_fixed_review/outputs/howe/200015843_00105_1/result/200015843_00105_1.png",
+      "baseline_sha256": "bbd5389b9c916a8788c4a58e4de85c37965048b505f964ee8c18a3a05872b8c7",
+      "removed_pixels": 0
+    },
+    {
+      "id": "04",
+      "method": "automatic",
+      "reused": true,
+      "output": "tmp_work/test_only_challenge_search_20261009/evidence_gated_howe_20261010/outputs/automatic/200021071_00032_1/result/200021071_00032_1.png",
+      "sha256": "a1667430b5afa6e1ae14ff0c368859040618be2d41e580d2675973489bb7dd98",
+      "reason": "Identical black/red inputs with unchanged frozen inference settings",
+      "baseline": "tmp_work/test_only_challenge_search_20261009/six_challenge_fixed_review/outputs/howe/200021071_00032_1/result/200021071_00032_1.png",
+      "baseline_sha256": "a1667430b5afa6e1ae14ff0c368859040618be2d41e580d2675973489bb7dd98",
+      "removed_pixels": 0
+    },
+    {
+      "id": "06",
+      "method": "automatic",
+      "reused": true,
+      "output": "tmp_work/test_only_challenge_search_20261009/evidence_gated_howe_20261010/outputs/automatic/200003803_00003_1/result/200003803_00003_1.png",
+      "sha256": "a809964a0135cf953870c75aaf79e22cb7a81c9939c391fcb56f6efa517aa3af",
+      "reason": "Identical black/red inputs with unchanged frozen inference settings",
+      "baseline": "tmp_work/test_only_challenge_search_20261009/six_challenge_fixed_review/outputs/howe/200003803_00003_1/result/200003803_00003_1.png",
+      "baseline_sha256": "a809964a0135cf953870c75aaf79e22cb7a81c9939c391fcb56f6efa517aa3af",
+      "removed_pixels": 0
+    },
+    {
+      "id": "07",
+      "method": "automatic",
+      "seconds": 299.3,
+      "reused": false,
+      "command": [
+        "/home/imoto/miniconda3/envs/diffusion/bin/python",
+        "-B",
+        "/home/imoto/Heritage_Pipeline/tmp_work/npj_dirt_control_20261002/source_snapshot/ddrm_npj_v2/scripts/pipeline_ddrm.py",
+        "--input_dir",
+        "/home/imoto/Heritage_Pipeline/tmp_work/test_only_challenge_search_20261009/evidence_gated_howe_20261010/inputs/200021071_00033_2",
+        "--output_dir",
+        "/home/imoto/Heritage_Pipeline/tmp_work/test_only_challenge_search_20261009/evidence_gated_howe_20261010/outputs/automatic",
+        "--tmp_dir",
+        "/home/imoto/Heritage_Pipeline/tmp_work/test_only_challenge_search_20261009/evidence_gated_howe_20261010/infer_tmp/automatic/200021071_00033_2",
+        "--mask_dir",
+        "/home/imoto/Heritage_Pipeline/tmp_work/test_only_challenge_search_20261009/evidence_gated_howe_20261010/masks/automatic",
+        "--ckpt",
+        "/home/imoto/Heritage_Pipeline/modules/stain_removal/experiments/model_char/model_char/ckpt_epoch0350.pth",
+        "--back_ground",
+        "/home/imoto/Heritage_Pipeline/modules/ddrm_npj_v2/background/isemonogatari.png",
+        "--device",
+        "cuda:0",
+        "--patch_size",
+        "128",
+        "--overlap",
+        "32",
+        "--shared_noise",
+        "--no_wandb"
+      ],
+      "output": "tmp_work/test_only_challenge_search_20261009/evidence_gated_howe_20261010/outputs/automatic/200021071_00033_2/result/200021071_00033_2.png",
+      "sha256": "1508f3b1a8b99016beed93638491429619b2410d5bf0447c49a8735ee20eec2b",
+      "baseline": "tmp_work/test_only_challenge_search_20261009/six_challenge_fixed_review/outputs/howe/200021071_00033_2/result/200021071_00033_2.png",
+      "baseline_sha256": "3c392cac7765679010790431f898d0b91f7d9b08586c54312e8523ff173216b9",
+      "removed_pixels": 439
+    },
+    {
+      "id": "F01",
+      "method": "automatic",
+      "reused": true,
+      "output": "tmp_work/test_only_challenge_search_20261009/evidence_gated_howe_20261010/outputs/automatic/200004107_00006_1/result/200004107_00006_1.png",
+      "sha256": "403e393cc9dc1f785f9ab4c0351c9170e8399ee7d9db8900cc9c6bbe216e5260",
+      "reason": "Identical black/red inputs with unchanged frozen inference settings",
+      "baseline": "tmp_work/test_only_challenge_search_20261009/fixed_holdout_validation/outputs/howe/200004107_00006_1/result/200004107_00006_1.png",
+      "baseline_sha256": "403e393cc9dc1f785f9ab4c0351c9170e8399ee7d9db8900cc9c6bbe216e5260",
+      "removed_pixels": 0
+    },
+    {
+      "id": "F02",
+      "method": "automatic",
+      "reused": true,
+      "output": "tmp_work/test_only_challenge_search_20261009/evidence_gated_howe_20261010/outputs/automatic/200021063_00007_1/result/200021063_00007_1.png",
+      "sha256": "c113b7653f13ad4ba8ed52247f5694b43aa626e51ea16846eb90311543be97cd",
+      "reason": "Identical black/red inputs with unchanged frozen inference settings",
+      "baseline": "tmp_work/test_only_challenge_search_20261009/fixed_holdout_validation/outputs/howe/200021063_00007_1/result/200021063_00007_1.png",
+      "baseline_sha256": "c113b7653f13ad4ba8ed52247f5694b43aa626e51ea16846eb90311543be97cd",
+      "removed_pixels": 0
+    },
+    {
+      "id": "F03",
+      "method": "automatic",
+      "reused": true,
+      "output": "tmp_work/test_only_challenge_search_20261009/evidence_gated_howe_20261010/outputs/automatic/200021063_00009_2/result/200021063_00009_2.png",
+      "sha256": "3274a30fd2c7d6553005afd8b9f65f181edb90980eba0ffcad6433253f8c5f8c",
+      "reason": "Identical black/red inputs with unchanged frozen inference settings",
+      "baseline": "tmp_work/test_only_challenge_search_20261009/fixed_holdout_validation/outputs/howe/200021063_00009_2/result/200021063_00009_2.png",
+      "baseline_sha256": "3274a30fd2c7d6553005afd8b9f65f181edb90980eba0ffcad6433253f8c5f8c",
+      "removed_pixels": 0
+    },
+    {
+      "id": "F04",
+      "method": "automatic",
+      "reused": true,
+      "output": "tmp_work/test_only_challenge_search_20261009/evidence_gated_howe_20261010/outputs/automatic/200021063_00002_2/result/200021063_00002_2.png",
+      "sha256": "53d6d50afb66b8ee6722d342879ee99c32554dc38a3ebd6c51a3f69cc5b57762",
+      "reason": "Identical black/red inputs with unchanged frozen inference settings",
+      "baseline": "tmp_work/test_only_challenge_search_20261009/fixed_holdout_validation/outputs/howe/200021063_00002_2/result/200021063_00002_2.png",
+      "baseline_sha256": "53d6d50afb66b8ee6722d342879ee99c32554dc38a3ebd6c51a3f69cc5b57762",
+      "removed_pixels": 0
+    },
+    {
+      "id": "F05",
+      "method": "automatic",
+      "reused": true,
+      "output": "tmp_work/test_only_challenge_search_20261009/evidence_gated_howe_20261010/outputs/automatic/200005798_00036_1/result/200005798_00036_1.png",
+      "sha256": "0ad280e92c9b62fd2641c526b5fc6c0337477ab723c9a3fcb7900a3f3a527c33",
+      "reason": "Identical black/red inputs with unchanged frozen inference settings",
+      "baseline": "tmp_work/test_only_challenge_search_20261009/fixed_holdout_validation/outputs/howe/200005798_00036_1/result/200005798_00036_1.png",
+      "baseline_sha256": "0ad280e92c9b62fd2641c526b5fc6c0337477ab723c9a3fcb7900a3f3a527c33",
+      "removed_pixels": 0
+    },
+    {
+      "id": "F06",
+      "method": "automatic",
+      "reused": true,
+      "output": "tmp_work/test_only_challenge_search_20261009/evidence_gated_howe_20261010/outputs/automatic/200008003_00006_1/result/200008003_00006_1.png",
+      "sha256": "bb397ee37a7985afe57848d7b29cbcd949ed2a16aedb47edd8fbf2490de41baa",
+      "reason": "Identical black/red inputs with unchanged frozen inference settings",
+      "baseline": "tmp_work/test_only_challenge_search_20261009/fixed_holdout_validation/outputs/howe/200008003_00006_1/result/200008003_00006_1.png",
+      "baseline_sha256": "bb397ee37a7985afe57848d7b29cbcd949ed2a16aedb47edd8fbf2490de41baa",
+      "removed_pixels": 0
+    }
+  ],
+  "new": 1,
+  "reused": 11
+}

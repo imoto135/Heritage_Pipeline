@@ -1,0 +1,21 @@
+{
+  "start_utc": "2026-10-07T14:53:23+00:00",
+  "target_end_utc": "2026-10-07T22:53:23+00:00",
+  "main_objective": "Preserve readable red writing/annotations while separating brown stains",
+  "excluded_main_objectives": [
+    "black ink tone preservation",
+    "page border aesthetics",
+    "inventing missing characters"
+  ],
+  "status": "active",
+  "phases": [
+    "evidence_and_literature",
+    "candidate_implementation",
+    "development_and_ablation",
+    "fixed_book_separated_validation",
+    "PNG_and_report"
+  ],
+  "ground_truth_status": "existing ROIs are locations only, not pixel GT",
+  "prior_positive_books_are_development": true,
+  "artifacts_within_project_only": true
+}

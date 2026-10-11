@@ -1,0 +1,65 @@
+[
+  {
+    "name": "independent_v2",
+    "old_pid": 3561741,
+    "pid": 33948,
+    "command": [
+      "/home/imoto/miniconda3/envs/diffusion/bin/python",
+      "-u",
+      "/home/imoto/Heritage_Pipeline/tmp_work/vermillion_stain_research_20261007_8h/predict_independent_v2.py",
+      "--device",
+      "cuda:1"
+    ]
+  },
+  {
+    "name": "independent_direct",
+    "old_pid": 3562009,
+    "pid": 33949,
+    "command": [
+      "/home/imoto/miniconda3/envs/diffusion/bin/python",
+      "-u",
+      "/home/imoto/Heritage_Pipeline/tmp_work/vermillion_stain_research_20261007_8h/workflow_independent_direct.py"
+    ]
+  },
+  {
+    "name": "independent_classical",
+    "old_pid": 3564649,
+    "pid": 33950,
+    "command": [
+      "/home/imoto/miniconda3/envs/diffusion/bin/python",
+      "-u",
+      "/home/imoto/Heritage_Pipeline/tmp_work/vermillion_stain_research_20261007_8h/predict_independent_v2.py",
+      "--classical-only"
+    ]
+  },
+  {
+    "name": "independent_ddrm",
+    "old_pid": 3564417,
+    "pid": 33951,
+    "command": [
+      "/home/imoto/miniconda3/envs/diffusion/bin/python",
+      "-u",
+      "/home/imoto/Heritage_Pipeline/tmp_work/vermillion_stain_research_20261007_8h/workflow_independent_ddrm.py"
+    ]
+  },
+  {
+    "name": "stain_pair_control",
+    "old_pid": 3562727,
+    "pid": 33952,
+    "command": [
+      "/home/imoto/miniconda3/envs/diffusion/bin/python",
+      "-u",
+      "/home/imoto/Heritage_Pipeline/tmp_work/vermillion_stain_research_20261007_8h/workflow_stain_pair_control.py"
+    ]
+  },
+  {
+    "name": "relative_only",
+    "old_pid": 3564300,
+    "pid": 33953,
+    "command": [
+      "/home/imoto/miniconda3/envs/diffusion/bin/python",
+      "-u",
+      "/home/imoto/Heritage_Pipeline/tmp_work/vermillion_stain_research_20261007_8h/workflow_relative_only.py"
+    ]
+  }
+]

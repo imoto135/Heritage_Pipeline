@@ -1,0 +1,161 @@
+{
+  "cases": [
+    {
+      "id": "unseen_lower_frame_mark",
+      "page": "200004107_00023_1",
+      "role": "monochrome_damage_candidate_and_text",
+      "new_v6_book": true,
+      "v6_update": 0,
+      "v6_applied": 0,
+      "v6_changed": 0,
+      "ruled_update": 0,
+      "ruled_applied": 0,
+      "ruled_changed": 0,
+      "v6_reference_L_threshold": 74.09228515625,
+      "ruled_reference_L_threshold": 100.0,
+      "v6_solves": [],
+      "ruled_geometry": {
+        "rules": [],
+        "chosen_rule": null,
+        "components": [],
+        "counts": {
+          "margin": 0,
+          "original_local_dark": 66449,
+          "horizontal": 2721,
+          "broad_soft": 0,
+          "broad_seed": 0,
+          "mandatory": 0,
+          "narrow_guard": 102164,
+          "margin_update": 0,
+          "guarded_update": 0
+        }
+      },
+      "ruled_solves": [],
+      "outside_update_exact": true,
+      "v6_keep_exact": true,
+      "ruled_keep_exact": true,
+      "excluded_reference_poison_invariant": true
+    },
+    {
+      "id": "unseen_lower_binding_mark",
+      "page": "200003967_00043_1",
+      "role": "monochrome_damage_candidate_and_text",
+      "new_v6_book": true,
+      "v6_update": 0,
+      "v6_applied": 0,
+      "v6_changed": 0,
+      "ruled_update": 0,
+      "ruled_applied": 0,
+      "ruled_changed": 0,
+      "v6_reference_L_threshold": 74.427978515625,
+      "ruled_reference_L_threshold": 74.568359375,
+      "v6_solves": [],
+      "ruled_geometry": {
+        "rules": [
+          {
+            "y0": 357,
+            "y1": 373,
+            "ink_above": 0.3519729393115942,
+            "ink_below": 0.2900673686594203,
+            "accepted": true
+          }
+        ],
+        "chosen_rule": {
+          "y0": 357,
+          "y1": 373,
+          "ink_above": 0.3519729393115942,
+          "ink_below": 0.2900673686594203,
+          "accepted": true
+        },
+        "components": [],
+        "counts": {
+          "margin": 297216,
+          "original_local_dark": 199069,
+          "horizontal": 25948,
+          "broad_soft": 0,
+          "broad_seed": 0,
+          "mandatory": 0,
+          "narrow_guard": 196567,
+          "margin_update": 0,
+          "guarded_update": 0
+        }
+      },
+      "ruled_solves": [],
+      "outside_update_exact": true,
+      "v6_keep_exact": true,
+      "ruled_keep_exact": true,
+      "excluded_reference_poison_invariant": true
+    }
+  ],
+  "mask_inference_scope": "Full original page for v6, aligned 768px raw frame for lower-rule detector",
+  "fixed_numeric_reference_settings": {
+    "mask": "Unchanged frozen ruled-margin margin_update mask, not guarded_update",
+    "scope": "Whole 620x620 control; no crop ROI supplied to renderer",
+    "paper_reference": "Outside update, inside frozen margin, outside mandatory keep; Lab L >= max(50, eligible median L - 8), local 65px closing drop <= 4",
+    "reference_smoothing_sigma": 2,
+    "solver": "4-neighbour BGR Laplace; zero flux at non-paper neighbours; minimum 16 clean boundary pairs per 4-connected component",
+    "comparison": "Same mask: all-neighbour harmonic vs clean-paper-only smoothed boundary",
+    "stroke_repair": false,
+    "mask_expansion": false,
+    "adopted": false,
+    "limitations": [
+      "Known case used to design mask and thresholds; no independent validation",
+      "No material GT; lower margin might include writing or paper structure",
+      "Inside writing frame remains unchanged; texture is not generated",
+      "Fresh control is current local v2 code with CSC v1 mask, not historical replay"
+    ]
+  },
+  "ruled_geometry_settings": {
+    "scope": "Entire aligned original/reference frame; no ROI, book or page labels in infer",
+    "baseline": "Unmodified authentic saved npj; original/reference used for geometry, not replacement outside update",
+    "ruled_margin": {
+      "local_dark_contrast_L": 8,
+      "closing_kernel_native": 31,
+      "horizontal_length": "odd max(81, round(.15*width))",
+      "min_row_coverage": 0.65,
+      "row_group_gap": 9,
+      "max_rule_height_fraction": 0.07,
+      "min_rule_y_fraction": 0.35,
+      "min_lower_margin_fraction": 0.1,
+      "rule_halo_px": 8,
+      "require_above_ink_fraction": 0.01,
+      "require_below_less_ink": true
+    },
+    "broad_shadow": {
+      "estimator": "Unchanged prior bright-weighted paper_estimate",
+      "gaussian_sigma": 8,
+      "soft_L_drop": 5,
+      "seed_L_drop": 8,
+      "min_area": 128,
+      "min_seed": 32,
+      "min_peak_radius": 4,
+      "observed_npj_residual_L_drop": 12,
+      "min_residual_pixels": 32,
+      "min_residual_fraction": 0.03,
+      "min_paper_chroma_b": 5,
+      "frame_guard_px": 2
+    },
+    "narrow_guard": {
+      "sigmas": [
+        1.5,
+        3.0
+      ],
+      "response_min": 2,
+      "coherence_min": 0.8,
+      "local_dark_drop_min": 8,
+      "halo_px": 2
+    },
+    "mandatory": "Union of existing saved-input red and v6-specific extra hold; not all protect/hold",
+    "fill": "Same saved-npj 4-neighbour harmonic kernel; no pre-fill or model rerun",
+    "development": true,
+    "pixel_GT": false,
+    "automatic_adoption": false,
+    "limitations": [
+      "Known failure case influenced design; no independent generalization test",
+      "Rule geometry does not prove absence of margin writing",
+      "Original/reference and actual saved-input pixels differ on two frames",
+      "Inside writing frame intentionally not handled; shadows/creases may be natural"
+    ]
+  },
+  "v6_reference_domain_extension": "Use v6 non-keep pixels as paper domain because these crops lack a lower margin; NOT unchanged Oct2 geometry"
+}

@@ -1,0 +1,266 @@
+{
+  "target": "data/test/200021071/200021071_00033_2.jpg",
+  "source": "data/test/200021071/200021071_00033_1.jpg",
+  "transformation": "horizontal mirror, resize to target, then affine source-to-target",
+  "source_points": [
+    [
+      1225.223876953125,
+      133.3134307861328
+    ],
+    [
+      1191.6024169921875,
+      209.0060272216797
+    ],
+    [
+      1250.45361328125,
+      242.0824737548828
+    ],
+    [
+      1056.0,
+      402.625
+    ],
+    [
+      1639.565185546875,
+      1522.478271484375
+    ],
+    [
+      1731.1976318359375,
+      1738.215576171875
+    ],
+    [
+      1503.2689208984375,
+      2202.765625
+    ]
+  ],
+  "target_points": [
+    [
+      1216.7313232421875,
+      132.1641845703125
+    ],
+    [
+      1183.7008056640625,
+      207.59829711914062
+    ],
+    [
+      1242.2615966796875,
+      239.55384826660156
+    ],
+    [
+      1051.591796875,
+      403.2244873046875
+    ],
+    [
+      1657.142822265625,
+      1526.873046875
+    ],
+    [
+      1727.988037109375,
+      1733.797607421875
+    ],
+    [
+      1507.9810791015625,
+      2205.302001953125
+    ]
+  ],
+  "affine": [
+    [
+      0.9849130079543823,
+      0.00846900334563693,
+      8.47188648137698
+    ],
+    [
+      -0.016201291239206526,
+      1.0042118726641884,
+      16.966986493793097
+    ]
+  ],
+  "inliers": [
+    true,
+    true,
+    true,
+    true,
+    false,
+    true,
+    true
+  ],
+  "residuals_px": [
+    1.2361033972869633,
+    0.17338389076995678,
+    0.29769312117315283,
+    1.0196744609726716,
+    22.276665353577986,
+    0.7170445068617144,
+    0.6986648058185304
+  ],
+  "leave_one_out_errors_px": [
+    1.7983208597597817,
+    0.2336838053896474,
+    0.41342663072193436,
+    2.207940564668068,
+    3.405225592709791,
+    3.920255204359039
+  ],
+  "accepted_landmark_bounds_xy": [
+    [
+      1051.591796875,
+      132.1641845703125
+    ],
+    [
+      1727.988037109375,
+      2205.302001953125
+    ]
+  ],
+  "registration_limit": "six spot correspondences concentrated on right side; left-side accuracy and local paper warp unverified",
+  "pixel_ground_truth": false,
+  "selected_removal_pixels": 0,
+  "selected_removal_pixels_roi": 0,
+  "candidate_mask_identical": true,
+  "red_mask_identical": true,
+  "mask_rule": {
+    "source_gray_threshold": 130,
+    "source_support_dilation_radius_px": 5,
+    "min_component_area": 16,
+    "min_source_support": 0.7,
+    "target_gray_threshold": 130,
+    "max_target_dark_fraction": 0,
+    "max_csc_black_fraction": 0.05,
+    "protect_red_overlap": true
+  },
+  "pale_component_diagnostics": [
+    {
+      "label": 8,
+      "xywh": [
+        720,
+        295,
+        5,
+        14
+      ],
+      "area": 48,
+      "source_support_fraction": 0.625,
+      "target_dark_fraction": 0.0625,
+      "csc_fraction": 0.0,
+      "median_gray": 158.0,
+      "selected": false
+    },
+    {
+      "label": 10,
+      "xywh": [
+        818,
+        307,
+        7,
+        11
+      ],
+      "area": 48,
+      "source_support_fraction": 0.0,
+      "target_dark_fraction": 0.020833333333333332,
+      "csc_fraction": 0.020833333333333332,
+      "median_gray": 161.5,
+      "selected": false
+    },
+    {
+      "label": 13,
+      "xywh": [
+        1673,
+        506,
+        11,
+        13
+      ],
+      "area": 75,
+      "source_support_fraction": 0.0,
+      "target_dark_fraction": 0.013333333333333334,
+      "csc_fraction": 0.0,
+      "median_gray": 160.0,
+      "selected": false
+    },
+    {
+      "label": 44,
+      "xywh": [
+        1536,
+        697,
+        8,
+        12
+      ],
+      "area": 76,
+      "source_support_fraction": 0.0,
+      "target_dark_fraction": 0.11842105263157894,
+      "csc_fraction": 0.0,
+      "median_gray": 142.0,
+      "selected": false
+    },
+    {
+      "label": 50,
+      "xywh": [
+        1526,
+        719,
+        13,
+        14
+      ],
+      "area": 101,
+      "source_support_fraction": 0.0,
+      "target_dark_fraction": 0.0,
+      "csc_fraction": 0.0,
+      "median_gray": 153.0,
+      "selected": false
+    },
+    {
+      "label": 51,
+      "xywh": [
+        1515,
+        720,
+        5,
+        6
+      ],
+      "area": 17,
+      "source_support_fraction": 0.0,
+      "target_dark_fraction": 0.0,
+      "csc_fraction": 0.0,
+      "median_gray": 159.0,
+      "selected": false
+    },
+    {
+      "label": 53,
+      "xywh": [
+        1500,
+        749,
+        24,
+        43
+      ],
+      "area": 321,
+      "source_support_fraction": 0.0,
+      "target_dark_fraction": 0.07165109034267912,
+      "csc_fraction": 0.0,
+      "median_gray": 153.0,
+      "selected": false
+    },
+    {
+      "label": 127,
+      "xywh": [
+        801,
+        1110,
+        11,
+        16
+      ],
+      "area": 67,
+      "source_support_fraction": 0.0,
+      "target_dark_fraction": 0.11940298507462686,
+      "csc_fraction": 0.014925373134328358,
+      "median_gray": 152.0,
+      "selected": false
+    }
+  ],
+  "dependencies": {
+    "data/test/200021071/200021071_00033_2.jpg": "ccb0099adc3745cc6974aa7c7e51791c36e6575c0d3deb394dac64a62276c9e5",
+    "data/test/200021071/200021071_00033_1.jpg": "ca52cdbec46300276600de1b44d659e2d9faf2b45009ea64adecf020cd8a05d9",
+    "data/split_dataset_csc_mask_v2/test/200021071/200021071_00033_1/02_text_black.png": "bcf8b800bb3981ce17cd3c8273c45a995975384692f2614feba5aa32a7029545",
+    "data/split_dataset_csc_mask_v2/test/200021071/200021071_00033_2/02_text_black.png": "d1e25f571be87bd371b727148425a850bb98b820796db9ccfeda34c42aad9a8e",
+    "tmp_work/test_only_challenge_search_20261009/ddrm_pilot/masks/howe/200021071_00033_2/02_text_black.png": "c9c8dc65a3dda8e794e9de843f0a1ab564a18e9b8cae7c170b596f9bfb848b34",
+    "tmp_work/test_only_challenge_search_20261009/ddrm_pilot/masks/howe/200021071_00033_2/03_text_red.png": "ca76c880d9ac139b6524b740853f75b3ec8c19b5afb7fe7a5d0a84e95960fbfd",
+    "tmp_work/test_only_challenge_search_20261009/ddrm_pilot/outputs/csc/200021071_00033_2/result/200021071_00033_2.png": "eea55b4bddc63227ac163a633f9606b8fee4dd3e6d048f33d11426c6b3fa42d0",
+    "tmp_work/test_only_challenge_search_20261009/ddrm_pilot/outputs/howe/200021071_00033_2/result/200021071_00033_2.png": "3c392cac7765679010790431f898d0b91f7d9b08586c54312e8523ff173216b9"
+  },
+  "output_reused": true,
+  "reused_output_sha256": "3c392cac7765679010790431f898d0b91f7d9b08586c54312e8523ff173216b9",
+  "development_examples": true,
+  "shared_stepwise_noise_guaranteed": false,
+  "script_sha256": "0cb54533ce93f439cc0a530482038f7a5e6fa243844c0e60905bb96aef8c3538"
+}

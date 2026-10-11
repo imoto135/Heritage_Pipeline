@@ -1,0 +1,20 @@
+{
+  "page": "200021763_00002_2",
+  "name": "spatial_forest",
+  "book": "200021763",
+  "role": "development",
+  "original": "data/train/200021763/200021763_00002_2.jpg",
+  "source_sha256": "44631919294b4cde57c2cfa8f669ac2648fa855a2f204e25629c115f5b986313",
+  "model_sha256": "3467836a4d796b0ceecc1484a39776bbf34c9acf69f5138e83f827acf1cde271",
+  "threshold": 0.5,
+  "script_sha256": "588fbd088eac4cdf6957f0f1fb1c5957ab38aabbba74d196a0c7011db0b5741c",
+  "mark_pixels": 697513,
+  "seconds": 16.780106080695987,
+  "training": "92 tentative original-development points; no validation labels used",
+  "classifier_has_no_stain_head": true,
+  "no_full_pixel_GT": true,
+  "outputs": {
+    "mark_mask.png": "93f34906dcdec726390c318a4eee752b2bec6e582ef31d6a11386a9748ab8281",
+    "mark_probability_preview.png": "f72573a2f9278614b491f316590c094a085b176b0029221cf99e54418229c21c"
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "page": "100249416_00002_2",
+  "book": "100249416",
+  "role": "validation",
+  "original": "/home/imoto/Heritage_Pipeline/data/val/100249416/100249416_00002_2.jpg",
+  "source_sha256": "31f4689eae8f8bc1c944000095d8850950bccafbae6816041b1ee46b113cd8fc",
+  "method": "docres_binarization",
+  "seconds": 16.591843110509217,
+  "shape": [
+    3150,
+    2034,
+    3
+  ],
+  "finite": true,
+  "protocol_sha256": "fcdd1f4d087a75557c2fd0903dfc69df79c9b5b56f48618e078d8e7284b986ee",
+  "source_pixel_GT": false,
+  "inputs_have_no_masks_or_annotations": true,
+  "outputs": {
+    "result.png": "3c2c72db2f6fa798ecba54bc59c50bb5d5f06b97c71ccbfc5fd2ba246483abf6",
+    "background_probability.npy": "04786fd0534d2600520ce5a802b5ee0bd05558bf2cf1675ce346fbc234862981",
+    "prompt.png": "1b6f21b86244ca4d9d72ab8244a5d5f554b98319882efc304dcb10d4a83b607b",
+    "ink_mask.png": "583e27faba54f00745a9eaf53ac0e1e25dd2b160aa859bd93ee72af2827e07d0"
+  }
+}

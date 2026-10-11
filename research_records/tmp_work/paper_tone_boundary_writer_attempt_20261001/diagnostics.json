@@ -1,0 +1,1446 @@
+[
+  {
+    "id": "dense_stain",
+    "page": "hnsd001_011",
+    "xywh": [
+      400,
+      460,
+      400,
+      400
+    ],
+    "title": "濃い茶色の斑点を墨と判定",
+    "baseline_failure": true,
+    "adjusted_pixels": 0,
+    "reference_pixels": 0,
+    "components": [],
+    "diagnostics": {
+      "base": {
+        "boundary_pairs": 0,
+        "median_known_paper_boundary_deltaLab": null,
+        "changed_vs_base": 0
+      },
+      "tone": {
+        "boundary_pairs": 0,
+        "median_known_paper_boundary_deltaLab": null,
+        "changed_vs_base": 0
+      },
+      "boundary": {
+        "boundary_pairs": 0,
+        "median_known_paper_boundary_deltaLab": null,
+        "changed_vs_base": 0
+      },
+      "tone_boundary": {
+        "boundary_pairs": 0,
+        "median_known_paper_boundary_deltaLab": null,
+        "changed_vs_base": 0
+      }
+    },
+    "texture": {
+      "reference_pixels": 0,
+      "edit_core_pixels": 0,
+      "reference_L_highpass_std": null,
+      "base_L_highpass_std": null,
+      "tone_L_highpass_std": null,
+      "boundary_L_highpass_std": null,
+      "tone_boundary_L_highpass_std": null
+    },
+    "outside_edit_changed_pixels": 0
+  },
+  {
+    "id": "thin_black_water",
+    "page": "hnsd001_011",
+    "xywh": [
+      220,
+      1620,
+      850,
+      760
+    ],
+    "title": "水染みの中の薄い本文の欠損",
+    "baseline_failure": true,
+    "adjusted_pixels": 0,
+    "reference_pixels": 0,
+    "components": [],
+    "diagnostics": {
+      "base": {
+        "boundary_pairs": 0,
+        "median_known_paper_boundary_deltaLab": null,
+        "changed_vs_base": 0
+      },
+      "tone": {
+        "boundary_pairs": 0,
+        "median_known_paper_boundary_deltaLab": null,
+        "changed_vs_base": 0
+      },
+      "boundary": {
+        "boundary_pairs": 0,
+        "median_known_paper_boundary_deltaLab": null,
+        "changed_vs_base": 0
+      },
+      "tone_boundary": {
+        "boundary_pairs": 0,
+        "median_known_paper_boundary_deltaLab": null,
+        "changed_vs_base": 0
+      }
+    },
+    "texture": {
+      "reference_pixels": 0,
+      "edit_core_pixels": 0,
+      "reference_L_highpass_std": null,
+      "base_L_highpass_std": null,
+      "tone_L_highpass_std": null,
+      "boundary_L_highpass_std": null,
+      "tone_boundary_L_highpass_std": null
+    },
+    "outside_edit_changed_pixels": 0
+  },
+  {
+    "id": "brown_as_red",
+    "page": "200010454_00002_2",
+    "xywh": [
+      710,
+      200,
+      450,
+      330
+    ],
+    "title": "茶色い斑点を朱インクと判定",
+    "baseline_failure": true,
+    "adjusted_pixels": 0,
+    "reference_pixels": 0,
+    "components": [],
+    "diagnostics": {
+      "base": {
+        "boundary_pairs": 0,
+        "median_known_paper_boundary_deltaLab": null,
+        "changed_vs_base": 0
+      },
+      "tone": {
+        "boundary_pairs": 0,
+        "median_known_paper_boundary_deltaLab": null,
+        "changed_vs_base": 0
+      },
+      "boundary": {
+        "boundary_pairs": 0,
+        "median_known_paper_boundary_deltaLab": null,
+        "changed_vs_base": 0
+      },
+      "tone_boundary": {
+        "boundary_pairs": 0,
+        "median_known_paper_boundary_deltaLab": null,
+        "changed_vs_base": 0
+      }
+    },
+    "texture": {
+      "reference_pixels": 0,
+      "edit_core_pixels": 0,
+      "reference_L_highpass_std": null,
+      "base_L_highpass_std": null,
+      "tone_L_highpass_std": null,
+      "boundary_L_highpass_std": null,
+      "tone_boundary_L_highpass_std": null
+    },
+    "outside_edit_changed_pixels": 0
+  },
+  {
+    "id": "thin_black_loop",
+    "page": "200010454_00002_2",
+    "xywh": [
+      1290,
+      600,
+      280,
+      600
+    ],
+    "title": "薄い黒筆画のループが編集候補に入る",
+    "baseline_failure": true,
+    "adjusted_pixels": 0,
+    "reference_pixels": 0,
+    "components": [],
+    "diagnostics": {
+      "base": {
+        "boundary_pairs": 0,
+        "median_known_paper_boundary_deltaLab": null,
+        "changed_vs_base": 0
+      },
+      "tone": {
+        "boundary_pairs": 0,
+        "median_known_paper_boundary_deltaLab": null,
+        "changed_vs_base": 0
+      },
+      "boundary": {
+        "boundary_pairs": 0,
+        "median_known_paper_boundary_deltaLab": null,
+        "changed_vs_base": 0
+      },
+      "tone_boundary": {
+        "boundary_pairs": 0,
+        "median_known_paper_boundary_deltaLab": null,
+        "changed_vs_base": 0
+      }
+    },
+    "texture": {
+      "reference_pixels": 0,
+      "edit_core_pixels": 0,
+      "reference_L_highpass_std": null,
+      "base_L_highpass_std": null,
+      "tone_L_highpass_std": null,
+      "boundary_L_highpass_std": null,
+      "tone_boundary_L_highpass_std": null
+    },
+    "outside_edit_changed_pixels": 0
+  },
+  {
+    "id": "thin_black_text",
+    "page": "200003803_00009_2",
+    "xywh": [
+      600,
+      960,
+      900,
+      900
+    ],
+    "title": "対照：本文と薄い青灰色の線",
+    "baseline_failure": false,
+    "adjusted_pixels": 0,
+    "reference_pixels": 0,
+    "components": [],
+    "diagnostics": {
+      "base": {
+        "boundary_pairs": 0,
+        "median_known_paper_boundary_deltaLab": null,
+        "changed_vs_base": 0
+      },
+      "tone": {
+        "boundary_pairs": 0,
+        "median_known_paper_boundary_deltaLab": null,
+        "changed_vs_base": 0
+      },
+      "boundary": {
+        "boundary_pairs": 0,
+        "median_known_paper_boundary_deltaLab": null,
+        "changed_vs_base": 0
+      },
+      "tone_boundary": {
+        "boundary_pairs": 0,
+        "median_known_paper_boundary_deltaLab": null,
+        "changed_vs_base": 0
+      }
+    },
+    "texture": {
+      "reference_pixels": 0,
+      "edit_core_pixels": 0,
+      "reference_L_highpass_std": null,
+      "base_L_highpass_std": null,
+      "tone_L_highpass_std": null,
+      "boundary_L_highpass_std": null,
+      "tone_boundary_L_highpass_std": null
+    },
+    "outside_edit_changed_pixels": 0
+  },
+  {
+    "id": "warm_stroke",
+    "page": "200021763_00002_2",
+    "xywh": [
+      200,
+      2020,
+      490,
+      450
+    ],
+    "title": "赤褐色の長い筆画が分断される",
+    "baseline_failure": true,
+    "adjusted_pixels": 0,
+    "reference_pixels": 0,
+    "components": [],
+    "diagnostics": {
+      "base": {
+        "boundary_pairs": 0,
+        "median_known_paper_boundary_deltaLab": null,
+        "changed_vs_base": 0
+      },
+      "tone": {
+        "boundary_pairs": 0,
+        "median_known_paper_boundary_deltaLab": null,
+        "changed_vs_base": 0
+      },
+      "boundary": {
+        "boundary_pairs": 0,
+        "median_known_paper_boundary_deltaLab": null,
+        "changed_vs_base": 0
+      },
+      "tone_boundary": {
+        "boundary_pairs": 0,
+        "median_known_paper_boundary_deltaLab": null,
+        "changed_vs_base": 0
+      }
+    },
+    "texture": {
+      "reference_pixels": 0,
+      "edit_core_pixels": 0,
+      "reference_L_highpass_std": null,
+      "base_L_highpass_std": null,
+      "tone_L_highpass_std": null,
+      "boundary_L_highpass_std": null,
+      "tone_boundary_L_highpass_std": null
+    },
+    "outside_edit_changed_pixels": 0
+  },
+  {
+    "id": "control_black",
+    "page": "200021869_00010_2",
+    "xywh": [
+      377,
+      604,
+      512,
+      512
+    ],
+    "title": "対照：比較的濃い黒本文",
+    "baseline_failure": false,
+    "adjusted_pixels": 0,
+    "reference_pixels": 0,
+    "components": [],
+    "diagnostics": {
+      "base": {
+        "boundary_pairs": 0,
+        "median_known_paper_boundary_deltaLab": null,
+        "changed_vs_base": 0
+      },
+      "tone": {
+        "boundary_pairs": 0,
+        "median_known_paper_boundary_deltaLab": null,
+        "changed_vs_base": 0
+      },
+      "boundary": {
+        "boundary_pairs": 0,
+        "median_known_paper_boundary_deltaLab": null,
+        "changed_vs_base": 0
+      },
+      "tone_boundary": {
+        "boundary_pairs": 0,
+        "median_known_paper_boundary_deltaLab": null,
+        "changed_vs_base": 0
+      }
+    },
+    "texture": {
+      "reference_pixels": 0,
+      "edit_core_pixels": 0,
+      "reference_L_highpass_std": null,
+      "base_L_highpass_std": null,
+      "tone_L_highpass_std": null,
+      "boundary_L_highpass_std": null,
+      "tone_boundary_L_highpass_std": null
+    },
+    "outside_edit_changed_pixels": 0
+  },
+  {
+    "id": "dense_stain_new",
+    "page": "hnsd007_042",
+    "xywh": [
+      930,
+      240,
+      350,
+      440
+    ],
+    "title": "枠線・本文に接する濃い茶色の汚れ",
+    "baseline_failure": true,
+    "adjusted_pixels": 0,
+    "reference_pixels": 0,
+    "components": [],
+    "diagnostics": {
+      "base": {
+        "boundary_pairs": 0,
+        "median_known_paper_boundary_deltaLab": null,
+        "changed_vs_base": 0
+      },
+      "tone": {
+        "boundary_pairs": 0,
+        "median_known_paper_boundary_deltaLab": null,
+        "changed_vs_base": 0
+      },
+      "boundary": {
+        "boundary_pairs": 0,
+        "median_known_paper_boundary_deltaLab": null,
+        "changed_vs_base": 0
+      },
+      "tone_boundary": {
+        "boundary_pairs": 0,
+        "median_known_paper_boundary_deltaLab": null,
+        "changed_vs_base": 0
+      }
+    },
+    "texture": {
+      "reference_pixels": 0,
+      "edit_core_pixels": 0,
+      "reference_L_highpass_std": null,
+      "base_L_highpass_std": null,
+      "tone_L_highpass_std": null,
+      "boundary_L_highpass_std": null,
+      "tone_boundary_L_highpass_std": null
+    },
+    "outside_edit_changed_pixels": 0
+  },
+  {
+    "id": "brown_false_red_new",
+    "page": "100249476_00003_1",
+    "xywh": [
+      120,
+      70,
+      650,
+      360
+    ],
+    "title": "上端の茶色い紙面を朱インクと判定",
+    "baseline_failure": true,
+    "adjusted_pixels": 15079,
+    "reference_pixels": 39690,
+    "components": [
+      {
+        "id": 2,
+        "area": 523,
+        "adjusted": true,
+        "reference_pixels": 5806,
+        "core_pixels": 523,
+        "median_bias_Lab": [
+          3.5493621826171875,
+          -2.8141088485717773,
+          -2.1425037384033203
+        ],
+        "paper_plane_Lab_coefficients": [
+          [
+            91.95122528076172,
+            0.08530756086111069,
+            27.008136749267578
+          ],
+          [
+            -0.8183107376098633,
+            0.7250335216522217,
+            0.8071366548538208
+          ],
+          [
+            1.630143404006958,
+            -1.7663960456848145,
+            -1.3047658205032349
+          ]
+        ]
+      },
+      {
+        "id": 12,
+        "area": 224,
+        "adjusted": true,
+        "reference_pixels": 5437,
+        "core_pixels": 224,
+        "median_bias_Lab": [
+          0.7730560302734375,
+          0.353313684463501,
+          -0.16300392150878906
+        ],
+        "paper_plane_Lab_coefficients": [
+          [
+            87.61632537841797,
+            4.0496110916137695,
+            31.55949592590332
+          ],
+          [
+            1.3883285522460938,
+            -1.430760145187378,
+            0.22547438740730286
+          ],
+          [
+            0.608392059803009,
+            -0.7753399610519409,
+            0.6254203915596008
+          ]
+        ]
+      },
+      {
+        "id": 13,
+        "area": 2337,
+        "adjusted": true,
+        "reference_pixels": 3958,
+        "core_pixels": 1279,
+        "median_bias_Lab": [
+          6.0,
+          -1.7161083221435547,
+          -0.42795562744140625
+        ],
+        "paper_plane_Lab_coefficients": [
+          [
+            90.18195343017578,
+            0.7552871108055115,
+            28.07863426208496
+          ],
+          [
+            2.2342748641967773,
+            -1.1914794445037842,
+            -1.4934289455413818
+          ],
+          [
+            0.05878031998872757,
+            0.017514793202280998,
+            -0.04333988204598427
+          ]
+        ]
+      },
+      {
+        "id": 14,
+        "area": 70,
+        "adjusted": true,
+        "reference_pixels": 5884,
+        "core_pixels": 70,
+        "median_bias_Lab": [
+          0.47893524169921875,
+          -0.11930084228515625,
+          -1.6497688293457031
+        ],
+        "paper_plane_Lab_coefficients": [
+          [
+            86.89185333251953,
+            4.706594944000244,
+            31.478559494018555
+          ],
+          [
+            0.9066691398620605,
+            -1.1139429807662964,
+            0.5519673228263855
+          ],
+          [
+            0.8322812914848328,
+            -0.8732025027275085,
+            0.5262150764465332
+          ]
+        ]
+      },
+      {
+        "id": 18,
+        "area": 140,
+        "adjusted": true,
+        "reference_pixels": 3751,
+        "core_pixels": 140,
+        "median_bias_Lab": [
+          0.9596939086914062,
+          -0.6518034934997559,
+          -0.6882448196411133
+        ],
+        "paper_plane_Lab_coefficients": [
+          [
+            88.77872467041016,
+            2.7961559295654297,
+            31.28005599975586
+          ],
+          [
+            2.328449249267578,
+            -2.432523012161255,
+            -1.2227399349212646
+          ],
+          [
+            1.92764413356781,
+            -1.8645681142807007,
+            -0.05367344617843628
+          ]
+        ]
+      },
+      {
+        "id": 20,
+        "area": 77,
+        "adjusted": true,
+        "reference_pixels": 3078,
+        "core_pixels": 77,
+        "median_bias_Lab": [
+          1.440155029296875,
+          -1.7842758893966675,
+          -1.2745532989501953
+        ],
+        "paper_plane_Lab_coefficients": [
+          [
+            90.71456146240234,
+            0.8543251156806946,
+            29.49152374267578
+          ],
+          [
+            3.776932716369629,
+            -3.599747896194458,
+            -3.932582139968872
+          ],
+          [
+            0.5183470249176025,
+            -0.4263947904109955,
+            -0.26774895191192627
+          ]
+        ]
+      },
+      {
+        "id": 21,
+        "area": 11490,
+        "adjusted": true,
+        "reference_pixels": 25381,
+        "core_pixels": 4117,
+        "median_bias_Lab": [
+          0.9041213989257812,
+          -0.4334939122200012,
+          -1.200185775756836
+        ],
+        "paper_plane_Lab_coefficients": [
+          [
+            91.76240539550781,
+            0.01925065368413925,
+            28.10395050048828
+          ],
+          [
+            -0.20851202309131622,
+            0.24528320133686066,
+            0.07522370666265488
+          ],
+          [
+            1.4827101230621338,
+            -1.552210807800293,
+            -1.5737460851669312
+          ]
+        ]
+      },
+      {
+        "id": 25,
+        "area": 64,
+        "adjusted": true,
+        "reference_pixels": 2616,
+        "core_pixels": 64,
+        "median_bias_Lab": [
+          1.50799560546875,
+          -1.0034221410751343,
+          -0.3869056701660156
+        ],
+        "paper_plane_Lab_coefficients": [
+          [
+            89.65479278564453,
+            2.5572376251220703,
+            31.176145553588867
+          ],
+          [
+            -0.5341924428939819,
+            0.6822444796562195,
+            -0.07684873789548874
+          ],
+          [
+            1.0401169061660767,
+            -1.5149809122085571,
+            0.2528449296951294
+          ]
+        ]
+      },
+      {
+        "id": 26,
+        "area": 81,
+        "adjusted": true,
+        "reference_pixels": 2458,
+        "core_pixels": 81,
+        "median_bias_Lab": [
+          1.4774017333984375,
+          -0.9043302536010742,
+          -0.39858436584472656
+        ],
+        "paper_plane_Lab_coefficients": [
+          [
+            89.6055679321289,
+            2.5593016147613525,
+            31.014610290527344
+          ],
+          [
+            -0.764797568321228,
+            0.8894919753074646,
+            -0.10796773433685303
+          ],
+          [
+            1.0038561820983887,
+            -1.4506155252456665,
+            -0.19993725419044495
+          ]
+        ]
+      },
+      {
+        "id": 29,
+        "area": 73,
+        "adjusted": true,
+        "reference_pixels": 1082,
+        "core_pixels": 73,
+        "median_bias_Lab": [
+          4.031852722167969,
+          -1.710189938545227,
+          -1.6444110870361328
+        ],
+        "paper_plane_Lab_coefficients": [
+          [
+            90.0346450805664,
+            1.0992698669433594,
+            28.378494262695312
+          ],
+          [
+            2.2468297481536865,
+            -1.513331651687622,
+            -1.778138279914856
+          ],
+          [
+            -0.07462573796510696,
+            0.20705123245716095,
+            -0.16574108600616455
+          ]
+        ]
+      }
+    ],
+    "diagnostics": {
+      "base": {
+        "boundary_pairs": 54,
+        "median_known_paper_boundary_deltaLab": 2.1865100860595703,
+        "changed_vs_base": 0
+      },
+      "tone": {
+        "boundary_pairs": 54,
+        "median_known_paper_boundary_deltaLab": 2.7805259227752686,
+        "changed_vs_base": 15079
+      },
+      "boundary": {
+        "boundary_pairs": 54,
+        "median_known_paper_boundary_deltaLab": 2.4806830883026123,
+        "changed_vs_base": 14409
+      },
+      "tone_boundary": {
+        "boundary_pairs": 54,
+        "median_known_paper_boundary_deltaLab": 2.4806830883026123,
+        "changed_vs_base": 14946
+      }
+    },
+    "texture": {
+      "reference_pixels": 39114,
+      "edit_core_pixels": 5412,
+      "reference_L_highpass_std": 0.4547382891178131,
+      "base_L_highpass_std": 0.9426345825195312,
+      "tone_L_highpass_std": 0.9342803955078125,
+      "boundary_L_highpass_std": 0.9431775808334351,
+      "tone_boundary_L_highpass_std": 0.9407756328582764
+    },
+    "outside_edit_changed_pixels": 0
+  },
+  {
+    "id": "hole_edge_new",
+    "page": "200021712_00082_1",
+    "xywh": [
+      1300,
+      150,
+      400,
+      420
+    ],
+    "title": "虫食い状の穴・裂けの縁を墨と判定",
+    "baseline_failure": true,
+    "adjusted_pixels": 9460,
+    "reference_pixels": 34621,
+    "components": [
+      {
+        "id": 3,
+        "area": 8013,
+        "adjusted": true,
+        "reference_pixels": 27112,
+        "core_pixels": 5284,
+        "median_bias_Lab": [
+          0.5361251831054688,
+          0.517139196395874,
+          0.2624015808105469
+        ],
+        "paper_plane_Lab_coefficients": [
+          [
+            93.76210021972656,
+            0.9535056948661804,
+            13.573615074157715
+          ],
+          [
+            -0.1380418837070465,
+            0.13909535109996796,
+            -0.24708209931850433
+          ],
+          [
+            0.6954720616340637,
+            -0.30222076177597046,
+            -0.15836681425571442
+          ]
+        ]
+      },
+      {
+        "id": 6,
+        "area": 1447,
+        "adjusted": true,
+        "reference_pixels": 11821,
+        "core_pixels": 868,
+        "median_bias_Lab": [
+          -0.0872039794921875,
+          0.4843180775642395,
+          -0.10282373428344727
+        ],
+        "paper_plane_Lab_coefficients": [
+          [
+            94.95986938476562,
+            0.3406112790107727,
+            13.463968276977539
+          ],
+          [
+            -0.2809356451034546,
+            -0.015827374532818794,
+            0.19813929498195648
+          ],
+          [
+            -0.7345150709152222,
+            0.43589159846305847,
+            0.555057168006897
+          ]
+        ]
+      }
+    ],
+    "diagnostics": {
+      "base": {
+        "boundary_pairs": 325,
+        "median_known_paper_boundary_deltaLab": 3.549867630004883,
+        "changed_vs_base": 0
+      },
+      "tone": {
+        "boundary_pairs": 325,
+        "median_known_paper_boundary_deltaLab": 3.5697901248931885,
+        "changed_vs_base": 9460
+      },
+      "boundary": {
+        "boundary_pairs": 325,
+        "median_known_paper_boundary_deltaLab": 3.673933982849121,
+        "changed_vs_base": 6467
+      },
+      "tone_boundary": {
+        "boundary_pairs": 325,
+        "median_known_paper_boundary_deltaLab": 3.673933982849121,
+        "changed_vs_base": 9404
+      }
+    },
+    "texture": {
+      "reference_pixels": 34579,
+      "edit_core_pixels": 6152,
+      "reference_L_highpass_std": 0.4907630383968353,
+      "base_L_highpass_std": 0.6281167268753052,
+      "tone_L_highpass_std": 0.6281763911247253,
+      "boundary_L_highpass_std": 0.6280484795570374,
+      "tone_boundary_L_highpass_std": 0.6283226609230042
+    },
+    "outside_edit_changed_pixels": 0
+  },
+  {
+    "id": "control_text_new",
+    "page": "200021712_00082_1",
+    "xywh": [
+      600,
+      1400,
+      420,
+      580
+    ],
+    "title": "対照：穴のあるページの通常本文",
+    "baseline_failure": false,
+    "adjusted_pixels": 0,
+    "reference_pixels": 0,
+    "components": [],
+    "diagnostics": {
+      "base": {
+        "boundary_pairs": 0,
+        "median_known_paper_boundary_deltaLab": null,
+        "changed_vs_base": 0
+      },
+      "tone": {
+        "boundary_pairs": 0,
+        "median_known_paper_boundary_deltaLab": null,
+        "changed_vs_base": 0
+      },
+      "boundary": {
+        "boundary_pairs": 0,
+        "median_known_paper_boundary_deltaLab": null,
+        "changed_vs_base": 0
+      },
+      "tone_boundary": {
+        "boundary_pairs": 0,
+        "median_known_paper_boundary_deltaLab": null,
+        "changed_vs_base": 0
+      }
+    },
+    "texture": {
+      "reference_pixels": 0,
+      "edit_core_pixels": 0,
+      "reference_L_highpass_std": null,
+      "base_L_highpass_std": null,
+      "tone_L_highpass_std": null,
+      "boundary_L_highpass_std": null,
+      "tone_boundary_L_highpass_std": null
+    },
+    "outside_edit_changed_pixels": 0
+  },
+  {
+    "id": "brown_near_text",
+    "page": "200021869_00014_2",
+    "xywh": [
+      940,
+      1580,
+      550,
+      420
+    ],
+    "title": "文字のすぐ上の濃い茶色い斑点",
+    "baseline_failure": true,
+    "adjusted_pixels": 0,
+    "reference_pixels": 0,
+    "components": [],
+    "diagnostics": {
+      "base": {
+        "boundary_pairs": 0,
+        "median_known_paper_boundary_deltaLab": null,
+        "changed_vs_base": 0
+      },
+      "tone": {
+        "boundary_pairs": 0,
+        "median_known_paper_boundary_deltaLab": null,
+        "changed_vs_base": 0
+      },
+      "boundary": {
+        "boundary_pairs": 0,
+        "median_known_paper_boundary_deltaLab": null,
+        "changed_vs_base": 0
+      },
+      "tone_boundary": {
+        "boundary_pairs": 0,
+        "median_known_paper_boundary_deltaLab": null,
+        "changed_vs_base": 0
+      }
+    },
+    "texture": {
+      "reference_pixels": 0,
+      "edit_core_pixels": 0,
+      "reference_L_highpass_std": null,
+      "base_L_highpass_std": null,
+      "tone_L_highpass_std": null,
+      "boundary_L_highpass_std": null,
+      "tone_boundary_L_highpass_std": null
+    },
+    "outside_edit_changed_pixels": 0
+  },
+  {
+    "id": "dark_text_control",
+    "page": "200021869_00014_2",
+    "xywh": [
+      500,
+      400,
+      550,
+      600
+    ],
+    "title": "対照：同じページの濃い本文",
+    "baseline_failure": false,
+    "adjusted_pixels": 0,
+    "reference_pixels": 0,
+    "components": [],
+    "diagnostics": {
+      "base": {
+        "boundary_pairs": 0,
+        "median_known_paper_boundary_deltaLab": null,
+        "changed_vs_base": 0
+      },
+      "tone": {
+        "boundary_pairs": 0,
+        "median_known_paper_boundary_deltaLab": null,
+        "changed_vs_base": 0
+      },
+      "boundary": {
+        "boundary_pairs": 0,
+        "median_known_paper_boundary_deltaLab": null,
+        "changed_vs_base": 0
+      },
+      "tone_boundary": {
+        "boundary_pairs": 0,
+        "median_known_paper_boundary_deltaLab": null,
+        "changed_vs_base": 0
+      }
+    },
+    "texture": {
+      "reference_pixels": 0,
+      "edit_core_pixels": 0,
+      "reference_L_highpass_std": null,
+      "base_L_highpass_std": null,
+      "tone_L_highpass_std": null,
+      "boundary_L_highpass_std": null,
+      "tone_boundary_L_highpass_std": null
+    },
+    "outside_edit_changed_pixels": 0
+  },
+  {
+    "id": "faint_left_text",
+    "page": "200010454_00026_1",
+    "xywh": [
+      180,
+      500,
+      450,
+      1000
+    ],
+    "title": "別ページの細い筆画の分断",
+    "baseline_failure": true,
+    "adjusted_pixels": 0,
+    "reference_pixels": 0,
+    "components": [],
+    "diagnostics": {
+      "base": {
+        "boundary_pairs": 0,
+        "median_known_paper_boundary_deltaLab": null,
+        "changed_vs_base": 0
+      },
+      "tone": {
+        "boundary_pairs": 0,
+        "median_known_paper_boundary_deltaLab": null,
+        "changed_vs_base": 0
+      },
+      "boundary": {
+        "boundary_pairs": 0,
+        "median_known_paper_boundary_deltaLab": null,
+        "changed_vs_base": 0
+      },
+      "tone_boundary": {
+        "boundary_pairs": 0,
+        "median_known_paper_boundary_deltaLab": null,
+        "changed_vs_base": 0
+      }
+    },
+    "texture": {
+      "reference_pixels": 0,
+      "edit_core_pixels": 0,
+      "reference_L_highpass_std": null,
+      "base_L_highpass_std": null,
+      "tone_L_highpass_std": null,
+      "boundary_L_highpass_std": null,
+      "tone_boundary_L_highpass_std": null
+    },
+    "outside_edit_changed_pixels": 0
+  },
+  {
+    "id": "damage_control",
+    "page": "200014740_00065_2",
+    "xywh": [
+      700,
+      120,
+      650,
+      350
+    ],
+    "title": "別冊の穴・裂けの濃い縁",
+    "baseline_failure": true,
+    "adjusted_pixels": 0,
+    "reference_pixels": 0,
+    "components": [],
+    "diagnostics": {
+      "base": {
+        "boundary_pairs": 0,
+        "median_known_paper_boundary_deltaLab": null,
+        "changed_vs_base": 0
+      },
+      "tone": {
+        "boundary_pairs": 0,
+        "median_known_paper_boundary_deltaLab": null,
+        "changed_vs_base": 0
+      },
+      "boundary": {
+        "boundary_pairs": 0,
+        "median_known_paper_boundary_deltaLab": null,
+        "changed_vs_base": 0
+      },
+      "tone_boundary": {
+        "boundary_pairs": 0,
+        "median_known_paper_boundary_deltaLab": null,
+        "changed_vs_base": 0
+      }
+    },
+    "texture": {
+      "reference_pixels": 0,
+      "edit_core_pixels": 0,
+      "reference_L_highpass_std": null,
+      "base_L_highpass_std": null,
+      "tone_L_highpass_std": null,
+      "boundary_L_highpass_std": null,
+      "tone_boundary_L_highpass_std": null
+    },
+    "outside_edit_changed_pixels": 0
+  },
+  {
+    "id": "new_margin_hole",
+    "page": "100249416_00024_1",
+    "xywh": [
+      580,
+      60,
+      480,
+      280
+    ],
+    "title": "新しい冊の上余白の穴・裂け",
+    "baseline_failure": true,
+    "adjusted_pixels": 7312,
+    "reference_pixels": 19334,
+    "components": [
+      {
+        "id": 1,
+        "area": 7312,
+        "adjusted": true,
+        "reference_pixels": 19334,
+        "core_pixels": 4255,
+        "median_bias_Lab": [
+          0.95404052734375,
+          -0.8727569580078125,
+          -1.2955741882324219
+        ],
+        "paper_plane_Lab_coefficients": [
+          [
+            98.41938018798828,
+            -4.438679218292236,
+            15.074810028076172
+          ],
+          [
+            0.04837827384471893,
+            0.043347667902708054,
+            -0.2599802017211914
+          ],
+          [
+            0.3816632926464081,
+            -0.12339729815721512,
+            -1.0062267780303955
+          ]
+        ]
+      }
+    ],
+    "diagnostics": {
+      "base": {
+        "boundary_pairs": 205,
+        "median_known_paper_boundary_deltaLab": 3.5261690616607666,
+        "changed_vs_base": 0
+      },
+      "tone": {
+        "boundary_pairs": 205,
+        "median_known_paper_boundary_deltaLab": 4.765799522399902,
+        "changed_vs_base": 7312
+      },
+      "boundary": {
+        "boundary_pairs": 205,
+        "median_known_paper_boundary_deltaLab": 4.253687381744385,
+        "changed_vs_base": 6430
+      },
+      "tone_boundary": {
+        "boundary_pairs": 205,
+        "median_known_paper_boundary_deltaLab": 4.424656391143799,
+        "changed_vs_base": 7312
+      }
+    },
+    "texture": {
+      "reference_pixels": 19319,
+      "edit_core_pixels": 4255,
+      "reference_L_highpass_std": 0.20454472303390503,
+      "base_L_highpass_std": 0.4006311297416687,
+      "tone_L_highpass_std": 0.3983522057533264,
+      "boundary_L_highpass_std": 0.4197005331516266,
+      "tone_boundary_L_highpass_std": 0.41471368074417114
+    },
+    "outside_edit_changed_pixels": 0
+  },
+  {
+    "id": "new_frame_text",
+    "page": "100249416_00024_1",
+    "xywh": [
+      650,
+      320,
+      850,
+      350
+    ],
+    "title": "対照：穴の下の枠と本文",
+    "baseline_failure": false,
+    "adjusted_pixels": 0,
+    "reference_pixels": 0,
+    "components": [],
+    "diagnostics": {
+      "base": {
+        "boundary_pairs": 0,
+        "median_known_paper_boundary_deltaLab": null,
+        "changed_vs_base": 0
+      },
+      "tone": {
+        "boundary_pairs": 0,
+        "median_known_paper_boundary_deltaLab": null,
+        "changed_vs_base": 0
+      },
+      "boundary": {
+        "boundary_pairs": 0,
+        "median_known_paper_boundary_deltaLab": null,
+        "changed_vs_base": 0
+      },
+      "tone_boundary": {
+        "boundary_pairs": 0,
+        "median_known_paper_boundary_deltaLab": null,
+        "changed_vs_base": 0
+      }
+    },
+    "texture": {
+      "reference_pixels": 0,
+      "edit_core_pixels": 0,
+      "reference_L_highpass_std": null,
+      "base_L_highpass_std": null,
+      "tone_L_highpass_std": null,
+      "boundary_L_highpass_std": null,
+      "tone_boundary_L_highpass_std": null
+    },
+    "outside_edit_changed_pixels": 0
+  },
+  {
+    "id": "new_uncertain_trace",
+    "page": "brsk003_003",
+    "xywh": [
+      990,
+      170,
+      330,
+      300
+    ],
+    "title": "上余白の細い曲線：原因未確定",
+    "baseline_failure": false,
+    "adjusted_pixels": 0,
+    "reference_pixels": 0,
+    "components": [],
+    "diagnostics": {
+      "base": {
+        "boundary_pairs": 0,
+        "median_known_paper_boundary_deltaLab": null,
+        "changed_vs_base": 0
+      },
+      "tone": {
+        "boundary_pairs": 0,
+        "median_known_paper_boundary_deltaLab": null,
+        "changed_vs_base": 0
+      },
+      "boundary": {
+        "boundary_pairs": 0,
+        "median_known_paper_boundary_deltaLab": null,
+        "changed_vs_base": 0
+      },
+      "tone_boundary": {
+        "boundary_pairs": 0,
+        "median_known_paper_boundary_deltaLab": null,
+        "changed_vs_base": 0
+      }
+    },
+    "texture": {
+      "reference_pixels": 0,
+      "edit_core_pixels": 0,
+      "reference_L_highpass_std": null,
+      "base_L_highpass_std": null,
+      "tone_L_highpass_std": null,
+      "boundary_L_highpass_std": null,
+      "tone_boundary_L_highpass_std": null
+    },
+    "outside_edit_changed_pixels": 0
+  },
+  {
+    "id": "new_brown_stamp",
+    "page": "brsk003_003",
+    "xywh": [
+      2000,
+      390,
+      440,
+      380
+    ],
+    "title": "対照：本文外の茶色い印影",
+    "baseline_failure": false,
+    "adjusted_pixels": 555,
+    "reference_pixels": 2377,
+    "components": [
+      {
+        "id": 1,
+        "area": 555,
+        "adjusted": true,
+        "reference_pixels": 2377,
+        "core_pixels": 289,
+        "median_bias_Lab": [
+          1.8824234008789062,
+          -0.661302387714386,
+          -1.7505216598510742
+        ],
+        "paper_plane_Lab_coefficients": [
+          [
+            79.41510009765625,
+            0.7502694725990295,
+            9.48862361907959
+          ],
+          [
+            0.1197296753525734,
+            0.18622806668281555,
+            0.1240827739238739
+          ],
+          [
+            -0.7101134061813354,
+            -0.5255667567253113,
+            0.03671961650252342
+          ]
+        ]
+      }
+    ],
+    "diagnostics": {
+      "base": {
+        "boundary_pairs": 110,
+        "median_known_paper_boundary_deltaLab": 2.5512397289276123,
+        "changed_vs_base": 0
+      },
+      "tone": {
+        "boundary_pairs": 110,
+        "median_known_paper_boundary_deltaLab": 4.593355178833008,
+        "changed_vs_base": 555
+      },
+      "boundary": {
+        "boundary_pairs": 110,
+        "median_known_paper_boundary_deltaLab": 5.078286647796631,
+        "changed_vs_base": 555
+      },
+      "tone_boundary": {
+        "boundary_pairs": 110,
+        "median_known_paper_boundary_deltaLab": 5.078286647796631,
+        "changed_vs_base": 555
+      }
+    },
+    "texture": {
+      "reference_pixels": 2369,
+      "edit_core_pixels": 289,
+      "reference_L_highpass_std": 1.0075528621673584,
+      "base_L_highpass_std": 2.0551741123199463,
+      "tone_L_highpass_std": 2.042664051055908,
+      "boundary_L_highpass_std": 2.0548229217529297,
+      "tone_boundary_L_highpass_std": 2.0510659217834473
+    },
+    "outside_edit_changed_pixels": 0
+  },
+  {
+    "id": "new_header_ink",
+    "page": "brsk003_003",
+    "xywh": [
+      1520,
+      530,
+      330,
+      420
+    ],
+    "title": "対照：余白内の見出しと囲み",
+    "baseline_failure": false,
+    "adjusted_pixels": 0,
+    "reference_pixels": 0,
+    "components": [],
+    "diagnostics": {
+      "base": {
+        "boundary_pairs": 0,
+        "median_known_paper_boundary_deltaLab": null,
+        "changed_vs_base": 0
+      },
+      "tone": {
+        "boundary_pairs": 0,
+        "median_known_paper_boundary_deltaLab": null,
+        "changed_vs_base": 0
+      },
+      "boundary": {
+        "boundary_pairs": 0,
+        "median_known_paper_boundary_deltaLab": null,
+        "changed_vs_base": 0
+      },
+      "tone_boundary": {
+        "boundary_pairs": 0,
+        "median_known_paper_boundary_deltaLab": null,
+        "changed_vs_base": 0
+      }
+    },
+    "texture": {
+      "reference_pixels": 0,
+      "edit_core_pixels": 0,
+      "reference_L_highpass_std": null,
+      "base_L_highpass_std": null,
+      "tone_L_highpass_std": null,
+      "boundary_L_highpass_std": null,
+      "tone_boundary_L_highpass_std": null
+    },
+    "outside_edit_changed_pixels": 0
+  },
+  {
+    "id": "new_blank_paper",
+    "page": "200008003_00004_2",
+    "xywh": [
+      500,
+      120,
+      800,
+      600
+    ],
+    "title": "対照：白黒資料の上余白",
+    "baseline_failure": false,
+    "adjusted_pixels": 0,
+    "reference_pixels": 0,
+    "components": [],
+    "diagnostics": {
+      "base": {
+        "boundary_pairs": 0,
+        "median_known_paper_boundary_deltaLab": null,
+        "changed_vs_base": 0
+      },
+      "tone": {
+        "boundary_pairs": 0,
+        "median_known_paper_boundary_deltaLab": null,
+        "changed_vs_base": 0
+      },
+      "boundary": {
+        "boundary_pairs": 0,
+        "median_known_paper_boundary_deltaLab": null,
+        "changed_vs_base": 0
+      },
+      "tone_boundary": {
+        "boundary_pairs": 0,
+        "median_known_paper_boundary_deltaLab": null,
+        "changed_vs_base": 0
+      }
+    },
+    "texture": {
+      "reference_pixels": 0,
+      "edit_core_pixels": 0,
+      "reference_L_highpass_std": null,
+      "base_L_highpass_std": null,
+      "tone_L_highpass_std": null,
+      "boundary_L_highpass_std": null,
+      "tone_boundary_L_highpass_std": null
+    },
+    "outside_edit_changed_pixels": 0
+  },
+  {
+    "id": "new_mono_text",
+    "page": "200008003_00004_2",
+    "xywh": [
+      900,
+      1400,
+      650,
+      650
+    ],
+    "title": "対照：白黒資料の本文",
+    "baseline_failure": false,
+    "adjusted_pixels": 0,
+    "reference_pixels": 0,
+    "components": [],
+    "diagnostics": {
+      "base": {
+        "boundary_pairs": 0,
+        "median_known_paper_boundary_deltaLab": null,
+        "changed_vs_base": 0
+      },
+      "tone": {
+        "boundary_pairs": 0,
+        "median_known_paper_boundary_deltaLab": null,
+        "changed_vs_base": 0
+      },
+      "boundary": {
+        "boundary_pairs": 0,
+        "median_known_paper_boundary_deltaLab": null,
+        "changed_vs_base": 0
+      },
+      "tone_boundary": {
+        "boundary_pairs": 0,
+        "median_known_paper_boundary_deltaLab": null,
+        "changed_vs_base": 0
+      }
+    },
+    "texture": {
+      "reference_pixels": 0,
+      "edit_core_pixels": 0,
+      "reference_L_highpass_std": null,
+      "base_L_highpass_std": null,
+      "tone_L_highpass_std": null,
+      "boundary_L_highpass_std": null,
+      "tone_boundary_L_highpass_std": null
+    },
+    "outside_edit_changed_pixels": 0
+  }
+]

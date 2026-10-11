@@ -1,0 +1,470 @@
+{
+  "purpose": "Frozen other-book diagnostic comparison, purposive selection, no pixel GT",
+  "source_sha256": "771ec8fd458a69854bc051ce986fa41ade63564e3aa5cea3085a9045e06f4f5b",
+  "cases": [
+    {
+      "id": "200021802_00057_1",
+      "original": "data/train/200021802/200021802_00057_1.jpg",
+      "book": "200021802",
+      "split": "train",
+      "index": 110,
+      "reduced_width": 738,
+      "reduced_height": 1100,
+      "saturated_pixels": 652006,
+      "loose_pixels": 657186,
+      "dark_pixels": 5610,
+      "full_loose_pixels": 743037,
+      "ranking": "saturated_pixels",
+      "screening_stratum": "high",
+      "original_sha256": "b1c36337ec3a82b8cec57999ff2284323b4c42d08c0538bbe7bdf76dbeaea1d6",
+      "width": 2950,
+      "height": 4400,
+      "thumbnail": "thumbnails/200021802_00057_1.png"
+    },
+    {
+      "id": "100249476_00028_1",
+      "original": "data/train/100249476/100249476_00028_1.jpg",
+      "book": "100249476",
+      "split": "train",
+      "index": 53,
+      "reduced_width": 511,
+      "reduced_height": 725,
+      "saturated_pixels": 292628,
+      "loose_pixels": 299400,
+      "dark_pixels": 4932,
+      "full_loose_pixels": 345369,
+      "ranking": "saturated_pixels",
+      "screening_stratum": "high",
+      "original_sha256": "243805b579f648e1da3f13f9a7ed02c99e605444ec3d2808aa185bc93406d12a",
+      "width": 2042,
+      "height": 2898,
+      "thumbnail": "thumbnails/100249476_00028_1.png"
+    },
+    {
+      "id": "200021853_00016_2",
+      "original": "data/train/200021853/200021853_00016_2.jpg",
+      "book": "200021853",
+      "split": "train",
+      "index": 29,
+      "reduced_width": 327,
+      "reduced_height": 657,
+      "saturated_pixels": 12199,
+      "loose_pixels": 30824,
+      "dark_pixels": 20318,
+      "full_loose_pixels": 49669,
+      "ranking": "saturated_pixels",
+      "screening_stratum": "medium",
+      "original_sha256": "bc5f203cd7a62f2a66f76edc6dcce08a13e31ff4ec23cf74db8f3be74c01b772",
+      "width": 1306,
+      "height": 2625,
+      "thumbnail": "thumbnails/200021853_00016_2.png"
+    },
+    {
+      "id": "200021644_00003_1",
+      "original": "data/train/200021644/200021644_00003_1.jpg",
+      "book": "200021644",
+      "split": "train",
+      "index": 3,
+      "reduced_width": 525,
+      "reduced_height": 779,
+      "saturated_pixels": 30076,
+      "loose_pixels": 78597,
+      "dark_pixels": 314,
+      "full_loose_pixels": 84321,
+      "ranking": "saturated_pixels",
+      "screening_stratum": "medium",
+      "original_sha256": "5f7089ad84c745fe3503e0f3d628670419e22d8eedd68986f6b0a7965de36500",
+      "width": 2098,
+      "height": 3114,
+      "thumbnail": "thumbnails/200021644_00003_1.png"
+    },
+    {
+      "id": "200014685_00004_2",
+      "original": "data/train/200014685/200014685_00004_2.jpg",
+      "book": "200014685",
+      "split": "train",
+      "index": 5,
+      "reduced_width": 511,
+      "reduced_height": 808,
+      "saturated_pixels": 3137,
+      "loose_pixels": 26958,
+      "dark_pixels": 21936,
+      "full_loose_pixels": 38408,
+      "ranking": "saturated_pixels",
+      "screening_stratum": "low",
+      "original_sha256": "ef4a6af2df2c04984ca47a356fad6a6d02713386be0f166213427895821fe92b",
+      "width": 2041,
+      "height": 3231,
+      "thumbnail": "thumbnails/200014685_00004_2.png"
+    },
+    {
+      "id": "200021637_00003_2",
+      "original": "data/val/200021637/200021637_00003_2.jpg",
+      "book": "200021637",
+      "split": "val",
+      "index": 3,
+      "reduced_width": 460,
+      "reduced_height": 717,
+      "saturated_pixels": 3806,
+      "loose_pixels": 54199,
+      "dark_pixels": 4550,
+      "full_loose_pixels": 76113,
+      "ranking": "saturated_pixels",
+      "screening_stratum": "low",
+      "original_sha256": "8f1529dc441b3546249cb1931261d9401423923ae606b5bc7539b3f5b652d944",
+      "width": 1839,
+      "height": 2867,
+      "thumbnail": "thumbnails/200021637_00003_2.png"
+    }
+  ],
+  "dependencies": {
+    "scripts/benchmark/explore_warm_ink_hold.py": "21e378f61634484a34dbcad7c13756a0cfa4c6f75b018f2ed6701b4b86d39b8a",
+    "tmp_work/warm_ink_hold_v3_20260930/manifest.json": "53e0b3d6e546ff8d3e29964f91666b7edd0b69a049fd5ccd9230f64d88fda41e",
+    "scripts/benchmark/refine_warm_ink_hold.py": "187c3d33ac75039d388aa6b20a5210cfa287823fdcf05c5c5cef0cc2be0a54df",
+    "tmp_work/warm_ink_hold_v4_20260930/manifest.json": "97c6efe97249fa1300f637b95898a045adefa4dbcbe25a9267931038ea24d163",
+    "scripts/benchmark/compare_warm_stroke_hold.py": "de3d62b99280978cea8fd1093916f41b0335d981b9867ef06d812da1960d6cfb",
+    "tmp_work/warm_ink_hold_v5_20260930/manifest.json": "491c0971653895120d3753b444ca90da0b934c42a799db4c3296d234a3b8a007",
+    "scripts/benchmark/compare_split_warm_hold.py": "7d8ab28a12af5db727795f3c488d02a4c05f5ba12b047f7328dbee4ff32994e8",
+    "tmp_work/warm_ink_hold_v6_20260930/manifest.json": "1064fc55b1c1a7f3236ab020d0d7bef3c9f4b8daf5fe6c1a3b162e597359dddf",
+    "tmp_work/warm_ink_hold_v6_20260930/candidate_freeze.json": "2ed7f5bec639009039946a3548291697b4353a793c5148c3484a44683313b5b0",
+    "tmp_work/warm_ink_hold_v6_20260930/complete.json": "b8891f080eed52f9dc53cfe48713206e8767fdd46cead507ca5edeac972f33c5",
+    "tmp_work/red_positive_collection_20260930/candidate_pages.json": "8f6cdd0ffe7129e7732e4e71dc40cb8a5f4fd29f99c272a9a9ae5836fdb9ee61",
+    "tmp_work/red_positive_collection_20260930/screening_manifest.json": "67482fd483cc020525b153acdd455340bf07a1c2e15e45a8286f21270ea6db1c",
+    "tmp_work/warm_ink_v6_next_fixed_inputs_20260930/selection.json": "5f6ffc8d929e8011f99140d82f236367a8102708436c04abf2ed6a3383f46c72",
+    "tmp_work/warm_ink_v6_other_books_fixed_20261001/input_review/manifest.json": "8ea2aca793821ff9b1bd2f7972d05aa076bb2bcce2aa4aca5b191c8f451930c8",
+    "tmp_work/warm_ink_v6_other_books_fixed_20261001/input_review/rois.json": "4a9c7766a4431224d646dac1a9eb362f7209b6bedc10ec736af66e37a981026b",
+    "tmp_work/warm_ink_v6_other_books_fixed_20261001/input_review/findings.md": "f25dcc51a2da528e002b3878ff1e7d069de5db80971373fa3890ffb9fd9f57eb",
+    "scripts/benchmark/check_red_positive_fixed.py": "1da41567bf85cc01fcb95134627c0ff5b596bd1962232ff12595fd3489ba4ddd",
+    "scripts/benchmark/prepare_training_free_fixed_check.py": "7e780aa4c321aedc87ac1483628f7dd9e2aef6dd234bb49ab09c6a4a02a17e99",
+    "scripts/benchmark/refine_training_free_protection.py": "8f106202a7259aa3f4420b6a828b4cbab69acc177640f43c21daa2bb5a5e70b4",
+    "tmp_work/training_free_protection_v2_20260930/manifest.json": "aee81173acc492fe09bf29acf6e4b8b78411bfb1816532f7949d368bb426c3b2",
+    "scripts/benchmark/compare_training_free_color_shape.py": "33d08600b64905c9c722decb2bc140c4b1fe6e23cc6314e42a600b99f30b71ad",
+    "tmp_work/training_free_color_shape_20260930/manifest.json": "24a2cb0fd6d4fc0664edbb99db36f25c8e8cb6d136b1a4b4f2785bcf55e31ca2",
+    "scripts/benchmark/compare_training_free_preprocessing.py": "2645c45cee5461a397079642843403f741495f9a8c46f81530300e9a25f0429a",
+    "tmp_work/training_free_preprocess_20260930/manifest.json": "c6038e594c7a28125c8552bb79786ddd1b7ca4253ffdaf75a85e58af46e48dbb"
+  },
+  "rois": {
+    "200021802_00057_1": [
+      {
+        "title": "表紙中央の暖色面と亀裂",
+        "xywh": [
+          850,
+          1400,
+          700,
+          700
+        ]
+      },
+      {
+        "title": "表紙の左縁と綴じ",
+        "xywh": [
+          70,
+          550,
+          560,
+          900
+        ]
+      },
+      {
+        "title": "表紙下部の劣化",
+        "xywh": [
+          1100,
+          3100,
+          700,
+          700
+        ]
+      }
+    ],
+    "100249476_00028_1": [
+      {
+        "title": "表紙上部の色むら",
+        "xywh": [
+          360,
+          260,
+          800,
+          700
+        ]
+      },
+      {
+        "title": "表紙中央の折り目",
+        "xywh": [
+          550,
+          1320,
+          750,
+          620
+        ]
+      },
+      {
+        "title": "表紙の左縁",
+        "xywh": [
+          60,
+          900,
+          430,
+          850
+        ]
+      }
+    ],
+    "200021853_00016_2": [
+      {
+        "title": "上段の本文",
+        "xywh": [
+          130,
+          430,
+          700,
+          560
+        ]
+      },
+      {
+        "title": "下段の本文",
+        "xywh": [
+          190,
+          1620,
+          690,
+          700
+        ]
+      },
+      {
+        "title": "右側の紙の縁と文字",
+        "xywh": [
+          980,
+          520,
+          320,
+          1150
+        ]
+      }
+    ],
+    "200021644_00003_1": [
+      {
+        "title": "右下の朱印",
+        "xywh": [
+          1570,
+          2360,
+          380,
+          440
+        ]
+      },
+      {
+        "title": "桃色の図と輪郭",
+        "xywh": [
+          220,
+          1530,
+          1270,
+          890
+        ]
+      },
+      {
+        "title": "黄褐色の図",
+        "xywh": [
+          1290,
+          520,
+          550,
+          1250
+        ]
+      },
+      {
+        "title": "緑色の図と文字",
+        "xywh": [
+          1230,
+          1770,
+          640,
+          620
+        ]
+      },
+      {
+        "title": "上部の墨文字",
+        "xywh": [
+          620,
+          450,
+          650,
+          780
+        ]
+      }
+    ],
+    "200014685_00004_2": [
+      {
+        "title": "上側の本文",
+        "xywh": [
+          240,
+          500,
+          730,
+          720
+        ]
+      },
+      {
+        "title": "下側の本文",
+        "xywh": [
+          540,
+          2180,
+          890,
+          660
+        ]
+      },
+      {
+        "title": "上部の折れと紙の縁",
+        "xywh": [
+          1570,
+          0,
+          470,
+          590
+        ]
+      }
+    ],
+    "200021637_00003_2": [
+      {
+        "title": "右下の朱印と隣の薄い印",
+        "xywh": [
+          1100,
+          2180,
+          600,
+          660
+        ]
+      },
+      {
+        "title": "中央の薄い文字と色むら",
+        "xywh": [
+          720,
+          1020,
+          560,
+          960
+        ]
+      },
+      {
+        "title": "上段の墨の図",
+        "xywh": [
+          200,
+          360,
+          1300,
+          430
+        ]
+      },
+      {
+        "title": "下部の紙の色むらと枠",
+        "xywh": [
+          210,
+          2520,
+          900,
+          280
+        ]
+      }
+    ]
+  },
+  "settings": {
+    "v3": {
+      "purpose": "Development of extra editing hold; not classification accuracy",
+      "paper": {
+        "downsample": 4,
+        "closing_ellipse": 31,
+        "blur_sigma": 2.0,
+        "channelwise": true,
+        "rule": "estimated local bright field capped below by observed channel; not a physical paper measurement"
+      },
+      "chromatic": {
+        "classification_median": 3,
+        "green_minus_red_OD_min": 0.012,
+        "blue_minus_red_OD_min": 0.012,
+        "anchor_difference_min": 0.03,
+        "minimum_anchor_pixels": 20,
+        "anchor_angle_tolerance_degrees": 25.0,
+        "formula": "OD_c = log((bright_field_c + 1)/(median_input_c + 1))"
+      },
+      "shape": {
+        "bridge_closing_ellipse": 5,
+        "min_area": 12,
+        "max_area": 100000,
+        "max_fill": 0.75,
+        "max_aspect": 35.0,
+        "dense_exclusion": "exclude saved dense-stain and dense-hold pixels"
+      },
+      "graph": {
+        "maximum_component_gap": 64.0,
+        "maximum_rounds": 6,
+        "maximum_initial_anchor_distance": 512.0,
+        "rule": "component minimum distance; use only original chromatic pixels, not the artificial bridges"
+      },
+      "policy": "Add hold only; keep confirmed red, protection, stain candidates and guard unchanged",
+      "ablations": [
+        "weak_red_hold: saved weak-red color condition only",
+        "global_warm_hold: eligible local chromatic components without red context",
+        "context_warm_hold: eligible components linked to robust confirmed-red anchors"
+      ],
+      "caveat": "Fixed first trial heuristics on development pages. Extra hold may include stains near red ink."
+    },
+    "v4": {
+      "color": "Reuse frozen v3 contextual_candidate; same input-derived color direction and page gate (>=20 anchors)",
+      "routing": "Color candidate intersected with v2 protect | hold | stain_candidate; exclude dense_stain | dense_hold",
+      "connectivity": {
+        "closing_ellipse": 5,
+        "original_color_pixels_only": true,
+        "connectivity": 8
+      },
+      "red_touch": {
+        "minimum_confirmed_red_pixels_per_component": 3,
+        "no_area_cap": true
+      },
+      "nearby_protect": {
+        "minimum_existing_protected_warm_pixels": 3,
+        "maximum_minimum_red_distance": 512.0,
+        "minimum_bridge_area": 12,
+        "maximum_fill": 0.75,
+        "maximum_aspect": 35.0,
+        "no_area_cap": true
+      },
+      "added_hold": "Only accepted color pixels already in v2 edit_allowed",
+      "policy": "Confirmed red, protection, stain candidates and guard stay frozen; only hold expands and edit shrinks",
+      "limitation": "Development heuristics; nearby protected warm ink may include stains; no independent accuracy claim"
+    },
+    "v5": {
+      "chromatic": "Original median3, quarter-resolution closing31 ellipse + Gaussian2 bright field, original-pixel max; OD channel differences as v3",
+      "direction_tolerance_degrees": 18.0,
+      "v3_page_anchor_gate": true,
+      "strength": "min(OD_G-OD_R, OD_B-OD_R), before thresholding",
+      "ridge": {
+        "sigmas": [
+          2.0,
+          4.0,
+          8.0
+        ],
+        "derivative": "Gaussian then Sobel second derivatives k3, scale sigma^2/4",
+        "eigen_rule": "largest-absolute eigenvalue negative; |small| <= 0.5 |large|",
+        "response": "-large * exp(-2*(small/(abs(large)+1e-8))^2); maximum across scales"
+      },
+      "short_context": {
+        "max_red_distance": 96.0,
+        "minimum_ridge": 0.005
+      },
+      "supported_context": {
+        "support": "Saved v4 red_protect_context_extra_hold",
+        "minimum_ridge": 0.025
+      },
+      "neighbourhood": {
+        "dilation_radius": 8,
+        "kernel": "17px ellipse; only original chromatic pixels already editable become hold"
+      },
+      "modes": [
+        "short_context: tighter color direction and red distance only",
+        "stroke_context: short context with weak ridge, or v4 support with strong ridge"
+      ],
+      "fixed_decisions": "Keep v2 confirmed red, protection, stain candidates and guard; extra hold subset of v2 edit",
+      "parameter_selection": "Development heuristic trial after looking at 3 failure zooms and 2 brown diagnostic rectangles; no GT calibration",
+      "limitation": "Ridges can also be stains; thresholds and distances in native pixels; not a physical pigment or ink classifier"
+    },
+    "v6": {
+      "experiment": "Change output color gates only; all ridge seeds and support frozen from v5",
+      "short_path": "v5 narrow18 color & v2 edit & v5 near_red96 & dilated v5 weak ridge seeds",
+      "supported_path": "v3 broad25 color & v2 edit & v4 extra_hold & dilated v5 strong ridge seeds",
+      "split_direction": "short_path | supported_path",
+      "wide_direction": "v3 broad25 color & v2 edit & ((near_red96 & weak seed neighbours) | (v4 extra & strong seed neighbours))",
+      "seed_neighbourhood": "17px ellipse dilation, same 8px radius as v5; seed color still narrow18",
+      "fixed": "Original pixels, confirmed red, protection, stain candidate, guard, v4 support, v5 seeds unchanged",
+      "parameter_selection": "Known development examples; separate output gates after matched ablation; no GT calibration",
+      "limitation": "Diagnostic extra hold does not certify ink; native-pixel thresholds and inherited v4 mistakes"
+    }
+  },
+  "method_thresholds_changed": false,
+  "neural_training": false,
+  "pixel_GT": false,
+  "restoration_performed": false,
+  "versions": {
+    "python": "3.10.20 (main, Jun 11 2026, 15:17:37) [GCC 14.3.0]",
+    "opencv": "4.13.0",
+    "numpy": "1.26.4"
+  }
+}

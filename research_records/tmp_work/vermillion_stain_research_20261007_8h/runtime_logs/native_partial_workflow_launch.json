@@ -1,0 +1,34 @@
+[
+  {
+    "lane": "0",
+    "pid": 3541912,
+    "args": [
+      "/home/imoto/miniconda3/envs/diffusion/bin/python",
+      "-u",
+      "tmp_work/vermillion_stain_research_20261007_8h/workflow_native_partial.py",
+      "--lane",
+      "0",
+      "--dense-pid",
+      "3539885",
+      "--control-pid",
+      "3539884"
+    ],
+    "utc": "2026-10-07T17:27:25.408955+00:00"
+  },
+  {
+    "lane": "1",
+    "pid": 3541913,
+    "args": [
+      "/home/imoto/miniconda3/envs/diffusion/bin/python",
+      "-u",
+      "tmp_work/vermillion_stain_research_20261007_8h/workflow_native_partial.py",
+      "--lane",
+      "1",
+      "--dense-pid",
+      "3539885",
+      "--control-pid",
+      "3539884"
+    ],
+    "utc": "2026-10-07T17:27:25.410182+00:00"
+  }
+]

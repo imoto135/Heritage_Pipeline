@@ -1,0 +1,24 @@
+id,page,frame,xywh,title,priority,finding,human_GT,image
+01_upper_slender_marks,200019865_00003_1,page_200019865,"[1270, 250, 550, 400]",上余白の細い暖色跡,低,暖色の線は大きく弱まるが、小さい黒い断片が残る。材質未確定,False,01_upper_slender_marks.png
+02_left_margin_marks,200019865_00003_1,page_200019865,"[20, 850, 450, 900]",左余白の線状跡,低,余白の線状跡の一部が黒い短線として残る。枠線は概ね維持,False,02_left_margin_marks.png
+03_faint_text_control,200019865_00003_1,page_200019865,"[1200, 1050, 650, 650]",薄い文字の対照,対照,主線は黒く明瞭。周囲に細かな黒い断片がある,False,03_faint_text_control.png
+04_warm_paper_pattern,200017197_00008_1,page_200017197,"[100, 30, 650, 380]",暖色の紙模様・汚れと断定しない,入力確認,保存入力の斑点は大きく除去。参照原画像に同じ斑点がなく自然劣化評価と混ぜない,False,04_warm_paper_pattern.png
+05_pattern_text_control,200017197_00008_1,page_200017197,"[1100, 1400, 550, 600]",紙模様上の文字対照,対照,主線の形は概ね残り明瞭になる。必要な接続の正解は未確認,False,05_pattern_text_control.png
+06_lower_thin_text,200017197_00008_1,page_200017197,"[150, 2400, 700, 600]",下部の細い筆画と紙模様,対照,主要筆画は残る。筆の離れや小さな切れ目の正解は未確認,False,06_lower_thin_text.png
+07_red_seal_control,200010454_00002_2,known_200010454_v2,"[1330, 1800, 430, 550]",朱印の対照・既知ページの別保存版,細部確認,印影の全体・赤色は残るが細線・小点は原画像との差がある。全面消失は見えない,False,07_red_seal_control.png
+08_known_brown_stain,200010454_00002_2,known_200010454_v2,"[730, 230, 180, 140]",既知の茶色い斑点・別保存版,追加改善不要候補,この保存版では斑点がほぼ除去済み,False,08_known_brown_stain.png
+09_known_dense_text,200010454_00002_2,known_200010454_v2,"[555, 335, 175, 160]",既知の濃い筆画・別保存版,対照,濃い主線は形を維持し明瞭になる,False,09_known_dense_text.png
+10_rule_crossing_dark_mass,hnsd001_011_crop,crop_hnsd,"[170, 300, 350, 210]",枠線に接する濃い塊,高・入力条件確認,濃い範囲が文字・枠線と接した黒い塊になる。実入力の濃淡は参照と異なる,False,10_rule_crossing_dark_mass.png
+11_crop_text_control,hnsd001_011_crop,crop_hnsd,"[30, 50, 160, 260]",濃い文字と枠線の対照,対照,濃い文字と枠線は概ね維持される。黒い塊と同じcropの対照,False,11_crop_text_control.png
+12_crop_lower_paper,hnsd001_011_crop,crop_hnsd,"[0, 520, 620, 100]",下端の紙面対照,低,参照紙面への置換。実入力との差だけを意図しない変色と扱わない,False,12_crop_lower_paper.png
+old_01_upper_faint_stroke,200010454_00002_2,old_upper_crop,"[190, 325, 180, 175]",上部の薄い筆画,中,主線は残るが曲線の細い接続の切れと輪郭の粗さがある,False,old_01_upper_faint_stroke.png
+old_02_upper_dense_control,200010454_00002_2,old_upper_crop,"[5, 335, 175, 160]",濃い筆画の対照,対照,濃い主線は形を維持して黒くなる,False,old_02_upper_dense_control.png
+old_03_upper_brown_stain,200010454_00002_2,old_upper_crop,"[180, 235, 160, 120]",筆画の上方の茶色い斑点,版比較優先,旧crop版では斑点の不自然な塊が残る。同じ位置の全ページCSC v2版ではほぼ消える,False,old_03_upper_brown_stain.png
+old_04_upper_pale_stain,200010454_00002_2,old_upper_crop,"[330, 120, 150, 160]",淡い茶色の広がり,低・版確認,広い淡い濃淡は弱まるが小さい茶色い形が残る,False,old_04_upper_pale_stain.png
+old_05_page_faint_left,200018243_00003_2,old_full_page,"[170, 700, 235, 450]",左列の薄い筆画,材質確認,主線は残り黒くなる。隣の灰色像は弱まるが黒い断片が残る。裏写りの正解未確定,False,old_05_page_faint_left.png
+old_06_page_faint_middle,200018243_00003_2,old_full_page,"[760, 1870, 220, 480]",中央列の細い筆画,材質確認,主要曲線は維持。灰色の副次像が黒い点や断片として残る。材質未確定,False,old_06_page_faint_middle.png
+old_07_page_dense_control,200018243_00003_2,old_full_page,"[1510, 1650, 300, 440]",右列の濃い筆画の対照,対照,濃い主線は維持。小さな背景の点は残る,False,old_07_page_dense_control.png
+old_08_page_long_stroke,200018243_00003_2,old_full_page,"[440, 1850, 240, 650]",左寄りの長い細線,材質確認,長い主線は維持。横の灰色像は弱まるが黒い断片が残る,False,old_08_page_long_stroke.png
+21_faint_column,200010454_00002_2,known_200010454_v2,"[1230, 500, 280, 650]",薄い主線の分断候補：CSC v2保存版,高・筆画確認,本文列の長い曲線・輪郭が点線状・断片状に変わる。3保存版にも残る,False,21_faint_column.png
+22_lower_faint_column,200019865_00003_1,page_200019865,"[1750, 2490, 280, 550]",下部の薄い線の分断候補：保存npj,高・筆画確認,別ページの薄い主線で分断・欠損候補。副次灰色像とは区別して確認する,False,22_lower_faint_column.png
+23_upper_mark,200018243_00003_2,old_full_page,"[1030, 150, 170, 210]",上余白の暖色の跡：濃い断片への変化候補,低・材質確認,上余白の暖色の跡が黒い断片になる。文字・紙繊維・汚れの正解は未確定,False,23_upper_mark.png

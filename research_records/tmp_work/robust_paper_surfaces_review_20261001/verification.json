@@ -1,0 +1,1940 @@
+{
+  "status": "passed",
+  "pages": 25,
+  "ROIs": 73,
+  "variants": 146,
+  "checks": [
+    {
+      "id": "dense_stain",
+      "mode": "plane"
+    },
+    {
+      "id": "dense_stain",
+      "mode": "quadratic"
+    },
+    {
+      "id": "thin_black_water",
+      "mode": "plane"
+    },
+    {
+      "id": "thin_black_water",
+      "mode": "quadratic"
+    },
+    {
+      "id": "brown_as_red",
+      "mode": "plane"
+    },
+    {
+      "id": "brown_as_red",
+      "mode": "quadratic"
+    },
+    {
+      "id": "thin_black_loop",
+      "mode": "plane"
+    },
+    {
+      "id": "thin_black_loop",
+      "mode": "quadratic"
+    },
+    {
+      "id": "thin_black_text",
+      "mode": "plane"
+    },
+    {
+      "id": "thin_black_text",
+      "mode": "quadratic"
+    },
+    {
+      "id": "warm_stroke",
+      "mode": "plane"
+    },
+    {
+      "id": "warm_stroke",
+      "mode": "quadratic"
+    },
+    {
+      "id": "control_black",
+      "mode": "plane"
+    },
+    {
+      "id": "control_black",
+      "mode": "quadratic"
+    },
+    {
+      "id": "dense_stain_new",
+      "mode": "plane"
+    },
+    {
+      "id": "dense_stain_new",
+      "mode": "quadratic"
+    },
+    {
+      "id": "brown_false_red_new",
+      "mode": "plane",
+      "components": [
+        {
+          "component": 1,
+          "reference_pixels": 9734,
+          "inside_hull": 224,
+          "known_paper_holdout_RMSE_Lab": [
+            1.5556282980622245,
+            1.0749357727390725,
+            1.4530190455651024
+          ],
+          "test_samples": 4872
+        }
+      ]
+    },
+    {
+      "id": "brown_false_red_new",
+      "mode": "quadratic",
+      "components": [
+        {
+          "component": 1,
+          "reference_pixels": 9734,
+          "inside_hull": 224,
+          "known_paper_holdout_RMSE_Lab": [
+            1.428947059565082,
+            0.8790807428571766,
+            1.1685611019464157
+          ],
+          "test_samples": 4872
+        }
+      ]
+    },
+    {
+      "id": "hole_edge_new",
+      "mode": "plane",
+      "components": [
+        {
+          "component": 1,
+          "reference_pixels": 44317,
+          "inside_hull": 9243,
+          "known_paper_holdout_RMSE_Lab": [
+            1.7593346790348694,
+            0.8961572904644908,
+            1.416365160230549
+          ],
+          "test_samples": 8192
+        },
+        {
+          "component": 2,
+          "reference_pixels": 19902,
+          "inside_hull": 1657,
+          "known_paper_holdout_RMSE_Lab": [
+            1.4022743528090917,
+            0.8814212983106143,
+            1.3926194486953363
+          ],
+          "test_samples": 8192
+        }
+      ]
+    },
+    {
+      "id": "hole_edge_new",
+      "mode": "quadratic",
+      "components": [
+        {
+          "component": 1,
+          "reference_pixels": 44317,
+          "inside_hull": 9243,
+          "known_paper_holdout_RMSE_Lab": [
+            1.598841194946842,
+            0.8296889759304931,
+            1.3552060940567805
+          ],
+          "test_samples": 8192
+        },
+        {
+          "component": 2,
+          "reference_pixels": 19902,
+          "inside_hull": 1657,
+          "known_paper_holdout_RMSE_Lab": [
+            1.3546257302571152,
+            0.8587582502425853,
+            1.3554073736055865
+          ],
+          "test_samples": 8192
+        }
+      ]
+    },
+    {
+      "id": "control_text_new",
+      "mode": "plane"
+    },
+    {
+      "id": "control_text_new",
+      "mode": "quadratic"
+    },
+    {
+      "id": "200021712_00082_1_component_16",
+      "mode": "plane",
+      "components": [
+        {
+          "component": 1,
+          "reference_pixels": 22159,
+          "inside_hull": 7198,
+          "known_paper_holdout_RMSE_Lab": [
+            1.8291166127965774,
+            0.977788610730544,
+            1.184587502337459
+          ],
+          "test_samples": 8192
+        },
+        {
+          "component": 2,
+          "reference_pixels": 11207,
+          "inside_hull": 1057,
+          "known_paper_holdout_RMSE_Lab": [
+            1.8218828396463078,
+            0.9594813950784936,
+            1.432895522005083
+          ],
+          "test_samples": 5575
+        },
+        {
+          "component": 3,
+          "reference_pixels": 6241,
+          "inside_hull": 494,
+          "known_paper_holdout_RMSE_Lab": [
+            1.7695934249252894,
+            0.8751514021774474,
+            0.9341978961634828
+          ],
+          "test_samples": 3119
+        }
+      ]
+    },
+    {
+      "id": "200021712_00082_1_component_16",
+      "mode": "quadratic",
+      "components": [
+        {
+          "component": 1,
+          "reference_pixels": 22159,
+          "inside_hull": 7198,
+          "known_paper_holdout_RMSE_Lab": [
+            1.8279486848295106,
+            0.9647409500032369,
+            1.1124790193007832
+          ],
+          "test_samples": 8192
+        },
+        {
+          "component": 2,
+          "reference_pixels": 11207,
+          "inside_hull": 1057,
+          "known_paper_holdout_RMSE_Lab": [
+            1.7974889946274224,
+            0.953497876278215,
+            1.3064021102262011
+          ],
+          "test_samples": 5575
+        },
+        {
+          "component": 3,
+          "reference_pixels": 6241,
+          "inside_hull": 494,
+          "known_paper_holdout_RMSE_Lab": [
+            1.7928870076266479,
+            0.9125640190565985,
+            0.9435832925112945
+          ],
+          "test_samples": 3119
+        }
+      ]
+    },
+    {
+      "id": "200021712_00082_1_component_21",
+      "mode": "plane",
+      "components": [
+        {
+          "component": 1,
+          "reference_pixels": 23573,
+          "inside_hull": 5679,
+          "known_paper_holdout_RMSE_Lab": [
+            1.8986901407109449,
+            0.9248021023775232,
+            1.2646331269558744
+          ],
+          "test_samples": 8192
+        },
+        {
+          "component": 2,
+          "reference_pixels": 12784,
+          "inside_hull": 1057,
+          "known_paper_holdout_RMSE_Lab": [
+            1.806206327335387,
+            0.9796072659975495,
+            1.2964397991902403
+          ],
+          "test_samples": 6439
+        }
+      ]
+    },
+    {
+      "id": "200021712_00082_1_component_21",
+      "mode": "quadratic",
+      "components": [
+        {
+          "component": 1,
+          "reference_pixels": 23573,
+          "inside_hull": 5679,
+          "known_paper_holdout_RMSE_Lab": [
+            1.8910052573346616,
+            0.9254010536914233,
+            1.1144927074727664
+          ],
+          "test_samples": 8192
+        },
+        {
+          "component": 2,
+          "reference_pixels": 12784,
+          "inside_hull": 1057,
+          "known_paper_holdout_RMSE_Lab": [
+            1.7794917956047018,
+            0.9614896085949654,
+            1.2028714432001157
+          ],
+          "test_samples": 6439
+        }
+      ]
+    },
+    {
+      "id": "200021712_00082_1_component_28",
+      "mode": "plane",
+      "components": [
+        {
+          "component": 1,
+          "reference_pixels": 11844,
+          "inside_hull": 3552,
+          "known_paper_holdout_RMSE_Lab": [
+            1.802509584778279,
+            1.0108875645615436,
+            1.2662267073225264
+          ],
+          "test_samples": 5886
+        },
+        {
+          "component": 2,
+          "reference_pixels": 12878,
+          "inside_hull": 320,
+          "known_paper_holdout_RMSE_Lab": [
+            2.0334217094338904,
+            0.9072459910771037,
+            1.2855934413480108
+          ],
+          "test_samples": 6285
+        },
+        {
+          "component": 3,
+          "reference_pixels": 10037,
+          "inside_hull": 1155,
+          "known_paper_holdout_RMSE_Lab": [
+            1.8904223853162112,
+            0.9782776447712465,
+            1.3972118664334867
+          ],
+          "test_samples": 5056
+        }
+      ]
+    },
+    {
+      "id": "200021712_00082_1_component_28",
+      "mode": "quadratic",
+      "components": [
+        {
+          "component": 1,
+          "reference_pixels": 11844,
+          "inside_hull": 3552,
+          "known_paper_holdout_RMSE_Lab": [
+            1.7954706848121318,
+            0.9611460075163822,
+            1.2644128216346813
+          ],
+          "test_samples": 5886
+        },
+        {
+          "component": 2,
+          "reference_pixels": 12878,
+          "inside_hull": 320,
+          "known_paper_holdout_RMSE_Lab": [
+            1.964765493793489,
+            0.8612008213914271,
+            1.2774290383365359
+          ],
+          "test_samples": 6285
+        },
+        {
+          "component": 3,
+          "reference_pixels": 10037,
+          "inside_hull": 1155,
+          "known_paper_holdout_RMSE_Lab": [
+            1.8692207216499102,
+            0.9289422136557473,
+            1.3885596513910146
+          ],
+          "test_samples": 5056
+        }
+      ]
+    },
+    {
+      "id": "200021712_00082_1_component_36",
+      "mode": "plane",
+      "components": [
+        {
+          "component": 1,
+          "reference_pixels": 2390,
+          "inside_hull": 874,
+          "known_paper_holdout_RMSE_Lab": [
+            2.7321226065510116,
+            1.0682379784288583,
+            1.5472279124867014
+          ],
+          "test_samples": 1206
+        }
+      ]
+    },
+    {
+      "id": "200021712_00082_1_component_36",
+      "mode": "quadratic",
+      "components": [
+        {
+          "component": 1,
+          "reference_pixels": 2390,
+          "inside_hull": 874,
+          "known_paper_holdout_RMSE_Lab": [
+            2.609363142977702,
+            1.118329053208002,
+            1.5343451714975078
+          ],
+          "test_samples": 1206
+        }
+      ]
+    },
+    {
+      "id": "200021712_00082_1_component_160",
+      "mode": "plane",
+      "components": [
+        {
+          "component": 1,
+          "reference_pixels": 17098,
+          "inside_hull": 563,
+          "known_paper_holdout_RMSE_Lab": [
+            1.3349843733241031,
+            0.996344770453553,
+            1.4125670274060422
+          ],
+          "test_samples": 8192
+        }
+      ]
+    },
+    {
+      "id": "200021712_00082_1_component_160",
+      "mode": "quadratic",
+      "components": [
+        {
+          "component": 1,
+          "reference_pixels": 17098,
+          "inside_hull": 563,
+          "known_paper_holdout_RMSE_Lab": [
+            1.324340287761959,
+            0.9594724810315957,
+            1.403637178368165
+          ],
+          "test_samples": 8192
+        }
+      ]
+    },
+    {
+      "id": "brown_near_text",
+      "mode": "plane"
+    },
+    {
+      "id": "brown_near_text",
+      "mode": "quadratic"
+    },
+    {
+      "id": "dark_text_control",
+      "mode": "plane"
+    },
+    {
+      "id": "dark_text_control",
+      "mode": "quadratic"
+    },
+    {
+      "id": "faint_left_text",
+      "mode": "plane"
+    },
+    {
+      "id": "faint_left_text",
+      "mode": "quadratic"
+    },
+    {
+      "id": "damage_control",
+      "mode": "plane"
+    },
+    {
+      "id": "damage_control",
+      "mode": "quadratic"
+    },
+    {
+      "id": "new_margin_hole",
+      "mode": "plane",
+      "components": [
+        {
+          "component": 1,
+          "reference_pixels": 36966,
+          "inside_hull": 16072,
+          "known_paper_holdout_RMSE_Lab": [
+            0.9764193959372968,
+            0.9533009041223446,
+            2.0826937061178272
+          ],
+          "test_samples": 8192
+        }
+      ]
+    },
+    {
+      "id": "new_margin_hole",
+      "mode": "quadratic",
+      "components": [
+        {
+          "component": 1,
+          "reference_pixels": 36966,
+          "inside_hull": 16072,
+          "known_paper_holdout_RMSE_Lab": [
+            0.9049032812250899,
+            0.931801516853284,
+            1.962518201563923
+          ],
+          "test_samples": 8192
+        }
+      ]
+    },
+    {
+      "id": "new_frame_text",
+      "mode": "plane"
+    },
+    {
+      "id": "new_frame_text",
+      "mode": "quadratic"
+    },
+    {
+      "id": "new_uncertain_trace",
+      "mode": "plane"
+    },
+    {
+      "id": "new_uncertain_trace",
+      "mode": "quadratic"
+    },
+    {
+      "id": "new_brown_stamp",
+      "mode": "plane",
+      "components": [
+        {
+          "component": 1,
+          "reference_pixels": 5679,
+          "inside_hull": 662,
+          "known_paper_holdout_RMSE_Lab": [
+            2.1817061375498583,
+            0.8782337220175278,
+            0.9149004833543407
+          ],
+          "test_samples": 2787
+        }
+      ]
+    },
+    {
+      "id": "new_brown_stamp",
+      "mode": "quadratic",
+      "components": [
+        {
+          "component": 1,
+          "reference_pixels": 5679,
+          "inside_hull": 662,
+          "known_paper_holdout_RMSE_Lab": [
+            2.140210275540774,
+            0.8668771319352342,
+            0.9126832628023588
+          ],
+          "test_samples": 2787
+        }
+      ]
+    },
+    {
+      "id": "new_header_ink",
+      "mode": "plane"
+    },
+    {
+      "id": "new_header_ink",
+      "mode": "quadratic"
+    },
+    {
+      "id": "new_blank_paper",
+      "mode": "plane"
+    },
+    {
+      "id": "new_blank_paper",
+      "mode": "quadratic"
+    },
+    {
+      "id": "new_mono_text",
+      "mode": "plane"
+    },
+    {
+      "id": "new_mono_text",
+      "mode": "quadratic"
+    },
+    {
+      "id": "unseen_thin_crack",
+      "mode": "plane",
+      "components": [
+        {
+          "component": 1,
+          "reference_pixels": 21073,
+          "inside_hull": 1522,
+          "known_paper_holdout_RMSE_Lab": [
+            1.5987383670036202,
+            0.7349003648780703,
+            1.0379892299063844
+          ],
+          "test_samples": 8192
+        }
+      ]
+    },
+    {
+      "id": "unseen_thin_crack",
+      "mode": "quadratic",
+      "components": [
+        {
+          "component": 1,
+          "reference_pixels": 21073,
+          "inside_hull": 1522,
+          "known_paper_holdout_RMSE_Lab": [
+            1.5491687226041082,
+            0.7197653141746134,
+            1.0424816615961467
+          ],
+          "test_samples": 8192
+        }
+      ]
+    },
+    {
+      "id": "unseen_brown_spot",
+      "mode": "plane"
+    },
+    {
+      "id": "unseen_brown_spot",
+      "mode": "quadratic"
+    },
+    {
+      "id": "unseen_dense_text",
+      "mode": "plane"
+    },
+    {
+      "id": "unseen_dense_text",
+      "mode": "quadratic"
+    },
+    {
+      "id": "200017458_00004_2_component_7",
+      "mode": "plane",
+      "components": [
+        {
+          "component": 1,
+          "reference_pixels": 20659,
+          "inside_hull": 1522,
+          "known_paper_holdout_RMSE_Lab": [
+            1.6018686284501613,
+            0.7888814038731918,
+            1.023591112186483
+          ],
+          "test_samples": 8192
+        }
+      ]
+    },
+    {
+      "id": "200017458_00004_2_component_7",
+      "mode": "quadratic",
+      "components": [
+        {
+          "component": 1,
+          "reference_pixels": 20659,
+          "inside_hull": 1522,
+          "known_paper_holdout_RMSE_Lab": [
+            1.5440004105675549,
+            0.7734375596009406,
+            1.0231517773033993
+          ],
+          "test_samples": 8192
+        }
+      ]
+    },
+    {
+      "id": "200017458_00004_2_component_13",
+      "mode": "plane",
+      "components": [
+        {
+          "component": 1,
+          "reference_pixels": 21073,
+          "inside_hull": 1522,
+          "known_paper_holdout_RMSE_Lab": [
+            1.5975542597371621,
+            0.7786084245394016,
+            1.0316828931324062
+          ],
+          "test_samples": 8192
+        }
+      ]
+    },
+    {
+      "id": "200017458_00004_2_component_13",
+      "mode": "quadratic",
+      "components": [
+        {
+          "component": 1,
+          "reference_pixels": 21073,
+          "inside_hull": 1522,
+          "known_paper_holdout_RMSE_Lab": [
+            1.5446710038790639,
+            0.7638569895866543,
+            1.021296890960958
+          ],
+          "test_samples": 8192
+        }
+      ]
+    },
+    {
+      "id": "200017458_00004_2_component_45",
+      "mode": "plane"
+    },
+    {
+      "id": "200017458_00004_2_component_45",
+      "mode": "quadratic"
+    },
+    {
+      "id": "unseen_fold",
+      "mode": "plane",
+      "components": [
+        {
+          "component": 1,
+          "reference_pixels": 14422,
+          "inside_hull": 8573,
+          "known_paper_holdout_RMSE_Lab": [
+            2.637904238072866,
+            1.2418302144803244,
+            2.7806148601702585
+          ],
+          "test_samples": 6913
+        },
+        {
+          "component": 2,
+          "reference_pixels": 14470,
+          "inside_hull": 75,
+          "known_paper_holdout_RMSE_Lab": [
+            1.828540712185802,
+            0.6881507272048756,
+            0.971266208869989
+          ],
+          "test_samples": 7240
+        }
+      ]
+    },
+    {
+      "id": "unseen_fold",
+      "mode": "quadratic",
+      "components": [
+        {
+          "component": 1,
+          "reference_pixels": 14422,
+          "inside_hull": 8573,
+          "known_paper_holdout_RMSE_Lab": [
+            2.151485090582272,
+            1.0355633178656303,
+            2.0401021187362076
+          ],
+          "test_samples": 6913
+        },
+        {
+          "component": 2,
+          "reference_pixels": 14470,
+          "inside_hull": 75,
+          "known_paper_holdout_RMSE_Lab": [
+            1.748698054659967,
+            0.654885275915127,
+            0.9276408418060247
+          ],
+          "test_samples": 7240
+        }
+      ]
+    },
+    {
+      "id": "unseen_top_trace",
+      "mode": "plane",
+      "components": [
+        {
+          "component": 1,
+          "reference_pixels": 15198,
+          "inside_hull": 131,
+          "known_paper_holdout_RMSE_Lab": [
+            1.6381610712328347,
+            0.6776611437223923,
+            0.5163874529334883
+          ],
+          "test_samples": 7536
+        }
+      ]
+    },
+    {
+      "id": "unseen_top_trace",
+      "mode": "quadratic",
+      "components": [
+        {
+          "component": 1,
+          "reference_pixels": 15198,
+          "inside_hull": 131,
+          "known_paper_holdout_RMSE_Lab": [
+            1.5171950276888795,
+            0.6725728026711504,
+            0.5043455303431228
+          ],
+          "test_samples": 7536
+        }
+      ]
+    },
+    {
+      "id": "unseen_blue_text",
+      "mode": "plane"
+    },
+    {
+      "id": "unseen_blue_text",
+      "mode": "quadratic"
+    },
+    {
+      "id": "200021802_00015_1_upper_core_25",
+      "mode": "plane"
+    },
+    {
+      "id": "200021802_00015_1_upper_core_25",
+      "mode": "quadratic"
+    },
+    {
+      "id": "200021802_00015_1_upper_core_237",
+      "mode": "plane"
+    },
+    {
+      "id": "200021802_00015_1_upper_core_237",
+      "mode": "quadratic"
+    },
+    {
+      "id": "unseen_blank",
+      "mode": "plane"
+    },
+    {
+      "id": "unseen_blank",
+      "mode": "quadratic"
+    },
+    {
+      "id": "unseen_frame",
+      "mode": "plane"
+    },
+    {
+      "id": "unseen_frame",
+      "mode": "quadratic"
+    },
+    {
+      "id": "unseen_body",
+      "mode": "plane"
+    },
+    {
+      "id": "unseen_body",
+      "mode": "quadratic"
+    },
+    {
+      "id": "unseen_upper_paper",
+      "mode": "plane"
+    },
+    {
+      "id": "unseen_upper_paper",
+      "mode": "quadratic"
+    },
+    {
+      "id": "unseen_seal",
+      "mode": "plane"
+    },
+    {
+      "id": "unseen_seal",
+      "mode": "quadratic"
+    },
+    {
+      "id": "unseen_light_text",
+      "mode": "plane"
+    },
+    {
+      "id": "unseen_light_text",
+      "mode": "quadratic"
+    },
+    {
+      "id": "fresh_page_edge",
+      "mode": "plane"
+    },
+    {
+      "id": "fresh_page_edge",
+      "mode": "quadratic"
+    },
+    {
+      "id": "fresh_margin_flecks",
+      "mode": "plane"
+    },
+    {
+      "id": "fresh_margin_flecks",
+      "mode": "quadratic"
+    },
+    {
+      "id": "fresh_blank_margin",
+      "mode": "plane"
+    },
+    {
+      "id": "fresh_blank_margin",
+      "mode": "quadratic"
+    },
+    {
+      "id": "fresh_dark_body",
+      "mode": "plane"
+    },
+    {
+      "id": "fresh_dark_body",
+      "mode": "quadratic"
+    },
+    {
+      "id": "fresh_header_ink",
+      "mode": "plane"
+    },
+    {
+      "id": "fresh_header_ink",
+      "mode": "quadratic"
+    },
+    {
+      "id": "fresh_left_paper",
+      "mode": "plane"
+    },
+    {
+      "id": "fresh_left_paper",
+      "mode": "quadratic"
+    },
+    {
+      "id": "fresh_mid_paper",
+      "mode": "plane"
+    },
+    {
+      "id": "fresh_mid_paper",
+      "mode": "quadratic"
+    },
+    {
+      "id": "fresh_body_ink",
+      "mode": "plane"
+    },
+    {
+      "id": "fresh_body_ink",
+      "mode": "quadratic"
+    },
+    {
+      "id": "fresh_small_top_trace",
+      "mode": "plane"
+    },
+    {
+      "id": "fresh_small_top_trace",
+      "mode": "quadratic"
+    },
+    {
+      "id": "fresh_red_seal",
+      "mode": "plane"
+    },
+    {
+      "id": "fresh_red_seal",
+      "mode": "quadratic"
+    },
+    {
+      "id": "fresh_blank_top",
+      "mode": "plane"
+    },
+    {
+      "id": "fresh_blank_top",
+      "mode": "quadratic"
+    },
+    {
+      "id": "fresh_gray_body",
+      "mode": "plane"
+    },
+    {
+      "id": "fresh_gray_body",
+      "mode": "quadratic"
+    },
+    {
+      "id": "extra_top_branch",
+      "mode": "plane",
+      "components": [
+        {
+          "component": 1,
+          "reference_pixels": 51362,
+          "inside_hull": 6690,
+          "known_paper_holdout_RMSE_Lab": [
+            1.0490919822268687,
+            0.760147807278166,
+            1.180478232914845
+          ],
+          "test_samples": 8192
+        }
+      ]
+    },
+    {
+      "id": "extra_top_branch",
+      "mode": "quadratic",
+      "components": [
+        {
+          "component": 1,
+          "reference_pixels": 51362,
+          "inside_hull": 6690,
+          "known_paper_holdout_RMSE_Lab": [
+            1.030481352889269,
+            0.759765293886208,
+            1.1870667615563442
+          ],
+          "test_samples": 8192
+        }
+      ]
+    },
+    {
+      "id": "extra_branch_blank",
+      "mode": "plane"
+    },
+    {
+      "id": "extra_branch_blank",
+      "mode": "quadratic"
+    },
+    {
+      "id": "extra_branch_body",
+      "mode": "plane"
+    },
+    {
+      "id": "extra_branch_body",
+      "mode": "quadratic"
+    },
+    {
+      "id": "200014685_00004_2_upper_core_1",
+      "mode": "plane",
+      "components": [
+        {
+          "component": 1,
+          "reference_pixels": 30061,
+          "inside_hull": 5614,
+          "known_paper_holdout_RMSE_Lab": [
+            1.134627110538644,
+            0.8307429469862168,
+            1.3217621046796844
+          ],
+          "test_samples": 8192
+        }
+      ]
+    },
+    {
+      "id": "200014685_00004_2_upper_core_1",
+      "mode": "quadratic",
+      "components": [
+        {
+          "component": 1,
+          "reference_pixels": 30061,
+          "inside_hull": 5614,
+          "known_paper_holdout_RMSE_Lab": [
+            1.1085513243118137,
+            0.8356999117539095,
+            1.277691319309828
+          ],
+          "test_samples": 8192
+        }
+      ]
+    },
+    {
+      "id": "extra_brown_stain",
+      "mode": "plane",
+      "components": [
+        {
+          "component": 1,
+          "reference_pixels": 44868,
+          "inside_hull": 7360,
+          "known_paper_holdout_RMSE_Lab": [
+            1.9094577367692944,
+            1.0517921549788172,
+            2.2193066751386494
+          ],
+          "test_samples": 8192
+        },
+        {
+          "component": 2,
+          "reference_pixels": 14603,
+          "inside_hull": 424,
+          "known_paper_holdout_RMSE_Lab": [
+            1.3221843808962264,
+            0.9478052413912552,
+            1.526269201693725
+          ],
+          "test_samples": 7407
+        },
+        {
+          "component": 3,
+          "reference_pixels": 12546,
+          "inside_hull": 126,
+          "known_paper_holdout_RMSE_Lab": [
+            1.2242439973933572,
+            0.7686097699027269,
+            1.470856849365072
+          ],
+          "test_samples": 6319
+        },
+        {
+          "component": 4,
+          "reference_pixels": 22750,
+          "inside_hull": 1611,
+          "known_paper_holdout_RMSE_Lab": [
+            1.7814166259353492,
+            0.9437797879844311,
+            1.6633277564354383
+          ],
+          "test_samples": 8192
+        },
+        {
+          "component": 5,
+          "reference_pixels": 12448,
+          "inside_hull": 96,
+          "known_paper_holdout_RMSE_Lab": [
+            1.673679579204726,
+            0.8095573491661678,
+            1.492185070010581
+          ],
+          "test_samples": 6155
+        },
+        {
+          "component": 6,
+          "reference_pixels": 15681,
+          "inside_hull": 396,
+          "known_paper_holdout_RMSE_Lab": [
+            1.2406055561513754,
+            0.8558618498086599,
+            1.563451556608563
+          ],
+          "test_samples": 7866
+        },
+        {
+          "component": 7,
+          "reference_pixels": 9815,
+          "inside_hull": 77,
+          "known_paper_holdout_RMSE_Lab": [
+            1.362876453066777,
+            0.7928762789673128,
+            1.6345511796352064
+          ],
+          "test_samples": 4814
+        },
+        {
+          "component": 8,
+          "reference_pixels": 12307,
+          "inside_hull": 254,
+          "known_paper_holdout_RMSE_Lab": [
+            1.4214301441571662,
+            0.918209772231681,
+            1.6775241513280659
+          ],
+          "test_samples": 6043
+        },
+        {
+          "component": 9,
+          "reference_pixels": 9736,
+          "inside_hull": 105,
+          "known_paper_holdout_RMSE_Lab": [
+            1.5668431779048881,
+            0.9934387791256241,
+            1.519369040999998
+          ],
+          "test_samples": 4856
+        },
+        {
+          "component": 10,
+          "reference_pixels": 13289,
+          "inside_hull": 516,
+          "known_paper_holdout_RMSE_Lab": [
+            1.4752725465695073,
+            0.9574461329565757,
+            1.4283470948604218
+          ],
+          "test_samples": 6823
+        },
+        {
+          "component": 11,
+          "reference_pixels": 15409,
+          "inside_hull": 448,
+          "known_paper_holdout_RMSE_Lab": [
+            1.2915787248376898,
+            0.8197078258627207,
+            1.4959560091195676
+          ],
+          "test_samples": 7619
+        },
+        {
+          "component": 12,
+          "reference_pixels": 9019,
+          "inside_hull": 105,
+          "known_paper_holdout_RMSE_Lab": [
+            1.538810939799568,
+            0.8334975280813297,
+            1.381804307453347
+          ],
+          "test_samples": 4556
+        },
+        {
+          "component": 13,
+          "reference_pixels": 19646,
+          "inside_hull": 1519,
+          "known_paper_holdout_RMSE_Lab": [
+            1.7426158595658274,
+            0.828984757864407,
+            1.747956168842821
+          ],
+          "test_samples": 8192
+        },
+        {
+          "component": 14,
+          "reference_pixels": 9715,
+          "inside_hull": 109,
+          "known_paper_holdout_RMSE_Lab": [
+            1.7442162516638022,
+            0.7988519871996479,
+            1.4368673702159862
+          ],
+          "test_samples": 4880
+        },
+        {
+          "component": 15,
+          "reference_pixels": 10403,
+          "inside_hull": 69,
+          "known_paper_holdout_RMSE_Lab": [
+            1.546286923101132,
+            0.939582739077216,
+            1.624324657055913
+          ],
+          "test_samples": 5183
+        }
+      ]
+    },
+    {
+      "id": "extra_brown_stain",
+      "mode": "quadratic",
+      "components": [
+        {
+          "component": 1,
+          "reference_pixels": 44868,
+          "inside_hull": 7360,
+          "known_paper_holdout_RMSE_Lab": [
+            1.669575380302283,
+            0.8788801631656559,
+            1.6348644326295247
+          ],
+          "test_samples": 8192
+        },
+        {
+          "component": 2,
+          "reference_pixels": 14603,
+          "inside_hull": 424,
+          "known_paper_holdout_RMSE_Lab": [
+            1.2540866603270804,
+            0.8004990593757864,
+            1.1264673706987833
+          ],
+          "test_samples": 7407
+        },
+        {
+          "component": 3,
+          "reference_pixels": 12546,
+          "inside_hull": 126,
+          "known_paper_holdout_RMSE_Lab": [
+            1.0861595012132264,
+            0.7236186948504945,
+            0.9845902594766982
+          ],
+          "test_samples": 6319
+        },
+        {
+          "component": 4,
+          "reference_pixels": 22750,
+          "inside_hull": 1611,
+          "known_paper_holdout_RMSE_Lab": [
+            1.6299664266433809,
+            0.8834082007352035,
+            1.5265663801468436
+          ],
+          "test_samples": 8192
+        },
+        {
+          "component": 5,
+          "reference_pixels": 12448,
+          "inside_hull": 96,
+          "known_paper_holdout_RMSE_Lab": [
+            1.6432240687840591,
+            0.795951667324431,
+            1.4448392106400043
+          ],
+          "test_samples": 6155
+        },
+        {
+          "component": 6,
+          "reference_pixels": 15681,
+          "inside_hull": 396,
+          "known_paper_holdout_RMSE_Lab": [
+            1.1245632521647704,
+            0.7592282363128194,
+            1.13524508191281
+          ],
+          "test_samples": 7866
+        },
+        {
+          "component": 7,
+          "reference_pixels": 9815,
+          "inside_hull": 77,
+          "known_paper_holdout_RMSE_Lab": [
+            1.2962586350951895,
+            0.8236277358045386,
+            1.4637570801132511
+          ],
+          "test_samples": 4814
+        },
+        {
+          "component": 8,
+          "reference_pixels": 12307,
+          "inside_hull": 254,
+          "known_paper_holdout_RMSE_Lab": [
+            1.1986845464686093,
+            0.8232885036195059,
+            1.3596584600365151
+          ],
+          "test_samples": 6043
+        },
+        {
+          "component": 9,
+          "reference_pixels": 9736,
+          "inside_hull": 105,
+          "known_paper_holdout_RMSE_Lab": [
+            1.4916101479643047,
+            0.8525833519108611,
+            1.34304576693781
+          ],
+          "test_samples": 4856
+        },
+        {
+          "component": 10,
+          "reference_pixels": 13289,
+          "inside_hull": 516,
+          "known_paper_holdout_RMSE_Lab": [
+            1.340282546263305,
+            0.7792907157757067,
+            1.1789094655187984
+          ],
+          "test_samples": 6823
+        },
+        {
+          "component": 11,
+          "reference_pixels": 15409,
+          "inside_hull": 448,
+          "known_paper_holdout_RMSE_Lab": [
+            1.2755256587040236,
+            0.7763967814804004,
+            1.445888473107779
+          ],
+          "test_samples": 7619
+        },
+        {
+          "component": 12,
+          "reference_pixels": 9019,
+          "inside_hull": 105,
+          "known_paper_holdout_RMSE_Lab": [
+            1.505939680852167,
+            0.8271130567409335,
+            1.329589265062317
+          ],
+          "test_samples": 4556
+        },
+        {
+          "component": 13,
+          "reference_pixels": 19646,
+          "inside_hull": 1519,
+          "known_paper_holdout_RMSE_Lab": [
+            1.5471319072338419,
+            0.7554846563903923,
+            1.430243642227355
+          ],
+          "test_samples": 8192
+        },
+        {
+          "component": 14,
+          "reference_pixels": 9715,
+          "inside_hull": 109,
+          "known_paper_holdout_RMSE_Lab": [
+            1.6545920894462676,
+            0.7806576711508685,
+            1.4402294520904146
+          ],
+          "test_samples": 4880
+        },
+        {
+          "component": 15,
+          "reference_pixels": 10403,
+          "inside_hull": 69,
+          "known_paper_holdout_RMSE_Lab": [
+            1.3384364364570691,
+            0.6935973758884374,
+            1.2380280387586517
+          ],
+          "test_samples": 5183
+        }
+      ]
+    },
+    {
+      "id": "extra_second_branch",
+      "mode": "plane",
+      "components": [
+        {
+          "component": 1,
+          "reference_pixels": 21369,
+          "inside_hull": 1603,
+          "known_paper_holdout_RMSE_Lab": [
+            1.3658480385168592,
+            0.8151547465471173,
+            1.3683888716490786
+          ],
+          "test_samples": 8192
+        },
+        {
+          "component": 2,
+          "reference_pixels": 8703,
+          "inside_hull": 279,
+          "known_paper_holdout_RMSE_Lab": [
+            1.2751522652474012,
+            0.723794703338327,
+            1.1386818559182426
+          ],
+          "test_samples": 4333
+        },
+        {
+          "component": 3,
+          "reference_pixels": 37353,
+          "inside_hull": 4133,
+          "known_paper_holdout_RMSE_Lab": [
+            1.2451916744338465,
+            0.7480828518421674,
+            1.2583217524669779
+          ],
+          "test_samples": 8192
+        }
+      ]
+    },
+    {
+      "id": "extra_second_branch",
+      "mode": "quadratic",
+      "components": [
+        {
+          "component": 1,
+          "reference_pixels": 21369,
+          "inside_hull": 1603,
+          "known_paper_holdout_RMSE_Lab": [
+            1.357640452221769,
+            0.8179863559042403,
+            1.3757572356656624
+          ],
+          "test_samples": 8192
+        },
+        {
+          "component": 2,
+          "reference_pixels": 8703,
+          "inside_hull": 279,
+          "known_paper_holdout_RMSE_Lab": [
+            1.2548405879561586,
+            0.6588772089337148,
+            1.0535968056201896
+          ],
+          "test_samples": 4333
+        },
+        {
+          "component": 3,
+          "reference_pixels": 37353,
+          "inside_hull": 4133,
+          "known_paper_holdout_RMSE_Lab": [
+            1.2382543549497684,
+            0.7418881209710778,
+            1.1622211846683104
+          ],
+          "test_samples": 8192
+        }
+      ]
+    },
+    {
+      "id": "extra_small_seal",
+      "mode": "plane"
+    },
+    {
+      "id": "extra_small_seal",
+      "mode": "quadratic"
+    },
+    {
+      "id": "extra_stain_body",
+      "mode": "plane"
+    },
+    {
+      "id": "extra_stain_body",
+      "mode": "quadratic"
+    },
+    {
+      "id": "200014685_00002_2_upper_core_3",
+      "mode": "plane",
+      "components": [
+        {
+          "component": 1,
+          "reference_pixels": 21369,
+          "inside_hull": 1603,
+          "known_paper_holdout_RMSE_Lab": [
+            1.3991607030552093,
+            0.8250444328523807,
+            1.3387694301852953
+          ],
+          "test_samples": 8192
+        },
+        {
+          "component": 2,
+          "reference_pixels": 6847,
+          "inside_hull": 279,
+          "known_paper_holdout_RMSE_Lab": [
+            1.4075679162914014,
+            0.7247938829823085,
+            1.106701373224965
+          ],
+          "test_samples": 3365
+        },
+        {
+          "component": 3,
+          "reference_pixels": 26288,
+          "inside_hull": 4133,
+          "known_paper_holdout_RMSE_Lab": [
+            1.320779876745733,
+            0.7980188008484275,
+            1.3478248318511425
+          ],
+          "test_samples": 8192
+        }
+      ]
+    },
+    {
+      "id": "200014685_00002_2_upper_core_3",
+      "mode": "quadratic",
+      "components": [
+        {
+          "component": 1,
+          "reference_pixels": 21369,
+          "inside_hull": 1603,
+          "known_paper_holdout_RMSE_Lab": [
+            1.3960683469525415,
+            0.8277452109430729,
+            1.3445836733457908
+          ],
+          "test_samples": 8192
+        },
+        {
+          "component": 2,
+          "reference_pixels": 6847,
+          "inside_hull": 279,
+          "known_paper_holdout_RMSE_Lab": [
+            1.3871762622212669,
+            0.6862057687546326,
+            0.9273377497488596
+          ],
+          "test_samples": 3365
+        },
+        {
+          "component": 3,
+          "reference_pixels": 26288,
+          "inside_hull": 4133,
+          "known_paper_holdout_RMSE_Lab": [
+            1.3099497317277091,
+            0.8069310996561077,
+            1.2793025905485529
+          ],
+          "test_samples": 8192
+        }
+      ]
+    },
+    {
+      "id": "200014685_00002_2_upper_core_5",
+      "mode": "plane",
+      "components": [
+        {
+          "component": 1,
+          "reference_pixels": 8703,
+          "inside_hull": 279,
+          "known_paper_holdout_RMSE_Lab": [
+            1.2497041103477422,
+            0.7134813396474015,
+            1.1350466876008434
+          ],
+          "test_samples": 4360
+        },
+        {
+          "component": 2,
+          "reference_pixels": 17189,
+          "inside_hull": 2451,
+          "known_paper_holdout_RMSE_Lab": [
+            1.2493305878575736,
+            0.7414191316752402,
+            1.3443159052442317
+          ],
+          "test_samples": 8192
+        },
+        {
+          "component": 3,
+          "reference_pixels": 7523,
+          "inside_hull": 513,
+          "known_paper_holdout_RMSE_Lab": [
+            1.3453677741256556,
+            0.8717327367159282,
+            1.46209531508844
+          ],
+          "test_samples": 3521
+        }
+      ]
+    },
+    {
+      "id": "200014685_00002_2_upper_core_5",
+      "mode": "quadratic",
+      "components": [
+        {
+          "component": 1,
+          "reference_pixels": 8703,
+          "inside_hull": 279,
+          "known_paper_holdout_RMSE_Lab": [
+            1.2344948392496,
+            0.6446396479265352,
+            1.0487470365879639
+          ],
+          "test_samples": 4360
+        },
+        {
+          "component": 2,
+          "reference_pixels": 17189,
+          "inside_hull": 2451,
+          "known_paper_holdout_RMSE_Lab": [
+            1.2383942838046904,
+            0.7508177037430588,
+            1.3071848371379242
+          ],
+          "test_samples": 8192
+        },
+        {
+          "component": 3,
+          "reference_pixels": 7523,
+          "inside_hull": 513,
+          "known_paper_holdout_RMSE_Lab": [
+            1.3120015931366766,
+            0.8636038049007495,
+            1.4022355798153114
+          ],
+          "test_samples": 3521
+        }
+      ]
+    },
+    {
+      "id": "200014685_00002_2_upper_core_16",
+      "mode": "plane",
+      "components": [
+        {
+          "component": 1,
+          "reference_pixels": 15215,
+          "inside_hull": 1603,
+          "known_paper_holdout_RMSE_Lab": [
+            1.3797322191997512,
+            0.8289476024745863,
+            1.4064195568176658
+          ],
+          "test_samples": 7384
+        },
+        {
+          "component": 2,
+          "reference_pixels": 8703,
+          "inside_hull": 279,
+          "known_paper_holdout_RMSE_Lab": [
+            1.2497041103477422,
+            0.7134813396474015,
+            1.1350466876008434
+          ],
+          "test_samples": 4360
+        },
+        {
+          "component": 3,
+          "reference_pixels": 32169,
+          "inside_hull": 4133,
+          "known_paper_holdout_RMSE_Lab": [
+            1.2464568163655796,
+            0.7654766072599296,
+            1.2847502095253418
+          ],
+          "test_samples": 8192
+        }
+      ]
+    },
+    {
+      "id": "200014685_00002_2_upper_core_16",
+      "mode": "quadratic",
+      "components": [
+        {
+          "component": 1,
+          "reference_pixels": 15215,
+          "inside_hull": 1603,
+          "known_paper_holdout_RMSE_Lab": [
+            1.3516122484454975,
+            0.8221312598991816,
+            1.372719665707336
+          ],
+          "test_samples": 7384
+        },
+        {
+          "component": 2,
+          "reference_pixels": 8703,
+          "inside_hull": 279,
+          "known_paper_holdout_RMSE_Lab": [
+            1.2344948392496,
+            0.6446396479265352,
+            1.0487470365879639
+          ],
+          "test_samples": 4360
+        },
+        {
+          "component": 3,
+          "reference_pixels": 32169,
+          "inside_hull": 4133,
+          "known_paper_holdout_RMSE_Lab": [
+            1.236701908627305,
+            0.7562450658815731,
+            1.2267762643451456
+          ],
+          "test_samples": 8192
+        }
+      ]
+    },
+    {
+      "id": "extra_isolated_marks",
+      "mode": "plane",
+      "components": [
+        {
+          "component": 1,
+          "reference_pixels": 20529,
+          "inside_hull": 812,
+          "known_paper_holdout_RMSE_Lab": [
+            1.9318050122481116,
+            0.40562805016576337,
+            0.9576226454540334
+          ],
+          "test_samples": 8192
+        },
+        {
+          "component": 2,
+          "reference_pixels": 21366,
+          "inside_hull": 1474,
+          "known_paper_holdout_RMSE_Lab": [
+            1.804463430532323,
+            0.346269574391705,
+            0.7840116636143823
+          ],
+          "test_samples": 8192
+        }
+      ]
+    },
+    {
+      "id": "extra_isolated_marks",
+      "mode": "quadratic",
+      "components": [
+        {
+          "component": 1,
+          "reference_pixels": 20529,
+          "inside_hull": 812,
+          "known_paper_holdout_RMSE_Lab": [
+            1.9221716316895776,
+            0.3972789762137996,
+            0.9276419312166226
+          ],
+          "test_samples": 8192
+        },
+        {
+          "component": 2,
+          "reference_pixels": 21366,
+          "inside_hull": 1474,
+          "known_paper_holdout_RMSE_Lab": [
+            1.70776524105681,
+            0.3407475748943457,
+            0.7648143835402863
+          ],
+          "test_samples": 8192
+        }
+      ]
+    },
+    {
+      "id": "extra_mark_blank",
+      "mode": "plane"
+    },
+    {
+      "id": "extra_mark_blank",
+      "mode": "quadratic"
+    },
+    {
+      "id": "extra_mark_body",
+      "mode": "plane"
+    },
+    {
+      "id": "extra_mark_body",
+      "mode": "quadratic"
+    },
+    {
+      "id": "extra_header_strokes",
+      "mode": "plane"
+    },
+    {
+      "id": "extra_header_strokes",
+      "mode": "quadratic"
+    },
+    {
+      "id": "extra_header_blank",
+      "mode": "plane"
+    },
+    {
+      "id": "extra_header_blank",
+      "mode": "quadratic"
+    },
+    {
+      "id": "extra_header_body",
+      "mode": "plane"
+    },
+    {
+      "id": "extra_header_body",
+      "mode": "quadratic"
+    }
+  ],
+  "unchanged_ROIs": {
+    "plane": [
+      "dense_stain",
+      "thin_black_water",
+      "brown_as_red",
+      "thin_black_loop",
+      "thin_black_text",
+      "warm_stroke",
+      "control_black",
+      "dense_stain_new",
+      "control_text_new",
+      "brown_near_text",
+      "dark_text_control",
+      "faint_left_text",
+      "damage_control",
+      "new_frame_text",
+      "new_uncertain_trace",
+      "new_header_ink",
+      "new_blank_paper",
+      "new_mono_text",
+      "unseen_brown_spot",
+      "unseen_dense_text",
+      "200017458_00004_2_component_45",
+      "unseen_blue_text",
+      "200021802_00015_1_upper_core_25",
+      "200021802_00015_1_upper_core_237",
+      "unseen_blank",
+      "unseen_frame",
+      "unseen_body",
+      "unseen_upper_paper",
+      "unseen_seal",
+      "unseen_light_text",
+      "fresh_page_edge",
+      "fresh_margin_flecks",
+      "fresh_blank_margin",
+      "fresh_dark_body",
+      "fresh_header_ink",
+      "fresh_left_paper",
+      "fresh_mid_paper",
+      "fresh_body_ink",
+      "fresh_small_top_trace",
+      "fresh_red_seal",
+      "fresh_blank_top",
+      "fresh_gray_body",
+      "extra_branch_blank",
+      "extra_branch_body",
+      "extra_small_seal",
+      "extra_stain_body",
+      "extra_mark_blank",
+      "extra_mark_body",
+      "extra_header_strokes",
+      "extra_header_blank",
+      "extra_header_body"
+    ],
+    "quadratic": [
+      "dense_stain",
+      "thin_black_water",
+      "brown_as_red",
+      "thin_black_loop",
+      "thin_black_text",
+      "warm_stroke",
+      "control_black",
+      "dense_stain_new",
+      "control_text_new",
+      "brown_near_text",
+      "dark_text_control",
+      "faint_left_text",
+      "damage_control",
+      "new_frame_text",
+      "new_uncertain_trace",
+      "new_header_ink",
+      "new_blank_paper",
+      "new_mono_text",
+      "unseen_brown_spot",
+      "unseen_dense_text",
+      "200017458_00004_2_component_45",
+      "unseen_blue_text",
+      "200021802_00015_1_upper_core_25",
+      "200021802_00015_1_upper_core_237",
+      "unseen_blank",
+      "unseen_frame",
+      "unseen_body",
+      "unseen_upper_paper",
+      "unseen_seal",
+      "unseen_light_text",
+      "fresh_page_edge",
+      "fresh_margin_flecks",
+      "fresh_blank_margin",
+      "fresh_dark_body",
+      "fresh_header_ink",
+      "fresh_left_paper",
+      "fresh_mid_paper",
+      "fresh_body_ink",
+      "fresh_small_top_trace",
+      "fresh_red_seal",
+      "fresh_blank_top",
+      "fresh_gray_body",
+      "extra_branch_blank",
+      "extra_branch_body",
+      "extra_small_seal",
+      "extra_stain_body",
+      "extra_mark_blank",
+      "extra_mark_body",
+      "extra_header_strokes",
+      "extra_header_blank",
+      "extra_header_body"
+    ]
+  },
+  "masks_reference_applied_unchanged": true,
+  "baseline_field_exactly_reconstructed": true,
+  "fine_L_seam_fixed": true,
+  "first_inside_pixel_unchanged": true,
+  "model_and_holdout_reconstruction": true,
+  "outside_edit_changes": 0,
+  "pixel_GT": false,
+  "new_DDRM": false
+}

@@ -1,0 +1,584 @@
++ cd /home/imoto/Heritage_Pipeline/modules/ddrm_npj_v2
++ python scripts/pipeline_ddrm.py --input_dir /home/imoto/Heritage_Pipeline/tmp_work/bt_00003_2_crop/input --output_dir /home/imoto/Heritage_Pipeline/tmp_work/bt_00003_2_crop/ddrm_v15bg_out --mask_dir /home/imoto/Heritage_Pipeline/tmp_work/bt_00003_2_crop/mask_dir --ckpt ../stain_removal/experiments/model_char/model_char/ckpt_epoch0350.pth --back_ground /home/imoto/Heritage_Pipeline/tmp_work/bt_00003_2_crop/v15_bg_out/200018243_00003_2.png --device cuda:0 --patch_size 128 --overlap 32 --no_wandb
+[INFO] 対象画像数: 1
+[INFO] 処理中: 200018243_00003_2
+DDRM Data Len:1
+Dataset has size 1
+Start from 0
+  0%|          | 0/1 [00:00<?, ?it/s]/home/imoto/Heritage_Pipeline/tmp_work/bt_00003_2_crop/ddrm_v15bg_out/.tmp/200018243_00003_2/p_0_0/bg_patch.png
+
+0it [00:00, ?it/s][A
+1it [00:00,  3.16it/s][A
+8it [00:00, 23.67it/s][A
+15it [00:00, 37.23it/s][A20it [00:00, 33.39it/s]
+100%|██████████| 1/1 [00:00<00:00,  1.47it/s]100%|██████████| 1/1 [00:00<00:00,  1.47it/s]
+DDRM Data Len:1
+Dataset has size 1
+Start from 0
+  0%|          | 0/1 [00:00<?, ?it/s]/home/imoto/Heritage_Pipeline/tmp_work/bt_00003_2_crop/ddrm_v15bg_out/.tmp/200018243_00003_2/p_0_96/bg_patch.png
+
+0it [00:00, ?it/s][A
+7it [00:00, 67.68it/s][A
+14it [00:00, 68.25it/s][A20it [00:00, 68.29it/s]
+100%|██████████| 1/1 [00:00<00:00,  3.24it/s]100%|██████████| 1/1 [00:00<00:00,  3.24it/s]
+DDRM Data Len:1
+Dataset has size 1
+Start from 0
+  0%|          | 0/1 [00:00<?, ?it/s]/home/imoto/Heritage_Pipeline/tmp_work/bt_00003_2_crop/ddrm_v15bg_out/.tmp/200018243_00003_2/p_0_192/bg_patch.png
+
+0it [00:00, ?it/s][A
+7it [00:00, 66.81it/s][A
+14it [00:00, 67.97it/s][A20it [00:00, 68.12it/s]
+100%|██████████| 1/1 [00:00<00:00,  3.24it/s]100%|██████████| 1/1 [00:00<00:00,  3.24it/s]
+DDRM Data Len:1
+Dataset has size 1
+Start from 0
+  0%|          | 0/1 [00:00<?, ?it/s]/home/imoto/Heritage_Pipeline/tmp_work/bt_00003_2_crop/ddrm_v15bg_out/.tmp/200018243_00003_2/p_0_288/bg_patch.png
+
+0it [00:00, ?it/s][A
+7it [00:00, 67.40it/s][A
+14it [00:00, 68.23it/s][A20it [00:00, 68.02it/s]
+100%|██████████| 1/1 [00:00<00:00,  3.24it/s]100%|██████████| 1/1 [00:00<00:00,  3.23it/s]
+DDRM Data Len:1
+Dataset has size 1
+Start from 0
+  0%|          | 0/1 [00:00<?, ?it/s]/home/imoto/Heritage_Pipeline/tmp_work/bt_00003_2_crop/ddrm_v15bg_out/.tmp/200018243_00003_2/p_0_384/bg_patch.png
+
+0it [00:00, ?it/s][A
+7it [00:00, 65.08it/s][A
+14it [00:00, 66.95it/s][A20it [00:00, 67.07it/s]
+100%|██████████| 1/1 [00:00<00:00,  3.19it/s]100%|██████████| 1/1 [00:00<00:00,  3.19it/s]
+DDRM Data Len:1
+Dataset has size 1
+Start from 0
+  0%|          | 0/1 [00:00<?, ?it/s]/home/imoto/Heritage_Pipeline/tmp_work/bt_00003_2_crop/ddrm_v15bg_out/.tmp/200018243_00003_2/p_0_480/bg_patch.png
+
+0it [00:00, ?it/s][A
+7it [00:00, 67.32it/s][A
+14it [00:00, 68.00it/s][A20it [00:00, 68.21it/s]
+100%|██████████| 1/1 [00:00<00:00,  3.24it/s]100%|██████████| 1/1 [00:00<00:00,  3.24it/s]
+DDRM Data Len:1
+Dataset has size 1
+Start from 0
+  0%|          | 0/1 [00:00<?, ?it/s]/home/imoto/Heritage_Pipeline/tmp_work/bt_00003_2_crop/ddrm_v15bg_out/.tmp/200018243_00003_2/p_0_576/bg_patch.png
+
+0it [00:00, ?it/s][A
+7it [00:00, 66.47it/s][A
+14it [00:00, 67.99it/s][A20it [00:00, 68.25it/s]
+100%|██████████| 1/1 [00:00<00:00,  3.24it/s]100%|██████████| 1/1 [00:00<00:00,  3.24it/s]
+DDRM Data Len:1
+Dataset has size 1
+Start from 0
+  0%|          | 0/1 [00:00<?, ?it/s]/home/imoto/Heritage_Pipeline/tmp_work/bt_00003_2_crop/ddrm_v15bg_out/.tmp/200018243_00003_2/p_0_672/bg_patch.png
+
+0it [00:00, ?it/s][A
+7it [00:00, 66.72it/s][A
+14it [00:00, 68.15it/s][A20it [00:00, 68.31it/s]
+100%|██████████| 1/1 [00:00<00:00,  3.28it/s]100%|██████████| 1/1 [00:00<00:00,  3.28it/s]
+DDRM Data Len:1
+Dataset has size 1
+Start from 0
+  0%|          | 0/1 [00:00<?, ?it/s]/home/imoto/Heritage_Pipeline/tmp_work/bt_00003_2_crop/ddrm_v15bg_out/.tmp/200018243_00003_2/p_96_0/bg_patch.png
+
+0it [00:00, ?it/s][A
+7it [00:00, 66.37it/s][A
+14it [00:00, 67.88it/s][A20it [00:00, 68.12it/s]
+100%|██████████| 1/1 [00:00<00:00,  3.24it/s]100%|██████████| 1/1 [00:00<00:00,  3.24it/s]
+DDRM Data Len:1
+Dataset has size 1
+Start from 0
+  0%|          | 0/1 [00:00<?, ?it/s]/home/imoto/Heritage_Pipeline/tmp_work/bt_00003_2_crop/ddrm_v15bg_out/.tmp/200018243_00003_2/p_96_96/bg_patch.png
+
+0it [00:00, ?it/s][A
+7it [00:00, 67.16it/s][A
+14it [00:00, 68.34it/s][A20it [00:00, 68.01it/s]
+100%|██████████| 1/1 [00:00<00:00,  3.24it/s]100%|██████████| 1/1 [00:00<00:00,  3.24it/s]
+DDRM Data Len:1
+Dataset has size 1
+Start from 0
+  0%|          | 0/1 [00:00<?, ?it/s]/home/imoto/Heritage_Pipeline/tmp_work/bt_00003_2_crop/ddrm_v15bg_out/.tmp/200018243_00003_2/p_96_192/bg_patch.png
+
+0it [00:00, ?it/s][A
+7it [00:00, 67.83it/s][A
+14it [00:00, 68.47it/s][A20it [00:00, 67.92it/s]
+100%|██████████| 1/1 [00:00<00:00,  3.24it/s]100%|██████████| 1/1 [00:00<00:00,  3.23it/s]
+DDRM Data Len:1
+Dataset has size 1
+Start from 0
+  0%|          | 0/1 [00:00<?, ?it/s]/home/imoto/Heritage_Pipeline/tmp_work/bt_00003_2_crop/ddrm_v15bg_out/.tmp/200018243_00003_2/p_96_288/bg_patch.png
+
+0it [00:00, ?it/s][A
+7it [00:00, 67.95it/s][A
+14it [00:00, 68.72it/s][A20it [00:00, 68.17it/s]
+100%|██████████| 1/1 [00:00<00:00,  3.24it/s]100%|██████████| 1/1 [00:00<00:00,  3.24it/s]
+DDRM Data Len:1
+Dataset has size 1
+Start from 0
+  0%|          | 0/1 [00:00<?, ?it/s]/home/imoto/Heritage_Pipeline/tmp_work/bt_00003_2_crop/ddrm_v15bg_out/.tmp/200018243_00003_2/p_96_384/bg_patch.png
+
+0it [00:00, ?it/s][A
+7it [00:00, 67.70it/s][A
+14it [00:00, 66.90it/s][A20it [00:00, 67.39it/s]
+100%|██████████| 1/1 [00:00<00:00,  3.21it/s]100%|██████████| 1/1 [00:00<00:00,  3.20it/s]
+DDRM Data Len:1
+Dataset has size 1
+Start from 0
+  0%|          | 0/1 [00:00<?, ?it/s]/home/imoto/Heritage_Pipeline/tmp_work/bt_00003_2_crop/ddrm_v15bg_out/.tmp/200018243_00003_2/p_96_480/bg_patch.png
+
+0it [00:00, ?it/s][A
+7it [00:00, 68.13it/s][A
+14it [00:00, 67.76it/s][A20it [00:00, 68.18it/s]
+100%|██████████| 1/1 [00:00<00:00,  3.24it/s]100%|██████████| 1/1 [00:00<00:00,  3.24it/s]
+DDRM Data Len:1
+Dataset has size 1
+Start from 0
+  0%|          | 0/1 [00:00<?, ?it/s]/home/imoto/Heritage_Pipeline/tmp_work/bt_00003_2_crop/ddrm_v15bg_out/.tmp/200018243_00003_2/p_96_576/bg_patch.png
+
+0it [00:00, ?it/s][A
+7it [00:00, 67.99it/s][A
+14it [00:00, 67.70it/s][A20it [00:00, 68.15it/s]
+100%|██████████| 1/1 [00:00<00:00,  3.24it/s]100%|██████████| 1/1 [00:00<00:00,  3.24it/s]
+DDRM Data Len:1
+Dataset has size 1
+Start from 0
+  0%|          | 0/1 [00:00<?, ?it/s]/home/imoto/Heritage_Pipeline/tmp_work/bt_00003_2_crop/ddrm_v15bg_out/.tmp/200018243_00003_2/p_96_672/bg_patch.png
+
+0it [00:00, ?it/s][A
+7it [00:00, 65.37it/s][A
+14it [00:00, 66.55it/s][A20it [00:00, 67.14it/s]
+100%|██████████| 1/1 [00:00<00:00,  3.23it/s]100%|██████████| 1/1 [00:00<00:00,  3.23it/s]
+DDRM Data Len:1
+Dataset has size 1
+Start from 0
+  0%|          | 0/1 [00:00<?, ?it/s]/home/imoto/Heritage_Pipeline/tmp_work/bt_00003_2_crop/ddrm_v15bg_out/.tmp/200018243_00003_2/p_192_0/bg_patch.png
+
+0it [00:00, ?it/s][A
+7it [00:00, 65.95it/s][A
+14it [00:00, 67.71it/s][A20it [00:00, 67.90it/s]
+100%|██████████| 1/1 [00:00<00:00,  3.23it/s]100%|██████████| 1/1 [00:00<00:00,  3.23it/s]
+DDRM Data Len:1
+Dataset has size 1
+Start from 0
+  0%|          | 0/1 [00:00<?, ?it/s]/home/imoto/Heritage_Pipeline/tmp_work/bt_00003_2_crop/ddrm_v15bg_out/.tmp/200018243_00003_2/p_192_96/bg_patch.png
+
+0it [00:00, ?it/s][A
+7it [00:00, 65.99it/s][A
+14it [00:00, 67.44it/s][A20it [00:00, 67.62it/s]
+100%|██████████| 1/1 [00:00<00:00,  3.22it/s]100%|██████████| 1/1 [00:00<00:00,  3.21it/s]
+DDRM Data Len:1
+Dataset has size 1
+Start from 0
+  0%|          | 0/1 [00:00<?, ?it/s]/home/imoto/Heritage_Pipeline/tmp_work/bt_00003_2_crop/ddrm_v15bg_out/.tmp/200018243_00003_2/p_192_192/bg_patch.png
+
+0it [00:00, ?it/s][A
+7it [00:00, 66.57it/s][A
+14it [00:00, 68.11it/s][A20it [00:00, 68.24it/s]
+100%|██████████| 1/1 [00:00<00:00,  3.25it/s]100%|██████████| 1/1 [00:00<00:00,  3.24it/s]
+DDRM Data Len:1
+Dataset has size 1
+Start from 0
+  0%|          | 0/1 [00:00<?, ?it/s]/home/imoto/Heritage_Pipeline/tmp_work/bt_00003_2_crop/ddrm_v15bg_out/.tmp/200018243_00003_2/p_192_288/bg_patch.png
+
+0it [00:00, ?it/s][A
+7it [00:00, 68.11it/s][A
+14it [00:00, 68.72it/s][A20it [00:00, 68.27it/s]
+100%|██████████| 1/1 [00:00<00:00,  3.24it/s]100%|██████████| 1/1 [00:00<00:00,  3.24it/s]
+DDRM Data Len:1
+Dataset has size 1
+Start from 0
+  0%|          | 0/1 [00:00<?, ?it/s]/home/imoto/Heritage_Pipeline/tmp_work/bt_00003_2_crop/ddrm_v15bg_out/.tmp/200018243_00003_2/p_192_384/bg_patch.png
+
+0it [00:00, ?it/s][A
+7it [00:00, 68.05it/s][A
+14it [00:00, 68.73it/s][A20it [00:00, 68.18it/s]
+100%|██████████| 1/1 [00:00<00:00,  3.24it/s]100%|██████████| 1/1 [00:00<00:00,  3.24it/s]
+DDRM Data Len:1
+Dataset has size 1
+Start from 0
+  0%|          | 0/1 [00:00<?, ?it/s]/home/imoto/Heritage_Pipeline/tmp_work/bt_00003_2_crop/ddrm_v15bg_out/.tmp/200018243_00003_2/p_192_480/bg_patch.png
+
+0it [00:00, ?it/s][A
+7it [00:00, 67.83it/s][A
+14it [00:00, 68.43it/s][A20it [00:00, 67.98it/s]
+100%|██████████| 1/1 [00:00<00:00,  3.24it/s]100%|██████████| 1/1 [00:00<00:00,  3.23it/s]
+DDRM Data Len:1
+Dataset has size 1
+Start from 0
+  0%|          | 0/1 [00:00<?, ?it/s]/home/imoto/Heritage_Pipeline/tmp_work/bt_00003_2_crop/ddrm_v15bg_out/.tmp/200018243_00003_2/p_192_576/bg_patch.png
+
+0it [00:00, ?it/s][A
+7it [00:00, 68.17it/s][A
+14it [00:00, 67.85it/s][A20it [00:00, 68.29it/s]
+100%|██████████| 1/1 [00:00<00:00,  3.21it/s]100%|██████████| 1/1 [00:00<00:00,  3.21it/s]
+DDRM Data Len:1
+Dataset has size 1
+Start from 0
+  0%|          | 0/1 [00:00<?, ?it/s]/home/imoto/Heritage_Pipeline/tmp_work/bt_00003_2_crop/ddrm_v15bg_out/.tmp/200018243_00003_2/p_192_672/bg_patch.png
+
+0it [00:00, ?it/s][A
+7it [00:00, 67.45it/s][A
+14it [00:00, 67.28it/s][A20it [00:00, 67.83it/s]
+100%|██████████| 1/1 [00:00<00:00,  3.26it/s]100%|██████████| 1/1 [00:00<00:00,  3.26it/s]
+DDRM Data Len:1
+Dataset has size 1
+Start from 0
+  0%|          | 0/1 [00:00<?, ?it/s]/home/imoto/Heritage_Pipeline/tmp_work/bt_00003_2_crop/ddrm_v15bg_out/.tmp/200018243_00003_2/p_288_0/bg_patch.png
+
+0it [00:00, ?it/s][A
+7it [00:00, 68.01it/s][A
+14it [00:00, 67.73it/s][A20it [00:00, 68.21it/s]
+100%|██████████| 1/1 [00:00<00:00,  3.25it/s]100%|██████████| 1/1 [00:00<00:00,  3.25it/s]
+DDRM Data Len:1
+Dataset has size 1
+Start from 0
+  0%|          | 0/1 [00:00<?, ?it/s]/home/imoto/Heritage_Pipeline/tmp_work/bt_00003_2_crop/ddrm_v15bg_out/.tmp/200018243_00003_2/p_288_96/bg_patch.png
+
+0it [00:00, ?it/s][A
+7it [00:00, 67.23it/s][A
+14it [00:00, 68.14it/s][A20it [00:00, 68.42it/s]
+100%|██████████| 1/1 [00:00<00:00,  3.25it/s]100%|██████████| 1/1 [00:00<00:00,  3.25it/s]
+DDRM Data Len:1
+Dataset has size 1
+Start from 0
+  0%|          | 0/1 [00:00<?, ?it/s]/home/imoto/Heritage_Pipeline/tmp_work/bt_00003_2_crop/ddrm_v15bg_out/.tmp/200018243_00003_2/p_288_192/bg_patch.png
+
+0it [00:00, ?it/s][A
+7it [00:00, 66.33it/s][A
+14it [00:00, 68.00it/s][A20it [00:00, 68.17it/s]
+100%|██████████| 1/1 [00:00<00:00,  3.24it/s]100%|██████████| 1/1 [00:00<00:00,  3.24it/s]
+DDRM Data Len:1
+Dataset has size 1
+Start from 0
+  0%|          | 0/1 [00:00<?, ?it/s]/home/imoto/Heritage_Pipeline/tmp_work/bt_00003_2_crop/ddrm_v15bg_out/.tmp/200018243_00003_2/p_288_288/bg_patch.png
+
+0it [00:00, ?it/s][A
+7it [00:00, 66.60it/s][A
+14it [00:00, 68.18it/s][A20it [00:00, 68.38it/s]
+100%|██████████| 1/1 [00:00<00:00,  3.25it/s]100%|██████████| 1/1 [00:00<00:00,  3.25it/s]
+DDRM Data Len:1
+Dataset has size 1
+Start from 0
+  0%|          | 0/1 [00:00<?, ?it/s]/home/imoto/Heritage_Pipeline/tmp_work/bt_00003_2_crop/ddrm_v15bg_out/.tmp/200018243_00003_2/p_288_384/bg_patch.png
+
+0it [00:00, ?it/s][A
+7it [00:00, 66.73it/s][A
+14it [00:00, 68.16it/s][A20it [00:00, 68.08it/s]
+100%|██████████| 1/1 [00:00<00:00,  3.24it/s]100%|██████████| 1/1 [00:00<00:00,  3.24it/s]
+DDRM Data Len:1
+Dataset has size 1
+Start from 0
+  0%|          | 0/1 [00:00<?, ?it/s]/home/imoto/Heritage_Pipeline/tmp_work/bt_00003_2_crop/ddrm_v15bg_out/.tmp/200018243_00003_2/p_288_480/bg_patch.png
+
+0it [00:00, ?it/s][A
+7it [00:00, 68.37it/s][A
+14it [00:00, 68.85it/s][A20it [00:00, 68.30it/s]
+100%|██████████| 1/1 [00:00<00:00,  3.26it/s]100%|██████████| 1/1 [00:00<00:00,  3.26it/s]
+DDRM Data Len:1
+Dataset has size 1
+Start from 0
+  0%|          | 0/1 [00:00<?, ?it/s]/home/imoto/Heritage_Pipeline/tmp_work/bt_00003_2_crop/ddrm_v15bg_out/.tmp/200018243_00003_2/p_288_576/bg_patch.png
+
+0it [00:00, ?it/s][A
+7it [00:00, 68.25it/s][A
+14it [00:00, 68.19it/s][A20it [00:00, 67.63it/s]
+100%|██████████| 1/1 [00:00<00:00,  3.23it/s]100%|██████████| 1/1 [00:00<00:00,  3.23it/s]
+DDRM Data Len:1
+Dataset has size 1
+Start from 0
+  0%|          | 0/1 [00:00<?, ?it/s]/home/imoto/Heritage_Pipeline/tmp_work/bt_00003_2_crop/ddrm_v15bg_out/.tmp/200018243_00003_2/p_288_672/bg_patch.png
+
+0it [00:00, ?it/s][A
+7it [00:00, 68.33it/s][A
+14it [00:00, 68.88it/s][A20it [00:00, 68.32it/s]
+100%|██████████| 1/1 [00:00<00:00,  3.29it/s]100%|██████████| 1/1 [00:00<00:00,  3.29it/s]
+DDRM Data Len:1
+Dataset has size 1
+Start from 0
+  0%|          | 0/1 [00:00<?, ?it/s]/home/imoto/Heritage_Pipeline/tmp_work/bt_00003_2_crop/ddrm_v15bg_out/.tmp/200018243_00003_2/p_384_0/bg_patch.png
+
+0it [00:00, ?it/s][A
+7it [00:00, 68.44it/s][A
+14it [00:00, 68.08it/s][A20it [00:00, 68.49it/s]
+100%|██████████| 1/1 [00:00<00:00,  3.26it/s]100%|██████████| 1/1 [00:00<00:00,  3.26it/s]
+DDRM Data Len:1
+Dataset has size 1
+Start from 0
+  0%|          | 0/1 [00:00<?, ?it/s]/home/imoto/Heritage_Pipeline/tmp_work/bt_00003_2_crop/ddrm_v15bg_out/.tmp/200018243_00003_2/p_384_96/bg_patch.png
+
+0it [00:00, ?it/s][A
+7it [00:00, 68.20it/s][A
+14it [00:00, 67.79it/s][A20it [00:00, 68.33it/s]
+100%|██████████| 1/1 [00:00<00:00,  3.25it/s]100%|██████████| 1/1 [00:00<00:00,  3.25it/s]
+DDRM Data Len:1
+Dataset has size 1
+Start from 0
+  0%|          | 0/1 [00:00<?, ?it/s]/home/imoto/Heritage_Pipeline/tmp_work/bt_00003_2_crop/ddrm_v15bg_out/.tmp/200018243_00003_2/p_384_192/bg_patch.png
+
+0it [00:00, ?it/s][A
+7it [00:00, 68.26it/s][A
+14it [00:00, 67.87it/s][A20it [00:00, 68.37it/s]
+100%|██████████| 1/1 [00:00<00:00,  3.26it/s]100%|██████████| 1/1 [00:00<00:00,  3.26it/s]
+DDRM Data Len:1
+Dataset has size 1
+Start from 0
+  0%|          | 0/1 [00:00<?, ?it/s]/home/imoto/Heritage_Pipeline/tmp_work/bt_00003_2_crop/ddrm_v15bg_out/.tmp/200018243_00003_2/p_384_288/bg_patch.png
+
+0it [00:00, ?it/s][A
+7it [00:00, 67.48it/s][A
+14it [00:00, 68.05it/s][A20it [00:00, 68.43it/s]
+100%|██████████| 1/1 [00:00<00:00,  3.26it/s]100%|██████████| 1/1 [00:00<00:00,  3.25it/s]
+DDRM Data Len:1
+Dataset has size 1
+Start from 0
+  0%|          | 0/1 [00:00<?, ?it/s]/home/imoto/Heritage_Pipeline/tmp_work/bt_00003_2_crop/ddrm_v15bg_out/.tmp/200018243_00003_2/p_384_384/bg_patch.png
+
+0it [00:00, ?it/s][A
+7it [00:00, 66.50it/s][A
+14it [00:00, 68.10it/s][A20it [00:00, 68.31it/s]
+100%|██████████| 1/1 [00:00<00:00,  3.26it/s]100%|██████████| 1/1 [00:00<00:00,  3.26it/s]
+DDRM Data Len:1
+Dataset has size 1
+Start from 0
+  0%|          | 0/1 [00:00<?, ?it/s]/home/imoto/Heritage_Pipeline/tmp_work/bt_00003_2_crop/ddrm_v15bg_out/.tmp/200018243_00003_2/p_384_480/bg_patch.png
+
+0it [00:00, ?it/s][A
+7it [00:00, 66.36it/s][A
+14it [00:00, 67.89it/s][A20it [00:00, 68.05it/s]
+100%|██████████| 1/1 [00:00<00:00,  3.25it/s]100%|██████████| 1/1 [00:00<00:00,  3.25it/s]
+DDRM Data Len:1
+Dataset has size 1
+Start from 0
+  0%|          | 0/1 [00:00<?, ?it/s]/home/imoto/Heritage_Pipeline/tmp_work/bt_00003_2_crop/ddrm_v15bg_out/.tmp/200018243_00003_2/p_384_576/bg_patch.png
+
+0it [00:00, ?it/s][A
+7it [00:00, 66.62it/s][A
+14it [00:00, 68.29it/s][A20it [00:00, 68.47it/s]
+100%|██████████| 1/1 [00:00<00:00,  3.26it/s]100%|██████████| 1/1 [00:00<00:00,  3.26it/s]
+DDRM Data Len:1
+Dataset has size 1
+Start from 0
+  0%|          | 0/1 [00:00<?, ?it/s]/home/imoto/Heritage_Pipeline/tmp_work/bt_00003_2_crop/ddrm_v15bg_out/.tmp/200018243_00003_2/p_384_672/bg_patch.png
+
+0it [00:00, ?it/s][A
+7it [00:00, 68.34it/s][A
+14it [00:00, 68.98it/s][A20it [00:00, 68.42it/s]
+100%|██████████| 1/1 [00:00<00:00,  3.30it/s]100%|██████████| 1/1 [00:00<00:00,  3.29it/s]
+DDRM Data Len:1
+Dataset has size 1
+Start from 0
+  0%|          | 0/1 [00:00<?, ?it/s]/home/imoto/Heritage_Pipeline/tmp_work/bt_00003_2_crop/ddrm_v15bg_out/.tmp/200018243_00003_2/p_480_0/bg_patch.png
+
+0it [00:00, ?it/s][A
+7it [00:00, 68.47it/s][A
+14it [00:00, 68.99it/s][A20it [00:00, 68.40it/s]
+100%|██████████| 1/1 [00:00<00:00,  3.26it/s]100%|██████████| 1/1 [00:00<00:00,  3.26it/s]
+DDRM Data Len:1
+Dataset has size 1
+Start from 0
+  0%|          | 0/1 [00:00<?, ?it/s]/home/imoto/Heritage_Pipeline/tmp_work/bt_00003_2_crop/ddrm_v15bg_out/.tmp/200018243_00003_2/p_480_96/bg_patch.png
+
+0it [00:00, ?it/s][A
+7it [00:00, 68.33it/s][A
+14it [00:00, 69.07it/s][A20it [00:00, 68.53it/s]
+100%|██████████| 1/1 [00:00<00:00,  3.26it/s]100%|██████████| 1/1 [00:00<00:00,  3.26it/s]
+DDRM Data Len:1
+Dataset has size 1
+Start from 0
+  0%|          | 0/1 [00:00<?, ?it/s]/home/imoto/Heritage_Pipeline/tmp_work/bt_00003_2_crop/ddrm_v15bg_out/.tmp/200018243_00003_2/p_480_192/bg_patch.png
+
+0it [00:00, ?it/s][A
+7it [00:00, 68.40it/s][A
+14it [00:00, 67.81it/s][A20it [00:00, 68.29it/s]
+100%|██████████| 1/1 [00:00<00:00,  3.25it/s]100%|██████████| 1/1 [00:00<00:00,  3.25it/s]
+DDRM Data Len:1
+Dataset has size 1
+Start from 0
+  0%|          | 0/1 [00:00<?, ?it/s]/home/imoto/Heritage_Pipeline/tmp_work/bt_00003_2_crop/ddrm_v15bg_out/.tmp/200018243_00003_2/p_480_288/bg_patch.png
+
+0it [00:00, ?it/s][A
+7it [00:00, 67.97it/s][A
+14it [00:00, 67.64it/s][A20it [00:00, 68.08it/s]
+100%|██████████| 1/1 [00:00<00:00,  3.24it/s]100%|██████████| 1/1 [00:00<00:00,  3.24it/s]
+DDRM Data Len:1
+Dataset has size 1
+Start from 0
+  0%|          | 0/1 [00:00<?, ?it/s]/home/imoto/Heritage_Pipeline/tmp_work/bt_00003_2_crop/ddrm_v15bg_out/.tmp/200018243_00003_2/p_480_384/bg_patch.png
+
+0it [00:00, ?it/s][A
+7it [00:00, 68.45it/s][A
+14it [00:00, 67.94it/s][A20it [00:00, 68.42it/s]
+100%|██████████| 1/1 [00:00<00:00,  3.26it/s]100%|██████████| 1/1 [00:00<00:00,  3.26it/s]
+DDRM Data Len:1
+Dataset has size 1
+Start from 0
+  0%|          | 0/1 [00:00<?, ?it/s]/home/imoto/Heritage_Pipeline/tmp_work/bt_00003_2_crop/ddrm_v15bg_out/.tmp/200018243_00003_2/p_480_480/bg_patch.png
+
+0it [00:00, ?it/s][A
+7it [00:00, 68.55it/s][A
+14it [00:00, 68.08it/s][A20it [00:00, 68.45it/s]
+100%|██████████| 1/1 [00:00<00:00,  3.26it/s]100%|██████████| 1/1 [00:00<00:00,  3.26it/s]
+DDRM Data Len:1
+Dataset has size 1
+Start from 0
+  0%|          | 0/1 [00:00<?, ?it/s]/home/imoto/Heritage_Pipeline/tmp_work/bt_00003_2_crop/ddrm_v15bg_out/.tmp/200018243_00003_2/p_480_576/bg_patch.png
+
+0it [00:00, ?it/s][A
+7it [00:00, 66.76it/s][A
+14it [00:00, 68.40it/s][A20it [00:00, 68.55it/s]
+100%|██████████| 1/1 [00:00<00:00,  3.27it/s]100%|██████████| 1/1 [00:00<00:00,  3.27it/s]
+DDRM Data Len:1
+Dataset has size 1
+Start from 0
+  0%|          | 0/1 [00:00<?, ?it/s]/home/imoto/Heritage_Pipeline/tmp_work/bt_00003_2_crop/ddrm_v15bg_out/.tmp/200018243_00003_2/p_480_672/bg_patch.png
+
+0it [00:00, ?it/s][A
+7it [00:00, 66.63it/s][A
+14it [00:00, 68.24it/s][A20it [00:00, 68.46it/s]
+100%|██████████| 1/1 [00:00<00:00,  3.30it/s]100%|██████████| 1/1 [00:00<00:00,  3.30it/s]
+DDRM Data Len:1
+Dataset has size 1
+Start from 0
+  0%|          | 0/1 [00:00<?, ?it/s]/home/imoto/Heritage_Pipeline/tmp_work/bt_00003_2_crop/ddrm_v15bg_out/.tmp/200018243_00003_2/p_576_0/bg_patch.png
+
+0it [00:00, ?it/s][A
+7it [00:00, 66.50it/s][A
+14it [00:00, 68.14it/s][A20it [00:00, 68.31it/s]
+100%|██████████| 1/1 [00:00<00:00,  3.26it/s]100%|██████████| 1/1 [00:00<00:00,  3.26it/s]
+DDRM Data Len:1
+Dataset has size 1
+Start from 0
+  0%|          | 0/1 [00:00<?, ?it/s]/home/imoto/Heritage_Pipeline/tmp_work/bt_00003_2_crop/ddrm_v15bg_out/.tmp/200018243_00003_2/p_576_96/bg_patch.png
+
+0it [00:00, ?it/s][A
+7it [00:00, 67.59it/s][A
+14it [00:00, 68.64it/s][A20it [00:00, 68.30it/s]
+100%|██████████| 1/1 [00:00<00:00,  3.25it/s]100%|██████████| 1/1 [00:00<00:00,  3.25it/s]
+DDRM Data Len:1
+Dataset has size 1
+Start from 0
+  0%|          | 0/1 [00:00<?, ?it/s]/home/imoto/Heritage_Pipeline/tmp_work/bt_00003_2_crop/ddrm_v15bg_out/.tmp/200018243_00003_2/p_576_192/bg_patch.png
+
+0it [00:00, ?it/s][A
+7it [00:00, 68.58it/s][A
+14it [00:00, 69.10it/s][A20it [00:00, 68.50it/s]
+100%|██████████| 1/1 [00:00<00:00,  3.27it/s]100%|██████████| 1/1 [00:00<00:00,  3.27it/s]
+DDRM Data Len:1
+Dataset has size 1
+Start from 0
+  0%|          | 0/1 [00:00<?, ?it/s]/home/imoto/Heritage_Pipeline/tmp_work/bt_00003_2_crop/ddrm_v15bg_out/.tmp/200018243_00003_2/p_576_288/bg_patch.png
+
+0it [00:00, ?it/s][A
+7it [00:00, 68.37it/s][A
+14it [00:00, 68.98it/s][A20it [00:00, 68.37it/s]
+100%|██████████| 1/1 [00:00<00:00,  3.26it/s]100%|██████████| 1/1 [00:00<00:00,  3.26it/s]
+DDRM Data Len:1
+Dataset has size 1
+Start from 0
+  0%|          | 0/1 [00:00<?, ?it/s]/home/imoto/Heritage_Pipeline/tmp_work/bt_00003_2_crop/ddrm_v15bg_out/.tmp/200018243_00003_2/p_576_384/bg_patch.png
+
+0it [00:00, ?it/s][A
+7it [00:00, 68.24it/s][A
+14it [00:00, 68.49it/s][A20it [00:00, 68.33it/s]
+100%|██████████| 1/1 [00:00<00:00,  3.26it/s]100%|██████████| 1/1 [00:00<00:00,  3.26it/s]
+DDRM Data Len:1
+Dataset has size 1
+Start from 0
+  0%|          | 0/1 [00:00<?, ?it/s]/home/imoto/Heritage_Pipeline/tmp_work/bt_00003_2_crop/ddrm_v15bg_out/.tmp/200018243_00003_2/p_576_480/bg_patch.png
+
+0it [00:00, ?it/s][A
+7it [00:00, 67.92it/s][A
+14it [00:00, 67.15it/s][A20it [00:00, 67.93it/s]
+100%|██████████| 1/1 [00:00<00:00,  3.24it/s]100%|██████████| 1/1 [00:00<00:00,  3.24it/s]
+DDRM Data Len:1
+Dataset has size 1
+Start from 0
+  0%|          | 0/1 [00:00<?, ?it/s]/home/imoto/Heritage_Pipeline/tmp_work/bt_00003_2_crop/ddrm_v15bg_out/.tmp/200018243_00003_2/p_576_576/bg_patch.png
+
+0it [00:00, ?it/s][A
+7it [00:00, 68.31it/s][A
+14it [00:00, 67.91it/s][A20it [00:00, 68.39it/s]
+100%|██████████| 1/1 [00:00<00:00,  3.26it/s]100%|██████████| 1/1 [00:00<00:00,  3.26it/s]
+DDRM Data Len:1
+Dataset has size 1
+Start from 0
+  0%|          | 0/1 [00:00<?, ?it/s]/home/imoto/Heritage_Pipeline/tmp_work/bt_00003_2_crop/ddrm_v15bg_out/.tmp/200018243_00003_2/p_576_672/bg_patch.png
+
+0it [00:00, ?it/s][A
+7it [00:00, 68.47it/s][A
+14it [00:00, 67.97it/s][A20it [00:00, 67.90it/s]
+100%|██████████| 1/1 [00:00<00:00,  3.27it/s]100%|██████████| 1/1 [00:00<00:00,  3.27it/s]
+DDRM Data Len:1
+Dataset has size 1
+Start from 0
+  0%|          | 0/1 [00:00<?, ?it/s]/home/imoto/Heritage_Pipeline/tmp_work/bt_00003_2_crop/ddrm_v15bg_out/.tmp/200018243_00003_2/p_672_0/bg_patch.png
+
+0it [00:00, ?it/s][A
+7it [00:00, 65.96it/s][A
+14it [00:00, 67.63it/s][A20it [00:00, 68.00it/s]
+100%|██████████| 1/1 [00:00<00:00,  3.28it/s]100%|██████████| 1/1 [00:00<00:00,  3.28it/s]
+DDRM Data Len:1
+Dataset has size 1
+Start from 0
+  0%|          | 0/1 [00:00<?, ?it/s]/home/imoto/Heritage_Pipeline/tmp_work/bt_00003_2_crop/ddrm_v15bg_out/.tmp/200018243_00003_2/p_672_96/bg_patch.png
+
+0it [00:00, ?it/s][A
+7it [00:00, 66.43it/s][A
+14it [00:00, 68.24it/s][A20it [00:00, 68.46it/s]
+100%|██████████| 1/1 [00:00<00:00,  3.30it/s]100%|██████████| 1/1 [00:00<00:00,  3.30it/s]
+DDRM Data Len:1
+Dataset has size 1
+Start from 0
+  0%|          | 0/1 [00:00<?, ?it/s]/home/imoto/Heritage_Pipeline/tmp_work/bt_00003_2_crop/ddrm_v15bg_out/.tmp/200018243_00003_2/p_672_192/bg_patch.png
+
+0it [00:00, ?it/s][A
+7it [00:00, 66.90it/s][A
+14it [00:00, 68.13it/s][A20it [00:00, 68.43it/s]
+100%|██████████| 1/1 [00:00<00:00,  3.30it/s]100%|██████████| 1/1 [00:00<00:00,  3.30it/s]
+DDRM Data Len:1
+Dataset has size 1
+Start from 0
+  0%|          | 0/1 [00:00<?, ?it/s]/home/imoto/Heritage_Pipeline/tmp_work/bt_00003_2_crop/ddrm_v15bg_out/.tmp/200018243_00003_2/p_672_288/bg_patch.png
+
+0it [00:00, ?it/s][A
+7it [00:00, 66.70it/s][A
+14it [00:00, 68.42it/s][A20it [00:00, 68.54it/s]
+100%|██████████| 1/1 [00:00<00:00,  3.31it/s]100%|██████████| 1/1 [00:00<00:00,  3.31it/s]
+DDRM Data Len:1
+Dataset has size 1
+Start from 0
+  0%|          | 0/1 [00:00<?, ?it/s]/home/imoto/Heritage_Pipeline/tmp_work/bt_00003_2_crop/ddrm_v15bg_out/.tmp/200018243_00003_2/p_672_384/bg_patch.png
+
+0it [00:00, ?it/s][A
+7it [00:00, 67.54it/s][A
+14it [00:00, 68.54it/s][A20it [00:00, 68.17it/s]
+100%|██████████| 1/1 [00:00<00:00,  3.29it/s]100%|██████████| 1/1 [00:00<00:00,  3.29it/s]
+DDRM Data Len:1
+Dataset has size 1
+Start from 0
+  0%|          | 0/1 [00:00<?, ?it/s]/home/imoto/Heritage_Pipeline/tmp_work/bt_00003_2_crop/ddrm_v15bg_out/.tmp/200018243_00003_2/p_672_480/bg_patch.png
+
+0it [00:00, ?it/s][A
+7it [00:00, 68.69it/s][A
+14it [00:00, 69.16it/s][A20it [00:00, 68.08it/s]
+100%|██████████| 1/1 [00:00<00:00,  3.28it/s]100%|██████████| 1/1 [00:00<00:00,  3.28it/s]
+DDRM Data Len:1
+Dataset has size 1
+Start from 0
+  0%|          | 0/1 [00:00<?, ?it/s]/home/imoto/Heritage_Pipeline/tmp_work/bt_00003_2_crop/ddrm_v15bg_out/.tmp/200018243_00003_2/p_672_576/bg_patch.png
+
+0it [00:00, ?it/s][A
+7it [00:00, 68.16it/s][A
+14it [00:00, 68.76it/s][A20it [00:00, 68.12it/s]
+100%|██████████| 1/1 [00:00<00:00,  3.29it/s]100%|██████████| 1/1 [00:00<00:00,  3.29it/s]
+DDRM Data Len:1
+Dataset has size 1
+Start from 0
+  0%|          | 0/1 [00:00<?, ?it/s]/home/imoto/Heritage_Pipeline/tmp_work/bt_00003_2_crop/ddrm_v15bg_out/.tmp/200018243_00003_2/p_672_672/bg_patch.png
+
+0it [00:00, ?it/s][A
+7it [00:00, 68.47it/s][A
+14it [00:00, 68.96it/s][A20it [00:00, 68.79it/s]
+100%|██████████| 1/1 [00:00<00:00,  3.31it/s]100%|██████████| 1/1 [00:00<00:00,  3.30it/s]
+[INFO]   赤文字合成: 完了
+[INFO]   保存: /home/imoto/Heritage_Pipeline/tmp_work/bt_00003_2_crop/ddrm_v15bg_out/200018243_00003_2/result/200018243_00003_2.png
+[INFO] 完了。

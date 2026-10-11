@@ -1,0 +1,23 @@
+{
+  "dependencies": {
+    "tmp_work/npj_masks_and_stain_audit_20261007/official/StainRestorer/models/StainRestorer.py": "d12181917d63a80bda21fa6a938baad561748b3b086478761eab0a67d5dba11a",
+    "tmp_work/npj_masks_and_stain_audit_20261007/official/StainRestorer/data/dataset_RGB.py": "68be999c7fc9ae2dd6af4710b78464356e4946e8b7886b2cab1090f0347f8d8c",
+    "tmp_work/npj_masks_and_stain_audit_20261007/official/StainDoc_fresh.pth": "7cdbd674367535d4f429ef077030b930da2a460012fe8fc44d995ead2f7418ee",
+    "scripts/benchmark/run_npj_literature_models.py": "1fb608304a989abdcc367d434dd2b7fd77cb953e73de6f634730479bc11fde41",
+    "tmp_work/npj_masks_and_stain_audit_20261007/audit_stain.py": "a89d804efa2ca92dfe8b951d041c8b49afa1f75bd81fe8aeaae0d5bdc25ebfb0"
+  },
+  "selected": [
+    "T01",
+    "N01",
+    "N02",
+    "F41"
+  ],
+  "fresh_author_weights": true,
+  "actual_author_DataLoaderVal": true,
+  "loader_package": "albumentations1.3.1 local isolated dependency; uses Resize linear only; author current environment lists2.0.8",
+  "torch": "2.1.0+cu118",
+  "torchvision": "0.16.0+cu118",
+  "official_head": "model(inp)[0], as author train.py validation",
+  "paired_benchmark": false,
+  "dummy_target": "input copied only to satisfy paired loader; not a clean GT; no metrics against it"
+}

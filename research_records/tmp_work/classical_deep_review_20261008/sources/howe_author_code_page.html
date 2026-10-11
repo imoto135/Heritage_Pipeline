@@ -1,0 +1,188 @@
+<html>
+<head>
+<title> Code Implementations by Nicholas R. Howe </title>
+<link rel="stylesheet" type="text/css" href="http://www.cs.smith.edu/~nhowe/main.css">
+</head>
+
+
+<body>
+<!-- Navigation bar here. -->
+<div id="navbar">
+<ul>
+<li><a href="../../index.html">Home</a></li>
+<li><a href="../../teaching">Teaching</a></li>
+<li><a href="../../research">Research</a></li>
+<li><a href="../../personal">Personal</a></li>
+</ul>
+</div>
+
+<!-- Main page begins here. -->
+<div id="main">
+<h3> Available Code Implementations by Nicholas R. Howe </h3>
+<br />
+
+<dl class="subheads">
+<a name="psm"></a>
+<dt>MATLAB/C Implementation of Part-Structured Inkball Models</dt>
+<dd>
+<img src="inkball_anim.gif" alt="generative handwriting model" style="width: 2in; float: right" />
+<p>[<a href="PSM.zip">Download Zip File</a>] This package contains
+m-files for implementing part-structured inkball models, as described
+in the paper listed below, and including a CUDA GPU implementation of
+the matching routine.  This code serves as the reference
+implementation for the paper.  If you find the software useful, and
+your use of the material leads to a publication, please cite the paper
+below.  I also
+appreciate <a href="mailto:nhowe@cs.smith.edu?subject=PSM%20Code"
+title="PSM Code">notes of acknowledgement</a> if you feel so inclined.
+Thanks!
+</p>
+
+<ul><li>Part-Structured Inkball Models for One-Shot Handwritten Word
+  Spotting.  N. Howe.  International Conference on Document Analysis
+  and Recognition, August 2013.  Preprint: [<a href =
+  "../pubs/icdar2013.pdf">PDF</a>] [<a href =
+  "../pubs/bibtex.html#icdar13">BibTeX</a>].  Copyright IEEE.</li>
+</ul>
+
+<p><i>Last modified 2013-08-28.  See readme for changelog.</i></p>
+</dd>
+
+<hr width="80%" />
+
+<a name="binarize"></a>
+<dt>MATLAB Implementation of Document Binarization Code</dt>
+<dd>
+<img src="stripe31.png" alt="binarized handwriting" style="width: 4in; float: right; padding: 0.25in; padding-top: 0px;" />
+<p>[<a href="IJDAR-Binarization.zip">Download Zip File</a>] This
+package contains m-files for the binarization of document images using
+automatic parameter tuning, as described in the paper listed
+below.  This code serves as the reference implementation for that
+paper.  To use the software, you will also need to download the
+separately
+licensed <a href="http://pub.ist.ac.at/~vnk/software.html#MAXFLOW">max-flow
+package</a> by V. Kolmogorov and compile it in combination with my
+source files, as described in the readme text.  If you find the
+software useful, and your use of the material leads to a publication,
+please cite the paper below.  I also
+appreciate <a href="mailto:nhowe@cs.smith.edu?subject=Document%20Binarization%20Code"
+title="Document Binarization Code">notes of acknowledgement</a> if you
+feel so inclined.  Thanks!
+</p>
+
+<ul><li>Document Binarization with Automatic Parameter Tuning,
+N. Howe.&nbsp;  To appear in <i>International Journal of Document Analysis and Recognition</i>. DOI: 10.1007/s10032-012-0192-x.
+[<a href = "../pubs/divseg-ijdar.pdf">PDF</a>]
+[<a href = "../pubs/bibtex.html#divseg-ijdar">BibTeX</a>].  The final publication is available at <a href="http://www.springerlink.com">www.springerlink.com</a>.</li>
+</ul>
+
+<p>An earlier version of this algorithm (actually the base algorithm
+for the parameter tuning) was described in a conference paper
+appearing in ICDAR 2011.  Although the journal paper above largely
+supersedes this work, the citation and associated code package are
+still available here: [<a href="HoweBinarization.zip">Download Zip
+File</a>]</p>
+
+<ul><li>A Laplacian Energy for Document Binarization,
+N. Howe.&nbsp;  <i>International Conference on Document Analysis and Recognition</i>, 2011.
+[<a href = "../pubs/divseg-icdar.pdf">PDF</a>]
+[<a href = "../pubs/divseg-icdar.ps.gz">PS.GZ</a>]
+[<a href = "../pubs/bibtex.html#divseg-icdar">BibTeX</a>].</li></ul>
+</dd>
+
+<hr width="80%" />
+
+<a name="fgseg"></a>
+<dt>MATLAB Implementation of Foreground/Background Motion Segmentation Based on Graph Cut</dt>
+<dd><p>[<a href="FGseg.zip">Download Zip File</a>][<a href="FGseg2.zip">Supplemental Zip file with sample 
+video &amp; RUNME script</a>]  This package contains m-files for the segmentation of a moving foreground from video with a 
+static background.  The techniques implemented were described in the paper referenced below.  If you find the code useful, I would
+appreciate a <a href="mailto:nhowe@cs.smith.edu?subject=Foreground%20Segmentation%20Code" title="Foreground Segmentation Code">note of 
+acknowledgement</a>, and perhaps a citation if appropriate.  Thanks!  
+<!--If you would like a copy of this package, please 
+<a href="mailto:nhowe@cs.smith.edu?subject=Foreground%20Segmentation%20Code" title="Foreground Segmentation Code">contact</a>
+me.  I will make every effort to respond promptly.-->
+</p>
+
+<ul><li>Better Foreground Segmentation Through Graph Cuts, 
+N. Howe &amp; A. Deschamps.&nbsp; Tech report, 
+<tt><a href="http://arxiv.org/abs/cs.CV/0401017">http://arxiv.org/abs/cs.CV/0401017</a></tt>.
+[<a href = "../pubs/bgsub.pdf">PDF</a>]
+[<a href = "../pubs/bgsub.ps.gz">PS.GZ</a>]
+[<a href = "../pubs/bibtex.html#bgsub">BibTeX</a>].</li></ul>
+
+<p class="blockcenter">
+<img src="fg1.png">
+<img src="fg2.png">
+<img src="fg3.png">
+<img src="fg4.png">
+<img src="fg5.png">
+</p>
+</dd>
+
+<hr width="80%" />
+
+<a name="skeleton"></a>
+<dt>MATLAB Implementation of Contour-Pruned Skeletonization</dt>
+<dd><p>[<a href="Skeleton.zip">Download Zip File</a>]  This package contains mex-files for computing the skeleton of a binary image
+that is both intuitive and noise-resistant.  These are my own implementation of a skeletonization method communicated to me by 
+<a href="http://www.cs.rug.nl/svcg/Shapes/Skel">Alex Telea</a>.  See
+his papers for more details, particularly <a href="https://www.researchgate.net/publication/228960923_An_Augmented_Fast_Marching_Method_for_Computing_Skeletons_and_Centerlines">VisSym 2002</a>.  If you find
+the code useful, I would appreciate
+a <a href="mailto:nhowe@cs.smith.edu?subject=Skeletonization%20Code"
+title="Skeletonization Code">note of acknowledgement</a>.  Thanks!</p>
+
+<p style="text-align: center;"><img src="letters-results2.png"></p>
+
+<p>Note:  I have no published paper on this technique.  The idea came to me orally from Alex Telea, 
+and is described in the paper above.  
+Here is a summary of the concept:  A point on the skeleton sits at 
+the center of a circle that touches the edge of the figure at multiple points.  The 
+intensity in the gray-level skeleton image is based on the shortest distance you would have 
+to travel around the perimeter of the figure to connect the most distant two points.  Thus spurs in
+the skeleton due to small edge perturbations will have low intensity even if they are very long.  If the 
+circle touches two disconnected edges (like the inside and the outside of an O shape) 
+then the skeleton will be infinite at that point.  To get a final skeleton, you should pick your threshold depending on the 
+expected size of any noisy protrusions in the silhouette.  Note that the end result is often similar to that produced by Matlab's <tt>bwmorph</tt> function, using the <tt>'thin'</tt> option.</p>
+
+</dd>
+
+
+<hr width="80%" />
+
+<a name="silcompare"></a>
+<img src="chamfer2.png" align="right" border="1">
+<dt>MATLAB Implementation of Turning Angle and Chamfer Distance for Silhouette Comparison</dt>
+<dd><p>[<a href="silCompare.zip">Download Zip File</a>]  This package contains mex-files for computing the turning angle difference and chamfer distance
+between two shapes (binary images with a single positive connected component, e.g., human silhouettes).
+The techniques implemented were used in the paper referenced below.  If you find the code useful, I would
+appreciate a <a href="mailto:nhowe@cs.smith.edu?subject=Silhouette%20Comparison%20Code" title="Silhouette Comparison Code">note of 
+acknowledgement</a>, and perhaps a citation if appropriate.  Thanks!
+<!--If you would like a copy of this
+package, please <a href="mailto:nhowe@cs.smith.edu?subject=Silhouette%20Comparison%20Code" title="Silhouette Comparison Code">contact</a>
+me.  I will make every effort to respond promptly.-->
+</p>
+
+<ul><li>Silhouette Lookup for Automatic Pose Tracking, 
+N. Howe.&nbsp; <i>IEEE Workshop on Articulated and Nonrigid Motion</i>, June 2004. 
+[<a href = "../pubs/anm04.pdf">PDF</a>]
+[<a href = "../pubs/anm04.ps.gz">PS.GZ</a>]
+[<a href = "../pubs/bibtex.html#anm04">BibTeX</a>]
+[<a href = "../pubs/anm04.pps">PowerPoint</a>].</li></ul>
+
+<p class="blockcenter">
+<img src="tashape.png" height="150" width="150">
+<img src="tashape2.png" height="150" width="150">
+</p>
+
+<p>A cautionary note on the "chain code" implemented in the files above: it is not a standard chain code from the textbooks.  The chain code used here travels around the silhouette in unit moves in four cardinal directions (no diagonals) outlining all the foreground pixels.  It follows the external boundary only and ignores any holes.  In two bits it encodes the direction of one step.  (The code is given by the defined constants at the top of <tt>chain.cpp</tt>.)  Thus four steps fit into one byte, which is a more convenient unit to process.  Since it is good to smooth things a little to get a better comparison of direction, the turning angle code  compares the directions using these four-step units.  The numbers in <tt>chaincode.h</tt> are the orientation and length of the vector from the start of a four-step sequence to the end.  The indices of the arrays correspond to the bit string of the encoded movement.  So for example, 0 is the code for four moves north:  its direction is pi/2 and length is 4 units.  1 is the code for three moves north followed by one south, etc.</p>
+</dd>
+</dl>
+</div>
+
+<!-- Footer here. -->
+<script src="../../footer.js" language="JavaScript" type="text/javascript">
+</script>
+
+</body>
+</html>

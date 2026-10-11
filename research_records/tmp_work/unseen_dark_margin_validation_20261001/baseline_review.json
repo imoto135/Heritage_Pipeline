@@ -1,0 +1,352 @@
+{
+  "cases": [
+    {
+      "split": "train",
+      "book": "200014685",
+      "page": "200014685_00004_2",
+      "original": "data/split_dataset/train/200014685/200014685_00004_2.jpg",
+      "ace": "data/split_dataset_csc/train/200014685/200014685_00004_2.jpg",
+      "npj_input": "data/split_dataset_csc_mask/train/200014685/200014685_00004_2/00_input.png",
+      "npj_black": "data/split_dataset_csc_mask/train/200014685/200014685_00004_2/02_text_black.png",
+      "npj_red": "data/split_dataset_csc_mask/train/200014685/200014685_00004_2/03_text_red.png",
+      "npj_degradation": "data/split_dataset_csc_mask/train/200014685/200014685_00004_2/04_degradation.png",
+      "npj_background": "data/split_dataset_csc_mask/train/200014685/200014685_00004_2/05_background.png",
+      "review_status": "unreviewed",
+      "failure_type": "",
+      "roi_xywh": "",
+      "v6_status": "",
+      "observation": "",
+      "rois": [
+        {
+          "id": "extra_top_branch",
+          "title": "上端の枝分かれした損傷候補",
+          "xywh": [
+            1550,
+            0,
+            440,
+            420
+          ],
+          "baseline_failure": null
+        },
+        {
+          "id": "extra_branch_blank",
+          "title": "対照：損傷候補左の余白",
+          "xywh": [
+            670,
+            85,
+            560,
+            320
+          ],
+          "baseline_failure": null
+        },
+        {
+          "id": "extra_branch_body",
+          "title": "対照：同じページの本文",
+          "xywh": [
+            380,
+            900,
+            700,
+            900
+          ],
+          "baseline_failure": null
+        }
+      ],
+      "contains_illustration": false,
+      "baseline_failure": null,
+      "selection_reason": "original-only dark/warm screening and visual damage/stain/header controls"
+    },
+    {
+      "split": "train",
+      "book": "200014685",
+      "page": "200014685_00002_2",
+      "original": "data/split_dataset/train/200014685/200014685_00002_2.jpg",
+      "ace": "data/split_dataset_csc/train/200014685/200014685_00002_2.jpg",
+      "npj_input": "data/split_dataset_csc_mask/train/200014685/200014685_00002_2/00_input.png",
+      "npj_black": "data/split_dataset_csc_mask/train/200014685/200014685_00002_2/02_text_black.png",
+      "npj_red": "data/split_dataset_csc_mask/train/200014685/200014685_00002_2/03_text_red.png",
+      "npj_degradation": "data/split_dataset_csc_mask/train/200014685/200014685_00002_2/04_degradation.png",
+      "npj_background": "data/split_dataset_csc_mask/train/200014685/200014685_00002_2/05_background.png",
+      "review_status": "unreviewed",
+      "failure_type": "",
+      "roi_xywh": "",
+      "v6_status": "",
+      "observation": "",
+      "rois": [
+        {
+          "id": "extra_brown_stain",
+          "title": "上余白の広い黄褐色のシミ候補",
+          "xywh": [
+            620,
+            35,
+            900,
+            430
+          ],
+          "baseline_failure": null
+        },
+        {
+          "id": "extra_second_branch",
+          "title": "同じ冊の別ページの上端損傷候補",
+          "xywh": [
+            1540,
+            0,
+            440,
+            350
+          ],
+          "baseline_failure": null
+        },
+        {
+          "id": "extra_small_seal",
+          "title": "対照：右下の小さな朱印",
+          "xywh": [
+            1740,
+            2880,
+            260,
+            330
+          ],
+          "baseline_failure": null
+        },
+        {
+          "id": "extra_stain_body",
+          "title": "対照：シミのページの本文",
+          "xywh": [
+            420,
+            850,
+            700,
+            900
+          ],
+          "baseline_failure": null
+        }
+      ],
+      "contains_illustration": false,
+      "baseline_failure": null,
+      "selection_reason": "original-only dark/warm screening and visual damage/stain/header controls"
+    },
+    {
+      "split": "train",
+      "book": "umgy00000",
+      "page": "umgy004_013",
+      "original": "data/split_dataset/train/umgy00000/umgy004_013.jpg",
+      "ace": "data/split_dataset_csc/train/umgy00000/umgy004_013.jpg",
+      "npj_input": "data/split_dataset_csc_mask/train/umgy00000/umgy004_013/00_input.png",
+      "npj_black": "data/split_dataset_csc_mask/train/umgy00000/umgy004_013/02_text_black.png",
+      "npj_red": "data/split_dataset_csc_mask/train/umgy00000/umgy004_013/03_text_red.png",
+      "npj_degradation": "data/split_dataset_csc_mask/train/umgy00000/umgy004_013/04_degradation.png",
+      "npj_background": "data/split_dataset_csc_mask/train/umgy00000/umgy004_013/05_background.png",
+      "review_status": "unreviewed",
+      "failure_type": "",
+      "roi_xywh": "",
+      "v6_status": "",
+      "observation": "",
+      "rois": [
+        {
+          "id": "extra_isolated_marks",
+          "title": "上余白の孤立した茶色い跡：原因未確定",
+          "xywh": [
+            530,
+            80,
+            640,
+            230
+          ],
+          "baseline_failure": null
+        },
+        {
+          "id": "extra_mark_blank",
+          "title": "対照：跡の左の余白",
+          "xywh": [
+            160,
+            90,
+            300,
+            210
+          ],
+          "baseline_failure": null
+        },
+        {
+          "id": "extra_mark_body",
+          "title": "対照：茶色い紙の本文",
+          "xywh": [
+            380,
+            600,
+            600,
+            850
+          ],
+          "baseline_failure": null
+        }
+      ],
+      "contains_illustration": false,
+      "baseline_failure": null,
+      "selection_reason": "original-only dark/warm screening and visual damage/stain/header controls"
+    },
+    {
+      "split": "train",
+      "book": "200008316",
+      "page": "200008316_00020_1",
+      "original": "data/split_dataset/train/200008316/200008316_00020_1.jpg",
+      "ace": "data/split_dataset_csc/train/200008316/200008316_00020_1.jpg",
+      "npj_input": "data/split_dataset_csc_mask/train/200008316/200008316_00020_1/00_input.png",
+      "npj_black": "data/split_dataset_csc_mask/train/200008316/200008316_00020_1/02_text_black.png",
+      "npj_red": "data/split_dataset_csc_mask/train/200008316/200008316_00020_1/03_text_red.png",
+      "npj_degradation": "data/split_dataset_csc_mask/train/200008316/200008316_00020_1/04_degradation.png",
+      "npj_background": "data/split_dataset_csc_mask/train/200008316/200008316_00020_1/05_background.png",
+      "review_status": "unreviewed",
+      "failure_type": "",
+      "roi_xywh": "",
+      "v6_status": "",
+      "observation": "",
+      "rois": [
+        {
+          "id": "extra_header_strokes",
+          "title": "対照：上余白内の大きな実筆画",
+          "xywh": [
+            560,
+            210,
+            1200,
+            430
+          ],
+          "baseline_failure": null
+        },
+        {
+          "id": "extra_header_blank",
+          "title": "対照：見出し右の余白",
+          "xywh": [
+            1850,
+            220,
+            650,
+            370
+          ],
+          "baseline_failure": null
+        },
+        {
+          "id": "extra_header_body",
+          "title": "対照：白黒の本文",
+          "xywh": [
+            650,
+            1250,
+            700,
+            950
+          ],
+          "baseline_failure": null
+        }
+      ],
+      "contains_illustration": false,
+      "baseline_failure": null,
+      "selection_reason": "original-only dark/warm screening and visual damage/stain/header controls"
+    }
+  ],
+  "selected_pages": 4,
+  "selected_books": 3,
+  "selected_ROIs": 13,
+  "selection_before_new_v6_and_candidate": true,
+  "original_only": true,
+  "screened_pages": 1832,
+  "excluded_books": [
+    "100241706",
+    "100249371",
+    "100249376",
+    "100249416",
+    "100249476",
+    "100249537",
+    "200003076",
+    "200003803",
+    "200006663",
+    "200008003",
+    "200010454",
+    "200014740",
+    "200015779",
+    "200017197",
+    "200017458",
+    "200018243",
+    "200019865",
+    "200020019",
+    "200021063",
+    "200021071",
+    "200021086",
+    "200021644",
+    "200021660",
+    "200021712",
+    "200021763",
+    "200021802",
+    "200021851",
+    "200021853",
+    "200021869",
+    "200022050",
+    "200025191",
+    "brsk00000",
+    "hnsd00000"
+  ],
+  "pixel_GT": false,
+  "training_independence_unknown": true,
+  "parameters_tuned_after_new_outputs": false,
+  "frozen_rim_source_sha256": "9d1dc0c515f79f86ab502b1a9dea03ea16fc0b42e670b602f5032fe3df0289c5",
+  "frozen_candidate_sources": {
+    "probe_thin_margin_components.py": "b4d531a6bf83637c2536ce84b6c85fb0bf360c528ef5ffb4eb0e608908c15a33",
+    "probe_anchored_thin_fragments.py": "b92a0e49ac31dbc253a62ac6f4191727b05e0bb1330cf4724fc3930e97c67494",
+    "probe_known_paper_harmonic_fill_v2.py": "42869e62cd44ebb3a8454e7af3daf050baf280e408141b5624f65a4a0de38f95"
+  },
+  "candidate": "same v6 -> original margin/top-completion/rim -> core3.5 -> one-step near8 brown fragments",
+  "restoration": "unchanged16-pair harmonic color + saved known-paper observed L seam; no tone/chroma/coarse variants",
+  "illustration_and_decorative_filter": {
+    "200014685_00004_2": "selected_text_page",
+    "200014685_00002_2": "selected_text_page",
+    "umgy004_013": "selected_text_page",
+    "200008316_00020_1": "selected_text_page",
+    "200004107_00033_1": "excluded_illustration",
+    "200004107_00028_1": "excluded_illustration",
+    "umgy002_006": "excluded_illustration",
+    "200004148_00043_2": "excluded_illustration",
+    "200005798_00085_1": "excluded_illustration",
+    "200014685_00009_1": "excluded_illustration",
+    "200014685_00028_2": "excluded_illustration",
+    "200014685_00006_1": "excluded_illustration",
+    "200014685_00007_1": "excluded_illustration",
+    "umgy004_009": "excluded_illustration",
+    "200014685_00008_1": "excluded_illustration",
+    "umgy001_011": "excluded_illustration",
+    "200021637_00010_1": "excluded_illustration",
+    "200021637_00003_1": "excluded_illustration",
+    "200005798_00092_2": "reviewed_original_not_selected",
+    "200014685_00015_2": "reviewed_original_not_selected",
+    "200004148_00016_1": "reviewed_original_not_selected",
+    "200003967_00024_2": "reviewed_original_not_selected",
+    "200003967_00036_2": "reviewed_original_not_selected",
+    "200005598_00003_2": "reviewed_original_not_selected",
+    "200005598_00048_2": "reviewed_original_not_selected",
+    "200008316_00126_2": "reviewed_original_not_selected",
+    "umgy012_013": "reviewed_original_not_selected",
+    "umgy002_025": "reviewed_original_not_selected",
+    "umgy010_022": "reviewed_original_not_selected",
+    "200014685_00005_2": "reviewed_original_not_selected",
+    "umgy006_021": "reviewed_original_not_selected",
+    "umgy003_007": "reviewed_original_not_selected"
+  },
+  "inputs": {
+    "data/split_dataset/train/200014685/200014685_00004_2.jpg": "ef4a6af2df2c04984ca47a356fad6a6d02713386be0f166213427895821fe92b",
+    "data/split_dataset_csc_mask/train/200014685/200014685_00004_2/00_input.png": "68d43f9eb8dc9fe113bfcb6a4a3ee8e89196c4011ba38215ca9357b1d71883f5",
+    "data/split_dataset_csc_mask/train/200014685/200014685_00004_2/02_text_black.png": "abe8aa80a1de0c831f16a15b8915612d263a271fbb1aba3dab77fb425c9fe684",
+    "data/split_dataset_csc_mask/train/200014685/200014685_00004_2/03_text_red.png": "0cc657124a3ae83b135e42219af893757f0a7c9c26816070231ad79d0c0040da",
+    "data/split_dataset_csc_mask/train/200014685/200014685_00004_2/04_degradation.png": "b3e86c5193a3c0f2268c00385fddf3df4da74b69d2b636fdaaf2b0e73c62125c",
+    "data/split_dataset_csc_mask/train/200014685/200014685_00004_2/05_background.png": "dc2716bb4768cd58532c04d24209d8d3190f4e4a002fc03b2383472f409fb781",
+    "data/split_dataset/train/200014685/200014685_00002_2.jpg": "ece797d001ca46faf7973da61b631698776a9103a9efb7ba816b695ac418c59e",
+    "data/split_dataset_csc_mask/train/200014685/200014685_00002_2/00_input.png": "41e1b766cd46bda27a038c2d058c7a822c9cdbab8c2ee2ca33a6fe47a6c6fbeb",
+    "data/split_dataset_csc_mask/train/200014685/200014685_00002_2/02_text_black.png": "a8f1dcfb79dd632ccc99ce45cf53328ae0e91cbca5d12d6c56d0cee059917987",
+    "data/split_dataset_csc_mask/train/200014685/200014685_00002_2/03_text_red.png": "2471ad769e3a404f5264819fcce59fc312adc611f582ede0e35e40d97a10842e",
+    "data/split_dataset_csc_mask/train/200014685/200014685_00002_2/04_degradation.png": "31f191e4b7bc5311527b6b25f7bd17ccc8224756d32999d81094f185a45ba62e",
+    "data/split_dataset_csc_mask/train/200014685/200014685_00002_2/05_background.png": "f39d61ff8502dbc935597aaee58ed395b0c60b05100d2fed656f8fb8414260c7",
+    "data/split_dataset/train/umgy00000/umgy004_013.jpg": "d7d9af9b3cada13d05c6eae923055f0a4445877924fb3344286d9fb764d362e9",
+    "data/split_dataset_csc_mask/train/umgy00000/umgy004_013/00_input.png": "debb8affac46be22aae6dfde7c23b60ceb9b16db358e9364e3052fb979164bb6",
+    "data/split_dataset_csc_mask/train/umgy00000/umgy004_013/02_text_black.png": "b422805565c2886112729ae60814f8fe89e90e8bb053da1a57d22d715bde5d17",
+    "data/split_dataset_csc_mask/train/umgy00000/umgy004_013/03_text_red.png": "e5ae2f97ff67e487d3cb73dbbf31d9fae89c995b0e4a19c33dfbd15a29d508a0",
+    "data/split_dataset_csc_mask/train/umgy00000/umgy004_013/04_degradation.png": "0aab43201c0763dafe4d864aba0382761dcb3c614e1107d227509752ee6b496b",
+    "data/split_dataset_csc_mask/train/umgy00000/umgy004_013/05_background.png": "c76091359d51786f7c5743ce18a7cc8feefa36125310d5e25fb1f7e59658d4af",
+    "data/split_dataset/train/200008316/200008316_00020_1.jpg": "352781727e51d07c557b1e30f9299aac454f28a294b07d373b7dd53b9e2424ba",
+    "data/split_dataset_csc_mask/train/200008316/200008316_00020_1/00_input.png": "f2a9bfc11338caf39bedac9889a76bfe91ecba8fbf96f2141ea5f9e34cc86150",
+    "data/split_dataset_csc_mask/train/200008316/200008316_00020_1/02_text_black.png": "24d16f672de63d089a2306f7dfc9d10229fe839ce13b02c719ec73c183bfeda2",
+    "data/split_dataset_csc_mask/train/200008316/200008316_00020_1/03_text_red.png": "9d74ac0fe807092ef16c3dba0eff447d9ca9a3f05e1bda4f19626ea8be0c537a",
+    "data/split_dataset_csc_mask/train/200008316/200008316_00020_1/04_degradation.png": "cd568377225a80ff8a1ad42fcdfb02371257700a117ab0e1c880983b500eebb9",
+    "data/split_dataset_csc_mask/train/200008316/200008316_00020_1/05_background.png": "0ed91d96bc1a1aa9391de0c5acd1ee6c40d98446c3fd08dc1f61b5034c4286d3"
+  },
+  "same_book_pages": [
+    "200014685_00004_2",
+    "200014685_00002_2"
+  ],
+  "selection_limits": "same book group counted once; umgy volume prefix not claimed independent books; no confirmed pixel GT"
+}

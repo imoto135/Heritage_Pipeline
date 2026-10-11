@@ -1,0 +1,391 @@
+{
+  "status": "pending_visual_review",
+  "page": "200021071_00033_2",
+  "development_only": true,
+  "pixel_ground_truth": false,
+  "annotation_type": "provisional_visual_review",
+  "counts": {
+    "点・傷状の像": 2,
+    "不明（短線）": 1,
+    "近隣ページ対応の裏移り・転写候補": 4,
+    "不明（本文近傍）": 1
+  },
+  "components": [
+    {
+      "label": 8,
+      "xywh": [
+        720,
+        295,
+        5,
+        14
+      ],
+      "area": 48,
+      "source_support_fraction": 0.625,
+      "target_dark_fraction": 0.0625,
+      "csc_fraction": 0.0,
+      "median_gray": 158.0,
+      "selected": false,
+      "category": "点・傷状の像",
+      "cause_confirmed": false,
+      "decision": "保持",
+      "removal_approved": false,
+      "reason": "本文のない上余白の縦点。参照の濃い像との近接はあるが形状・由来は確定できない。",
+      "context_xyxy": [
+        542,
+        112,
+        902,
+        492
+      ],
+      "caption": "成分8：点・傷状の像／保持　直前ページ濃画素支持 0.625"
+    },
+    {
+      "label": 10,
+      "xywh": [
+        818,
+        307,
+        7,
+        11
+      ],
+      "area": 48,
+      "source_support_fraction": 0.0,
+      "target_dark_fraction": 0.020833333333333332,
+      "csc_fraction": 0.020833333333333332,
+      "median_gray": 161.5,
+      "selected": false,
+      "category": "点・傷状の像",
+      "cause_confirmed": false,
+      "decision": "保持",
+      "removal_approved": false,
+      "reason": "上余白の小点。対応する参照の濃い本文はない。虫害・汚れ等の原因は未確定。",
+      "context_xyxy": [
+        641,
+        122,
+        1001,
+        502
+      ],
+      "caption": "成分10：点・傷状の像／保持　直前ページ濃画素支持 0.000"
+    },
+    {
+      "label": 13,
+      "xywh": [
+        1673,
+        506,
+        11,
+        13
+      ],
+      "area": 75,
+      "source_support_fraction": 0.0,
+      "target_dark_fraction": 0.013333333333333334,
+      "csc_fraction": 0.0,
+      "median_gray": 160.0,
+      "selected": false,
+      "category": "不明（短線）",
+      "cause_confirmed": false,
+      "decision": "保持",
+      "removal_approved": false,
+      "reason": "上部の淡い曲線に接する短線。参照にも淡い像があるが濃い本文との対応はない。",
+      "context_xyxy": [
+        1498,
+        322,
+        1858,
+        702
+      ],
+      "caption": "成分13：不明（短線）／保持　直前ページ濃画素支持 0.000"
+    },
+    {
+      "label": 44,
+      "xywh": [
+        1536,
+        697,
+        8,
+        12
+      ],
+      "area": 76,
+      "source_support_fraction": 0.0,
+      "target_dark_fraction": 0.11842105263157894,
+      "csc_fraction": 0.0,
+      "median_gray": 142.0,
+      "selected": false,
+      "category": "近隣ページ対応の裏移り・転写候補",
+      "cause_confirmed": false,
+      "decision": "保持",
+      "removal_approved": false,
+      "reason": "00034_1鏡像の濃い文字状のまとまりと局所形状が対応。上下の照合で同じ移動量。画像だけで裏面透過・転写等の物理原因は確定しない。",
+      "context_xyxy": [
+        1360,
+        513,
+        1720,
+        893
+      ],
+      "caption": "成分44：次ページ対応の裏移り・転写候補／今回は保持",
+      "corresponding_page": "200021071_00034_1",
+      "local_shape_match": true
+    },
+    {
+      "label": 50,
+      "xywh": [
+        1526,
+        719,
+        13,
+        14
+      ],
+      "area": 101,
+      "source_support_fraction": 0.0,
+      "target_dark_fraction": 0.0,
+      "csc_fraction": 0.0,
+      "median_gray": 153.0,
+      "selected": false,
+      "category": "近隣ページ対応の裏移り・転写候補",
+      "cause_confirmed": false,
+      "decision": "保持",
+      "removal_approved": false,
+      "reason": "00034_1鏡像の濃い文字状のまとまりと局所形状が対応。上下の照合で同じ移動量。画像だけで裏面透過・転写等の物理原因は確定しない。",
+      "context_xyxy": [
+        1352,
+        536,
+        1712,
+        916
+      ],
+      "caption": "成分50：次ページ対応の裏移り・転写候補／今回は保持",
+      "corresponding_page": "200021071_00034_1",
+      "local_shape_match": true
+    },
+    {
+      "label": 51,
+      "xywh": [
+        1515,
+        720,
+        5,
+        6
+      ],
+      "area": 17,
+      "source_support_fraction": 0.0,
+      "target_dark_fraction": 0.0,
+      "csc_fraction": 0.0,
+      "median_gray": 159.0,
+      "selected": false,
+      "category": "近隣ページ対応の裏移り・転写候補",
+      "cause_confirmed": false,
+      "decision": "保持",
+      "removal_approved": false,
+      "reason": "00034_1鏡像の濃い文字状のまとまりと局所形状が対応。上下の照合で同じ移動量。画像だけで裏面透過・転写等の物理原因は確定しない。",
+      "context_xyxy": [
+        1337,
+        533,
+        1697,
+        913
+      ],
+      "caption": "成分51：次ページ対応の裏移り・転写候補／今回は保持",
+      "corresponding_page": "200021071_00034_1",
+      "local_shape_match": true
+    },
+    {
+      "label": 53,
+      "xywh": [
+        1500,
+        749,
+        24,
+        43
+      ],
+      "area": 321,
+      "source_support_fraction": 0.0,
+      "target_dark_fraction": 0.07165109034267912,
+      "csc_fraction": 0.0,
+      "median_gray": 153.0,
+      "selected": false,
+      "category": "近隣ページ対応の裏移り・転写候補",
+      "cause_confirmed": false,
+      "decision": "保持",
+      "removal_approved": false,
+      "reason": "00034_1鏡像の濃い文字状のまとまりと局所形状が対応。上下の照合で同じ移動量。画像だけで裏面透過・転写等の物理原因は確定しない。",
+      "context_xyxy": [
+        1332,
+        580,
+        1692,
+        960
+      ],
+      "caption": "成分53：次ページ対応の裏移り・転写候補／今回は保持",
+      "corresponding_page": "200021071_00034_1",
+      "local_shape_match": true
+    },
+    {
+      "label": 127,
+      "xywh": [
+        801,
+        1110,
+        11,
+        16
+      ],
+      "area": 67,
+      "source_support_fraction": 0.0,
+      "target_dark_fraction": 0.11940298507462686,
+      "csc_fraction": 0.014925373134328358,
+      "median_gray": 152.0,
+      "selected": false,
+      "category": "不明（本文近傍）",
+      "cause_confirmed": false,
+      "decision": "保持",
+      "removal_approved": false,
+      "reason": "濃い表文字の間にある淡い短線。表文字の薄い続きの可能性が残る。",
+      "context_xyxy": [
+        626,
+        928,
+        986,
+        1308
+      ],
+      "caption": "成分127：不明（本文近傍）／保持　直前ページ濃画素支持 0.000"
+    }
+  ],
+  "controls": [
+    {
+      "id": "C1",
+      "caption": "C1：濃い表文字と淡い文字状像の混在／上下文脈を確認",
+      "context_xyxy": [
+        1350,
+        480,
+        1770,
+        920
+      ]
+    },
+    {
+      "id": "C2",
+      "caption": "C2：本文中の表文字を保持する対照／不明短線も含む",
+      "context_xyxy": [
+        620,
+        960,
+        1100,
+        1420
+      ]
+    },
+    {
+      "id": "C3",
+      "caption": "C3：右欄の裏移り候補と表文字／対応形状と除去結果を確認",
+      "context_xyxy": [
+        1550,
+        1250,
+        1950,
+        1800
+      ]
+    }
+  ],
+  "mask_modified": false,
+  "inference_run": false,
+  "removal_pixels": 0,
+  "registration_limit": "six spot correspondences concentrated on right side; left-side accuracy and local paper warp unverified",
+  "neighbors_locally_registered": {
+    "00032_2": false,
+    "00034_1": "upper glyph local translation only"
+  },
+  "next_page_local_translation": {
+    "method": "local positive dark-contrast NCC",
+    "manually_selected_diagnostic_windows": true,
+    "gaussian_sigma_px": 12,
+    "search_radius_px": 65,
+    "fits": [
+      {
+        "page": "200021071_00032_2",
+        "probes": [
+          {
+            "xywh": [
+              1430,
+              610,
+              155,
+              205
+            ],
+            "ncc": 0.28348076343536377,
+            "source_minus_target_translation_xy": [
+              49,
+              -56
+            ]
+          },
+          {
+            "xywh": [
+              1440,
+              620,
+              145,
+              95
+            ],
+            "ncc": 0.20670630037784576,
+            "source_minus_target_translation_xy": [
+              -49,
+              -4
+            ]
+          },
+          {
+            "xywh": [
+              1430,
+              715,
+              155,
+              100
+            ],
+            "ncc": 0.30671700835227966,
+            "source_minus_target_translation_xy": [
+              49,
+              -56
+            ]
+          }
+        ]
+      },
+      {
+        "page": "200021071_00034_1",
+        "probes": [
+          {
+            "xywh": [
+              1430,
+              610,
+              155,
+              205
+            ],
+            "ncc": 0.5791696310043335,
+            "source_minus_target_translation_xy": [
+              14,
+              -3
+            ]
+          },
+          {
+            "xywh": [
+              1440,
+              620,
+              145,
+              95
+            ],
+            "ncc": 0.7342247366905212,
+            "source_minus_target_translation_xy": [
+              14,
+              -3
+            ]
+          },
+          {
+            "xywh": [
+              1430,
+              715,
+              155,
+              100
+            ],
+            "ncc": 0.5216104984283447,
+            "source_minus_target_translation_xy": [
+              14,
+              -3
+            ]
+          }
+        ]
+      }
+    ],
+    "applied_source_to_target_xy": [
+      -14,
+      3
+    ],
+    "validity": "only upper glyph neighborhood; not whole-page alignment",
+    "physically_confirmed_bleed": false
+  },
+  "dependencies": {
+    "data/test/200021071/200021071_00033_2.jpg": "ccb0099adc3745cc6974aa7c7e51791c36e6575c0d3deb394dac64a62276c9e5",
+    "tmp_work/test_only_challenge_search_20261009/bleed_pair_registration/source_affine_registered.png": "c313798ebe9efc171b367d10e0359305ef10131b5a29c377c1bdabad85353e6c",
+    "tmp_work/test_only_challenge_search_20261009/six_challenge_fixed_review/outputs/csc/200021071_00033_2/result/200021071_00033_2.png": "eea55b4bddc63227ac163a633f9606b8fee4dd3e6d048f33d11426c6b3fa42d0",
+    "tmp_work/test_only_challenge_search_20261009/six_challenge_fixed_review/outputs/sauvola/200021071_00033_2/result/200021071_00033_2.png": "7d718d86f1c6f9cec17e22c7468a47205fc41256f40fd1220a33eb6a090fdce0",
+    "tmp_work/test_only_challenge_search_20261009/six_challenge_fixed_review/outputs/howe/200021071_00033_2/result/200021071_00033_2.png": "3c392cac7765679010790431f898d0b91f7d9b08586c54312e8523ff173216b9",
+    "data/test/200021071/200021071_00032_2.jpg": "dfea8e0d365ca2cf824cebf548765c8a03085f9a92f989c4ebcc2f5af3df0968",
+    "data/test/200021071/200021071_00034_1.jpg": "bc71059d29892bc129d06143e8e3fadb58fc5fd2d3ce2ac6118e9513d80357ed"
+  },
+  "script_sha256": "048c23baea3eeba16f7cf0e3083794d38c034903b85c93ddfd2e91e1de4d16eb"
+}

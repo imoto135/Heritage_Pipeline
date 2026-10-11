@@ -1,0 +1,23 @@
+{
+  "source_sha256": "4b39a78025d2133ff83400f133f8355d912090ea024f7ab16909666e239ca883",
+  "dependencies": {
+    "scripts/benchmark/diagnose_margin_top_fill.py": "4b39a78025d2133ff83400f133f8355d912090ea024f7ab16909666e239ca883",
+    "tmp_work/margin_top_completion_ddrm_20261001/manifest.json": "2600efbdd7895f52c22516e649f1e6c973c09e821ee4cf60878d58ee6cb306a0",
+    "tmp_work/margin_top_completion_ddrm_20261001/complete.json": "2a176fcda7cc3de6fae5425af2d4ada62b4c05da8247fe82bb7770ec34e39f7f",
+    "tmp_work/margin_top_completion_pilot_20261001/manifest.json": "86ded0f7629f11f4b745c5df023012209aa87651a77598fa19a866f0d1314b5f",
+    "tmp_work/margin_top_completion_pilot_20261001/complete.json": "fe1d5b0a35efbc6aa04df2263cc703b08d645a184938b37c469fad5b0ffddfc0",
+    "tmp_work/paper_margin_defect_ddrm_20261001/manifest.json": "4144ebcec1bc15f2fbbf8d6bb9404974854aa55ea1139955eb2e74debdccc0e4",
+    "tmp_work/paper_margin_defect_ddrm_20261001/complete.json": "e80ed7bb006b9cdaac2918bc387f4ed98e5765cfeeaeb7936da25db1787eacf6"
+  },
+  "regions": 22,
+  "pages": 14,
+  "settings": {
+    "method": "OpenCV Telea",
+    "radius_px": 3,
+    "context_px": 64,
+    "mask_fixed": true,
+    "baseline": "saved original-context Telea with old margin mask",
+    "DDRM": false,
+    "purpose": "post-output diagnostic of dark generated strokes; no training or mask changes"
+  }
+}

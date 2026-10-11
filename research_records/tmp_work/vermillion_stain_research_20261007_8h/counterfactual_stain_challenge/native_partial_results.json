@@ -1,0 +1,4850 @@
+[
+  {
+    "id": "dev_10_narrow_fold_brown_30",
+    "case": "dev_10",
+    "name": "partial_sparse_control",
+    "family": "native_partial",
+    "input_sha256": "e8ad105cdab54312f5bf2ac9ff8c7b4df2d2e322875d22171c6416984735c180",
+    "checkpoint_sha256": "e36b4daccbedd39fb37da87fed976f8804b1b78cef3cf5abbe0c7cf2ad936ac7",
+    "training_protocol_sha256": "9e99fd3aa6456b72a5e9ea45fe4fdb6baccc3e0e5f9fdb958dbad54bc06a17c6",
+    "script_sha256": "0f564b0df6a14ff841cb21de8e76c01088e787ce8252840e86ff30d6b067e390",
+    "diagnostic_helper_sha256": "e5b0b087d40c4768818e555ae7cc5533c9102382540214d00bc64b3b8a00b66b",
+    "mask_sha256": "de305b2107b7a1cd7babcb6167a8387fbd450ccdf08159332f11c51c7ee52efe",
+    "threshold": 0.5,
+    "seconds": 8.801383101381361,
+    "diagnostic": {
+      "points": {
+        "observed_red_mark": {
+          "points": 32,
+          "before": 32,
+          "after": 32,
+          "newly_selected": 0,
+          "newly_lost": 0
+        },
+        "paper_or_brown_nonmark": {
+          "points": 10,
+          "before": 0,
+          "after": 0,
+          "newly_selected": 0,
+          "newly_lost": 0
+        }
+      },
+      "selected_paper_region_added_support": [
+        {
+          "region": 0,
+          "added_support_pixels": 0,
+          "before_selected": 0,
+          "after_selected": 0,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        },
+        {
+          "region": 1,
+          "added_support_pixels": 0,
+          "before_selected": 0,
+          "after_selected": 0,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        },
+        {
+          "region": 2,
+          "added_support_pixels": 0,
+          "before_selected": 0,
+          "after_selected": 0,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        },
+        {
+          "region": 3,
+          "added_support_pixels": 0,
+          "before_selected": 0,
+          "after_selected": 0,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        }
+      ]
+    },
+    "original_training_points_may_have_been_seen": true,
+    "no_real_pixel_or_reading_GT": true,
+    "perturbation": "Frozen development diagnosis, not final test"
+  },
+  {
+    "id": "dev_06_narrow_fold_brown_30",
+    "case": "dev_06",
+    "name": "partial_sparse_control",
+    "family": "native_partial",
+    "input_sha256": "923b58007732313486de7c15b33942581431b1b37dd7e4f26f735f0e14855994",
+    "checkpoint_sha256": "e36b4daccbedd39fb37da87fed976f8804b1b78cef3cf5abbe0c7cf2ad936ac7",
+    "training_protocol_sha256": "9e99fd3aa6456b72a5e9ea45fe4fdb6baccc3e0e5f9fdb958dbad54bc06a17c6",
+    "script_sha256": "0f564b0df6a14ff841cb21de8e76c01088e787ce8252840e86ff30d6b067e390",
+    "diagnostic_helper_sha256": "e5b0b087d40c4768818e555ae7cc5533c9102382540214d00bc64b3b8a00b66b",
+    "mask_sha256": "1a24e388cecaca2ec0cfff8feec17d09de364d4c3f2b91823df6ecb32ee8b490",
+    "threshold": 0.5,
+    "seconds": 11.767596675083041,
+    "diagnostic": {
+      "points": {
+        "observed_red_mark": {
+          "points": 16,
+          "before": 16,
+          "after": 16,
+          "newly_selected": 0,
+          "newly_lost": 0
+        },
+        "paper_or_brown_nonmark": {
+          "points": 8,
+          "before": 0,
+          "after": 0,
+          "newly_selected": 0,
+          "newly_lost": 0
+        }
+      },
+      "selected_paper_region_added_support": [
+        {
+          "region": 9,
+          "added_support_pixels": 0,
+          "before_selected": 0,
+          "after_selected": 0,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        },
+        {
+          "region": 10,
+          "added_support_pixels": 0,
+          "before_selected": 0,
+          "after_selected": 0,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        },
+        {
+          "region": 11,
+          "added_support_pixels": 0,
+          "before_selected": 0,
+          "after_selected": 0,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        },
+        {
+          "region": 12,
+          "added_support_pixels": 0,
+          "before_selected": 0,
+          "after_selected": 0,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        }
+      ]
+    },
+    "original_training_points_may_have_been_seen": true,
+    "no_real_pixel_or_reading_GT": true,
+    "perturbation": "Frozen development diagnosis, not final test"
+  },
+  {
+    "id": "dev_08_broad_ellipses_brown_30",
+    "case": "dev_08",
+    "name": "partial_sparse_control",
+    "family": "native_partial",
+    "input_sha256": "43a51b8659d91bb09503838dc99ad5d041a3250bea1eca7694f235d56e02cd97",
+    "checkpoint_sha256": "e36b4daccbedd39fb37da87fed976f8804b1b78cef3cf5abbe0c7cf2ad936ac7",
+    "training_protocol_sha256": "9e99fd3aa6456b72a5e9ea45fe4fdb6baccc3e0e5f9fdb958dbad54bc06a17c6",
+    "script_sha256": "0f564b0df6a14ff841cb21de8e76c01088e787ce8252840e86ff30d6b067e390",
+    "diagnostic_helper_sha256": "e5b0b087d40c4768818e555ae7cc5533c9102382540214d00bc64b3b8a00b66b",
+    "mask_sha256": "485513db350da50fce49eeca89ee3ef8473f2507bec469950973f6a1d19ac107",
+    "threshold": 0.5,
+    "seconds": 2.405470235273242,
+    "diagnostic": {
+      "points": {
+        "observed_red_mark": {
+          "points": 18,
+          "before": 18,
+          "after": 18,
+          "newly_selected": 0,
+          "newly_lost": 0
+        },
+        "paper_or_brown_nonmark": {
+          "points": 8,
+          "before": 0,
+          "after": 0,
+          "newly_selected": 0,
+          "newly_lost": 0
+        }
+      },
+      "selected_paper_region_added_support": [
+        {
+          "region": 4,
+          "added_support_pixels": 0,
+          "before_selected": 0,
+          "after_selected": 0,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        },
+        {
+          "region": 5,
+          "added_support_pixels": 15750,
+          "before_selected": 0,
+          "after_selected": 0,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        },
+        {
+          "region": 6,
+          "added_support_pixels": 17500,
+          "before_selected": 0,
+          "after_selected": 0,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        },
+        {
+          "region": 7,
+          "added_support_pixels": 0,
+          "before_selected": 0,
+          "after_selected": 0,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        },
+        {
+          "region": 8,
+          "added_support_pixels": 10614,
+          "before_selected": 0,
+          "after_selected": 0,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        }
+      ]
+    },
+    "original_training_points_may_have_been_seen": true,
+    "no_real_pixel_or_reading_GT": true,
+    "perturbation": "Frozen development diagnosis, not final test"
+  },
+  {
+    "id": "dev_06_broad_ellipses_red_brown_30",
+    "case": "dev_06",
+    "name": "partial_sparse_control",
+    "family": "native_partial",
+    "input_sha256": "9fb43dcb94e56bda14adc28dcd6696a0d6cc7af65b927921e9951d9f3bda89c4",
+    "checkpoint_sha256": "e36b4daccbedd39fb37da87fed976f8804b1b78cef3cf5abbe0c7cf2ad936ac7",
+    "training_protocol_sha256": "9e99fd3aa6456b72a5e9ea45fe4fdb6baccc3e0e5f9fdb958dbad54bc06a17c6",
+    "script_sha256": "0f564b0df6a14ff841cb21de8e76c01088e787ce8252840e86ff30d6b067e390",
+    "diagnostic_helper_sha256": "e5b0b087d40c4768818e555ae7cc5533c9102382540214d00bc64b3b8a00b66b",
+    "mask_sha256": "27f9e62025f80c2c5c68d18f2298f783b344f9b0350f53c1b46741b61ad81b09",
+    "threshold": 0.5,
+    "seconds": 2.170752146281302,
+    "diagnostic": {
+      "points": {
+        "observed_red_mark": {
+          "points": 16,
+          "before": 16,
+          "after": 16,
+          "newly_selected": 0,
+          "newly_lost": 0
+        },
+        "paper_or_brown_nonmark": {
+          "points": 8,
+          "before": 0,
+          "after": 0,
+          "newly_selected": 0,
+          "newly_lost": 0
+        }
+      },
+      "selected_paper_region_added_support": [
+        {
+          "region": 9,
+          "added_support_pixels": 2832,
+          "before_selected": 14,
+          "after_selected": 0,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        },
+        {
+          "region": 10,
+          "added_support_pixels": 6800,
+          "before_selected": 461,
+          "after_selected": 34,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        },
+        {
+          "region": 11,
+          "added_support_pixels": 2222,
+          "before_selected": 0,
+          "after_selected": 0,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        },
+        {
+          "region": 12,
+          "added_support_pixels": 6729,
+          "before_selected": 207,
+          "after_selected": 770,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        }
+      ]
+    },
+    "original_training_points_may_have_been_seen": true,
+    "no_real_pixel_or_reading_GT": true,
+    "perturbation": "Frozen development diagnosis, not final test"
+  },
+  {
+    "id": "dev_08_narrow_fold_red_brown_30",
+    "case": "dev_08",
+    "name": "partial_sparse_control",
+    "family": "native_partial",
+    "input_sha256": "3a8f82cf1051dcbf2aaec7f5ea855aae3d41f2e94c563857f440eec40bf5074f",
+    "checkpoint_sha256": "e36b4daccbedd39fb37da87fed976f8804b1b78cef3cf5abbe0c7cf2ad936ac7",
+    "training_protocol_sha256": "9e99fd3aa6456b72a5e9ea45fe4fdb6baccc3e0e5f9fdb958dbad54bc06a17c6",
+    "script_sha256": "0f564b0df6a14ff841cb21de8e76c01088e787ce8252840e86ff30d6b067e390",
+    "diagnostic_helper_sha256": "e5b0b087d40c4768818e555ae7cc5533c9102382540214d00bc64b3b8a00b66b",
+    "mask_sha256": "04a163f65959834b122a602288993fcb5fd0c022e2a4267dc09e67645975bf53",
+    "threshold": 0.5,
+    "seconds": 2.7373642371967435,
+    "diagnostic": {
+      "points": {
+        "observed_red_mark": {
+          "points": 18,
+          "before": 18,
+          "after": 18,
+          "newly_selected": 0,
+          "newly_lost": 0
+        },
+        "paper_or_brown_nonmark": {
+          "points": 8,
+          "before": 0,
+          "after": 0,
+          "newly_selected": 0,
+          "newly_lost": 0
+        }
+      },
+      "selected_paper_region_added_support": [
+        {
+          "region": 4,
+          "added_support_pixels": 0,
+          "before_selected": 0,
+          "after_selected": 0,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        },
+        {
+          "region": 5,
+          "added_support_pixels": 0,
+          "before_selected": 0,
+          "after_selected": 0,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        },
+        {
+          "region": 6,
+          "added_support_pixels": 0,
+          "before_selected": 0,
+          "after_selected": 0,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        },
+        {
+          "region": 7,
+          "added_support_pixels": 0,
+          "before_selected": 0,
+          "after_selected": 0,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        },
+        {
+          "region": 8,
+          "added_support_pixels": 2237,
+          "before_selected": 0,
+          "after_selected": 0,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        }
+      ]
+    },
+    "original_training_points_may_have_been_seen": true,
+    "no_real_pixel_or_reading_GT": true,
+    "perturbation": "Frozen development diagnosis, not final test"
+  },
+  {
+    "id": "dev_10_narrow_fold_red_brown_10",
+    "case": "dev_10",
+    "name": "partial_sparse_control",
+    "family": "native_partial",
+    "input_sha256": "6837655dc094e6935bd26d198c808780d351f4d324b2a9f7b4a34fcdbd40a594",
+    "checkpoint_sha256": "e36b4daccbedd39fb37da87fed976f8804b1b78cef3cf5abbe0c7cf2ad936ac7",
+    "training_protocol_sha256": "9e99fd3aa6456b72a5e9ea45fe4fdb6baccc3e0e5f9fdb958dbad54bc06a17c6",
+    "script_sha256": "0f564b0df6a14ff841cb21de8e76c01088e787ce8252840e86ff30d6b067e390",
+    "diagnostic_helper_sha256": "e5b0b087d40c4768818e555ae7cc5533c9102382540214d00bc64b3b8a00b66b",
+    "mask_sha256": "15a0c9d60a1dd16f1dd8f533fdf2f76f3fbc73253d77fa11179d34c8c8530900",
+    "threshold": 0.5,
+    "seconds": 34.93497795332223,
+    "diagnostic": {
+      "points": {
+        "observed_red_mark": {
+          "points": 32,
+          "before": 32,
+          "after": 32,
+          "newly_selected": 0,
+          "newly_lost": 0
+        },
+        "paper_or_brown_nonmark": {
+          "points": 10,
+          "before": 0,
+          "after": 0,
+          "newly_selected": 0,
+          "newly_lost": 0
+        }
+      },
+      "selected_paper_region_added_support": [
+        {
+          "region": 0,
+          "added_support_pixels": 0,
+          "before_selected": 0,
+          "after_selected": 0,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        },
+        {
+          "region": 1,
+          "added_support_pixels": 0,
+          "before_selected": 0,
+          "after_selected": 0,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        },
+        {
+          "region": 2,
+          "added_support_pixels": 0,
+          "before_selected": 0,
+          "after_selected": 0,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        },
+        {
+          "region": 3,
+          "added_support_pixels": 0,
+          "before_selected": 0,
+          "after_selected": 0,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        }
+      ]
+    },
+    "original_training_points_may_have_been_seen": true,
+    "no_real_pixel_or_reading_GT": true,
+    "perturbation": "Frozen development diagnosis, not final test"
+  },
+  {
+    "id": "dev_08_broad_ellipses_red_brown_30",
+    "case": "dev_08",
+    "name": "partial_sparse_control",
+    "family": "native_partial",
+    "input_sha256": "4aa0ad3d93f79e11ef0224e8bc7f7ff8b35a21de559d69912077d3c4e0f69910",
+    "checkpoint_sha256": "e36b4daccbedd39fb37da87fed976f8804b1b78cef3cf5abbe0c7cf2ad936ac7",
+    "training_protocol_sha256": "9e99fd3aa6456b72a5e9ea45fe4fdb6baccc3e0e5f9fdb958dbad54bc06a17c6",
+    "script_sha256": "0f564b0df6a14ff841cb21de8e76c01088e787ce8252840e86ff30d6b067e390",
+    "diagnostic_helper_sha256": "e5b0b087d40c4768818e555ae7cc5533c9102382540214d00bc64b3b8a00b66b",
+    "mask_sha256": "a966f2c2db97a1c7280022b4306146cf462e6315d8ce447a36dbff4319fb7ef3",
+    "threshold": 0.5,
+    "seconds": 2.3738593431189656,
+    "diagnostic": {
+      "points": {
+        "observed_red_mark": {
+          "points": 18,
+          "before": 18,
+          "after": 18,
+          "newly_selected": 0,
+          "newly_lost": 0
+        },
+        "paper_or_brown_nonmark": {
+          "points": 8,
+          "before": 0,
+          "after": 0,
+          "newly_selected": 0,
+          "newly_lost": 0
+        }
+      },
+      "selected_paper_region_added_support": [
+        {
+          "region": 4,
+          "added_support_pixels": 0,
+          "before_selected": 0,
+          "after_selected": 0,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        },
+        {
+          "region": 5,
+          "added_support_pixels": 15750,
+          "before_selected": 0,
+          "after_selected": 0,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        },
+        {
+          "region": 6,
+          "added_support_pixels": 17500,
+          "before_selected": 0,
+          "after_selected": 0,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        },
+        {
+          "region": 7,
+          "added_support_pixels": 0,
+          "before_selected": 0,
+          "after_selected": 0,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        },
+        {
+          "region": 8,
+          "added_support_pixels": 10614,
+          "before_selected": 0,
+          "after_selected": 0,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        }
+      ]
+    },
+    "original_training_points_may_have_been_seen": true,
+    "no_real_pixel_or_reading_GT": true,
+    "perturbation": "Frozen development diagnosis, not final test"
+  },
+  {
+    "id": "dev_10_broad_ellipses_brown_30",
+    "case": "dev_10",
+    "name": "partial_sparse_control",
+    "family": "native_partial",
+    "input_sha256": "60c72af8923b19e25a2bc03d551530c6adae0ed33a819c03da276c9af02e6743",
+    "checkpoint_sha256": "e36b4daccbedd39fb37da87fed976f8804b1b78cef3cf5abbe0c7cf2ad936ac7",
+    "training_protocol_sha256": "9e99fd3aa6456b72a5e9ea45fe4fdb6baccc3e0e5f9fdb958dbad54bc06a17c6",
+    "script_sha256": "0f564b0df6a14ff841cb21de8e76c01088e787ce8252840e86ff30d6b067e390",
+    "diagnostic_helper_sha256": "e5b0b087d40c4768818e555ae7cc5533c9102382540214d00bc64b3b8a00b66b",
+    "mask_sha256": "08e27346a480b26ebe8e0897883537e5db3501bba3b1b2494b910f4dbfea0735",
+    "threshold": 0.5,
+    "seconds": 7.3486189767718315,
+    "diagnostic": {
+      "points": {
+        "observed_red_mark": {
+          "points": 32,
+          "before": 32,
+          "after": 32,
+          "newly_selected": 0,
+          "newly_lost": 0
+        },
+        "paper_or_brown_nonmark": {
+          "points": 10,
+          "before": 0,
+          "after": 0,
+          "newly_selected": 0,
+          "newly_lost": 0
+        }
+      },
+      "selected_paper_region_added_support": [
+        {
+          "region": 0,
+          "added_support_pixels": 14172,
+          "before_selected": 0,
+          "after_selected": 0,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        },
+        {
+          "region": 1,
+          "added_support_pixels": 18597,
+          "before_selected": 184,
+          "after_selected": 329,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        },
+        {
+          "region": 2,
+          "added_support_pixels": 5600,
+          "before_selected": 0,
+          "after_selected": 0,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        },
+        {
+          "region": 3,
+          "added_support_pixels": 10500,
+          "before_selected": 0,
+          "after_selected": 0,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        }
+      ]
+    },
+    "original_training_points_may_have_been_seen": true,
+    "no_real_pixel_or_reading_GT": true,
+    "perturbation": "Frozen development diagnosis, not final test"
+  },
+  {
+    "id": "dev_06_narrow_fold_brown_10",
+    "case": "dev_06",
+    "name": "partial_sparse_control",
+    "family": "native_partial",
+    "input_sha256": "763b2ba87a933a28f59b07fa29cc6e52be39332a11e94c638c5c1bb36c36f6e7",
+    "checkpoint_sha256": "e36b4daccbedd39fb37da87fed976f8804b1b78cef3cf5abbe0c7cf2ad936ac7",
+    "training_protocol_sha256": "9e99fd3aa6456b72a5e9ea45fe4fdb6baccc3e0e5f9fdb958dbad54bc06a17c6",
+    "script_sha256": "0f564b0df6a14ff841cb21de8e76c01088e787ce8252840e86ff30d6b067e390",
+    "diagnostic_helper_sha256": "e5b0b087d40c4768818e555ae7cc5533c9102382540214d00bc64b3b8a00b66b",
+    "mask_sha256": "cf12ab80bb5a302318a2d6beebcef2cee983f410d3875e7e3b808f5aa2420c07",
+    "threshold": 0.5,
+    "seconds": 2.377908606082201,
+    "diagnostic": {
+      "points": {
+        "observed_red_mark": {
+          "points": 16,
+          "before": 16,
+          "after": 16,
+          "newly_selected": 0,
+          "newly_lost": 0
+        },
+        "paper_or_brown_nonmark": {
+          "points": 8,
+          "before": 0,
+          "after": 0,
+          "newly_selected": 0,
+          "newly_lost": 0
+        }
+      },
+      "selected_paper_region_added_support": [
+        {
+          "region": 9,
+          "added_support_pixels": 0,
+          "before_selected": 0,
+          "after_selected": 0,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        },
+        {
+          "region": 10,
+          "added_support_pixels": 0,
+          "before_selected": 0,
+          "after_selected": 0,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        },
+        {
+          "region": 11,
+          "added_support_pixels": 0,
+          "before_selected": 0,
+          "after_selected": 0,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        },
+        {
+          "region": 12,
+          "added_support_pixels": 0,
+          "before_selected": 0,
+          "after_selected": 0,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        }
+      ]
+    },
+    "original_training_points_may_have_been_seen": true,
+    "no_real_pixel_or_reading_GT": true,
+    "perturbation": "Frozen development diagnosis, not final test"
+  },
+  {
+    "id": "dev_10_broad_ellipses_brown_10",
+    "case": "dev_10",
+    "name": "partial_sparse_control",
+    "family": "native_partial",
+    "input_sha256": "e2c5218029072696fa7fd1c4b127222ae71b8fa7c798e1e8eb763efe59db37a5",
+    "checkpoint_sha256": "e36b4daccbedd39fb37da87fed976f8804b1b78cef3cf5abbe0c7cf2ad936ac7",
+    "training_protocol_sha256": "9e99fd3aa6456b72a5e9ea45fe4fdb6baccc3e0e5f9fdb958dbad54bc06a17c6",
+    "script_sha256": "0f564b0df6a14ff841cb21de8e76c01088e787ce8252840e86ff30d6b067e390",
+    "diagnostic_helper_sha256": "e5b0b087d40c4768818e555ae7cc5533c9102382540214d00bc64b3b8a00b66b",
+    "mask_sha256": "4fbbc7a14508ebd9c82105485306457cc8e9c00674073e6e1a68d7f557582536",
+    "threshold": 0.5,
+    "seconds": 6.944050433114171,
+    "diagnostic": {
+      "points": {
+        "observed_red_mark": {
+          "points": 32,
+          "before": 32,
+          "after": 32,
+          "newly_selected": 0,
+          "newly_lost": 0
+        },
+        "paper_or_brown_nonmark": {
+          "points": 10,
+          "before": 0,
+          "after": 0,
+          "newly_selected": 0,
+          "newly_lost": 0
+        }
+      },
+      "selected_paper_region_added_support": [
+        {
+          "region": 0,
+          "added_support_pixels": 14172,
+          "before_selected": 0,
+          "after_selected": 0,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        },
+        {
+          "region": 1,
+          "added_support_pixels": 18597,
+          "before_selected": 184,
+          "after_selected": 210,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        },
+        {
+          "region": 2,
+          "added_support_pixels": 5600,
+          "before_selected": 0,
+          "after_selected": 0,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        },
+        {
+          "region": 3,
+          "added_support_pixels": 10500,
+          "before_selected": 0,
+          "after_selected": 2,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        }
+      ]
+    },
+    "original_training_points_may_have_been_seen": true,
+    "no_real_pixel_or_reading_GT": true,
+    "perturbation": "Frozen development diagnosis, not final test"
+  },
+  {
+    "id": "dev_10_narrow_fold_brown_10",
+    "case": "dev_10",
+    "name": "partial_sparse_control",
+    "family": "native_partial",
+    "input_sha256": "f8cfeaa5b532829257e3d6bdb09745a1e63bf9b5eaeecfef2599928373c8ee5c",
+    "checkpoint_sha256": "e36b4daccbedd39fb37da87fed976f8804b1b78cef3cf5abbe0c7cf2ad936ac7",
+    "training_protocol_sha256": "9e99fd3aa6456b72a5e9ea45fe4fdb6baccc3e0e5f9fdb958dbad54bc06a17c6",
+    "script_sha256": "0f564b0df6a14ff841cb21de8e76c01088e787ce8252840e86ff30d6b067e390",
+    "diagnostic_helper_sha256": "e5b0b087d40c4768818e555ae7cc5533c9102382540214d00bc64b3b8a00b66b",
+    "mask_sha256": "2ef024582544708ed9ed2f71ec902af73105a18f7f37a409be74d6a4ce24402d",
+    "threshold": 0.5,
+    "seconds": 7.602876846678555,
+    "diagnostic": {
+      "points": {
+        "observed_red_mark": {
+          "points": 32,
+          "before": 32,
+          "after": 32,
+          "newly_selected": 0,
+          "newly_lost": 0
+        },
+        "paper_or_brown_nonmark": {
+          "points": 10,
+          "before": 0,
+          "after": 0,
+          "newly_selected": 0,
+          "newly_lost": 0
+        }
+      },
+      "selected_paper_region_added_support": [
+        {
+          "region": 0,
+          "added_support_pixels": 0,
+          "before_selected": 0,
+          "after_selected": 0,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        },
+        {
+          "region": 1,
+          "added_support_pixels": 0,
+          "before_selected": 0,
+          "after_selected": 0,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        },
+        {
+          "region": 2,
+          "added_support_pixels": 0,
+          "before_selected": 0,
+          "after_selected": 0,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        },
+        {
+          "region": 3,
+          "added_support_pixels": 0,
+          "before_selected": 0,
+          "after_selected": 0,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        }
+      ]
+    },
+    "original_training_points_may_have_been_seen": true,
+    "no_real_pixel_or_reading_GT": true,
+    "perturbation": "Frozen development diagnosis, not final test"
+  },
+  {
+    "id": "dev_10_broad_ellipses_red_brown_10",
+    "case": "dev_10",
+    "name": "partial_sparse_control",
+    "family": "native_partial",
+    "input_sha256": "512091d5e593874e4fd7e316e288189ec9bd02521e141eb29e326076e759837e",
+    "checkpoint_sha256": "e36b4daccbedd39fb37da87fed976f8804b1b78cef3cf5abbe0c7cf2ad936ac7",
+    "training_protocol_sha256": "9e99fd3aa6456b72a5e9ea45fe4fdb6baccc3e0e5f9fdb958dbad54bc06a17c6",
+    "script_sha256": "0f564b0df6a14ff841cb21de8e76c01088e787ce8252840e86ff30d6b067e390",
+    "diagnostic_helper_sha256": "e5b0b087d40c4768818e555ae7cc5533c9102382540214d00bc64b3b8a00b66b",
+    "mask_sha256": "eb28f20ddff6b2fe6586ed582b5ba1dd3f8cbaa767ca55a12a7225c14bc99204",
+    "threshold": 0.5,
+    "seconds": 7.150841481983662,
+    "diagnostic": {
+      "points": {
+        "observed_red_mark": {
+          "points": 32,
+          "before": 32,
+          "after": 32,
+          "newly_selected": 0,
+          "newly_lost": 0
+        },
+        "paper_or_brown_nonmark": {
+          "points": 10,
+          "before": 0,
+          "after": 0,
+          "newly_selected": 0,
+          "newly_lost": 0
+        }
+      },
+      "selected_paper_region_added_support": [
+        {
+          "region": 0,
+          "added_support_pixels": 14172,
+          "before_selected": 0,
+          "after_selected": 0,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        },
+        {
+          "region": 1,
+          "added_support_pixels": 18597,
+          "before_selected": 184,
+          "after_selected": 145,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        },
+        {
+          "region": 2,
+          "added_support_pixels": 5600,
+          "before_selected": 0,
+          "after_selected": 0,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        },
+        {
+          "region": 3,
+          "added_support_pixels": 10500,
+          "before_selected": 0,
+          "after_selected": 0,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        }
+      ]
+    },
+    "original_training_points_may_have_been_seen": true,
+    "no_real_pixel_or_reading_GT": true,
+    "perturbation": "Frozen development diagnosis, not final test"
+  },
+  {
+    "id": "dev_06_broad_ellipses_brown_30",
+    "case": "dev_06",
+    "name": "partial_sparse_control",
+    "family": "native_partial",
+    "input_sha256": "8cbade62c431916ffa9fa037dfab07cbfd905f56f7836d18df1aea778d750ed9",
+    "checkpoint_sha256": "e36b4daccbedd39fb37da87fed976f8804b1b78cef3cf5abbe0c7cf2ad936ac7",
+    "training_protocol_sha256": "9e99fd3aa6456b72a5e9ea45fe4fdb6baccc3e0e5f9fdb958dbad54bc06a17c6",
+    "script_sha256": "0f564b0df6a14ff841cb21de8e76c01088e787ce8252840e86ff30d6b067e390",
+    "diagnostic_helper_sha256": "e5b0b087d40c4768818e555ae7cc5533c9102382540214d00bc64b3b8a00b66b",
+    "mask_sha256": "a05e51b0191ffeb85f92411c646942bcaca4749720982684b4dd1d905eabd27b",
+    "threshold": 0.5,
+    "seconds": 9.481559234671295,
+    "diagnostic": {
+      "points": {
+        "observed_red_mark": {
+          "points": 16,
+          "before": 16,
+          "after": 16,
+          "newly_selected": 0,
+          "newly_lost": 0
+        },
+        "paper_or_brown_nonmark": {
+          "points": 8,
+          "before": 0,
+          "after": 0,
+          "newly_selected": 0,
+          "newly_lost": 0
+        }
+      },
+      "selected_paper_region_added_support": [
+        {
+          "region": 9,
+          "added_support_pixels": 2832,
+          "before_selected": 14,
+          "after_selected": 4,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        },
+        {
+          "region": 10,
+          "added_support_pixels": 6800,
+          "before_selected": 461,
+          "after_selected": 90,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        },
+        {
+          "region": 11,
+          "added_support_pixels": 2222,
+          "before_selected": 0,
+          "after_selected": 0,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        },
+        {
+          "region": 12,
+          "added_support_pixels": 6729,
+          "before_selected": 207,
+          "after_selected": 440,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        }
+      ]
+    },
+    "original_training_points_may_have_been_seen": true,
+    "no_real_pixel_or_reading_GT": true,
+    "perturbation": "Frozen development diagnosis, not final test"
+  },
+  {
+    "id": "dev_08_narrow_fold_red_brown_10",
+    "case": "dev_08",
+    "name": "partial_sparse_control",
+    "family": "native_partial",
+    "input_sha256": "9e75c50d5a2b3782f4a384878d33cf1879a02f22b26f9981b14b9767277c256a",
+    "checkpoint_sha256": "e36b4daccbedd39fb37da87fed976f8804b1b78cef3cf5abbe0c7cf2ad936ac7",
+    "training_protocol_sha256": "9e99fd3aa6456b72a5e9ea45fe4fdb6baccc3e0e5f9fdb958dbad54bc06a17c6",
+    "script_sha256": "0f564b0df6a14ff841cb21de8e76c01088e787ce8252840e86ff30d6b067e390",
+    "diagnostic_helper_sha256": "e5b0b087d40c4768818e555ae7cc5533c9102382540214d00bc64b3b8a00b66b",
+    "mask_sha256": "0b9819b5caf26182a81a5b9747f2daeb593442e3d6453f14d4fd2d6d30f6674d",
+    "threshold": 0.5,
+    "seconds": 2.802735147997737,
+    "diagnostic": {
+      "points": {
+        "observed_red_mark": {
+          "points": 18,
+          "before": 18,
+          "after": 18,
+          "newly_selected": 0,
+          "newly_lost": 0
+        },
+        "paper_or_brown_nonmark": {
+          "points": 8,
+          "before": 0,
+          "after": 0,
+          "newly_selected": 0,
+          "newly_lost": 0
+        }
+      },
+      "selected_paper_region_added_support": [
+        {
+          "region": 4,
+          "added_support_pixels": 0,
+          "before_selected": 0,
+          "after_selected": 0,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        },
+        {
+          "region": 5,
+          "added_support_pixels": 0,
+          "before_selected": 0,
+          "after_selected": 0,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        },
+        {
+          "region": 6,
+          "added_support_pixels": 0,
+          "before_selected": 0,
+          "after_selected": 0,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        },
+        {
+          "region": 7,
+          "added_support_pixels": 0,
+          "before_selected": 0,
+          "after_selected": 0,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        },
+        {
+          "region": 8,
+          "added_support_pixels": 2237,
+          "before_selected": 0,
+          "after_selected": 0,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        }
+      ]
+    },
+    "original_training_points_may_have_been_seen": true,
+    "no_real_pixel_or_reading_GT": true,
+    "perturbation": "Frozen development diagnosis, not final test"
+  },
+  {
+    "id": "dev_08_narrow_fold_brown_30",
+    "case": "dev_08",
+    "name": "partial_sparse_control",
+    "family": "native_partial",
+    "input_sha256": "30c8fd46177c3b5c646d251109e64f5e57e3b85821e79ffc82e0710caf380695",
+    "checkpoint_sha256": "e36b4daccbedd39fb37da87fed976f8804b1b78cef3cf5abbe0c7cf2ad936ac7",
+    "training_protocol_sha256": "9e99fd3aa6456b72a5e9ea45fe4fdb6baccc3e0e5f9fdb958dbad54bc06a17c6",
+    "script_sha256": "0f564b0df6a14ff841cb21de8e76c01088e787ce8252840e86ff30d6b067e390",
+    "diagnostic_helper_sha256": "e5b0b087d40c4768818e555ae7cc5533c9102382540214d00bc64b3b8a00b66b",
+    "mask_sha256": "6ef44ebb1e3c029cf0464f4bf3747e53d966b9f0fe2e73e3cececfadb28b74a6",
+    "threshold": 0.5,
+    "seconds": 2.337997056543827,
+    "diagnostic": {
+      "points": {
+        "observed_red_mark": {
+          "points": 18,
+          "before": 18,
+          "after": 18,
+          "newly_selected": 0,
+          "newly_lost": 0
+        },
+        "paper_or_brown_nonmark": {
+          "points": 8,
+          "before": 0,
+          "after": 0,
+          "newly_selected": 0,
+          "newly_lost": 0
+        }
+      },
+      "selected_paper_region_added_support": [
+        {
+          "region": 4,
+          "added_support_pixels": 0,
+          "before_selected": 0,
+          "after_selected": 0,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        },
+        {
+          "region": 5,
+          "added_support_pixels": 0,
+          "before_selected": 0,
+          "after_selected": 0,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        },
+        {
+          "region": 6,
+          "added_support_pixels": 0,
+          "before_selected": 0,
+          "after_selected": 0,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        },
+        {
+          "region": 7,
+          "added_support_pixels": 0,
+          "before_selected": 0,
+          "after_selected": 0,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        },
+        {
+          "region": 8,
+          "added_support_pixels": 2237,
+          "before_selected": 0,
+          "after_selected": 0,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        }
+      ]
+    },
+    "original_training_points_may_have_been_seen": true,
+    "no_real_pixel_or_reading_GT": true,
+    "perturbation": "Frozen development diagnosis, not final test"
+  },
+  {
+    "id": "dev_08_broad_ellipses_brown_10",
+    "case": "dev_08",
+    "name": "partial_sparse_control",
+    "family": "native_partial",
+    "input_sha256": "2b45675ce3044d88559e567d1bd0693ce0703c27bfe752ee21c558ca17b22594",
+    "checkpoint_sha256": "e36b4daccbedd39fb37da87fed976f8804b1b78cef3cf5abbe0c7cf2ad936ac7",
+    "training_protocol_sha256": "9e99fd3aa6456b72a5e9ea45fe4fdb6baccc3e0e5f9fdb958dbad54bc06a17c6",
+    "script_sha256": "0f564b0df6a14ff841cb21de8e76c01088e787ce8252840e86ff30d6b067e390",
+    "diagnostic_helper_sha256": "e5b0b087d40c4768818e555ae7cc5533c9102382540214d00bc64b3b8a00b66b",
+    "mask_sha256": "d533e0effe9b7eba98560e4479be29c46e3333b2768afb7b876e691d44196450",
+    "threshold": 0.5,
+    "seconds": 2.3086679847911,
+    "diagnostic": {
+      "points": {
+        "observed_red_mark": {
+          "points": 18,
+          "before": 18,
+          "after": 18,
+          "newly_selected": 0,
+          "newly_lost": 0
+        },
+        "paper_or_brown_nonmark": {
+          "points": 8,
+          "before": 0,
+          "after": 0,
+          "newly_selected": 0,
+          "newly_lost": 0
+        }
+      },
+      "selected_paper_region_added_support": [
+        {
+          "region": 4,
+          "added_support_pixels": 0,
+          "before_selected": 0,
+          "after_selected": 0,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        },
+        {
+          "region": 5,
+          "added_support_pixels": 15750,
+          "before_selected": 0,
+          "after_selected": 0,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        },
+        {
+          "region": 6,
+          "added_support_pixels": 17500,
+          "before_selected": 0,
+          "after_selected": 0,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        },
+        {
+          "region": 7,
+          "added_support_pixels": 0,
+          "before_selected": 0,
+          "after_selected": 0,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        },
+        {
+          "region": 8,
+          "added_support_pixels": 10614,
+          "before_selected": 0,
+          "after_selected": 0,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        }
+      ]
+    },
+    "original_training_points_may_have_been_seen": true,
+    "no_real_pixel_or_reading_GT": true,
+    "perturbation": "Frozen development diagnosis, not final test"
+  },
+  {
+    "id": "dev_06_narrow_fold_red_brown_10",
+    "case": "dev_06",
+    "name": "partial_sparse_control",
+    "family": "native_partial",
+    "input_sha256": "ea6eae59045bff13da4aa576143b902cebe6660800c6d3bcd750c025b64aaba3",
+    "checkpoint_sha256": "e36b4daccbedd39fb37da87fed976f8804b1b78cef3cf5abbe0c7cf2ad936ac7",
+    "training_protocol_sha256": "9e99fd3aa6456b72a5e9ea45fe4fdb6baccc3e0e5f9fdb958dbad54bc06a17c6",
+    "script_sha256": "0f564b0df6a14ff841cb21de8e76c01088e787ce8252840e86ff30d6b067e390",
+    "diagnostic_helper_sha256": "e5b0b087d40c4768818e555ae7cc5533c9102382540214d00bc64b3b8a00b66b",
+    "mask_sha256": "628047cd6139469398d7daf483531d1528a4c2b7a856557e318eb12b5571a027",
+    "threshold": 0.5,
+    "seconds": 13.452101470902562,
+    "diagnostic": {
+      "points": {
+        "observed_red_mark": {
+          "points": 16,
+          "before": 16,
+          "after": 16,
+          "newly_selected": 0,
+          "newly_lost": 0
+        },
+        "paper_or_brown_nonmark": {
+          "points": 8,
+          "before": 0,
+          "after": 0,
+          "newly_selected": 0,
+          "newly_lost": 0
+        }
+      },
+      "selected_paper_region_added_support": [
+        {
+          "region": 9,
+          "added_support_pixels": 0,
+          "before_selected": 0,
+          "after_selected": 0,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        },
+        {
+          "region": 10,
+          "added_support_pixels": 0,
+          "before_selected": 0,
+          "after_selected": 0,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        },
+        {
+          "region": 11,
+          "added_support_pixels": 0,
+          "before_selected": 0,
+          "after_selected": 0,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        },
+        {
+          "region": 12,
+          "added_support_pixels": 0,
+          "before_selected": 0,
+          "after_selected": 0,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        }
+      ]
+    },
+    "original_training_points_may_have_been_seen": true,
+    "no_real_pixel_or_reading_GT": true,
+    "perturbation": "Frozen development diagnosis, not final test"
+  },
+  {
+    "id": "dev_08_broad_ellipses_red_brown_10",
+    "case": "dev_08",
+    "name": "partial_sparse_control",
+    "family": "native_partial",
+    "input_sha256": "267b8d0980870c91d5814ff33658b4829c2839f705b25f3a528c3a24e9b7b9a6",
+    "checkpoint_sha256": "e36b4daccbedd39fb37da87fed976f8804b1b78cef3cf5abbe0c7cf2ad936ac7",
+    "training_protocol_sha256": "9e99fd3aa6456b72a5e9ea45fe4fdb6baccc3e0e5f9fdb958dbad54bc06a17c6",
+    "script_sha256": "0f564b0df6a14ff841cb21de8e76c01088e787ce8252840e86ff30d6b067e390",
+    "diagnostic_helper_sha256": "e5b0b087d40c4768818e555ae7cc5533c9102382540214d00bc64b3b8a00b66b",
+    "mask_sha256": "3b252b06d2d5d49386ef74c87b353f1f981280e1952fa40513c5b4ebc8ef62ca",
+    "threshold": 0.5,
+    "seconds": 2.365441622212529,
+    "diagnostic": {
+      "points": {
+        "observed_red_mark": {
+          "points": 18,
+          "before": 18,
+          "after": 18,
+          "newly_selected": 0,
+          "newly_lost": 0
+        },
+        "paper_or_brown_nonmark": {
+          "points": 8,
+          "before": 0,
+          "after": 0,
+          "newly_selected": 0,
+          "newly_lost": 0
+        }
+      },
+      "selected_paper_region_added_support": [
+        {
+          "region": 4,
+          "added_support_pixels": 0,
+          "before_selected": 0,
+          "after_selected": 0,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        },
+        {
+          "region": 5,
+          "added_support_pixels": 15750,
+          "before_selected": 0,
+          "after_selected": 0,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        },
+        {
+          "region": 6,
+          "added_support_pixels": 17500,
+          "before_selected": 0,
+          "after_selected": 1,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        },
+        {
+          "region": 7,
+          "added_support_pixels": 0,
+          "before_selected": 0,
+          "after_selected": 0,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        },
+        {
+          "region": 8,
+          "added_support_pixels": 10614,
+          "before_selected": 0,
+          "after_selected": 0,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        }
+      ]
+    },
+    "original_training_points_may_have_been_seen": true,
+    "no_real_pixel_or_reading_GT": true,
+    "perturbation": "Frozen development diagnosis, not final test"
+  },
+  {
+    "id": "dev_06_narrow_fold_red_brown_30",
+    "case": "dev_06",
+    "name": "partial_sparse_control",
+    "family": "native_partial",
+    "input_sha256": "4dce49cb09316a1b46f7bb63814cab419f2132aa5c8bdce76a743e85dd0d625d",
+    "checkpoint_sha256": "e36b4daccbedd39fb37da87fed976f8804b1b78cef3cf5abbe0c7cf2ad936ac7",
+    "training_protocol_sha256": "9e99fd3aa6456b72a5e9ea45fe4fdb6baccc3e0e5f9fdb958dbad54bc06a17c6",
+    "script_sha256": "0f564b0df6a14ff841cb21de8e76c01088e787ce8252840e86ff30d6b067e390",
+    "diagnostic_helper_sha256": "e5b0b087d40c4768818e555ae7cc5533c9102382540214d00bc64b3b8a00b66b",
+    "mask_sha256": "61085b3a2720c014a3dcd18ba55ad79b47fc653018797b296a1741ffc3cc65d3",
+    "threshold": 0.5,
+    "seconds": 2.2385607892647386,
+    "diagnostic": {
+      "points": {
+        "observed_red_mark": {
+          "points": 16,
+          "before": 16,
+          "after": 16,
+          "newly_selected": 0,
+          "newly_lost": 0
+        },
+        "paper_or_brown_nonmark": {
+          "points": 8,
+          "before": 0,
+          "after": 0,
+          "newly_selected": 0,
+          "newly_lost": 0
+        }
+      },
+      "selected_paper_region_added_support": [
+        {
+          "region": 9,
+          "added_support_pixels": 0,
+          "before_selected": 0,
+          "after_selected": 0,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        },
+        {
+          "region": 10,
+          "added_support_pixels": 0,
+          "before_selected": 0,
+          "after_selected": 0,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        },
+        {
+          "region": 11,
+          "added_support_pixels": 0,
+          "before_selected": 0,
+          "after_selected": 0,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        },
+        {
+          "region": 12,
+          "added_support_pixels": 0,
+          "before_selected": 0,
+          "after_selected": 0,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        }
+      ]
+    },
+    "original_training_points_may_have_been_seen": true,
+    "no_real_pixel_or_reading_GT": true,
+    "perturbation": "Frozen development diagnosis, not final test"
+  },
+  {
+    "id": "dev_10_broad_ellipses_red_brown_30",
+    "case": "dev_10",
+    "name": "partial_sparse_control",
+    "family": "native_partial",
+    "input_sha256": "31b2aedfa07aad403a325a6cb2611a9d0c016d62be75fe59e108ace398f1ae1b",
+    "checkpoint_sha256": "e36b4daccbedd39fb37da87fed976f8804b1b78cef3cf5abbe0c7cf2ad936ac7",
+    "training_protocol_sha256": "9e99fd3aa6456b72a5e9ea45fe4fdb6baccc3e0e5f9fdb958dbad54bc06a17c6",
+    "script_sha256": "0f564b0df6a14ff841cb21de8e76c01088e787ce8252840e86ff30d6b067e390",
+    "diagnostic_helper_sha256": "e5b0b087d40c4768818e555ae7cc5533c9102382540214d00bc64b3b8a00b66b",
+    "mask_sha256": "0a1a461919b3fd6776f8beee12e3ad951bdf6b0ec2e2289a844b60ea3f99bb3b",
+    "threshold": 0.5,
+    "seconds": 7.327578363008797,
+    "diagnostic": {
+      "points": {
+        "observed_red_mark": {
+          "points": 32,
+          "before": 32,
+          "after": 32,
+          "newly_selected": 0,
+          "newly_lost": 0
+        },
+        "paper_or_brown_nonmark": {
+          "points": 10,
+          "before": 0,
+          "after": 0,
+          "newly_selected": 0,
+          "newly_lost": 0
+        }
+      },
+      "selected_paper_region_added_support": [
+        {
+          "region": 0,
+          "added_support_pixels": 14172,
+          "before_selected": 0,
+          "after_selected": 0,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        },
+        {
+          "region": 1,
+          "added_support_pixels": 18597,
+          "before_selected": 184,
+          "after_selected": 266,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        },
+        {
+          "region": 2,
+          "added_support_pixels": 5600,
+          "before_selected": 0,
+          "after_selected": 0,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        },
+        {
+          "region": 3,
+          "added_support_pixels": 10500,
+          "before_selected": 0,
+          "after_selected": 0,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        }
+      ]
+    },
+    "original_training_points_may_have_been_seen": true,
+    "no_real_pixel_or_reading_GT": true,
+    "perturbation": "Frozen development diagnosis, not final test"
+  },
+  {
+    "id": "dev_06_broad_ellipses_red_brown_10",
+    "case": "dev_06",
+    "name": "partial_sparse_control",
+    "family": "native_partial",
+    "input_sha256": "fed76c246ae5715638c760ec0f4b20d4039e0e2112fb1f6191e3e614a5125e67",
+    "checkpoint_sha256": "e36b4daccbedd39fb37da87fed976f8804b1b78cef3cf5abbe0c7cf2ad936ac7",
+    "training_protocol_sha256": "9e99fd3aa6456b72a5e9ea45fe4fdb6baccc3e0e5f9fdb958dbad54bc06a17c6",
+    "script_sha256": "0f564b0df6a14ff841cb21de8e76c01088e787ce8252840e86ff30d6b067e390",
+    "diagnostic_helper_sha256": "e5b0b087d40c4768818e555ae7cc5533c9102382540214d00bc64b3b8a00b66b",
+    "mask_sha256": "583db203a7f6eaf36166a542ce0c61065e29bc7354c100d76105b22f7491371c",
+    "threshold": 0.5,
+    "seconds": 6.771747621707618,
+    "diagnostic": {
+      "points": {
+        "observed_red_mark": {
+          "points": 16,
+          "before": 16,
+          "after": 16,
+          "newly_selected": 0,
+          "newly_lost": 0
+        },
+        "paper_or_brown_nonmark": {
+          "points": 8,
+          "before": 0,
+          "after": 0,
+          "newly_selected": 0,
+          "newly_lost": 0
+        }
+      },
+      "selected_paper_region_added_support": [
+        {
+          "region": 9,
+          "added_support_pixels": 2832,
+          "before_selected": 14,
+          "after_selected": 15,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        },
+        {
+          "region": 10,
+          "added_support_pixels": 6800,
+          "before_selected": 461,
+          "after_selected": 150,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        },
+        {
+          "region": 11,
+          "added_support_pixels": 2222,
+          "before_selected": 0,
+          "after_selected": 0,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        },
+        {
+          "region": 12,
+          "added_support_pixels": 6729,
+          "before_selected": 207,
+          "after_selected": 354,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        }
+      ]
+    },
+    "original_training_points_may_have_been_seen": true,
+    "no_real_pixel_or_reading_GT": true,
+    "perturbation": "Frozen development diagnosis, not final test"
+  },
+  {
+    "id": "dev_10_narrow_fold_red_brown_30",
+    "case": "dev_10",
+    "name": "partial_sparse_control",
+    "family": "native_partial",
+    "input_sha256": "c208ff7241ace62a8608fd5bd49b95704260d465bdd1b8359538450c1e8f99d0",
+    "checkpoint_sha256": "e36b4daccbedd39fb37da87fed976f8804b1b78cef3cf5abbe0c7cf2ad936ac7",
+    "training_protocol_sha256": "9e99fd3aa6456b72a5e9ea45fe4fdb6baccc3e0e5f9fdb958dbad54bc06a17c6",
+    "script_sha256": "0f564b0df6a14ff841cb21de8e76c01088e787ce8252840e86ff30d6b067e390",
+    "diagnostic_helper_sha256": "e5b0b087d40c4768818e555ae7cc5533c9102382540214d00bc64b3b8a00b66b",
+    "mask_sha256": "d3da032bbbfe503b6d46e0945c122414b6094d03e688316cbe4dc31d53755f91",
+    "threshold": 0.5,
+    "seconds": 46.32680485211313,
+    "diagnostic": {
+      "points": {
+        "observed_red_mark": {
+          "points": 32,
+          "before": 32,
+          "after": 32,
+          "newly_selected": 0,
+          "newly_lost": 0
+        },
+        "paper_or_brown_nonmark": {
+          "points": 10,
+          "before": 0,
+          "after": 0,
+          "newly_selected": 0,
+          "newly_lost": 0
+        }
+      },
+      "selected_paper_region_added_support": [
+        {
+          "region": 0,
+          "added_support_pixels": 0,
+          "before_selected": 0,
+          "after_selected": 0,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        },
+        {
+          "region": 1,
+          "added_support_pixels": 0,
+          "before_selected": 0,
+          "after_selected": 0,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        },
+        {
+          "region": 2,
+          "added_support_pixels": 0,
+          "before_selected": 0,
+          "after_selected": 0,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        },
+        {
+          "region": 3,
+          "added_support_pixels": 0,
+          "before_selected": 0,
+          "after_selected": 0,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        }
+      ]
+    },
+    "original_training_points_may_have_been_seen": true,
+    "no_real_pixel_or_reading_GT": true,
+    "perturbation": "Frozen development diagnosis, not final test"
+  },
+  {
+    "id": "dev_06_broad_ellipses_brown_10",
+    "case": "dev_06",
+    "name": "partial_sparse_control",
+    "family": "native_partial",
+    "input_sha256": "2f1041ab7be01857ec019cf4f85dd467a9e8b88b042db2861013a8fb8d557c26",
+    "checkpoint_sha256": "e36b4daccbedd39fb37da87fed976f8804b1b78cef3cf5abbe0c7cf2ad936ac7",
+    "training_protocol_sha256": "9e99fd3aa6456b72a5e9ea45fe4fdb6baccc3e0e5f9fdb958dbad54bc06a17c6",
+    "script_sha256": "0f564b0df6a14ff841cb21de8e76c01088e787ce8252840e86ff30d6b067e390",
+    "diagnostic_helper_sha256": "e5b0b087d40c4768818e555ae7cc5533c9102382540214d00bc64b3b8a00b66b",
+    "mask_sha256": "026a66f74c52e5ffae51af1795f28a72704f23ef6d2672f82f3b4500f351e02f",
+    "threshold": 0.5,
+    "seconds": 14.289043319411576,
+    "diagnostic": {
+      "points": {
+        "observed_red_mark": {
+          "points": 16,
+          "before": 16,
+          "after": 16,
+          "newly_selected": 0,
+          "newly_lost": 0
+        },
+        "paper_or_brown_nonmark": {
+          "points": 8,
+          "before": 0,
+          "after": 0,
+          "newly_selected": 0,
+          "newly_lost": 0
+        }
+      },
+      "selected_paper_region_added_support": [
+        {
+          "region": 9,
+          "added_support_pixels": 2832,
+          "before_selected": 14,
+          "after_selected": 19,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        },
+        {
+          "region": 10,
+          "added_support_pixels": 6800,
+          "before_selected": 461,
+          "after_selected": 278,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        },
+        {
+          "region": 11,
+          "added_support_pixels": 2222,
+          "before_selected": 0,
+          "after_selected": 0,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        },
+        {
+          "region": 12,
+          "added_support_pixels": 6729,
+          "before_selected": 207,
+          "after_selected": 288,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        }
+      ]
+    },
+    "original_training_points_may_have_been_seen": true,
+    "no_real_pixel_or_reading_GT": true,
+    "perturbation": "Frozen development diagnosis, not final test"
+  },
+  {
+    "id": "dev_08_narrow_fold_brown_10",
+    "case": "dev_08",
+    "name": "partial_sparse_control",
+    "family": "native_partial",
+    "input_sha256": "ab7541752a02d5b518c0db47249b14fad9463a5a5cf2107e26c05c481299b707",
+    "checkpoint_sha256": "e36b4daccbedd39fb37da87fed976f8804b1b78cef3cf5abbe0c7cf2ad936ac7",
+    "training_protocol_sha256": "9e99fd3aa6456b72a5e9ea45fe4fdb6baccc3e0e5f9fdb958dbad54bc06a17c6",
+    "script_sha256": "0f564b0df6a14ff841cb21de8e76c01088e787ce8252840e86ff30d6b067e390",
+    "diagnostic_helper_sha256": "e5b0b087d40c4768818e555ae7cc5533c9102382540214d00bc64b3b8a00b66b",
+    "mask_sha256": "cf1b44d4859199d52b8271b75dc8a1a5ba6bf1b235a01665bed33d3fa38fad1d",
+    "threshold": 0.5,
+    "seconds": 2.430119457654655,
+    "diagnostic": {
+      "points": {
+        "observed_red_mark": {
+          "points": 18,
+          "before": 18,
+          "after": 18,
+          "newly_selected": 0,
+          "newly_lost": 0
+        },
+        "paper_or_brown_nonmark": {
+          "points": 8,
+          "before": 0,
+          "after": 0,
+          "newly_selected": 0,
+          "newly_lost": 0
+        }
+      },
+      "selected_paper_region_added_support": [
+        {
+          "region": 4,
+          "added_support_pixels": 0,
+          "before_selected": 0,
+          "after_selected": 0,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        },
+        {
+          "region": 5,
+          "added_support_pixels": 0,
+          "before_selected": 0,
+          "after_selected": 0,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        },
+        {
+          "region": 6,
+          "added_support_pixels": 0,
+          "before_selected": 0,
+          "after_selected": 0,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        },
+        {
+          "region": 7,
+          "added_support_pixels": 0,
+          "before_selected": 0,
+          "after_selected": 0,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        },
+        {
+          "region": 8,
+          "added_support_pixels": 2237,
+          "before_selected": 0,
+          "after_selected": 0,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        }
+      ]
+    },
+    "original_training_points_may_have_been_seen": true,
+    "no_real_pixel_or_reading_GT": true,
+    "perturbation": "Frozen development diagnosis, not final test"
+  },
+  {
+    "id": "dev_10_narrow_fold_brown_30",
+    "case": "dev_10",
+    "name": "partial_dense_native",
+    "family": "native_partial",
+    "input_sha256": "e8ad105cdab54312f5bf2ac9ff8c7b4df2d2e322875d22171c6416984735c180",
+    "checkpoint_sha256": "43f5476ebf795e7f5fde10dc1e870e872eab6e381489cb0a96361dc5838d537c",
+    "training_protocol_sha256": "78ca491c5a228228048064143df0a4a59c7fcf53a7a9e448944c9af5c6ef31ff",
+    "script_sha256": "0f564b0df6a14ff841cb21de8e76c01088e787ce8252840e86ff30d6b067e390",
+    "diagnostic_helper_sha256": "e5b0b087d40c4768818e555ae7cc5533c9102382540214d00bc64b3b8a00b66b",
+    "mask_sha256": "c58b86a8425ad0e38d656e10d7c3e9bd0b22394d443915fc50ad48e492725757",
+    "threshold": 0.5,
+    "seconds": 22.917696447111666,
+    "diagnostic": {
+      "points": {
+        "observed_red_mark": {
+          "points": 32,
+          "before": 32,
+          "after": 32,
+          "newly_selected": 0,
+          "newly_lost": 0
+        },
+        "paper_or_brown_nonmark": {
+          "points": 10,
+          "before": 0,
+          "after": 0,
+          "newly_selected": 0,
+          "newly_lost": 0
+        }
+      },
+      "selected_paper_region_added_support": [
+        {
+          "region": 0,
+          "added_support_pixels": 0,
+          "before_selected": 0,
+          "after_selected": 0,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        },
+        {
+          "region": 1,
+          "added_support_pixels": 0,
+          "before_selected": 0,
+          "after_selected": 0,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        },
+        {
+          "region": 2,
+          "added_support_pixels": 0,
+          "before_selected": 0,
+          "after_selected": 0,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        },
+        {
+          "region": 3,
+          "added_support_pixels": 0,
+          "before_selected": 0,
+          "after_selected": 0,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        }
+      ]
+    },
+    "original_training_points_may_have_been_seen": true,
+    "no_real_pixel_or_reading_GT": true,
+    "perturbation": "Frozen development diagnosis, not final test"
+  },
+  {
+    "id": "dev_06_narrow_fold_brown_30",
+    "case": "dev_06",
+    "name": "partial_dense_native",
+    "family": "native_partial",
+    "input_sha256": "923b58007732313486de7c15b33942581431b1b37dd7e4f26f735f0e14855994",
+    "checkpoint_sha256": "43f5476ebf795e7f5fde10dc1e870e872eab6e381489cb0a96361dc5838d537c",
+    "training_protocol_sha256": "78ca491c5a228228048064143df0a4a59c7fcf53a7a9e448944c9af5c6ef31ff",
+    "script_sha256": "0f564b0df6a14ff841cb21de8e76c01088e787ce8252840e86ff30d6b067e390",
+    "diagnostic_helper_sha256": "e5b0b087d40c4768818e555ae7cc5533c9102382540214d00bc64b3b8a00b66b",
+    "mask_sha256": "3ceb80d266edca516f9b00bf324436ebc30c94b3a25d37eaf8286191a3be7941",
+    "threshold": 0.5,
+    "seconds": 16.656973318196833,
+    "diagnostic": {
+      "points": {
+        "observed_red_mark": {
+          "points": 16,
+          "before": 16,
+          "after": 16,
+          "newly_selected": 0,
+          "newly_lost": 0
+        },
+        "paper_or_brown_nonmark": {
+          "points": 8,
+          "before": 0,
+          "after": 0,
+          "newly_selected": 0,
+          "newly_lost": 0
+        }
+      },
+      "selected_paper_region_added_support": [
+        {
+          "region": 9,
+          "added_support_pixels": 0,
+          "before_selected": 0,
+          "after_selected": 0,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        },
+        {
+          "region": 10,
+          "added_support_pixels": 0,
+          "before_selected": 0,
+          "after_selected": 0,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        },
+        {
+          "region": 11,
+          "added_support_pixels": 0,
+          "before_selected": 0,
+          "after_selected": 0,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        },
+        {
+          "region": 12,
+          "added_support_pixels": 0,
+          "before_selected": 0,
+          "after_selected": 0,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        }
+      ]
+    },
+    "original_training_points_may_have_been_seen": true,
+    "no_real_pixel_or_reading_GT": true,
+    "perturbation": "Frozen development diagnosis, not final test"
+  },
+  {
+    "id": "dev_08_broad_ellipses_brown_30",
+    "case": "dev_08",
+    "name": "partial_dense_native",
+    "family": "native_partial",
+    "input_sha256": "43a51b8659d91bb09503838dc99ad5d041a3250bea1eca7694f235d56e02cd97",
+    "checkpoint_sha256": "43f5476ebf795e7f5fde10dc1e870e872eab6e381489cb0a96361dc5838d537c",
+    "training_protocol_sha256": "78ca491c5a228228048064143df0a4a59c7fcf53a7a9e448944c9af5c6ef31ff",
+    "script_sha256": "0f564b0df6a14ff841cb21de8e76c01088e787ce8252840e86ff30d6b067e390",
+    "diagnostic_helper_sha256": "e5b0b087d40c4768818e555ae7cc5533c9102382540214d00bc64b3b8a00b66b",
+    "mask_sha256": "7df4189a9c5c75e986dcd4979f4e216687f33d0c55bc99a9e16a5ae83d9a55b2",
+    "threshold": 0.5,
+    "seconds": 18.01820173393935,
+    "diagnostic": {
+      "points": {
+        "observed_red_mark": {
+          "points": 18,
+          "before": 18,
+          "after": 18,
+          "newly_selected": 0,
+          "newly_lost": 0
+        },
+        "paper_or_brown_nonmark": {
+          "points": 8,
+          "before": 0,
+          "after": 0,
+          "newly_selected": 0,
+          "newly_lost": 0
+        }
+      },
+      "selected_paper_region_added_support": [
+        {
+          "region": 4,
+          "added_support_pixels": 0,
+          "before_selected": 0,
+          "after_selected": 0,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        },
+        {
+          "region": 5,
+          "added_support_pixels": 15750,
+          "before_selected": 0,
+          "after_selected": 0,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        },
+        {
+          "region": 6,
+          "added_support_pixels": 17500,
+          "before_selected": 0,
+          "after_selected": 0,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        },
+        {
+          "region": 7,
+          "added_support_pixels": 0,
+          "before_selected": 0,
+          "after_selected": 0,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        },
+        {
+          "region": 8,
+          "added_support_pixels": 10614,
+          "before_selected": 0,
+          "after_selected": 0,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        }
+      ]
+    },
+    "original_training_points_may_have_been_seen": true,
+    "no_real_pixel_or_reading_GT": true,
+    "perturbation": "Frozen development diagnosis, not final test"
+  },
+  {
+    "id": "dev_06_broad_ellipses_red_brown_30",
+    "case": "dev_06",
+    "name": "partial_dense_native",
+    "family": "native_partial",
+    "input_sha256": "9fb43dcb94e56bda14adc28dcd6696a0d6cc7af65b927921e9951d9f3bda89c4",
+    "checkpoint_sha256": "43f5476ebf795e7f5fde10dc1e870e872eab6e381489cb0a96361dc5838d537c",
+    "training_protocol_sha256": "78ca491c5a228228048064143df0a4a59c7fcf53a7a9e448944c9af5c6ef31ff",
+    "script_sha256": "0f564b0df6a14ff841cb21de8e76c01088e787ce8252840e86ff30d6b067e390",
+    "diagnostic_helper_sha256": "e5b0b087d40c4768818e555ae7cc5533c9102382540214d00bc64b3b8a00b66b",
+    "mask_sha256": "e56e3a541c6177f07a3f8b36ccbea6ae56a92a3556e0922697349b2f4454828c",
+    "threshold": 0.5,
+    "seconds": 16.212375848554075,
+    "diagnostic": {
+      "points": {
+        "observed_red_mark": {
+          "points": 16,
+          "before": 16,
+          "after": 16,
+          "newly_selected": 0,
+          "newly_lost": 0
+        },
+        "paper_or_brown_nonmark": {
+          "points": 8,
+          "before": 0,
+          "after": 0,
+          "newly_selected": 0,
+          "newly_lost": 0
+        }
+      },
+      "selected_paper_region_added_support": [
+        {
+          "region": 9,
+          "added_support_pixels": 2832,
+          "before_selected": 6,
+          "after_selected": 0,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        },
+        {
+          "region": 10,
+          "added_support_pixels": 6800,
+          "before_selected": 85,
+          "after_selected": 11,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        },
+        {
+          "region": 11,
+          "added_support_pixels": 2222,
+          "before_selected": 0,
+          "after_selected": 0,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        },
+        {
+          "region": 12,
+          "added_support_pixels": 6729,
+          "before_selected": 0,
+          "after_selected": 0,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        }
+      ]
+    },
+    "original_training_points_may_have_been_seen": true,
+    "no_real_pixel_or_reading_GT": true,
+    "perturbation": "Frozen development diagnosis, not final test"
+  },
+  {
+    "id": "dev_08_narrow_fold_red_brown_30",
+    "case": "dev_08",
+    "name": "partial_dense_native",
+    "family": "native_partial",
+    "input_sha256": "3a8f82cf1051dcbf2aaec7f5ea855aae3d41f2e94c563857f440eec40bf5074f",
+    "checkpoint_sha256": "43f5476ebf795e7f5fde10dc1e870e872eab6e381489cb0a96361dc5838d537c",
+    "training_protocol_sha256": "78ca491c5a228228048064143df0a4a59c7fcf53a7a9e448944c9af5c6ef31ff",
+    "script_sha256": "0f564b0df6a14ff841cb21de8e76c01088e787ce8252840e86ff30d6b067e390",
+    "diagnostic_helper_sha256": "e5b0b087d40c4768818e555ae7cc5533c9102382540214d00bc64b3b8a00b66b",
+    "mask_sha256": "a1139b668bedf232e54fd62fe6664e0d55748b0c84ac652345def69959bc6a14",
+    "threshold": 0.5,
+    "seconds": 11.07517674099654,
+    "diagnostic": {
+      "points": {
+        "observed_red_mark": {
+          "points": 18,
+          "before": 18,
+          "after": 18,
+          "newly_selected": 0,
+          "newly_lost": 0
+        },
+        "paper_or_brown_nonmark": {
+          "points": 8,
+          "before": 0,
+          "after": 1,
+          "newly_selected": 1,
+          "newly_lost": 0
+        }
+      },
+      "selected_paper_region_added_support": [
+        {
+          "region": 4,
+          "added_support_pixels": 0,
+          "before_selected": 0,
+          "after_selected": 0,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        },
+        {
+          "region": 5,
+          "added_support_pixels": 0,
+          "before_selected": 0,
+          "after_selected": 0,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        },
+        {
+          "region": 6,
+          "added_support_pixels": 0,
+          "before_selected": 0,
+          "after_selected": 0,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        },
+        {
+          "region": 7,
+          "added_support_pixels": 0,
+          "before_selected": 0,
+          "after_selected": 0,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        },
+        {
+          "region": 8,
+          "added_support_pixels": 2237,
+          "before_selected": 0,
+          "after_selected": 0,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        }
+      ]
+    },
+    "original_training_points_may_have_been_seen": true,
+    "no_real_pixel_or_reading_GT": true,
+    "perturbation": "Frozen development diagnosis, not final test"
+  },
+  {
+    "id": "dev_10_narrow_fold_red_brown_10",
+    "case": "dev_10",
+    "name": "partial_dense_native",
+    "family": "native_partial",
+    "input_sha256": "6837655dc094e6935bd26d198c808780d351f4d324b2a9f7b4a34fcdbd40a594",
+    "checkpoint_sha256": "43f5476ebf795e7f5fde10dc1e870e872eab6e381489cb0a96361dc5838d537c",
+    "training_protocol_sha256": "78ca491c5a228228048064143df0a4a59c7fcf53a7a9e448944c9af5c6ef31ff",
+    "script_sha256": "0f564b0df6a14ff841cb21de8e76c01088e787ce8252840e86ff30d6b067e390",
+    "diagnostic_helper_sha256": "e5b0b087d40c4768818e555ae7cc5533c9102382540214d00bc64b3b8a00b66b",
+    "mask_sha256": "4f1c4840f640315040c6c9df91e3e3a4846480eb27886c052f96f66d147ade40",
+    "threshold": 0.5,
+    "seconds": 43.92017110809684,
+    "diagnostic": {
+      "points": {
+        "observed_red_mark": {
+          "points": 32,
+          "before": 32,
+          "after": 32,
+          "newly_selected": 0,
+          "newly_lost": 0
+        },
+        "paper_or_brown_nonmark": {
+          "points": 10,
+          "before": 0,
+          "after": 0,
+          "newly_selected": 0,
+          "newly_lost": 0
+        }
+      },
+      "selected_paper_region_added_support": [
+        {
+          "region": 0,
+          "added_support_pixels": 0,
+          "before_selected": 0,
+          "after_selected": 0,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        },
+        {
+          "region": 1,
+          "added_support_pixels": 0,
+          "before_selected": 0,
+          "after_selected": 0,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        },
+        {
+          "region": 2,
+          "added_support_pixels": 0,
+          "before_selected": 0,
+          "after_selected": 0,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        },
+        {
+          "region": 3,
+          "added_support_pixels": 0,
+          "before_selected": 0,
+          "after_selected": 0,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        }
+      ]
+    },
+    "original_training_points_may_have_been_seen": true,
+    "no_real_pixel_or_reading_GT": true,
+    "perturbation": "Frozen development diagnosis, not final test"
+  },
+  {
+    "id": "dev_08_broad_ellipses_red_brown_30",
+    "case": "dev_08",
+    "name": "partial_dense_native",
+    "family": "native_partial",
+    "input_sha256": "4aa0ad3d93f79e11ef0224e8bc7f7ff8b35a21de559d69912077d3c4e0f69910",
+    "checkpoint_sha256": "43f5476ebf795e7f5fde10dc1e870e872eab6e381489cb0a96361dc5838d537c",
+    "training_protocol_sha256": "78ca491c5a228228048064143df0a4a59c7fcf53a7a9e448944c9af5c6ef31ff",
+    "script_sha256": "0f564b0df6a14ff841cb21de8e76c01088e787ce8252840e86ff30d6b067e390",
+    "diagnostic_helper_sha256": "e5b0b087d40c4768818e555ae7cc5533c9102382540214d00bc64b3b8a00b66b",
+    "mask_sha256": "2ba2e611921a726d8f4ded3b8c08030fc7cfce0427e55614d6f04d1c75b4dec1",
+    "threshold": 0.5,
+    "seconds": 15.404414341785014,
+    "diagnostic": {
+      "points": {
+        "observed_red_mark": {
+          "points": 18,
+          "before": 18,
+          "after": 18,
+          "newly_selected": 0,
+          "newly_lost": 0
+        },
+        "paper_or_brown_nonmark": {
+          "points": 8,
+          "before": 0,
+          "after": 0,
+          "newly_selected": 0,
+          "newly_lost": 0
+        }
+      },
+      "selected_paper_region_added_support": [
+        {
+          "region": 4,
+          "added_support_pixels": 0,
+          "before_selected": 0,
+          "after_selected": 0,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        },
+        {
+          "region": 5,
+          "added_support_pixels": 15750,
+          "before_selected": 0,
+          "after_selected": 0,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        },
+        {
+          "region": 6,
+          "added_support_pixels": 17500,
+          "before_selected": 0,
+          "after_selected": 0,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        },
+        {
+          "region": 7,
+          "added_support_pixels": 0,
+          "before_selected": 0,
+          "after_selected": 0,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        },
+        {
+          "region": 8,
+          "added_support_pixels": 10614,
+          "before_selected": 0,
+          "after_selected": 0,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        }
+      ]
+    },
+    "original_training_points_may_have_been_seen": true,
+    "no_real_pixel_or_reading_GT": true,
+    "perturbation": "Frozen development diagnosis, not final test"
+  },
+  {
+    "id": "dev_10_broad_ellipses_brown_30",
+    "case": "dev_10",
+    "name": "partial_dense_native",
+    "family": "native_partial",
+    "input_sha256": "60c72af8923b19e25a2bc03d551530c6adae0ed33a819c03da276c9af02e6743",
+    "checkpoint_sha256": "43f5476ebf795e7f5fde10dc1e870e872eab6e381489cb0a96361dc5838d537c",
+    "training_protocol_sha256": "78ca491c5a228228048064143df0a4a59c7fcf53a7a9e448944c9af5c6ef31ff",
+    "script_sha256": "0f564b0df6a14ff841cb21de8e76c01088e787ce8252840e86ff30d6b067e390",
+    "diagnostic_helper_sha256": "e5b0b087d40c4768818e555ae7cc5533c9102382540214d00bc64b3b8a00b66b",
+    "mask_sha256": "15a4e8370e22af6b4f3361539116e975089fb265359f34368551859e28070aa4",
+    "threshold": 0.5,
+    "seconds": 22.334942128509283,
+    "diagnostic": {
+      "points": {
+        "observed_red_mark": {
+          "points": 32,
+          "before": 32,
+          "after": 32,
+          "newly_selected": 0,
+          "newly_lost": 0
+        },
+        "paper_or_brown_nonmark": {
+          "points": 10,
+          "before": 0,
+          "after": 0,
+          "newly_selected": 0,
+          "newly_lost": 0
+        }
+      },
+      "selected_paper_region_added_support": [
+        {
+          "region": 0,
+          "added_support_pixels": 14172,
+          "before_selected": 0,
+          "after_selected": 0,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        },
+        {
+          "region": 1,
+          "added_support_pixels": 18597,
+          "before_selected": 0,
+          "after_selected": 66,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        },
+        {
+          "region": 2,
+          "added_support_pixels": 5600,
+          "before_selected": 0,
+          "after_selected": 0,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        },
+        {
+          "region": 3,
+          "added_support_pixels": 10500,
+          "before_selected": 0,
+          "after_selected": 0,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        }
+      ]
+    },
+    "original_training_points_may_have_been_seen": true,
+    "no_real_pixel_or_reading_GT": true,
+    "perturbation": "Frozen development diagnosis, not final test"
+  },
+  {
+    "id": "dev_06_narrow_fold_brown_10",
+    "case": "dev_06",
+    "name": "partial_dense_native",
+    "family": "native_partial",
+    "input_sha256": "763b2ba87a933a28f59b07fa29cc6e52be39332a11e94c638c5c1bb36c36f6e7",
+    "checkpoint_sha256": "43f5476ebf795e7f5fde10dc1e870e872eab6e381489cb0a96361dc5838d537c",
+    "training_protocol_sha256": "78ca491c5a228228048064143df0a4a59c7fcf53a7a9e448944c9af5c6ef31ff",
+    "script_sha256": "0f564b0df6a14ff841cb21de8e76c01088e787ce8252840e86ff30d6b067e390",
+    "diagnostic_helper_sha256": "e5b0b087d40c4768818e555ae7cc5533c9102382540214d00bc64b3b8a00b66b",
+    "mask_sha256": "1e72e9203ce19864b75ff98858b008f8aedb63ffe835d30f475c6be54954c8a7",
+    "threshold": 0.5,
+    "seconds": 16.866824095137417,
+    "diagnostic": {
+      "points": {
+        "observed_red_mark": {
+          "points": 16,
+          "before": 16,
+          "after": 16,
+          "newly_selected": 0,
+          "newly_lost": 0
+        },
+        "paper_or_brown_nonmark": {
+          "points": 8,
+          "before": 0,
+          "after": 0,
+          "newly_selected": 0,
+          "newly_lost": 0
+        }
+      },
+      "selected_paper_region_added_support": [
+        {
+          "region": 9,
+          "added_support_pixels": 0,
+          "before_selected": 0,
+          "after_selected": 0,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        },
+        {
+          "region": 10,
+          "added_support_pixels": 0,
+          "before_selected": 0,
+          "after_selected": 0,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        },
+        {
+          "region": 11,
+          "added_support_pixels": 0,
+          "before_selected": 0,
+          "after_selected": 0,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        },
+        {
+          "region": 12,
+          "added_support_pixels": 0,
+          "before_selected": 0,
+          "after_selected": 0,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        }
+      ]
+    },
+    "original_training_points_may_have_been_seen": true,
+    "no_real_pixel_or_reading_GT": true,
+    "perturbation": "Frozen development diagnosis, not final test"
+  },
+  {
+    "id": "dev_10_broad_ellipses_brown_10",
+    "case": "dev_10",
+    "name": "partial_dense_native",
+    "family": "native_partial",
+    "input_sha256": "e2c5218029072696fa7fd1c4b127222ae71b8fa7c798e1e8eb763efe59db37a5",
+    "checkpoint_sha256": "43f5476ebf795e7f5fde10dc1e870e872eab6e381489cb0a96361dc5838d537c",
+    "training_protocol_sha256": "78ca491c5a228228048064143df0a4a59c7fcf53a7a9e448944c9af5c6ef31ff",
+    "script_sha256": "0f564b0df6a14ff841cb21de8e76c01088e787ce8252840e86ff30d6b067e390",
+    "diagnostic_helper_sha256": "e5b0b087d40c4768818e555ae7cc5533c9102382540214d00bc64b3b8a00b66b",
+    "mask_sha256": "c295f5ac19a816aacde6e95dd0e2f8219301e18adffacfbe8ac8960995d96233",
+    "threshold": 0.5,
+    "seconds": 20.6176197482273,
+    "diagnostic": {
+      "points": {
+        "observed_red_mark": {
+          "points": 32,
+          "before": 32,
+          "after": 32,
+          "newly_selected": 0,
+          "newly_lost": 0
+        },
+        "paper_or_brown_nonmark": {
+          "points": 10,
+          "before": 0,
+          "after": 0,
+          "newly_selected": 0,
+          "newly_lost": 0
+        }
+      },
+      "selected_paper_region_added_support": [
+        {
+          "region": 0,
+          "added_support_pixels": 14172,
+          "before_selected": 0,
+          "after_selected": 0,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        },
+        {
+          "region": 1,
+          "added_support_pixels": 18597,
+          "before_selected": 0,
+          "after_selected": 17,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        },
+        {
+          "region": 2,
+          "added_support_pixels": 5600,
+          "before_selected": 0,
+          "after_selected": 0,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        },
+        {
+          "region": 3,
+          "added_support_pixels": 10500,
+          "before_selected": 0,
+          "after_selected": 0,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        }
+      ]
+    },
+    "original_training_points_may_have_been_seen": true,
+    "no_real_pixel_or_reading_GT": true,
+    "perturbation": "Frozen development diagnosis, not final test"
+  },
+  {
+    "id": "dev_10_narrow_fold_brown_10",
+    "case": "dev_10",
+    "name": "partial_dense_native",
+    "family": "native_partial",
+    "input_sha256": "f8cfeaa5b532829257e3d6bdb09745a1e63bf9b5eaeecfef2599928373c8ee5c",
+    "checkpoint_sha256": "43f5476ebf795e7f5fde10dc1e870e872eab6e381489cb0a96361dc5838d537c",
+    "training_protocol_sha256": "78ca491c5a228228048064143df0a4a59c7fcf53a7a9e448944c9af5c6ef31ff",
+    "script_sha256": "0f564b0df6a14ff841cb21de8e76c01088e787ce8252840e86ff30d6b067e390",
+    "diagnostic_helper_sha256": "e5b0b087d40c4768818e555ae7cc5533c9102382540214d00bc64b3b8a00b66b",
+    "mask_sha256": "a824d8af83977f7aab02520023af9a9602eeb5a091c01c4ca619cfaf45d6e947",
+    "threshold": 0.5,
+    "seconds": 28.77847489155829,
+    "diagnostic": {
+      "points": {
+        "observed_red_mark": {
+          "points": 32,
+          "before": 32,
+          "after": 32,
+          "newly_selected": 0,
+          "newly_lost": 0
+        },
+        "paper_or_brown_nonmark": {
+          "points": 10,
+          "before": 0,
+          "after": 0,
+          "newly_selected": 0,
+          "newly_lost": 0
+        }
+      },
+      "selected_paper_region_added_support": [
+        {
+          "region": 0,
+          "added_support_pixels": 0,
+          "before_selected": 0,
+          "after_selected": 0,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        },
+        {
+          "region": 1,
+          "added_support_pixels": 0,
+          "before_selected": 0,
+          "after_selected": 0,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        },
+        {
+          "region": 2,
+          "added_support_pixels": 0,
+          "before_selected": 0,
+          "after_selected": 0,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        },
+        {
+          "region": 3,
+          "added_support_pixels": 0,
+          "before_selected": 0,
+          "after_selected": 0,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        }
+      ]
+    },
+    "original_training_points_may_have_been_seen": true,
+    "no_real_pixel_or_reading_GT": true,
+    "perturbation": "Frozen development diagnosis, not final test"
+  },
+  {
+    "id": "dev_10_broad_ellipses_red_brown_10",
+    "case": "dev_10",
+    "name": "partial_dense_native",
+    "family": "native_partial",
+    "input_sha256": "512091d5e593874e4fd7e316e288189ec9bd02521e141eb29e326076e759837e",
+    "checkpoint_sha256": "43f5476ebf795e7f5fde10dc1e870e872eab6e381489cb0a96361dc5838d537c",
+    "training_protocol_sha256": "78ca491c5a228228048064143df0a4a59c7fcf53a7a9e448944c9af5c6ef31ff",
+    "script_sha256": "0f564b0df6a14ff841cb21de8e76c01088e787ce8252840e86ff30d6b067e390",
+    "diagnostic_helper_sha256": "e5b0b087d40c4768818e555ae7cc5533c9102382540214d00bc64b3b8a00b66b",
+    "mask_sha256": "b08faeeec1e548b0c4fffc2082a6a0d1acca3e97f916aef55986bb597b0a79b3",
+    "threshold": 0.5,
+    "seconds": 32.772801699116826,
+    "diagnostic": {
+      "points": {
+        "observed_red_mark": {
+          "points": 32,
+          "before": 32,
+          "after": 32,
+          "newly_selected": 0,
+          "newly_lost": 0
+        },
+        "paper_or_brown_nonmark": {
+          "points": 10,
+          "before": 0,
+          "after": 0,
+          "newly_selected": 0,
+          "newly_lost": 0
+        }
+      },
+      "selected_paper_region_added_support": [
+        {
+          "region": 0,
+          "added_support_pixels": 14172,
+          "before_selected": 0,
+          "after_selected": 0,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        },
+        {
+          "region": 1,
+          "added_support_pixels": 18597,
+          "before_selected": 0,
+          "after_selected": 6,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        },
+        {
+          "region": 2,
+          "added_support_pixels": 5600,
+          "before_selected": 0,
+          "after_selected": 0,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        },
+        {
+          "region": 3,
+          "added_support_pixels": 10500,
+          "before_selected": 0,
+          "after_selected": 0,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        }
+      ]
+    },
+    "original_training_points_may_have_been_seen": true,
+    "no_real_pixel_or_reading_GT": true,
+    "perturbation": "Frozen development diagnosis, not final test"
+  },
+  {
+    "id": "dev_06_broad_ellipses_brown_30",
+    "case": "dev_06",
+    "name": "partial_dense_native",
+    "family": "native_partial",
+    "input_sha256": "8cbade62c431916ffa9fa037dfab07cbfd905f56f7836d18df1aea778d750ed9",
+    "checkpoint_sha256": "43f5476ebf795e7f5fde10dc1e870e872eab6e381489cb0a96361dc5838d537c",
+    "training_protocol_sha256": "78ca491c5a228228048064143df0a4a59c7fcf53a7a9e448944c9af5c6ef31ff",
+    "script_sha256": "0f564b0df6a14ff841cb21de8e76c01088e787ce8252840e86ff30d6b067e390",
+    "diagnostic_helper_sha256": "e5b0b087d40c4768818e555ae7cc5533c9102382540214d00bc64b3b8a00b66b",
+    "mask_sha256": "7eaf89721ea90bcf8850eac28c4bc7253294b6106cae64c460227285903177d5",
+    "threshold": 0.5,
+    "seconds": 22.818581049330533,
+    "diagnostic": {
+      "points": {
+        "observed_red_mark": {
+          "points": 16,
+          "before": 16,
+          "after": 16,
+          "newly_selected": 0,
+          "newly_lost": 0
+        },
+        "paper_or_brown_nonmark": {
+          "points": 8,
+          "before": 0,
+          "after": 0,
+          "newly_selected": 0,
+          "newly_lost": 0
+        }
+      },
+      "selected_paper_region_added_support": [
+        {
+          "region": 9,
+          "added_support_pixels": 2832,
+          "before_selected": 6,
+          "after_selected": 0,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        },
+        {
+          "region": 10,
+          "added_support_pixels": 6800,
+          "before_selected": 85,
+          "after_selected": 31,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        },
+        {
+          "region": 11,
+          "added_support_pixels": 2222,
+          "before_selected": 0,
+          "after_selected": 0,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        },
+        {
+          "region": 12,
+          "added_support_pixels": 6729,
+          "before_selected": 0,
+          "after_selected": 0,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        }
+      ]
+    },
+    "original_training_points_may_have_been_seen": true,
+    "no_real_pixel_or_reading_GT": true,
+    "perturbation": "Frozen development diagnosis, not final test"
+  },
+  {
+    "id": "dev_08_narrow_fold_red_brown_10",
+    "case": "dev_08",
+    "name": "partial_dense_native",
+    "family": "native_partial",
+    "input_sha256": "9e75c50d5a2b3782f4a384878d33cf1879a02f22b26f9981b14b9767277c256a",
+    "checkpoint_sha256": "43f5476ebf795e7f5fde10dc1e870e872eab6e381489cb0a96361dc5838d537c",
+    "training_protocol_sha256": "78ca491c5a228228048064143df0a4a59c7fcf53a7a9e448944c9af5c6ef31ff",
+    "script_sha256": "0f564b0df6a14ff841cb21de8e76c01088e787ce8252840e86ff30d6b067e390",
+    "diagnostic_helper_sha256": "e5b0b087d40c4768818e555ae7cc5533c9102382540214d00bc64b3b8a00b66b",
+    "mask_sha256": "6c48a7259208f025182e1eb75ee1d6bd36962b5db7aec6a4ed23b212bcbc8446",
+    "threshold": 0.5,
+    "seconds": 10.069953455589712,
+    "diagnostic": {
+      "points": {
+        "observed_red_mark": {
+          "points": 18,
+          "before": 18,
+          "after": 18,
+          "newly_selected": 0,
+          "newly_lost": 0
+        },
+        "paper_or_brown_nonmark": {
+          "points": 8,
+          "before": 0,
+          "after": 0,
+          "newly_selected": 0,
+          "newly_lost": 0
+        }
+      },
+      "selected_paper_region_added_support": [
+        {
+          "region": 4,
+          "added_support_pixels": 0,
+          "before_selected": 0,
+          "after_selected": 0,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        },
+        {
+          "region": 5,
+          "added_support_pixels": 0,
+          "before_selected": 0,
+          "after_selected": 0,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        },
+        {
+          "region": 6,
+          "added_support_pixels": 0,
+          "before_selected": 0,
+          "after_selected": 0,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        },
+        {
+          "region": 7,
+          "added_support_pixels": 0,
+          "before_selected": 0,
+          "after_selected": 0,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        },
+        {
+          "region": 8,
+          "added_support_pixels": 2237,
+          "before_selected": 0,
+          "after_selected": 0,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        }
+      ]
+    },
+    "original_training_points_may_have_been_seen": true,
+    "no_real_pixel_or_reading_GT": true,
+    "perturbation": "Frozen development diagnosis, not final test"
+  },
+  {
+    "id": "dev_08_narrow_fold_brown_30",
+    "case": "dev_08",
+    "name": "partial_dense_native",
+    "family": "native_partial",
+    "input_sha256": "30c8fd46177c3b5c646d251109e64f5e57e3b85821e79ffc82e0710caf380695",
+    "checkpoint_sha256": "43f5476ebf795e7f5fde10dc1e870e872eab6e381489cb0a96361dc5838d537c",
+    "training_protocol_sha256": "78ca491c5a228228048064143df0a4a59c7fcf53a7a9e448944c9af5c6ef31ff",
+    "script_sha256": "0f564b0df6a14ff841cb21de8e76c01088e787ce8252840e86ff30d6b067e390",
+    "diagnostic_helper_sha256": "e5b0b087d40c4768818e555ae7cc5533c9102382540214d00bc64b3b8a00b66b",
+    "mask_sha256": "f8fdda46e3d20a9cb18cac58ed2e7327ca87d797cf5c150f35701220e6ff9089",
+    "threshold": 0.5,
+    "seconds": 10.31121610570699,
+    "diagnostic": {
+      "points": {
+        "observed_red_mark": {
+          "points": 18,
+          "before": 18,
+          "after": 18,
+          "newly_selected": 0,
+          "newly_lost": 0
+        },
+        "paper_or_brown_nonmark": {
+          "points": 8,
+          "before": 0,
+          "after": 0,
+          "newly_selected": 0,
+          "newly_lost": 0
+        }
+      },
+      "selected_paper_region_added_support": [
+        {
+          "region": 4,
+          "added_support_pixels": 0,
+          "before_selected": 0,
+          "after_selected": 0,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        },
+        {
+          "region": 5,
+          "added_support_pixels": 0,
+          "before_selected": 0,
+          "after_selected": 0,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        },
+        {
+          "region": 6,
+          "added_support_pixels": 0,
+          "before_selected": 0,
+          "after_selected": 0,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        },
+        {
+          "region": 7,
+          "added_support_pixels": 0,
+          "before_selected": 0,
+          "after_selected": 0,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        },
+        {
+          "region": 8,
+          "added_support_pixels": 2237,
+          "before_selected": 0,
+          "after_selected": 0,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        }
+      ]
+    },
+    "original_training_points_may_have_been_seen": true,
+    "no_real_pixel_or_reading_GT": true,
+    "perturbation": "Frozen development diagnosis, not final test"
+  },
+  {
+    "id": "dev_08_broad_ellipses_brown_10",
+    "case": "dev_08",
+    "name": "partial_dense_native",
+    "family": "native_partial",
+    "input_sha256": "2b45675ce3044d88559e567d1bd0693ce0703c27bfe752ee21c558ca17b22594",
+    "checkpoint_sha256": "43f5476ebf795e7f5fde10dc1e870e872eab6e381489cb0a96361dc5838d537c",
+    "training_protocol_sha256": "78ca491c5a228228048064143df0a4a59c7fcf53a7a9e448944c9af5c6ef31ff",
+    "script_sha256": "0f564b0df6a14ff841cb21de8e76c01088e787ce8252840e86ff30d6b067e390",
+    "diagnostic_helper_sha256": "e5b0b087d40c4768818e555ae7cc5533c9102382540214d00bc64b3b8a00b66b",
+    "mask_sha256": "aec63b05e198b8ef36fd3e66560415e529755959e112b4493c47c46697148166",
+    "threshold": 0.5,
+    "seconds": 17.59730159305036,
+    "diagnostic": {
+      "points": {
+        "observed_red_mark": {
+          "points": 18,
+          "before": 18,
+          "after": 18,
+          "newly_selected": 0,
+          "newly_lost": 0
+        },
+        "paper_or_brown_nonmark": {
+          "points": 8,
+          "before": 0,
+          "after": 0,
+          "newly_selected": 0,
+          "newly_lost": 0
+        }
+      },
+      "selected_paper_region_added_support": [
+        {
+          "region": 4,
+          "added_support_pixels": 0,
+          "before_selected": 0,
+          "after_selected": 0,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        },
+        {
+          "region": 5,
+          "added_support_pixels": 15750,
+          "before_selected": 0,
+          "after_selected": 0,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        },
+        {
+          "region": 6,
+          "added_support_pixels": 17500,
+          "before_selected": 0,
+          "after_selected": 0,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        },
+        {
+          "region": 7,
+          "added_support_pixels": 0,
+          "before_selected": 0,
+          "after_selected": 0,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        },
+        {
+          "region": 8,
+          "added_support_pixels": 10614,
+          "before_selected": 0,
+          "after_selected": 0,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        }
+      ]
+    },
+    "original_training_points_may_have_been_seen": true,
+    "no_real_pixel_or_reading_GT": true,
+    "perturbation": "Frozen development diagnosis, not final test"
+  },
+  {
+    "id": "dev_06_narrow_fold_red_brown_10",
+    "case": "dev_06",
+    "name": "partial_dense_native",
+    "family": "native_partial",
+    "input_sha256": "ea6eae59045bff13da4aa576143b902cebe6660800c6d3bcd750c025b64aaba3",
+    "checkpoint_sha256": "43f5476ebf795e7f5fde10dc1e870e872eab6e381489cb0a96361dc5838d537c",
+    "training_protocol_sha256": "78ca491c5a228228048064143df0a4a59c7fcf53a7a9e448944c9af5c6ef31ff",
+    "script_sha256": "0f564b0df6a14ff841cb21de8e76c01088e787ce8252840e86ff30d6b067e390",
+    "diagnostic_helper_sha256": "e5b0b087d40c4768818e555ae7cc5533c9102382540214d00bc64b3b8a00b66b",
+    "mask_sha256": "588f4a7c20c42992e50199e816421f9845d220f8dae01e6a95cd640ea4aedb0e",
+    "threshold": 0.5,
+    "seconds": 15.753990393131971,
+    "diagnostic": {
+      "points": {
+        "observed_red_mark": {
+          "points": 16,
+          "before": 16,
+          "after": 16,
+          "newly_selected": 0,
+          "newly_lost": 0
+        },
+        "paper_or_brown_nonmark": {
+          "points": 8,
+          "before": 0,
+          "after": 0,
+          "newly_selected": 0,
+          "newly_lost": 0
+        }
+      },
+      "selected_paper_region_added_support": [
+        {
+          "region": 9,
+          "added_support_pixels": 0,
+          "before_selected": 0,
+          "after_selected": 0,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        },
+        {
+          "region": 10,
+          "added_support_pixels": 0,
+          "before_selected": 0,
+          "after_selected": 0,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        },
+        {
+          "region": 11,
+          "added_support_pixels": 0,
+          "before_selected": 0,
+          "after_selected": 0,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        },
+        {
+          "region": 12,
+          "added_support_pixels": 0,
+          "before_selected": 0,
+          "after_selected": 0,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        }
+      ]
+    },
+    "original_training_points_may_have_been_seen": true,
+    "no_real_pixel_or_reading_GT": true,
+    "perturbation": "Frozen development diagnosis, not final test"
+  },
+  {
+    "id": "dev_08_broad_ellipses_red_brown_10",
+    "case": "dev_08",
+    "name": "partial_dense_native",
+    "family": "native_partial",
+    "input_sha256": "267b8d0980870c91d5814ff33658b4829c2839f705b25f3a528c3a24e9b7b9a6",
+    "checkpoint_sha256": "43f5476ebf795e7f5fde10dc1e870e872eab6e381489cb0a96361dc5838d537c",
+    "training_protocol_sha256": "78ca491c5a228228048064143df0a4a59c7fcf53a7a9e448944c9af5c6ef31ff",
+    "script_sha256": "0f564b0df6a14ff841cb21de8e76c01088e787ce8252840e86ff30d6b067e390",
+    "diagnostic_helper_sha256": "e5b0b087d40c4768818e555ae7cc5533c9102382540214d00bc64b3b8a00b66b",
+    "mask_sha256": "f9fb5d160ded281d410af1a04bf1f7315619f68f848933689dcfb1b72087be2f",
+    "threshold": 0.5,
+    "seconds": 20.064165718853474,
+    "diagnostic": {
+      "points": {
+        "observed_red_mark": {
+          "points": 18,
+          "before": 18,
+          "after": 18,
+          "newly_selected": 0,
+          "newly_lost": 0
+        },
+        "paper_or_brown_nonmark": {
+          "points": 8,
+          "before": 0,
+          "after": 0,
+          "newly_selected": 0,
+          "newly_lost": 0
+        }
+      },
+      "selected_paper_region_added_support": [
+        {
+          "region": 4,
+          "added_support_pixels": 0,
+          "before_selected": 0,
+          "after_selected": 0,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        },
+        {
+          "region": 5,
+          "added_support_pixels": 15750,
+          "before_selected": 0,
+          "after_selected": 0,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        },
+        {
+          "region": 6,
+          "added_support_pixels": 17500,
+          "before_selected": 0,
+          "after_selected": 0,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        },
+        {
+          "region": 7,
+          "added_support_pixels": 0,
+          "before_selected": 0,
+          "after_selected": 0,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        },
+        {
+          "region": 8,
+          "added_support_pixels": 10614,
+          "before_selected": 0,
+          "after_selected": 0,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        }
+      ]
+    },
+    "original_training_points_may_have_been_seen": true,
+    "no_real_pixel_or_reading_GT": true,
+    "perturbation": "Frozen development diagnosis, not final test"
+  },
+  {
+    "id": "dev_06_narrow_fold_red_brown_30",
+    "case": "dev_06",
+    "name": "partial_dense_native",
+    "family": "native_partial",
+    "input_sha256": "4dce49cb09316a1b46f7bb63814cab419f2132aa5c8bdce76a743e85dd0d625d",
+    "checkpoint_sha256": "43f5476ebf795e7f5fde10dc1e870e872eab6e381489cb0a96361dc5838d537c",
+    "training_protocol_sha256": "78ca491c5a228228048064143df0a4a59c7fcf53a7a9e448944c9af5c6ef31ff",
+    "script_sha256": "0f564b0df6a14ff841cb21de8e76c01088e787ce8252840e86ff30d6b067e390",
+    "diagnostic_helper_sha256": "e5b0b087d40c4768818e555ae7cc5533c9102382540214d00bc64b3b8a00b66b",
+    "mask_sha256": "c17fc080c5939d59a2e9d4c1262cf3f66c9f69196107063f34cca754d01ce81e",
+    "threshold": 0.5,
+    "seconds": 19.143250497989357,
+    "diagnostic": {
+      "points": {
+        "observed_red_mark": {
+          "points": 16,
+          "before": 16,
+          "after": 16,
+          "newly_selected": 0,
+          "newly_lost": 0
+        },
+        "paper_or_brown_nonmark": {
+          "points": 8,
+          "before": 0,
+          "after": 0,
+          "newly_selected": 0,
+          "newly_lost": 0
+        }
+      },
+      "selected_paper_region_added_support": [
+        {
+          "region": 9,
+          "added_support_pixels": 0,
+          "before_selected": 0,
+          "after_selected": 0,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        },
+        {
+          "region": 10,
+          "added_support_pixels": 0,
+          "before_selected": 0,
+          "after_selected": 0,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        },
+        {
+          "region": 11,
+          "added_support_pixels": 0,
+          "before_selected": 0,
+          "after_selected": 0,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        },
+        {
+          "region": 12,
+          "added_support_pixels": 0,
+          "before_selected": 0,
+          "after_selected": 0,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        }
+      ]
+    },
+    "original_training_points_may_have_been_seen": true,
+    "no_real_pixel_or_reading_GT": true,
+    "perturbation": "Frozen development diagnosis, not final test"
+  },
+  {
+    "id": "dev_10_broad_ellipses_red_brown_30",
+    "case": "dev_10",
+    "name": "partial_dense_native",
+    "family": "native_partial",
+    "input_sha256": "31b2aedfa07aad403a325a6cb2611a9d0c016d62be75fe59e108ace398f1ae1b",
+    "checkpoint_sha256": "43f5476ebf795e7f5fde10dc1e870e872eab6e381489cb0a96361dc5838d537c",
+    "training_protocol_sha256": "78ca491c5a228228048064143df0a4a59c7fcf53a7a9e448944c9af5c6ef31ff",
+    "script_sha256": "0f564b0df6a14ff841cb21de8e76c01088e787ce8252840e86ff30d6b067e390",
+    "diagnostic_helper_sha256": "e5b0b087d40c4768818e555ae7cc5533c9102382540214d00bc64b3b8a00b66b",
+    "mask_sha256": "9cb1b418c49a2221ce7aa6d273f14e098170fe051aa02a578a548cdee85a6018",
+    "threshold": 0.5,
+    "seconds": 30.899676312692463,
+    "diagnostic": {
+      "points": {
+        "observed_red_mark": {
+          "points": 32,
+          "before": 32,
+          "after": 32,
+          "newly_selected": 0,
+          "newly_lost": 0
+        },
+        "paper_or_brown_nonmark": {
+          "points": 10,
+          "before": 0,
+          "after": 0,
+          "newly_selected": 0,
+          "newly_lost": 0
+        }
+      },
+      "selected_paper_region_added_support": [
+        {
+          "region": 0,
+          "added_support_pixels": 14172,
+          "before_selected": 0,
+          "after_selected": 0,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        },
+        {
+          "region": 1,
+          "added_support_pixels": 18597,
+          "before_selected": 0,
+          "after_selected": 22,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        },
+        {
+          "region": 2,
+          "added_support_pixels": 5600,
+          "before_selected": 0,
+          "after_selected": 0,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        },
+        {
+          "region": 3,
+          "added_support_pixels": 10500,
+          "before_selected": 0,
+          "after_selected": 0,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        }
+      ]
+    },
+    "original_training_points_may_have_been_seen": true,
+    "no_real_pixel_or_reading_GT": true,
+    "perturbation": "Frozen development diagnosis, not final test"
+  },
+  {
+    "id": "dev_06_broad_ellipses_red_brown_10",
+    "case": "dev_06",
+    "name": "partial_dense_native",
+    "family": "native_partial",
+    "input_sha256": "fed76c246ae5715638c760ec0f4b20d4039e0e2112fb1f6191e3e614a5125e67",
+    "checkpoint_sha256": "43f5476ebf795e7f5fde10dc1e870e872eab6e381489cb0a96361dc5838d537c",
+    "training_protocol_sha256": "78ca491c5a228228048064143df0a4a59c7fcf53a7a9e448944c9af5c6ef31ff",
+    "script_sha256": "0f564b0df6a14ff841cb21de8e76c01088e787ce8252840e86ff30d6b067e390",
+    "diagnostic_helper_sha256": "e5b0b087d40c4768818e555ae7cc5533c9102382540214d00bc64b3b8a00b66b",
+    "mask_sha256": "091c7a4b0d611ca4fa9e49d25d7f34aa877d435a7c9581c9b1782442eab79250",
+    "threshold": 0.5,
+    "seconds": 17.62375911977142,
+    "diagnostic": {
+      "points": {
+        "observed_red_mark": {
+          "points": 16,
+          "before": 16,
+          "after": 16,
+          "newly_selected": 0,
+          "newly_lost": 0
+        },
+        "paper_or_brown_nonmark": {
+          "points": 8,
+          "before": 0,
+          "after": 0,
+          "newly_selected": 0,
+          "newly_lost": 0
+        }
+      },
+      "selected_paper_region_added_support": [
+        {
+          "region": 9,
+          "added_support_pixels": 2832,
+          "before_selected": 6,
+          "after_selected": 5,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        },
+        {
+          "region": 10,
+          "added_support_pixels": 6800,
+          "before_selected": 85,
+          "after_selected": 34,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        },
+        {
+          "region": 11,
+          "added_support_pixels": 2222,
+          "before_selected": 0,
+          "after_selected": 0,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        },
+        {
+          "region": 12,
+          "added_support_pixels": 6729,
+          "before_selected": 0,
+          "after_selected": 0,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        }
+      ]
+    },
+    "original_training_points_may_have_been_seen": true,
+    "no_real_pixel_or_reading_GT": true,
+    "perturbation": "Frozen development diagnosis, not final test"
+  },
+  {
+    "id": "dev_10_narrow_fold_red_brown_30",
+    "case": "dev_10",
+    "name": "partial_dense_native",
+    "family": "native_partial",
+    "input_sha256": "c208ff7241ace62a8608fd5bd49b95704260d465bdd1b8359538450c1e8f99d0",
+    "checkpoint_sha256": "43f5476ebf795e7f5fde10dc1e870e872eab6e381489cb0a96361dc5838d537c",
+    "training_protocol_sha256": "78ca491c5a228228048064143df0a4a59c7fcf53a7a9e448944c9af5c6ef31ff",
+    "script_sha256": "0f564b0df6a14ff841cb21de8e76c01088e787ce8252840e86ff30d6b067e390",
+    "diagnostic_helper_sha256": "e5b0b087d40c4768818e555ae7cc5533c9102382540214d00bc64b3b8a00b66b",
+    "mask_sha256": "e062484b0bd3d36ea64680e230edb0c5aad61b22f8bb3e80e7d28f311aab8e7e",
+    "threshold": 0.5,
+    "seconds": 42.048087048344314,
+    "diagnostic": {
+      "points": {
+        "observed_red_mark": {
+          "points": 32,
+          "before": 32,
+          "after": 32,
+          "newly_selected": 0,
+          "newly_lost": 0
+        },
+        "paper_or_brown_nonmark": {
+          "points": 10,
+          "before": 0,
+          "after": 0,
+          "newly_selected": 0,
+          "newly_lost": 0
+        }
+      },
+      "selected_paper_region_added_support": [
+        {
+          "region": 0,
+          "added_support_pixels": 0,
+          "before_selected": 0,
+          "after_selected": 0,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        },
+        {
+          "region": 1,
+          "added_support_pixels": 0,
+          "before_selected": 0,
+          "after_selected": 0,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        },
+        {
+          "region": 2,
+          "added_support_pixels": 0,
+          "before_selected": 0,
+          "after_selected": 0,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        },
+        {
+          "region": 3,
+          "added_support_pixels": 0,
+          "before_selected": 0,
+          "after_selected": 0,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        }
+      ]
+    },
+    "original_training_points_may_have_been_seen": true,
+    "no_real_pixel_or_reading_GT": true,
+    "perturbation": "Frozen development diagnosis, not final test"
+  },
+  {
+    "id": "dev_06_broad_ellipses_brown_10",
+    "case": "dev_06",
+    "name": "partial_dense_native",
+    "family": "native_partial",
+    "input_sha256": "2f1041ab7be01857ec019cf4f85dd467a9e8b88b042db2861013a8fb8d557c26",
+    "checkpoint_sha256": "43f5476ebf795e7f5fde10dc1e870e872eab6e381489cb0a96361dc5838d537c",
+    "training_protocol_sha256": "78ca491c5a228228048064143df0a4a59c7fcf53a7a9e448944c9af5c6ef31ff",
+    "script_sha256": "0f564b0df6a14ff841cb21de8e76c01088e787ce8252840e86ff30d6b067e390",
+    "diagnostic_helper_sha256": "e5b0b087d40c4768818e555ae7cc5533c9102382540214d00bc64b3b8a00b66b",
+    "mask_sha256": "ce84abea59c3e69582cdbb96c8f3acb9ad7a083ea416789b4ab92de21769352a",
+    "threshold": 0.5,
+    "seconds": 21.07600742392242,
+    "diagnostic": {
+      "points": {
+        "observed_red_mark": {
+          "points": 16,
+          "before": 16,
+          "after": 16,
+          "newly_selected": 0,
+          "newly_lost": 0
+        },
+        "paper_or_brown_nonmark": {
+          "points": 8,
+          "before": 0,
+          "after": 0,
+          "newly_selected": 0,
+          "newly_lost": 0
+        }
+      },
+      "selected_paper_region_added_support": [
+        {
+          "region": 9,
+          "added_support_pixels": 2832,
+          "before_selected": 6,
+          "after_selected": 6,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        },
+        {
+          "region": 10,
+          "added_support_pixels": 6800,
+          "before_selected": 85,
+          "after_selected": 86,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        },
+        {
+          "region": 11,
+          "added_support_pixels": 2222,
+          "before_selected": 0,
+          "after_selected": 0,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        },
+        {
+          "region": 12,
+          "added_support_pixels": 6729,
+          "before_selected": 0,
+          "after_selected": 0,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        }
+      ]
+    },
+    "original_training_points_may_have_been_seen": true,
+    "no_real_pixel_or_reading_GT": true,
+    "perturbation": "Frozen development diagnosis, not final test"
+  },
+  {
+    "id": "dev_08_narrow_fold_brown_10",
+    "case": "dev_08",
+    "name": "partial_dense_native",
+    "family": "native_partial",
+    "input_sha256": "ab7541752a02d5b518c0db47249b14fad9463a5a5cf2107e26c05c481299b707",
+    "checkpoint_sha256": "43f5476ebf795e7f5fde10dc1e870e872eab6e381489cb0a96361dc5838d537c",
+    "training_protocol_sha256": "78ca491c5a228228048064143df0a4a59c7fcf53a7a9e448944c9af5c6ef31ff",
+    "script_sha256": "0f564b0df6a14ff841cb21de8e76c01088e787ce8252840e86ff30d6b067e390",
+    "diagnostic_helper_sha256": "e5b0b087d40c4768818e555ae7cc5533c9102382540214d00bc64b3b8a00b66b",
+    "mask_sha256": "6fa9b7cbdc6ec36f5a2e3c56edd2986db4a41468618bf315017f0adcbe23bfaf",
+    "threshold": 0.5,
+    "seconds": 11.443353687413037,
+    "diagnostic": {
+      "points": {
+        "observed_red_mark": {
+          "points": 18,
+          "before": 18,
+          "after": 18,
+          "newly_selected": 0,
+          "newly_lost": 0
+        },
+        "paper_or_brown_nonmark": {
+          "points": 8,
+          "before": 0,
+          "after": 0,
+          "newly_selected": 0,
+          "newly_lost": 0
+        }
+      },
+      "selected_paper_region_added_support": [
+        {
+          "region": 4,
+          "added_support_pixels": 0,
+          "before_selected": 0,
+          "after_selected": 0,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        },
+        {
+          "region": 5,
+          "added_support_pixels": 0,
+          "before_selected": 0,
+          "after_selected": 0,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        },
+        {
+          "region": 6,
+          "added_support_pixels": 0,
+          "before_selected": 0,
+          "after_selected": 0,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        },
+        {
+          "region": 7,
+          "added_support_pixels": 0,
+          "before_selected": 0,
+          "after_selected": 0,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        },
+        {
+          "region": 8,
+          "added_support_pixels": 2237,
+          "before_selected": 0,
+          "after_selected": 0,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        }
+      ]
+    },
+    "original_training_points_may_have_been_seen": true,
+    "no_real_pixel_or_reading_GT": true,
+    "perturbation": "Frozen development diagnosis, not final test"
+  },
+  {
+    "id": "dev_10_narrow_fold_brown_30",
+    "case": "dev_10",
+    "name": "partial_dense_native_brown",
+    "family": "native_partial",
+    "input_sha256": "e8ad105cdab54312f5bf2ac9ff8c7b4df2d2e322875d22171c6416984735c180",
+    "checkpoint_sha256": "4fae44635adcb9f202339c2a1c83b0861b458ea1d62459897dff3774206e9c00",
+    "training_protocol_sha256": "f6fff1142a54f3c7edd13b7a70c53f26a20bc09c6d3785871af6e3856e593b89",
+    "script_sha256": "0f564b0df6a14ff841cb21de8e76c01088e787ce8252840e86ff30d6b067e390",
+    "diagnostic_helper_sha256": "e5b0b087d40c4768818e555ae7cc5533c9102382540214d00bc64b3b8a00b66b",
+    "mask_sha256": "472ac5ef7d9b6389b81c4b0cc71cfb812370331a19cf9dabb3776eb0bb7f2624",
+    "threshold": 0.5,
+    "seconds": 9.111915671266615,
+    "diagnostic": {
+      "points": {
+        "observed_red_mark": {
+          "points": 32,
+          "before": 32,
+          "after": 32,
+          "newly_selected": 0,
+          "newly_lost": 0
+        },
+        "paper_or_brown_nonmark": {
+          "points": 10,
+          "before": 0,
+          "after": 0,
+          "newly_selected": 0,
+          "newly_lost": 0
+        }
+      },
+      "selected_paper_region_added_support": [
+        {
+          "region": 0,
+          "added_support_pixels": 0,
+          "before_selected": 0,
+          "after_selected": 0,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        },
+        {
+          "region": 1,
+          "added_support_pixels": 0,
+          "before_selected": 0,
+          "after_selected": 0,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        },
+        {
+          "region": 2,
+          "added_support_pixels": 0,
+          "before_selected": 0,
+          "after_selected": 0,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        },
+        {
+          "region": 3,
+          "added_support_pixels": 0,
+          "before_selected": 0,
+          "after_selected": 0,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        }
+      ]
+    },
+    "original_training_points_may_have_been_seen": true,
+    "no_real_pixel_or_reading_GT": true,
+    "perturbation": "Frozen development diagnosis, not final test"
+  },
+  {
+    "id": "dev_06_narrow_fold_brown_30",
+    "case": "dev_06",
+    "name": "partial_dense_native_brown",
+    "family": "native_partial",
+    "input_sha256": "923b58007732313486de7c15b33942581431b1b37dd7e4f26f735f0e14855994",
+    "checkpoint_sha256": "4fae44635adcb9f202339c2a1c83b0861b458ea1d62459897dff3774206e9c00",
+    "training_protocol_sha256": "f6fff1142a54f3c7edd13b7a70c53f26a20bc09c6d3785871af6e3856e593b89",
+    "script_sha256": "0f564b0df6a14ff841cb21de8e76c01088e787ce8252840e86ff30d6b067e390",
+    "diagnostic_helper_sha256": "e5b0b087d40c4768818e555ae7cc5533c9102382540214d00bc64b3b8a00b66b",
+    "mask_sha256": "274b1d726ec98fdb0c416611e8440858914e1a167c6914d85a6dfc4e62f30479",
+    "threshold": 0.5,
+    "seconds": 20.682132569141686,
+    "diagnostic": {
+      "points": {
+        "observed_red_mark": {
+          "points": 16,
+          "before": 16,
+          "after": 16,
+          "newly_selected": 0,
+          "newly_lost": 0
+        },
+        "paper_or_brown_nonmark": {
+          "points": 8,
+          "before": 0,
+          "after": 0,
+          "newly_selected": 0,
+          "newly_lost": 0
+        }
+      },
+      "selected_paper_region_added_support": [
+        {
+          "region": 9,
+          "added_support_pixels": 0,
+          "before_selected": 0,
+          "after_selected": 0,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        },
+        {
+          "region": 10,
+          "added_support_pixels": 0,
+          "before_selected": 0,
+          "after_selected": 0,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        },
+        {
+          "region": 11,
+          "added_support_pixels": 0,
+          "before_selected": 0,
+          "after_selected": 0,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        },
+        {
+          "region": 12,
+          "added_support_pixels": 0,
+          "before_selected": 0,
+          "after_selected": 0,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        }
+      ]
+    },
+    "original_training_points_may_have_been_seen": true,
+    "no_real_pixel_or_reading_GT": true,
+    "perturbation": "Frozen development diagnosis, not final test"
+  },
+  {
+    "id": "dev_08_broad_ellipses_brown_30",
+    "case": "dev_08",
+    "name": "partial_dense_native_brown",
+    "family": "native_partial",
+    "input_sha256": "43a51b8659d91bb09503838dc99ad5d041a3250bea1eca7694f235d56e02cd97",
+    "checkpoint_sha256": "4fae44635adcb9f202339c2a1c83b0861b458ea1d62459897dff3774206e9c00",
+    "training_protocol_sha256": "f6fff1142a54f3c7edd13b7a70c53f26a20bc09c6d3785871af6e3856e593b89",
+    "script_sha256": "0f564b0df6a14ff841cb21de8e76c01088e787ce8252840e86ff30d6b067e390",
+    "diagnostic_helper_sha256": "e5b0b087d40c4768818e555ae7cc5533c9102382540214d00bc64b3b8a00b66b",
+    "mask_sha256": "d93a400684eeb91e3bde625886fac5d31ab74cc3ac30517fc25fbecdee133740",
+    "threshold": 0.5,
+    "seconds": 15.098603484220803,
+    "diagnostic": {
+      "points": {
+        "observed_red_mark": {
+          "points": 18,
+          "before": 18,
+          "after": 18,
+          "newly_selected": 0,
+          "newly_lost": 0
+        },
+        "paper_or_brown_nonmark": {
+          "points": 8,
+          "before": 0,
+          "after": 0,
+          "newly_selected": 0,
+          "newly_lost": 0
+        }
+      },
+      "selected_paper_region_added_support": [
+        {
+          "region": 4,
+          "added_support_pixels": 0,
+          "before_selected": 0,
+          "after_selected": 0,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        },
+        {
+          "region": 5,
+          "added_support_pixels": 15750,
+          "before_selected": 0,
+          "after_selected": 0,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        },
+        {
+          "region": 6,
+          "added_support_pixels": 17500,
+          "before_selected": 0,
+          "after_selected": 0,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        },
+        {
+          "region": 7,
+          "added_support_pixels": 0,
+          "before_selected": 0,
+          "after_selected": 0,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        },
+        {
+          "region": 8,
+          "added_support_pixels": 10614,
+          "before_selected": 0,
+          "after_selected": 0,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        }
+      ]
+    },
+    "original_training_points_may_have_been_seen": true,
+    "no_real_pixel_or_reading_GT": true,
+    "perturbation": "Frozen development diagnosis, not final test"
+  },
+  {
+    "id": "dev_06_broad_ellipses_red_brown_30",
+    "case": "dev_06",
+    "name": "partial_dense_native_brown",
+    "family": "native_partial",
+    "input_sha256": "9fb43dcb94e56bda14adc28dcd6696a0d6cc7af65b927921e9951d9f3bda89c4",
+    "checkpoint_sha256": "4fae44635adcb9f202339c2a1c83b0861b458ea1d62459897dff3774206e9c00",
+    "training_protocol_sha256": "f6fff1142a54f3c7edd13b7a70c53f26a20bc09c6d3785871af6e3856e593b89",
+    "script_sha256": "0f564b0df6a14ff841cb21de8e76c01088e787ce8252840e86ff30d6b067e390",
+    "diagnostic_helper_sha256": "e5b0b087d40c4768818e555ae7cc5533c9102382540214d00bc64b3b8a00b66b",
+    "mask_sha256": "2fbcfe0f4e4a2e3f843df6da14bc2928bab6fb0ee48557897387eb23c0f98d8b",
+    "threshold": 0.5,
+    "seconds": 7.287560417316854,
+    "diagnostic": {
+      "points": {
+        "observed_red_mark": {
+          "points": 16,
+          "before": 16,
+          "after": 16,
+          "newly_selected": 0,
+          "newly_lost": 0
+        },
+        "paper_or_brown_nonmark": {
+          "points": 8,
+          "before": 0,
+          "after": 0,
+          "newly_selected": 0,
+          "newly_lost": 0
+        }
+      },
+      "selected_paper_region_added_support": [
+        {
+          "region": 9,
+          "added_support_pixels": 2832,
+          "before_selected": 6,
+          "after_selected": 0,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        },
+        {
+          "region": 10,
+          "added_support_pixels": 6800,
+          "before_selected": 103,
+          "after_selected": 7,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        },
+        {
+          "region": 11,
+          "added_support_pixels": 2222,
+          "before_selected": 0,
+          "after_selected": 0,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        },
+        {
+          "region": 12,
+          "added_support_pixels": 6729,
+          "before_selected": 0,
+          "after_selected": 0,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        }
+      ]
+    },
+    "original_training_points_may_have_been_seen": true,
+    "no_real_pixel_or_reading_GT": true,
+    "perturbation": "Frozen development diagnosis, not final test"
+  },
+  {
+    "id": "dev_08_narrow_fold_red_brown_30",
+    "case": "dev_08",
+    "name": "partial_dense_native_brown",
+    "family": "native_partial",
+    "input_sha256": "3a8f82cf1051dcbf2aaec7f5ea855aae3d41f2e94c563857f440eec40bf5074f",
+    "checkpoint_sha256": "4fae44635adcb9f202339c2a1c83b0861b458ea1d62459897dff3774206e9c00",
+    "training_protocol_sha256": "f6fff1142a54f3c7edd13b7a70c53f26a20bc09c6d3785871af6e3856e593b89",
+    "script_sha256": "0f564b0df6a14ff841cb21de8e76c01088e787ce8252840e86ff30d6b067e390",
+    "diagnostic_helper_sha256": "e5b0b087d40c4768818e555ae7cc5533c9102382540214d00bc64b3b8a00b66b",
+    "mask_sha256": "d85f7fcd5b2b10de8f8cc93e70a6db4b945035caa8cfbd052c1a98f49b696cc7",
+    "threshold": 0.5,
+    "seconds": 9.261686224490404,
+    "diagnostic": {
+      "points": {
+        "observed_red_mark": {
+          "points": 18,
+          "before": 18,
+          "after": 18,
+          "newly_selected": 0,
+          "newly_lost": 0
+        },
+        "paper_or_brown_nonmark": {
+          "points": 8,
+          "before": 0,
+          "after": 1,
+          "newly_selected": 1,
+          "newly_lost": 0
+        }
+      },
+      "selected_paper_region_added_support": [
+        {
+          "region": 4,
+          "added_support_pixels": 0,
+          "before_selected": 0,
+          "after_selected": 0,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        },
+        {
+          "region": 5,
+          "added_support_pixels": 0,
+          "before_selected": 0,
+          "after_selected": 0,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        },
+        {
+          "region": 6,
+          "added_support_pixels": 0,
+          "before_selected": 0,
+          "after_selected": 0,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        },
+        {
+          "region": 7,
+          "added_support_pixels": 0,
+          "before_selected": 0,
+          "after_selected": 0,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        },
+        {
+          "region": 8,
+          "added_support_pixels": 2237,
+          "before_selected": 0,
+          "after_selected": 0,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        }
+      ]
+    },
+    "original_training_points_may_have_been_seen": true,
+    "no_real_pixel_or_reading_GT": true,
+    "perturbation": "Frozen development diagnosis, not final test"
+  },
+  {
+    "id": "dev_10_narrow_fold_red_brown_10",
+    "case": "dev_10",
+    "name": "partial_dense_native_brown",
+    "family": "native_partial",
+    "input_sha256": "6837655dc094e6935bd26d198c808780d351f4d324b2a9f7b4a34fcdbd40a594",
+    "checkpoint_sha256": "4fae44635adcb9f202339c2a1c83b0861b458ea1d62459897dff3774206e9c00",
+    "training_protocol_sha256": "f6fff1142a54f3c7edd13b7a70c53f26a20bc09c6d3785871af6e3856e593b89",
+    "script_sha256": "0f564b0df6a14ff841cb21de8e76c01088e787ce8252840e86ff30d6b067e390",
+    "diagnostic_helper_sha256": "e5b0b087d40c4768818e555ae7cc5533c9102382540214d00bc64b3b8a00b66b",
+    "mask_sha256": "237d08130c9c256cd0a3e47515e5f5cb4d1ced9ee27ad52b650bedad488cf6cb",
+    "threshold": 0.5,
+    "seconds": 31.236170201562345,
+    "diagnostic": {
+      "points": {
+        "observed_red_mark": {
+          "points": 32,
+          "before": 32,
+          "after": 32,
+          "newly_selected": 0,
+          "newly_lost": 0
+        },
+        "paper_or_brown_nonmark": {
+          "points": 10,
+          "before": 0,
+          "after": 0,
+          "newly_selected": 0,
+          "newly_lost": 0
+        }
+      },
+      "selected_paper_region_added_support": [
+        {
+          "region": 0,
+          "added_support_pixels": 0,
+          "before_selected": 0,
+          "after_selected": 0,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        },
+        {
+          "region": 1,
+          "added_support_pixels": 0,
+          "before_selected": 0,
+          "after_selected": 0,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        },
+        {
+          "region": 2,
+          "added_support_pixels": 0,
+          "before_selected": 0,
+          "after_selected": 0,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        },
+        {
+          "region": 3,
+          "added_support_pixels": 0,
+          "before_selected": 0,
+          "after_selected": 0,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        }
+      ]
+    },
+    "original_training_points_may_have_been_seen": true,
+    "no_real_pixel_or_reading_GT": true,
+    "perturbation": "Frozen development diagnosis, not final test"
+  },
+  {
+    "id": "dev_08_broad_ellipses_red_brown_30",
+    "case": "dev_08",
+    "name": "partial_dense_native_brown",
+    "family": "native_partial",
+    "input_sha256": "4aa0ad3d93f79e11ef0224e8bc7f7ff8b35a21de559d69912077d3c4e0f69910",
+    "checkpoint_sha256": "4fae44635adcb9f202339c2a1c83b0861b458ea1d62459897dff3774206e9c00",
+    "training_protocol_sha256": "f6fff1142a54f3c7edd13b7a70c53f26a20bc09c6d3785871af6e3856e593b89",
+    "script_sha256": "0f564b0df6a14ff841cb21de8e76c01088e787ce8252840e86ff30d6b067e390",
+    "diagnostic_helper_sha256": "e5b0b087d40c4768818e555ae7cc5533c9102382540214d00bc64b3b8a00b66b",
+    "mask_sha256": "672835afc84e1b9baaeb273ff6c02e9bded1099025c3e36a97295afb3c87db3a",
+    "threshold": 0.5,
+    "seconds": 12.374676623381674,
+    "diagnostic": {
+      "points": {
+        "observed_red_mark": {
+          "points": 18,
+          "before": 18,
+          "after": 18,
+          "newly_selected": 0,
+          "newly_lost": 0
+        },
+        "paper_or_brown_nonmark": {
+          "points": 8,
+          "before": 0,
+          "after": 0,
+          "newly_selected": 0,
+          "newly_lost": 0
+        }
+      },
+      "selected_paper_region_added_support": [
+        {
+          "region": 4,
+          "added_support_pixels": 0,
+          "before_selected": 0,
+          "after_selected": 0,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        },
+        {
+          "region": 5,
+          "added_support_pixels": 15750,
+          "before_selected": 0,
+          "after_selected": 0,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        },
+        {
+          "region": 6,
+          "added_support_pixels": 17500,
+          "before_selected": 0,
+          "after_selected": 0,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        },
+        {
+          "region": 7,
+          "added_support_pixels": 0,
+          "before_selected": 0,
+          "after_selected": 0,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        },
+        {
+          "region": 8,
+          "added_support_pixels": 10614,
+          "before_selected": 0,
+          "after_selected": 0,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        }
+      ]
+    },
+    "original_training_points_may_have_been_seen": true,
+    "no_real_pixel_or_reading_GT": true,
+    "perturbation": "Frozen development diagnosis, not final test"
+  },
+  {
+    "id": "dev_10_broad_ellipses_brown_30",
+    "case": "dev_10",
+    "name": "partial_dense_native_brown",
+    "family": "native_partial",
+    "input_sha256": "60c72af8923b19e25a2bc03d551530c6adae0ed33a819c03da276c9af02e6743",
+    "checkpoint_sha256": "4fae44635adcb9f202339c2a1c83b0861b458ea1d62459897dff3774206e9c00",
+    "training_protocol_sha256": "f6fff1142a54f3c7edd13b7a70c53f26a20bc09c6d3785871af6e3856e593b89",
+    "script_sha256": "0f564b0df6a14ff841cb21de8e76c01088e787ce8252840e86ff30d6b067e390",
+    "diagnostic_helper_sha256": "e5b0b087d40c4768818e555ae7cc5533c9102382540214d00bc64b3b8a00b66b",
+    "mask_sha256": "c2fd53e381cf51a2d0cf1e1890ef84d55e208f4a51fb0691f9b13b2693faa303",
+    "threshold": 0.5,
+    "seconds": 4.954086692072451,
+    "diagnostic": {
+      "points": {
+        "observed_red_mark": {
+          "points": 32,
+          "before": 32,
+          "after": 32,
+          "newly_selected": 0,
+          "newly_lost": 0
+        },
+        "paper_or_brown_nonmark": {
+          "points": 10,
+          "before": 0,
+          "after": 0,
+          "newly_selected": 0,
+          "newly_lost": 0
+        }
+      },
+      "selected_paper_region_added_support": [
+        {
+          "region": 0,
+          "added_support_pixels": 14172,
+          "before_selected": 0,
+          "after_selected": 0,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        },
+        {
+          "region": 1,
+          "added_support_pixels": 18597,
+          "before_selected": 0,
+          "after_selected": 0,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        },
+        {
+          "region": 2,
+          "added_support_pixels": 5600,
+          "before_selected": 0,
+          "after_selected": 0,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        },
+        {
+          "region": 3,
+          "added_support_pixels": 10500,
+          "before_selected": 0,
+          "after_selected": 0,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        }
+      ]
+    },
+    "original_training_points_may_have_been_seen": true,
+    "no_real_pixel_or_reading_GT": true,
+    "perturbation": "Frozen development diagnosis, not final test"
+  },
+  {
+    "id": "dev_06_narrow_fold_brown_10",
+    "case": "dev_06",
+    "name": "partial_dense_native_brown",
+    "family": "native_partial",
+    "input_sha256": "763b2ba87a933a28f59b07fa29cc6e52be39332a11e94c638c5c1bb36c36f6e7",
+    "checkpoint_sha256": "4fae44635adcb9f202339c2a1c83b0861b458ea1d62459897dff3774206e9c00",
+    "training_protocol_sha256": "f6fff1142a54f3c7edd13b7a70c53f26a20bc09c6d3785871af6e3856e593b89",
+    "script_sha256": "0f564b0df6a14ff841cb21de8e76c01088e787ce8252840e86ff30d6b067e390",
+    "diagnostic_helper_sha256": "e5b0b087d40c4768818e555ae7cc5533c9102382540214d00bc64b3b8a00b66b",
+    "mask_sha256": "4bd2d6718eddb7f93835f86799b93bbbdb6850b7dc23b0845370d819d8981328",
+    "threshold": 0.5,
+    "seconds": 23.676186171360314,
+    "diagnostic": {
+      "points": {
+        "observed_red_mark": {
+          "points": 16,
+          "before": 16,
+          "after": 16,
+          "newly_selected": 0,
+          "newly_lost": 0
+        },
+        "paper_or_brown_nonmark": {
+          "points": 8,
+          "before": 0,
+          "after": 0,
+          "newly_selected": 0,
+          "newly_lost": 0
+        }
+      },
+      "selected_paper_region_added_support": [
+        {
+          "region": 9,
+          "added_support_pixels": 0,
+          "before_selected": 0,
+          "after_selected": 0,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        },
+        {
+          "region": 10,
+          "added_support_pixels": 0,
+          "before_selected": 0,
+          "after_selected": 0,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        },
+        {
+          "region": 11,
+          "added_support_pixels": 0,
+          "before_selected": 0,
+          "after_selected": 0,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        },
+        {
+          "region": 12,
+          "added_support_pixels": 0,
+          "before_selected": 0,
+          "after_selected": 0,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        }
+      ]
+    },
+    "original_training_points_may_have_been_seen": true,
+    "no_real_pixel_or_reading_GT": true,
+    "perturbation": "Frozen development diagnosis, not final test"
+  },
+  {
+    "id": "dev_10_broad_ellipses_brown_10",
+    "case": "dev_10",
+    "name": "partial_dense_native_brown",
+    "family": "native_partial",
+    "input_sha256": "e2c5218029072696fa7fd1c4b127222ae71b8fa7c798e1e8eb763efe59db37a5",
+    "checkpoint_sha256": "4fae44635adcb9f202339c2a1c83b0861b458ea1d62459897dff3774206e9c00",
+    "training_protocol_sha256": "f6fff1142a54f3c7edd13b7a70c53f26a20bc09c6d3785871af6e3856e593b89",
+    "script_sha256": "0f564b0df6a14ff841cb21de8e76c01088e787ce8252840e86ff30d6b067e390",
+    "diagnostic_helper_sha256": "e5b0b087d40c4768818e555ae7cc5533c9102382540214d00bc64b3b8a00b66b",
+    "mask_sha256": "e725382e15629f0ad56a29fbbfb0b9f06c5a16dede778636c54fc5c40709645d",
+    "threshold": 0.5,
+    "seconds": 16.746337953023612,
+    "diagnostic": {
+      "points": {
+        "observed_red_mark": {
+          "points": 32,
+          "before": 32,
+          "after": 32,
+          "newly_selected": 0,
+          "newly_lost": 0
+        },
+        "paper_or_brown_nonmark": {
+          "points": 10,
+          "before": 0,
+          "after": 0,
+          "newly_selected": 0,
+          "newly_lost": 0
+        }
+      },
+      "selected_paper_region_added_support": [
+        {
+          "region": 0,
+          "added_support_pixels": 14172,
+          "before_selected": 0,
+          "after_selected": 0,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        },
+        {
+          "region": 1,
+          "added_support_pixels": 18597,
+          "before_selected": 0,
+          "after_selected": 0,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        },
+        {
+          "region": 2,
+          "added_support_pixels": 5600,
+          "before_selected": 0,
+          "after_selected": 0,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        },
+        {
+          "region": 3,
+          "added_support_pixels": 10500,
+          "before_selected": 0,
+          "after_selected": 0,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        }
+      ]
+    },
+    "original_training_points_may_have_been_seen": true,
+    "no_real_pixel_or_reading_GT": true,
+    "perturbation": "Frozen development diagnosis, not final test"
+  },
+  {
+    "id": "dev_10_narrow_fold_brown_10",
+    "case": "dev_10",
+    "name": "partial_dense_native_brown",
+    "family": "native_partial",
+    "input_sha256": "f8cfeaa5b532829257e3d6bdb09745a1e63bf9b5eaeecfef2599928373c8ee5c",
+    "checkpoint_sha256": "4fae44635adcb9f202339c2a1c83b0861b458ea1d62459897dff3774206e9c00",
+    "training_protocol_sha256": "f6fff1142a54f3c7edd13b7a70c53f26a20bc09c6d3785871af6e3856e593b89",
+    "script_sha256": "0f564b0df6a14ff841cb21de8e76c01088e787ce8252840e86ff30d6b067e390",
+    "diagnostic_helper_sha256": "e5b0b087d40c4768818e555ae7cc5533c9102382540214d00bc64b3b8a00b66b",
+    "mask_sha256": "b818db3c905b4265813a58768ebd08669d62d84633d05fa6d589c7b830692d66",
+    "threshold": 0.5,
+    "seconds": 21.893988807685673,
+    "diagnostic": {
+      "points": {
+        "observed_red_mark": {
+          "points": 32,
+          "before": 32,
+          "after": 32,
+          "newly_selected": 0,
+          "newly_lost": 0
+        },
+        "paper_or_brown_nonmark": {
+          "points": 10,
+          "before": 0,
+          "after": 0,
+          "newly_selected": 0,
+          "newly_lost": 0
+        }
+      },
+      "selected_paper_region_added_support": [
+        {
+          "region": 0,
+          "added_support_pixels": 0,
+          "before_selected": 0,
+          "after_selected": 0,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        },
+        {
+          "region": 1,
+          "added_support_pixels": 0,
+          "before_selected": 0,
+          "after_selected": 0,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        },
+        {
+          "region": 2,
+          "added_support_pixels": 0,
+          "before_selected": 0,
+          "after_selected": 0,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        },
+        {
+          "region": 3,
+          "added_support_pixels": 0,
+          "before_selected": 0,
+          "after_selected": 0,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        }
+      ]
+    },
+    "original_training_points_may_have_been_seen": true,
+    "no_real_pixel_or_reading_GT": true,
+    "perturbation": "Frozen development diagnosis, not final test"
+  },
+  {
+    "id": "dev_10_broad_ellipses_red_brown_10",
+    "case": "dev_10",
+    "name": "partial_dense_native_brown",
+    "family": "native_partial",
+    "input_sha256": "512091d5e593874e4fd7e316e288189ec9bd02521e141eb29e326076e759837e",
+    "checkpoint_sha256": "4fae44635adcb9f202339c2a1c83b0861b458ea1d62459897dff3774206e9c00",
+    "training_protocol_sha256": "f6fff1142a54f3c7edd13b7a70c53f26a20bc09c6d3785871af6e3856e593b89",
+    "script_sha256": "0f564b0df6a14ff841cb21de8e76c01088e787ce8252840e86ff30d6b067e390",
+    "diagnostic_helper_sha256": "e5b0b087d40c4768818e555ae7cc5533c9102382540214d00bc64b3b8a00b66b",
+    "mask_sha256": "f32f16c3aa750bf3539fa34dc1c2f4fa1af4154047b35f527f8899c649f89f4e",
+    "threshold": 0.5,
+    "seconds": 29.176080373115838,
+    "diagnostic": {
+      "points": {
+        "observed_red_mark": {
+          "points": 32,
+          "before": 32,
+          "after": 32,
+          "newly_selected": 0,
+          "newly_lost": 0
+        },
+        "paper_or_brown_nonmark": {
+          "points": 10,
+          "before": 0,
+          "after": 0,
+          "newly_selected": 0,
+          "newly_lost": 0
+        }
+      },
+      "selected_paper_region_added_support": [
+        {
+          "region": 0,
+          "added_support_pixels": 14172,
+          "before_selected": 0,
+          "after_selected": 0,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        },
+        {
+          "region": 1,
+          "added_support_pixels": 18597,
+          "before_selected": 0,
+          "after_selected": 0,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        },
+        {
+          "region": 2,
+          "added_support_pixels": 5600,
+          "before_selected": 0,
+          "after_selected": 0,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        },
+        {
+          "region": 3,
+          "added_support_pixels": 10500,
+          "before_selected": 0,
+          "after_selected": 0,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        }
+      ]
+    },
+    "original_training_points_may_have_been_seen": true,
+    "no_real_pixel_or_reading_GT": true,
+    "perturbation": "Frozen development diagnosis, not final test"
+  },
+  {
+    "id": "dev_06_broad_ellipses_brown_30",
+    "case": "dev_06",
+    "name": "partial_dense_native_brown",
+    "family": "native_partial",
+    "input_sha256": "8cbade62c431916ffa9fa037dfab07cbfd905f56f7836d18df1aea778d750ed9",
+    "checkpoint_sha256": "4fae44635adcb9f202339c2a1c83b0861b458ea1d62459897dff3774206e9c00",
+    "training_protocol_sha256": "f6fff1142a54f3c7edd13b7a70c53f26a20bc09c6d3785871af6e3856e593b89",
+    "script_sha256": "0f564b0df6a14ff841cb21de8e76c01088e787ce8252840e86ff30d6b067e390",
+    "diagnostic_helper_sha256": "e5b0b087d40c4768818e555ae7cc5533c9102382540214d00bc64b3b8a00b66b",
+    "mask_sha256": "a47b85fa366fb970a2d10c644079addaebde4440724218e1669f12f18884ff9e",
+    "threshold": 0.5,
+    "seconds": 17.101664409041405,
+    "diagnostic": {
+      "points": {
+        "observed_red_mark": {
+          "points": 16,
+          "before": 16,
+          "after": 16,
+          "newly_selected": 0,
+          "newly_lost": 0
+        },
+        "paper_or_brown_nonmark": {
+          "points": 8,
+          "before": 0,
+          "after": 0,
+          "newly_selected": 0,
+          "newly_lost": 0
+        }
+      },
+      "selected_paper_region_added_support": [
+        {
+          "region": 9,
+          "added_support_pixels": 2832,
+          "before_selected": 6,
+          "after_selected": 0,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        },
+        {
+          "region": 10,
+          "added_support_pixels": 6800,
+          "before_selected": 103,
+          "after_selected": 20,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        },
+        {
+          "region": 11,
+          "added_support_pixels": 2222,
+          "before_selected": 0,
+          "after_selected": 0,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        },
+        {
+          "region": 12,
+          "added_support_pixels": 6729,
+          "before_selected": 0,
+          "after_selected": 0,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        }
+      ]
+    },
+    "original_training_points_may_have_been_seen": true,
+    "no_real_pixel_or_reading_GT": true,
+    "perturbation": "Frozen development diagnosis, not final test"
+  },
+  {
+    "id": "dev_08_narrow_fold_red_brown_10",
+    "case": "dev_08",
+    "name": "partial_dense_native_brown",
+    "family": "native_partial",
+    "input_sha256": "9e75c50d5a2b3782f4a384878d33cf1879a02f22b26f9981b14b9767277c256a",
+    "checkpoint_sha256": "4fae44635adcb9f202339c2a1c83b0861b458ea1d62459897dff3774206e9c00",
+    "training_protocol_sha256": "f6fff1142a54f3c7edd13b7a70c53f26a20bc09c6d3785871af6e3856e593b89",
+    "script_sha256": "0f564b0df6a14ff841cb21de8e76c01088e787ce8252840e86ff30d6b067e390",
+    "diagnostic_helper_sha256": "e5b0b087d40c4768818e555ae7cc5533c9102382540214d00bc64b3b8a00b66b",
+    "mask_sha256": "eee861e99fb446b6bc4a7b4bea210897c10b3bba6f5b297c4797fb374eba637e",
+    "threshold": 0.5,
+    "seconds": 8.949191370047629,
+    "diagnostic": {
+      "points": {
+        "observed_red_mark": {
+          "points": 18,
+          "before": 18,
+          "after": 18,
+          "newly_selected": 0,
+          "newly_lost": 0
+        },
+        "paper_or_brown_nonmark": {
+          "points": 8,
+          "before": 0,
+          "after": 0,
+          "newly_selected": 0,
+          "newly_lost": 0
+        }
+      },
+      "selected_paper_region_added_support": [
+        {
+          "region": 4,
+          "added_support_pixels": 0,
+          "before_selected": 0,
+          "after_selected": 0,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        },
+        {
+          "region": 5,
+          "added_support_pixels": 0,
+          "before_selected": 0,
+          "after_selected": 0,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        },
+        {
+          "region": 6,
+          "added_support_pixels": 0,
+          "before_selected": 0,
+          "after_selected": 0,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        },
+        {
+          "region": 7,
+          "added_support_pixels": 0,
+          "before_selected": 0,
+          "after_selected": 0,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        },
+        {
+          "region": 8,
+          "added_support_pixels": 2237,
+          "before_selected": 0,
+          "after_selected": 0,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        }
+      ]
+    },
+    "original_training_points_may_have_been_seen": true,
+    "no_real_pixel_or_reading_GT": true,
+    "perturbation": "Frozen development diagnosis, not final test"
+  },
+  {
+    "id": "dev_08_narrow_fold_brown_30",
+    "case": "dev_08",
+    "name": "partial_dense_native_brown",
+    "family": "native_partial",
+    "input_sha256": "30c8fd46177c3b5c646d251109e64f5e57e3b85821e79ffc82e0710caf380695",
+    "checkpoint_sha256": "4fae44635adcb9f202339c2a1c83b0861b458ea1d62459897dff3774206e9c00",
+    "training_protocol_sha256": "f6fff1142a54f3c7edd13b7a70c53f26a20bc09c6d3785871af6e3856e593b89",
+    "script_sha256": "0f564b0df6a14ff841cb21de8e76c01088e787ce8252840e86ff30d6b067e390",
+    "diagnostic_helper_sha256": "e5b0b087d40c4768818e555ae7cc5533c9102382540214d00bc64b3b8a00b66b",
+    "mask_sha256": "498fa2cea993c27564af2057117dd73ecd7e99ef022bc78b4eed0392b312b79e",
+    "threshold": 0.5,
+    "seconds": 9.636704009957612,
+    "diagnostic": {
+      "points": {
+        "observed_red_mark": {
+          "points": 18,
+          "before": 18,
+          "after": 18,
+          "newly_selected": 0,
+          "newly_lost": 0
+        },
+        "paper_or_brown_nonmark": {
+          "points": 8,
+          "before": 0,
+          "after": 0,
+          "newly_selected": 0,
+          "newly_lost": 0
+        }
+      },
+      "selected_paper_region_added_support": [
+        {
+          "region": 4,
+          "added_support_pixels": 0,
+          "before_selected": 0,
+          "after_selected": 0,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        },
+        {
+          "region": 5,
+          "added_support_pixels": 0,
+          "before_selected": 0,
+          "after_selected": 0,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        },
+        {
+          "region": 6,
+          "added_support_pixels": 0,
+          "before_selected": 0,
+          "after_selected": 0,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        },
+        {
+          "region": 7,
+          "added_support_pixels": 0,
+          "before_selected": 0,
+          "after_selected": 0,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        },
+        {
+          "region": 8,
+          "added_support_pixels": 2237,
+          "before_selected": 0,
+          "after_selected": 0,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        }
+      ]
+    },
+    "original_training_points_may_have_been_seen": true,
+    "no_real_pixel_or_reading_GT": true,
+    "perturbation": "Frozen development diagnosis, not final test"
+  },
+  {
+    "id": "dev_08_broad_ellipses_brown_10",
+    "case": "dev_08",
+    "name": "partial_dense_native_brown",
+    "family": "native_partial",
+    "input_sha256": "2b45675ce3044d88559e567d1bd0693ce0703c27bfe752ee21c558ca17b22594",
+    "checkpoint_sha256": "4fae44635adcb9f202339c2a1c83b0861b458ea1d62459897dff3774206e9c00",
+    "training_protocol_sha256": "f6fff1142a54f3c7edd13b7a70c53f26a20bc09c6d3785871af6e3856e593b89",
+    "script_sha256": "0f564b0df6a14ff841cb21de8e76c01088e787ce8252840e86ff30d6b067e390",
+    "diagnostic_helper_sha256": "e5b0b087d40c4768818e555ae7cc5533c9102382540214d00bc64b3b8a00b66b",
+    "mask_sha256": "88b66b62bb89e8f4da04d046117bf8f89c204e413dc6f90a1bfe8bbd24043c79",
+    "threshold": 0.5,
+    "seconds": 17.36941292323172,
+    "diagnostic": {
+      "points": {
+        "observed_red_mark": {
+          "points": 18,
+          "before": 18,
+          "after": 18,
+          "newly_selected": 0,
+          "newly_lost": 0
+        },
+        "paper_or_brown_nonmark": {
+          "points": 8,
+          "before": 0,
+          "after": 0,
+          "newly_selected": 0,
+          "newly_lost": 0
+        }
+      },
+      "selected_paper_region_added_support": [
+        {
+          "region": 4,
+          "added_support_pixels": 0,
+          "before_selected": 0,
+          "after_selected": 0,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        },
+        {
+          "region": 5,
+          "added_support_pixels": 15750,
+          "before_selected": 0,
+          "after_selected": 0,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        },
+        {
+          "region": 6,
+          "added_support_pixels": 17500,
+          "before_selected": 0,
+          "after_selected": 0,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        },
+        {
+          "region": 7,
+          "added_support_pixels": 0,
+          "before_selected": 0,
+          "after_selected": 0,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        },
+        {
+          "region": 8,
+          "added_support_pixels": 10614,
+          "before_selected": 0,
+          "after_selected": 0,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        }
+      ]
+    },
+    "original_training_points_may_have_been_seen": true,
+    "no_real_pixel_or_reading_GT": true,
+    "perturbation": "Frozen development diagnosis, not final test"
+  },
+  {
+    "id": "dev_06_narrow_fold_red_brown_10",
+    "case": "dev_06",
+    "name": "partial_dense_native_brown",
+    "family": "native_partial",
+    "input_sha256": "ea6eae59045bff13da4aa576143b902cebe6660800c6d3bcd750c025b64aaba3",
+    "checkpoint_sha256": "4fae44635adcb9f202339c2a1c83b0861b458ea1d62459897dff3774206e9c00",
+    "training_protocol_sha256": "f6fff1142a54f3c7edd13b7a70c53f26a20bc09c6d3785871af6e3856e593b89",
+    "script_sha256": "0f564b0df6a14ff841cb21de8e76c01088e787ce8252840e86ff30d6b067e390",
+    "diagnostic_helper_sha256": "e5b0b087d40c4768818e555ae7cc5533c9102382540214d00bc64b3b8a00b66b",
+    "mask_sha256": "789fe2a7b8a28138656f7e45506bf110011ccba01dcd5cfa4b42cd14dc65b40c",
+    "threshold": 0.5,
+    "seconds": 19.087472258135676,
+    "diagnostic": {
+      "points": {
+        "observed_red_mark": {
+          "points": 16,
+          "before": 16,
+          "after": 16,
+          "newly_selected": 0,
+          "newly_lost": 0
+        },
+        "paper_or_brown_nonmark": {
+          "points": 8,
+          "before": 0,
+          "after": 0,
+          "newly_selected": 0,
+          "newly_lost": 0
+        }
+      },
+      "selected_paper_region_added_support": [
+        {
+          "region": 9,
+          "added_support_pixels": 0,
+          "before_selected": 0,
+          "after_selected": 0,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        },
+        {
+          "region": 10,
+          "added_support_pixels": 0,
+          "before_selected": 0,
+          "after_selected": 0,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        },
+        {
+          "region": 11,
+          "added_support_pixels": 0,
+          "before_selected": 0,
+          "after_selected": 0,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        },
+        {
+          "region": 12,
+          "added_support_pixels": 0,
+          "before_selected": 0,
+          "after_selected": 0,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        }
+      ]
+    },
+    "original_training_points_may_have_been_seen": true,
+    "no_real_pixel_or_reading_GT": true,
+    "perturbation": "Frozen development diagnosis, not final test"
+  },
+  {
+    "id": "dev_08_broad_ellipses_red_brown_10",
+    "case": "dev_08",
+    "name": "partial_dense_native_brown",
+    "family": "native_partial",
+    "input_sha256": "267b8d0980870c91d5814ff33658b4829c2839f705b25f3a528c3a24e9b7b9a6",
+    "checkpoint_sha256": "4fae44635adcb9f202339c2a1c83b0861b458ea1d62459897dff3774206e9c00",
+    "training_protocol_sha256": "f6fff1142a54f3c7edd13b7a70c53f26a20bc09c6d3785871af6e3856e593b89",
+    "script_sha256": "0f564b0df6a14ff841cb21de8e76c01088e787ce8252840e86ff30d6b067e390",
+    "diagnostic_helper_sha256": "e5b0b087d40c4768818e555ae7cc5533c9102382540214d00bc64b3b8a00b66b",
+    "mask_sha256": "18dc9527f17c9bb6a86c785aa4347885a07ffb4aae4b0f4ecd671db756c26576",
+    "threshold": 0.5,
+    "seconds": 12.889581169001758,
+    "diagnostic": {
+      "points": {
+        "observed_red_mark": {
+          "points": 18,
+          "before": 18,
+          "after": 18,
+          "newly_selected": 0,
+          "newly_lost": 0
+        },
+        "paper_or_brown_nonmark": {
+          "points": 8,
+          "before": 0,
+          "after": 0,
+          "newly_selected": 0,
+          "newly_lost": 0
+        }
+      },
+      "selected_paper_region_added_support": [
+        {
+          "region": 4,
+          "added_support_pixels": 0,
+          "before_selected": 0,
+          "after_selected": 0,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        },
+        {
+          "region": 5,
+          "added_support_pixels": 15750,
+          "before_selected": 0,
+          "after_selected": 0,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        },
+        {
+          "region": 6,
+          "added_support_pixels": 17500,
+          "before_selected": 0,
+          "after_selected": 0,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        },
+        {
+          "region": 7,
+          "added_support_pixels": 0,
+          "before_selected": 0,
+          "after_selected": 0,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        },
+        {
+          "region": 8,
+          "added_support_pixels": 10614,
+          "before_selected": 0,
+          "after_selected": 0,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        }
+      ]
+    },
+    "original_training_points_may_have_been_seen": true,
+    "no_real_pixel_or_reading_GT": true,
+    "perturbation": "Frozen development diagnosis, not final test"
+  },
+  {
+    "id": "dev_06_narrow_fold_red_brown_30",
+    "case": "dev_06",
+    "name": "partial_dense_native_brown",
+    "family": "native_partial",
+    "input_sha256": "4dce49cb09316a1b46f7bb63814cab419f2132aa5c8bdce76a743e85dd0d625d",
+    "checkpoint_sha256": "4fae44635adcb9f202339c2a1c83b0861b458ea1d62459897dff3774206e9c00",
+    "training_protocol_sha256": "f6fff1142a54f3c7edd13b7a70c53f26a20bc09c6d3785871af6e3856e593b89",
+    "script_sha256": "0f564b0df6a14ff841cb21de8e76c01088e787ce8252840e86ff30d6b067e390",
+    "diagnostic_helper_sha256": "e5b0b087d40c4768818e555ae7cc5533c9102382540214d00bc64b3b8a00b66b",
+    "mask_sha256": "3c49d5abe92ff096918c8b92a4b82e9eb97f922960743566d8725bac1673f6ab",
+    "threshold": 0.5,
+    "seconds": 14.341157435439527,
+    "diagnostic": {
+      "points": {
+        "observed_red_mark": {
+          "points": 16,
+          "before": 16,
+          "after": 16,
+          "newly_selected": 0,
+          "newly_lost": 0
+        },
+        "paper_or_brown_nonmark": {
+          "points": 8,
+          "before": 0,
+          "after": 0,
+          "newly_selected": 0,
+          "newly_lost": 0
+        }
+      },
+      "selected_paper_region_added_support": [
+        {
+          "region": 9,
+          "added_support_pixels": 0,
+          "before_selected": 0,
+          "after_selected": 0,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        },
+        {
+          "region": 10,
+          "added_support_pixels": 0,
+          "before_selected": 0,
+          "after_selected": 0,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        },
+        {
+          "region": 11,
+          "added_support_pixels": 0,
+          "before_selected": 0,
+          "after_selected": 0,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        },
+        {
+          "region": 12,
+          "added_support_pixels": 0,
+          "before_selected": 0,
+          "after_selected": 0,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        }
+      ]
+    },
+    "original_training_points_may_have_been_seen": true,
+    "no_real_pixel_or_reading_GT": true,
+    "perturbation": "Frozen development diagnosis, not final test"
+  },
+  {
+    "id": "dev_10_broad_ellipses_red_brown_30",
+    "case": "dev_10",
+    "name": "partial_dense_native_brown",
+    "family": "native_partial",
+    "input_sha256": "31b2aedfa07aad403a325a6cb2611a9d0c016d62be75fe59e108ace398f1ae1b",
+    "checkpoint_sha256": "4fae44635adcb9f202339c2a1c83b0861b458ea1d62459897dff3774206e9c00",
+    "training_protocol_sha256": "f6fff1142a54f3c7edd13b7a70c53f26a20bc09c6d3785871af6e3856e593b89",
+    "script_sha256": "0f564b0df6a14ff841cb21de8e76c01088e787ce8252840e86ff30d6b067e390",
+    "diagnostic_helper_sha256": "e5b0b087d40c4768818e555ae7cc5533c9102382540214d00bc64b3b8a00b66b",
+    "mask_sha256": "469a145e01814c1c1f918385cab2f135cf7032f69dac1d7ff29539795602d7d4",
+    "threshold": 0.5,
+    "seconds": 23.452310238033533,
+    "diagnostic": {
+      "points": {
+        "observed_red_mark": {
+          "points": 32,
+          "before": 32,
+          "after": 32,
+          "newly_selected": 0,
+          "newly_lost": 0
+        },
+        "paper_or_brown_nonmark": {
+          "points": 10,
+          "before": 0,
+          "after": 0,
+          "newly_selected": 0,
+          "newly_lost": 0
+        }
+      },
+      "selected_paper_region_added_support": [
+        {
+          "region": 0,
+          "added_support_pixels": 14172,
+          "before_selected": 0,
+          "after_selected": 0,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        },
+        {
+          "region": 1,
+          "added_support_pixels": 18597,
+          "before_selected": 0,
+          "after_selected": 0,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        },
+        {
+          "region": 2,
+          "added_support_pixels": 5600,
+          "before_selected": 0,
+          "after_selected": 0,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        },
+        {
+          "region": 3,
+          "added_support_pixels": 10500,
+          "before_selected": 0,
+          "after_selected": 0,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        }
+      ]
+    },
+    "original_training_points_may_have_been_seen": true,
+    "no_real_pixel_or_reading_GT": true,
+    "perturbation": "Frozen development diagnosis, not final test"
+  },
+  {
+    "id": "dev_06_broad_ellipses_red_brown_10",
+    "case": "dev_06",
+    "name": "partial_dense_native_brown",
+    "family": "native_partial",
+    "input_sha256": "fed76c246ae5715638c760ec0f4b20d4039e0e2112fb1f6191e3e614a5125e67",
+    "checkpoint_sha256": "4fae44635adcb9f202339c2a1c83b0861b458ea1d62459897dff3774206e9c00",
+    "training_protocol_sha256": "f6fff1142a54f3c7edd13b7a70c53f26a20bc09c6d3785871af6e3856e593b89",
+    "script_sha256": "0f564b0df6a14ff841cb21de8e76c01088e787ce8252840e86ff30d6b067e390",
+    "diagnostic_helper_sha256": "e5b0b087d40c4768818e555ae7cc5533c9102382540214d00bc64b3b8a00b66b",
+    "mask_sha256": "b9721737cecac09ecc5ee9708c91002f6aa49165d1b81829edad6484222ee51a",
+    "threshold": 0.5,
+    "seconds": 8.245227030478418,
+    "diagnostic": {
+      "points": {
+        "observed_red_mark": {
+          "points": 16,
+          "before": 16,
+          "after": 16,
+          "newly_selected": 0,
+          "newly_lost": 0
+        },
+        "paper_or_brown_nonmark": {
+          "points": 8,
+          "before": 0,
+          "after": 0,
+          "newly_selected": 0,
+          "newly_lost": 0
+        }
+      },
+      "selected_paper_region_added_support": [
+        {
+          "region": 9,
+          "added_support_pixels": 2832,
+          "before_selected": 6,
+          "after_selected": 3,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        },
+        {
+          "region": 10,
+          "added_support_pixels": 6800,
+          "before_selected": 103,
+          "after_selected": 31,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        },
+        {
+          "region": 11,
+          "added_support_pixels": 2222,
+          "before_selected": 0,
+          "after_selected": 0,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        },
+        {
+          "region": 12,
+          "added_support_pixels": 6729,
+          "before_selected": 0,
+          "after_selected": 0,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        }
+      ]
+    },
+    "original_training_points_may_have_been_seen": true,
+    "no_real_pixel_or_reading_GT": true,
+    "perturbation": "Frozen development diagnosis, not final test"
+  },
+  {
+    "id": "dev_10_narrow_fold_red_brown_30",
+    "case": "dev_10",
+    "name": "partial_dense_native_brown",
+    "family": "native_partial",
+    "input_sha256": "c208ff7241ace62a8608fd5bd49b95704260d465bdd1b8359538450c1e8f99d0",
+    "checkpoint_sha256": "4fae44635adcb9f202339c2a1c83b0861b458ea1d62459897dff3774206e9c00",
+    "training_protocol_sha256": "f6fff1142a54f3c7edd13b7a70c53f26a20bc09c6d3785871af6e3856e593b89",
+    "script_sha256": "0f564b0df6a14ff841cb21de8e76c01088e787ce8252840e86ff30d6b067e390",
+    "diagnostic_helper_sha256": "e5b0b087d40c4768818e555ae7cc5533c9102382540214d00bc64b3b8a00b66b",
+    "mask_sha256": "340717f035772ec595c99393e10cdbf7738a78dda4fa70d42c3d0a32135384f5",
+    "threshold": 0.5,
+    "seconds": 38.81325510609895,
+    "diagnostic": {
+      "points": {
+        "observed_red_mark": {
+          "points": 32,
+          "before": 32,
+          "after": 32,
+          "newly_selected": 0,
+          "newly_lost": 0
+        },
+        "paper_or_brown_nonmark": {
+          "points": 10,
+          "before": 0,
+          "after": 0,
+          "newly_selected": 0,
+          "newly_lost": 0
+        }
+      },
+      "selected_paper_region_added_support": [
+        {
+          "region": 0,
+          "added_support_pixels": 0,
+          "before_selected": 0,
+          "after_selected": 0,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        },
+        {
+          "region": 1,
+          "added_support_pixels": 0,
+          "before_selected": 0,
+          "after_selected": 0,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        },
+        {
+          "region": 2,
+          "added_support_pixels": 0,
+          "before_selected": 0,
+          "after_selected": 0,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        },
+        {
+          "region": 3,
+          "added_support_pixels": 0,
+          "before_selected": 0,
+          "after_selected": 0,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        }
+      ]
+    },
+    "original_training_points_may_have_been_seen": true,
+    "no_real_pixel_or_reading_GT": true,
+    "perturbation": "Frozen development diagnosis, not final test"
+  },
+  {
+    "id": "dev_06_broad_ellipses_brown_10",
+    "case": "dev_06",
+    "name": "partial_dense_native_brown",
+    "family": "native_partial",
+    "input_sha256": "2f1041ab7be01857ec019cf4f85dd467a9e8b88b042db2861013a8fb8d557c26",
+    "checkpoint_sha256": "4fae44635adcb9f202339c2a1c83b0861b458ea1d62459897dff3774206e9c00",
+    "training_protocol_sha256": "f6fff1142a54f3c7edd13b7a70c53f26a20bc09c6d3785871af6e3856e593b89",
+    "script_sha256": "0f564b0df6a14ff841cb21de8e76c01088e787ce8252840e86ff30d6b067e390",
+    "diagnostic_helper_sha256": "e5b0b087d40c4768818e555ae7cc5533c9102382540214d00bc64b3b8a00b66b",
+    "mask_sha256": "ad63b2a0f51a508e1fe37c032c07a4fb97bb0953d5003101c7e296538fa82949",
+    "threshold": 0.5,
+    "seconds": 17.949249574914575,
+    "diagnostic": {
+      "points": {
+        "observed_red_mark": {
+          "points": 16,
+          "before": 16,
+          "after": 16,
+          "newly_selected": 0,
+          "newly_lost": 0
+        },
+        "paper_or_brown_nonmark": {
+          "points": 8,
+          "before": 0,
+          "after": 0,
+          "newly_selected": 0,
+          "newly_lost": 0
+        }
+      },
+      "selected_paper_region_added_support": [
+        {
+          "region": 9,
+          "added_support_pixels": 2832,
+          "before_selected": 6,
+          "after_selected": 5,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        },
+        {
+          "region": 10,
+          "added_support_pixels": 6800,
+          "before_selected": 103,
+          "after_selected": 83,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        },
+        {
+          "region": 11,
+          "added_support_pixels": 2222,
+          "before_selected": 0,
+          "after_selected": 0,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        },
+        {
+          "region": 12,
+          "added_support_pixels": 6729,
+          "before_selected": 0,
+          "after_selected": 0,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        }
+      ]
+    },
+    "original_training_points_may_have_been_seen": true,
+    "no_real_pixel_or_reading_GT": true,
+    "perturbation": "Frozen development diagnosis, not final test"
+  },
+  {
+    "id": "dev_08_narrow_fold_brown_10",
+    "case": "dev_08",
+    "name": "partial_dense_native_brown",
+    "family": "native_partial",
+    "input_sha256": "ab7541752a02d5b518c0db47249b14fad9463a5a5cf2107e26c05c481299b707",
+    "checkpoint_sha256": "4fae44635adcb9f202339c2a1c83b0861b458ea1d62459897dff3774206e9c00",
+    "training_protocol_sha256": "f6fff1142a54f3c7edd13b7a70c53f26a20bc09c6d3785871af6e3856e593b89",
+    "script_sha256": "0f564b0df6a14ff841cb21de8e76c01088e787ce8252840e86ff30d6b067e390",
+    "diagnostic_helper_sha256": "e5b0b087d40c4768818e555ae7cc5533c9102382540214d00bc64b3b8a00b66b",
+    "mask_sha256": "b534c406bd34d9ddea07a562985e89d64ef65e51a4d74c7dd0e0fa4402c83cee",
+    "threshold": 0.5,
+    "seconds": 11.602522488683462,
+    "diagnostic": {
+      "points": {
+        "observed_red_mark": {
+          "points": 18,
+          "before": 18,
+          "after": 18,
+          "newly_selected": 0,
+          "newly_lost": 0
+        },
+        "paper_or_brown_nonmark": {
+          "points": 8,
+          "before": 0,
+          "after": 0,
+          "newly_selected": 0,
+          "newly_lost": 0
+        }
+      },
+      "selected_paper_region_added_support": [
+        {
+          "region": 4,
+          "added_support_pixels": 0,
+          "before_selected": 0,
+          "after_selected": 0,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        },
+        {
+          "region": 5,
+          "added_support_pixels": 0,
+          "before_selected": 0,
+          "after_selected": 0,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        },
+        {
+          "region": 6,
+          "added_support_pixels": 0,
+          "before_selected": 0,
+          "after_selected": 0,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        },
+        {
+          "region": 7,
+          "added_support_pixels": 0,
+          "before_selected": 0,
+          "after_selected": 0,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        },
+        {
+          "region": 8,
+          "added_support_pixels": 2237,
+          "before_selected": 0,
+          "after_selected": 0,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        }
+      ]
+    },
+    "original_training_points_may_have_been_seen": true,
+    "no_real_pixel_or_reading_GT": true,
+    "perturbation": "Frozen development diagnosis, not final test"
+  }
+]

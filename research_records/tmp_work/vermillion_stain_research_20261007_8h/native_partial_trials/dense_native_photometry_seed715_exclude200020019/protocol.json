@@ -1,0 +1,31 @@
+{
+  "name": "dense_native_photometry",
+  "steps": 8000,
+  "seed": 715,
+  "start_utc": "2026-10-07T18:12:58.470961+00:00",
+  "initial_checkpoint": "/home/imoto/Heritage_Pipeline/tmp_work/vermillion_stain_research_20261007_8h/learned_trials/relative_overlap_seed413/last.pth",
+  "initial_checkpoint_sha256": "cab717380cdd42485bdb78cba9e0afbbc7bae91878d544e85b43b9ebe7b59c77",
+  "source_sha256": "b44487c360d2c968e1955028c339d75664caa4b3bc1e4095eb29ab17b5381ddc",
+  "actual_training_books": [
+    "200021086",
+    "200021763"
+  ],
+  "excluded_development_books": [
+    "200020019"
+  ],
+  "point_count": 68,
+  "paper_regions": 9,
+  "dense_negative": true,
+  "brown_augmentation": false,
+  "selection": "Fixed LAST8000 and .5 threshold; developmental comparison, no local validation or external inspection",
+  "exposure": "All conditions: 4 ordinary synthetic +4 real texture synthetic +4 native original crops per step; identical anchors and seed",
+  "losses": "Synthetic both heads, real texture synthetic mark head, native partial mark loss averaged over positive and negative classes with coefficient .5",
+  "labels": "Tentative original-only points and no-visible-red rectangles, not expert or chemical GT; unlabeled pixels ignored",
+  "perturbation": "Known multiplicative gamma-RGB smooth brown fields; approximate augmentation, not physical stain model",
+  "points_sha256": "7ebaf076b01f8a579a54e53c9466125ee3db42621e7bd967dd62f783b7c7a2d3",
+  "regions_sha256": "3a8474f07d75e2c71ec6076055e7ec6b4622a70882a1d2ae610d298e5ce4bf82",
+  "photometry": "90 percent native samples; multiplicative per-channel loggain normal std.15 plus neutral spatial gradient std.10; raw and estimated paper transformed together, clipped and relative OD recomputed",
+  "photometry_labels": "Same mark/paper annotations and coordinates; input paper estimate from original alone, never clean GT",
+  "source_parent_sha256": "333c116f334e711311b43acd3d9aa327ad36c100cfda36bf133b6b6c29139533",
+  "novelty": "Photometric augmentation is known; this is a controlled paper-color dependence hypothesis, not a new-method claim"
+}

@@ -1,0 +1,39 @@
+{
+  "status": "verified",
+  "pages": 12,
+  "fixed_rois": 38,
+  "all_review_crops": 72,
+  "png_hashes_checked": 408,
+  "regression": {
+    "known_dense_stain": {
+      "candidate_pixels": 3131,
+      "edit_allowed_pixels": 3131
+    },
+    "seal_roi": {
+      "previous_red_pixels": 20027,
+      "previous_red_protected_pixels": 20027,
+      "confirmed_red_pixels": 19555,
+      "manual_recall": false
+    }
+  },
+  "actual_mask_overlaps": {
+    "stain_protect": 403954,
+    "protect_hold": 65696
+  },
+  "checks": [
+    "source/input/dependency/output hashes",
+    "native binary masks",
+    "original decoded pixels unchanged; overlays unchanged outside selected masks",
+    "red subset of prior red; uncertain color protected or held",
+    "protection equals black/red/unknown-color partition",
+    "edit_allowed excludes protection, hold and 3-pixel protection guard",
+    "local foreground retained except previously logged dense candidates",
+    "no prior ink candidate is edit-allowed; unprotected prior ink is held",
+    "whole-page and review-crop metrics recomputed",
+    "known seal and dense-stain regression checks",
+    "viewer file links and JavaScript syntax"
+  ],
+  "browser_ui_tested": false,
+  "manual_ground_truth_used": false,
+  "independent_accuracy_test": false
+}

@@ -1,0 +1,81 @@
+{
+  "purpose": "Training-free exploratory color/shape segmentation; no manual GT or deletion",
+  "parameters": {
+    "color_space": "OpenCV float32 BGR [0,1] to CIELab; L [0,100], signed a/b",
+    "local_color_background": "quarter-size Lab, Gaussian sigma16, resized to native",
+    "red_weak": {
+      "a_min": 6.0,
+      "delta_a_min": 3.0,
+      "a_over_positive_b": 0.45,
+      "hue_max": 22,
+      "hue_min_wrap": 168,
+      "saturation_min": 30
+    },
+    "red_seed": {
+      "a_min": 14.0,
+      "delta_a_min": 6.0,
+      "a_over_positive_b": 0.8,
+      "hue_max": 18,
+      "hue_min_wrap": 172,
+      "saturation_min": 60
+    },
+    "red_growth": "8-connected weak-color components with at least 2 seed pixels; independent of gray foreground",
+    "brown_field": {
+      "a_min": 3.0,
+      "b_min": 8.0,
+      "delta_a_min": 1.3,
+      "delta_b_min": -0.5,
+      "b_over_a": 1.3,
+      "lightness_below_local": 2.0,
+      "minimum_component_area": 20
+    },
+    "dense_component": {
+      "core_radius": 8.0,
+      "core_fraction": 0.25,
+      "fill": 0.55,
+      "min_area": 200,
+      "max_aspect": 3.0,
+      "red_fraction_exclusion": 0.05
+    },
+    "component_paper_ring": "bbox expanded16 pixels; exclude gray foreground and red candidates; median Lab",
+    "blob_brown_evidence": {
+      "delta_a_min": 1.0,
+      "delta_b_min": -1.0,
+      "mean_a_min": 2.0,
+      "mean_b_min": 8.0
+    },
+    "policy": "dense brown-evidence blobs -> stain candidate; other dense blobs -> hold; no pixels deleted",
+    "scale_disagreement": "only unprotected pixels with 1 or 2 votes; diagnostic hold, not calibrated uncertainty",
+    "border": "no forced background; all classification at native resolution"
+  },
+  "dependencies": {
+    "100249416_00024_1/original.png": "8ee85e2ac1dd3e1b9de93bff2305f440f5d7aea76b4801d73213726cde38dcab",
+    "100249416_00024_1/sauvola_local/foreground.png": "2b0ad2aa6a9eebe7ee398d124caa8303b03f1f91406fc7ec360efcd5481dbaec",
+    "100249416_00024_1/scale_votes.png": "a1743ba33225567b728440024a70cff3ba790dc7626b5dc518e85f4c944e72b4",
+    "brsk003_003/original.png": "4a538372a93926ea1b68630d9f5d0265eb325ee5322ba16fc20db5ba02a17537",
+    "brsk003_003/sauvola_local/foreground.png": "c597a14972005d9129ce48b446fad5e97f839d6c2285e63ff17ad6e10bd89eb5",
+    "brsk003_003/scale_votes.png": "9137e4487c1b03a5d75c87e047a1e5c5b430f0e597c5c328db13a785a18ad2f1",
+    "200008003_00004_2/original.png": "bba53b4deb18d29b6dfd617b87116118bee0217f6718c556601246d2fd16a2ae",
+    "200008003_00004_2/sauvola_local/foreground.png": "a22b295d76b4960d781999a7f4e552fedffd0c701f8e4327c9bee15d38a3bca6",
+    "200008003_00004_2/scale_votes.png": "681cd5fdcca75014b8c7d62b5d3705e9d2a2c2b679f981a76414a9dd6d0db3aa"
+  },
+  "parent_manifest_sha256": "0e0bf68850449d959efc17aed6a6f7bb4c3fa7d7d03e15721291b2138dff8f09",
+  "rois_sha256": "a8cc2aef3c56c5847443645ed7284150b88c24a452b6e023f9a5717dc6a01c55",
+  "source_sha256": "33d08600b64905c9c722decb2bc140c4b1fe6e23cc6314e42a600b99f30b71ad",
+  "viewer_template_sha256": "f40eac8395620e0ebe00ce36abd0151f0ebc3643e670e8dd0c64ba49f31d9fa2",
+  "versions": {
+    "python": "3.10.20 (main, Jun 11 2026, 15:17:37) [GCC 14.3.0]",
+    "opencv": "4.13.0",
+    "numpy": "1.26.4"
+  },
+  "modes": {
+    "local_baseline": "前回の局所Sauvola：前景のみ",
+    "color_only": "原画像の色を追加：形の判定なし",
+    "color_shape": "色＋詰まった塊の判定＋保留"
+  },
+  "input_hashes": {
+    "data/split_dataset/val/100249416/100249416_00024_1.jpg": "ecce820bd50baefa59332a75ecc8f853a2b6692055ad175d54a93c7b5e0b072b",
+    "data/split_dataset/train/brsk00000/brsk003_003.jpg": "c3f9572db7b12dbb41553514e1a1b41f67e399b0aeb6de34694afb35ef33479d",
+    "data/split_dataset/test/200008003/200008003_00004_2.jpg": "39fe3aa26d74c3ae5379c88293b6cb9479f4b995fd15a8dbb7976f8851adae8b"
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "diagnostics": {
+    "id": "dense_stain_new",
+    "page": "hnsd007_042",
+    "book": "hnsd00000",
+    "xywh": [
+      930,
+      240,
+      350,
+      440
+    ],
+    "context_xywh": [
+      866,
+      176,
+      478,
+      568
+    ],
+    "baseline_failure": true,
+    "failure_type": "stain_as_ink",
+    "total_patches": 30,
+    "elapsed_seconds": 11.37687808740884,
+    "npj_edit_pixels": 27108,
+    "npj_changed_pixels": 27101,
+    "npj_nonedit_changed_pixels": 0,
+    "npj_sampled_patches": 30,
+    "npj_raw_nonedit_changed_pixels": 126223,
+    "v6_edit_pixels": 39,
+    "v6_changed_pixels": 39,
+    "v6_nonedit_changed_pixels": 0,
+    "v6_sampled_patches": 1,
+    "v6_raw_nonedit_changed_pixels": 11911
+  },
+  "outputs": {
+    "v6_raw.png": "c387fedfb80f6766d7342344b960dd489123788ad2ad0b6e0b7b0b8142e8ccbc",
+    "npj_raw.png": "4cc314b061901503171be9c789cbf899137ea0f3cd03ac5bc109249cdeb49f24",
+    "npj_changed.png": "cabb460994775365c73a522f9d80ec179454f968f5244850a95f069df4dd20bc",
+    "original.png": "a7602c267a04a839081e8ff4264e11fbc29b639782e022fa81a0a8cd98b4bd01",
+    "npj_edit.png": "381c605643b1717ac201d14d5595e59019333488fc3dcecb154e0a2b6f171289",
+    "v6_edit.png": "4e22b360a8c132330a61e03f1b867e122ae32147f26b4a619d26ce9672dbe371",
+    "v6.png": "9ecebad8d4bbabedcf159b8f37fa80da00c0266cdca258dea5a0d2452c3a3466",
+    "v6_changed.png": "4e22b360a8c132330a61e03f1b867e122ae32147f26b4a619d26ce9672dbe371",
+    "npj.png": "f6027457bef366476757cf9f7d9b4715e6b5b9e9c380460aba5822e3ada81520"
+  }
+}

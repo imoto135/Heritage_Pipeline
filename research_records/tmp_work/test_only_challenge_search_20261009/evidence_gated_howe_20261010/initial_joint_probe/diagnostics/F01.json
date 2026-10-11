@@ -1,0 +1,40 @@
+{
+  "stroke_width": 4.0,
+  "eligible_components": 0,
+  "groups": [],
+  "removed_pixels": 0,
+  "removed_components": 0,
+  "strict_geometry_removed_pixels": 0,
+  "strict_geometry_removed_components": 0,
+  "naive_csc_veto_removed_pixels": 1379,
+  "id": "F01",
+  "page": "200004107_00006_1",
+  "origin": "fixed_holdout_validation",
+  "neighbors": [
+    "data/test/200004107/200004107_00005_1.jpg",
+    "data/test/200004107/200004107_00005_2.jpg",
+    "data/test/200004107/200004107_00006_2.jpg",
+    "data/test/200004107/200004107_00007_1.jpg"
+  ],
+  "masks_unchanged": true,
+  "route_counts": {
+    "red": 0,
+    "text": 503211,
+    "background": 5117167,
+    "repair_candidate": 60808,
+    "unknown": 239064
+  },
+  "dependencies": {
+    "data/test/200004107/200004107_00006_1.jpg": "071c97d447948e1921d3e5ece2dc1b8183e29bf3290c89682cbaa88357eb70f8",
+    "tmp_work/test_only_challenge_search_20261009/fixed_holdout_validation/masks/howe/200004107_00006_1/02_text_black.png": "2df69dfa8a478a6ba53659c0a1e69c83e04e73319488598c7af124db584e3c87",
+    "tmp_work/test_only_challenge_search_20261009/fixed_holdout_validation/masks/howe/200004107_00006_1/03_text_red.png": "447dfc0070e57dd34b85b894a57b3a6b2bebf582a0af7a2876b096c337bea085",
+    "data/split_dataset_csc_mask_v2/test/200004107/200004107_00006_1/02_text_black.png": "ef5ea4877dae12e2ce40414f38c4b052564f154fdf1d701106a62b4e7abad897",
+    "data/split_dataset_csc_mask_v2/test/200004107/200004107_00006_1/04_degradation.png": "2e34df331664451e17e8a3c681d76e2c486a44148158896534c2322a80de5396",
+    "data/split_dataset_csc_mask_v2/test/200004107/200004107_00006_1/05_background.png": "6f31c07787887471c6478d8764f731ad6629fa50548c4b9d803faa5dbad59384",
+    "data/test/200004107/200004107_00005_1.jpg": "fc6c12930fbe1688639a7ad71c53e028a0b7825fd6bf20bee31bfc31209b9b41",
+    "data/test/200004107/200004107_00005_2.jpg": "82a9a91649f5c381e6d6cbd7a7a7e0d481e449167861c2f7cb25972adff12d8a",
+    "data/test/200004107/200004107_00006_2.jpg": "a36df9157bcdbd27ace2c8ad688d58ab42f8f736db1647073cedf57da96369d1",
+    "data/test/200004107/200004107_00007_1.jpg": "d72dfa01aaf986b398a65f6e814748fe85a0191565718910cd5eb496a86cd1c9"
+  },
+  "seconds": 2.38
+}

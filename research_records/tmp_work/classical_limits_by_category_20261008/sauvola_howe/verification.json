@@ -1,0 +1,633 @@
+{
+  "exact_panels": 42,
+  "figures": [
+    {
+      "case": "01_極細・薄い筆画",
+      "detail": false,
+      "roi_xywh": [
+        1110,
+        500,
+        520,
+        650
+      ],
+      "scale": 1,
+      "panels": [
+        {
+          "method": "original",
+          "xywh": [
+            22,
+            145,
+            520,
+            650
+          ]
+        },
+        {
+          "method": "sauvola",
+          "xywh": [
+            564,
+            145,
+            520,
+            650
+          ]
+        },
+        {
+          "method": "howe",
+          "xywh": [
+            1106,
+            145,
+            520,
+            650
+          ]
+        }
+      ],
+      "path": "comparisons/01_極細・薄い筆画.png",
+      "sha256": "64ad2ab65ee2c08ca93a2fab26bb02320879028e1d36d306e99672e2b7e5a7bf"
+    },
+    {
+      "case": "01_極細・薄い筆画",
+      "detail": true,
+      "roi_xywh": [
+        1320,
+        540,
+        230,
+        370
+      ],
+      "scale": 2,
+      "panels": [
+        {
+          "method": "original",
+          "xywh": [
+            22,
+            145,
+            460,
+            740
+          ]
+        },
+        {
+          "method": "sauvola",
+          "xywh": [
+            504,
+            145,
+            460,
+            740
+          ]
+        },
+        {
+          "method": "howe",
+          "xywh": [
+            986,
+            145,
+            460,
+            740
+          ]
+        }
+      ],
+      "path": "details/01_極細・薄い筆画.png",
+      "sha256": "d3a9c6984bedc2ae14117b2a19d46c6e1469eb52b6e2933dc6caef03a354b244"
+    },
+    {
+      "case": "02_広い水染みと低コントラスト文字",
+      "detail": false,
+      "roi_xywh": [
+        265,
+        1620,
+        760,
+        760
+      ],
+      "scale": 1,
+      "panels": [
+        {
+          "method": "original",
+          "xywh": [
+            22,
+            145,
+            760,
+            760
+          ]
+        },
+        {
+          "method": "sauvola",
+          "xywh": [
+            804,
+            145,
+            760,
+            760
+          ]
+        },
+        {
+          "method": "howe",
+          "xywh": [
+            1586,
+            145,
+            760,
+            760
+          ]
+        }
+      ],
+      "path": "comparisons/02_広い水染みと低コントラスト文字.png",
+      "sha256": "7a51beb7644571e8e17c015193d816112154b6b9070c818c6fa50b7afc331e83"
+    },
+    {
+      "case": "02_広い水染みと低コントラスト文字",
+      "detail": true,
+      "roi_xywh": [
+        580,
+        1800,
+        300,
+        350
+      ],
+      "scale": 2,
+      "panels": [
+        {
+          "method": "original",
+          "xywh": [
+            22,
+            145,
+            600,
+            700
+          ]
+        },
+        {
+          "method": "sauvola",
+          "xywh": [
+            644,
+            145,
+            600,
+            700
+          ]
+        },
+        {
+          "method": "howe",
+          "xywh": [
+            1266,
+            145,
+            600,
+            700
+          ]
+        }
+      ],
+      "path": "details/02_広い水染みと低コントラスト文字.png",
+      "sha256": "8a73447b4bc5510839b35ee9f22ddac0061066bf7e3e5ad8eca3ecd68d9b0d82"
+    },
+    {
+      "case": "03_本文に接触する濃い染み",
+      "detail": false,
+      "roi_xywh": [
+        800,
+        190,
+        520,
+        520
+      ],
+      "scale": 1,
+      "panels": [
+        {
+          "method": "original",
+          "xywh": [
+            22,
+            145,
+            520,
+            520
+          ]
+        },
+        {
+          "method": "sauvola",
+          "xywh": [
+            564,
+            145,
+            520,
+            520
+          ]
+        },
+        {
+          "method": "howe",
+          "xywh": [
+            1106,
+            145,
+            520,
+            520
+          ]
+        }
+      ],
+      "path": "comparisons/03_本文に接触する濃い染み.png",
+      "sha256": "c349c7a3f16d4e27326a8484e24c097ea36aa3ad79bb446568fced53a1360c39"
+    },
+    {
+      "case": "03_本文に接触する濃い染み",
+      "detail": true,
+      "roi_xywh": [
+        970,
+        280,
+        250,
+        360
+      ],
+      "scale": 2,
+      "panels": [
+        {
+          "method": "original",
+          "xywh": [
+            22,
+            145,
+            500,
+            720
+          ]
+        },
+        {
+          "method": "sauvola",
+          "xywh": [
+            544,
+            145,
+            500,
+            720
+          ]
+        },
+        {
+          "method": "howe",
+          "xywh": [
+            1066,
+            145,
+            500,
+            720
+          ]
+        }
+      ],
+      "path": "details/03_本文に接触する濃い染み.png",
+      "sha256": "03421d07e82d4141a6aeb8b3256bffaccc82ce5fead7f9d77d60f4a9a7a9015f"
+    },
+    {
+      "case": "04_墨と似た濃い斑点",
+      "detail": false,
+      "roi_xywh": [
+        340,
+        400,
+        520,
+        520
+      ],
+      "scale": 1,
+      "panels": [
+        {
+          "method": "original",
+          "xywh": [
+            22,
+            145,
+            520,
+            520
+          ]
+        },
+        {
+          "method": "sauvola",
+          "xywh": [
+            564,
+            145,
+            520,
+            520
+          ]
+        },
+        {
+          "method": "howe",
+          "xywh": [
+            1106,
+            145,
+            520,
+            520
+          ]
+        }
+      ],
+      "path": "comparisons/04_墨と似た濃い斑点.png",
+      "sha256": "cb6b4bd5efbeeb4542c9c9fc1e958bc347341779f5b516c6b500ce042cc93eb7"
+    },
+    {
+      "case": "04_墨と似た濃い斑点",
+      "detail": true,
+      "roi_xywh": [
+        400,
+        540,
+        260,
+        270
+      ],
+      "scale": 2,
+      "panels": [
+        {
+          "method": "original",
+          "xywh": [
+            22,
+            145,
+            520,
+            540
+          ]
+        },
+        {
+          "method": "sauvola",
+          "xywh": [
+            564,
+            145,
+            520,
+            540
+          ]
+        },
+        {
+          "method": "howe",
+          "xywh": [
+            1106,
+            145,
+            520,
+            540
+          ]
+        }
+      ],
+      "path": "details/04_墨と似た濃い斑点.png",
+      "sha256": "e132737b90be5d732683278dbcf7b959e068996b5c310234d27df18603267749"
+    },
+    {
+      "case": "05_密な粒状像と暗い帯",
+      "detail": false,
+      "roi_xywh": [
+        1433,
+        2127,
+        520,
+        520
+      ],
+      "scale": 1,
+      "panels": [
+        {
+          "method": "original",
+          "xywh": [
+            22,
+            145,
+            520,
+            520
+          ]
+        },
+        {
+          "method": "sauvola",
+          "xywh": [
+            564,
+            145,
+            520,
+            520
+          ]
+        },
+        {
+          "method": "howe",
+          "xywh": [
+            1106,
+            145,
+            520,
+            520
+          ]
+        }
+      ],
+      "path": "comparisons/05_密な粒状像と暗い帯.png",
+      "sha256": "138bf4cdf70aede6b98dcf883889f8a40ffc233ea77f43a576c1212d1e53c486"
+    },
+    {
+      "case": "05_密な粒状像と暗い帯",
+      "detail": true,
+      "roi_xywh": [
+        1540,
+        2350,
+        320,
+        320
+      ],
+      "scale": 2,
+      "panels": [
+        {
+          "method": "original",
+          "xywh": [
+            22,
+            145,
+            640,
+            640
+          ]
+        },
+        {
+          "method": "sauvola",
+          "xywh": [
+            684,
+            145,
+            640,
+            640
+          ]
+        },
+        {
+          "method": "howe",
+          "xywh": [
+            1346,
+            145,
+            640,
+            640
+          ]
+        }
+      ],
+      "path": "details/05_密な粒状像と暗い帯.png",
+      "sha256": "acc300d719c707979300267439f56e1720b1bbead99fb81b16aac316e058c978"
+    },
+    {
+      "case": "06_紙面の欠損が文字と重なる",
+      "detail": false,
+      "roi_xywh": [
+        1030,
+        1256,
+        520,
+        520
+      ],
+      "scale": 1,
+      "panels": [
+        {
+          "method": "original",
+          "xywh": [
+            22,
+            145,
+            520,
+            520
+          ]
+        },
+        {
+          "method": "sauvola",
+          "xywh": [
+            564,
+            145,
+            520,
+            520
+          ]
+        },
+        {
+          "method": "howe",
+          "xywh": [
+            1106,
+            145,
+            520,
+            520
+          ]
+        }
+      ],
+      "path": "comparisons/06_紙面の欠損が文字と重なる.png",
+      "sha256": "89c4952bcd28f387b9a4777fd1243a866d612471e561148a53664e21b8d118e0"
+    },
+    {
+      "case": "06_紙面の欠損が文字と重なる",
+      "detail": true,
+      "roi_xywh": [
+        1200,
+        1510,
+        350,
+        310
+      ],
+      "scale": 2,
+      "panels": [
+        {
+          "method": "original",
+          "xywh": [
+            22,
+            145,
+            700,
+            620
+          ]
+        },
+        {
+          "method": "sauvola",
+          "xywh": [
+            744,
+            145,
+            700,
+            620
+          ]
+        },
+        {
+          "method": "howe",
+          "xywh": [
+            1466,
+            145,
+            700,
+            620
+          ]
+        }
+      ],
+      "path": "details/06_紙面の欠損が文字と重なる.png",
+      "sha256": "9890e135341d4fe6b2cb3dec22714381dc1160eb282bc1488ac94537c68819ba"
+    },
+    {
+      "case": "07_裏写り候補と薄い表文字の混在",
+      "detail": false,
+      "roi_xywh": [
+        796,
+        1385,
+        650,
+        650
+      ],
+      "scale": 1,
+      "panels": [
+        {
+          "method": "original",
+          "xywh": [
+            22,
+            145,
+            650,
+            650
+          ]
+        },
+        {
+          "method": "sauvola",
+          "xywh": [
+            694,
+            145,
+            650,
+            650
+          ]
+        },
+        {
+          "method": "howe",
+          "xywh": [
+            1366,
+            145,
+            650,
+            650
+          ]
+        }
+      ],
+      "path": "comparisons/07_裏写り候補と薄い表文字の混在.png",
+      "sha256": "4d3ebd398ea25463fab92fde622e1ce2ee4604408d0a306d37532bf2f6f446a2"
+    },
+    {
+      "case": "07_裏写り候補と薄い表文字の混在",
+      "detail": true,
+      "roi_xywh": [
+        800,
+        1400,
+        300,
+        340
+      ],
+      "scale": 2,
+      "panels": [
+        {
+          "method": "original",
+          "xywh": [
+            22,
+            145,
+            600,
+            680
+          ]
+        },
+        {
+          "method": "sauvola",
+          "xywh": [
+            644,
+            145,
+            600,
+            680
+          ]
+        },
+        {
+          "method": "howe",
+          "xywh": [
+            1266,
+            145,
+            600,
+            680
+          ]
+        }
+      ],
+      "path": "details/07_裏写り候補と薄い表文字の混在.png",
+      "sha256": "9aed34e7f271d7fb6f28eb1686d9fe53b2412a5b51e8a683add4208c68f7110f"
+    }
+  ],
+  "inputs_sha256": {
+    "data/split_dataset/test/200010454/200010454_00002_2.jpg": "177776f90fc08b12e2f59a37773ef433556f43ebe47c503c2d676595a08a60d1",
+    "tmp_work/classical_limits_by_category_20261008/masks/200010454_00002_2/sauvola.png": "48cbe6ab019135070019740417aca0be29ad3effe0cc883e7dd997915f6b5b6a",
+    "tmp_work/classical_limits_by_category_20261008/masks/200010454_00002_2/howe.png": "0d5af3e008caab0f82b41a7249d6d0c9ad80529ded6539f6c7a16d740134a64d",
+    "data/split_dataset/train/hnsd00000/hnsd001_011.jpg": "22017c0af65c5f43560ff05cfcc15c6ed8f56b72e60a04a732d9c31b72f05731",
+    "tmp_work/classical_limits_by_category_20261008/masks/hnsd001_011/sauvola.png": "99fe8f06106294c9878452ccb11f170699a4125d88652aaa79acb506fb029d77",
+    "tmp_work/classical_limits_by_category_20261008/masks/hnsd001_011/howe.png": "5080ec95fe2b53bfb3d5fb7073d821324a3d5f391faed6d8bb0115d576e4f60f",
+    "data/split_dataset/train/hnsd00000/hnsd007_042.jpg": "68315f7e551cb29695d9e830f09826eef92809409d4e9242290c5ed14f393afc",
+    "tmp_work/classical_limits_by_category_20261008/masks/hnsd007_042/sauvola.png": "c0d5bc5bb3f47235b90746113e2b9af5a614ae606cb19390a093ead3d9240e8a",
+    "tmp_work/classical_limits_by_category_20261008/masks/hnsd007_042/howe.png": "4286d4d1de124f84d71cefb79a1d9b46f8eb5ba70e26f8357a9f9f050df49956",
+    "data/split_dataset/train/200003967/200003967_00043_1.jpg": "32de18d0c167336c8cb4a4e8e214516029b6542de1f4053a1189f083c8ff41fb",
+    "tmp_work/classical_limits_by_category_20261008/masks/200003967_00043_1/sauvola.png": "ff2cd353fc64810fba352724317d81757ef9cff84418db57034590de0bf1e4d7",
+    "tmp_work/classical_limits_by_category_20261008/masks/200003967_00043_1/howe.png": "3c2739207dcfeca7f14468d50e1ea376f201e5519c7c0f0d604cba645e8b7aa4",
+    "data/train/200021925/200021925_00007_1.jpg": "836f9c418cc5b5f3e1844e9024d1b676c3a6de19d56ccd1c6832ce6017654a8b",
+    "tmp_work/classical_limits_by_category_20261008/masks/200021925_00007_1/sauvola.png": "1ce0b16892396e7cb2ffe2ce64320b1f103959a09f9f475279514f87cd037147",
+    "tmp_work/classical_limits_by_category_20261008/masks/200021925_00007_1/howe.png": "f85136b29c3366ad27748a11d63fcbb6e07116b4fc9d4871acd0606adf94706b",
+    "data/split_dataset/test/200015843/200015843_00099_1.jpg": "a4f96422b1f7d32a320b4e5ed0b62eb34815c0cb9ff2d17ee7dd855781682376",
+    "tmp_work/classical_limits_by_category_20261008/masks/200015843_00099_1/sauvola.png": "57c3ed8dab63792a72a5dc315e6a32675f57566cba6e7a20e8f03a32b6b241d4",
+    "tmp_work/classical_limits_by_category_20261008/masks/200015843_00099_1/howe.png": "fada3b233d8bfc8225b92aeb077b951f0fca7078a3a987ab9138d23c62412128"
+  },
+  "spot_audit": {
+    "page": "hnsd001_011",
+    "rectangle_xywh": [
+      460,
+      590,
+      90,
+      60
+    ],
+    "rectangle_area": 5400,
+    "foreground_black_pixels": {
+      "sauvola": 2885,
+      "wolf": 3119,
+      "howe": 0
+    },
+    "scope": "Post-output manual rectangle isolating the spot, not dense GT or overall accuracy.",
+    "finding": "Howe removes this isolated dark spot; previous common-failure description was a visual-review error.",
+    "algorithm_changed": false
+  },
+  "method_parameters_changed": false,
+  "script_sha256": "cd00211ef2ccee5fd28cce4f9315f0e8f13f8f4ead792e9dfff2ea85eba557c0"
+}

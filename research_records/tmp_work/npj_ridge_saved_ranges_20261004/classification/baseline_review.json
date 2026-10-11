@@ -1,0 +1,37 @@
+{
+  "cases": [
+    {
+      "split": "test",
+      "book": "200018243",
+      "page": "200018243_00002_2",
+      "original": "data/split_dataset/test/200018243/200018243_00002_2.jpg",
+      "ace": "data/split_dataset_csc/test/200018243/200018243_00002_2.jpg",
+      "npj_input": "data/split_dataset_csc_mask/test/200018243/200018243_00002_2/00_input.png",
+      "npj_black": "data/split_dataset_csc_mask/test/200018243/200018243_00002_2/02_text_black.png",
+      "npj_red": "data/split_dataset_csc_mask/test/200018243/200018243_00002_2/03_text_red.png",
+      "npj_degradation": "data/split_dataset_csc_mask/test/200018243/200018243_00002_2/04_degradation.png",
+      "npj_background": "data/split_dataset_csc_mask/test/200018243/200018243_00002_2/05_background.png",
+      "review_status": "unreviewed",
+      "failure_type": "",
+      "roi_xywh": "",
+      "v6_status": "",
+      "observation": "",
+      "input": "tmp_work/bt_200018243_00002_2/input/200018243_00002_2.jpg",
+      "saved_npj": "tmp_work/bt_200018243_00002_2/ddrm_extref_out/200018243_00002_2/result/200018243_00002_2.png",
+      "roles": "tmp_work/npj_ridge_saved_ranges_20261004/classification/v6_masks/200018243_00002_2",
+      "baseline_label": "Actual saved external-reference local npj v2; historical source snapshot unavailable",
+      "id": "new_page_upper",
+      "xywh": [
+        90,
+        410,
+        768,
+        768
+      ],
+      "role": "writing_and_gray_secondary_image",
+      "rois": [],
+      "contains_illustration": false,
+      "new_page_for_ridge": true
+    }
+  ],
+  "scope": "One writing-only original page; fixed v6"
+}

@@ -1,0 +1,77 @@
++ cd /home/imoto/Heritage_Pipeline/modules/ddnm_npj
++ python scripts/pipeline_ddnm.py --ddrm_style --degradation_only --full_kept --enhance --residual_thresh 10 --no_final_correction --ckpt ../stain_removal/experiments/model_char/model_char/ckpt_epoch0350.pth --num_res_blocks 2 --eta 0.5 --input_dir /home/imoto/Heritage_Pipeline/tmp_work/bt_00003_2_crop/input --output_dir /home/imoto/Heritage_Pipeline/tmp_work/bt_00003_2_crop/v15_bg_out --mask_dir /home/imoto/Heritage_Pipeline/tmp_work/bt_00003_2_crop/mask_dir --device cuda:1 --patch_size 128 --overlap 32
+[INFO] モデルロード完了: ../stain_removal/experiments/model_char/model_char/ckpt_epoch0350.pth
+[INFO] 1 枚を処理します (DDRM-styleモード, degradation_only)
+[INFO] 処理中: 200018243_00003_2
+[INFO]   CSC劣化マスク使用: missing割合=5.7%
+[INFO]   残存シミ掃討: thresh=10.0
+[INFO]   文字書き戻し: シミ片除外=0px
+[INFO]   enhance: 背景→203, 文字gain=0.5
+[INFO]   full_kept: 劣化(dilate5px)+文字+赤を除外したinpaint y_0を使用
+0it [00:00, ?it/s]1it [00:00,  2.40it/s]9it [00:00, 21.57it/s]16it [00:00, 34.13it/s]19it [00:00, 27.78it/s]
+0it [00:00, ?it/s]8it [00:00, 72.14it/s]16it [00:00, 71.15it/s]19it [00:00, 68.16it/s]
+0it [00:00, ?it/s]8it [00:00, 72.10it/s]16it [00:00, 72.88it/s]19it [00:00, 68.30it/s]
+0it [00:00, ?it/s]8it [00:00, 71.37it/s]16it [00:00, 72.62it/s]19it [00:00, 67.98it/s]
+0it [00:00, ?it/s]8it [00:00, 71.72it/s]16it [00:00, 72.79it/s]19it [00:00, 69.22it/s]
+0it [00:00, ?it/s]7it [00:00, 69.55it/s]15it [00:00, 72.03it/s]19it [00:00, 68.52it/s]
+0it [00:00, ?it/s]7it [00:00, 68.31it/s]15it [00:00, 71.58it/s]19it [00:00, 68.18it/s]
+0it [00:00, ?it/s]7it [00:00, 68.40it/s]15it [00:00, 71.34it/s]19it [00:00, 68.00it/s]
+0it [00:00, ?it/s]8it [00:00, 69.97it/s]16it [00:00, 71.54it/s]19it [00:00, 68.18it/s]
+0it [00:00, ?it/s]8it [00:00, 72.43it/s]16it [00:00, 70.75it/s]19it [00:00, 67.20it/s]
+0it [00:00, ?it/s]8it [00:00, 72.30it/s]16it [00:00, 71.06it/s]19it [00:00, 68.15it/s]
+0it [00:00, ?it/s]8it [00:00, 72.11it/s]16it [00:00, 70.96it/s]19it [00:00, 68.10it/s]
+0it [00:00, ?it/s]8it [00:00, 72.17it/s]16it [00:00, 71.14it/s]19it [00:00, 67.58it/s]
+0it [00:00, ?it/s]8it [00:00, 72.42it/s]16it [00:00, 72.54it/s]19it [00:00, 67.85it/s]
+0it [00:00, ?it/s]8it [00:00, 72.10it/s]16it [00:00, 72.54it/s]19it [00:00, 68.16it/s]
+0it [00:00, ?it/s]7it [00:00, 67.64it/s]15it [00:00, 71.23it/s]19it [00:00, 67.84it/s]
+0it [00:00, ?it/s]7it [00:00, 68.50it/s]15it [00:00, 71.60it/s]19it [00:00, 68.08it/s]
+0it [00:00, ?it/s]7it [00:00, 69.02it/s]15it [00:00, 71.88it/s]19it [00:00, 68.44it/s]
+0it [00:00, ?it/s]7it [00:00, 68.89it/s]15it [00:00, 71.52it/s]19it [00:00, 68.23it/s]
+0it [00:00, ?it/s]8it [00:00, 71.65it/s]16it [00:00, 71.06it/s]19it [00:00, 68.10it/s]
+0it [00:00, ?it/s]8it [00:00, 72.56it/s]16it [00:00, 71.14it/s]19it [00:00, 68.30it/s]
+0it [00:00, ?it/s]8it [00:00, 72.40it/s]16it [00:00, 71.00it/s]19it [00:00, 68.16it/s]
+0it [00:00, ?it/s]8it [00:00, 72.13it/s]16it [00:00, 70.95it/s]19it [00:00, 68.09it/s]
+0it [00:00, ?it/s]8it [00:00, 72.20it/s]16it [00:00, 73.00it/s]19it [00:00, 68.15it/s]
+0it [00:00, ?it/s]8it [00:00, 72.29it/s]16it [00:00, 73.10it/s]19it [00:00, 68.29it/s]
+0it [00:00, ?it/s]8it [00:00, 72.73it/s]16it [00:00, 73.29it/s]19it [00:00, 69.64it/s]
+0it [00:00, ?it/s]7it [00:00, 69.67it/s]15it [00:00, 72.15it/s]19it [00:00, 68.69it/s]
+0it [00:00, ?it/s]7it [00:00, 68.80it/s]15it [00:00, 71.65it/s]19it [00:00, 68.30it/s]
+0it [00:00, ?it/s]7it [00:00, 68.46it/s]15it [00:00, 71.66it/s]19it [00:00, 68.23it/s]
+0it [00:00, ?it/s]8it [00:00, 68.87it/s]16it [00:00, 71.15it/s]19it [00:00, 67.83it/s]
+0it [00:00, ?it/s]8it [00:00, 72.02it/s]16it [00:00, 70.76it/s]19it [00:00, 67.70it/s]
+0it [00:00, ?it/s]8it [00:00, 71.73it/s]16it [00:00, 70.41it/s]19it [00:00, 67.54it/s]
+0it [00:00, ?it/s]7it [00:00, 68.90it/s]15it [00:00, 69.71it/s]19it [00:00, 67.03it/s]
+0it [00:00, ?it/s]8it [00:00, 72.42it/s]16it [00:00, 71.44it/s]19it [00:00, 68.32it/s]
+0it [00:00, ?it/s]8it [00:00, 72.21it/s]16it [00:00, 73.07it/s]19it [00:00, 68.21it/s]
+0it [00:00, ?it/s]8it [00:00, 72.48it/s]16it [00:00, 73.11it/s]19it [00:00, 68.37it/s]
+0it [00:00, ?it/s]8it [00:00, 72.45it/s]16it [00:00, 73.05it/s]19it [00:00, 69.50it/s]
+0it [00:00, ?it/s]7it [00:00, 69.49it/s]15it [00:00, 71.96it/s]19it [00:00, 68.55it/s]
+0it [00:00, ?it/s]7it [00:00, 68.18it/s]15it [00:00, 71.42it/s]19it [00:00, 68.07it/s]
+0it [00:00, ?it/s]7it [00:00, 68.33it/s]15it [00:00, 71.34it/s]19it [00:00, 68.04it/s]
+0it [00:00, ?it/s]8it [00:00, 69.75it/s]16it [00:00, 71.57it/s]19it [00:00, 68.24it/s]
+0it [00:00, ?it/s]8it [00:00, 72.28it/s]16it [00:00, 71.12it/s]19it [00:00, 68.18it/s]
+0it [00:00, ?it/s]8it [00:00, 72.24it/s]16it [00:00, 71.10it/s]19it [00:00, 68.19it/s]
+0it [00:00, ?it/s]8it [00:00, 71.40it/s]16it [00:00, 70.35it/s]19it [00:00, 67.58it/s]
+0it [00:00, ?it/s]8it [00:00, 72.22it/s]16it [00:00, 71.57it/s]19it [00:00, 68.26it/s]
+0it [00:00, ?it/s]8it [00:00, 72.52it/s]16it [00:00, 72.26it/s]19it [00:00, 67.63it/s]
+0it [00:00, ?it/s]8it [00:00, 72.42it/s]16it [00:00, 72.88it/s]19it [00:00, 68.62it/s]
+0it [00:00, ?it/s]8it [00:00, 72.26it/s]16it [00:00, 73.04it/s]19it [00:00, 69.41it/s]
+0it [00:00, ?it/s]7it [00:00, 68.53it/s]15it [00:00, 71.48it/s]19it [00:00, 68.16it/s]
+0it [00:00, ?it/s]7it [00:00, 67.20it/s]15it [00:00, 71.06it/s]19it [00:00, 67.74it/s]
+[INFO]   パッチ 50/64
+0it [00:00, ?it/s]7it [00:00, 68.66it/s]15it [00:00, 71.63it/s]19it [00:00, 68.22it/s]
+0it [00:00, ?it/s]8it [00:00, 70.05it/s]16it [00:00, 71.53it/s]19it [00:00, 68.23it/s]
+0it [00:00, ?it/s]8it [00:00, 72.42it/s]16it [00:00, 71.27it/s]19it [00:00, 68.34it/s]
+0it [00:00, ?it/s]8it [00:00, 72.38it/s]16it [00:00, 71.21it/s]19it [00:00, 68.24it/s]
+0it [00:00, ?it/s]8it [00:00, 72.28it/s]16it [00:00, 71.42it/s]19it [00:00, 68.42it/s]
+0it [00:00, ?it/s]8it [00:00, 72.26it/s]16it [00:00, 71.33it/s]19it [00:00, 68.30it/s]
+0it [00:00, ?it/s]8it [00:00, 71.93it/s]16it [00:00, 73.00it/s]19it [00:00, 68.32it/s]
+0it [00:00, ?it/s]8it [00:00, 72.42it/s]16it [00:00, 72.21it/s]19it [00:00, 67.82it/s]
+0it [00:00, ?it/s]8it [00:00, 72.24it/s]16it [00:00, 73.12it/s]19it [00:00, 69.13it/s]
+0it [00:00, ?it/s]8it [00:00, 71.72it/s]16it [00:00, 72.83it/s]19it [00:00, 69.27it/s]
+0it [00:00, ?it/s]7it [00:00, 69.20it/s]15it [00:00, 71.96it/s]19it [00:00, 68.49it/s]
+0it [00:00, ?it/s]7it [00:00, 69.38it/s]15it [00:00, 72.00it/s]19it [00:00, 68.49it/s]
+0it [00:00, ?it/s]8it [00:00, 70.80it/s]16it [00:00, 72.28it/s]19it [00:00, 68.50it/s]
+0it [00:00, ?it/s]7it [00:00, 67.89it/s]15it [00:00, 70.63it/s]19it [00:00, 67.52it/s]
+[INFO]   パッチ 64/64
+[INFO]   保存: /home/imoto/Heritage_Pipeline/tmp_work/bt_00003_2_crop/v15_bg_out/200018243_00003_2.png

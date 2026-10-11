@@ -1,0 +1,19 @@
+{
+  "settings": {
+    "restoration_changed": false,
+    "all90ROIs": true,
+    "highpass": "L minus finite Gaussian9x9 sigma1.2; all input neighbours must be in known/applied respectively",
+    "donor_highpass": "central16x16 from each qualified24x24 raw L patch",
+    "ring": "qualified known neighbours within64px of effective applied, eroded9x9 for finite signal",
+    "selected": "first donor and all placed tile donors, before alpha blending",
+    "alpha": "frozen absolute patch alpha; report ROI applied/core6px quantiles and fractions",
+    "no_GT": true,
+    "development": true
+  },
+  "dependencies": {
+    "scripts/benchmark/diagnose_absolute_paper_patch_attenuation.py": "656c837f4ba2c471e210431f25f7e17079687414b3da9a054222e5bde93913f9",
+    "tmp_work/observed_absolute_paper_patches_pilot_20261001/manifest.json": "3caa4d62f2288c94692984bea39a43b375eb15e0e004d062f7de8ebe3758a2b1",
+    "tmp_work/observed_absolute_paper_patches_pilot_20261001/complete.json": "5a85cf590d496b1e42c8672a3282916ee7bd5fdf508c57357ef90a63751a8932"
+  },
+  "source_sha256": "656c837f4ba2c471e210431f25f7e17079687414b3da9a054222e5bde93913f9"
+}

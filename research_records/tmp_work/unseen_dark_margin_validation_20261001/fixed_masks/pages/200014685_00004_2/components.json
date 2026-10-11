@@ -1,0 +1,104 @@
+{
+  "margin": {
+    "rule_y": 480,
+    "rules": [
+      {
+        "x": 80,
+        "y": 480,
+        "width": 1964,
+        "height": 24,
+        "area_small": 2389
+      },
+      {
+        "x": 80,
+        "y": 512,
+        "width": 1964,
+        "height": 16,
+        "area_small": 1676
+      }
+    ],
+    "components": [
+      {
+        "id": 1,
+        "xywh": [
+          1665,
+          129,
+          24,
+          23
+        ],
+        "area": 260,
+        "brown_seed_pixels": 152,
+        "peak_radius": 6.396899700164795,
+        "touches_margin_boundary": true,
+        "accepted": false
+      },
+      {
+        "id": 4,
+        "xywh": [
+          1675,
+          139,
+          38,
+          130
+        ],
+        "area": 1195,
+        "brown_seed_pixels": 299,
+        "peak_radius": 7.590699672698975,
+        "touches_margin_boundary": false,
+        "accepted": true
+      }
+    ]
+  },
+  "completion": {
+    "rule_y": 480,
+    "top_components": [
+      {
+        "id": 1,
+        "xywh": [
+          1665,
+          129,
+          24,
+          23
+        ],
+        "area": 260,
+        "seeds": 152,
+        "peak": 6.396899700164795,
+        "top_contacts": 8,
+        "other_contacts": 0,
+        "eligible": true
+      }
+    ],
+    "completed_components": [
+      {
+        "id": 21,
+        "xywh": [
+          1665,
+          118,
+          24,
+          34
+        ],
+        "area": 330,
+        "selected_overlap": 260,
+        "seeds": 152,
+        "peak": 6.396899700164795,
+        "outer_contacts": 0,
+        "accepted": true
+      }
+    ]
+  },
+  "thin": [
+    {
+      "id": 4,
+      "xywh": [
+        1675,
+        139,
+        38,
+        130
+      ],
+      "area": 1195,
+      "seeds": 299,
+      "peak": 7.590699672698975,
+      "newly_accepted": false
+    }
+  ],
+  "near8": []
+}

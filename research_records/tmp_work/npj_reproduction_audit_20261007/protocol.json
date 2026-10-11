@@ -1,0 +1,202 @@
+{
+  "created": 1791378953.1361644,
+  "cases": [
+    {
+      "id": "T01",
+      "page": "hnsd007_023",
+      "source": {
+        "original": "data/split_dataset/train/hnsd00000/hnsd007_023.jpg",
+        "npj_black": "data/split_dataset_csc_mask/train/hnsd00000/hnsd007_023/02_text_black.png",
+        "npj_red": "data/split_dataset_csc_mask/train/hnsd00000/hnsd007_023/03_text_red.png",
+        "actual_input": "tmp_work/npj_contact_stain_search_20261007/inputs/T01/hnsd007_023.png",
+        "output": "tmp_work/npj_contact_stain_search_20261007/output/hnsd007_023/result/hnsd007_023.png"
+      },
+      "detail_page_xywh": [
+        812,
+        421,
+        450,
+        450
+      ],
+      "folder": "tmp_work/npj_contact_research_20261007/full_page",
+      "role": "追加・本文重なり",
+      "v2_dir": "data/split_dataset_csc_mask_v2/train/hnsd00000/hnsd007_023"
+    },
+    {
+      "id": "N01",
+      "page": "200010454_00003_2",
+      "source": {
+        "split": "test",
+        "book": "200010454",
+        "page": "200010454_00003_2",
+        "original": "data/split_dataset/test/200010454/200010454_00003_2.jpg",
+        "ace": "data/split_dataset_csc/test/200010454/200010454_00003_2.jpg",
+        "npj_input": "data/split_dataset_csc_mask/test/200010454/200010454_00003_2/00_input.png",
+        "npj_black": "data/split_dataset_csc_mask/test/200010454/200010454_00003_2/02_text_black.png",
+        "npj_red": "data/split_dataset_csc_mask/test/200010454/200010454_00003_2/03_text_red.png",
+        "npj_degradation": "data/split_dataset_csc_mask/test/200010454/200010454_00003_2/04_degradation.png",
+        "npj_background": "data/split_dataset_csc_mask/test/200010454/200010454_00003_2/05_background.png",
+        "review_status": "unreviewed",
+        "failure_type": "",
+        "roi_xywh": "",
+        "v6_status": "",
+        "observation": ""
+      },
+      "detail_page_xywh": [
+        268,
+        157,
+        520,
+        560
+      ],
+      "role": "細い曲線に茶色の円形跡が重なる",
+      "source_sha256": {
+        "original": "67c1f8a762d442015f420a34512119163c3e4cb06307bb75567d086f119a246f",
+        "npj_black": "eb9912c62c766975e8752c156536a577d1ae0ee1f5ec7e12647c0a7cda677cd4",
+        "npj_red": "895ab69ea45c1c3ae17a5e1fa1c2ac1253b35872251b555fd32eadf19ef4ec22"
+      },
+      "image_size": [
+        1768,
+        2383
+      ],
+      "folder": "tmp_work/npj_contact_research_20261007/full_followup/B",
+      "v2_dir": "data/split_dataset_csc_mask_v2/test/200010454/200010454_00003_2"
+    },
+    {
+      "id": "N02",
+      "page": "200021071_00032_1",
+      "source": {
+        "split": "test",
+        "book": "200021071",
+        "page": "200021071_00032_1",
+        "original": "data/split_dataset/test/200021071/200021071_00032_1.jpg",
+        "ace": "data/split_dataset_csc/test/200021071/200021071_00032_1.jpg",
+        "npj_input": "data/split_dataset_csc_mask/test/200021071/200021071_00032_1/00_input.png",
+        "npj_black": "data/split_dataset_csc_mask/test/200021071/200021071_00032_1/02_text_black.png",
+        "npj_red": "data/split_dataset_csc_mask/test/200021071/200021071_00032_1/03_text_red.png",
+        "npj_degradation": "data/split_dataset_csc_mask/test/200021071/200021071_00032_1/04_degradation.png",
+        "npj_background": "data/split_dataset_csc_mask/test/200021071/200021071_00032_1/05_background.png",
+        "review_status": "unreviewed",
+        "failure_type": "",
+        "roi_xywh": "",
+        "v6_status": "",
+        "observation": ""
+      },
+      "detail_page_xywh": [
+        520,
+        890,
+        520,
+        560
+      ],
+      "role": "本文に茶色い跡が重なる",
+      "source_sha256": {
+        "original": "d8fe32dc777814394c58baacccfdea957e2ab0fe9c63c667b98fbdf35bcfba63",
+        "npj_black": "b27e3285be71e12f7fe6fa9b74af093e7ba5ace9160431ad8c62873851e330e1",
+        "npj_red": "8c5bc65f2feea2efaba5581f5fa58214131af5a80bd3de2ffb7df0b0fca8ae26"
+      },
+      "image_size": [
+        1974,
+        3257
+      ],
+      "folder": "tmp_work/npj_contact_research_20261007/full_followup/B",
+      "v2_dir": "data/split_dataset_csc_mask_v2/test/200021071/200021071_00032_1"
+    }
+  ],
+  "jobs": [
+    [
+      "T01",
+      "local_char_weight"
+    ],
+    [
+      "T01",
+      "local_page_weight"
+    ],
+    [
+      "T01",
+      "v2_masks"
+    ],
+    [
+      "N01",
+      "local_char_weight"
+    ],
+    [
+      "N01",
+      "local_page_weight"
+    ],
+    [
+      "N01",
+      "v2_masks"
+    ],
+    [
+      "N02",
+      "v2_masks"
+    ],
+    [
+      "N02",
+      "saved_ACE_input"
+    ]
+  ],
+  "source_code": {
+    "tmp_work/npj_dirt_control_20261002/source_snapshot/ddrm_npj_v2/datasets/celeba.py": "ae136695098b70ed6ed7e6140a2ad9ca717034e7bd8ddf8ec71d118baca34b5e",
+    "tmp_work/npj_dirt_control_20261002/source_snapshot/ddrm_npj_v2/datasets/__init__.py": "e120b14931f914e5fb1c3c64847d407178eb7ed4e378c27200f2abda56762954",
+    "tmp_work/npj_dirt_control_20261002/source_snapshot/ddrm_npj_v2/datasets/utils.py": "c1ff6203044ab3300156caa957bd9b2ddb092ce7ca84eb84354adce56b4679ed",
+    "tmp_work/npj_dirt_control_20261002/source_snapshot/ddrm_npj_v2/datasets/vision.py": "7e7a817dca0da5f91d438141ad93108b3d6319ff63300900916fa576577b1891",
+    "tmp_work/npj_dirt_control_20261002/source_snapshot/ddrm_npj_v2/datasets/imagenet_subset.py": "f9b8d31c653bb8d8518fb84a6bdff9bfde385fd9b5d0143de19909e679ccb601",
+    "tmp_work/npj_dirt_control_20261002/source_snapshot/ddrm_npj_v2/datasets/lsun.py": "0b0bfaa3ce8f82490725069c6a5f576cf6a05b88498241f20480c05506f20c0f",
+    "tmp_work/npj_dirt_control_20261002/source_snapshot/ddrm_npj_v2/functions/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "tmp_work/npj_dirt_control_20261002/source_snapshot/ddrm_npj_v2/functions/denoising.py": "6e59f0b2348b81e3b24e2e62c50047be5bda63cd6583822e3d09ba152beff74f",
+    "tmp_work/npj_dirt_control_20261002/source_snapshot/ddrm_npj_v2/functions/svd_replacement.py": "2d54c04de543558c0091d4e1db3e84be437a52e33af7c07bd5246e64af2f7cbc",
+    "tmp_work/npj_dirt_control_20261002/source_snapshot/ddrm_npj_v2/functions/ckpt_util.py": "7a9d0a26dbd8a753a128c673a6de236271f8749d2da874e5ad3152e6034b2d0e",
+    "tmp_work/npj_dirt_control_20261002/source_snapshot/ddrm_npj_v2/runners/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "tmp_work/npj_dirt_control_20261002/source_snapshot/ddrm_npj_v2/scripts/postprocess_flatfield.py": "537b19526fc44a56843498ca499590a387334136e4338f70e631b21e884965df",
+    "tmp_work/npj_dirt_control_20261002/source_snapshot/ddrm_npj_v2/scripts/generate_mask_csc.py": "c77d63315c46117a8a978634d2a5b04ad8aacef09b790d08653667e8950c74ff",
+    "tmp_work/npj_dirt_control_20261002/source_snapshot/ddrm_npj_v2/scripts/ace.py": "35f40c8397a4df8fc07e64ec61994b561ceefe922803e84d9046434d992b5146",
+    "tmp_work/npj_dirt_control_20261002/source_snapshot/ddrm_npj_v2/scripts/csc.py": "11815cbb82d6972644498db9c5a8879dfc7e104b14a2749e04fdf0198e19b22f",
+    "tmp_work/npj_dirt_control_20261002/source_snapshot/ddrm_npj_v2/scripts/postprocess_composite_stage.py": "cda3dff74420e03b5bb3b9827631512e4f7edd5ed56de249e66c85b580727dc3",
+    "tmp_work/npj_dirt_control_20261002/source_snapshot/ddrm_npj_v2/scripts/pipeline_ddrm.py": "bbc130a1761be21dfa7ff6d5ec9bc29e34155a56dfa405d91daa6a989a77f2ec",
+    "tmp_work/npj_dirt_control_20261002/source_snapshot/ddrm_npj_v2/scripts/pipeline_ddrm_page.py": "38d54734213e6b83b1e5271b94a0239baf803b590af334112e1e496c6d4c0a58",
+    "tmp_work/npj_dirt_control_20261002/source_snapshot/ddrm_npj_v2/codes/random_crop.py": "2b4df6582b1754652548960be66e7a4a668be1c6a1ec82cdf57580d3c72cc0e9",
+    "tmp_work/npj_dirt_control_20261002/source_snapshot/ddrm_npj_v2/codes/diffusion.py": "9ef760c426b51f6a345d0c750dd0dae04b8ad8b308d5b79b1d10c500c59080bf",
+    "tmp_work/npj_dirt_control_20261002/source_snapshot/ddrm_npj_v2/codes/OrigDataset.py": "33c6660f1ad97d045509f24865a7811b2a52f9f329172436e59fbc676070fd6c",
+    "tmp_work/npj_dirt_control_20261002/source_snapshot/ddrm_npj_v2/codes/Inpainting.py": "cc783e6f6b8e76c6352d39b51da04f4d4c6f1afbc7a167a2269e13a83cf2e12a",
+    "tmp_work/npj_dirt_control_20261002/source_snapshot/ddrm_npj_v2/codes/openai/nn.py": "d9547fb22b421a16dc079cb82a9d98630100b5e1b2a710d343f4d3f90b8661f3",
+    "tmp_work/npj_dirt_control_20261002/source_snapshot/ddrm_npj_v2/codes/openai/unet.py": "ceb81079066117455c71ced730a62ee3f23967e7a51271126340b59cb24069b7",
+    "tmp_work/npj_dirt_control_20261002/source_snapshot/ddrm_npj_v2/codes/openai_1ch/nn.py": "d9547fb22b421a16dc079cb82a9d98630100b5e1b2a710d343f4d3f90b8661f3",
+    "tmp_work/npj_dirt_control_20261002/source_snapshot/ddrm_npj_v2/codes/openai_1ch/unet.py": "ceb81079066117455c71ced730a62ee3f23967e7a51271126340b59cb24069b7"
+  },
+  "dependencies": {
+    "modules/stain_removal/experiments/model_char/model_char/ckpt_epoch0350.pth": "1a5decb747e34e8b51ccea96b598fe3c6ec0e7f7a6f8df6cffc3135d8281a7f3",
+    "modules/ddrm_npj_v2/background/isemonogatari.png": "2a96dbde5301415c593dc1d119410e7a077a6ac15ea3d8d8d5f8d4021dc3897c",
+    "modules/stain_removal/model/model_char.pth": "9a10417414f300fb12fbd5b2e59676474fc9ed3ba7c9969806c950cb68610433",
+    "modules/stain_removal/model/model_page.pth": "ec7155feaef476aed9f88231fb811a39ac54c3c4ac6091b5361e9f874ffcded0",
+    "data/split_dataset/train/hnsd00000/hnsd007_023.jpg": "41999e5b52d17e60ea068c9b629ffcce037dc27fcbb3a4f45f46a5063d7b22af",
+    "data/split_dataset_csc_mask/train/hnsd00000/hnsd007_023/02_text_black.png": "ebd3b3ef4557fe0523ab6cd3bcebfa120f8a7f196672d815f0b3533fda922309",
+    "data/split_dataset_csc_mask/train/hnsd00000/hnsd007_023/03_text_red.png": "1184f50da7328831f68ee85b6be0695b11dad7ee54f9582913287562c0731543",
+    "data/split_dataset_csc_mask/train/hnsd00000/hnsd007_023/00_input.png": "d28a0af22f8695fd2a2aa209fda464cfec6ee64c405574de2ae091c40914a70e",
+    "data/split_dataset_csc_mask_v2/train/hnsd00000/hnsd007_023/02_text_black.png": "b96834418ece51c159af9b19fecbc4c33fdad718fb07d9997dc3f5a5db8a3609",
+    "data/split_dataset_csc_mask_v2/train/hnsd00000/hnsd007_023/03_text_red.png": "1184f50da7328831f68ee85b6be0695b11dad7ee54f9582913287562c0731543",
+    "data/split_dataset/test/200010454/200010454_00003_2.jpg": "67c1f8a762d442015f420a34512119163c3e4cb06307bb75567d086f119a246f",
+    "data/split_dataset_csc_mask/test/200010454/200010454_00003_2/02_text_black.png": "eb9912c62c766975e8752c156536a577d1ae0ee1f5ec7e12647c0a7cda677cd4",
+    "data/split_dataset_csc_mask/test/200010454/200010454_00003_2/03_text_red.png": "895ab69ea45c1c3ae17a5e1fa1c2ac1253b35872251b555fd32eadf19ef4ec22",
+    "data/split_dataset_csc_mask/test/200010454/200010454_00003_2/00_input.png": "68dfa05cf25aea5b75958063e97c7d028d0df86b645e776bcbc2246c95885c27",
+    "data/split_dataset_csc_mask_v2/test/200010454/200010454_00003_2/02_text_black.png": "9104a04197ee3b78edaadaf0a6d66f6bf039717a94e6cbe3db29a6cdf3b79730",
+    "data/split_dataset_csc_mask_v2/test/200010454/200010454_00003_2/03_text_red.png": "895ab69ea45c1c3ae17a5e1fa1c2ac1253b35872251b555fd32eadf19ef4ec22",
+    "data/split_dataset/test/200021071/200021071_00032_1.jpg": "d8fe32dc777814394c58baacccfdea957e2ab0fe9c63c667b98fbdf35bcfba63",
+    "data/split_dataset_csc_mask/test/200021071/200021071_00032_1/02_text_black.png": "b27e3285be71e12f7fe6fa9b74af093e7ba5ace9160431ad8c62873851e330e1",
+    "data/split_dataset_csc_mask/test/200021071/200021071_00032_1/03_text_red.png": "8c5bc65f2feea2efaba5581f5fa58214131af5a80bd3de2ffb7df0b0fca8ae26",
+    "data/split_dataset_csc_mask/test/200021071/200021071_00032_1/00_input.png": "da821a3d640cd17ad8946913694c2aa5203c648d8d9183d37bb25fdb6e695eb3",
+    "data/split_dataset_csc_mask_v2/test/200021071/200021071_00032_1/02_text_black.png": "a0b4308fbd142198b5c46fc81b1f8af1ec5e69bf03fe737fcda740877273d63c",
+    "data/split_dataset_csc_mask_v2/test/200021071/200021071_00032_1/03_text_red.png": "efff6b440965e869b1c1ae068e2b9974e14600b241cce87f2b805b1b2e22f401"
+  },
+  "baseline": "Existing verified full-page output from previous run, epoch350 + v1 masks + isemonogatari background + overlap32",
+  "variants": {
+    "local_char_weight": "Only checkpoint changes to model/model_char.pth; provenance to 2025 paper unverified",
+    "local_page_weight": "Only checkpoint changes to model/model_page.pth; original local main_high Args uses model_type=page; paper provenance unverified",
+    "v2_masks": "Only black/red masks change to stored CSC v2; this is a later local change, not the paper method",
+    "saved_ACE_input": "Only input pixels change to saved classifier ACE input. Same shape/masks/checkpoint/seed/background; raw RGB is not a direct black-text observation in this implementation"
+  },
+  "seed": 999,
+  "timesteps": 20,
+  "patch": 128,
+  "overlap": 32,
+  "authentic_paper_replay": false,
+  "ground_truth": false
+}

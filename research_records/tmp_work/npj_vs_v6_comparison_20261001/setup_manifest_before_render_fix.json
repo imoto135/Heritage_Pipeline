@@ -1,0 +1,378 @@
+{
+  "source_sha256": "ca709ea3fac575ee3d2939942fdc6cd15274ea1811a488dcbd2488ea9dccbaf6",
+  "dependencies": {
+    "tmp_work/npj_preprocess_review_20260930/manifest.json": "3b8f32a7f7b94f99f2aad3d02d4c90954eb87d703d06030a8f65fae6790b77fe",
+    "tmp_work/warm_ink_v6_other_books_fixed_20261001/manifest.json": "618ad6266b1a1148167796e63feacf33e064d679af95fbaa57bc32496cf2ff43",
+    "tmp_work/warm_ink_v6_other_books_fixed_20261001/complete.json": "2187913dfb76a98882fe3d4d94af7fddbcdd77787a889fe474d462deeaa2266b",
+    "tmp_work/warm_ink_v6_other_books_fixed_20261001/verification.json": "4190baac7611f8e678f995d47e768b69bc180cd173e9249e1fc442832349f326",
+    "modules/ddrm_npj/scripts/ace.py": "35f40c8397a4df8fc07e64ec61994b561ceefe922803e84d9046434d992b5146",
+    "modules/ddrm_npj/scripts/csc.py": "4213d20062a6e835e6e10ae7399651718060e30ddf5c8d0177c26aa6c1872955",
+    "data/train/200021802/200021802_00057_1.jpg": "b1c36337ec3a82b8cec57999ff2284323b4c42d08c0538bbe7bdf76dbeaea1d6",
+    "tmp_work/warm_ink_v6_other_books_fixed_20261001/200021802_00057_1/v2/red.png": "265aa9a9bca21b55458df57fd12306ec0092aa0642960cb5a49e62f9d1becaf5",
+    "tmp_work/warm_ink_v6_other_books_fixed_20261001/200021802_00057_1/v2/protect.png": "ecf3f7a8aedf8aba25e76c7247a6bee56fdf6793d7cc4311054d1cf29332dec4",
+    "tmp_work/warm_ink_v6_other_books_fixed_20261001/200021802_00057_1/v6_edit_allowed.png": "ece5ff4d2836537c4e2403df235e31d01862cf9fe40d72e7508d44050e9c1ccf",
+    "tmp_work/warm_ink_v6_other_books_fixed_20261001/200021802_00057_1/v6_hold.png": "34c66846f08158c11af338be30bcb8ae3feb143f5141f8ecbff22994597463ad",
+    "data/train/100249476/100249476_00028_1.jpg": "243805b579f648e1da3f13f9a7ed02c99e605444ec3d2808aa185bc93406d12a",
+    "tmp_work/warm_ink_v6_other_books_fixed_20261001/100249476_00028_1/v2/red.png": "21f8a7fc9bfebfa1165dc5b62b553209d2a492c36a4677b9b3ced58a5873c6dd",
+    "tmp_work/warm_ink_v6_other_books_fixed_20261001/100249476_00028_1/v2/protect.png": "ca2e7ac0f6e928ac3d27a4a26a1551b25e881523f2654ba959d057c5ba3eabdc",
+    "tmp_work/warm_ink_v6_other_books_fixed_20261001/100249476_00028_1/v6_edit_allowed.png": "d1f49260fbea76d9661676b69f9ec04b1abc88adab2c3eeb4067a6532aa1bf0b",
+    "tmp_work/warm_ink_v6_other_books_fixed_20261001/100249476_00028_1/v6_hold.png": "de91678b413473b750b6cb73def9fee7c88249c7b7a38cabfa8cb9a5da62da3f",
+    "data/train/200021853/200021853_00016_2.jpg": "bc5f203cd7a62f2a66f76edc6dcce08a13e31ff4ec23cf74db8f3be74c01b772",
+    "tmp_work/warm_ink_v6_other_books_fixed_20261001/200021853_00016_2/v2/red.png": "528ac20b9ebf3c072dd78fdd0d1a4a994f504814c11da89632728b6421c8a6a5",
+    "tmp_work/warm_ink_v6_other_books_fixed_20261001/200021853_00016_2/v2/protect.png": "9c95b5f4a00b9bb3ec698b5381e2d64570202c3b30f9f730447194b26c008f53",
+    "tmp_work/warm_ink_v6_other_books_fixed_20261001/200021853_00016_2/v6_edit_allowed.png": "d9f50593b4f467fbe83b3e37c59d7eccf7126ffe0ebe47c4b121bcccd5302129",
+    "tmp_work/warm_ink_v6_other_books_fixed_20261001/200021853_00016_2/v6_hold.png": "3a38704a21b8470e5b5ed85d4d241dc1c4e882a20c764e505d12ee2016825687",
+    "data/train/200021644/200021644_00003_1.jpg": "5f7089ad84c745fe3503e0f3d628670419e22d8eedd68986f6b0a7965de36500",
+    "tmp_work/warm_ink_v6_other_books_fixed_20261001/200021644_00003_1/v2/red.png": "5880b2c83556da00f7da495587d0776e8d499e71de6bf464a9a817b6801077fc",
+    "tmp_work/warm_ink_v6_other_books_fixed_20261001/200021644_00003_1/v2/protect.png": "6bdf6509e163b0fa07ad5dc3310a21e3e35df7ef3468c4f182659916b2212c40",
+    "tmp_work/warm_ink_v6_other_books_fixed_20261001/200021644_00003_1/v6_edit_allowed.png": "4a889e9ccd35a2c471928b99b2b0d6b4cc3d5fc02cdcbe315faa1965c31b395f",
+    "tmp_work/warm_ink_v6_other_books_fixed_20261001/200021644_00003_1/v6_hold.png": "d0629e0426f03a47cff7d7ea787c483eec9501d6bce9a9a2d2961579f328ea94",
+    "data/train/200014685/200014685_00004_2.jpg": "ef4a6af2df2c04984ca47a356fad6a6d02713386be0f166213427895821fe92b",
+    "tmp_work/warm_ink_v6_other_books_fixed_20261001/200014685_00004_2/v2/red.png": "fef5aa977f2502fe8f4f19ec5e9830e0fc3b106a15fdca239a630d67f561615d",
+    "tmp_work/warm_ink_v6_other_books_fixed_20261001/200014685_00004_2/v2/protect.png": "adb50ac66a444f414c1f4cc8f779d4b28b3928820c77d6d8b6467dc69350038f",
+    "tmp_work/warm_ink_v6_other_books_fixed_20261001/200014685_00004_2/v6_edit_allowed.png": "af6fa1e778fd96e0bb4d75d4b09dad401171d0a6c5a49d597124c9d6ac88a5a8",
+    "tmp_work/warm_ink_v6_other_books_fixed_20261001/200014685_00004_2/v6_hold.png": "63d678555b49b277b2ca0fb9b000ec968d6157f6beba398c56b5676c996743c4",
+    "data/val/200021637/200021637_00003_2.jpg": "8f1529dc441b3546249cb1931261d9401423923ae606b5bc7539b3f5b652d944",
+    "tmp_work/warm_ink_v6_other_books_fixed_20261001/200021637_00003_2/v2/red.png": "6ed298e152858affa65815f71f162c43075329f9f02443530331e416d9bffa9a",
+    "tmp_work/warm_ink_v6_other_books_fixed_20261001/200021637_00003_2/v2/protect.png": "c5c343ff69a6dc342fbd82b26a957f888ea54d1ba16cfe6323d33970e4699542",
+    "tmp_work/warm_ink_v6_other_books_fixed_20261001/200021637_00003_2/v6_edit_allowed.png": "1bc3b6df7b6010ffceae702630b4c3ba2c5e57ccee5b95ac05ecac46db79ddae",
+    "tmp_work/warm_ink_v6_other_books_fixed_20261001/200021637_00003_2/v6_hold.png": "c42e70a22836e2b5ad296617e271a85c0de39772b07b64838e268d4bf14c23a5"
+  },
+  "cases": [
+    {
+      "id": "200021802_00057_1",
+      "original": "data/train/200021802/200021802_00057_1.jpg",
+      "book": "200021802",
+      "split": "train",
+      "index": 110,
+      "reduced_width": 738,
+      "reduced_height": 1100,
+      "saturated_pixels": 652006,
+      "loose_pixels": 657186,
+      "dark_pixels": 5610,
+      "full_loose_pixels": 743037,
+      "ranking": "saturated_pixels",
+      "screening_stratum": "high",
+      "original_sha256": "b1c36337ec3a82b8cec57999ff2284323b4c42d08c0538bbe7bdf76dbeaea1d6",
+      "width": 2950,
+      "height": 4400,
+      "thumbnail": "thumbnails/200021802_00057_1.png"
+    },
+    {
+      "id": "100249476_00028_1",
+      "original": "data/train/100249476/100249476_00028_1.jpg",
+      "book": "100249476",
+      "split": "train",
+      "index": 53,
+      "reduced_width": 511,
+      "reduced_height": 725,
+      "saturated_pixels": 292628,
+      "loose_pixels": 299400,
+      "dark_pixels": 4932,
+      "full_loose_pixels": 345369,
+      "ranking": "saturated_pixels",
+      "screening_stratum": "high",
+      "original_sha256": "243805b579f648e1da3f13f9a7ed02c99e605444ec3d2808aa185bc93406d12a",
+      "width": 2042,
+      "height": 2898,
+      "thumbnail": "thumbnails/100249476_00028_1.png"
+    },
+    {
+      "id": "200021853_00016_2",
+      "original": "data/train/200021853/200021853_00016_2.jpg",
+      "book": "200021853",
+      "split": "train",
+      "index": 29,
+      "reduced_width": 327,
+      "reduced_height": 657,
+      "saturated_pixels": 12199,
+      "loose_pixels": 30824,
+      "dark_pixels": 20318,
+      "full_loose_pixels": 49669,
+      "ranking": "saturated_pixels",
+      "screening_stratum": "medium",
+      "original_sha256": "bc5f203cd7a62f2a66f76edc6dcce08a13e31ff4ec23cf74db8f3be74c01b772",
+      "width": 1306,
+      "height": 2625,
+      "thumbnail": "thumbnails/200021853_00016_2.png"
+    },
+    {
+      "id": "200021644_00003_1",
+      "original": "data/train/200021644/200021644_00003_1.jpg",
+      "book": "200021644",
+      "split": "train",
+      "index": 3,
+      "reduced_width": 525,
+      "reduced_height": 779,
+      "saturated_pixels": 30076,
+      "loose_pixels": 78597,
+      "dark_pixels": 314,
+      "full_loose_pixels": 84321,
+      "ranking": "saturated_pixels",
+      "screening_stratum": "medium",
+      "original_sha256": "5f7089ad84c745fe3503e0f3d628670419e22d8eedd68986f6b0a7965de36500",
+      "width": 2098,
+      "height": 3114,
+      "thumbnail": "thumbnails/200021644_00003_1.png"
+    },
+    {
+      "id": "200014685_00004_2",
+      "original": "data/train/200014685/200014685_00004_2.jpg",
+      "book": "200014685",
+      "split": "train",
+      "index": 5,
+      "reduced_width": 511,
+      "reduced_height": 808,
+      "saturated_pixels": 3137,
+      "loose_pixels": 26958,
+      "dark_pixels": 21936,
+      "full_loose_pixels": 38408,
+      "ranking": "saturated_pixels",
+      "screening_stratum": "low",
+      "original_sha256": "ef4a6af2df2c04984ca47a356fad6a6d02713386be0f166213427895821fe92b",
+      "width": 2041,
+      "height": 3231,
+      "thumbnail": "thumbnails/200014685_00004_2.png"
+    },
+    {
+      "id": "200021637_00003_2",
+      "original": "data/val/200021637/200021637_00003_2.jpg",
+      "book": "200021637",
+      "split": "val",
+      "index": 3,
+      "reduced_width": 460,
+      "reduced_height": 717,
+      "saturated_pixels": 3806,
+      "loose_pixels": 54199,
+      "dark_pixels": 4550,
+      "full_loose_pixels": 76113,
+      "ranking": "saturated_pixels",
+      "screening_stratum": "low",
+      "original_sha256": "8f1529dc441b3546249cb1931261d9401423923ae606b5bc7539b3f5b652d944",
+      "width": 1839,
+      "height": 2867,
+      "thumbnail": "thumbnails/200021637_00003_2.png"
+    }
+  ],
+  "rois": {
+    "200021802_00057_1": [
+      {
+        "title": "表紙中央の暖色面と亀裂",
+        "xywh": [
+          850,
+          1400,
+          700,
+          700
+        ]
+      },
+      {
+        "title": "表紙の左縁と綴じ",
+        "xywh": [
+          70,
+          550,
+          560,
+          900
+        ]
+      },
+      {
+        "title": "表紙下部の劣化",
+        "xywh": [
+          1100,
+          3100,
+          700,
+          700
+        ]
+      }
+    ],
+    "100249476_00028_1": [
+      {
+        "title": "表紙上部の色むら",
+        "xywh": [
+          360,
+          260,
+          800,
+          700
+        ]
+      },
+      {
+        "title": "表紙中央の折り目",
+        "xywh": [
+          550,
+          1320,
+          750,
+          620
+        ]
+      },
+      {
+        "title": "表紙の左縁",
+        "xywh": [
+          60,
+          900,
+          430,
+          850
+        ]
+      }
+    ],
+    "200021853_00016_2": [
+      {
+        "title": "上段の本文",
+        "xywh": [
+          130,
+          430,
+          700,
+          560
+        ]
+      },
+      {
+        "title": "下段の本文",
+        "xywh": [
+          190,
+          1620,
+          690,
+          700
+        ]
+      },
+      {
+        "title": "右側の紙の縁と文字",
+        "xywh": [
+          980,
+          520,
+          320,
+          1150
+        ]
+      }
+    ],
+    "200021644_00003_1": [
+      {
+        "title": "右下の朱印",
+        "xywh": [
+          1570,
+          2360,
+          380,
+          440
+        ]
+      },
+      {
+        "title": "桃色の図と輪郭",
+        "xywh": [
+          220,
+          1530,
+          1270,
+          890
+        ]
+      },
+      {
+        "title": "黄褐色の図",
+        "xywh": [
+          1290,
+          520,
+          550,
+          1250
+        ]
+      },
+      {
+        "title": "緑色の図と文字",
+        "xywh": [
+          1230,
+          1770,
+          640,
+          620
+        ]
+      },
+      {
+        "title": "上部の墨文字",
+        "xywh": [
+          620,
+          450,
+          650,
+          780
+        ]
+      }
+    ],
+    "200014685_00004_2": [
+      {
+        "title": "上側の本文",
+        "xywh": [
+          240,
+          500,
+          730,
+          720
+        ]
+      },
+      {
+        "title": "下側の本文",
+        "xywh": [
+          540,
+          2180,
+          890,
+          660
+        ]
+      },
+      {
+        "title": "上部の折れと紙の縁",
+        "xywh": [
+          1570,
+          0,
+          470,
+          590
+        ]
+      }
+    ],
+    "200021637_00003_2": [
+      {
+        "title": "右下の朱印と隣の薄い印",
+        "xywh": [
+          1100,
+          2180,
+          600,
+          660
+        ]
+      },
+      {
+        "title": "中央の薄い文字と色むら",
+        "xywh": [
+          720,
+          1020,
+          560,
+          960
+        ]
+      },
+      {
+        "title": "上段の墨の図",
+        "xywh": [
+          200,
+          360,
+          1300,
+          430
+        ]
+      },
+      {
+        "title": "下部の紙の色むらと枠",
+        "xywh": [
+          210,
+          2520,
+          900,
+          280
+        ]
+      }
+    ]
+  },
+  "npj_baseline": "Local frozen ddrm_npj CPU ACE + v1 CSC; exact published reproduction not established",
+  "ace": {
+    "alpha": 5.0,
+    "n_samples": 200,
+    "seed": 0,
+    "arithmetic": "native resolution; pixel-row chunking only"
+  },
+  "csc": {
+    "seed": 42,
+    "max_samples": 50000,
+    "border_margin_ratio": 0.04,
+    "red_a_min": 133.0
+  },
+  "v6_variant": "frozen split_direction",
+  "restoration": false,
+  "pixel_GT": false,
+  "thresholds_changed": false,
+  "display": "Masks classified at native resolution; composited onto the identical original image"
+}

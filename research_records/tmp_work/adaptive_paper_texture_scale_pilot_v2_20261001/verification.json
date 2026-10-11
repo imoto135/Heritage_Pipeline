@@ -1,0 +1,117 @@
+{
+  "status": "passed",
+  "pages": 25,
+  "ROIs": 77,
+  "variants": 154,
+  "baseline_field_and24_seam_exactly_reconstructed": true,
+  "reference_mask_applied_and_color_fixed": true,
+  "float_ab_exactly_unchanged": true,
+  "first_inside_pixel_unchanged": true,
+  "qualified_donor_pixels_only": true,
+  "all_nonreference_poison_cases": [
+    {
+      "id": "brown_false_red_new",
+      "patch_size": 12
+    },
+    {
+      "id": "hole_edge_new",
+      "patch_size": 12
+    },
+    {
+      "id": "200021712_00082_1_component_16",
+      "patch_size": 12
+    },
+    {
+      "id": "200021712_00082_1_component_21",
+      "patch_size": 12
+    },
+    {
+      "id": "200021712_00082_1_component_28",
+      "patch_size": 12
+    },
+    {
+      "id": "200021712_00082_1_component_160",
+      "patch_size": 12
+    },
+    {
+      "id": "new_margin_hole",
+      "patch_size": 12
+    },
+    {
+      "id": "new_brown_stamp",
+      "patch_size": 12
+    },
+    {
+      "id": "unseen_thin_crack",
+      "patch_size": 12
+    },
+    {
+      "id": "200017458_00004_2_component_7",
+      "patch_size": 12
+    },
+    {
+      "id": "200017458_00004_2_component_13",
+      "patch_size": 12
+    },
+    {
+      "id": "unseen_fold",
+      "patch_size": 12
+    },
+    {
+      "id": "unseen_top_trace",
+      "patch_size": 12
+    },
+    {
+      "id": "extra_top_branch",
+      "patch_size": 12
+    },
+    {
+      "id": "200014685_00004_2_upper_core_1",
+      "patch_size": 12
+    },
+    {
+      "id": "extra_brown_stain",
+      "patch_size": 12
+    },
+    {
+      "id": "extra_second_branch",
+      "patch_size": 12
+    },
+    {
+      "id": "200014685_00002_2_upper_core_3",
+      "patch_size": 12
+    },
+    {
+      "id": "200014685_00002_2_upper_core_5",
+      "patch_size": 12
+    },
+    {
+      "id": "200014685_00002_2_upper_core_16",
+      "patch_size": 12
+    },
+    {
+      "id": "extra_isolated_marks",
+      "patch_size": 12
+    },
+    {
+      "id": "200021712_00082_1_external_rim_core_1",
+      "patch_size": 12
+    },
+    {
+      "id": "200021712_00082_1_external_rim_core_6",
+      "patch_size": 12
+    },
+    {
+      "id": "200021712_00082_1_external_rim_core_7",
+      "patch_size": 12
+    },
+    {
+      "id": "200021712_00082_1_external_rim_core_10",
+      "patch_size": 12
+    }
+  ],
+  "original24_implementation_parity": true,
+  "outside_edit_changes": 0,
+  "pixel_GT": false,
+  "new_DDRM": false
+}

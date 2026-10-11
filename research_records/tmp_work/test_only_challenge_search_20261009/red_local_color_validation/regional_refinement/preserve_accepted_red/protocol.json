@@ -1,0 +1,307 @@
+{
+  "created_utc": "2026-10-09T12:40:07.883480+00:00",
+  "cases": [
+    {
+      "id": "F04",
+      "page": "200021063_00002_2",
+      "roi_xywh": [
+        1650,
+        2500,
+        400,
+        620
+      ],
+      "controls_xywh": {},
+      "source": "data/test/200021063/200021063_00002_2.jpg",
+      "source_sha256": "5f3d987a099149ea73332ab7420b22dd5e93d3b9908c34d3f8ee210966a25fe7",
+      "input_size": [
+        2069,
+        3161
+      ]
+    },
+    {
+      "id": "R01",
+      "page": "200019865_00002_1",
+      "roi_xywh": [
+        1350,
+        100,
+        650,
+        650
+      ],
+      "controls_xywh": {
+        "black_text": [
+          950,
+          1000,
+          800,
+          1000
+        ]
+      },
+      "source": "data/test/200019865/200019865_00002_1.jpg",
+      "source_sha256": "66e59afbf085f7b0a21219683f91d852356f6612a61b627f10b6fb19664f5cec",
+      "input_size": [
+        2124,
+        3208
+      ]
+    },
+    {
+      "id": "R02",
+      "page": "200017458_00003_2",
+      "roi_xywh": [
+        1790,
+        80,
+        320,
+        620
+      ],
+      "controls_xywh": {
+        "brown_binding": [
+          70,
+          150,
+          200,
+          2800
+        ],
+        "black_text": [
+          650,
+          900,
+          850,
+          900
+        ]
+      },
+      "source": "data/test/200017458/200017458_00003_2.jpg",
+      "source_sha256": "dba458ff40c3944e93ccbda866a6683c4cdb6cc312576ec66dddfd5d9a0f5ac1",
+      "input_size": [
+        2178,
+        3254
+      ]
+    },
+    {
+      "id": "R03",
+      "page": "200010454_00002_2",
+      "roi_xywh": [
+        1220,
+        1830,
+        520,
+        480
+      ],
+      "controls_xywh": {
+        "black_text": [
+          650,
+          800,
+          700,
+          800
+        ]
+      },
+      "source": "data/test/200010454/200010454_00002_2.jpg",
+      "source_sha256": "177776f90fc08b12e2f59a37773ef433556f43ebe47c503c2d676595a08a60d1",
+      "input_size": [
+        1784,
+        2365
+      ]
+    },
+    {
+      "id": "R04",
+      "page": "200003803_00003_1",
+      "roi_xywh": [
+        200,
+        100,
+        750,
+        550
+      ],
+      "controls_xywh": {
+        "black_text": [
+          700,
+          900,
+          800,
+          1000
+        ]
+      },
+      "source": "data/test/200003803/200003803_00003_1.jpg",
+      "source_sha256": "3cc169f2ebad09fa9b312a0230c2357287f16a0a505f64ef3d00fd44dc39da53",
+      "input_size": [
+        2174,
+        3187
+      ]
+    },
+    {
+      "id": "F01",
+      "page": "200004107_00006_1",
+      "roi_xywh": [
+        650,
+        900,
+        850,
+        1000
+      ],
+      "controls_xywh": {
+        "text": [
+          500,
+          900,
+          1300,
+          1700
+        ],
+        "margin": [
+          150,
+          300,
+          700,
+          500
+        ]
+      },
+      "source": "data/test/200004107/200004107_00006_1.jpg",
+      "source_sha256": "071c97d447948e1921d3e5ece2dc1b8183e29bf3290c89682cbaa88357eb70f8",
+      "input_size": [
+        1990,
+        2975
+      ]
+    },
+    {
+      "id": "F02",
+      "page": "200021063_00007_1",
+      "roi_xywh": [
+        650,
+        900,
+        800,
+        1000
+      ],
+      "controls_xywh": {
+        "text": [
+          250,
+          750,
+          1650,
+          2300
+        ],
+        "paper": [
+          100,
+          100,
+          700,
+          550
+        ]
+      },
+      "source": "data/test/200021063/200021063_00007_1.jpg",
+      "source_sha256": "5b67654ae0bb73ec9dc3c243c253a0841b85d848d3b10130432d7d8e8201f86b",
+      "input_size": [
+        2011,
+        3203
+      ]
+    },
+    {
+      "id": "F03",
+      "page": "200021063_00009_2",
+      "roi_xywh": [
+        100,
+        100,
+        1000,
+        1000
+      ],
+      "controls_xywh": {
+        "text": [
+          250,
+          950,
+          1500,
+          1950
+        ],
+        "paper": [
+          300,
+          2850,
+          1350,
+          280
+        ]
+      },
+      "source": "data/test/200021063/200021063_00009_2.jpg",
+      "source_sha256": "f02210d58439d40b55ad4bb7c44cd8206a37c1fcf059b7c62b93534f49923423",
+      "input_size": [
+        2068,
+        3232
+      ]
+    },
+    {
+      "id": "F05",
+      "page": "200005798_00036_1",
+      "roi_xywh": [
+        700,
+        500,
+        850,
+        1100
+      ],
+      "controls_xywh": {
+        "text": [
+          450,
+          1100,
+          1150,
+          1500
+        ],
+        "margin": [
+          350,
+          200,
+          1250,
+          650
+        ]
+      },
+      "source": "data/test/200005798/200005798_00036_1.jpg",
+      "source_sha256": "0d2955319c30660157c5f279d75205f6b65ef07bccbd2d105391dad85af8184c",
+      "input_size": [
+        1987,
+        3130
+      ]
+    },
+    {
+      "id": "F06",
+      "page": "200008003_00006_1",
+      "roi_xywh": [
+        550,
+        900,
+        1050,
+        2400
+      ],
+      "controls_xywh": {
+        "small_text": [
+          650,
+          1300,
+          700,
+          2000
+        ],
+        "body": [
+          1700,
+          1050,
+          780,
+          2700
+        ]
+      },
+      "source": "data/test/200008003/200008003_00006_1.jpg",
+      "source_sha256": "49dfa208e193e0f1cc6264466348259b3c79b8aa1de7a53f51ffbc640fc120c8",
+      "input_size": [
+        2660,
+        4128
+      ]
+    }
+  ],
+  "variants": {
+    "grow5_preserve": {
+      "radius": 5,
+      "weak_a": 2,
+      "strong_a": 8,
+      "strong_fraction": 0.05,
+      "min_seed_pixels": 8,
+      "region_seed_radius": 16,
+      "region_min_seed_pixels": 128,
+      "preserve": "Original CSC red intersect accepted strong-seed regions, union local red"
+    }
+  },
+  "shared": {
+    "local_median_kernel": 51,
+    "hue": "<=15 or >=165",
+    "saturation_min": 25,
+    "r_minus_g_min": 12,
+    "r_minus_2g_plus_b_min": 6,
+    "csc_anchor": "Previous mean-a-gate-off mask; unchanged ACE HSV component support >=.05",
+    "post": "close3 intersect original weak support"
+  },
+  "howe": {
+    "c": 160,
+    "sigma": 0.6,
+    "low": 0.1,
+    "high": 0.4
+  },
+  "final_test": false,
+  "scope": "Development on observed test-derived pages; not dense-GT accuracy or unseen final test",
+  "script_sha256": "d04fd6206cd70cff11a17894de6ff6450d82e2965d3cb87088ec73a701552672",
+  "frozen_csc_sha256": "11815cbb82d6972644498db9c5a8879dfc7e104b14a2749e04fdf0198e19b22f",
+  "stage": "Posthoc development: preserve accepted CSC red after observing faint-seal regression",
+  "parent_protocol_sha256": "97cf17ccc5a9f963088390c733046913e8eca0a9916cb19d07f8f333a1ecf88b"
+}

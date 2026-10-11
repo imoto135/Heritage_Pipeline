@@ -1,0 +1,99 @@
+{
+  "stroke_width": 4.393799781799316,
+  "eligible_components": 4,
+  "groups": [
+    {
+      "group": 1,
+      "components": [
+        110
+      ],
+      "context_xywh": [
+        1094,
+        650,
+        160,
+        160
+      ],
+      "matches": [],
+      "selected_components": [],
+      "decision": "hold_single_component"
+    },
+    {
+      "group": 2,
+      "components": [
+        377
+      ],
+      "context_xywh": [
+        1299,
+        1522,
+        160,
+        160
+      ],
+      "matches": [],
+      "selected_components": [],
+      "decision": "hold_single_component"
+    },
+    {
+      "group": 3,
+      "components": [
+        772
+      ],
+      "context_xywh": [
+        1776,
+        2607,
+        160,
+        160
+      ],
+      "matches": [],
+      "selected_components": [],
+      "decision": "hold_single_component"
+    },
+    {
+      "group": 4,
+      "components": [
+        857
+      ],
+      "context_xywh": [
+        1738,
+        2700,
+        160,
+        160
+      ],
+      "matches": [],
+      "selected_components": [],
+      "decision": "hold_single_component"
+    }
+  ],
+  "removed_pixels": 0,
+  "removed_components": 0,
+  "strict_geometry_removed_pixels": 0,
+  "strict_geometry_removed_components": 0,
+  "naive_csc_veto_removed_pixels": 18978,
+  "id": "F04",
+  "page": "200021063_00002_2",
+  "origin": "fixed_holdout_validation",
+  "neighbors": [
+    "data/test/200021063/200021063_00002_1.jpg",
+    "data/test/200021063/200021063_00003_1.jpg",
+    "data/test/200021063/200021063_00003_2.jpg"
+  ],
+  "masks_unchanged": true,
+  "route_counts": {
+    "red": 0,
+    "text": 853678,
+    "background": 5328837,
+    "repair_candidate": 81716,
+    "unknown": 275878
+  },
+  "dependencies": {
+    "data/test/200021063/200021063_00002_2.jpg": "5f3d987a099149ea73332ab7420b22dd5e93d3b9908c34d3f8ee210966a25fe7",
+    "tmp_work/test_only_challenge_search_20261009/fixed_holdout_validation/masks/howe/200021063_00002_2/02_text_black.png": "69414f59ae4cfaf72141a3dda29225f913660ede889a5b31a67474a3c5262c2e",
+    "tmp_work/test_only_challenge_search_20261009/fixed_holdout_validation/masks/howe/200021063_00002_2/03_text_red.png": "ef4d52ec83c0a405e43960bdfc79b618970896fc723f2f4010ee70a1450c5bba",
+    "data/split_dataset_csc_mask_v2/test/200021063/200021063_00002_2/02_text_black.png": "a01dcf2e731470aedfb9e88ad2f2e77de7949476fd7794a60028400e7bd68658",
+    "data/split_dataset_csc_mask_v2/test/200021063/200021063_00002_2/04_degradation.png": "6050035c6d9de65b198a086ff7d6976549c91d61232e239829a20bb2b6d6d95c",
+    "data/split_dataset_csc_mask_v2/test/200021063/200021063_00002_2/05_background.png": "4731bb1c6c12f3a6cadae9e23312959a204e949efc0eeb3e27ebfc789eba8130",
+    "data/test/200021063/200021063_00002_1.jpg": "d643e0e7d4a0542d0b391892b642f1286c0cf66306cffb7f52d2243ad9bfc0c8",
+    "data/test/200021063/200021063_00003_1.jpg": "c2fec35c6eb64caacb608b89c14868c8f09e867a598d5deb6ce34d32ef6f1ee1",
+    "data/test/200021063/200021063_00003_2.jpg": "8cbc13d17c9ddf9250b5c16968b222db49d3a1252b47dc9d327bf6385f6e3ffb"
+  },
+  "seconds": 2.37
+}

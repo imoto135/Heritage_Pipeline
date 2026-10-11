@@ -1,0 +1,87 @@
+{
+  "scope": "data/test raw JPEG only",
+  "screened_pages": 1404,
+  "books": 11,
+  "selection_stage": "page-level shortlist; ROIs and final evaluation use not fixed",
+  "omitted_case": "05: color-page dense granular marks; no convincing test example found",
+  "cases": [
+    {
+      "id": "01",
+      "label": "薄い筆画",
+      "name": "200010454_00016_2",
+      "assessment": "有力",
+      "note": "褪色した表文字がページ全体にあり、目立つ裏移りはない。",
+      "dimensions": [
+        1784,
+        2354
+      ],
+      "source": "data/test/200010454/200010454_00016_2.jpg",
+      "sha256": "9a252f8305457507b1ac5e9d18c70be854a2aee28eaebf6607cea48bc3b9cb29"
+    },
+    {
+      "id": "02",
+      "label": "広い染みと低コントラスト文字",
+      "name": "200015843_00107_1",
+      "assessment": "弱い代替",
+      "note": "色のある紙面の褐色の濃淡と本文。ただし旧02ほど文字が淡くない。",
+      "dimensions": [
+        2130,
+        3202
+      ],
+      "source": "data/test/200015843/200015843_00107_1.jpg",
+      "sha256": "4ffec2db86247ebcca99203e6e413d42a90e49740951ce0cb30cad02fcf9da20"
+    },
+    {
+      "id": "03",
+      "label": "染みと筆画の接触",
+      "name": "200015843_00105_1",
+      "assessment": "候補",
+      "note": "褐色の染み状部分が本文の文字列に重なる。",
+      "dimensions": [
+        2146,
+        3222
+      ],
+      "source": "data/test/200015843/200015843_00105_1.jpg",
+      "sha256": "f2094b5180c377e666b00437d3adeb975b09cab6fee665c11893ad311eabf134"
+    },
+    {
+      "id": "04",
+      "label": "本文外の孤立斑点",
+      "name": "200021071_00032_1",
+      "assessment": "弱い代替",
+      "note": "本文の上の余白に孤立した黒点がある。旧04より点は小さい。",
+      "dimensions": [
+        1974,
+        3257
+      ],
+      "source": "data/test/200021071/200021071_00032_1.jpg",
+      "sha256": "d8fe32dc777814394c58baacccfdea957e2ab0fe9c63c667b98fbdf35bcfba63"
+    },
+    {
+      "id": "06",
+      "label": "虫食い状の紙面損傷",
+      "name": "200003803_00003_1",
+      "assessment": "暫定・既視",
+      "note": "左上の枝分かれ状の欠損。原因未確定。過去の方法出力確認歴あり。",
+      "dimensions": [
+        2174,
+        3187
+      ],
+      "source": "data/test/200003803/200003803_00003_1.jpg",
+      "sha256": "3cc169f2ebad09fa9b312a0230c2357287f16a0a505f64ef3d00fd44dc39da53"
+    },
+    {
+      "id": "07",
+      "label": "裏移りと表文字",
+      "name": "200021071_00033_2",
+      "assessment": "有力",
+      "note": "左側も含め表文字があり、青灰色像は直前ページの左右反転像と対応。",
+      "dimensions": [
+        1968,
+        3264
+      ],
+      "source": "data/test/200021071/200021071_00033_2.jpg",
+      "sha256": "ccb0099adc3745cc6974aa7c7e51791c36e6575c0d3deb394dac64a62276c9e5"
+    }
+  ]
+}

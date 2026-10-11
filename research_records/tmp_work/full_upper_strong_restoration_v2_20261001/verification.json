@@ -1,0 +1,52 @@
+{
+  "status": "passed",
+  "pages": 25,
+  "ROIs": 73,
+  "old_base_kept_on_solver_failure": true,
+  "outside_edit_changes": 0,
+  "all_nonreference_poison_cases": [
+    {
+      "id": "unseen_fold",
+      "mode": "raw_upper"
+    },
+    {
+      "id": "unseen_fold",
+      "mode": "short_upper"
+    },
+    {
+      "id": "200021802_00015_1_upper_core_25",
+      "mode": "raw_upper"
+    },
+    {
+      "id": "200021802_00015_1_upper_core_237",
+      "mode": "raw_upper"
+    },
+    {
+      "id": "extra_top_branch",
+      "mode": "raw_upper"
+    },
+    {
+      "id": "200014685_00004_2_upper_core_1",
+      "mode": "raw_upper"
+    },
+    {
+      "id": "extra_second_branch",
+      "mode": "raw_upper"
+    },
+    {
+      "id": "200014685_00002_2_upper_core_3",
+      "mode": "raw_upper"
+    },
+    {
+      "id": "200014685_00002_2_upper_core_5",
+      "mode": "raw_upper"
+    },
+    {
+      "id": "200014685_00002_2_upper_core_16",
+      "mode": "raw_upper"
+    }
+  ],
+  "minimum_boundary_pairs": 16,
+  "pixel_GT": false,
+  "new_DDRM": false
+}

@@ -1,0 +1,30 @@
+{
+  "rows": [
+    {
+      "id": "F02",
+      "roi_xywh": [
+        650,
+        900,
+        800,
+        1000
+      ],
+      "scale": 1,
+      "interpolation": "nearest if enlarged",
+      "note": "All three tiles within a row have the same crop and scale. ROI and case were selected before new masks/inference."
+    },
+    {
+      "id": "F04",
+      "roi_xywh": [
+        1650,
+        2500,
+        400,
+        620
+      ],
+      "scale": 2,
+      "interpolation": "nearest if enlarged",
+      "note": "All three tiles within a row have the same crop and scale. ROI and case were selected before new masks/inference."
+    }
+  ],
+  "dpi": 300,
+  "selection": "Representative successes/limits selected after reviewing completed outputs; not additional independent test cases"
+}

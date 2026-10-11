@@ -1,0 +1,12 @@
+{
+  "hnsd007_crop_mask_matches_global_csc_crop": true,
+  "hnsd007_crop_input_matches_original_page_crop": true,
+  "used_mask_reconstruction": "gray(02_text_black.png) < 127 then *255, same as pipeline_ddrm.py",
+  "actual_used_mask_file_archived": false,
+  "manual_stain_pixels": 1330,
+  "manual_stain_pixels_in_reconstructed_used_mask": 1330,
+  "baseline_vs_mask_override_output_changed_in_roi_pixels": 1330,
+  "baseline_roi_mean_rgb": [0.21, 2.51, 2.03],
+  "mask_override_roi_mean_rgb": [211.78, 200.37, 181.54],
+  "interpretation": "The entire hand-marked stain ROI was used as a DDRM target under the black-text mask; changing that mask changed all ROI output pixels from near-black to paper-like values. This establishes mask involvement for the case, but not a general pixel-causal explanation of DDRM output."
+}

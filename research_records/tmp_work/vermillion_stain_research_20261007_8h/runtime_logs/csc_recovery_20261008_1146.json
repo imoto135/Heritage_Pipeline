@@ -1,0 +1,28 @@
+[
+  {
+    "old_pid": 3561919,
+    "pid": 34006,
+    "command": [
+      "/home/imoto/miniconda3/envs/diffusion/bin/python",
+      "-u",
+      "/home/imoto/Heritage_Pipeline/tmp_work/vermillion_stain_research_20261007_8h/prepare_independent_csc.py",
+      "--shard",
+      "0",
+      "--shards",
+      "2"
+    ]
+  },
+  {
+    "old_pid": 3561920,
+    "pid": 34007,
+    "command": [
+      "/home/imoto/miniconda3/envs/diffusion/bin/python",
+      "-u",
+      "/home/imoto/Heritage_Pipeline/tmp_work/vermillion_stain_research_20261007_8h/prepare_independent_csc.py",
+      "--shard",
+      "1",
+      "--shards",
+      "2"
+    ]
+  }
+]

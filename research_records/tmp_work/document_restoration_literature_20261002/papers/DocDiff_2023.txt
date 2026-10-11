@@ -1,0 +1,752 @@
+                                        DocDiff: Document Enhancement via Residual Diffusion Models
+                                                           Zongyuan Yang                                                        Baolin Liu                               Yongping Xiong∗
+                                                  Beijing University of Posts and                                Beijing University of Posts and                   Beijing University of Posts and
+                                                       Telecommunications                                             Telecommunications                                Telecommunications
+                                                          Beijing, China                                                 Beijing, China                                    Beijing, China
+                                                  yangzongyuan0@bupt.edu.cn                                            baolin@bupt.edu.cn                               ypxiong@bupt.edu.cn
+
+                                                                    Lan Yi                                                     Guibin Wu                                    Xiaojun Tang
+                                                 Beijing University of Posts and                                 Beijing University of Posts and                   Beijing University of Posts and
+                                                      Telecommunications                                              Telecommunications                                Telecommunications
+arXiv:2305.03892v2 [cs.CV] 9 Aug 2023
+
+
+
+
+                                                         Beijing, China                                                  Beijing, China                                    Beijing, China
+
+                                                                  Ziqi Liu                                                    Junjie Zhou                                    Xing Zhang
+                                                 Beijing University of Posts and                                 Beijing University of Posts and                Artificial Intelligence Lab of China
+                                                      Telecommunications                                              Telecommunications                          Resources Digital Technology
+                                                         Beijing, China                                                  Beijing, China                                  Guangdong, China
+
+                                        ABSTRACT                                                                                        deblurring methods without additional joint training. Available
+                                        Removing degradation from document images not only improves                                     codes: https://github.com/Royalvice/DocDiff.
+                                        their visual quality and readability, but also enhances the perfor-
+                                        mance of numerous automated document analysis and recognition                                   CCS CONCEPTS
+                                        tasks. However, existing regression-based methods optimized for                                 • Computing methodologies → Computer vision.
+                                        pixel-level distortion reduction tend to suffer from significant loss
+                                        of high-frequency information, leading to distorted and blurred text                            KEYWORDS
+                                        edges. To compensate for this major deficiency, we propose DocDiff,                             Document Enhancement; Conditional Diffusion Models; Frequency
+                                        the first diffusion-based framework specifically designed for diverse                           Separation; Document Analysis
+                                        challenging document enhancement problems, including document
+                                        deblurring, denoising, and removal of watermarks and seals. DocD-                               ACM Reference Format:
+                                        iff consists of two modules: the Coarse Predictor (CP), which is                                Zongyuan Yang, Baolin Liu, Yongping Xiong, Lan Yi, Guibin Wu, Xiaojun
+                                        responsible for recovering the primary low-frequency content, and                               Tang, Ziqi Liu, Junjie Zhou, and Xing Zhang. 2023. DocDiff: Document
+                                                                                                                                        Enhancement via Residual Diffusion Models. In Proceedings of the 31st ACM
+                                        the High-Frequency Residual Refinement (HRR) module, which
+                                                                                                                                        International Conference on Multimedia (MM ’23), October 29-November 3,
+                                        adopts the diffusion models to predict the residual (high-frequency                             2023, Ottawa, ON, Canada. ACM, New York, NY, USA, 12 pages. https:
+                                        information, including text edges), between the ground-truth and                                //doi.org/10.1145/3581783.3611730
+                                        the CP-predicted image. DocDiff is a compact and computationally
+                                        efficient model that benefits from a well-designed network archi-
+                                        tecture, an optimized training loss objective, and a deterministic                              1    INTRODUCTION
+                                        sampling process with short time steps. Extensive experiments                                   Document images are widely used in multi-media applications. The
+                                        demonstrate that DocDiff achieves state-of-the-art (SOTA) per-                                  vulnerability to degradation is one of the challenges encountered in
+                                        formance on multiple benchmark datasets, and can significantly                                  processing such highly structured data that differs significantly in
+                                        enhance the readability and recognizability of degraded document                                pixel distribution from natural scene images. As an important pre-
+                                        images. Furthermore, our proposed HRR module in pre-trained                                     processing step, document enhancement aims to restore degraded
+                                        DocDiff is plug-and-play and ready-to-use, with only 4.17M pa-                                  document images to improve their readability and the performance
+                                        rameters. It greatly sharpens the text edges generated by SOTA                                  of OCR systems [15]. In this paper, we focus on three major doc-
+                                                                                                                                        ument enhancement tasks: document deblurring, document de-
+                                        ∗ Corresponding author                                                                          noising and binarization, i.e., to remove fragmented noise from
+                                                                                                                                        documents, such as smears and bleed-throughs, and watermark
+                                                                                                                                        and seal removal. (Figure 6 in Appendix shows several degraded
+                                        Permission to make digital or hard copies of all or part of this work for personal or
+                                        classroom use is granted without fee provided that copies are not made or distributed           document images addressed in this paper. )
+                                        for profit or commercial advantage and that copies bear this notice and the full citation          The major challenges for document enhancement are noise elim-
+                                        on the first page. Copyrights for components of this work owned by others than the              ination and pixel-level text generation with low latency on high
+                                        author(s) must be honored. Abstracting with credit is permitted. To copy otherwise, or
+                                        republish, to post on servers or to redistribute to lists, requires prior specific permission   resolution document images. Specially, the presence of diverse noise
+                                        and/or a fee. Request permissions from permissions@acm.org.                                     types in document images, comprising of both global noise such
+                                        MM ’23, October 29-November 3, 2023, Ottawa, ON, Canada                                         as blurring and local noise such as smears, bleed-throughs, and
+                                        © 2023 Copyright held by the owner/author(s). Publication rights licensed to ACM.
+                                        ACM ISBN 979-8-4007-0108-5/23/10. . . $15.00                                                    seals, along with their potential combination, poses a significant
+                                        https://doi.org/10.1145/3581783.3611730                                                         challenge for noise elimination. Moreover, the task of generating
+MM ’23, October 29-November 3, 2023, Ottawa, ON, Canada                                                                     Trovato and Tobin, et al.
+
+
+                                                                           difficult to be practically implemented in document analysis sys-
+                                                                           tems. For these methods, shorter inference time implies the need for
+                                                                           shorter sampling steps, which can lead to substantial performance
+                                                                           degradation. Besides, the generation diversity of these methods can
+                                                                           result in character inconsistency between the conditions and the
+                                                                           sampled images.
+                                                                              Considering these problems, we transform document enhance-
+           Blurred text lines                       Ground-truth           ment into the task of conditional image-to-image generation and
+                                                                           propose DocDiff, which consists of two modules: the Coarse Pre-
+                                                                           dictor (CP) and the High-Frequency Residual Refinement (HRR)
+                                                                           module. The CP takes degraded document images as input and
+                                                                           approximately restores their clean versions. The HRR module lever-
+                                                                           ages diffusion models to sharp the text edges produced by CP accu-
+                                                                           rately and efficiently. To avoid enhancing the generation quality at
+                                                                           the expense of altering the characters and speed the inference, we
+                                                                           adjust the optimization objective during training and adopt a short-
+                                                                           step deterministic sampling strategy during inference. Specifically,
+                                                                           we allow the HRR module to learn the distribution of residuals
+                                                                           between the ground-truth images and the CP-predicted images
+                                                                           (conditions). While ensuring consistency in the reverse diffusion
+                                                                           process, we enable the HRR to directly predict the original residual
+    DocDiff         HINet [2] / HINet+HRR        DE-GAN [40] / DEGAN+HRR   rather than the added noise. This allows DocDiff to produce reason-
+                                                                           able images that are highly correlated with the conditions in the
+Figure 1: Compared to DE-GAN [40] and HINet [2], DocDiff                   first few steps of the reverse diffusion, based on the premise of us-
+generates sharper text edges. Our proposed HRR module                      ing a channel-wise concatenation conditioning scheme [34, 35, 43].
+effectively mitigates the problem of distorted and blurred                 While sacrificing generation diversity, which is not a critical factor
+characters generated by regression-based methods, regard-                  for document enhancement, this operation considerably reduces
+less of whether they are designed for natural or document                  the number of diffusion steps required for sampling and results
+scenes. Note that the HRR module does not require addi-                    in a reduced range of potential outputs generated by the condi-
+tional joint training with DE-GAN [40] and HINet [2]. Its                  tional diffusion model, which effectively mitigates the production
+weights are derived from the pre-trained DocDiff.                          of distorted text edges and the replacement of characters. Overall,
+                                                                           DocDiff undergoes end-to-end training with frequency separation
+                                                                           through the joint use of pixel loss and modified diffusion model
+                                                                           loss and applies the deterministic short-step sampling. DocDiff
+text-laden images is fraught with difficulty. Unlike images that de-       strikes the balance between innovation and practicality, achieving
+pict natural scenes, the high-frequency information of text-laden          outstanding performance with a tiny and efficient network that
+images is mostly concentrated on the text edges. The slightest er-         contains only 8M parameters.
+roneous pixel modifications at the text edges have the potential              Experimental results on the three benchmark datasets (Docu-
+to alter the semantic meaning of a character, rendering it illegible       ment Deblurring [12] and (H-)DIBCO [29, 32]) demonstrate that
+or unrecognizable by OCR systems. Thus, document enhancement               DocDiff achieves SOTA performance in terms of perceptual qual-
+does not prioritize generation diversity, which differs from the           ity for low-level deblurring task and competitive performance for
+pursuit of recovering multiple distinct denoised images in natu-           high-level binarization task. More importantly, DocDiff achieves
+ral scenes [37, 43]. In practice, a typical document image contains        competitive deblurring performance with only 5 sampling steps.
+millons of pixels. To ensure the efficiency of the entire document         For the task of watermark and seal removal, we generated paired
+analysis system, pre-processing speed is crucial, which demands            datasets using in-house document images. Experimental results
+models to be as lightweight as possible.                                   demonstrate that DocDiff can effectively remove watermarks and
+   Currently, existing document enhancement methods [39–41] are            seals while preserving the covered characters. Specifically, for seal
+deep learning-based regression methods. Due to the problem of              removal, DocDiff trained on the synthesized dataset shows promis-
+"regression to the mean", these methods [39–41] optimized with             ing performance in real-world scenarios. Ablation experiments
+pixel-level loss produce blurry and distorted text edges. Addition-        demonstrate the effectiveness of the HRR module on sharpening
+ally, due to the existence of numerous non-text regions in high-           blurred characters generated by regression methods, as shown in
+resolution document images, GAN-based methods [40] are prone               Fig. 1.
+to mode collapse when trained on local patches. In natural scenes,            In summary, the contributions of our paper are as follows:
+many diffusion-based methods [35, 43] try to restore degraded im-
+ages with more details. However, there are challenges in directly
+applying these methods to document enhancement. Foremost, their                • We present a novel framework, named DocDiff. To the best of
+high training costs and excessively long sampling steps make them                our knowledge, it is the first diffusion-based method which
+DocDiff: Document Enhancement via Residual Diffusion Models                                     MM ’23, October 29-November 3, 2023, Ottawa, ON, Canada
+
+
+        is specifically designed for diverse chanllenging document              Although effective for denoising natural images, they are not
+        enhancement tasks.                                                   specifically designed for document images. Methods [18, 21, 33–
+      • We propose a plug-and-play High-Frequency Residual Re-               35, 37] cannot handle images of arbitrary resolution. Due to their
+        finement (HRR) module to refine the generation of text edges.        large networks, long sampling steps and large number of cropped
+        We demonstrate that the HRR module is capable of directly            patches, these lead to prohibitively long inference time on high
+        and substantially enhancing the perceptual quality of de-            resolution document images. Although Method [43] is capable of
+        blurred images generated by regression methods without               processing images of any resolution and has a relatively small
+        requiring any additional training.                                   network structure, its training method of predicting noise and sto-
+      • DocDiff is a tiny, flexible, efficient and train-stable generative   chastic sampling strategy produce diverse characters and distorted
+        model. Our experiments show that DocDiff achieves competi-           text edges, which is not suitable for document enhancement.
+        tive performance with only 5 sampling steps. Compared with
+        non-diffusion-based methods [15, 39, 40, 51], DocDiff’s infer-       3     METHODOLOGY
+        ence is fast with the same level of performance. Additionally,       The overall architecture of DocDiff is shown in Fig. 2. DocDiff
+        DocDiff is trained inexpensively, avoids mode collapse and           consists of two modules: the Coarse Predictor (CP) and the High-
+        can enhance both handwritten and printed document images             Frequency Residual Refinement (HRR) module. Due to the fixed
+        at any resolution.                                                   pattern of document images and their varying resolutions, we adopt
+      • Adequate ablation studies and comparative experiments                a compact U-Net structure for the CP and HRR module, modified
+        show that DocDiff achieves competitive performance on the            from [10]. We replace the self-attention layer in the middle with
+        tasks of deblurring, denoising, watermark and seal removal           four layers of dilated convolutions to increase the receptive field,
+        on documents. Our results highlight the benefits of various          and remove the remaining self-attention and normalization layers.
+        components of DocDiff, which collectively contribute to its          To reduce computational complexity, we compress the parameters
+        superior performance.                                                of the CP and HRR module to 4.03M and 4.17M respectively, while
+                                                                             ensuring performance, making them much smaller than existing
+2 RELATED WORKS                                                              document enhancement methods [39, 40, 45, 51]. Overrall, DocDiff
+                                                                             is a fully convolutional model that employs a combination of pixel
+2.1 Document Enhancement                                                     loss and diffusion model loss, facilitating end-to-end training with
+The pixel distribution in document images differs significantly from         frequency separation.
+that of natural scene images, and most document images have a
+resolution greater than 1k. Therefore, it is crucial to develop spe-         3.1    Coarse Predictor
+cialized enhancement models for document scenarios to handle                 The objective of the Coarse Predictor 𝐶𝜃 is to approximately restore
+the degradation of different types of documents efficiently and              a degraded document image 𝑦 into its clean version 𝑥 gt at the pixel
+robustly. The currently popular document enhancement methods                 level. The Lpixel can be defined as the mean square error between
+[15, 19, 39, 40] are predominantly based on deep learning regression         the coarse prediction 𝑥 𝐶 and the 𝑥 gt :
+metohds. These methods aim to achieve higher PSNR by minimiz-
+ing L1 or L2 pixel loss. However, distortion metrics like PSNR                                            𝑥 𝐶 = 𝐶𝜃 (𝑦)                              (1)
+only partially align with human perception [1]. This problem is                                                   𝐶
+                                                                                                     Lpixel = E∥𝑥 − 𝑥 gt ∥ 2                    (2)
+particularly noticeable in document scenarios (see details depicted
+                                                                                 During text pixel generation, the Coarse Predictor can effectively
+in Fig. 10 in Appendix). Although GAN-based methods [40, 41, 51]
+                                                                             restore the primary content of the text, but it may not be able
+utilize a combination of content and adversarial losses to generate
+                                                                             to accurately capture the high-frequency information in the text
+images with sharp edges, training GANs on high-resolution doc-
+                                                                             edges. This leads to significant blurring at the edges of the text.
+ument datasets can be challenging because the cropped patches
+                                                                             As shown in Fig. 1, this is a well-known limitation of CNN-based
+typically have a significant number of identical patterns, which
+                                                                             regression methods due to the problem of "regression to the mean".
+increases the risk of mode collapse.
+                                                                             It is challenging to address this issue by simply cascading more
+                                                                             convolutional layers.
+2.2     Diffusion-based Image-to-image
+Recently, Diffusion Probabilistic Models (DPMs) [10, 38] have been
+                                                                             3.2    High-Frequency Residual Refinement
+widely adopted for conditional image generation [18, 21, 33–35,                     Module
+37, 43? ? ]. Saharia et al. [35] present SR3, which adapts diffusion         To address the problem mentioned above, we introduce the High-
+models to image super-resolution. Saharia et al. [34] propose Palette,       Frequency Residual Refinement (HRR) module, which is capable
+which is a multi-task image-to-image diffusion model. Palette has            of generating samples from the learned posterior distribution. The
+demonstrated the excellent performance of diffusion models in                core component of HRR module id a Denoiser 𝑓𝜃 which leverages
+the field of conditional image generation, including colorization,           DPMs to estimate the distribution of residuals between the ground-
+inpainting and JPEG restoration. In [18, 37, 43], they all utilize the       truth images and the images generated by the CP. In contrast to
+prediction-refinement framework where the diffusion models are               prior research [18, 21, 37], we design the HRR module to address
+used to predict the residual. Different from [18, 21, 37], DocDiff is        not only the "regression to the mean" flaw found in a single regres-
+trained end-to-end.                                                          sion model (in this case, the CP), but also to be effective across a
+MM ’23, October 29-November 3, 2023, Ottawa, ON, Canada                                                                                  Trovato and Tobin, et al.
+
+
+
+
+     Figure 2: A overview of the proposed DocDiff for document enhancement. Take document deblurring as an example.
+
+
+variety of regression methods. To this end, We perform end-to-end           parameters in the forward process, and 𝑥 1:𝑇 have the same size as
+joint training of both CP and HRR modules, rather than separately.          𝑥 0 . With the reparameterization trick, 𝑥𝑡 can be written as:
+By this way, the HRR module can dynamically adjust and capture
+                                                                                                  √        √
+more patterns. Extensive experiments show that this training strat-                         𝑥𝑡 = 𝛼¯𝑡 𝑥 0 + 1 − 𝛼¯𝑡 𝜖, 𝜖 ∼ N (0, I)          (7)
+egy effectively enhances the sharpness of characters generated by
+                                                                                Reverse denoising process: The reverse process transforms
+different regression-based deblurring methods [2, 17, 39, 40, 48],
+                                                                            Gaussian noise back into the residual distributions conditioned on
+without requiring joint training like [21, 37].
+                                                                            𝑥 𝐶 . We can write the reverse diffusion step:
+3.2.1 Denoiser 𝑓𝜃 . Followed by [10, 38], the HRR module executes
+the forward noise-adding process and the reverse denoising                           𝑞 (𝑥𝑡 −1 | 𝑥𝑡 , 𝑥 0 ) = N (𝑥𝑡 −1 ; 𝜇𝑡 (𝑥𝑡 , 𝑥 0 ), 𝛽𝑡 (𝑥𝑡 , 𝑥 0 )I)      (8)
+process to model the residual distributions.
+                                                                            where 𝜇𝑡 (𝑥𝑡 , 𝑥 0 ) and 𝛽𝑡 (𝑥𝑡 , 𝑥 0 ) are the mean and variance, respec-
+    Forward noise-adding process: Given the clean document im-
+                                                                            tively. Followed by [38], we perform the deterministic reverse pro-
+age 𝑥 gt and its approximate estimate 𝑥 𝐶 , we calculate their residuals
+                                                                            cess 𝑞 (𝑥𝑡 −1 | 𝑥𝑡 , 𝑥 0 ) with zero variance and the mean can be com-
+𝑥 res . We assign 𝑥 0 as 𝑥 res , and then sequentially introduce Gaussian
+                                                                            puted:
+noise based on the time step, as follows:                                                                                             √
+                                                                                                       √             √           𝑥𝑡 − 𝛼¯𝑡 𝑥 0
+                                                                                       𝜇𝑡 (𝑥𝑡 , 𝑥 0 ) = 𝛼¯𝑡 −1𝑥 0 + 1 − 𝛼¯𝑡 −1 · √                 (9)
+                          𝑥 0 = 𝑥 res = 𝑥 gt − 𝑥 𝐶                   (3)                                                            1 − 𝛼¯𝑡
+                                                                                                                                | {z }
+                                     √                                                                                                      𝜖
+             𝑞 (𝑥𝑡 | 𝑥𝑡 −1 ) = N 𝑥𝑡 ; 𝛼𝑡 𝑥𝑡 −1, (1 − 𝛼𝑡 ) I          (4)
+                                                                                                             𝛽𝑡 (𝑥𝑡 , 𝑥 0 ) = 0                              (10)
+                                         𝑇
+                                         Ö                                    Given the Denoiser 𝑓𝜃 , the posterior 𝑞 (𝑥𝑡 −1 | 𝑥𝑡 , 𝑥 0 ) can be pa-
+                    𝑞 (𝑥 1:𝑇 | 𝑥 0 ) =          𝑞 (𝑥𝑡 | 𝑥𝑡 −1 )      (5)    rameterized:
+                                         𝑡 =1
+                                   √                                                  𝑝𝜃 (𝑥𝑡 −1 | 𝑥𝑡 , 𝑥 𝐶 ) = 𝑞(𝑥𝑡 −1 | 𝑥𝑡 , 𝑓𝜃 (𝑥𝑡 , 𝑡, 𝑥 𝐶 ))           (11)
+                𝑞 (𝑥𝑡 | 𝑥 0 ) = N 𝑥𝑡 ; 𝛼¯𝑡 𝑥 0, (1 − 𝛼¯𝑡 ) I         (6)
+                                                                               We emphasize the significance of the condition 𝑥 𝐶 in the condi-
+where 𝛼𝑡 is a hyperparameter between 0 and 1 that controls the              tional distribution 𝑝𝜃 (𝑥𝑡 −1 | 𝑥𝑡 , 𝑥 𝐶 ). At each time step, it is crucial
+variance of the added Gaussian noise at each time step, for all             to sample the residual that closely relate to 𝑥 𝐶 at the pixel level of
+                                 Î𝑡
+𝑡 = 1, ...,𝑇 , and 𝛼 0 = 1, 𝛼¯𝑡 = 𝑖=0 𝛼𝑖 . There are no learnable           the characters.
+DocDiff: Document Enhancement via Residual Diffusion Models                                            MM ’23, October 29-November 3, 2023, Ottawa, ON, Canada
+
+
+   The Denoiser 𝑓𝜃 can be trained to predict the original data 𝑥 0             high-frequency details:
+or the added noise 𝜖. To increase the diversity of generated natu-
+                                                                                                       L low = E∥𝜙 L ∗ (𝑥 𝐶 − 𝑥 gt )∥ 2                           (16)
+ral images, existing methods [10, 34, 35, 43] typically predict the                                                                   
+added noise 𝜖. The prediction of 𝑥 0 and 𝜖 is equivalent in uncon-                               L high = E 𝜙 H ∗ 𝑥 0 − 𝑓𝜃 𝑥𝑡 , 𝑡, 𝑥ˆ𝐶                            (17)
+ditional generation, as they can be transformed into each other                                                                                    2
+                                                                               Thus, the combined loss for 𝐶𝜃 and 𝑓𝜃 , together with the overall
+through Eq.7. However, for conditional generation, predicting 𝑥 0
+                                                                               loss for DocDiff, are given by:
+and predicting 𝜖 are not equivalent under the premise of using a
+                                                                                                           low
+channel-wise concatenation conditioning scheme [34, 35, 43] to                                            Lpixel = Lpixel + 𝛽 0 L low                             (18)
+introduce the condition 𝑥 𝐶 . When predicting 𝜖, the denoiser can                                            high
+only learn from the noisy 𝑥𝑡 . But when predicting 𝑥 0 , the denoiser                                     L𝐷𝑀 = LDM + 𝛽 0 L high                                  (19)
+can also learn from the conditional channels (𝑥 𝐶 ). This sacrifices di-                                               low
+                                                                                                         L𝑡𝑜𝑡𝑎𝑙 = 𝛽 1 Lpixel
+                                                                                                                                high
+                                                                                                                             + L𝐷𝑀                                (20)
+versity but significantly improves the generation quality of the first
+few steps in the reverse process. To this end, we train the Denoiser           Algorithm 1 outlines the complete training and inference processes
+𝑓𝜃 to directly predict 𝑥 0 , which aligns with the goals of document           of DocDiff.
+enhancement. The training objective is to minimize the distance
+                                                                               Algorithm 1 DocDiff
+between 𝑝𝜃 (𝑥𝑡 −1 | 𝑥𝑡 , 𝑥 𝐶 ) and the true posterior 𝑞 (𝑥𝑡 −1 | 𝑥𝑡 , 𝑥 0 ):
+                                                                               Require :𝐶𝜃 : Coarse Predictor, 𝑓𝜃 : Denoiser,
+                                √         √               
+                                                                                             𝑦: Degraded document image, 𝜙 H : High frequency filter,
+          L𝐷𝑀 = E 𝑥 0 − 𝑓𝜃 𝛼¯𝑡 𝑥 res + 1 − 𝛼¯𝑡 𝜖, 𝑡, 𝑥ˆ𝐶               (12)
+                                                               2                            𝑥 gt : Clean document image, 𝛼 0:𝑇 : Noise schedule.
+where 𝑥ˆ𝐶 is a clone of 𝑥 𝐶 in memory and does not participate in              Training :
+gradient calculations. Exactly, the gradient from the loss only flows           1: repeat
+through 𝑥 res from 𝑓𝜃 to 𝐶𝜃 .                                                   2:     (𝑦, 𝑥 gt ) ∼ 𝑞 (𝑦, 𝑥 gt ), 𝑡 ∼ Uniform{1, ...,𝑇 }, 𝜖 ∼ N (0, I)
+   Given the trained 𝐶𝜃 and 𝑓𝜃 , integrating the above equation we              3:    𝑥 𝐶 =√𝐶𝜃 (𝑦)                     √                           ⊲ Coarse prediction
+                                                                                4:    𝑥𝑡 = 𝛼¯ 𝑡 (𝑥 gt − 𝑥 𝐶 ) + 1 − 𝛼¯ 𝑡 𝜖                        ⊲ Forward diffusion
+finally have the deterministic reverse process:
+                                                                                5:    𝑥ˆres = 𝑓𝜃 (𝑥𝑡 , 𝑡, 𝑥 𝐶 )                                  ⊲ Residual prediction
+                                                                                6:    Take a gradient descent step on
+                         𝑥ˆres = 𝑓𝜃 (𝑥𝑡 , 𝑡, 𝐶𝜃 (𝑦))                   (13)            L𝑡𝑜𝑡𝑎𝑙 (𝑥 𝐶 , 𝑥ˆres , 𝑥 gt , 𝜙 H ; 𝐶𝜃 , 𝑓𝜃 )
+                                                  √                                                                     ⊲ Frequency separation training; see Eq. 20
+                  √             √            𝑥𝑡 − 𝛼¯𝑡 𝑥ˆres                     7: until converged
+           𝑥𝑡 −1 = 𝛼¯𝑡 −1𝑥ˆres + 1 − 𝛼¯𝑡 −1 · √                        (14)
+                                                 1 − 𝛼¯𝑡                       Sampling :
+3.2.2 Frequency Separation Training. Numerous prior studies [5,                 1: 𝑥 𝐶 = 𝐶𝜃 (𝑦)                                                    ⊲ Coarse prediction
+6, 37] have demonstrated that processing high and low frequency                 2: 𝑥𝑇 ∼ N (0, I)
+                                                                                3: for 𝑡 = 𝑇 , ..., 1 do
+information separately enhances the quality and level of detail in
+                                                                                4:    𝑥ˆres = 𝑓𝜃 (𝑥𝑡 , 𝑡, 𝑥 𝐶 ) √
+generated images of natural scenes. To further refine the generation                             √                                  √
+                                                                                                                     1−𝛼¯𝑡 −1 (𝑥𝑡 − 𝛼¯𝑡 𝑥ˆ res )
+                                                                                5:    𝑥𝑡 −1 = 𝛼¯𝑡 −1 𝑥ˆres +                √
+quality, DocDiff is trained with frequency separation. Specifically,                                                           1−𝛼¯𝑡
+we employ simple linear filters to separate the residuals into the low                                                                ⊲ Deterministic reverse diffusion
+                                                                                6: end for
+and high frequencies. As the spatial-domain addition is equivalent
+                                                                                7: return 𝑥 𝐶 + 𝑥 0                   ⊲ Return high-frequency residual refinement
+to the frequency-domain addition, frequency separation can be
+written directly as:
+                           𝑥 = 𝜙L ∗ 𝑥 + 𝜙H ∗ 𝑥                         (15)
+                                                                               4 EXPERIMENTS AND RESULTS
+   where 𝜙 L is the low-pass filter and 𝜙 H is the high-pass filter. In
+pratice, to extract residuals along the text edges, we commonly                4.1 Datasets and Implementation details
+set 𝜙 H as the Laplacian kernel. The low-frequency information is              To address various document enhancement tasks, we train and
+obtained according to Eq.15. Our approach differs from [37, 44] in             evaluate our models on distinct datasets. For a fair comparison, we
+that it does not require performing the Fast Fourier Transform (FFT)           use the source codes provided by the authors and follow the same
+and parameterizing frequency separation in the frequency domain.               experimental settings.
+The high-frequency information in document images is primarily                    Document Deblurring: We train and evaluate DocDiff on the
+concentrated at the text edges. Leveraging this prior knowledge by             widely-used Document Deblurring Dataset [12], which includes
+using the Laplacian kernel as a high-pass filter not only simplifies           66,000 pairs of clean and blurry 300 × 300 patches extracted from
+training time consumption but also proves to be highly effective.              diverse pages of different documents. Each blur kernel is distinct.
+   Our goal is to maximize the capacity of the Denoiser 𝑓𝜃 to restore          We randomly select 30,000 patches for training and 10,000 patches
+the missing high-frequency information in the Coarse Predictor                 for testing.
+𝐶𝜃 prediction, while minimizing the task burden of 𝑓𝜃 through the                 Document Denoising and Binarization: We evaluate DocDiff
+support of 𝐶𝜃 . In this perspective, both 𝐶𝜃 and 𝑓𝜃 necessitate the            on two of the most challenging datasets from the annual (Hand-
+restoration of distinct high and low frequencies, yet they exhibit             written) Document Image Binarization Competition ((H-)DIBCO)
+dissimilar specializations. Specifically, 𝐶𝜃 predominantly recon-              [7, 23, 25–32]: H-DIBCO‘18 [29] and DIBCO‘19 [32]. Followed by
+structs low-frequency information, while 𝑓𝜃 specializes in restoring           [41, 45, 47], the training set includes the remaining years of DIBCO
+MM ’23, October 29-November 3, 2023, Ottawa, ON, Canada                                                                                    Trovato and Tobin, et al.
+
+
+Table 1: Quantitative ablation study results on the Document Deblurring Dataset [12]. Best values are highlighted in red,
+second best are highlighted in blue. (CP: Coarse Predictor, CR: Cascade Refinement Module, HRR: High-Frequency Residual
+Refinement Module, EMA: Exponential Moving Average, FS: Frequency Separation Training.)
+
+                                              Method                                                               Perceptual                      Distortion
+    Structure       Training
+                                     Resolutions                  Sampling              Parameters           NR                   FR
+   components      techniques
+ CP CR HRR         EMA FS        Non-native    Native     Stochastic   Deterministic                 MANIQA↑      MUSIQ↑   DISTS↓      LPIPS↓   PSNR↑      SSIM↑
+ ✓                 ✓                           ✓          -            -                4.03M        0.6525       46.15    0.0951      0.0766   24.66      0.9574
+ ✓    ✓            ✓       ✓                   ✓          -            -                8.06M        0.6584       45.39    0.0688      0.0824   24.74      0.9610
+ ✓          ✓                    ✓                                     ✓                8.20M        0.6900       50.16    0.0671      0.0492   20.98      0.9025
+ ✓          ✓      ✓             ✓                                     ✓                8.20M        0.6917       50.21    0.0648      0.0499   20.43      0.8998
+ ✓          ✓      ✓       ✓     ✓                        ✓                             8.20M        0.6706       50.05    0.1778      0.1481   18.72      0.8507
+ ✓          ✓      ✓       ✓     ✓                                     ✓                8.20M        0.6971       50.31    0.0636      0.0474   20.46      0.9006
+ ✓          ✓      ✓       ✓                   ✓                       ✓                8.20M        0.7174       50.62    0.0611      0.0307   23.28      0.9505
+
+
+datasets [7, 23, 25–28, 30, 31], the Noisy Office Database [49], the                   proposed components of DocDiff: High-Frequency Residual Refine-
+Bickley Diary dataset [3], Persian Heritage Image Binarization                         ment Module (HRR), Frequency Separation Training (FS). Addition-
+Dataset (PHIDB) [20], and the Synchromedia Multispectral dataset                       ally, we investigate the impact of resolutions (native or non-native),
+(S-MS) [9].                                                                            sampling method (stochastic or deterministic), and predicted tar-
+    Watermark and Seal Removal: Dense watermarks and vari-                             get (𝑥 0 or 𝜖) on the performance of the model. Table 1 shows the
+able seals greatly affect the readability and recognizability of cov-                  quantitative results. (see qualitative results in Fig. 11 in Appendix.)
+ered characters. There is limited research on this issue in the docu-                     HRR: The HRR module effectively improves the perceptual qual-
+ment analysis community and a paucity of publicly available bench-                     ity by sharpening text edges. To further prove that the effectiveness
+mark datasets. Thus, we synthesized paired datasets (document                          of HRR is not solely due to an increase in parameters, we cascade
+image with dense watermarks and seals and its corresponding                            an identical Unet structure (CR) behind CP to transform the model
+clean version, see synthetic details in Synthetic Datasets section                     into a two-stage regression method. Experimental results show
+and Fig. 9 in Appendix) using in-house data for training and testing.                  that while simply cascading more encoder-decoder layers improve
+For the discussion of experimental results on the synthetic datasets,                  PSNR and SSIM, the perceptual quality remain poor with blurred
+please refer to Section C in Appendix.                                                 text edges. This reiterates the effectiveness of the HRR module.
+    We jointly train the CP and HRR modules by minimizing the                             FS: As shown in Table 1, training with frequency separation
+L𝑡𝑜𝑡𝑎𝑙 in Eq. 20 with 𝛽 0 = 2 and 𝛽 1 = 0.5. The total time steps 𝑇                    demonstrates an improvement in the perceptual quality and a re-
+are set to 100. We use random 128×128 crops with a batchsize of 64                     duction in distortion, thus achieving a better Perception-Distortion
+during training, and evaluate DocDiff on both non-native (larger                       trade-off. This decoupled strategy can effectively enhance the ca-
+size patches or full-size images) and native (128×128 crop-predict-                    pacity of HRR module to recover high-frequency information.
+merge) resolutions and different sampling steps (5, 20, 50 and 100).                      Native or Non-native ? : Performing the crop-predict-merge
+For data augmentation, we perform random rotation and horizontal                       strategy at native resolution can significantly reduce the distortion.
+flip. The number of training iterations is one million.                                However, inferring at non-native resolution (full-size image) also
+                                                                                       yields competitive perceptual quality and distortion. In practice,
+                                                                                       this is a time-quality trade-off. For instance, at 300x300 resolution,
+4.2    Evaluation Metrics                                                              using 128x128 crop-predict-merge inference requires processing
+We employ the SOTA no-reference (NR) image quality assessment                          60% more ineffective pixels compared to full-size inference.
+(IQA) methods, including MUSIQ [14] that is sensitive to varying                          Predict 𝑥 0 or 𝜖, Stochastic or Deterministic ? : We employ
+sizes and aspect ratios and MANIQA [46] that won the NTIRE 2022                        the HRR module to predict the 𝜖 and perform original stochastic
+NR-IQA Challenge [8], as well as widely-used full-reference (FR)                       sampling [10]. Except for NR-IQA, experimental results show infe-
+IQA methods including LPIPS [50] and DISTS [4], to evaluate the                        rior performance in FR-IQA, PSNR, and SSIM for this approach. On
+reconstruction quality of document images. We still compute PSNR                       one hand, the short sampling step (100) restricts the capability of the
+and SSIM [42] for completeness, although not the primary metrics.                      noise prediction-based models. On the other hand, stochastic sam-
+   For high-level binarization tasks, we evaluate methods on three                     pling results can lead to poor integration of generated characters
+evaluation metrics commonly used in competitions, including the                        with the given conditions, which leads to increased occurrence of
+FMeasure (FM), pseudo-FMeasure (p-FM) [22], and PSNR. For re-                          substitution characters. This is also the reason for the high NQ-IQA
+moval tasks, we evaulate methods on four metrics: MANIQA [46],                         score and low FQ-IQA score. These issues are addressed by com-
+LPIPS [50], PSNR and SSIM [42].                                                        bining the prediction of 𝑥 0 and deterministic sampling. Moreover,
+                                                                                       we notice that the approach based on predicting 𝑥 0 can effectively
+                                                                                       generate high-quality images with 5 sampling steps (see Tab. 3 and
+4.3    Document Deblurring                                                             Tab. 7 in Appendix), whereas the approach relying on predicting 𝜖
+4.3.1 Ablation Study. We conduct the ablation experiments on                           fails to achieve the same level of performance.
+the Document Deblurring Dataset [12] to verify the benefits of
+DocDiff: Document Enhancement via Residual Diffusion Models                                                                  MM ’23, October 29-November 3, 2023, Ottawa, ON, Canada
+
+
+
+
+          Input                 Ground-truth                 DE-GAN [40]              DEGAN+HRR                  HINet [2]                   HINet+HRR                        DocDiff
+
+
+            Figure 3: Qualitative representative results of text line deblurring on the Document Deblurring Dataset [12].
+
+Table 2: Results on the Document Deblurring Dataset [12].                                     Table 3: Document deblurring results on the Document De-
+The bold numbers represent the improvement of the HRR                                         blurring Dataset [12]. DocDiff outperforms state-of-the-art
+module over the regression-based baseline. Note that the                                      deblurring regression methods for both natural and docu-
+weights of the HRR module come from DocDiff and no joint                                      ment scenes on all perceptual metrics, even at non-native
+training with the baseline has been performed.                                                resolutions, while maintaining competitive PSNR and SSIM
+                                                                                              scores. DocDiff-n means applying n-step sampling (𝑇 ).
+                                                  Perceptual                  Distortion
+             Method                         NR                   FR
+                                                                                                                                                        Perceptual                  Distortion
+                                   MANIQA↑ MUSIQ↑ DISTS↓ LPIPS↓              PSNR↑   SSIM↑
+                                                                                                          Method                Parameters         NR                  FR
+                                  Natural scenes                                                                                          MANIQA↑ MUSIQ↑ DISTS↓ LPIPS↓             PSNR↑   SSIM↑
+   DeBlurGAN-v2 [17], ICCV2019       0.6967       50.25   0.1014    0.0991   20.76   0.8731                                              Natural scenes
+                +HRR                 0.7097      50.66    0.0952 0.0989      20.62   0.8736   DeBlurGAN-v2 [17], ICCV2019          67M      0.6967      50.25   0.1014    0.0991   20.76   0.8731
+ Pec. of        Better than GT       38.78%      48.83%                                          MPRNet[48], CVPR2021              34M      0.6675      47.52   0.1555    0.0900   21.27   0.8803
+ Pages Better than DeBlurGAN-v2      68.53%      82.76%                                           HINet [2], CVPR2021              86M      0.6836      47.59   0.1232    0.1163   24.15   0.9164
+        MPRNet[48], CVPR2021         0.6675       47.52   0.1555    0.0900   21.27   0.8803    Whang et al. [43], CVPR2022         33M      0.6898      50.86   0.0830    0.0750   19.89   0.8742
+                +HRR                 0.6852      49.87    0.1384 0.0887      20.86   0.8768                                             Document scenes
+ Pec. of        Better than GT       17.87%      40.12%                                           DE-GAN [40], TPAMI2020           31M      0.6546      46.75   0.0968    0.0843   22.30   0.9155
+ Pages       Better than MPRNet      57.04%      87.04%                                            DocEnTr [39], ICPR2022          67M      0.5821      46.53   0.1802    0.2225   22.66   0.9130
+         HINet [2], CVPR2021         0.6836       47.59   0.1232    0.1163   24.15   0.9164        DocDiff (Non-native)-5         8.20M     0.6873      47.92   0.0907    0.0582   22.17   0.9223
+                +HRR                 0.7041      50.44    0.0963 0.0987      23.44   0.9158       DocDiff (Non-native)-100        8.20M     0.6971      50.31   0.0636    0.0474   20.46   0.9006
+ Pec. of        Better than GT       31.07%      46.67%                                             DocDiff (Native)-100          8.20M     0.7174      50.62   0.0611    0.0307   23.28   0.9505
+ Pages        Better than HINet      56.91%      91.82%                                                     GT                       -      0.7207      51.03      0.0      0.0     ∞        1.0
+                                 Document scenes
+      DE-GAN [40], TPAMI2020         0.6546       46.75   0.0968    0.0843   22.30   0.9155
+                +HRR                 0.6973      50.36    0.0776 0.0696      21.21   0.9114
+ Pec. of        Better than GT       23.48%      45.34%                                          To validate the universality of the HRR module, we refine the
+ Pages       Better than DE-GAN      79.89%      95.40%
+       DocEnTr [39], ICPR2022        0.5821       46.53   0.1802    0.2225   22.66   0.9130   output of baselines [2, 17, 39, 40, 48] directly using the pre-trained
+                +HRR                 0.6637      51.84    0.1378 0.1653      21.65   0.9142   HRR module. As shown in Tab. 2, after refinement, all perceptual
+ Pec. of        Better than GT        5.57%      68.57%
+ Pages       Better than DocEnTr     94.40%      93.71%                                       metrics are improved. Specifically, the DISTS of HINet [2] decrease
+                 GT                  0.7207       51.03      0.0      0.0     ∞       1.0
+                                                                                              by 22%, and the MANIQA of DocEnTr [39] increase by 14%. We
+                                                                                              calculate the percentage of samples in which NR-IQA show better
+                                                                                              performance compared to the GT and baselines after refinement. On
+4.3.2 Performance. For a comprehensive comparison, we compare                                 average, in terms of MUSIQ, 90% of the samples show improvement
+with SOTA document deblurring methods [39, 40] as well as natural                             over baselines, and 50% over GT. As shown in Figs. 1 and 3, DocDiff
+scene deblurring methods [2, 17, 43, 48]. Table 3 shows quantita-                             provides the most clear and accurate capability of character pixel
+tive results and Figure 3 shows qualitative results. DocDiff(Native)                          restoration. After refined by the HRR module, the text edges of the
+achieves the best MANIQA, DISTS, LPIPS, and SSIM metrics, while                               baselines become sharp, but wrong characters still exist.
+also achieving competitive PSNR and MUSIQ. Notably, we obtain
+the LPIPS of 0.0307, a 66% reduction compared to MPRNet [48]                                  4.4        Document Denoising and Binarization
+and a 64% reduction compared to DE-GAN [40]. DocDiff uses                                     We compare with threshold-based methods [11, 13, 16, 24, 36] and
+only one-fourth of the parameters used by those two methods.                                  SOTA methods [40, 45, 51]. Quantitative and qualitative results
+We also compare DocDiff with SOTA diffusion-based deblurring                                  are shown in Tab. 4 and Fig. 4, respectively. On the H-DIBCO’18,
+method [43], which predicts 𝜖 and samples stochastically. [43] can                            our method do not achieve SOTA performance. However, our F-
+produce high-quality images (higher MUSIQ). However, its FR-IQA                               Measure is 10.52% higher than that of DE-GAN [40], and we also
+and distortion metrics are significantly worse than DocDiff’s at                              have competitive performance in terms of p-FM and PSNR. Due to
+the same sampling step. Moreover, DocDiff (Non-native) outper-                                the absence of papyri material in training sets and the presence of a
+forms MPRNet[48], HINet[2], and two document-scene methods                                    large amount of newly introduced noise in DIBCO’19, this dataset
+[39, 40] in all perceptual metrics with only 5-step sampling,                                 poses a great challenge. DocDiff outperforms existing methods
+while maintaining competitive distortion metrics.                                             on DIBCO’19 with an F-Measure improvement of 5.75% over D2
+MM ’23, October 29-November 3, 2023, Ottawa, ON, Canada                                                                                                      Trovato and Tobin, et al.
+
+
+Table 4: Results of document binarization on H-DIBCO 2018
+[29] and DIBCO 2019 [32]. Best values are bold.
+
+                                                       H-DIBCO’18                DIBCO’19
+           Method                 Parameters
+                                               FM↑       p-FM↑ PSNR↑     FM↑      p-FM↑ PSNR↑
+            Otsu [24]                  -       51.45      53.05   9.74   47.83     45.59   9.08
+     Sauvola [36], PR2000              -       67.81      74.08  13.78   51.73     55.15  13.72
+    Howe [11], IJDAR2013               -       80.84      82.85  16.67   48.20     48.37  11.38
+     Jia et al. [13], PR2018           -       76.05      80.36  16.90   55.87     56.28  11.34
+ Kligler et al. [16], CVPR2018         -       66.84      68.32  15.99   53.49     53.34  11.23
+       1st rank of contest             -       88.34      90.24  19.11   72.88     72.15  14.48
+      cGANs [51], PR2019            103M       87.73      90.60  18.37   62.33     62.89  12.43
+  DE-GAN [40], TPAMI2020             31M       77.59      85.74  16.16   55.98     53.44  12.29
+   D2 BFormer [45], IF2023          194M       88.84     93.42   18.91   67.63     66.69  15.05
+             DocDiff                8.20M      88.11      90.43  17.92   73.38    75.12   15.14    Figure 5: Qualitative results for Tesseract recognition of vari-
+                                                                                                   ous text lines. The red characters indicate recognition errors
+                                                                                                   or missed characters. Best viewed with zoom-in.
+
+
+                                                                                                      Diffusion models are notorious for their time complexity of infer-
+                                                                                                   ence. DocDiff (Non-native)-5 achieve competitive performance in
+                                                                                                   removing blur and watermarks. We compare the time complexity of
+                                                                                                   our methods with MPRNet [48] and DE-GAN [40] under the same
+                                                                                                   hardware environment. However, due to different frameworks be-
+                                                                                                   ing used (Tensorflow for DE-GAN [40] while PyTorch for MPRNet
+             Input                       Ground-truth                     Sauvola [36]
+                                                                                                   [48] and our methods), the speed comparison is only approximate.
+                                                                                                   The results are shown in Tab. 5. DocDiff (Non-native)-5 offers great
+                                                                                                   efficiency and perfomance, making it an ideal choice for various
+                                                                                                   document image enhancement tasks.
+
+                                                                                                   4.5     OCR Evaluation
+                                                                                                   we compare the OCR performance on degraded and enhanced doc-
+                                                                                                   uments using a set of 50 text patches. This set includes 30 blurred
+                                                                                                   patches from the Document Deblurring Dataset [12], 10 patches
+         Howe [11]                          Kligler [16]                     Jia [13]
+                                                                                                   with watermarks, and 10 patches with seals. We use Tesseract OCR
+                                                                                                   to recognize those patches. Highly blurred images are barely rec-
+                                                                                                   ognizable. After applying DE-GAN [40], DE-GAN[40]+HRR, and
+                                                                                                   DocDiff for deblurring, the character error rates of the enhanced
+                                                                                                   versions are reduced to 13.7%, 7.6%, and 4.4%, respectively. For the
+                                                                                                   removal task, the character error rates of the original images and
+                                                                                                   the ones enhanced with DocDiff are 28.7% and 1.8%, respectively.
+                                                                                                   The recognition results on some patches are shown in Fig. 5.
+
+         cGANs [51]                         DE-GAN [40]                      DocDiff               5     CONCLUSIONS
+                                                                                                   In this paper, we propose a novel and unified framework, DocDiff,
+Figure 4: Binarization results of two example images on H-                                         for various document enhancement tasks. DocDiff significantly
+DIBCO 2018 [29] and DIBCO 2019 [32]. Text pixels classified                                        improves the perceptual quality of reconstructed document images
+as background are highlighted in red, whereas background                                           by utilizing a residual prediction-based conditional diffusion model.
+pixels classified as text are highlighted in blue.                                                 For the deblurring task, our proposed HRR module is ready-to-use,
+                                                                                                   which effectively sharpens the text edges generated by regression
+Table 5: Average runtimes (seconds/megapixel) of different                                         methods [2, 17, 39, 40, 48] to enhance the readability and recog-
+methods.                                                                                           nizability of the text. Compared to non-diffusion-based methods,
+                                                                                                   DocDiff achieves competitive performance with only 5 steps of sam-
+ Method       MPRNet [48]        DE-GAN [40]   DocDiff(Non-native)-5     DocDiff(Non-native)-100   pling, and is lightweight, which greatly optimizes its inference time
+ Runtime         0.57                0.82              0.33                       5.69
+                                                                                                   complexity. We believe that DocDiff establishes a strong benchmark
+                                                                                                   for future work.
+BFormer [45] and 11.05% over cGANs [51]. Remarkably, this is
+achieved using significantly fewer parameters, with only 1/23 and
+                                                                                                   REFERENCES
+                                                                                                    [1] Yochai Blau and Tomer Michaeli. 2018. The perception-distortion tradeoff. In
+1/12 the parameter count of D2 BFormer [45] and cGANs [51],                                             Proceedings of the IEEE conference on computer vision and pattern recognition.
+respectively.                                                                                           6228–6237.
+DocDiff: Document Enhancement via Residual Diffusion Models                                                      MM ’23, October 29-November 3, 2023, Ottawa, ON, Canada
+
+
+ [2] Liangyu Chen, Xin Lu, Jie Zhang, Xiaojie Chu, and Chengpeng Chen. 2021. Hinet:       [26] Ioannis Pratikakis, Basilis Gatos, and Konstantinos Ntirogiannis. 2011. ICDAR
+     Half instance normalization network for image restoration. In Proceedings of the          2011 Document Image Binarization Contest (DIBCO 2011). In 2011 International
+     IEEE/CVF Conference on Computer Vision and Pattern Recognition. 182–192.                  Conference on Document Analysis and Recognition. IEEE, Beijing, China, 1506–
+ [3] Fanbo Deng, Zheng Wu, Zheng Lu, and Michael S. Brown. 2010. BinarizationShop:             1510.
+     A User-Assisted Software Suite for Converting Old Documents to Black-and-            [27] Ioannis Pratikakis, Basilis Gatos, and Konstantinos Ntirogiannis. 2012. ICFHR
+     White. In Proceedings of the 10th Annual Joint Conference on Digital Libraries -          2012 Competition on Handwritten Document Image Binarization (H-DIBCO
+     JCDL ’10. ACM Press, Gold Coast, Queensland, Australia, 255.                              2012). In 2012 International Conference on Frontiers in Handwriting Recognition.
+ [4] Keyan Ding, Kede Ma, Shiqi Wang, and Eero P. Simoncelli. 2022. Image Quality              IEEE, Bari, Italy, 817–822.
+     Assessment: Unifying Structure and Texture Similarity. IEEE Transactions on          [28] Ioannis Pratikakis, Basilis Gatos, and Konstantinos Ntirogiannis. 2013. ICDAR
+     Pattern Analysis and Machine Intelligence 44, 5 (2022), 2567–2581. https://doi.           2013 Document Image Binarization Contest (DIBCO 2013). In 2013 12th Interna-
+     org/10.1109/TPAMI.2020.3045810                                                            tional Conference on Document Analysis and Recognition. IEEE, Washington, DC,
+ [5] Manuel Fritsche, Shuhang Gu, and Radu Timofte. 2019. Frequency separation                 USA, 1471–1476.
+     for real-world super-resolution. In 2019 IEEE/CVF International Conference on        [29] Ioannis Pratikakis, Konstantinos Zagori, Panagiotis Kaddas, and Basilis Gatos.
+     Computer Vision Workshop (ICCVW). IEEE, 3599–3608.                                        2018. ICFHR 2018 Competition on Handwritten Document Image Binarization
+ [6] Dario Fuoli, Luc Van Gool, and Radu Timofte. 2021. Fourier space losses for               (H-DIBCO 2018). In 2018 16th International Conference on Frontiers in Handwriting
+     efficient perceptual image super-resolution. In Proceedings of the IEEE/CVF Inter-        Recognition (ICFHR). IEEE, Niagara Falls, NY, 489–493.
+     national Conference on Computer Vision. 2360–2369.                                   [30] Ioannis Pratikakis, Konstantinos Zagoris, George Barlas, and Basilis Gatos. 2016.
+ [7] Basilis Gatos, Konstantinos Ntirogiannis, and Ioannis Pratikakis. 2009. ICDAR             ICFHR2016 Handwritten Document Image Binarization Contest (H-DIBCO 2016).
+     2009 Document Image Binarization Contest (DIBCO 2009). In 2009 10th Interna-              In 2016 15th International Conference on Frontiers in Handwriting Recognition
+     tional Conference on Document Analysis and Recognition. IEEE, Barcelona, Spain,           (ICFHR). IEEE, Shenzhen, China, 619–623.
+     1375–1382.                                                                           [31] Ioannis Pratikakis, Konstantinos Zagoris, George Barlas, and Basilis Gatos. 2017.
+ [8] Jinjin Gu, Haoming Cai, and Chao et al. Dong. 2022. NTIRE 2022 Challenge on               ICDAR2017 Competition on Document Image Binarization (DIBCO 2017). In
+     Perceptual Image Quality Assessment. In Proceedings of the IEEE/CVF Conference            2017 14th IAPR International Conference on Document Analysis and Recognition
+     on Computer Vision and Pattern Recognition (CVPR) Workshops. 951–967.                     (ICDAR). IEEE, Kyoto, 1395–1403.
+ [9] Rachid Hedjam, Hossein Ziaei Nafchi, Reza Farrahi Moghaddam, Margaret Kalac-         [32] Ioannis Pratikakis, Konstantinos Zagoris, Xenofon Karagiannis, Lazaros
+     ska, and Mohamed Cheriet. 2015. ICDAR 2015 Contest on MultiSpectral Text                  Tsochatzidis, Tanmoy Mondal, and Isabelle Marthot-Santaniello. 2019. ICDAR
+     Extraction (MS-TEx 2015). In 2015 13th International Conference on Document               2019 Competition on Document Image Binarization (DIBCO 2019). In 2019 Inter-
+     Analysis and Recognition (ICDAR). IEEE, Tunis, Tunisia, 1181–1185.                        national Conference on Document Analysis and Recognition (ICDAR). 1547–1556.
+[10] Jonathan Ho, Ajay Jain, and Pieter Abbeel. 2020. Denoising diffusion probabilistic   [33] Robin Rombach, Andreas Blattmann, Dominik Lorenz, Patrick Esser, and Björn
+     models. Advances in Neural Information Processing Systems 33 (2020), 6840–6851.           Ommer. 2022. High-resolution image synthesis with latent diffusion models. In
+[11] Nicholas R. Howe. 2013. Document Binarization with Automatic Parameter                    Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition.
+     Tuning. International Journal on Document Analysis and Recognition (IJDAR) 16,            10684–10695.
+     3 (Sept. 2013), 247–258.                                                             [34] Chitwan Saharia, William Chan, Huiwen Chang, Chris Lee, Jonathan Ho, Tim
+[12] Michal Hradiš, Jan Kotera, Pavel Zemcık, and Filip Šroubek. 2015. Convolutional           Salimans, David Fleet, and Mohammad Norouzi. 2022. Palette: Image-to-image
+     neural networks for direct text deblurring. In Proceedings of BMVC, Vol. 10.              diffusion models. In ACM SIGGRAPH 2022 Conference Proceedings. 1–10.
+[13] Fuxi Jia, Cunzhao Shi, Kun He, Chunheng Wang, and Baihua Xiao. 2018. Degraded        [35] Chitwan Saharia, Jonathan Ho, William Chan, Tim Salimans, David J. Fleet, and
+     Document Image Binarization Using Structural Symmetry of Strokes. Pattern                 Mohammad Norouzi. 2023. Image Super-Resolution via Iterative Refinement.
+     Recognition 74 (Feb. 2018), 225–240.                                                      IEEE Transactions on Pattern Analysis and Machine Intelligence 45, 4 (2023), 4713–
+[14] Junjie Ke, Qifei Wang, Yilin Wang, Peyman Milanfar, and Feng Yang. 2021. MUSIQ:           4726. https://doi.org/10.1109/TPAMI.2022.3204461
+     Multi-Scale Image Quality Transformer. In Proceedings of the IEEE/CVF Interna-       [36] J. Sauvola and M. Pietikäinen. 2000. Adaptive Document Image Binarization.
+     tional Conference on Computer Vision (ICCV). 5148–5157.                                   Pattern Recognition 33, 2 (Feb. 2000), 225–236.
+[15] Sana Khamekhem Jemni, Mohamed Ali Souibgui, Yousri Kessentini, and Alicia            [37] Shuyao Shang, Zhengyang Shan, Guangxing Liu, and Jinglin Zhang. 2023. ResDiff:
+     Fornés. 2022. Enhance to Read Better: A Multi-Task Adversarial Network for                Combining CNN and Diffusion Model for Image Super-Resolution. arXiv preprint
+     Handwritten Document Image Enhancement. Pattern Recognition 123 (March                    arXiv:2303.08714 (2023).
+     2022), 108370.                                                                       [38] Jiaming Song, Chenlin Meng, and Stefano Ermon. 2020. Denoising diffusion
+[16] Netanel Kligler, Sagi Katz, and Ayellet Tal. 2018. Document enhancement using             implicit models. arXiv preprint arXiv:2010.02502 (2020).
+     visibility detection. In Proceedings of the IEEE Conference on Computer Vision and   [39] Mohamed Ali Souibgui, Sanket Biswas, Sana Khamekhem Jemni, Yousri Kessen-
+     Pattern Recognition. 2374–2382.                                                           tini, Alicia Fornés, Josep Lladós, and Umapada Pal. 2022. DocEnTr: an end-to-end
+[17] Orest Kupyn, Tetiana Martyniuk, Junru Wu, and Zhangyang Wang. 2019.                       document image enhancement transformer. In 2022 26th International Conference
+     Deblurgan-v2: Deblurring (orders-of-magnitude) faster and better. In Proceedings          on Pattern Recognition (ICPR). IEEE, 1699–1705.
+     of the IEEE/CVF international conference on computer vision. 8878–8887.              [40] Mohamed Ali Souibgui and Yousri Kessentini. 2020. De-gan: A conditional
+[18] Haoying Li, Yifan Yang, Meng Chang, Shiqi Chen, Huajun Feng, Zhihai Xu, Qi                generative adversarial network for document enhancement. IEEE Transactions
+     Li, and Yueting Chen. 2022. Srdiff: Single image super-resolution with diffusion          on Pattern Analysis and Machine Intelligence 44, 3 (2020), 1180–1191.
+     probabilistic models. Neurocomputing 479 (2022), 47–59.                              [41] Sungho Suh, Jihun Kim, Paul Lukowicz, and Yong Oh Lee. 2022. Two-Stage
+[19] Yun-Hsuan Lin, Wen-Chin Chen, and Yung-Yu Chuang. 2020. Bedsr-net: A deep                 Generative Adversarial Networks for Binarization of Color Document Images.
+     shadow removal network from a single document image. In Proceedings of the                Pattern Recognition 130 (Oct. 2022), 108810.
+     IEEE/CVF Conference on Computer Vision and Pattern Recognition. 12905–12914.         [42] Zhou Wang, A.C. Bovik, H.R. Sheikh, and E.P. Simoncelli. 2004. Image quality
+[20] Hossein Ziaei Nafchi, Seyed Morteza Ayatollahi, Reza Farrahi Moghaddam, and               assessment: from error visibility to structural similarity. IEEE Transactions on
+     Mohamed Cheriet. 2013. An Efficient Ground Truthing Tool for Binarization                 Image Processing 13, 4 (2004), 600–612. https://doi.org/10.1109/TIP.2003.819861
+     of Historical Manuscripts. In 2013 12th International Conference on Document         [43] Jay Whang, Mauricio Delbracio, Hossein Talebi, Chitwan Saharia, Alexandros G
+     Analysis and Recognition. IEEE, Washington, DC, USA, 807–811.                             Dimakis, and Peyman Milanfar. 2022. Deblurring via stochastic refinement. In
+[21] Axi Niu, Kang Zhang, Trung X Pham, Jinqiu Sun, Yu Zhu, In So Kweon, and                   Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition.
+     Yanning Zhang. 2023. CDPMSR: Conditional Diffusion Probabilistic Models for               16293–16303.
+     Single Image Super-Resolution. arXiv preprint arXiv:2302.12831 (2023).               [44] Junde Wu, Huihui Fang, Yu Zhang, Yehui Yang, and Yanwu Xu. 2022. MedSegDiff:
+[22] K. Ntirogiannis, B. Gatos, and I. Pratikakis. 2013. Performance Evaluation Method-        Medical Image Segmentation with Diffusion Probabilistic Model. arXiv preprint
+     ology for Historical Document Image Binarization. IEEE Transactions on Image              arXiv:2211.00611 (2022).
+     Processing 22, 2 (Feb. 2013), 595–609.                                               [45] Mingming Yang and Songhua Xu. 2023. A Novel Degraded Document Binarization
+[23] Konstantinos Ntirogiannis, Basilis Gatos, and Ioannis Pratikakis. 2014. ICFHR2014         Model through Vision Transformer Network. Information Fusion 93 (2023), 159–
+     Competition on Handwritten Document Image Binarization (H-DIBCO 2014). In                 173.
+     2014 14th International Conference on Frontiers in Handwriting Recognition. IEEE,    [46] Sidi Yang, Tianhe Wu, Shuwei Shi, Shanshan Lao, Yuan Gong, Mingdeng Cao,
+     Greece, 809–813.                                                                          Jiahao Wang, and Yujiu Yang. 2022. MANIQA: Multi-Dimension Attention Net-
+[24] Nobuyuki Otsu. 1979. A Threshold Selection Method from Gray-Level Histograms.             work for No-Reference Image Quality Assessment. In Proceedings of the IEEE/CVF
+     IEEE Transactions on Systems, Man, and Cybernetics 9, 1 (1979), 62–66.                    Conference on Computer Vision and Pattern Recognition (CVPR) Workshops. 1191–
+[25] Ioannis Pratikakis, Basilis Gatos, and Konstantinos Ntirogiannis. 2010. H-DIBCO           1200.
+     2010 - Handwritten Document Image Binarization Competition. In 2010 12th             [47] Zongyuan Yang, Yongping Xiong, and Guibin Wu. 2023. GDB: Gated convolutions-
+     International Conference on Frontiers in Handwriting Recognition. IEEE, Kolkata,          based Document Binarization. arXiv preprint arXiv:2302.02073 (2023).
+     India, 727–732.                                                                      [48] Syed Waqas Zamir, Aditya Arora, Salman Khan, Munawar Hayat, Fahad Shahbaz
+                                                                                               Khan, Ming-Hsuan Yang, and Ling Shao. 2021. Multi-stage progressive image
+MM ’23, October 29-November 3, 2023, Ottawa, ON, Canada                                                                                                           Trovato and Tobin, et al.
+
+
+     restoration. In Proceedings of the IEEE/CVF conference on computer vision and        Table 6: Watermark and seal removal results on our devel-
+     pattern recognition. 14821–14831.                                                    oped datasets.
+[49] F. Zamora-Martínez, S. España-Boquera, and M. J. Castro-Bleda. 2007. Behaviour-
+     Based Clustering of Neural Networks Applied to Document Enhancement. In
+                                                                                                                            Watermark Removal                         Seal Removal
+     Proceedings of the 9th International Work Conference on Artificial Neural Networks          Method                 Perceptual        Distortion          Perceptual          Distortion
+     (IWANN’07). Springer-Verlag, Berlin, Heidelberg, 144–151.                                                      MANIQA↑ LPIPS↓ PSNR↑ SSIM↑            MANIQA↑ LPIPS↓ PSNR↑ SSIM↑
+[50] Richard Zhang, Phillip Isola, Alexei A. Efros, Eli Shechtman, and Oliver Wang.           MPRNet [48]            0.5253     0.0806  33.36    0.9497    0.5133     0.0913 32.76 0.9397
+     2018. The Unreasonable Effectiveness of Deep Features as a Perceptual Metric.            DE-GAN [40]            0.5190     0.1167  24.11    0.9106    0.4742      0.4115   19.62    0.7084
+                                                                                           DocDiff(Non-native)-5     0.5263     0.0680  30.91 0.9637       0.5018      0.1162   31.07    0.9292
+     In Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition     DocDiff(Non-native)-100    0.5267     0.0577  30.36    0.9576    0.5031      0.1152   30.67    0.9225
+     (CVPR).                                                                                  Ground Truth           0.5367        0.0   ∞         1.0     0.5525        0.0     ∞         1.0
+[51] Jinyuan Zhao, Cunzhao Shi, Fuxi Jia, Yanna Wang, and Baihua Xiao. 2019. Docu-
+     ment Image Binarization with Cascaded Generators of Conditional Generative
+     Adversarial Networks. Pattern Recognition 96 (Dec. 2019), 106968.
+
+
+
+A     DEGRADED DOCUMENTS
+Figure 6 illustrates the three types of degraded documents that our
+work aims to enhance: documents with fragmented noise, blurry
+documents, and documents with seals and dense watermarks. Re-
+garding the removal of seals, we mainly focus on red seals in the
+context of Chinese documents.
+
+
+
+
+                                                                                               Input          Ground-truth DE-GAN [40] MPRNet [48]                             DocDiff-5
+
+
+                                                                                          Figure 7: Qualitative watermark and seal removal results on
+     (a) Various noises (Broken holes, Bleed-through, Smear, Faint ink)
+                                                                                          synthetic datasets. While DocDiff is effective at removing
+                                                                                          watermarks and seals, MPRNet [48] displays better perfor-
+                                                                                          mance in restoring background on invoices.
+
+
+
+
+                 (b) Blur                    (c) Watermark             (d) Seal
+
+
+      Figure 6: Examples of degraded document images.
+
+
+
+
+B     SYNTHETIC DATASETS
+Figure 9 shows some examples from our synthetic datasets. The
+synthesized dense watermarks feature randomized text (includ-
+ing both Chinese and English characters and numbers), font, size,
+color, spacing, position, and angle. The opacity of the watermarks
+is randomly sampled between 0.7 to 0.95. We utilized our unified                                          Input          DE-GAN [40] MPRNet [48]                    DocDiff-5
+seal-segmentation method to extract the mask of the seals in real
+Chinese document scenes. These seals mostly come from our inter-                          Figure 8: Qualitative seal removal results in real Chinese in-
+nal documents, with a small portion coming from the ICDAR 2023                            voice and document scenarios. Our proposed DocDiff model
+Competition on Reading the Seal Title. Afterwards, we fused the                           exhibits superior generalization ability and is resilient to
+seal masks into the background images in the same manner. In our                          noise.
+developed datasets, documents covered with watermarks have a
+resolution of 1754×1240 (with 3000 512×512 patches allocated for
+training and 100 full images for testing), while those covered with                       C     WATERMARK AND SEAL REMOVAL
+seals have a resolution of 512×512 (with 3000 for training and 500                        Quantitative and qualitative results are shown in Tab. 6 and Fig.
+used for testing). Note that the watermarks, seals, and background                        7, respectively. For watermark removal, DocDiff (Non-native)-5
+images in the training sets and testing sets are independent.                             exhibits competitive performance as compared to MPRNet [48]. For
+DocDiff: Document Enhancement via Residual Diffusion Models                                   MM ’23, October 29-November 3, 2023, Ottawa, ON, Canada
+
+
+seal removal, MPRNet [48] perform better on synthetic datasets due     F    DISCUSSION ABOUT SAMPLING STEPS
+to its well-designed feature extraction module that can effectively    Followed by DDIM, the time steps during training are set to 100,
+restore diverse invoice backgrounds. However, in real-world Chi-       while different sampling steps are used during inference including
+nese invoice and document scenarios, DocDiff demonstrate better        5, 10, 20, 50, and 100. Table 7 shows quantitative results and Fig-
+generalization ability, as shown in Fig. 8. DE-GAN [40] is designed    ure 12 shows qualitative results. As the sampling step increases,
+to take grayscale images as input and output, hence its performance    there is an observable trend where the perceptual quality of the
+on multi-color removal is bad.                                         image improves, but this comes at the cost of increased distortion.
+                                                                       As shown in Fig. 12, the edge of the word "Expression" become
+                                                                       distinguishable after 5 sampling steps, while the edge of the word
+                                                                       "Therefore" only become clear after 50 sampling steps. While DocD-
+                                                                       iff can correctly restore a majority of characters, errors can still
+                                                                       occur such as "Therefore" becoming "Therofore". We introduce a
+                                                                       possible solution to this problem in the next section. Even with
+                                                                       100 sampling steps during inference is usually considered a low
+                                                                       sampling step for general diffusion models. We emphasize again
+                                                                       that DocDiff is able to restore relatively sharp text edges within 20
+                                                                       steps thanks to its training strategy of predicting original data 𝑥 0
+Figure 9: Examples of document images synthesized with
+                                                                       and its deterministic sampling strategy.
+dense watermarks and real seals.
+
+
+
+D     METRICS DESCRIPTION
+As shown in Fig. 10, DE-GAN generates images with higher PSNR
+and SSIM scores but the character pixel-level edges are notably
+blurred, causing difficulty in reading for humans and recognition
+for OCR systems. With the enhancement of the HRR module, the
+character edges become much sharper and easier to recognize. The              Input            Ground-truth              CP                 CP+CR
+improvement in multiple perceptual metrics aligns with human
+perceptual quality.
+
+
+
+
+                                                                       CP+HRR (Stochas- CP+HRR (w/o FS)           CP+HRR (w FS)       CP+HRR (Native)
+                                                                       tic)
+
+
+                                                                       Figure 11: Qualitative ablation study results on the Docu-
+                                                                       ment Deblurring Dataset. (CP: Coarse Predictor, CR: Cascade
+Figure 10: Comparison of different metrics. Best viewed with
+                                                                       Refinement Module, HRR: High-Frequency Residual Refine-
+zoom-in.
+                                                                       ment Module, FS: Frequency Separation Training.
+
+
+E    MORE DETAILS IN ABLATION STUDY
+Figure 11 shows qualitative results in ablation study. We can get      Table 7: Quantitative results for different sampling steps on
+the following useful conclusions:                                      the Document Deblurring Dataset. DocDiff-n means applying
+     • Adding more encoder-decoder layers to optimize pixel loss in    n-step sampling (𝑇 ).
+       a cascade manner may not necessarily improve edge sharp-
+                                                                                                                Perceptual                    Distortion
+       ening and legibility.                                                                       MANIQA↑    MUSIQ↑ DISTS↓       LPIPS↓   PSNR↑ SSIM↑
+     • Training with frequency separation can better restore text        DocDiff (Non-native)-5     0.6873     47.92     0.0907   0.0582   22.17 0.9223
+       edges.                                                           DocDiff (Non-native)-10     0.6878     47.93     0.0886   0.0592    22.16    0.9217
+                                                                        DocDiff (Non-native)-20     0.6890     47.99     0.0875   0.0608    22.13    0.9206
+     • Predicting added noise 𝜖 and applying short-step stochastic      DocDiff (Non-native)-50     0.6912     48.13     0.0776   0.0565    21.88    0.9180
+       sampling can result in noisy sampled images with less sharp      DocDiff (Non-native)-100    0.6971     50.31    0.0636    0.0474    20.46    0.9006
+       text edges.
+     • Inference at native resolution provides the best performance.
+MM ’23, October 29-November 3, 2023, Ottawa, ON, Canada                                                                   Trovato and Tobin, et al.
+
+
+                                                                        G    FUTURE WORKS
+                                                                        There are several potential solutions to overcome the limitations
+                                                                        of our work. During the experiment, we observe that although
+                                                                        DocDiff is able to generate sharp text edges in most cases, there
+                                                                        are still instances where characters appear erroneous or distorted.
+                                                                        To address this issue, one approach is to utilize the text prior in
+                                                                        order to incorporate additional semantic information. Currently,
+      Input          Ground-truth      Coarse Predictor    DocDiff-5    there is a scarcity of paired large-scale document enhancement
+                                                                        benchmark datasets in real-world scenarios. This leads to a lack of
+                                                                        generalizability in practical applications. One approach to address
+                                                                        this issue is to utilize DocDiff for assisted annotation. For instance,
+                                                                        in the case of seal removal, humans can annotate on the results
+                                                                        generated by DocDiff, thereby substantially reducing labelling com-
+                                                                        plexity. Through multiple rounds of iteration and fine-tuning, the
+                                                                        dataset can be expanded and the performance of the model can be
+    DocDiff-10         DocDiff-20         DocDiff-50      DocDiff-100   improved.
+
+Figure 12: Qualitative sampling results for different time
+steps on the Document Deblurring Dataset.
+

@@ -1,0 +1,18 @@
+{
+  "page": "hnsd001_011",
+  "rectangle_xywh": [
+    460,
+    590,
+    90,
+    60
+  ],
+  "rectangle_area": 5400,
+  "foreground_black_pixels": {
+    "sauvola": 2885,
+    "wolf": 3119,
+    "howe": 0
+  },
+  "scope": "Post-output manual rectangle isolating the spot, not dense GT or overall accuracy.",
+  "finding": "Howe removes this isolated dark spot; previous common-failure description was a visual-review error.",
+  "algorithm_changed": false
+}

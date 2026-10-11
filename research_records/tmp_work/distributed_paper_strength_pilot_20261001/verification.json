@@ -1,0 +1,34 @@
+{
+  "status": "passed",
+  "weak256_reproduced": true,
+  "constant_paper": true,
+  "outside_newly_applied_changes": 0,
+  "all_nonreference_poison_cases": [
+    {
+      "id": "brown_false_red_new",
+      "denominator": 64
+    },
+    {
+      "id": "brown_false_red_new",
+      "denominator": 16
+    },
+    {
+      "id": "unseen_brown_spot",
+      "denominator": 64
+    },
+    {
+      "id": "unseen_brown_spot",
+      "denominator": 16
+    },
+    {
+      "id": "unseen_fold",
+      "denominator": 64
+    },
+    {
+      "id": "unseen_fold",
+      "denominator": 16
+    }
+  ],
+  "ROIs": 34,
+  "pixel_GT": false
+}

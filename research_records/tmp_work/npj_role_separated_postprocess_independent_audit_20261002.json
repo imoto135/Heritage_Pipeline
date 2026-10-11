@@ -1,0 +1,24 @@
+{
+  "status": "passed",
+  "pilot_complete_sha256": "d5d81a6cb0d5c286ca57c54cc0b7e009400aaf47cfd1d15db786bdb8c11f5dda",
+  "review_complete_sha256": "31741db472086ac4ac7c1310d96366e6b92703aecaa0d76c4788ba45fe34e171",
+  "records": [
+    {
+      "frame": "upper_crop",
+      "paper_uint8_equation_max_residual": 3,
+      "mask_rule_reconstructed": true,
+      "stroke_contrast_reconstructed": true,
+      "outside_updates_exact_npj": true
+    },
+    {
+      "frame": "full_page",
+      "paper_uint8_equation_max_residual": 3,
+      "mask_rule_reconstructed": true,
+      "stroke_contrast_reconstructed": true,
+      "outside_updates_exact_npj": true
+    }
+  ],
+  "all_9_gap_candidates_shown": true,
+  "archive_png_count": 19,
+  "pixel_GT": false
+}

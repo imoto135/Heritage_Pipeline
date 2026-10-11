@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="ja">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>npj段階のACE・CSCを振り返る</title>
+<style>
+:root{font-family:system-ui,"Noto Sans CJK JP",sans-serif;color:#172334;background:#f3f5f7}body{max-width:1600px;margin:auto;padding:24px}h1{font-size:26px;margin:0 0 12px}p{line-height:1.8;margin:8px 0}a{color:#1457b0}.intro,.controls,.notes{background:white;border:1px solid #d9e0e7;border-radius:12px;padding:18px;margin-bottom:16px}.controls{display:flex;gap:18px;flex-wrap:wrap;align-items:flex-end;position:sticky;top:0;z-index:2;box-shadow:0 3px 12px #0001}label{display:flex;flex-direction:column;gap:6px;font-size:14px}select,button,input{font:inherit;padding:7px;border:1px solid #bdc8d4;border-radius:5px}button{cursor:pointer;background:#f4f8fc}.grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}.view{background:white;border:1px solid #d9e0e7;border-radius:8px;padding:10px}.view h2{font-size:15px;margin:2px 0 10px}canvas{width:100%;height:auto;display:block;image-rendering:auto}#original{cursor:crosshair}.legend{display:flex;gap:18px;flex-wrap:wrap;font-size:14px;margin:12px 0}.legend span::before{content:"";display:inline-block;width:12px;height:12px;background:var(--color);margin-right:5px}.notes{margin-top:16px}textarea{width:100%;min-height:100px;font:inherit;box-sizing:border-box;padding:10px;border:1px solid #bdc8d4;border-radius:5px}#message{font-weight:600}#roiInfo{color:#42576c}.figures{display:flex;gap:12px;flex-wrap:wrap}.figures a{padding:8px;background:#edf3fa;border-radius:6px}.hint{font-size:13px;color:#516578}.status{color:#9a3815}details{margin-top:12px}@media(max-width:1000px){.grid{grid-template-columns:repeat(2,minmax(0,1fr))}}@media(max-width:550px){body{padding:12px}.grid{grid-template-columns:1fr}.controls{position:static}}
+</style>
+<body>
+<h1>npj段階のACE・CSCを振り返る</h1>
+<div class="intro">
+<p>まず原画像とACE後を比較し、文字の筆画と分類結果を同じ位置で確認してください。分類色はモデルの予測で、正解ラベルではありません。</p>
+<p>基準はローカルの凍結済みv1です。全ページを元解像度のままCPU ACEで再計算しました。改良v3にも同じACE画像を渡しています。4ページは既知の問題を振り返るために選んだ探索例です。</p>
+<p class="hint">ACEなしとありで分類が変わっても、どちらが正しいかは原画像の筆画と照合して判断します。拡散モデルの出力は含めていません。</p>
+<p><a href="report.md">目視所見と注意点</a> · <a href="manifest.json">比較条件の記録</a></p>
+</div>
+<div class="controls">
+<label>ページ<select id="page"></select></label>
+<label>見る場所<select id="region"></select></label>
+<label>分類条件<select id="mode"></select></label>
+<label>重ねる領域<select id="class"><option value="foreground">文字＋シミ候補</option><option value="black">黒文字</option><option value="red">赤文字</option><option value="degradation">シミ候補</option><option value="background">背景</option><option value="all">全クラス</option><option value="none">重ねない</option></select></label>
+<label>重ね表示の濃さ<input id="opacity" type="range" min="0" max="100" value="45"></label>
+<button id="whole">全体に戻る</button>
+</div>
+<p id="message" aria-live="polite"></p><p id="roiInfo"></p>
+<div class="legend">
+<span style="--color:rgb(38,100,225)">黒文字＝青</span><span style="--color:rgb(228,52,69)">赤文字＝赤</span><span style="--color:rgb(235,178,23)">シミ候補＝黄</span><span style="--color:rgb(231,235,239)">背景＝薄灰</span><span style="--color:rgb(175,61,206)">複数マスクの重複＝紫</span>
+</div>
+<div class="grid">
+<div class="view"><h2>原画像</h2><canvas id="original"></canvas></div>
+<div class="view"><h2>CPU ACE後</h2><canvas id="ace"></canvas></div>
+<div class="view"><h2>原画像に分類を重ねる</h2><canvas id="overlay"></canvas></div>
+<div class="view"><h2>分類だけを見る</h2><canvas id="map"></canvas></div>
+</div>
+<p class="hint">原画像をクリックすると、その位置を中心とした512×512画素を拡大します。全体表示ではレビュー領域を枠で表示します。</p>
+<div class="notes">
+<p id="finding"></p>
+<div id="figures" class="figures"></div>
+<details><summary>目視確認のポイント</summary><p>①ACEで紙の汚れまで強調されていないか。②原画像にある細い筆画が青色から抜けていないか。③茶色い汚れが赤色になっていないか。④裏写りが本文として検出されていないか。⑤外周の文字が一律に背景扱いになっていないか。</p></details>
+<p>自分の目視メモ <span class="hint">このブラウザー内に保存します。正解マスクにはなりません。</span></p>
+<textarea id="memo" placeholder="場所、見えている筆画、分類の疑問など"></textarea><p><button id="export">メモをJSONで保存</button><span id="memoStatus" class="hint"></span></p>
+</div>
+<script>
+const DATA=__REVIEW_DATA__;
+const $=id=>document.getElementById(id);
+const cache=new Map();let requestId=0,currentCrop=null;
+const notePrefix='npj-preprocess-review-20260930:';
+function loadImage(path){if(!cache.has(path))cache.set(path,new Promise((resolve,reject)=>{const image=new Image();image.onload=()=>resolve(image);image.onerror=()=>reject(new Error('画像を開けません: '+path));image.src=path}));return cache.get(path)}
+function option(select,value,label){const item=document.createElement('option');item.value=value;item.textContent=label;select.appendChild(item)}
+DATA.cases.forEach((page,i)=>option($('page'),i,page.id+' — '+page.title));
+Object.entries(DATA.modes).forEach(([key,label])=>option($('mode'),key,label));$('mode').value='v1_ace';
+function activeCase(){return DATA.cases[Number($('page').value)]}
+function refreshRegions(){const page=activeCase();$('region').replaceChildren();option($('region'),'whole','ページ全体');page.rois.forEach((roi,i)=>option($('region'),i,roi.title));currentCrop=null}
+function memoKey(){return notePrefix+activeCase().id+':'+$('region').value+':'+(currentCrop?currentCrop.join(','):'')}
+function restoreMemo(){try{$('memo').value=localStorage.getItem(memoKey())||'';$('memoStatus').textContent=''}catch{$('memoStatus').textContent='ブラウザー保存は利用できません。JSON保存をご利用ください。'}}
+function cropFor(page){if(currentCrop)return currentCrop;const value=$('region').value;return value==='whole'?[0,0,page.width,page.height]:page.rois[Number(value)].xywh}
+function draw(canvas,image,crop){const[x,y,w,h]=crop;const scale=Math.min(1,1000/w,1300/h);canvas.width=Math.max(1,Math.round(w*scale));canvas.height=Math.max(1,Math.round(h*scale));const context=canvas.getContext('2d');context.imageSmoothingEnabled=false;context.drawImage(image,x,y,w,h,0,0,canvas.width,canvas.height);return context}
+async function render(){const id=++requestId;const page=activeCase(),mode=$('mode').value,crop=cropFor(page);$('message').textContent='画像を読み込んでいます…';$('message').className='';try{const selected=$('class').value;const[original,ace,map,overlay]=await Promise.all([loadImage(page.id+'/original.png'),loadImage(page.id+'/ace.png'),loadImage(page.id+'/'+mode+'/classes.png'),selected==='none'?Promise.resolve(null):loadImage(page.id+'/'+mode+'/overlay_'+selected+'.png')]);if(id!==requestId)return;const originalContext=draw($('original'),original,crop);draw($('ace'),ace,crop);draw($('map'),map,crop);const context=draw($('overlay'),original,crop);if(overlay){const layer=document.createElement('canvas');draw(layer,overlay,crop);context.globalAlpha=Number($('opacity').value)/100;context.drawImage(layer,0,0);context.globalAlpha=1;}if($('region').value==='whole'&&!currentCrop){const sx=$('original').width/page.width,sy=$('original').height/page.height;page.rois.forEach((roi,i)=>{const[x,y,w,h]=roi.xywh;originalContext.strokeStyle='#e0215a';originalContext.lineWidth=3;originalContext.strokeRect(x*sx,y*sy,w*sx,h*sy);originalContext.fillStyle='#e0215a';originalContext.font='18px sans-serif';originalContext.fillText(String(i+1),x*sx+5,y*sy+22)})}$('message').textContent=page.title+' / '+DATA.modes[mode];$('roiInfo').textContent='原画像座標 x='+crop[0]+', y='+crop[1]+' / '+crop[2]+'×'+crop[3]+'画素';const roi=$('region').value==='whole'||currentCrop?null:page.rois[Number($('region').value)];$('finding').textContent=roi?roi.finding:'ページ全体から筆画の欠損、汚れの誤分類、紙面の強調を確認してください。';$('figures').replaceChildren();const links=[['ページ比較図',page.id+'/overview.png'],...page.rois.map((r,i)=>['拡大図'+(i+1),r.image])];links.forEach(([label,url])=>{const a=document.createElement('a');a.href=url;a.textContent=label;a.target='_blank';$('figures').appendChild(a)})}catch(error){$('message').textContent=error.message;$('message').className='status'}}
+$('page').addEventListener('change',()=>{refreshRegions();restoreMemo();render()});$('region').addEventListener('change',()=>{currentCrop=null;restoreMemo();render()});['mode','class','opacity'].forEach(id=>$(id).addEventListener('input',render));$('whole').addEventListener('click',()=>{currentCrop=null;$('region').value='whole';restoreMemo();render()});$('original').addEventListener('click',event=>{const page=activeCase(),crop=cropFor(page),rect=$('original').getBoundingClientRect();const x=crop[0]+(event.clientX-rect.left)/rect.width*crop[2],y=crop[1]+(event.clientY-rect.top)/rect.height*crop[3],w=Math.min(512,page.width),h=Math.min(512,page.height);currentCrop=[Math.max(0,Math.min(page.width-w,Math.round(x-w/2))),Math.max(0,Math.min(page.height-h,Math.round(y-h/2))),w,h];restoreMemo();render()});$('memo').addEventListener('input',()=>{try{localStorage.setItem(memoKey(),$('memo').value);$('memoStatus').textContent=' ブラウザー内に保存しました。'}catch{$('memoStatus').textContent=' 保存できません。JSON保存をご利用ください。'}});$('export').addEventListener('click',()=>{const notes={};try{for(let i=0;i<localStorage.length;i++){const key=localStorage.key(i);if(key.startsWith(notePrefix))notes[key.slice(notePrefix.length)]=localStorage.getItem(key)}}catch{}notes[memoKey().slice(notePrefix.length)]=$('memo').value;const url=URL.createObjectURL(new Blob([JSON.stringify({date:new Date().toISOString(),notes},null,2)],{type:'application/json'}));const a=document.createElement('a');a.href=url;a.download='npj_preprocessing_visual_notes.json';a.click();setTimeout(()=>URL.revokeObjectURL(url),1000)});refreshRegions();restoreMemo();render();
+</script>
+</body>
+</html>

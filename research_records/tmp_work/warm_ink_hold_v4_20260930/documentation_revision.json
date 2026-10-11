@@ -1,0 +1,22 @@
+{
+  "changed_files": [
+    {
+      "path": "index.html",
+      "previous_sha256": "b75fa78e1d2e14cc58a0f584720316f3e26b9aefc71b5c39ec4dc94e072f4edc",
+      "final_sha256": "6c4dff70413c373d7ab5ca0c0ec3f1599137e29224756e7ef9d4c135c6622be2"
+    },
+    {
+      "path": "report.md",
+      "previous_sha256": "c9cf77dfba2d6b8376054034ec9fdcdcd022656891fdc67e9325539edcfb6c7c",
+      "final_sha256": "c8b3d35ade199b86968ecc35dc971b4b0e86cd537f9e5dd03aafe1314263b8a1"
+    }
+  ],
+  "added_files": [
+    "visual_findings.md",
+    "remaining_failure_diagnostics.json",
+    "final_documentation_check.py",
+    "documentation_revision.json"
+  ],
+  "native_image_outputs_changed": false,
+  "reason": "Record visual findings, remaining failure causes and final review links"
+}

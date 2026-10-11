@@ -1,0 +1,448 @@
+{
+  "purpose": "Input-only red-positive challenge collection before fixed-method check",
+  "scope": "Books not used in the latest 12-page development/regression set; not claimed unused throughout the project",
+  "observer": "Codex image viewing; user review pending",
+  "selection_protocol": "All 100 input-only candidate thumbnails inspected, then all 14 native crops inspected; no segmentation results used for selection",
+  "caveat": "Color-based purposive positive collection; cannot estimate population prevalence or precision/recall. Crops are review locations, not pixel GT. Ink chemistry and print/stamp origin unverified.",
+  "dark_red_coverage": "Red-brown handwriting with dark portions included; truly dark red coverage remains insufficient",
+  "screening": {
+    "pages_screened": 4628,
+    "books_screened": 33,
+    "candidate_pages": 100,
+    "sheet_count": 7
+  },
+  "excluded_development_book_ids": [
+    "200003803",
+    "200010454",
+    "200017197",
+    "200017197_00008_0",
+    "200018243",
+    "200019865",
+    "200021063",
+    "200021071",
+    "200021660",
+    "200021851",
+    "200021869",
+    "200022050",
+    "hnsd00000"
+  ],
+  "frozen_method": {
+    "manifest": "tmp_work/training_free_protection_v2_20260930/manifest.json",
+    "settings": {
+      "red_seed": {
+        "filtered_image": "3x3 median BGR; classification only",
+        "lab_a_min": 20.0,
+        "a_over_positive_b": 0.95,
+        "lightness_min": 20.0,
+        "saturation_min": 80,
+        "hue_max": 14,
+        "hue_min_wrap": 174,
+        "minimum_seed_pixels_per_old_component": 3
+      },
+      "red_component": {
+        "median_lightness_min": 25.0,
+        "growth": "whole prior red candidate component; original weak colors preserved"
+      },
+      "red_uncertain_context": {
+        "radius": 24.0,
+        "minimum_component_median_lightness": 25.0,
+        "rule": "unconfirmed old red component within radius of confirmed red is protected with unknown color"
+      },
+      "thin_extension": {
+        "radius": 2.0,
+        "support": "at least one of prior Sauvola scales; within radius of base ink or confirmed/contextual red"
+      },
+      "dense_stain": "reuse logged prior dense brown-evidence components; not new universal proof",
+      "edit_guard": {
+        "radius": 3.0,
+        "rule": "stain candidate outside protection guard and hold only"
+      },
+      "hold": "unconfirmed red (may overlap protection), scale disagreement outside protection except prior dense stain, prior dense hold, stain near protection",
+      "mask_semantics": "independent stain_candidate/protect/hold; edit_allowed disjoint from protect and hold",
+      "pixels": "native resolution; no automatic deletion; no fixed border cutoff"
+    },
+    "source_sha256": "8f106202a7259aa3f4420b6a828b4cbab69acc177640f43c21daa2bb5a5e70b4",
+    "viewer_template_sha256": "c6c27b9688c75668f28af4c3649508ba67cc67aa57bed92e676a4c7f41dbd665"
+  },
+  "method_applied": false,
+  "training_performed": false,
+  "pixel_ground_truth_created": false,
+  "packaging_source_sha256": "9acc77594429b7e67e3a37b8396568f56fcfa12c0b0df2fc56ae7a9a01bc707f",
+  "dependencies": {
+    "tmp_work/training_free_protection_v2_20260930/manifest.json": "aee81173acc492fe09bf29acf6e4b8b78411bfb1816532f7949d368bb426c3b2",
+    "scripts/benchmark/refine_training_free_protection.py": "8f106202a7259aa3f4420b6a828b4cbab69acc177640f43c21daa2bb5a5e70b4",
+    "scripts/benchmark/training_free_protection_viewer.html": "c6c27b9688c75668f28af4c3649508ba67cc67aa57bed92e676a4c7f41dbd665",
+    "tmp_work/red_positive_collection_20260930/screening_manifest.json": "67482fd483cc020525b153acdd455340bf07a1c2e15e45a8286f21270ea6db1c",
+    "tmp_work/red_positive_collection_20260930/candidate_pages.json": "8f6cdd0ffe7129e7732e4e71dc40cb8a5f4fd29f99c272a9a9ae5836fdb9ee61",
+    "tmp_work/red_positive_collection_20260930/inspection_queue.json": "72a6be73765196128c73d25f0190c2a635e9eec1da16695f45fe0fd0e1e642e1",
+    "tmp_work/red_positive_collection_20260930/screening_complete.json": "0c627d694324d9427a22b63e95aaeed7eb0402b9111bf7ac0e033640928b06f6",
+    "tmp_work/red_positive_collection_20260930/screening_scores.json": "7e5684ae1d62ede7bbccb2a73e24233f131334854f761403e28ce22e5b642c0a",
+    "tmp_work/red_positive_collection_20260930/book_coverage.json": "850e3f20d6531702befba00ce2c8a83ef5855b00579e2d8c87a204ee1aea2aac",
+    "scripts/benchmark/collect_red_source_candidates.py": "fa3bacaff91cb96fe9bf99f2fb60c12125ea221a7eb70a20d363ef329d4b1f0b"
+  },
+  "cases": [
+    {
+      "id": "100249376_00056_1",
+      "original": "data/train/100249376/100249376_00056_1.jpg",
+      "original_sha256": "58d356496a4bc7facbf5474648d15beb1234871cec9aebed6e02375249b67b92",
+      "book": "100249376",
+      "split": "train",
+      "width": 2018,
+      "height": 2994,
+      "screening_candidate_index": 5,
+      "tags": [
+        "薄い朱印",
+        "黄変紙",
+        "薄い灰青色の文字と重なり"
+      ],
+      "observation": "黄変した紙の矩形印影。灰青色の文字と重なる。退色原因や裏写りかどうかは未確定。",
+      "original_png": "pages/100249376_00056_1/original.png",
+      "preview": "pages/100249376_00056_1/preview.jpg",
+      "rois": [
+        {
+          "id": "100249376_00056_1_roi_01",
+          "name": "薄い矩形印影",
+          "xywh": [
+            340,
+            2170,
+            550,
+            520
+          ],
+          "png": "pages/100249376_00056_1/roi_01.png",
+          "visually_inspected": true,
+          "pixel_ground_truth": false
+        }
+      ]
+    },
+    {
+      "id": "100249537_00003_2",
+      "original": "data/train/100249537/100249537_00003_2.jpg",
+      "original_sha256": "557d28ea4800b88997e0c7da395b4171583533996508bc88088c0cb85a05ad87",
+      "book": "100249537",
+      "split": "train",
+      "width": 1910,
+      "height": 3018,
+      "screening_candidate_index": 13,
+      "tags": [
+        "朱線の囲み",
+        "墨と重なり",
+        "黄変紙"
+      ],
+      "observation": "墨書の上に赤い囲み線がある。線幅・濃度にむらがある。",
+      "original_png": "pages/100249537_00003_2/original.png",
+      "preview": "pages/100249537_00003_2/preview.jpg",
+      "rois": [
+        {
+          "id": "100249537_00003_2_roi_01",
+          "name": "上部の囲み線と墨",
+          "xywh": [
+            1190,
+            480,
+            430,
+            970
+          ],
+          "png": "pages/100249537_00003_2/roi_01.png",
+          "visually_inspected": true,
+          "pixel_ground_truth": false
+        },
+        {
+          "id": "100249537_00003_2_roi_02",
+          "name": "下部の囲み線と墨",
+          "xywh": [
+            960,
+            1550,
+            380,
+            600
+          ],
+          "png": "pages/100249537_00003_2/roi_02.png",
+          "visually_inspected": true,
+          "pixel_ground_truth": false
+        }
+      ]
+    },
+    {
+      "id": "200006663_00002_2",
+      "original": "data/train/200006663/200006663_00002_2.jpg",
+      "original_sha256": "ae604e514da9007ef8ce6c2a4e01cae0bcdcaeb5be2b4c38e3564f522e6aed3c",
+      "book": "200006663",
+      "split": "train",
+      "width": 2118,
+      "height": 3010,
+      "screening_candidate_index": 20,
+      "tags": [
+        "朱印",
+        "細い印影",
+        "黒い挿絵と重なり"
+      ],
+      "observation": "細く欠けた矩形印影が黒い挿絵と交差する。",
+      "original_png": "pages/200006663_00002_2/original.png",
+      "preview": "pages/200006663_00002_2/preview.jpg",
+      "rois": [
+        {
+          "id": "200006663_00002_2_roi_01",
+          "name": "挿絵に重なる印影",
+          "xywh": [
+            730,
+            2180,
+            730,
+            780
+          ],
+          "png": "pages/200006663_00002_2/roi_01.png",
+          "visually_inspected": true,
+          "pixel_ground_truth": false
+        }
+      ]
+    },
+    {
+      "id": "200020019_00002_2",
+      "original": "data/train/200020019/200020019_00002_2.jpg",
+      "original_sha256": "5824181ca480ec7aa37251d7087fa3dc7ed0431d1bdbcc4b9123a491ba8bf9cb",
+      "book": "200020019",
+      "split": "train",
+      "width": 1853,
+      "height": 3076,
+      "screening_candidate_index": 32,
+      "tags": [
+        "朱印",
+        "墨と重なり",
+        "印影内の濃淡"
+      ],
+      "observation": "上部・下部の矩形印影が墨書と重なり、朱にも濃淡がある。",
+      "original_png": "pages/200020019_00002_2/original.png",
+      "preview": "pages/200020019_00002_2/preview.jpg",
+      "rois": [
+        {
+          "id": "200020019_00002_2_roi_01",
+          "name": "上部の印影と墨",
+          "xywh": [
+            1150,
+            50,
+            600,
+            850
+          ],
+          "png": "pages/200020019_00002_2/roi_01.png",
+          "visually_inspected": true,
+          "pixel_ground_truth": false
+        },
+        {
+          "id": "200020019_00002_2_roi_02",
+          "name": "下部の印影と墨",
+          "xywh": [
+            1550,
+            2520,
+            300,
+            420
+          ],
+          "png": "pages/200020019_00002_2/roi_02.png",
+          "visually_inspected": true,
+          "pixel_ground_truth": false
+        }
+      ]
+    },
+    {
+      "id": "200020019_00082_2",
+      "original": "data/train/200020019/200020019_00082_2.jpg",
+      "original_sha256": "1202997f573d6dcdc461fda9941fa0889311ee31c34842f4b49c0c38d037847c",
+      "book": "200020019",
+      "split": "train",
+      "width": 1869,
+      "height": 3037,
+      "screening_candidate_index": 33,
+      "tags": [
+        "薄い朱印",
+        "濃い朱印との対比",
+        "同冊別ページ"
+      ],
+      "observation": "上側の薄い赤色印影と下側の明瞭な印影。同冊の別ページであり、独立した冊として数えない。",
+      "original_png": "pages/200020019_00082_2/original.png",
+      "preview": "pages/200020019_00082_2/preview.jpg",
+      "rois": [
+        {
+          "id": "200020019_00082_2_roi_01",
+          "name": "薄い印影",
+          "xywh": [
+            40,
+            1300,
+            480,
+            500
+          ],
+          "png": "pages/200020019_00082_2/roi_01.png",
+          "visually_inspected": true,
+          "pixel_ground_truth": false
+        },
+        {
+          "id": "200020019_00082_2_roi_02",
+          "name": "明瞭な印影",
+          "xywh": [
+            580,
+            2380,
+            500,
+            480
+          ],
+          "png": "pages/200020019_00082_2/roi_02.png",
+          "visually_inspected": true,
+          "pixel_ground_truth": false
+        }
+      ]
+    },
+    {
+      "id": "200021086_00032_2",
+      "original": "data/train/200021086/200021086_00032_2.jpg",
+      "original_sha256": "26214bf730b542def243debc71ee34aadba790cc4773e1326fdff1aff7c45ba6",
+      "book": "200021086",
+      "split": "train",
+      "width": 1872,
+      "height": 3133,
+      "screening_candidate_index": 36,
+      "tags": [
+        "薄い朱印",
+        "低コントラスト",
+        "紙色に近い赤"
+      ],
+      "observation": "淡い大きな印影。紙面の斑点もある。近代の蔵書管理印は主な確認範囲に含めていない。",
+      "original_png": "pages/200021086_00032_2/original.png",
+      "preview": "pages/200021086_00032_2/preview.jpg",
+      "rois": [
+        {
+          "id": "200021086_00032_2_roi_01",
+          "name": "低コントラストの印影",
+          "xywh": [
+            570,
+            350,
+            650,
+            1100
+          ],
+          "png": "pages/200021086_00032_2/roi_01.png",
+          "visually_inspected": true,
+          "pixel_ground_truth": false
+        }
+      ]
+    },
+    {
+      "id": "200021763_00002_2",
+      "original": "data/train/200021763/200021763_00002_2.jpg",
+      "original_sha256": "44631919294b4cde57c2cfa8f669ac2648fa855a2f204e25629c115f5b986313",
+      "book": "200021763",
+      "split": "train",
+      "width": 2769,
+      "height": 4438,
+      "screening_candidate_index": 48,
+      "tags": [
+        "赤褐色の筆記",
+        "細い筆画",
+        "筆画内の濃淡",
+        "黄変紙"
+      ],
+      "observation": "赤褐色の縦書き筆記。濃い箇所と薄い細線が共存する。暗い朱の代表例として十分かは未確定。",
+      "original_png": "pages/200021763_00002_2/original.png",
+      "preview": "pages/200021763_00002_2/preview.jpg",
+      "rois": [
+        {
+          "id": "200021763_00002_2_roi_01",
+          "name": "上側の赤褐色筆記",
+          "xywh": [
+            190,
+            580,
+            520,
+            800
+          ],
+          "png": "pages/200021763_00002_2/roi_01.png",
+          "visually_inspected": true,
+          "pixel_ground_truth": false
+        },
+        {
+          "id": "200021763_00002_2_roi_02",
+          "name": "下側の赤褐色筆記と細線",
+          "xywh": [
+            190,
+            1280,
+            560,
+            1260
+          ],
+          "png": "pages/200021763_00002_2/roi_02.png",
+          "visually_inspected": true,
+          "pixel_ground_truth": false
+        }
+      ]
+    },
+    {
+      "id": "200025191_00004_2",
+      "original": "data/train/200025191/200025191_00004_2.jpg",
+      "original_sha256": "28435ed05f9d48efa60f467c628616a3e5dc294642cab424e0014146494add7a",
+      "book": "200025191",
+      "split": "train",
+      "width": 1891,
+      "height": 2826,
+      "screening_candidate_index": 64,
+      "tags": [
+        "朱印",
+        "細い印影",
+        "墨と接触"
+      ],
+      "observation": "明るい朱の細い矩形印影。左枠の一部が墨と接触する。",
+      "original_png": "pages/200025191_00004_2/original.png",
+      "preview": "pages/200025191_00004_2/preview.jpg",
+      "rois": [
+        {
+          "id": "200025191_00004_2_roi_01",
+          "name": "細い印影と墨の接触",
+          "xywh": [
+            550,
+            1850,
+            440,
+            850
+          ],
+          "png": "pages/200025191_00004_2/roi_01.png",
+          "visually_inspected": true,
+          "pixel_ground_truth": false
+        }
+      ]
+    },
+    {
+      "id": "100249371_00002_1",
+      "original": "data/val/100249371/100249371_00002_1.jpg",
+      "original_sha256": "fd32440af0d2cd93de4b9b7ac820cbc90d84e2bed0e7b23e3796d0b0f4861ff6",
+      "book": "100249371",
+      "split": "val",
+      "width": 1986,
+      "height": 3030,
+      "screening_candidate_index": 76,
+      "tags": [
+        "赤色の図形・文字",
+        "墨と重なり",
+        "青い罫線と重なり"
+      ],
+      "observation": "赤色の図形・文字が墨と青い罫線に重なる。朱印か色刷りかは未確定。",
+      "original_png": "pages/100249371_00002_1/original.png",
+      "preview": "pages/100249371_00002_1/preview.jpg",
+      "rois": [
+        {
+          "id": "100249371_00002_1_roi_01",
+          "name": "上部の赤と青・墨",
+          "xywh": [
+            880,
+            60,
+            740,
+            680
+          ],
+          "png": "pages/100249371_00002_1/roi_01.png",
+          "visually_inspected": true,
+          "pixel_ground_truth": false
+        },
+        {
+          "id": "100249371_00002_1_roi_02",
+          "name": "下部の赤と墨",
+          "xywh": [
+            180,
+            2050,
+            530,
+            650
+          ],
+          "png": "pages/100249371_00002_1/roi_02.png",
+          "visually_inspected": true,
+          "pixel_ground_truth": false
+        }
+      ]
+    }
+  ]
+}

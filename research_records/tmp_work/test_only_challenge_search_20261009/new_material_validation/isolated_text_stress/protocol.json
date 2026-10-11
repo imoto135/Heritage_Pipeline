@@ -1,0 +1,56 @@
+{
+  "cases": [
+    {
+      "id": "S01",
+      "page": "200008003_00007_1",
+      "roi_xywh": [
+        180,
+        800,
+        2380,
+        850
+      ],
+      "protection_xywh": [
+        280,
+        850,
+        2150,
+        900
+      ],
+      "reason": "離れた漢字の見出し",
+      "source": "data/test/200008003/200008003_00007_1.jpg",
+      "source_sha256": "f60d97f52b2f11e3924979fa3e888e96386d0b0821144360fb263996a197d20e",
+      "input_size": [
+        2655,
+        4108
+      ]
+    },
+    {
+      "id": "S02",
+      "page": "200005798_00024_2",
+      "roi_xywh": [
+        850,
+        600,
+        450,
+        1300
+      ],
+      "protection_xywh": [
+        870,
+        660,
+        430,
+        1130
+      ],
+      "reason": "単独の短い題字",
+      "source": "data/test/200005798/200005798_00024_2.jpg",
+      "source_sha256": "f08c3e4b80657787ba9704d379729146c4040ace8180a33a24a66d4f7f5a190f",
+      "input_size": [
+        2014,
+        3146
+      ]
+    }
+  ],
+  "rule_frozen": true,
+  "rule_protocol": "tmp_work/test_only_challenge_search_20261009/new_material_validation/protocol.json",
+  "rule_protocol_sha256": "3d7f6343f75aef4aa84c8e937c0cf964c13ae009384645cb20be37dcf1078e7e",
+  "selection_scope": "Additional source-selected grayscale stress controls after initial color mask review; mask only, no DDRM",
+  "no_parameter_changes": true,
+  "script_sha256": "f0b25563d67cfdded20fb0010ee46b05985654bb33b968fc0a68490046392a0d"
+}

@@ -1,0 +1,24 @@
+{
+  "anchor_profiles": 6,
+  "excluded_target_rois": true,
+  "spaces": {
+    "rgb_additive": {
+      "status": "insufficient_automatic_anchors",
+      "estimation_profiles": 4,
+      "confirmation_profiles": 1,
+      "pigment_direction_rgb": null
+    },
+    "encoded_od": {
+      "status": "insufficient_automatic_anchors",
+      "estimation_profiles": 5,
+      "confirmation_profiles": 1,
+      "pigment_direction_rgb": null
+    },
+    "linear_srgb_od": {
+      "status": "insufficient_automatic_anchors",
+      "estimation_profiles": 5,
+      "confirmation_profiles": 1,
+      "pigment_direction_rgb": null
+    }
+  }
+}

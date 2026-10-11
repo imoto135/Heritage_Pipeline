@@ -1,0 +1,855 @@
+{
+  "source_sha256": "d96ba141ab6a17f59df2cdafc8d92e28379816010dbbfb77b34efe016a39cde4",
+  "settings": {
+    "no_ridge": "v5 color_direction & v2 edit_allowed & (v5 near_red | v4 extra_hold)",
+    "with_ridge": "Frozen v5 stroke_context_extra_hold",
+    "shared": "Same pixels, direction18 degrees, red distance96, v4 support; remove only the ridge requirement",
+    "purpose": "Development ablation: ridge-reopened edits may be either stains or real ink; no pixel GT"
+  },
+  "cases": [
+    {
+      "id": "hnsd001_011",
+      "original": "data/train/hnsd00000/hnsd001_011.jpg",
+      "book": "hnsd00000",
+      "group": "initial_development",
+      "reference": "tmp_work/training_free_protection_v2_20260930/hnsd001_011",
+      "color": "tmp_work/training_free_color_shape_20260930/hnsd001_011",
+      "rois": [
+        {
+          "title": "水染みと薄い文字が混在する部分",
+          "xywh": [
+            220,
+            1620,
+            850,
+            760
+          ],
+          "finding": "ACEで薄い文字が青として拾われる場所があります。一方、紙の濃淡も強調されます。改良v3では、この領域の多くの筆画が黄に移り、黒文字の取りこぼしが増えています。"
+        },
+        {
+          "title": "濃い茶色の斑点と周囲の文字",
+          "xywh": [
+            400,
+            460,
+            400,
+            400
+          ],
+          "finding": "濃い楕円状の茶色い斑点が、v1のACEなし・ありと改良v3のいずれでも黒文字（青）に入ります。汚れと筆画の形を使わない分類の限界が見える例です。"
+        },
+        {
+          "title": "文字のない上部の紙面",
+          "xywh": [
+            500,
+            135,
+            650,
+            170
+          ],
+          "finding": "ACE後は紙の細かなムラが強くなり、黄色いシミ候補も増えます。グレースケールの標準偏差は5.83から13.36へ増加。ただし、このROIは手動の背景GTではありません。"
+        },
+        {
+          "title": "下端の紙面のムラ",
+          "xywh": [
+            200,
+            2690,
+            600,
+            150
+          ],
+          "finding": "濃い紙のムラがv1では黒文字にも入ります。下側が一律に薄灰になるのは外周4%を強制背景にする設定です。この位置では文字が削られたとは確認していません。"
+        }
+      ]
+    },
+    {
+      "id": "200010454_00002_2",
+      "original": "data/test/200010454/200010454_00002_2.jpg",
+      "book": "200010454",
+      "group": "initial_development",
+      "reference": "tmp_work/training_free_protection_v2_20260930/200010454_00002_2",
+      "color": "tmp_work/training_free_color_shape_20260930/200010454_00002_2",
+      "rois": [
+        {
+          "title": "茶色い汚れを赤文字と判定する例",
+          "xywh": [
+            710,
+            200,
+            450,
+            330
+          ],
+          "finding": "上部の茶色い汚れの一部がv1のACEあり条件で赤色になります。同じACEを使う改良v3と比較してください。"
+        },
+        {
+          "title": "本物の朱印と黒文字の重なり",
+          "xywh": [
+            1370,
+            1810,
+            360,
+            480
+          ],
+          "finding": "朱印の主要な線はv1で赤として分かれます。細線・薄い線の一部は青や黄にも分かれます。改良v3は茶色い汚れの赤誤検出を減らす一方、この朱印でも黄色へ移る部分が増えます。"
+        },
+        {
+          "title": "右側の細い筆画",
+          "xywh": [
+            1290,
+            600,
+            280,
+            600
+          ],
+          "finding": "左側の薄いループ状の筆画は、v1のACEなし・あり、改良v3でも主に黄に入ります。ACEで線が見やすくなっても、黒文字マスクの欠損は残る例です。"
+        }
+      ]
+    },
+    {
+      "id": "200017197_00008_0",
+      "original": "data/makura_csc_mask/200017197_00008_0/00_original.png",
+      "book": "200017197",
+      "group": "initial_development",
+      "reference": "tmp_work/training_free_protection_v2_20260930/200017197_00008_0",
+      "color": "tmp_work/training_free_color_shape_20260930/200017197_00008_0",
+      "rois": [
+        {
+          "title": "薄い筆画が黒文字から外れる例",
+          "xywh": [
+            700,
+            1470,
+            440,
+            550
+          ],
+          "finding": "左中段の短い筆画はACEなしではほぼ青ですが、ACEありのv1ではほぼ黄へ移ります。下の大きなループの細線も多くが黄です。改良v3は短い筆画を救済しますが、ループの一部は取りこぼします。"
+        },
+        {
+          "title": "比較的はっきりした筆画の対照",
+          "xywh": [
+            900,
+            600,
+            440,
+            500
+          ],
+          "finding": "「正」「月」や右側の濃い筆画はv1でも主要部分が青として残ります。同時に細い端部は黄へ分かれています。失敗例だけでACEやCSC全体の良否を判断しないための対照です。"
+        },
+        {
+          "title": "紙色の変化と分類用ACE",
+          "xywh": [
+            900,
+            60,
+            650,
+            210
+          ],
+          "finding": "ACEによる紙色の変化は、この段階では分類用の変換です。最終復元画像の色変更と同一視しないでください。"
+        }
+      ]
+    },
+    {
+      "id": "200018243_00003_2",
+      "original": "data/test/200018243/200018243_00003_2.jpg",
+      "book": "200018243",
+      "group": "initial_development",
+      "reference": "tmp_work/training_free_protection_v2_20260930/200018243_00003_2",
+      "color": "tmp_work/training_free_color_shape_20260930/200018243_00003_2",
+      "rois": [
+        {
+          "title": "右端の本文・小字と枠線",
+          "xywh": [
+            1640,
+            260,
+            360,
+            700
+          ],
+          "finding": "右側の濃い本文と枠線の主要部分は青として残ります。小字や細い端部の分類を原画像と照合してください。このROIには朱書の見逃しを断定できる朱色の筆画は確認していません。"
+        },
+        {
+          "title": "本文と裏写りが混在する部分",
+          "xywh": [
+            200,
+            2150,
+            580,
+            650
+          ],
+          "finding": "青灰色の薄い線や影がACEで強くなります。多くは黄へ分類されますが、濃い線の近傍で青との分断があります。これらが裏写りかどうかは反対面との照合なしには確定できません。"
+        },
+        {
+          "title": "濃淡のある本文",
+          "xywh": [
+            1090,
+            530,
+            420,
+            500
+          ],
+          "finding": "v1では本文の主要部分が青で残り、かすれた縁が黄へ分かれます。改良v3では、このROIでも本文の一部がさらに黄へ移ります。"
+        },
+        {
+          "title": "外周4%の境界と枠線・欄外",
+          "xywh": [
+            20,
+            320,
+            240,
+            650
+          ],
+          "finding": "左端約82画素は強制背景のため、横の枠線も境界で途切れます。欄外の小字はこのROIでは境界の内側にあり、文字が強制背景で消えたとは確認していません。"
+        }
+      ]
+    },
+    {
+      "id": "200021660_00040_1",
+      "original": "data/val/200021660/200021660_00040_1.jpg",
+      "book": "200021660",
+      "group": "negative_regression",
+      "reference": "tmp_work/training_free_protection_v2_20260930/200021660_00040_1",
+      "color": "tmp_work/training_free_fixed_check_20260930/200021660_00040_1",
+      "rois": [
+        {
+          "title": "固定位置の確認領域1",
+          "xywh": [
+            573,
+            950,
+            512,
+            512
+          ]
+        },
+        {
+          "title": "固定位置の確認領域2",
+          "xywh": [
+            1678,
+            1898,
+            512,
+            512
+          ]
+        },
+        {
+          "title": "固定位置の確認領域3",
+          "xywh": [
+            849,
+            3103,
+            512,
+            512
+          ]
+        }
+      ]
+    },
+    {
+      "id": "200021851_00019_2",
+      "original": "data/val/200021851/200021851_00019_2.jpg",
+      "book": "200021851",
+      "group": "negative_regression",
+      "reference": "tmp_work/training_free_protection_v2_20260930/200021851_00019_2",
+      "color": "tmp_work/training_free_fixed_check_20260930/200021851_00019_2",
+      "rois": [
+        {
+          "title": "固定位置の確認領域1",
+          "xywh": [
+            433,
+            646,
+            512,
+            512
+          ]
+        },
+        {
+          "title": "固定位置の確認領域2",
+          "xywh": [
+            1351,
+            1354,
+            512,
+            512
+          ]
+        },
+        {
+          "title": "固定位置の確認領域3",
+          "xywh": [
+            662,
+            2256,
+            512,
+            512
+          ]
+        }
+      ]
+    },
+    {
+      "id": "200021869_00010_2",
+      "original": "data/val/200021869/200021869_00010_2.jpg",
+      "book": "200021869",
+      "group": "negative_regression",
+      "reference": "tmp_work/training_free_protection_v2_20260930/200021869_00010_2",
+      "color": "tmp_work/training_free_fixed_check_20260930/200021869_00010_2",
+      "rois": [
+        {
+          "title": "固定位置の確認領域1",
+          "xywh": [
+            377,
+            604,
+            512,
+            512
+          ]
+        },
+        {
+          "title": "固定位置の確認領域2",
+          "xywh": [
+            1220,
+            1280,
+            512,
+            512
+          ]
+        },
+        {
+          "title": "固定位置の確認領域3",
+          "xywh": [
+            588,
+            2140,
+            512,
+            512
+          ]
+        }
+      ]
+    },
+    {
+      "id": "200022050_00010_1",
+      "original": "data/val/200022050/200022050_00010_1.jpg",
+      "book": "200022050",
+      "group": "negative_regression",
+      "reference": "tmp_work/training_free_protection_v2_20260930/200022050_00010_1",
+      "color": "tmp_work/training_free_fixed_check_20260930/200022050_00010_1",
+      "rois": [
+        {
+          "title": "固定位置の確認領域1",
+          "xywh": [
+            465,
+            732,
+            512,
+            512
+          ]
+        },
+        {
+          "title": "固定位置の確認領域2",
+          "xywh": [
+            1427,
+            1508,
+            512,
+            512
+          ]
+        },
+        {
+          "title": "固定位置の確認領域3",
+          "xywh": [
+            706,
+            2495,
+            512,
+            512
+          ]
+        }
+      ]
+    },
+    {
+      "id": "200003803_00009_2",
+      "original": "data/test/200003803/200003803_00009_2.jpg",
+      "book": "200003803",
+      "group": "negative_regression",
+      "reference": "tmp_work/training_free_protection_v2_20260930/200003803_00009_2",
+      "color": "tmp_work/training_free_fixed_check_20260930/200003803_00009_2",
+      "rois": [
+        {
+          "title": "固定位置の確認領域1",
+          "xywh": [
+            382,
+            644,
+            512,
+            512
+          ]
+        },
+        {
+          "title": "固定位置の確認領域2",
+          "xywh": [
+            1233,
+            1352,
+            512,
+            512
+          ]
+        },
+        {
+          "title": "固定位置の確認領域3",
+          "xywh": [
+            595,
+            2252,
+            512,
+            512
+          ]
+        }
+      ]
+    },
+    {
+      "id": "200019865_00075_2",
+      "original": "data/test/200019865/200019865_00075_2.jpg",
+      "book": "200019865",
+      "group": "negative_regression",
+      "reference": "tmp_work/training_free_protection_v2_20260930/200019865_00075_2",
+      "color": "tmp_work/training_free_fixed_check_20260930/200019865_00075_2",
+      "rois": [
+        {
+          "title": "固定位置の確認領域1",
+          "xywh": [
+            366,
+            641,
+            512,
+            512
+          ]
+        },
+        {
+          "title": "固定位置の確認領域2",
+          "xywh": [
+            1196,
+            1345,
+            512,
+            512
+          ]
+        },
+        {
+          "title": "固定位置の確認領域3",
+          "xywh": [
+            574,
+            2242,
+            512,
+            512
+          ]
+        }
+      ]
+    },
+    {
+      "id": "200021063_00021_1",
+      "original": "data/test/200021063/200021063_00021_1.jpg",
+      "book": "200021063",
+      "group": "negative_regression",
+      "reference": "tmp_work/training_free_protection_v2_20260930/200021063_00021_1",
+      "color": "tmp_work/training_free_fixed_check_20260930/200021063_00021_1",
+      "rois": [
+        {
+          "title": "固定位置の確認領域1",
+          "xywh": [
+            356,
+            634,
+            512,
+            512
+          ]
+        },
+        {
+          "title": "固定位置の確認領域2",
+          "xywh": [
+            1171,
+            1334,
+            512,
+            512
+          ]
+        },
+        {
+          "title": "固定位置の確認領域3",
+          "xywh": [
+            560,
+            2224,
+            512,
+            512
+          ]
+        }
+      ]
+    },
+    {
+      "id": "200021071_00079_2",
+      "original": "data/test/200021071/200021071_00079_2.jpg",
+      "book": "200021071",
+      "group": "negative_regression",
+      "reference": "tmp_work/training_free_protection_v2_20260930/200021071_00079_2",
+      "color": "tmp_work/training_free_fixed_check_20260930/200021071_00079_2",
+      "rois": [
+        {
+          "title": "固定位置の確認領域1",
+          "xywh": [
+            324,
+            653,
+            512,
+            512
+          ]
+        },
+        {
+          "title": "固定位置の確認領域2",
+          "xywh": [
+            1098,
+            1368,
+            512,
+            512
+          ]
+        },
+        {
+          "title": "固定位置の確認領域3",
+          "xywh": [
+            518,
+            2277,
+            512,
+            512
+          ]
+        }
+      ]
+    },
+    {
+      "id": "100249376_00056_1",
+      "original": "data/train/100249376/100249376_00056_1.jpg",
+      "book": "100249376",
+      "group": "positive_development",
+      "reference": "tmp_work/red_positive_fixed_check_20260930/refined/100249376_00056_1",
+      "color": "tmp_work/red_positive_fixed_check_20260930/color/100249376_00056_1",
+      "rois": [
+        {
+          "title": "薄い矩形印影",
+          "xywh": [
+            340,
+            2170,
+            550,
+            520
+          ]
+        }
+      ]
+    },
+    {
+      "id": "100249537_00003_2",
+      "original": "data/train/100249537/100249537_00003_2.jpg",
+      "book": "100249537",
+      "group": "positive_development",
+      "reference": "tmp_work/red_positive_fixed_check_20260930/refined/100249537_00003_2",
+      "color": "tmp_work/red_positive_fixed_check_20260930/color/100249537_00003_2",
+      "rois": [
+        {
+          "title": "上部の囲み線と墨",
+          "xywh": [
+            1190,
+            480,
+            430,
+            970
+          ]
+        },
+        {
+          "title": "下部の囲み線と墨",
+          "xywh": [
+            960,
+            1550,
+            380,
+            600
+          ]
+        }
+      ]
+    },
+    {
+      "id": "200006663_00002_2",
+      "original": "data/train/200006663/200006663_00002_2.jpg",
+      "book": "200006663",
+      "group": "positive_development",
+      "reference": "tmp_work/red_positive_fixed_check_20260930/refined/200006663_00002_2",
+      "color": "tmp_work/red_positive_fixed_check_20260930/color/200006663_00002_2",
+      "rois": [
+        {
+          "title": "挿絵に重なる印影",
+          "xywh": [
+            730,
+            2180,
+            730,
+            780
+          ]
+        }
+      ]
+    },
+    {
+      "id": "200020019_00002_2",
+      "original": "data/train/200020019/200020019_00002_2.jpg",
+      "book": "200020019",
+      "group": "positive_development",
+      "reference": "tmp_work/red_positive_fixed_check_20260930/refined/200020019_00002_2",
+      "color": "tmp_work/red_positive_fixed_check_20260930/color/200020019_00002_2",
+      "rois": [
+        {
+          "title": "上部の印影と墨",
+          "xywh": [
+            1150,
+            50,
+            600,
+            850
+          ]
+        },
+        {
+          "title": "下部の印影と墨",
+          "xywh": [
+            1550,
+            2520,
+            300,
+            420
+          ]
+        }
+      ]
+    },
+    {
+      "id": "200020019_00082_2",
+      "original": "data/train/200020019/200020019_00082_2.jpg",
+      "book": "200020019",
+      "group": "positive_development",
+      "reference": "tmp_work/red_positive_fixed_check_20260930/refined/200020019_00082_2",
+      "color": "tmp_work/red_positive_fixed_check_20260930/color/200020019_00082_2",
+      "rois": [
+        {
+          "title": "薄い印影",
+          "xywh": [
+            40,
+            1300,
+            480,
+            500
+          ]
+        },
+        {
+          "title": "明瞭な印影",
+          "xywh": [
+            580,
+            2380,
+            500,
+            480
+          ]
+        }
+      ]
+    },
+    {
+      "id": "200021086_00032_2",
+      "original": "data/train/200021086/200021086_00032_2.jpg",
+      "book": "200021086",
+      "group": "positive_development",
+      "reference": "tmp_work/red_positive_fixed_check_20260930/refined/200021086_00032_2",
+      "color": "tmp_work/red_positive_fixed_check_20260930/color/200021086_00032_2",
+      "rois": [
+        {
+          "title": "低コントラストの印影",
+          "xywh": [
+            570,
+            350,
+            650,
+            1100
+          ]
+        }
+      ]
+    },
+    {
+      "id": "200021763_00002_2",
+      "original": "data/train/200021763/200021763_00002_2.jpg",
+      "book": "200021763",
+      "group": "positive_development",
+      "reference": "tmp_work/red_positive_fixed_check_20260930/refined/200021763_00002_2",
+      "color": "tmp_work/red_positive_fixed_check_20260930/color/200021763_00002_2",
+      "rois": [
+        {
+          "title": "上側の赤褐色筆記",
+          "xywh": [
+            190,
+            580,
+            520,
+            800
+          ]
+        },
+        {
+          "title": "下側の赤褐色筆記と細線",
+          "xywh": [
+            190,
+            1280,
+            560,
+            1260
+          ]
+        }
+      ]
+    },
+    {
+      "id": "200025191_00004_2",
+      "original": "data/train/200025191/200025191_00004_2.jpg",
+      "book": "200025191",
+      "group": "positive_development",
+      "reference": "tmp_work/red_positive_fixed_check_20260930/refined/200025191_00004_2",
+      "color": "tmp_work/red_positive_fixed_check_20260930/color/200025191_00004_2",
+      "rois": [
+        {
+          "title": "細い印影と墨の接触",
+          "xywh": [
+            550,
+            1850,
+            440,
+            850
+          ]
+        }
+      ]
+    },
+    {
+      "id": "100249371_00002_1",
+      "original": "data/val/100249371/100249371_00002_1.jpg",
+      "book": "100249371",
+      "group": "positive_development",
+      "reference": "tmp_work/red_positive_fixed_check_20260930/refined/100249371_00002_1",
+      "color": "tmp_work/red_positive_fixed_check_20260930/color/100249371_00002_1",
+      "rois": [
+        {
+          "title": "上部の赤と青・墨",
+          "xywh": [
+            880,
+            60,
+            740,
+            680
+          ]
+        },
+        {
+          "title": "下部の赤と墨",
+          "xywh": [
+            180,
+            2050,
+            530,
+            650
+          ]
+        }
+      ]
+    }
+  ],
+  "dependencies": {
+    "tmp_work/warm_ink_hold_v5_20260930/manifest.json": "491c0971653895120d3753b444ca90da0b934c42a799db4c3296d234a3b8a007",
+    "scripts/benchmark/compare_warm_stroke_hold.py": "de3d62b99280978cea8fd1093916f41b0335d981b9867ef06d812da1960d6cfb",
+    "tmp_work/warm_ink_hold_v5_20260930/hnsd001_011/original.png": "0d9c755b24158108e8b242b235536ef17b49bd5605c946ceed1b09547e64d411",
+    "tmp_work/warm_ink_hold_v5_20260930/hnsd001_011/color_direction.png": "ddd311f5ae61f734d04d743ba0ba85ac2d3ad9faaf0f0d8ed42399625a37f9bb",
+    "tmp_work/warm_ink_hold_v5_20260930/hnsd001_011/near_red.png": "ddd311f5ae61f734d04d743ba0ba85ac2d3ad9faaf0f0d8ed42399625a37f9bb",
+    "tmp_work/warm_ink_hold_v5_20260930/hnsd001_011/stroke_context_edit_allowed.png": "5d3fd2018944676be36cb80c6e1a6fa5d83a65028d79bdede35a5733dba2334d",
+    "tmp_work/warm_ink_hold_v5_20260930/hnsd001_011/stroke_context_extra_hold.png": "ddd311f5ae61f734d04d743ba0ba85ac2d3ad9faaf0f0d8ed42399625a37f9bb",
+    "tmp_work/warm_ink_hold_v4_20260930/hnsd001_011/red_protect_context_extra_hold.png": "ddd311f5ae61f734d04d743ba0ba85ac2d3ad9faaf0f0d8ed42399625a37f9bb",
+    "tmp_work/training_free_protection_v2_20260930/hnsd001_011/edit_allowed.png": "5d3fd2018944676be36cb80c6e1a6fa5d83a65028d79bdede35a5733dba2334d",
+    "tmp_work/warm_ink_hold_v5_20260930/200010454_00002_2/original.png": "8805a59128a05467722bd0f0cdb1a133c2983c278b8d239bdb6cbf958a141900",
+    "tmp_work/warm_ink_hold_v5_20260930/200010454_00002_2/color_direction.png": "e61199be015b42be67f9601db6b3c190a8b39f54e75a37db7fd5331819c48618",
+    "tmp_work/warm_ink_hold_v5_20260930/200010454_00002_2/near_red.png": "52a7e13d43f8e5581049a9677ba45dedbeddaf7216513a9fb8f3024e07187ea5",
+    "tmp_work/warm_ink_hold_v5_20260930/200010454_00002_2/stroke_context_edit_allowed.png": "3feef591bfe1a2bf7e282ca438e2678d9d9d64ab4735b7f7f1733c6d1daada35",
+    "tmp_work/warm_ink_hold_v5_20260930/200010454_00002_2/stroke_context_extra_hold.png": "a257d16fc65209d245edabbfde54841398832ab91f9a1362226ada5a4a463662",
+    "tmp_work/warm_ink_hold_v4_20260930/200010454_00002_2/red_protect_context_extra_hold.png": "36cfcbc30f0c6d115629344164fec25c644cd231f2c6f64c46b8298d8e8eb780",
+    "tmp_work/training_free_protection_v2_20260930/200010454_00002_2/edit_allowed.png": "dbb6a7c410b99643cd504c870ca46e16dcfeab0ef2f0211d1eb0b5230a901d14",
+    "tmp_work/warm_ink_hold_v5_20260930/200017197_00008_0/original.png": "5496d4e4811c147a7305c538a0c2a3cd8443447b2d9e6e677ed25cb6d1b5a3bb",
+    "tmp_work/warm_ink_hold_v5_20260930/200017197_00008_0/color_direction.png": "76fbf91794c36723426af3effcc9be11baac30ae4cc09228c60aa2cede930fbc",
+    "tmp_work/warm_ink_hold_v5_20260930/200017197_00008_0/near_red.png": "76fbf91794c36723426af3effcc9be11baac30ae4cc09228c60aa2cede930fbc",
+    "tmp_work/warm_ink_hold_v5_20260930/200017197_00008_0/stroke_context_edit_allowed.png": "acc1f93ad29e47cada3d3099856d4e2b91cc114b2a8d161994bf06dd24acc2c0",
+    "tmp_work/warm_ink_hold_v5_20260930/200017197_00008_0/stroke_context_extra_hold.png": "76fbf91794c36723426af3effcc9be11baac30ae4cc09228c60aa2cede930fbc",
+    "tmp_work/warm_ink_hold_v4_20260930/200017197_00008_0/red_protect_context_extra_hold.png": "76fbf91794c36723426af3effcc9be11baac30ae4cc09228c60aa2cede930fbc",
+    "tmp_work/training_free_protection_v2_20260930/200017197_00008_0/edit_allowed.png": "acc1f93ad29e47cada3d3099856d4e2b91cc114b2a8d161994bf06dd24acc2c0",
+    "tmp_work/warm_ink_hold_v5_20260930/200018243_00003_2/original.png": "8db19164c7cbdc621ddab0a0cc1b57b5893390f1767157861e38595d897dc5ae",
+    "tmp_work/warm_ink_hold_v5_20260930/200018243_00003_2/color_direction.png": "a98cec0f78632a09a2fc7a190ab76ee0f38b99301623fbe2294de40642e42f24",
+    "tmp_work/warm_ink_hold_v5_20260930/200018243_00003_2/near_red.png": "a98cec0f78632a09a2fc7a190ab76ee0f38b99301623fbe2294de40642e42f24",
+    "tmp_work/warm_ink_hold_v5_20260930/200018243_00003_2/stroke_context_edit_allowed.png": "1cfa19d850c41163c46206a1e395344fa5fec18f5d9a57ce9ea54c0d5761f95b",
+    "tmp_work/warm_ink_hold_v5_20260930/200018243_00003_2/stroke_context_extra_hold.png": "a98cec0f78632a09a2fc7a190ab76ee0f38b99301623fbe2294de40642e42f24",
+    "tmp_work/warm_ink_hold_v4_20260930/200018243_00003_2/red_protect_context_extra_hold.png": "a98cec0f78632a09a2fc7a190ab76ee0f38b99301623fbe2294de40642e42f24",
+    "tmp_work/training_free_protection_v2_20260930/200018243_00003_2/edit_allowed.png": "1cfa19d850c41163c46206a1e395344fa5fec18f5d9a57ce9ea54c0d5761f95b",
+    "tmp_work/warm_ink_hold_v5_20260930/200021660_00040_1/original.png": "6b28ca72f52804b83982e84efc5fb991106520f85d24edbbc7ca0bff8540bd15",
+    "tmp_work/warm_ink_hold_v5_20260930/200021660_00040_1/color_direction.png": "dc8070c91c9e6d906588fbe4bb72318472d6e67c034e61d27da78949d705cc66",
+    "tmp_work/warm_ink_hold_v5_20260930/200021660_00040_1/near_red.png": "dc8070c91c9e6d906588fbe4bb72318472d6e67c034e61d27da78949d705cc66",
+    "tmp_work/warm_ink_hold_v5_20260930/200021660_00040_1/stroke_context_edit_allowed.png": "e3450783d22abcf4c1c96a7fa09785b12edf7ef1fc7c071fdbe755f7889f2bca",
+    "tmp_work/warm_ink_hold_v5_20260930/200021660_00040_1/stroke_context_extra_hold.png": "dc8070c91c9e6d906588fbe4bb72318472d6e67c034e61d27da78949d705cc66",
+    "tmp_work/warm_ink_hold_v4_20260930/200021660_00040_1/red_protect_context_extra_hold.png": "dc8070c91c9e6d906588fbe4bb72318472d6e67c034e61d27da78949d705cc66",
+    "tmp_work/training_free_protection_v2_20260930/200021660_00040_1/edit_allowed.png": "e3450783d22abcf4c1c96a7fa09785b12edf7ef1fc7c071fdbe755f7889f2bca",
+    "tmp_work/warm_ink_hold_v5_20260930/200021851_00019_2/original.png": "09d9bf3d25d1e44231bb07dd2c272bf533c9be54fc51ccba9954997707082693",
+    "tmp_work/warm_ink_hold_v5_20260930/200021851_00019_2/color_direction.png": "d135dea7b09065cbe025b363422cabd125093919f166cdd3b4aa5784c680e478",
+    "tmp_work/warm_ink_hold_v5_20260930/200021851_00019_2/near_red.png": "d135dea7b09065cbe025b363422cabd125093919f166cdd3b4aa5784c680e478",
+    "tmp_work/warm_ink_hold_v5_20260930/200021851_00019_2/stroke_context_edit_allowed.png": "cf5091711c1e98b7b484ad2b5cf8b31d3f76fe1b9632a8d70029df4096aa210b",
+    "tmp_work/warm_ink_hold_v5_20260930/200021851_00019_2/stroke_context_extra_hold.png": "d135dea7b09065cbe025b363422cabd125093919f166cdd3b4aa5784c680e478",
+    "tmp_work/warm_ink_hold_v4_20260930/200021851_00019_2/red_protect_context_extra_hold.png": "d135dea7b09065cbe025b363422cabd125093919f166cdd3b4aa5784c680e478",
+    "tmp_work/training_free_protection_v2_20260930/200021851_00019_2/edit_allowed.png": "cf5091711c1e98b7b484ad2b5cf8b31d3f76fe1b9632a8d70029df4096aa210b",
+    "tmp_work/warm_ink_hold_v5_20260930/200021869_00010_2/original.png": "2c71f8a52cba8bdf8abefec98fb2894db8f77d9ea3a1f377ba651afbef38c3d7",
+    "tmp_work/warm_ink_hold_v5_20260930/200021869_00010_2/color_direction.png": "f06024495a9fccf3c5dead9f37cc779050a2918159c04d169b3325c3570b7e09",
+    "tmp_work/warm_ink_hold_v5_20260930/200021869_00010_2/near_red.png": "f06024495a9fccf3c5dead9f37cc779050a2918159c04d169b3325c3570b7e09",
+    "tmp_work/warm_ink_hold_v5_20260930/200021869_00010_2/stroke_context_edit_allowed.png": "7e061c0ba4809f058953745fad647c0e0a791a685d2280bdfe4511195e45a85b",
+    "tmp_work/warm_ink_hold_v5_20260930/200021869_00010_2/stroke_context_extra_hold.png": "f06024495a9fccf3c5dead9f37cc779050a2918159c04d169b3325c3570b7e09",
+    "tmp_work/warm_ink_hold_v4_20260930/200021869_00010_2/red_protect_context_extra_hold.png": "f06024495a9fccf3c5dead9f37cc779050a2918159c04d169b3325c3570b7e09",
+    "tmp_work/training_free_protection_v2_20260930/200021869_00010_2/edit_allowed.png": "7e061c0ba4809f058953745fad647c0e0a791a685d2280bdfe4511195e45a85b",
+    "tmp_work/warm_ink_hold_v5_20260930/200022050_00010_1/original.png": "aaf53c99e472735822ef9aebc08a8efa2426f3d12c5a993ed22f87462877429a",
+    "tmp_work/warm_ink_hold_v5_20260930/200022050_00010_1/color_direction.png": "aec234e7ed008b5563b5dc66832da15fff43aeb4a6e960a68532e438f8fffbef",
+    "tmp_work/warm_ink_hold_v5_20260930/200022050_00010_1/near_red.png": "aec234e7ed008b5563b5dc66832da15fff43aeb4a6e960a68532e438f8fffbef",
+    "tmp_work/warm_ink_hold_v5_20260930/200022050_00010_1/stroke_context_edit_allowed.png": "cee3aa0118a558067762fa5ddf0d9f4e36a9111c515cefc2a2b44241c0049fff",
+    "tmp_work/warm_ink_hold_v5_20260930/200022050_00010_1/stroke_context_extra_hold.png": "aec234e7ed008b5563b5dc66832da15fff43aeb4a6e960a68532e438f8fffbef",
+    "tmp_work/warm_ink_hold_v4_20260930/200022050_00010_1/red_protect_context_extra_hold.png": "aec234e7ed008b5563b5dc66832da15fff43aeb4a6e960a68532e438f8fffbef",
+    "tmp_work/training_free_protection_v2_20260930/200022050_00010_1/edit_allowed.png": "cee3aa0118a558067762fa5ddf0d9f4e36a9111c515cefc2a2b44241c0049fff",
+    "tmp_work/warm_ink_hold_v5_20260930/200003803_00009_2/original.png": "552e5bb48af1eb0bb6012ea61aa8e519e89b7679c5a84a0159e479634cea492c",
+    "tmp_work/warm_ink_hold_v5_20260930/200003803_00009_2/color_direction.png": "e3cdff6cfc20729baf668266fd0a7777a5895905368585e61d8bd3322747eeaa",
+    "tmp_work/warm_ink_hold_v5_20260930/200003803_00009_2/near_red.png": "e3cdff6cfc20729baf668266fd0a7777a5895905368585e61d8bd3322747eeaa",
+    "tmp_work/warm_ink_hold_v5_20260930/200003803_00009_2/stroke_context_edit_allowed.png": "e6cebe1be1018fe6b530479f9b4d0e1e9facc9def94cb4a430022bd7d100d7cd",
+    "tmp_work/warm_ink_hold_v5_20260930/200003803_00009_2/stroke_context_extra_hold.png": "e3cdff6cfc20729baf668266fd0a7777a5895905368585e61d8bd3322747eeaa",
+    "tmp_work/warm_ink_hold_v4_20260930/200003803_00009_2/red_protect_context_extra_hold.png": "e3cdff6cfc20729baf668266fd0a7777a5895905368585e61d8bd3322747eeaa",
+    "tmp_work/training_free_protection_v2_20260930/200003803_00009_2/edit_allowed.png": "e6cebe1be1018fe6b530479f9b4d0e1e9facc9def94cb4a430022bd7d100d7cd",
+    "tmp_work/warm_ink_hold_v5_20260930/200019865_00075_2/original.png": "092d306e388630a373a3fce0dc7bf2c85a501fbeeaf30d45780d5f98ceb90fe3",
+    "tmp_work/warm_ink_hold_v5_20260930/200019865_00075_2/color_direction.png": "765fc14ba606f5838c5da3f58f9c840fb9b7fb1ee2c906eed34f0ada1d0dad59",
+    "tmp_work/warm_ink_hold_v5_20260930/200019865_00075_2/near_red.png": "765fc14ba606f5838c5da3f58f9c840fb9b7fb1ee2c906eed34f0ada1d0dad59",
+    "tmp_work/warm_ink_hold_v5_20260930/200019865_00075_2/stroke_context_edit_allowed.png": "ff50f6d91bae79b7958f647ab440f28e465dff8314a8b05f87984b9ccea29a94",
+    "tmp_work/warm_ink_hold_v5_20260930/200019865_00075_2/stroke_context_extra_hold.png": "765fc14ba606f5838c5da3f58f9c840fb9b7fb1ee2c906eed34f0ada1d0dad59",
+    "tmp_work/warm_ink_hold_v4_20260930/200019865_00075_2/red_protect_context_extra_hold.png": "765fc14ba606f5838c5da3f58f9c840fb9b7fb1ee2c906eed34f0ada1d0dad59",
+    "tmp_work/training_free_protection_v2_20260930/200019865_00075_2/edit_allowed.png": "ff50f6d91bae79b7958f647ab440f28e465dff8314a8b05f87984b9ccea29a94",
+    "tmp_work/warm_ink_hold_v5_20260930/200021063_00021_1/original.png": "6dc6e2541e4d2e58c46ac4a323b1edc5e21046700121e755b0ccfc3c5715022e",
+    "tmp_work/warm_ink_hold_v5_20260930/200021063_00021_1/color_direction.png": "0a0f4701f880acb88402e34dcf5254318b7aa255f34f803c7e37687333c7ac70",
+    "tmp_work/warm_ink_hold_v5_20260930/200021063_00021_1/near_red.png": "0a0f4701f880acb88402e34dcf5254318b7aa255f34f803c7e37687333c7ac70",
+    "tmp_work/warm_ink_hold_v5_20260930/200021063_00021_1/stroke_context_edit_allowed.png": "b62d2fc898dd6ec2c6e464415edffb43be91b0223f53afaedc44c4b38460fb53",
+    "tmp_work/warm_ink_hold_v5_20260930/200021063_00021_1/stroke_context_extra_hold.png": "0a0f4701f880acb88402e34dcf5254318b7aa255f34f803c7e37687333c7ac70",
+    "tmp_work/warm_ink_hold_v4_20260930/200021063_00021_1/red_protect_context_extra_hold.png": "0a0f4701f880acb88402e34dcf5254318b7aa255f34f803c7e37687333c7ac70",
+    "tmp_work/training_free_protection_v2_20260930/200021063_00021_1/edit_allowed.png": "b62d2fc898dd6ec2c6e464415edffb43be91b0223f53afaedc44c4b38460fb53",
+    "tmp_work/warm_ink_hold_v5_20260930/200021071_00079_2/original.png": "d615b486c6f5777ab74f0a1335aa717541f1d0829a58b5f87ece0f89c4854363",
+    "tmp_work/warm_ink_hold_v5_20260930/200021071_00079_2/color_direction.png": "899267778e515e956b85ca110e6deff8caf2004b97e55db3d9d0a3986490e81f",
+    "tmp_work/warm_ink_hold_v5_20260930/200021071_00079_2/near_red.png": "899267778e515e956b85ca110e6deff8caf2004b97e55db3d9d0a3986490e81f",
+    "tmp_work/warm_ink_hold_v5_20260930/200021071_00079_2/stroke_context_edit_allowed.png": "d34c26f0db24fc2c5d8f548907a21a69b7c0b723caf7a6422741650b5ad8072a",
+    "tmp_work/warm_ink_hold_v5_20260930/200021071_00079_2/stroke_context_extra_hold.png": "899267778e515e956b85ca110e6deff8caf2004b97e55db3d9d0a3986490e81f",
+    "tmp_work/warm_ink_hold_v4_20260930/200021071_00079_2/red_protect_context_extra_hold.png": "899267778e515e956b85ca110e6deff8caf2004b97e55db3d9d0a3986490e81f",
+    "tmp_work/training_free_protection_v2_20260930/200021071_00079_2/edit_allowed.png": "d34c26f0db24fc2c5d8f548907a21a69b7c0b723caf7a6422741650b5ad8072a",
+    "tmp_work/warm_ink_hold_v5_20260930/100249376_00056_1/original.png": "cdaa2baf5c2576ecf037b0cbd62eea1fdd59bd99a58bb2166087622281b9bf01",
+    "tmp_work/warm_ink_hold_v5_20260930/100249376_00056_1/color_direction.png": "2b23801978ef6d97c6585e0a7a33ec7d1331379635d0b1570e53fb72fb97c5bf",
+    "tmp_work/warm_ink_hold_v5_20260930/100249376_00056_1/near_red.png": "070e8bd15b59d9581395767597b210087889e8c63d42f6cb9c990077edc7e536",
+    "tmp_work/warm_ink_hold_v5_20260930/100249376_00056_1/stroke_context_edit_allowed.png": "9117da238cda5bf22a155be0946f53c5f3724a244474d41682a55b610e936679",
+    "tmp_work/warm_ink_hold_v5_20260930/100249376_00056_1/stroke_context_extra_hold.png": "971af03556cb3e3c5241e7b2ca9ac328d9d633cb1a8b1e704f51b21b6791d83d",
+    "tmp_work/warm_ink_hold_v4_20260930/100249376_00056_1/red_protect_context_extra_hold.png": "8c9cad7a9c034e056fe1aad0b116bbead4eecdcb4fbb178fcaad766aba7b0e19",
+    "tmp_work/red_positive_fixed_check_20260930/refined/100249376_00056_1/edit_allowed.png": "98dec799754f43a65240bdf7335af57a2dcc0354d916ce57492818e8e3252cd2",
+    "tmp_work/warm_ink_hold_v5_20260930/100249537_00003_2/original.png": "fc499aad6bcb408e0706c917d2328507405204c5ee8aebe2f485203cddea4a9a",
+    "tmp_work/warm_ink_hold_v5_20260930/100249537_00003_2/color_direction.png": "aa44b1cf504cc4a18f913f7b962e9f70788ad9f2ce24df5809ec41d84861d0a9",
+    "tmp_work/warm_ink_hold_v5_20260930/100249537_00003_2/near_red.png": "6fc8a27a532a89822b7362565d8c020eab6fd18e580f779fb69325c863d27c96",
+    "tmp_work/warm_ink_hold_v5_20260930/100249537_00003_2/stroke_context_edit_allowed.png": "c3080b3769fc07833e2dd36508865e1fdb1fcf5bbba71f1e8862d867bb183d7d",
+    "tmp_work/warm_ink_hold_v5_20260930/100249537_00003_2/stroke_context_extra_hold.png": "af591808a44f62fb361ace9dc89932baa0af51681abab86c515416f96a1b1883",
+    "tmp_work/warm_ink_hold_v4_20260930/100249537_00003_2/red_protect_context_extra_hold.png": "f064d9506fbf515d71147c0c5792562d499369a06d23e667702f34edb0b38236",
+    "tmp_work/red_positive_fixed_check_20260930/refined/100249537_00003_2/edit_allowed.png": "9d642be7d9da98f5c9a9ba886ff6d3e9280bb19bb653a85d364a18c2f36a5e5e",
+    "tmp_work/warm_ink_hold_v5_20260930/200006663_00002_2/original.png": "4b9e772a4b0c1227db1030efc4d209f16a9a811b2af0ad2b75801049790dcc63",
+    "tmp_work/warm_ink_hold_v5_20260930/200006663_00002_2/color_direction.png": "f794981caafb0bddfe4de8f64331042db24c7b85b6f5ff22071975f580340de6",
+    "tmp_work/warm_ink_hold_v5_20260930/200006663_00002_2/near_red.png": "3858adf414579f901b1e01db43fd75a858f05eaf06d1279e538dea742db2c0d8",
+    "tmp_work/warm_ink_hold_v5_20260930/200006663_00002_2/stroke_context_edit_allowed.png": "8c302d5655b4db7bfeac5092dea2920a011adfd17cb6dca23b5bba36e57f1278",
+    "tmp_work/warm_ink_hold_v5_20260930/200006663_00002_2/stroke_context_extra_hold.png": "49eb98313481bdef3da0a66c75f6203e0af70a8d1090b13538dac71a355b3e2e",
+    "tmp_work/warm_ink_hold_v4_20260930/200006663_00002_2/red_protect_context_extra_hold.png": "e623660720be3577846021aecc95c0e82b5700bb8377d2e19800fc727cc84045",
+    "tmp_work/red_positive_fixed_check_20260930/refined/200006663_00002_2/edit_allowed.png": "65c3984f209bfc177134a45e65e2a2d44016b34ca801b6c17be056dec89daba4",
+    "tmp_work/warm_ink_hold_v5_20260930/200020019_00002_2/original.png": "d139b9a31522fbecc7deea6caccb37073ac9310d16af166e3bf3ad71cbbd345b",
+    "tmp_work/warm_ink_hold_v5_20260930/200020019_00002_2/color_direction.png": "77bbf8d0525358a5ad48f60df7e886496582dbf41f69d3b516421cffc38afb00",
+    "tmp_work/warm_ink_hold_v5_20260930/200020019_00002_2/near_red.png": "1c611026b3bc660a67791721128e45d57e4c67355152a591fc15673f04067f09",
+    "tmp_work/warm_ink_hold_v5_20260930/200020019_00002_2/stroke_context_edit_allowed.png": "e6c1262913db22e3c30644790b9bac6bfeb914b8ec59c26b261f85230fd5d623",
+    "tmp_work/warm_ink_hold_v5_20260930/200020019_00002_2/stroke_context_extra_hold.png": "fb14cb731a6ffd9cc0e1d7443f61ec237b19bfe4f3ede892ebb2bcb81fa26715",
+    "tmp_work/warm_ink_hold_v4_20260930/200020019_00002_2/red_protect_context_extra_hold.png": "d04d3d849397317fd1016a32135d35635de636071af1dd0ee2b61280e601640c",
+    "tmp_work/red_positive_fixed_check_20260930/refined/200020019_00002_2/edit_allowed.png": "6e90f97ec79fcd1f2c5a23f76c2aa761a99f59417638cc420dcda7c04b153e1f",
+    "tmp_work/warm_ink_hold_v5_20260930/200020019_00082_2/original.png": "c3e12ca4b36dacbb3f50d4b936a6c754188b0c7f24f1d80bf4481014df310b15",
+    "tmp_work/warm_ink_hold_v5_20260930/200020019_00082_2/color_direction.png": "1e81a80abb045e1013819eb8f424fb1463911353a3f3330dd1202b5704785a3b",
+    "tmp_work/warm_ink_hold_v5_20260930/200020019_00082_2/near_red.png": "4d8ab5e400bd128908d1df57206aebacf6f8e1f968e1a063780c77fe7892e90b",
+    "tmp_work/warm_ink_hold_v5_20260930/200020019_00082_2/stroke_context_edit_allowed.png": "75667600e1210202e87aaf8eec23984ebdfe5b55c1751e2592eb1a228c8b3f66",
+    "tmp_work/warm_ink_hold_v5_20260930/200020019_00082_2/stroke_context_extra_hold.png": "f22349238690db75f3e8ab7f41599151cb6803d38666c68e9e9a626a212789eb",
+    "tmp_work/warm_ink_hold_v4_20260930/200020019_00082_2/red_protect_context_extra_hold.png": "4e1b1fd3a16794f242c8f50effef0a9648ddf2191fdf51958ea011b3ea191da3",
+    "tmp_work/red_positive_fixed_check_20260930/refined/200020019_00082_2/edit_allowed.png": "515f74fa3b3d98d91ee6d84f1937e3d67d8baa4828bf29df95c9d0d34c5e94ae",
+    "tmp_work/warm_ink_hold_v5_20260930/200021086_00032_2/original.png": "4eaca5a9238432e4f566adb883aabe36c11af38f82820beec963de1de1269bb4",
+    "tmp_work/warm_ink_hold_v5_20260930/200021086_00032_2/color_direction.png": "732de3c3fdb2e65f2981071d95236e89120171536efac538104c7e97299b6b7f",
+    "tmp_work/warm_ink_hold_v5_20260930/200021086_00032_2/near_red.png": "eefd8269d2e7146974ecab88f0361b117e8ac5d55e817d456aa0d8b5ec0acf1f",
+    "tmp_work/warm_ink_hold_v5_20260930/200021086_00032_2/stroke_context_edit_allowed.png": "5af6361bf4f0949fd5031e7e28ee22fb6b036d45ed11d549956a458f5a9868ec",
+    "tmp_work/warm_ink_hold_v5_20260930/200021086_00032_2/stroke_context_extra_hold.png": "44cb80b15a6b27e7cd1594f59cc1f524c33d7ba49f0dbef5c09262a4b677ef1e",
+    "tmp_work/warm_ink_hold_v4_20260930/200021086_00032_2/red_protect_context_extra_hold.png": "9eafc05c239cb9bcf5d4d488dfbc404b911ccf7bdd6d350bb333f99a5e9bf405",
+    "tmp_work/red_positive_fixed_check_20260930/refined/200021086_00032_2/edit_allowed.png": "195fb71892bf20009be12fde31d0d46465c86570c91bcb23a13ba39c828685b3",
+    "tmp_work/warm_ink_hold_v5_20260930/200021763_00002_2/original.png": "2309c24a7e5d08526dc002e1761640a0dbd36a58b9757a525d239f6992b84f19",
+    "tmp_work/warm_ink_hold_v5_20260930/200021763_00002_2/color_direction.png": "6b08d28582ff136f06676e39f470b21fc14c67f2d732b0dbbe219a752dab9f59",
+    "tmp_work/warm_ink_hold_v5_20260930/200021763_00002_2/near_red.png": "5ce979ac06f1e8cc2b09a028b051421c6349edaef226d8a1056fb4fbe9dd18de",
+    "tmp_work/warm_ink_hold_v5_20260930/200021763_00002_2/stroke_context_edit_allowed.png": "4d9ad53b5b21372f21ec397185dc330adb79945a58b8b04e367c0197b6877b28",
+    "tmp_work/warm_ink_hold_v5_20260930/200021763_00002_2/stroke_context_extra_hold.png": "291b1647de8f837c3cf6819a7c7b3a97fdc870c3bcc54105e2bd3ad2c5f7f9a8",
+    "tmp_work/warm_ink_hold_v4_20260930/200021763_00002_2/red_protect_context_extra_hold.png": "d8ab9fa4faf5d8d35fe75d3d6c793bb9d5777cb9a34e9ba171c8377f4031e071",
+    "tmp_work/red_positive_fixed_check_20260930/refined/200021763_00002_2/edit_allowed.png": "7af0e1a27e119fe5b902f84a1e428f353dcdc00cb1cfe0db2e78e5ffb14ddc59",
+    "tmp_work/warm_ink_hold_v5_20260930/200025191_00004_2/original.png": "d1c6767c15728090622ec2d7f5783732a2264f2d67efea5abf913f9c2b41c217",
+    "tmp_work/warm_ink_hold_v5_20260930/200025191_00004_2/color_direction.png": "16b438300dfd05832b655239446e43349a434dd2e3d5ef9e0f282537f67fa6b3",
+    "tmp_work/warm_ink_hold_v5_20260930/200025191_00004_2/near_red.png": "25818cdedfe21b21b9f22745d0792df8a4afd16f97488181c42de440c756398d",
+    "tmp_work/warm_ink_hold_v5_20260930/200025191_00004_2/stroke_context_edit_allowed.png": "1ef2fb50e40a46989b309111c22b4ff05ec98230c2478795c67d2a5e37c7e9d0",
+    "tmp_work/warm_ink_hold_v5_20260930/200025191_00004_2/stroke_context_extra_hold.png": "fcd1b8fcecd64259ad6b9a296e5f1fdd87091ec654d02407743e6ca3fd860ba0",
+    "tmp_work/warm_ink_hold_v4_20260930/200025191_00004_2/red_protect_context_extra_hold.png": "e452ed9f02d94cb494c905953b1c415579a7ccc17d500924f43ae6fbddabf053",
+    "tmp_work/red_positive_fixed_check_20260930/refined/200025191_00004_2/edit_allowed.png": "b12f343bcc8361fbf002402f3c08096a228a5973a4bff5e436cbedd59c8c5680",
+    "tmp_work/warm_ink_hold_v5_20260930/100249371_00002_1/original.png": "993dacf0e2de08cdf4dd2bc6b94825a80b62f16ed9037b9a8628f48a1d6ffd89",
+    "tmp_work/warm_ink_hold_v5_20260930/100249371_00002_1/color_direction.png": "da4934b41afb4f93ccfa5d67262ddd55136573a5d9d6949ee9e63017d97d700a",
+    "tmp_work/warm_ink_hold_v5_20260930/100249371_00002_1/near_red.png": "8bdd2a0926387ee1e1b1f3d370f2643c1feea6cd041d62bf3f1ce628f2ea9a1c",
+    "tmp_work/warm_ink_hold_v5_20260930/100249371_00002_1/stroke_context_edit_allowed.png": "c9a3a5602ae641f624ca7945e759755678382d176f5a46bf0b3d52e6fbb5d078",
+    "tmp_work/warm_ink_hold_v5_20260930/100249371_00002_1/stroke_context_extra_hold.png": "b020ec363cd90b28f1a15efcf4bc0f4094b9a64109b6e697dfc6ef74f9745012",
+    "tmp_work/warm_ink_hold_v4_20260930/100249371_00002_1/red_protect_context_extra_hold.png": "63a940807fe803b870368f1c3dd1cea04d68d34f400cef102c24d0da04a3018e",
+    "tmp_work/red_positive_fixed_check_20260930/refined/100249371_00002_1/edit_allowed.png": "fba8623002cda09b80250f645f04c8b7aa1dcf60123dbf9f40129f788563fd6c",
+    "tmp_work/warm_ink_hold_v5_20260930/failure_zoom_diagnostics.json": "7ce0680f786a87dedb4ad383e6a9e25288ad59a731ab9016c2c9bafb4e13ceb3"
+  }
+}

@@ -1,0 +1,61 @@
+{
+  "purpose": "Exploration without training/manual GT; no claim of accuracy or red/stain separation",
+  "settings": {
+    "sauvola_windows": [
+      31,
+      75,
+      151
+    ],
+    "k": 0.2,
+    "r": 128.0,
+    "comparison_window": 75,
+    "multiscale": "at least two of three window decisions",
+    "background_downsample": 4,
+    "background_closing": "31x31 ellipse on downsampled gray",
+    "background_blur_sigma": 2.0,
+    "normalization": "clip(255*gray/max(background,gray),0,255)",
+    "classification_resolution": "native; downsampling is only for background estimation",
+    "border_policy": "no forced background for candidates; CSC retains original 4% border",
+    "red_policy": "no separate red decision; original RGB is preserved in all previews"
+  },
+  "versions": {
+    "python": "3.10.20 (main, Jun 11 2026, 15:17:37) [GCC 14.3.0]",
+    "opencv": "4.13.0",
+    "skimage": "0.25.2",
+    "numpy": "1.26.4"
+  },
+  "source_sha256": "2645c45cee5461a397079642843403f741495f9a8c46f81530300e9a25f0429a",
+  "review_manifest_sha256": "3b8f32a7f7b94f99f2aad3d02d4c90954eb87d703d06030a8f65fae6790b77fe",
+  "rois_sha256": "f705a69c905d5614fabfbcd4dbcc94d8dfee21ca9ab8b4a3f8c8aa2e75ac4005",
+  "inputs": {
+    "data/train/hnsd00000/hnsd001_011.jpg": "22017c0af65c5f43560ff05cfcc15c6ed8f56b72e60a04a732d9c31b72f05731",
+    "data/test/200010454/200010454_00002_2.jpg": "177776f90fc08b12e2f59a37773ef433556f43ebe47c503c2d676595a08a60d1",
+    "data/makura_csc_mask/200017197_00008_0/00_original.png": "5496d4e4811c147a7305c538a0c2a3cd8443447b2d9e6e677ed25cb6d1b5a3bb",
+    "data/test/200018243/200018243_00003_2.jpg": "f1c8c26fea64d9511c462b9776198eadbf3481793b0e4ed397e9ba58aca45e6d"
+  },
+  "baseline_masks": {
+    "hnsd001_011/v1_ace/black.png": "e1b6b3f0ac9cc7744be80d68520fbc8696099c129cbbced1a8718f1fccbd108e",
+    "hnsd001_011/v1_ace/red.png": "ddd311f5ae61f734d04d743ba0ba85ac2d3ad9faaf0f0d8ed42399625a37f9bb",
+    "hnsd001_011/v3_ace_rescue/black.png": "a8d339c37fe19895065f07098c5625c4e5b093312a89a7136951ae62657ad397",
+    "hnsd001_011/v3_ace_rescue/red.png": "ddd311f5ae61f734d04d743ba0ba85ac2d3ad9faaf0f0d8ed42399625a37f9bb",
+    "200010454_00002_2/v1_ace/black.png": "7a637ad534190d5131b9cddf3b66cd09218a3ed5c92f987c83aa0de31401d5c9",
+    "200010454_00002_2/v1_ace/red.png": "be04963bd0f030aa42d4bbd21fd6a47c10d2de40831ade22e0dea736fb00c5f4",
+    "200010454_00002_2/v3_ace_rescue/black.png": "7ec703fe4a480509525cd34dfc731bf7c133ee32f63a6ab0364aea473d7ecfd6",
+    "200010454_00002_2/v3_ace_rescue/red.png": "f7215b485b9306d4189ac9213f6ab30aa5e2aa0d7dc62b77b02a22a76b70532d",
+    "200017197_00008_0/v1_ace/black.png": "af81f944afbd64440344f06cfb781cf9bc76d9a80e9eef02fc75c74d75507c98",
+    "200017197_00008_0/v1_ace/red.png": "76fbf91794c36723426af3effcc9be11baac30ae4cc09228c60aa2cede930fbc",
+    "200017197_00008_0/v3_ace_rescue/black.png": "2dd76dca979f97b1483fa1649fab23a1d3248b4205810c3f69226dac47678f7a",
+    "200017197_00008_0/v3_ace_rescue/red.png": "76fbf91794c36723426af3effcc9be11baac30ae4cc09228c60aa2cede930fbc",
+    "200018243_00003_2/v1_ace/black.png": "ffe14fe3fdb8cf440eff93c5f9a60299054634d21211f8123e18b20066905ad8",
+    "200018243_00003_2/v1_ace/red.png": "a98cec0f78632a09a2fc7a190ab76ee0f38b99301623fbe2294de40642e42f24",
+    "200018243_00003_2/v3_ace_rescue/black.png": "63ec83c22d9a257f0d346ba58529c0e4ffc25607a061ad568f9e0721ef2f3f5a",
+    "200018243_00003_2/v3_ace_rescue/red.png": "a98cec0f78632a09a2fc7a190ab76ee0f38b99301623fbe2294de40642e42f24"
+  },
+  "modes": {
+    "v1_ace": "凍結v1：同じACEのCSC（黒＋赤）",
+    "v3_ace_rescue": "現在v3：同じACEのCSC（黒＋赤）",
+    "sauvola_raw": "原画像：Sauvola 75",
+    "sauvola_local": "局所背景補正：Sauvola 75",
+    "sauvola_multiscale": "局所背景補正：3尺度の多数決"
+  }
+}

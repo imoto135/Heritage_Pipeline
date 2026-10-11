@@ -1,0 +1,1517 @@
+{
+  "results": [
+    {
+      "id": "F01",
+      "method": "csc",
+      "seconds": 274.43,
+      "reused": false,
+      "command": [
+        "/home/imoto/miniconda3/envs/diffusion/bin/python",
+        "-B",
+        "/home/imoto/Heritage_Pipeline/tmp_work/npj_dirt_control_20261002/source_snapshot/ddrm_npj_v2/scripts/pipeline_ddrm.py",
+        "--input_dir",
+        "/home/imoto/Heritage_Pipeline/tmp_work/test_only_challenge_search_20261009/fixed_holdout_validation/inputs/200004107_00006_1",
+        "--output_dir",
+        "/home/imoto/Heritage_Pipeline/tmp_work/test_only_challenge_search_20261009/fixed_holdout_validation/outputs/csc",
+        "--tmp_dir",
+        "/home/imoto/Heritage_Pipeline/tmp_work/test_only_challenge_search_20261009/fixed_holdout_validation/infer_tmp/csc/200004107_00006_1",
+        "--mask_dir",
+        "/home/imoto/Heritage_Pipeline/tmp_work/test_only_challenge_search_20261009/fixed_holdout_validation/masks/csc",
+        "--ckpt",
+        "/home/imoto/Heritage_Pipeline/modules/stain_removal/experiments/model_char/model_char/ckpt_epoch0350.pth",
+        "--back_ground",
+        "/home/imoto/Heritage_Pipeline/modules/ddrm_npj_v2/background/isemonogatari.png",
+        "--device",
+        "cuda:0",
+        "--patch_size",
+        "128",
+        "--overlap",
+        "32",
+        "--shared_noise",
+        "--no_wandb"
+      ],
+      "output": "tmp_work/test_only_challenge_search_20261009/fixed_holdout_validation/outputs/csc/200004107_00006_1/result/200004107_00006_1.png",
+      "sha256": "0a2b4e94fe6e6ba8a87f641e02832c889fc8f61fa15587efee577d002e9ccc42"
+    },
+    {
+      "id": "F01",
+      "method": "howe",
+      "seconds": 272.78,
+      "reused": false,
+      "command": [
+        "/home/imoto/miniconda3/envs/diffusion/bin/python",
+        "-B",
+        "/home/imoto/Heritage_Pipeline/tmp_work/npj_dirt_control_20261002/source_snapshot/ddrm_npj_v2/scripts/pipeline_ddrm.py",
+        "--input_dir",
+        "/home/imoto/Heritage_Pipeline/tmp_work/test_only_challenge_search_20261009/fixed_holdout_validation/inputs/200004107_00006_1",
+        "--output_dir",
+        "/home/imoto/Heritage_Pipeline/tmp_work/test_only_challenge_search_20261009/fixed_holdout_validation/outputs/howe",
+        "--tmp_dir",
+        "/home/imoto/Heritage_Pipeline/tmp_work/test_only_challenge_search_20261009/fixed_holdout_validation/infer_tmp/howe/200004107_00006_1",
+        "--mask_dir",
+        "/home/imoto/Heritage_Pipeline/tmp_work/test_only_challenge_search_20261009/fixed_holdout_validation/masks/howe",
+        "--ckpt",
+        "/home/imoto/Heritage_Pipeline/modules/stain_removal/experiments/model_char/model_char/ckpt_epoch0350.pth",
+        "--back_ground",
+        "/home/imoto/Heritage_Pipeline/modules/ddrm_npj_v2/background/isemonogatari.png",
+        "--device",
+        "cuda:0",
+        "--patch_size",
+        "128",
+        "--overlap",
+        "32",
+        "--shared_noise",
+        "--no_wandb"
+      ],
+      "output": "tmp_work/test_only_challenge_search_20261009/fixed_holdout_validation/outputs/howe/200004107_00006_1/result/200004107_00006_1.png",
+      "sha256": "403e393cc9dc1f785f9ab4c0351c9170e8399ee7d9db8900cc9c6bbe216e5260"
+    },
+    {
+      "id": "F01",
+      "method": "isolated",
+      "seconds": 273.83,
+      "reused": false,
+      "command": [
+        "/home/imoto/miniconda3/envs/diffusion/bin/python",
+        "-B",
+        "/home/imoto/Heritage_Pipeline/tmp_work/npj_dirt_control_20261002/source_snapshot/ddrm_npj_v2/scripts/pipeline_ddrm.py",
+        "--input_dir",
+        "/home/imoto/Heritage_Pipeline/tmp_work/test_only_challenge_search_20261009/fixed_holdout_validation/inputs/200004107_00006_1",
+        "--output_dir",
+        "/home/imoto/Heritage_Pipeline/tmp_work/test_only_challenge_search_20261009/fixed_holdout_validation/outputs/isolated",
+        "--tmp_dir",
+        "/home/imoto/Heritage_Pipeline/tmp_work/test_only_challenge_search_20261009/fixed_holdout_validation/infer_tmp/isolated/200004107_00006_1",
+        "--mask_dir",
+        "/home/imoto/Heritage_Pipeline/tmp_work/test_only_challenge_search_20261009/fixed_holdout_validation/masks/isolated",
+        "--ckpt",
+        "/home/imoto/Heritage_Pipeline/modules/stain_removal/experiments/model_char/model_char/ckpt_epoch0350.pth",
+        "--back_ground",
+        "/home/imoto/Heritage_Pipeline/modules/ddrm_npj_v2/background/isemonogatari.png",
+        "--device",
+        "cuda:0",
+        "--patch_size",
+        "128",
+        "--overlap",
+        "32",
+        "--shared_noise",
+        "--no_wandb"
+      ],
+      "output": "tmp_work/test_only_challenge_search_20261009/fixed_holdout_validation/outputs/isolated/200004107_00006_1/result/200004107_00006_1.png",
+      "sha256": "3dc3a57ceff1aa6457bb9a48ed96d16cd04b3ac3d75dd10caae975845184694d"
+    },
+    {
+      "id": "F02",
+      "method": "csc",
+      "seconds": 300.76,
+      "reused": false,
+      "command": [
+        "/home/imoto/miniconda3/envs/diffusion/bin/python",
+        "-B",
+        "/home/imoto/Heritage_Pipeline/tmp_work/npj_dirt_control_20261002/source_snapshot/ddrm_npj_v2/scripts/pipeline_ddrm.py",
+        "--input_dir",
+        "/home/imoto/Heritage_Pipeline/tmp_work/test_only_challenge_search_20261009/fixed_holdout_validation/inputs/200021063_00007_1",
+        "--output_dir",
+        "/home/imoto/Heritage_Pipeline/tmp_work/test_only_challenge_search_20261009/fixed_holdout_validation/outputs/csc",
+        "--tmp_dir",
+        "/home/imoto/Heritage_Pipeline/tmp_work/test_only_challenge_search_20261009/fixed_holdout_validation/infer_tmp/csc/200021063_00007_1",
+        "--mask_dir",
+        "/home/imoto/Heritage_Pipeline/tmp_work/test_only_challenge_search_20261009/fixed_holdout_validation/masks/csc",
+        "--ckpt",
+        "/home/imoto/Heritage_Pipeline/modules/stain_removal/experiments/model_char/model_char/ckpt_epoch0350.pth",
+        "--back_ground",
+        "/home/imoto/Heritage_Pipeline/modules/ddrm_npj_v2/background/isemonogatari.png",
+        "--device",
+        "cuda:1",
+        "--patch_size",
+        "128",
+        "--overlap",
+        "32",
+        "--shared_noise",
+        "--no_wandb"
+      ],
+      "output": "tmp_work/test_only_challenge_search_20261009/fixed_holdout_validation/outputs/csc/200021063_00007_1/result/200021063_00007_1.png",
+      "sha256": "66afa01d20763d2137d564961736c5414fb5759776885139187eab93e5aacd90"
+    },
+    {
+      "id": "F02",
+      "method": "howe",
+      "seconds": 306.53,
+      "reused": false,
+      "command": [
+        "/home/imoto/miniconda3/envs/diffusion/bin/python",
+        "-B",
+        "/home/imoto/Heritage_Pipeline/tmp_work/npj_dirt_control_20261002/source_snapshot/ddrm_npj_v2/scripts/pipeline_ddrm.py",
+        "--input_dir",
+        "/home/imoto/Heritage_Pipeline/tmp_work/test_only_challenge_search_20261009/fixed_holdout_validation/inputs/200021063_00007_1",
+        "--output_dir",
+        "/home/imoto/Heritage_Pipeline/tmp_work/test_only_challenge_search_20261009/fixed_holdout_validation/outputs/howe",
+        "--tmp_dir",
+        "/home/imoto/Heritage_Pipeline/tmp_work/test_only_challenge_search_20261009/fixed_holdout_validation/infer_tmp/howe/200021063_00007_1",
+        "--mask_dir",
+        "/home/imoto/Heritage_Pipeline/tmp_work/test_only_challenge_search_20261009/fixed_holdout_validation/masks/howe",
+        "--ckpt",
+        "/home/imoto/Heritage_Pipeline/modules/stain_removal/experiments/model_char/model_char/ckpt_epoch0350.pth",
+        "--back_ground",
+        "/home/imoto/Heritage_Pipeline/modules/ddrm_npj_v2/background/isemonogatari.png",
+        "--device",
+        "cuda:1",
+        "--patch_size",
+        "128",
+        "--overlap",
+        "32",
+        "--shared_noise",
+        "--no_wandb"
+      ],
+      "output": "tmp_work/test_only_challenge_search_20261009/fixed_holdout_validation/outputs/howe/200021063_00007_1/result/200021063_00007_1.png",
+      "sha256": "c113b7653f13ad4ba8ed52247f5694b43aa626e51ea16846eb90311543be97cd"
+    },
+    {
+      "id": "F02",
+      "method": "isolated",
+      "reused": true,
+      "reason": "Identical whole-page black and red masks",
+      "output": "tmp_work/test_only_challenge_search_20261009/fixed_holdout_validation/outputs/isolated/200021063_00007_1/result/200021063_00007_1.png",
+      "sha256": "c113b7653f13ad4ba8ed52247f5694b43aa626e51ea16846eb90311543be97cd"
+    },
+    {
+      "id": "F03",
+      "method": "csc",
+      "seconds": 313.55,
+      "reused": false,
+      "command": [
+        "/home/imoto/miniconda3/envs/diffusion/bin/python",
+        "-B",
+        "/home/imoto/Heritage_Pipeline/tmp_work/npj_dirt_control_20261002/source_snapshot/ddrm_npj_v2/scripts/pipeline_ddrm.py",
+        "--input_dir",
+        "/home/imoto/Heritage_Pipeline/tmp_work/test_only_challenge_search_20261009/fixed_holdout_validation/inputs/200021063_00009_2",
+        "--output_dir",
+        "/home/imoto/Heritage_Pipeline/tmp_work/test_only_challenge_search_20261009/fixed_holdout_validation/outputs/csc",
+        "--tmp_dir",
+        "/home/imoto/Heritage_Pipeline/tmp_work/test_only_challenge_search_20261009/fixed_holdout_validation/infer_tmp/csc/200021063_00009_2",
+        "--mask_dir",
+        "/home/imoto/Heritage_Pipeline/tmp_work/test_only_challenge_search_20261009/fixed_holdout_validation/masks/csc",
+        "--ckpt",
+        "/home/imoto/Heritage_Pipeline/modules/stain_removal/experiments/model_char/model_char/ckpt_epoch0350.pth",
+        "--back_ground",
+        "/home/imoto/Heritage_Pipeline/modules/ddrm_npj_v2/background/isemonogatari.png",
+        "--device",
+        "cuda:0",
+        "--patch_size",
+        "128",
+        "--overlap",
+        "32",
+        "--shared_noise",
+        "--no_wandb"
+      ],
+      "output": "tmp_work/test_only_challenge_search_20261009/fixed_holdout_validation/outputs/csc/200021063_00009_2/result/200021063_00009_2.png",
+      "sha256": "20434d591a32324249cf493f3d29910824651f3626362242bd1a8494c71ff936"
+    },
+    {
+      "id": "F03",
+      "method": "howe",
+      "seconds": 312.49,
+      "reused": false,
+      "command": [
+        "/home/imoto/miniconda3/envs/diffusion/bin/python",
+        "-B",
+        "/home/imoto/Heritage_Pipeline/tmp_work/npj_dirt_control_20261002/source_snapshot/ddrm_npj_v2/scripts/pipeline_ddrm.py",
+        "--input_dir",
+        "/home/imoto/Heritage_Pipeline/tmp_work/test_only_challenge_search_20261009/fixed_holdout_validation/inputs/200021063_00009_2",
+        "--output_dir",
+        "/home/imoto/Heritage_Pipeline/tmp_work/test_only_challenge_search_20261009/fixed_holdout_validation/outputs/howe",
+        "--tmp_dir",
+        "/home/imoto/Heritage_Pipeline/tmp_work/test_only_challenge_search_20261009/fixed_holdout_validation/infer_tmp/howe/200021063_00009_2",
+        "--mask_dir",
+        "/home/imoto/Heritage_Pipeline/tmp_work/test_only_challenge_search_20261009/fixed_holdout_validation/masks/howe",
+        "--ckpt",
+        "/home/imoto/Heritage_Pipeline/modules/stain_removal/experiments/model_char/model_char/ckpt_epoch0350.pth",
+        "--back_ground",
+        "/home/imoto/Heritage_Pipeline/modules/ddrm_npj_v2/background/isemonogatari.png",
+        "--device",
+        "cuda:0",
+        "--patch_size",
+        "128",
+        "--overlap",
+        "32",
+        "--shared_noise",
+        "--no_wandb"
+      ],
+      "output": "tmp_work/test_only_challenge_search_20261009/fixed_holdout_validation/outputs/howe/200021063_00009_2/result/200021063_00009_2.png",
+      "sha256": "3274a30fd2c7d6553005afd8b9f65f181edb90980eba0ffcad6433253f8c5f8c"
+    },
+    {
+      "id": "F03",
+      "method": "isolated",
+      "seconds": 349.69,
+      "reused": false,
+      "command": [
+        "/home/imoto/miniconda3/envs/diffusion/bin/python",
+        "-B",
+        "/home/imoto/Heritage_Pipeline/tmp_work/npj_dirt_control_20261002/source_snapshot/ddrm_npj_v2/scripts/pipeline_ddrm.py",
+        "--input_dir",
+        "/home/imoto/Heritage_Pipeline/tmp_work/test_only_challenge_search_20261009/fixed_holdout_validation/inputs/200021063_00009_2",
+        "--output_dir",
+        "/home/imoto/Heritage_Pipeline/tmp_work/test_only_challenge_search_20261009/fixed_holdout_validation/outputs/isolated",
+        "--tmp_dir",
+        "/home/imoto/Heritage_Pipeline/tmp_work/test_only_challenge_search_20261009/fixed_holdout_validation/infer_tmp/isolated/200021063_00009_2",
+        "--mask_dir",
+        "/home/imoto/Heritage_Pipeline/tmp_work/test_only_challenge_search_20261009/fixed_holdout_validation/masks/isolated",
+        "--ckpt",
+        "/home/imoto/Heritage_Pipeline/modules/stain_removal/experiments/model_char/model_char/ckpt_epoch0350.pth",
+        "--back_ground",
+        "/home/imoto/Heritage_Pipeline/modules/ddrm_npj_v2/background/isemonogatari.png",
+        "--device",
+        "cuda:0",
+        "--patch_size",
+        "128",
+        "--overlap",
+        "32",
+        "--shared_noise",
+        "--no_wandb"
+      ],
+      "output": "tmp_work/test_only_challenge_search_20261009/fixed_holdout_validation/outputs/isolated/200021063_00009_2/result/200021063_00009_2.png",
+      "sha256": "462056d32cd674dec13e7b7259712ce5e2869ab73ba30476f6cd2e54b256983d"
+    },
+    {
+      "id": "F04",
+      "method": "csc",
+      "seconds": 304.89,
+      "reused": false,
+      "command": [
+        "/home/imoto/miniconda3/envs/diffusion/bin/python",
+        "-B",
+        "/home/imoto/Heritage_Pipeline/tmp_work/npj_dirt_control_20261002/source_snapshot/ddrm_npj_v2/scripts/pipeline_ddrm.py",
+        "--input_dir",
+        "/home/imoto/Heritage_Pipeline/tmp_work/test_only_challenge_search_20261009/fixed_holdout_validation/inputs/200021063_00002_2",
+        "--output_dir",
+        "/home/imoto/Heritage_Pipeline/tmp_work/test_only_challenge_search_20261009/fixed_holdout_validation/outputs/csc",
+        "--tmp_dir",
+        "/home/imoto/Heritage_Pipeline/tmp_work/test_only_challenge_search_20261009/fixed_holdout_validation/infer_tmp/csc/200021063_00002_2",
+        "--mask_dir",
+        "/home/imoto/Heritage_Pipeline/tmp_work/test_only_challenge_search_20261009/fixed_holdout_validation/masks/csc",
+        "--ckpt",
+        "/home/imoto/Heritage_Pipeline/modules/stain_removal/experiments/model_char/model_char/ckpt_epoch0350.pth",
+        "--back_ground",
+        "/home/imoto/Heritage_Pipeline/modules/ddrm_npj_v2/background/isemonogatari.png",
+        "--device",
+        "cuda:1",
+        "--patch_size",
+        "128",
+        "--overlap",
+        "32",
+        "--shared_noise",
+        "--no_wandb"
+      ],
+      "output": "tmp_work/test_only_challenge_search_20261009/fixed_holdout_validation/outputs/csc/200021063_00002_2/result/200021063_00002_2.png",
+      "sha256": "8dcd1464dc3b281da0f51867c4f130bc12285c6efe0e5f12fc806cde6fa20203"
+    },
+    {
+      "id": "F04",
+      "method": "howe",
+      "seconds": 313.45,
+      "reused": false,
+      "command": [
+        "/home/imoto/miniconda3/envs/diffusion/bin/python",
+        "-B",
+        "/home/imoto/Heritage_Pipeline/tmp_work/npj_dirt_control_20261002/source_snapshot/ddrm_npj_v2/scripts/pipeline_ddrm.py",
+        "--input_dir",
+        "/home/imoto/Heritage_Pipeline/tmp_work/test_only_challenge_search_20261009/fixed_holdout_validation/inputs/200021063_00002_2",
+        "--output_dir",
+        "/home/imoto/Heritage_Pipeline/tmp_work/test_only_challenge_search_20261009/fixed_holdout_validation/outputs/howe",
+        "--tmp_dir",
+        "/home/imoto/Heritage_Pipeline/tmp_work/test_only_challenge_search_20261009/fixed_holdout_validation/infer_tmp/howe/200021063_00002_2",
+        "--mask_dir",
+        "/home/imoto/Heritage_Pipeline/tmp_work/test_only_challenge_search_20261009/fixed_holdout_validation/masks/howe",
+        "--ckpt",
+        "/home/imoto/Heritage_Pipeline/modules/stain_removal/experiments/model_char/model_char/ckpt_epoch0350.pth",
+        "--back_ground",
+        "/home/imoto/Heritage_Pipeline/modules/ddrm_npj_v2/background/isemonogatari.png",
+        "--device",
+        "cuda:1",
+        "--patch_size",
+        "128",
+        "--overlap",
+        "32",
+        "--shared_noise",
+        "--no_wandb"
+      ],
+      "output": "tmp_work/test_only_challenge_search_20261009/fixed_holdout_validation/outputs/howe/200021063_00002_2/result/200021063_00002_2.png",
+      "sha256": "53d6d50afb66b8ee6722d342879ee99c32554dc38a3ebd6c51a3f69cc5b57762"
+    },
+    {
+      "id": "F04",
+      "method": "isolated",
+      "seconds": 255.61,
+      "reused": false,
+      "command": [
+        "/home/imoto/miniconda3/envs/diffusion/bin/python",
+        "-B",
+        "/home/imoto/Heritage_Pipeline/tmp_work/npj_dirt_control_20261002/source_snapshot/ddrm_npj_v2/scripts/pipeline_ddrm.py",
+        "--input_dir",
+        "/home/imoto/Heritage_Pipeline/tmp_work/test_only_challenge_search_20261009/fixed_holdout_validation/inputs/200021063_00002_2",
+        "--output_dir",
+        "/home/imoto/Heritage_Pipeline/tmp_work/test_only_challenge_search_20261009/fixed_holdout_validation/outputs/isolated",
+        "--tmp_dir",
+        "/home/imoto/Heritage_Pipeline/tmp_work/test_only_challenge_search_20261009/fixed_holdout_validation/infer_tmp/isolated/200021063_00002_2",
+        "--mask_dir",
+        "/home/imoto/Heritage_Pipeline/tmp_work/test_only_challenge_search_20261009/fixed_holdout_validation/masks/isolated",
+        "--ckpt",
+        "/home/imoto/Heritage_Pipeline/modules/stain_removal/experiments/model_char/model_char/ckpt_epoch0350.pth",
+        "--back_ground",
+        "/home/imoto/Heritage_Pipeline/modules/ddrm_npj_v2/background/isemonogatari.png",
+        "--device",
+        "cuda:1",
+        "--patch_size",
+        "128",
+        "--overlap",
+        "32",
+        "--shared_noise",
+        "--no_wandb"
+      ],
+      "output": "tmp_work/test_only_challenge_search_20261009/fixed_holdout_validation/outputs/isolated/200021063_00002_2/result/200021063_00002_2.png",
+      "sha256": "3dd98177b44b23a37bd6622549b20c4e5a418e968188d898609ca220d9c43dd0"
+    },
+    {
+      "id": "F05",
+      "method": "csc",
+      "seconds": 259.45,
+      "reused": false,
+      "command": [
+        "/home/imoto/miniconda3/envs/diffusion/bin/python",
+        "-B",
+        "/home/imoto/Heritage_Pipeline/tmp_work/npj_dirt_control_20261002/source_snapshot/ddrm_npj_v2/scripts/pipeline_ddrm.py",
+        "--input_dir",
+        "/home/imoto/Heritage_Pipeline/tmp_work/test_only_challenge_search_20261009/fixed_holdout_validation/inputs/200005798_00036_1",
+        "--output_dir",
+        "/home/imoto/Heritage_Pipeline/tmp_work/test_only_challenge_search_20261009/fixed_holdout_validation/outputs/csc",
+        "--tmp_dir",
+        "/home/imoto/Heritage_Pipeline/tmp_work/test_only_challenge_search_20261009/fixed_holdout_validation/infer_tmp/csc/200005798_00036_1",
+        "--mask_dir",
+        "/home/imoto/Heritage_Pipeline/tmp_work/test_only_challenge_search_20261009/fixed_holdout_validation/masks/csc",
+        "--ckpt",
+        "/home/imoto/Heritage_Pipeline/modules/stain_removal/experiments/model_char/model_char/ckpt_epoch0350.pth",
+        "--back_ground",
+        "/home/imoto/Heritage_Pipeline/modules/ddrm_npj_v2/background/isemonogatari.png",
+        "--device",
+        "cuda:0",
+        "--patch_size",
+        "128",
+        "--overlap",
+        "32",
+        "--shared_noise",
+        "--no_wandb"
+      ],
+      "output": "tmp_work/test_only_challenge_search_20261009/fixed_holdout_validation/outputs/csc/200005798_00036_1/result/200005798_00036_1.png",
+      "sha256": "bd2696c3b9241ce2c79fa2e60595ad5c49c8aa8adfc1e82f39f0a49845a1a5ad"
+    },
+    {
+      "id": "F05",
+      "method": "howe",
+      "seconds": 284.47,
+      "reused": false,
+      "command": [
+        "/home/imoto/miniconda3/envs/diffusion/bin/python",
+        "-B",
+        "/home/imoto/Heritage_Pipeline/tmp_work/npj_dirt_control_20261002/source_snapshot/ddrm_npj_v2/scripts/pipeline_ddrm.py",
+        "--input_dir",
+        "/home/imoto/Heritage_Pipeline/tmp_work/test_only_challenge_search_20261009/fixed_holdout_validation/inputs/200005798_00036_1",
+        "--output_dir",
+        "/home/imoto/Heritage_Pipeline/tmp_work/test_only_challenge_search_20261009/fixed_holdout_validation/outputs/howe",
+        "--tmp_dir",
+        "/home/imoto/Heritage_Pipeline/tmp_work/test_only_challenge_search_20261009/fixed_holdout_validation/infer_tmp/howe/200005798_00036_1",
+        "--mask_dir",
+        "/home/imoto/Heritage_Pipeline/tmp_work/test_only_challenge_search_20261009/fixed_holdout_validation/masks/howe",
+        "--ckpt",
+        "/home/imoto/Heritage_Pipeline/modules/stain_removal/experiments/model_char/model_char/ckpt_epoch0350.pth",
+        "--back_ground",
+        "/home/imoto/Heritage_Pipeline/modules/ddrm_npj_v2/background/isemonogatari.png",
+        "--device",
+        "cuda:0",
+        "--patch_size",
+        "128",
+        "--overlap",
+        "32",
+        "--shared_noise",
+        "--no_wandb"
+      ],
+      "output": "tmp_work/test_only_challenge_search_20261009/fixed_holdout_validation/outputs/howe/200005798_00036_1/result/200005798_00036_1.png",
+      "sha256": "0ad280e92c9b62fd2641c526b5fc6c0337477ab723c9a3fcb7900a3f3a527c33"
+    },
+    {
+      "id": "F05",
+      "method": "isolated",
+      "seconds": 281.46,
+      "reused": false,
+      "command": [
+        "/home/imoto/miniconda3/envs/diffusion/bin/python",
+        "-B",
+        "/home/imoto/Heritage_Pipeline/tmp_work/npj_dirt_control_20261002/source_snapshot/ddrm_npj_v2/scripts/pipeline_ddrm.py",
+        "--input_dir",
+        "/home/imoto/Heritage_Pipeline/tmp_work/test_only_challenge_search_20261009/fixed_holdout_validation/inputs/200005798_00036_1",
+        "--output_dir",
+        "/home/imoto/Heritage_Pipeline/tmp_work/test_only_challenge_search_20261009/fixed_holdout_validation/outputs/isolated",
+        "--tmp_dir",
+        "/home/imoto/Heritage_Pipeline/tmp_work/test_only_challenge_search_20261009/fixed_holdout_validation/infer_tmp/isolated/200005798_00036_1",
+        "--mask_dir",
+        "/home/imoto/Heritage_Pipeline/tmp_work/test_only_challenge_search_20261009/fixed_holdout_validation/masks/isolated",
+        "--ckpt",
+        "/home/imoto/Heritage_Pipeline/modules/stain_removal/experiments/model_char/model_char/ckpt_epoch0350.pth",
+        "--back_ground",
+        "/home/imoto/Heritage_Pipeline/modules/ddrm_npj_v2/background/isemonogatari.png",
+        "--device",
+        "cuda:0",
+        "--patch_size",
+        "128",
+        "--overlap",
+        "32",
+        "--shared_noise",
+        "--no_wandb"
+      ],
+      "output": "tmp_work/test_only_challenge_search_20261009/fixed_holdout_validation/outputs/isolated/200005798_00036_1/result/200005798_00036_1.png",
+      "sha256": "964e1f118166ef0753c4bc0ec0efaea9f9f1e8871f5bbe91fd0ce534af03ad2f"
+    },
+    {
+      "id": "F06",
+      "method": "csc",
+      "seconds": 415.51,
+      "reused": false,
+      "command": [
+        "/home/imoto/miniconda3/envs/diffusion/bin/python",
+        "-B",
+        "/home/imoto/Heritage_Pipeline/tmp_work/npj_dirt_control_20261002/source_snapshot/ddrm_npj_v2/scripts/pipeline_ddrm.py",
+        "--input_dir",
+        "/home/imoto/Heritage_Pipeline/tmp_work/test_only_challenge_search_20261009/fixed_holdout_validation/inputs/200008003_00006_1",
+        "--output_dir",
+        "/home/imoto/Heritage_Pipeline/tmp_work/test_only_challenge_search_20261009/fixed_holdout_validation/outputs/csc",
+        "--tmp_dir",
+        "/home/imoto/Heritage_Pipeline/tmp_work/test_only_challenge_search_20261009/fixed_holdout_validation/infer_tmp/csc/200008003_00006_1",
+        "--mask_dir",
+        "/home/imoto/Heritage_Pipeline/tmp_work/test_only_challenge_search_20261009/fixed_holdout_validation/masks/csc",
+        "--ckpt",
+        "/home/imoto/Heritage_Pipeline/modules/stain_removal/experiments/model_char/model_char/ckpt_epoch0350.pth",
+        "--back_ground",
+        "/home/imoto/Heritage_Pipeline/modules/ddrm_npj_v2/background/isemonogatari.png",
+        "--device",
+        "cuda:1",
+        "--patch_size",
+        "128",
+        "--overlap",
+        "32",
+        "--shared_noise",
+        "--no_wandb"
+      ],
+      "output": "tmp_work/test_only_challenge_search_20261009/fixed_holdout_validation/outputs/csc/200008003_00006_1/result/200008003_00006_1.png",
+      "sha256": "c971693aefec87aa3c674ff9a8e787913f84d428162957395f681d3c54e68bb1"
+    },
+    {
+      "id": "F06",
+      "method": "howe",
+      "seconds": 404.52,
+      "reused": false,
+      "command": [
+        "/home/imoto/miniconda3/envs/diffusion/bin/python",
+        "-B",
+        "/home/imoto/Heritage_Pipeline/tmp_work/npj_dirt_control_20261002/source_snapshot/ddrm_npj_v2/scripts/pipeline_ddrm.py",
+        "--input_dir",
+        "/home/imoto/Heritage_Pipeline/tmp_work/test_only_challenge_search_20261009/fixed_holdout_validation/inputs/200008003_00006_1",
+        "--output_dir",
+        "/home/imoto/Heritage_Pipeline/tmp_work/test_only_challenge_search_20261009/fixed_holdout_validation/outputs/howe",
+        "--tmp_dir",
+        "/home/imoto/Heritage_Pipeline/tmp_work/test_only_challenge_search_20261009/fixed_holdout_validation/infer_tmp/howe/200008003_00006_1",
+        "--mask_dir",
+        "/home/imoto/Heritage_Pipeline/tmp_work/test_only_challenge_search_20261009/fixed_holdout_validation/masks/howe",
+        "--ckpt",
+        "/home/imoto/Heritage_Pipeline/modules/stain_removal/experiments/model_char/model_char/ckpt_epoch0350.pth",
+        "--back_ground",
+        "/home/imoto/Heritage_Pipeline/modules/ddrm_npj_v2/background/isemonogatari.png",
+        "--device",
+        "cuda:1",
+        "--patch_size",
+        "128",
+        "--overlap",
+        "32",
+        "--shared_noise",
+        "--no_wandb"
+      ],
+      "output": "tmp_work/test_only_challenge_search_20261009/fixed_holdout_validation/outputs/howe/200008003_00006_1/result/200008003_00006_1.png",
+      "sha256": "bb397ee37a7985afe57848d7b29cbcd949ed2a16aedb47edd8fbf2490de41baa"
+    },
+    {
+      "id": "F06",
+      "method": "isolated",
+      "seconds": 401.06,
+      "reused": false,
+      "command": [
+        "/home/imoto/miniconda3/envs/diffusion/bin/python",
+        "-B",
+        "/home/imoto/Heritage_Pipeline/tmp_work/npj_dirt_control_20261002/source_snapshot/ddrm_npj_v2/scripts/pipeline_ddrm.py",
+        "--input_dir",
+        "/home/imoto/Heritage_Pipeline/tmp_work/test_only_challenge_search_20261009/fixed_holdout_validation/inputs/200008003_00006_1",
+        "--output_dir",
+        "/home/imoto/Heritage_Pipeline/tmp_work/test_only_challenge_search_20261009/fixed_holdout_validation/outputs/isolated",
+        "--tmp_dir",
+        "/home/imoto/Heritage_Pipeline/tmp_work/test_only_challenge_search_20261009/fixed_holdout_validation/infer_tmp/isolated/200008003_00006_1",
+        "--mask_dir",
+        "/home/imoto/Heritage_Pipeline/tmp_work/test_only_challenge_search_20261009/fixed_holdout_validation/masks/isolated",
+        "--ckpt",
+        "/home/imoto/Heritage_Pipeline/modules/stain_removal/experiments/model_char/model_char/ckpt_epoch0350.pth",
+        "--back_ground",
+        "/home/imoto/Heritage_Pipeline/modules/ddrm_npj_v2/background/isemonogatari.png",
+        "--device",
+        "cuda:1",
+        "--patch_size",
+        "128",
+        "--overlap",
+        "32",
+        "--shared_noise",
+        "--no_wandb"
+      ],
+      "output": "tmp_work/test_only_challenge_search_20261009/fixed_holdout_validation/outputs/isolated/200008003_00006_1/result/200008003_00006_1.png",
+      "sha256": "0c6b7696f77d201c3c9e9e1a58593ce1de1a31db7a7b31fa3a63d7a778f2c2c1"
+    }
+  ],
+  "audits": [
+    {
+      "id": "F01",
+      "methods": {
+        "csc": {
+          "source_red_changed_pixels": 0,
+          "output_sha256": "0a2b4e94fe6e6ba8a87f641e02832c889fc8f61fa15587efee577d002e9ccc42"
+        },
+        "howe": {
+          "source_red_changed_pixels": 0,
+          "output_sha256": "403e393cc9dc1f785f9ab4c0351c9170e8399ee7d9db8900cc9c6bbe216e5260"
+        },
+        "isolated": {
+          "source_red_changed_pixels": 0,
+          "output_sha256": "3dc3a57ceff1aa6457bb9a48ed96d16cd04b3ac3d75dd10caae975845184694d"
+        }
+      },
+      "control_regions": {
+        "text": {
+          "xywh": [
+            500,
+            900,
+            1300,
+            1700
+          ],
+          "removed_mask_pixels": 12,
+          "changed_output_pixels": 20543
+        },
+        "margin": {
+          "xywh": [
+            150,
+            300,
+            700,
+            500
+          ],
+          "removed_mask_pixels": 4,
+          "changed_output_pixels": 31490
+        }
+      },
+      "removed_components": [
+        {
+          "xywh": [
+            375,
+            118,
+            2,
+            3
+          ],
+          "area": 4,
+          "baseline_dark_pixels": 4,
+          "candidate_dark_pixels": 0
+        },
+        {
+          "xywh": [
+            331,
+            123,
+            2,
+            2
+          ],
+          "area": 3,
+          "baseline_dark_pixels": 3,
+          "candidate_dark_pixels": 0
+        },
+        {
+          "xywh": [
+            1163,
+            166,
+            2,
+            2
+          ],
+          "area": 3,
+          "baseline_dark_pixels": 3,
+          "candidate_dark_pixels": 0
+        },
+        {
+          "xywh": [
+            391,
+            217,
+            2,
+            3
+          ],
+          "area": 5,
+          "baseline_dark_pixels": 5,
+          "candidate_dark_pixels": 0
+        },
+        {
+          "xywh": [
+            1412,
+            272,
+            3,
+            4
+          ],
+          "area": 9,
+          "baseline_dark_pixels": 9,
+          "candidate_dark_pixels": 0
+        },
+        {
+          "xywh": [
+            888,
+            374,
+            2,
+            3
+          ],
+          "area": 5,
+          "baseline_dark_pixels": 5,
+          "candidate_dark_pixels": 0
+        },
+        {
+          "xywh": [
+            993,
+            420,
+            3,
+            2
+          ],
+          "area": 4,
+          "baseline_dark_pixels": 4,
+          "candidate_dark_pixels": 0
+        },
+        {
+          "xywh": [
+            1167,
+            429,
+            2,
+            2
+          ],
+          "area": 3,
+          "baseline_dark_pixels": 3,
+          "candidate_dark_pixels": 0
+        },
+        {
+          "xywh": [
+            310,
+            480,
+            2,
+            2
+          ],
+          "area": 4,
+          "baseline_dark_pixels": 4,
+          "candidate_dark_pixels": 0
+        },
+        {
+          "xywh": [
+            1879,
+            564,
+            3,
+            3
+          ],
+          "area": 6,
+          "baseline_dark_pixels": 6,
+          "candidate_dark_pixels": 0
+        },
+        {
+          "xywh": [
+            197,
+            801,
+            3,
+            2
+          ],
+          "area": 5,
+          "baseline_dark_pixels": 5,
+          "candidate_dark_pixels": 0
+        },
+        {
+          "xywh": [
+            645,
+            872,
+            2,
+            2
+          ],
+          "area": 3,
+          "baseline_dark_pixels": 3,
+          "candidate_dark_pixels": 0
+        },
+        {
+          "xywh": [
+            352,
+            1023,
+            2,
+            2
+          ],
+          "area": 3,
+          "baseline_dark_pixels": 3,
+          "candidate_dark_pixels": 0
+        },
+        {
+          "xywh": [
+            1891,
+            1323,
+            2,
+            2
+          ],
+          "area": 3,
+          "baseline_dark_pixels": 3,
+          "candidate_dark_pixels": 0
+        },
+        {
+          "xywh": [
+            140,
+            1344,
+            4,
+            2
+          ],
+          "area": 7,
+          "baseline_dark_pixels": 7,
+          "candidate_dark_pixels": 0
+        },
+        {
+          "xywh": [
+            322,
+            1692,
+            2,
+            2
+          ],
+          "area": 2,
+          "baseline_dark_pixels": 2,
+          "candidate_dark_pixels": 0
+        },
+        {
+          "xywh": [
+            197,
+            1729,
+            2,
+            2
+          ],
+          "area": 3,
+          "baseline_dark_pixels": 3,
+          "candidate_dark_pixels": 0
+        },
+        {
+          "xywh": [
+            1197,
+            1740,
+            4,
+            4
+          ],
+          "area": 12,
+          "baseline_dark_pixels": 12,
+          "candidate_dark_pixels": 0
+        },
+        {
+          "xywh": [
+            1891,
+            1758,
+            3,
+            3
+          ],
+          "area": 5,
+          "baseline_dark_pixels": 5,
+          "candidate_dark_pixels": 0
+        },
+        {
+          "xywh": [
+            142,
+            2207,
+            3,
+            3
+          ],
+          "area": 6,
+          "baseline_dark_pixels": 6,
+          "candidate_dark_pixels": 0
+        },
+        {
+          "xywh": [
+            1878,
+            2573,
+            2,
+            3
+          ],
+          "area": 5,
+          "baseline_dark_pixels": 5,
+          "candidate_dark_pixels": 0
+        },
+        {
+          "xywh": [
+            379,
+            2575,
+            2,
+            3
+          ],
+          "area": 5,
+          "baseline_dark_pixels": 5,
+          "candidate_dark_pixels": 0
+        },
+        {
+          "xywh": [
+            1889,
+            2606,
+            2,
+            3
+          ],
+          "area": 5,
+          "baseline_dark_pixels": 5,
+          "candidate_dark_pixels": 0
+        },
+        {
+          "xywh": [
+            1416,
+            2745,
+            2,
+            2
+          ],
+          "area": 4,
+          "baseline_dark_pixels": 4,
+          "candidate_dark_pixels": 0
+        },
+        {
+          "xywh": [
+            1841,
+            2745,
+            2,
+            2
+          ],
+          "area": 3,
+          "baseline_dark_pixels": 3,
+          "candidate_dark_pixels": 0
+        },
+        {
+          "xywh": [
+            1306,
+            2765,
+            2,
+            2
+          ],
+          "area": 2,
+          "baseline_dark_pixels": 2,
+          "candidate_dark_pixels": 0
+        },
+        {
+          "xywh": [
+            1376,
+            2766,
+            2,
+            2
+          ],
+          "area": 3,
+          "baseline_dark_pixels": 3,
+          "candidate_dark_pixels": 0
+        },
+        {
+          "xywh": [
+            368,
+            2807,
+            2,
+            2
+          ],
+          "area": 3,
+          "baseline_dark_pixels": 3,
+          "candidate_dark_pixels": 0
+        },
+        {
+          "xywh": [
+            1213,
+            2808,
+            2,
+            3
+          ],
+          "area": 4,
+          "baseline_dark_pixels": 4,
+          "candidate_dark_pixels": 0
+        },
+        {
+          "xywh": [
+            257,
+            2813,
+            5,
+            5
+          ],
+          "area": 12,
+          "baseline_dark_pixels": 12,
+          "candidate_dark_pixels": 0
+        }
+      ]
+    },
+    {
+      "id": "F02",
+      "methods": {
+        "csc": {
+          "source_red_changed_pixels": 0,
+          "output_sha256": "66afa01d20763d2137d564961736c5414fb5759776885139187eab93e5aacd90"
+        },
+        "howe": {
+          "source_red_changed_pixels": 0,
+          "output_sha256": "c113b7653f13ad4ba8ed52247f5694b43aa626e51ea16846eb90311543be97cd"
+        },
+        "isolated": {
+          "source_red_changed_pixels": 0,
+          "output_sha256": "c113b7653f13ad4ba8ed52247f5694b43aa626e51ea16846eb90311543be97cd"
+        }
+      },
+      "control_regions": {
+        "text": {
+          "xywh": [
+            250,
+            750,
+            1650,
+            2300
+          ],
+          "removed_mask_pixels": 0,
+          "changed_output_pixels": 0
+        },
+        "paper": {
+          "xywh": [
+            100,
+            100,
+            700,
+            550
+          ],
+          "removed_mask_pixels": 0,
+          "changed_output_pixels": 0
+        }
+      },
+      "removed_components": []
+    },
+    {
+      "id": "F03",
+      "methods": {
+        "csc": {
+          "source_red_changed_pixels": 0,
+          "output_sha256": "20434d591a32324249cf493f3d29910824651f3626362242bd1a8494c71ff936"
+        },
+        "howe": {
+          "source_red_changed_pixels": 0,
+          "output_sha256": "3274a30fd2c7d6553005afd8b9f65f181edb90980eba0ffcad6433253f8c5f8c"
+        },
+        "isolated": {
+          "source_red_changed_pixels": 0,
+          "output_sha256": "462056d32cd674dec13e7b7259712ce5e2869ab73ba30476f6cd2e54b256983d"
+        }
+      },
+      "control_regions": {
+        "text": {
+          "xywh": [
+            250,
+            950,
+            1500,
+            1950
+          ],
+          "removed_mask_pixels": 0,
+          "changed_output_pixels": 0
+        },
+        "paper": {
+          "xywh": [
+            300,
+            2850,
+            1350,
+            280
+          ],
+          "removed_mask_pixels": 0,
+          "changed_output_pixels": 0
+        }
+      },
+      "removed_components": [
+        {
+          "xywh": [
+            484,
+            334,
+            9,
+            9
+          ],
+          "area": 57,
+          "baseline_dark_pixels": 57,
+          "candidate_dark_pixels": 0
+        }
+      ]
+    },
+    {
+      "id": "F04",
+      "methods": {
+        "csc": {
+          "source_red_changed_pixels": 0,
+          "output_sha256": "8dcd1464dc3b281da0f51867c4f130bc12285c6efe0e5f12fc806cde6fa20203"
+        },
+        "howe": {
+          "source_red_changed_pixels": 0,
+          "output_sha256": "53d6d50afb66b8ee6722d342879ee99c32554dc38a3ebd6c51a3f69cc5b57762"
+        },
+        "isolated": {
+          "source_red_changed_pixels": 0,
+          "output_sha256": "3dd98177b44b23a37bd6622549b20c4e5a418e968188d898609ca220d9c43dd0"
+        }
+      },
+      "control_regions": {
+        "text": {
+          "xywh": [
+            650,
+            900,
+            800,
+            1000
+          ],
+          "removed_mask_pixels": 0,
+          "changed_output_pixels": 0
+        }
+      },
+      "removed_components": [
+        {
+          "xywh": [
+            481,
+            295,
+            11,
+            8
+          ],
+          "area": 64,
+          "baseline_dark_pixels": 64,
+          "candidate_dark_pixels": 0
+        },
+        {
+          "xywh": [
+            459,
+            321,
+            8,
+            6
+          ],
+          "area": 33,
+          "baseline_dark_pixels": 33,
+          "candidate_dark_pixels": 0
+        },
+        {
+          "xywh": [
+            1750,
+            1298,
+            5,
+            6
+          ],
+          "area": 21,
+          "baseline_dark_pixels": 21,
+          "candidate_dark_pixels": 0
+        }
+      ]
+    },
+    {
+      "id": "F05",
+      "methods": {
+        "csc": {
+          "source_red_changed_pixels": 0,
+          "output_sha256": "bd2696c3b9241ce2c79fa2e60595ad5c49c8aa8adfc1e82f39f0a49845a1a5ad"
+        },
+        "howe": {
+          "source_red_changed_pixels": 0,
+          "output_sha256": "0ad280e92c9b62fd2641c526b5fc6c0337477ab723c9a3fcb7900a3f3a527c33"
+        },
+        "isolated": {
+          "source_red_changed_pixels": 0,
+          "output_sha256": "964e1f118166ef0753c4bc0ec0efaea9f9f1e8871f5bbe91fd0ce534af03ad2f"
+        }
+      },
+      "control_regions": {
+        "text": {
+          "xywh": [
+            450,
+            1100,
+            1150,
+            1500
+          ],
+          "removed_mask_pixels": 2,
+          "changed_output_pixels": 10575
+        },
+        "margin": {
+          "xywh": [
+            350,
+            200,
+            1250,
+            650
+          ],
+          "removed_mask_pixels": 335,
+          "changed_output_pixels": 134969
+        }
+      },
+      "removed_components": [
+        {
+          "xywh": [
+            595,
+            124,
+            1,
+            2
+          ],
+          "area": 2,
+          "baseline_dark_pixels": 2,
+          "candidate_dark_pixels": 0
+        },
+        {
+          "xywh": [
+            573,
+            127,
+            2,
+            1
+          ],
+          "area": 2,
+          "baseline_dark_pixels": 2,
+          "candidate_dark_pixels": 0
+        },
+        {
+          "xywh": [
+            717,
+            131,
+            3,
+            2
+          ],
+          "area": 4,
+          "baseline_dark_pixels": 4,
+          "candidate_dark_pixels": 0
+        },
+        {
+          "xywh": [
+            774,
+            164,
+            2,
+            3
+          ],
+          "area": 4,
+          "baseline_dark_pixels": 4,
+          "candidate_dark_pixels": 0
+        },
+        {
+          "xywh": [
+            801,
+            182,
+            4,
+            5
+          ],
+          "area": 13,
+          "baseline_dark_pixels": 13,
+          "candidate_dark_pixels": 0
+        },
+        {
+          "xywh": [
+            736,
+            209,
+            3,
+            2
+          ],
+          "area": 4,
+          "baseline_dark_pixels": 4,
+          "candidate_dark_pixels": 0
+        },
+        {
+          "xywh": [
+            506,
+            215,
+            3,
+            3
+          ],
+          "area": 6,
+          "baseline_dark_pixels": 6,
+          "candidate_dark_pixels": 0
+        },
+        {
+          "xywh": [
+            776,
+            245,
+            2,
+            2
+          ],
+          "area": 3,
+          "baseline_dark_pixels": 3,
+          "candidate_dark_pixels": 0
+        },
+        {
+          "xywh": [
+            1047,
+            256,
+            6,
+            9
+          ],
+          "area": 26,
+          "baseline_dark_pixels": 26,
+          "candidate_dark_pixels": 0
+        },
+        {
+          "xywh": [
+            554,
+            299,
+            19,
+            17
+          ],
+          "area": 193,
+          "baseline_dark_pixels": 193,
+          "candidate_dark_pixels": 0
+        },
+        {
+          "xywh": [
+            489,
+            317,
+            5,
+            6
+          ],
+          "area": 21,
+          "baseline_dark_pixels": 21,
+          "candidate_dark_pixels": 0
+        },
+        {
+          "xywh": [
+            549,
+            331,
+            4,
+            4
+          ],
+          "area": 12,
+          "baseline_dark_pixels": 12,
+          "candidate_dark_pixels": 0
+        },
+        {
+          "xywh": [
+            512,
+            340,
+            2,
+            2
+          ],
+          "area": 3,
+          "baseline_dark_pixels": 3,
+          "candidate_dark_pixels": 0
+        },
+        {
+          "xywh": [
+            1044,
+            396,
+            4,
+            5
+          ],
+          "area": 11,
+          "baseline_dark_pixels": 11,
+          "candidate_dark_pixels": 0
+        },
+        {
+          "xywh": [
+            1616,
+            413,
+            6,
+            8
+          ],
+          "area": 31,
+          "baseline_dark_pixels": 31,
+          "candidate_dark_pixels": 0
+        },
+        {
+          "xywh": [
+            709,
+            469,
+            4,
+            4
+          ],
+          "area": 12,
+          "baseline_dark_pixels": 12,
+          "candidate_dark_pixels": 0
+        },
+        {
+          "xywh": [
+            1816,
+            499,
+            3,
+            2
+          ],
+          "area": 5,
+          "baseline_dark_pixels": 5,
+          "candidate_dark_pixels": 0
+        },
+        {
+          "xywh": [
+            623,
+            513,
+            3,
+            2
+          ],
+          "area": 4,
+          "baseline_dark_pixels": 4,
+          "candidate_dark_pixels": 0
+        },
+        {
+          "xywh": [
+            1113,
+            521,
+            2,
+            3
+          ],
+          "area": 4,
+          "baseline_dark_pixels": 4,
+          "candidate_dark_pixels": 0
+        },
+        {
+          "xywh": [
+            1216,
+            532,
+            4,
+            3
+          ],
+          "area": 10,
+          "baseline_dark_pixels": 10,
+          "candidate_dark_pixels": 0
+        },
+        {
+          "xywh": [
+            717,
+            631,
+            2,
+            3
+          ],
+          "area": 4,
+          "baseline_dark_pixels": 4,
+          "candidate_dark_pixels": 0
+        },
+        {
+          "xywh": [
+            1459,
+            648,
+            6,
+            5
+          ],
+          "area": 22,
+          "baseline_dark_pixels": 22,
+          "candidate_dark_pixels": 0
+        },
+        {
+          "xywh": [
+            906,
+            1484,
+            2,
+            1
+          ],
+          "area": 2,
+          "baseline_dark_pixels": 2,
+          "candidate_dark_pixels": 0
+        },
+        {
+          "xywh": [
+            1701,
+            1603,
+            6,
+            12
+          ],
+          "area": 34,
+          "baseline_dark_pixels": 34,
+          "candidate_dark_pixels": 0
+        },
+        {
+          "xywh": [
+            1535,
+            2605,
+            8,
+            4
+          ],
+          "area": 16,
+          "baseline_dark_pixels": 16,
+          "candidate_dark_pixels": 0
+        },
+        {
+          "xywh": [
+            1564,
+            2912,
+            4,
+            4
+          ],
+          "area": 10,
+          "baseline_dark_pixels": 10,
+          "candidate_dark_pixels": 0
+        },
+        {
+          "xywh": [
+            1682,
+            2996,
+            6,
+            5
+          ],
+          "area": 17,
+          "baseline_dark_pixels": 17,
+          "candidate_dark_pixels": 0
+        }
+      ]
+    },
+    {
+      "id": "F06",
+      "methods": {
+        "csc": {
+          "source_red_changed_pixels": 0,
+          "output_sha256": "c971693aefec87aa3c674ff9a8e787913f84d428162957395f681d3c54e68bb1"
+        },
+        "howe": {
+          "source_red_changed_pixels": 0,
+          "output_sha256": "bb397ee37a7985afe57848d7b29cbcd949ed2a16aedb47edd8fbf2490de41baa"
+        },
+        "isolated": {
+          "source_red_changed_pixels": 0,
+          "output_sha256": "0c6b7696f77d201c3c9e9e1a58593ce1de1a31db7a7b31fa3a63d7a778f2c2c1"
+        }
+      },
+      "control_regions": {
+        "small_text": {
+          "xywh": [
+            650,
+            1300,
+            700,
+            2000
+          ],
+          "removed_mask_pixels": 75,
+          "changed_output_pixels": 15484
+        },
+        "body": {
+          "xywh": [
+            1700,
+            1050,
+            780,
+            2700
+          ],
+          "removed_mask_pixels": 0,
+          "changed_output_pixels": 0
+        }
+      },
+      "removed_components": [
+        {
+          "xywh": [
+            1954,
+            416,
+            8,
+            6
+          ],
+          "area": 42,
+          "baseline_dark_pixels": 42,
+          "candidate_dark_pixels": 0
+        },
+        {
+          "xywh": [
+            1950,
+            452,
+            8,
+            15
+          ],
+          "area": 88,
+          "baseline_dark_pixels": 88,
+          "candidate_dark_pixels": 0
+        },
+        {
+          "xywh": [
+            905,
+            2205,
+            12,
+            7
+          ],
+          "area": 75,
+          "baseline_dark_pixels": 75,
+          "candidate_dark_pixels": 0
+        }
+      ]
+    }
+  ],
+  "figure": "tmp_work/test_only_challenge_search_20261009/fixed_holdout_validation/追加6ページ_固定条件DDRM比較.png",
+  "figure_sha256": "74983a7e94f86f20ba1e27dfec47da6774ad674ab5a656174c2662bfaade4de0",
+  "inputs_unchanged": true
+}

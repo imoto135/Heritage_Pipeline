@@ -1,0 +1,21 @@
+{
+  "source_sha256": "361d215bd67d8d78359e871e2d484e1c6eaa1d6770c6aa6aa8ba4b9bd2891338",
+  "dependencies": {
+    "scripts/benchmark/prepare_full_upper_component_baselines_v2.py": "361d215bd67d8d78359e871e2d484e1c6eaa1d6770c6aa6aa8ba4b9bd2891338",
+    "tmp_work/full_upper_strong_mask_pilot_v2_20261001/manifest.json": "a2ac253184b69efb005685f939f4daa2b1afbfb7213052ffb85ff1890cc811b4",
+    "tmp_work/full_upper_strong_mask_pilot_v2_20261001/complete.json": "c68e33c5e708222f74c229c57197d2bb9f573a4b874cc96cedaf4ece40d4fd83",
+    "tmp_work/anchored_pale_margin_restoration_20261001/manifest.json": "bfb23d576260cb479ff35ff15c13c45bb4682279b83f1d74883e0e0eb121c03c",
+    "tmp_work/anchored_pale_margin_restoration_20261001/complete.json": "41b51305f6f6903e38006569fd814d2b614630f38a40a504051bca1fe658d6c5",
+    "tmp_work/unseen_margin_validation_20261001/paper_fill/manifest.json": "ae44036744b782a6db937f749146d415cf530fba181b28061927bcddf997cecc",
+    "tmp_work/unseen_margin_validation_20261001/paper_fill/complete.json": "4539d4bcca59cc8dc9dd7567409f5c5cd82552910779edf813be83c1e6a8d41b",
+    "tmp_work/unseen_dark_margin_validation_20261001/paper_fill/manifest.json": "ac48c49101fd659a91714a139150ac9190e903d70bf036e59da3691fe4b4e115",
+    "tmp_work/unseen_dark_margin_validation_20261001/paper_fill/complete.json": "768d2a0a5dae01f3fdbb6657e11ee851e2411fc02f4c2dbc001b66bf980244e7"
+  },
+  "fixed_full_page_mask": "previous pale6",
+  "ROIs": "all six new unanchored accepted strong components, 45px border/64px context",
+  "reference": "same qualified full-page paper minus pale6 additions",
+  "restorer": "same16-pair harmonic and observed fine L seams",
+  "outside_applied": "original",
+  "GT": false,
+  "selection_after_mask_outputs": true
+}

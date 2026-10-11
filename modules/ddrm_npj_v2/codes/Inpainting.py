@@ -201,13 +201,14 @@ class Diffusion(object):
             mask = mask.reshape((1,1,config.data.image_size,config.data.image_size))
         mask = torch.cat((mask,mask,mask),dim=1).to(torch.float32).to(self.device)
         
-        ##反転するかそのままか
-        tvu.save_image(
-            mask, 
-            os.path.join(image_folder, "used_mask.png"),
-            normalize=False
-        )   
-        
+        # 2026-07-24 速度改善: 以前はここで used_mask.png / x_orig{i} / x_mask{i} / y{i} /
+        # mask{i} / H{i} をパッチ呼び出しごとにディスク保存していたが、呼び出し元
+        # (pipeline_ddrm.py / pipeline_ddrm_page.py)はどれも読み返しておらず、
+        # 純粋なデバッグ用の書き捨て出力だった。パッチ単位で475回×これらの保存が
+        # 走ると1ページあたりのファイルI/Oが劇的に増える（実測でDDNM比1000倍規模の
+        # I/O、DDRMがDDNMより約6倍遅くなる主因と判明）ため削除した。
+        # 計算ロジック自体（H_funcs, y_0, pinv_y_0の計算）は変更していない。
+
         '''[-1,1] -> mask (-1,1)'''
         norm = transforms.Lambda(lambda x: (x+1)/2)
         for x_orig, classes in pbar:
@@ -224,23 +225,6 @@ class Diffusion(object):
             pinv_y_0 += H_funcs.H_pinv(H_funcs.H(torch.ones_like(pinv_y_0))
                                         ).reshape(*pinv_y_0.shape) - 1
 
-            # y_0 inf ?
-            for i in range(len(pinv_y_0)):
-                #x_orig:背景画像
-                tvu.save_image(
-                    x_orig_copy[i], os.path.join(image_folder, f"{args.x_dir}/x_orig{idx_so_far + i}.png")
-                )
-                tvu.save_image(
-                    x_orig[i], os.path.join(image_folder, f"{args.x_dir}/x_mask{idx_so_far + i}.png")
-                )
-                tvu.save_image(
-                    (pinv_y_0[i]), os.path.join(image_folder, f"{args.y_dir}/y{idx_so_far + i}.png")
-                )
-                tvu.save_image((mask), os.path.join(image_folder, f"{args.noise_mask}/mask{idx_so_far + i}.png")
-                                )
-                tvu.save_image((mask-1)*(-1), os.path.join(image_folder, f"{args.back_mask}/H{idx_so_far + i}.png")
-                                )
-                
             # Begin DDIM
             if init_noise is not None:
                 # ページ全体で共有した1枚のノイズマップから該当パッチ位置を
@@ -257,33 +241,24 @@ class Diffusion(object):
                 )
 
             # NOTE: This means that we are producing each predicted x0, not x_{t-1} at timestep t.
+            # 2026-07-24 速度改善: last=Falseで全拡散ステップ(タイムステップ数+1枚)を
+            # 都度ディスク保存していたが、呼び出し元は最終ステップ(_t{timesteps}.png)しか
+            # 読んでいない。sample_image()はlast=True/Falseどちらでも内部のefficient_
+            # generalized_steps()の計算は完全に同一（違いは戻り値をどこまで保持するかだけ）
+            # なので、last=Trueに切り替えても出力される最終画像はピクセル単位で同一。
             with torch.no_grad():
-                # x, _ ,cls_list= self.sample_image(
-                #     x, model, H_funcs, y_0, sigma_0, self.device, last=False, cls_fn=cls_fn, classes=classes,mask=mask,x_orig=x_orig)
-                
-                x_all_steps, _, cls_list = self.sample_image(
+                x_final, _, cls_list = self.sample_image(
                     x, model, H_funcs, y_0, sigma_0, self.device,
-                    last=False, cls_fn=cls_fn, classes=classes,
+                    last=True, cls_fn=cls_fn, classes=classes,
                     mask=mask, x_orig=x_orig
                 )
-                
 
-            # x = [inverse_data_transform(config, y) for y in x]
-            # 復元後の全ステップを [-1,1] で正規化
-            # x_all_steps = [inverse_data_transform(config, y) for y in x_all_steps]       
-            # x_all_steps = x_all_steps.clamp(0, 1)
-            # 各ステップを保存（x_t）
-            
-            
-            
-            for t, xt in enumerate(x_all_steps):
-                for j in range(xt.size(0)):
-                    tvu.save_image(
-                        xt[j],
-                        os.path.join(image_folder, f"{args.result}/{idx_so_far + j}_t{t}.png")
-                    )   
-            
-            
+            for j in range(x_final.size(0)):
+                tvu.save_image(
+                    x_final[j],
+                    os.path.join(image_folder, f"{args.result}/{idx_so_far + j}_t{args.timesteps}.png")
+                )
+
             # for t, xt in enumerate(x_all_steps):
             #     for j in range(xt.size(0)):
             #         # 背景画像も [0,1] に変換

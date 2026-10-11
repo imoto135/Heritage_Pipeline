@@ -1,0 +1,577 @@
+{
+  "cases": [
+    {
+      "id": "R_S01",
+      "page": "hnsd007_042",
+      "original": "data/split_dataset/train/hnsd00000/hnsd007_042.jpg",
+      "seed_xywh": [
+        900,
+        250,
+        320,
+        400
+      ],
+      "reason": "接触汚れ",
+      "roi_xywh": [
+        800,
+        190,
+        520,
+        520
+      ],
+      "source_sha256": "68315f7e551cb29695d9e830f09826eef92809409d4e9242290c5ed14f393afc",
+      "image_wh": [
+        1884,
+        2865
+      ]
+    },
+    {
+      "id": "R_S02",
+      "page": "hnsd001_011",
+      "original": "data/split_dataset/train/hnsd00000/hnsd001_011.jpg",
+      "seed_xywh": [
+        80,
+        2550,
+        540,
+        330
+      ],
+      "reason": "接触汚れ候補",
+      "roi_xywh": [
+        80,
+        2383,
+        540,
+        520
+      ],
+      "source_sha256": "22017c0af65c5f43560ff05cfcc15c6ed8f56b72e60a04a732d9c31b72f05731",
+      "image_wh": [
+        1857,
+        2903
+      ]
+    },
+    {
+      "id": "R_L01",
+      "page": "200010454_00002_2",
+      "original": "data/split_dataset/test/200010454/200010454_00002_2.jpg",
+      "seed_xywh": [
+        1230,
+        500,
+        280,
+        650
+      ],
+      "reason": "筆画欠損",
+      "roi_xywh": [
+        1110,
+        500,
+        520,
+        650
+      ],
+      "source_sha256": "177776f90fc08b12e2f59a37773ef433556f43ebe47c503c2d676595a08a60d1",
+      "image_wh": [
+        1784,
+        2365
+      ]
+    },
+    {
+      "id": "R_L02",
+      "page": "200019865_00003_1",
+      "original": "data/test/200019865/200019865_00003_1.jpg",
+      "seed_xywh": [
+        1750,
+        2490,
+        280,
+        550
+      ],
+      "reason": "局所的な筆画欠損",
+      "roi_xywh": [
+        1593,
+        2490,
+        520,
+        550
+      ],
+      "source_sha256": "31b993f91a1ce6d4db18f435513a2c7d9b9169b9a5b42e1e16c59ec6516dae16",
+      "image_wh": [
+        2113,
+        3191
+      ]
+    },
+    {
+      "id": "R_L03",
+      "page": "200018243_00002_2",
+      "original": "data/split_dataset/test/200018243/200018243_00002_2.jpg",
+      "seed_xywh": [
+        350,
+        800,
+        350,
+        700
+      ],
+      "reason": "筆画欠損",
+      "roi_xywh": [
+        265,
+        800,
+        520,
+        700
+      ],
+      "source_sha256": "684376939bc90652649c7529994f6c374b6ad0199b2c3eab61e3e701888a2d10",
+      "image_wh": [
+        2053,
+        3187
+      ]
+    },
+    {
+      "id": "R_L04",
+      "page": "200021925_00004_1",
+      "original": "data/train/200021925/200021925_00004_1.jpg",
+      "seed_xywh": [
+        1080,
+        550,
+        270,
+        650
+      ],
+      "reason": "筆画欠損",
+      "roi_xywh": [
+        955,
+        550,
+        520,
+        650
+      ],
+      "source_sha256": "61a09a7bff44908c8e4524e7b58dad02e5011d0bd8ec78259c4b544e9f0972b0",
+      "image_wh": [
+        2664,
+        1983
+      ]
+    },
+    {
+      "id": "R_L05a",
+      "page": "200021925_00007_1",
+      "original": "data/train/200021925/200021925_00007_1.jpg",
+      "seed_xywh": [
+        890,
+        290,
+        360,
+        450
+      ],
+      "reason": "広範囲の筆画欠損",
+      "roi_xywh": [
+        810,
+        255,
+        520,
+        520
+      ],
+      "source_sha256": "836f9c418cc5b5f3e1844e9024d1b676c3a6de19d56ccd1c6832ce6017654a8b",
+      "image_wh": [
+        2651,
+        1939
+      ]
+    },
+    {
+      "id": "R_L05b",
+      "page": "200021925_00007_1",
+      "original": "data/train/200021925/200021925_00007_1.jpg",
+      "seed_xywh": [
+        1050,
+        1291,
+        480,
+        450
+      ],
+      "reason": "広範囲の筆画欠損",
+      "roi_xywh": [
+        1030,
+        1256,
+        520,
+        520
+      ],
+      "source_sha256": "836f9c418cc5b5f3e1844e9024d1b676c3a6de19d56ccd1c6832ce6017654a8b",
+      "image_wh": [
+        2651,
+        1939
+      ]
+    },
+    {
+      "id": "R_N01",
+      "page": "200018243_00003_2",
+      "original": "data/split_dataset/test/200018243/200018243_00003_2.jpg",
+      "seed_xywh": [
+        760,
+        1870,
+        220,
+        480
+      ],
+      "reason": "残留像・材質未確定",
+      "roi_xywh": [
+        610,
+        1850,
+        520,
+        520
+      ],
+      "source_sha256": "f1c8c26fea64d9511c462b9776198eadbf3481793b0e4ed397e9ba58aca45e6d",
+      "image_wh": [
+        2073,
+        3203
+      ]
+    },
+    {
+      "id": "R_N02",
+      "page": "200003967_00043_1",
+      "original": "data/split_dataset/train/200003967/200003967_00043_1.jpg",
+      "seed_xywh": [
+        1545,
+        2187,
+        370,
+        400
+      ],
+      "reason": "残留像・材質未確定",
+      "roi_xywh": [
+        1433,
+        2127,
+        520,
+        520
+      ],
+      "source_sha256": "32de18d0c167336c8cb4a4e8e214516029b6542de1f4053a1189f083c8ff41fb",
+      "image_wh": [
+        1953,
+        2955
+      ]
+    },
+    {
+      "id": "S_T01",
+      "page": "hnsd007_023",
+      "original": "data/split_dataset/train/hnsd00000/hnsd007_023.jpg",
+      "seed_xywh": [
+        812,
+        421,
+        450,
+        450
+      ],
+      "reason": "複数の筆画を広い黒い塊が覆う",
+      "roi_xywh": [
+        777,
+        386,
+        520,
+        520
+      ],
+      "source_sha256": "41999e5b52d17e60ea068c9b629ffcce037dc27fcbb3a4f45f46a5063d7b22af",
+      "image_wh": [
+        1860,
+        2843
+      ]
+    },
+    {
+      "id": "S_T02",
+      "page": "hnsd007_025",
+      "original": "data/split_dataset/train/hnsd00000/hnsd007_025.jpg",
+      "seed_xywh": [
+        748,
+        404,
+        440,
+        440
+      ],
+      "reason": "2つのシミがそれぞれ本文を覆う",
+      "roi_xywh": [
+        708,
+        364,
+        520,
+        520
+      ],
+      "source_sha256": "e2c7e9f8ad82774ed8aeb8f7579a5a15535c07e7c71234cb8f2b2d20fe90b450",
+      "image_wh": [
+        1824,
+        2847
+      ]
+    },
+    {
+      "id": "S_T03",
+      "page": "hnsd007_022",
+      "original": "data/split_dataset/train/hnsd00000/hnsd007_022.jpg",
+      "seed_xywh": [
+        642,
+        383,
+        350,
+        480
+      ],
+      "reason": "本文の横の小さい文字が埋もれる",
+      "roi_xywh": [
+        557,
+        363,
+        520,
+        520
+      ],
+      "source_sha256": "7d8811bd447368b6da78d382a47ae9fc6e4ff03a5e25e6d838c5f7475b7b2caf",
+      "image_wh": [
+        1888,
+        2859
+      ]
+    },
+    {
+      "id": "S_T04",
+      "page": "hnsd007_026",
+      "original": "data/split_dataset/train/hnsd00000/hnsd007_026.jpg",
+      "seed_xywh": [
+        700,
+        426,
+        330,
+        470
+      ],
+      "reason": "シミが本文の細い線と一体になる",
+      "roi_xywh": [
+        605,
+        401,
+        520,
+        520
+      ],
+      "source_sha256": "fa7137d66a5072f96a2ea401d391ff14d99188033e7f5d6e41b8a02b659c3ea1",
+      "image_wh": [
+        1852,
+        2847
+      ]
+    },
+    {
+      "id": "S_T06",
+      "page": "hnsd007_043",
+      "original": "data/split_dataset/train/hnsd00000/hnsd007_043.jpg",
+      "seed_xywh": [
+        635,
+        342,
+        300,
+        440
+      ],
+      "reason": "小さい茶色い範囲が筆画に接続する",
+      "roi_xywh": [
+        525,
+        302,
+        520,
+        520
+      ],
+      "source_sha256": "c93a2dda9152a5c053ae5e315a13ad8604e41a7f122833fab9e6d4656952797b",
+      "image_wh": [
+        1876,
+        2847
+      ]
+    },
+    {
+      "id": "S_T07",
+      "page": "200021869_00014_2",
+      "original": "data/split_dataset/val/200021869/200021869_00014_2.jpg",
+      "seed_xywh": [
+        991,
+        1586,
+        450,
+        470
+      ],
+      "reason": "別資料の茶色い跡が本文の一画につながる",
+      "roi_xywh": [
+        956,
+        1561,
+        520,
+        520
+      ],
+      "source_sha256": "cc714c94bbd2f1b65d11321119dbdaf9b371027b5ef5039561427577118cdb19",
+      "image_wh": [
+        2149,
+        3114
+      ]
+    },
+    {
+      "id": "S_C01",
+      "page": "200021851_00007_2",
+      "original": "data/split_dataset/val/200021851/200021851_00007_2.jpg",
+      "seed_xywh": [
+        1675,
+        2190,
+        440,
+        490
+      ],
+      "reason": "粒状像は残るが本文との重なりは不確定",
+      "roi_xywh": [
+        1635,
+        2175,
+        520,
+        520
+      ],
+      "source_sha256": "75fdd5252ed78d47d9908060e5b315439068d0db8a53d241cf490d8ce8cd4aeb",
+      "image_wh": [
+        2300,
+        3221
+      ]
+    },
+    {
+      "id": "D_dense_stain",
+      "page": "hnsd001_011",
+      "original": "data/split_dataset/train/hnsd00000/hnsd001_011.jpg",
+      "seed_xywh": [
+        400,
+        460,
+        400,
+        400
+      ],
+      "reason": "濃い茶色の斑点を墨と判定",
+      "roi_xywh": [
+        340,
+        400,
+        520,
+        520
+      ],
+      "source_sha256": "22017c0af65c5f43560ff05cfcc15c6ed8f56b72e60a04a732d9c31b72f05731",
+      "image_wh": [
+        1857,
+        2903
+      ]
+    },
+    {
+      "id": "D_thin_black_water",
+      "page": "hnsd001_011",
+      "original": "data/split_dataset/train/hnsd00000/hnsd001_011.jpg",
+      "seed_xywh": [
+        220,
+        1620,
+        850,
+        760
+      ],
+      "reason": "水染みの中の薄い本文の欠損",
+      "roi_xywh": [
+        265,
+        1620,
+        760,
+        760
+      ],
+      "source_sha256": "22017c0af65c5f43560ff05cfcc15c6ed8f56b72e60a04a732d9c31b72f05731",
+      "image_wh": [
+        1857,
+        2903
+      ]
+    },
+    {
+      "id": "D_thin_black_text",
+      "page": "200003803_00009_2",
+      "original": "data/split_dataset/test/200003803/200003803_00009_2.jpg",
+      "seed_xywh": [
+        600,
+        960,
+        900,
+        900
+      ],
+      "reason": "対照：本文と薄い青灰色の線",
+      "roi_xywh": [
+        670,
+        1030,
+        760,
+        760
+      ],
+      "source_sha256": "e998f3ec838e4706bdd93396e3ac4ccd46cb0528d2c5f074260f91ba7ade1c0f",
+      "image_wh": [
+        2127,
+        3215
+      ]
+    },
+    {
+      "id": "D_hole_edge_new",
+      "page": "200021712_00082_1",
+      "original": "data/split_dataset/train/200021712/200021712_00082_1.jpg",
+      "seed_xywh": [
+        1300,
+        150,
+        400,
+        420
+      ],
+      "reason": "虫食い状の穴・裂けの縁を墨と判定",
+      "roi_xywh": [
+        1240,
+        100,
+        520,
+        520
+      ],
+      "source_sha256": "79ec47dac035351a4cfcb0efaf6cb6ef75524238deb20cbe1f4cdbe5586336e1",
+      "image_wh": [
+        2350,
+        3900
+      ]
+    },
+    {
+      "id": "G_200015843",
+      "page": "200015843_00099_1",
+      "original": "data/split_dataset/test/200015843/200015843_00099_1.jpg",
+      "roi_xywh": [
+        796,
+        1385,
+        650,
+        650
+      ],
+      "seed_xywh": [
+        796,
+        1385,
+        650,
+        650
+      ],
+      "reason": "濃い裏写り候補と表文字の混在",
+      "source_sha256": "a4f96422b1f7d32a320b4e5ed0b62eb34815c0cb9ff2d17ee7dd855781682376",
+      "image_wh": [
+        2154,
+        3222
+      ],
+      "selection": "Added after original-only 11-page ghost contact sheets; no new outputs seen for these pages"
+    },
+    {
+      "id": "G_200018243",
+      "page": "200018243_00020_2",
+      "original": "data/split_dataset/test/200018243/200018243_00020_2.jpg",
+      "roi_xywh": [
+        755,
+        1382,
+        650,
+        650
+      ],
+      "seed_xywh": [
+        755,
+        1382,
+        650,
+        650
+      ],
+      "reason": "濃い裏写り候補と表文字の混在",
+      "source_sha256": "4c0491f57a2c67c7bb0ff9935dd76813fbed1ee20a170132081d0ff44c8b8ed1",
+      "image_wh": [
+        2043,
+        3215
+      ],
+      "selection": "Added after original-only 11-page ghost contact sheets; no new outputs seen for these pages"
+    },
+    {
+      "id": "G_200021071",
+      "page": "200021071_00103_2",
+      "original": "data/split_dataset/test/200021071/200021071_00103_2.jpg",
+      "roi_xywh": [
+        719,
+        1396,
+        650,
+        650
+      ],
+      "seed_xywh": [
+        719,
+        1396,
+        650,
+        650
+      ],
+      "reason": "濃い裏写り候補と表文字の混在",
+      "source_sha256": "0d6bfe33963e45969dbadacd82cd3265c8ad8a495b14a631b7b5c5def6822e60",
+      "image_wh": [
+        1945,
+        3248
+      ],
+      "selection": "Added after original-only 11-page ghost contact sheets; no new outputs seen for these pages"
+    }
+  ],
+  "settings": {
+    "input": "Full native original RGB -> OpenCV gray /255, crop after page processing",
+    "sauvola": {
+      "window": 61,
+      "k": 0.2,
+      "R": 0.5
+    },
+    "wolf": {
+      "window": 61,
+      "k": 0.5
+    },
+    "howe_local": {
+      "c": 160,
+      "canny": "skimage approximation; no automatic tuning"
+    }
+  },
+  "selection": "Known difficult originals from previous inventories, originals inspected first; final hard cases chosen after outputs; exploratory, no held-out accuracy or globally-hardest guarantee.",
+  "parameters_frozen_before_new_outputs": true
+}

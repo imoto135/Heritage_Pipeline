@@ -1,0 +1,477 @@
+{
+  "created_utc": "2026-10-07T15:12:02.812743+00:00",
+  "cases": [
+    {
+      "case_id": "dev_00",
+      "page": "100249376_00056_1",
+      "book": "100249376",
+      "original": "data/train/100249376/100249376_00056_1.jpg",
+      "source_sha256": "58d356496a4bc7facbf5474648d15beb1234871cec9aebed6e02375249b67b92",
+      "ROI": [
+        340,
+        2170,
+        550,
+        520
+      ],
+      "name": "薄い矩形印影",
+      "role": "development",
+      "category": "seal_or_colored_content",
+      "prior_history": "Known prior outputs; development only",
+      "pixel_GT": false
+    },
+    {
+      "case_id": "dev_01",
+      "page": "100249537_00003_2",
+      "book": "100249537",
+      "original": "data/train/100249537/100249537_00003_2.jpg",
+      "source_sha256": "557d28ea4800b88997e0c7da395b4171583533996508bc88088c0cb85a05ad87",
+      "ROI": [
+        1190,
+        480,
+        430,
+        970
+      ],
+      "name": "上部の囲み線と墨",
+      "role": "development",
+      "category": "writing",
+      "prior_history": "Known prior outputs; development only",
+      "pixel_GT": false
+    },
+    {
+      "case_id": "dev_02",
+      "page": "100249537_00003_2",
+      "book": "100249537",
+      "original": "data/train/100249537/100249537_00003_2.jpg",
+      "source_sha256": "557d28ea4800b88997e0c7da395b4171583533996508bc88088c0cb85a05ad87",
+      "ROI": [
+        960,
+        1550,
+        380,
+        600
+      ],
+      "name": "下部の囲み線と墨",
+      "role": "development",
+      "category": "writing",
+      "prior_history": "Known prior outputs; development only",
+      "pixel_GT": false
+    },
+    {
+      "case_id": "dev_03",
+      "page": "200006663_00002_2",
+      "book": "200006663",
+      "original": "data/train/200006663/200006663_00002_2.jpg",
+      "source_sha256": "ae604e514da9007ef8ce6c2a4e01cae0bcdcaeb5be2b4c38e3564f522e6aed3c",
+      "ROI": [
+        730,
+        2180,
+        730,
+        780
+      ],
+      "name": "挿絵に重なる印影",
+      "role": "development",
+      "category": "seal_or_colored_content",
+      "prior_history": "Known prior outputs; development only",
+      "pixel_GT": false
+    },
+    {
+      "case_id": "dev_04",
+      "page": "200020019_00002_2",
+      "book": "200020019",
+      "original": "data/train/200020019/200020019_00002_2.jpg",
+      "source_sha256": "5824181ca480ec7aa37251d7087fa3dc7ed0431d1bdbcc4b9123a491ba8bf9cb",
+      "ROI": [
+        1150,
+        50,
+        600,
+        850
+      ],
+      "name": "上部の印影と墨",
+      "role": "development",
+      "category": "seal_or_colored_content",
+      "prior_history": "Known prior outputs; development only",
+      "pixel_GT": false
+    },
+    {
+      "case_id": "dev_05",
+      "page": "200020019_00002_2",
+      "book": "200020019",
+      "original": "data/train/200020019/200020019_00002_2.jpg",
+      "source_sha256": "5824181ca480ec7aa37251d7087fa3dc7ed0431d1bdbcc4b9123a491ba8bf9cb",
+      "ROI": [
+        1550,
+        2520,
+        300,
+        420
+      ],
+      "name": "下部の印影と墨",
+      "role": "development",
+      "category": "seal_or_colored_content",
+      "prior_history": "Known prior outputs; development only",
+      "pixel_GT": false
+    },
+    {
+      "case_id": "dev_06",
+      "page": "200020019_00082_2",
+      "book": "200020019",
+      "original": "data/train/200020019/200020019_00082_2.jpg",
+      "source_sha256": "1202997f573d6dcdc461fda9941fa0889311ee31c34842f4b49c0c38d037847c",
+      "ROI": [
+        40,
+        1300,
+        480,
+        500
+      ],
+      "name": "薄い印影",
+      "role": "development",
+      "category": "seal_or_colored_content",
+      "prior_history": "Known prior outputs; development only",
+      "pixel_GT": false
+    },
+    {
+      "case_id": "dev_07",
+      "page": "200020019_00082_2",
+      "book": "200020019",
+      "original": "data/train/200020019/200020019_00082_2.jpg",
+      "source_sha256": "1202997f573d6dcdc461fda9941fa0889311ee31c34842f4b49c0c38d037847c",
+      "ROI": [
+        580,
+        2380,
+        500,
+        480
+      ],
+      "name": "明瞭な印影",
+      "role": "development",
+      "category": "seal_or_colored_content",
+      "prior_history": "Known prior outputs; development only",
+      "pixel_GT": false
+    },
+    {
+      "case_id": "dev_08",
+      "page": "200021086_00032_2",
+      "book": "200021086",
+      "original": "data/train/200021086/200021086_00032_2.jpg",
+      "source_sha256": "26214bf730b542def243debc71ee34aadba790cc4773e1326fdff1aff7c45ba6",
+      "ROI": [
+        570,
+        350,
+        650,
+        1100
+      ],
+      "name": "低コントラストの印影",
+      "role": "development",
+      "category": "seal_or_colored_content",
+      "prior_history": "Known prior outputs; development only",
+      "pixel_GT": false
+    },
+    {
+      "case_id": "dev_09",
+      "page": "200021763_00002_2",
+      "book": "200021763",
+      "original": "data/train/200021763/200021763_00002_2.jpg",
+      "source_sha256": "44631919294b4cde57c2cfa8f669ac2648fa855a2f204e25629c115f5b986313",
+      "ROI": [
+        190,
+        580,
+        520,
+        800
+      ],
+      "name": "上側の赤褐色筆記",
+      "role": "development",
+      "category": "writing",
+      "prior_history": "Known prior outputs; development only",
+      "pixel_GT": false
+    },
+    {
+      "case_id": "dev_10",
+      "page": "200021763_00002_2",
+      "book": "200021763",
+      "original": "data/train/200021763/200021763_00002_2.jpg",
+      "source_sha256": "44631919294b4cde57c2cfa8f669ac2648fa855a2f204e25629c115f5b986313",
+      "ROI": [
+        190,
+        1280,
+        560,
+        1260
+      ],
+      "name": "下側の赤褐色筆記と細線",
+      "role": "development",
+      "category": "writing",
+      "prior_history": "Known prior outputs; development only",
+      "pixel_GT": false
+    },
+    {
+      "case_id": "dev_11",
+      "page": "200025191_00004_2",
+      "book": "200025191",
+      "original": "data/train/200025191/200025191_00004_2.jpg",
+      "source_sha256": "28435ed05f9d48efa60f467c628616a3e5dc294642cab424e0014146494add7a",
+      "ROI": [
+        550,
+        1850,
+        440,
+        850
+      ],
+      "name": "細い印影と墨の接触",
+      "role": "development",
+      "category": "seal_or_colored_content",
+      "prior_history": "Known prior outputs; development only",
+      "pixel_GT": false
+    },
+    {
+      "case_id": "dev_12",
+      "page": "100249371_00002_1",
+      "book": "100249371",
+      "original": "data/val/100249371/100249371_00002_1.jpg",
+      "source_sha256": "fd32440af0d2cd93de4b9b7ac820cbc90d84e2bed0e7b23e3796d0b0f4861ff6",
+      "ROI": [
+        880,
+        60,
+        740,
+        680
+      ],
+      "name": "上部の赤と青・墨",
+      "role": "development",
+      "category": "seal_or_colored_content",
+      "prior_history": "Known prior outputs; development only",
+      "pixel_GT": false
+    },
+    {
+      "case_id": "dev_13",
+      "page": "100249371_00002_1",
+      "book": "100249371",
+      "original": "data/val/100249371/100249371_00002_1.jpg",
+      "source_sha256": "fd32440af0d2cd93de4b9b7ac820cbc90d84e2bed0e7b23e3796d0b0f4861ff6",
+      "ROI": [
+        180,
+        2050,
+        530,
+        650
+      ],
+      "name": "下部の赤と墨",
+      "role": "development",
+      "category": "seal_or_colored_content",
+      "prior_history": "Known prior outputs; development only",
+      "pixel_GT": false
+    },
+    {
+      "case_id": "validation_00",
+      "page": "200021637_00003_2",
+      "book": "200021637",
+      "original": "data/val/200021637/200021637_00003_2.jpg",
+      "source_sha256": "8f1529dc441b3546249cb1931261d9401423923ae606b5bc7539b3f5b652d944",
+      "ROI": [
+        1160,
+        2320,
+        500,
+        460
+      ],
+      "name": "淡い印影と濃い朱印・茶色の折り目",
+      "role": "validation",
+      "category": "pale_seal",
+      "prior_history": "Original screened only in this session; project-wide prior usage not excluded",
+      "pixel_GT": false
+    },
+    {
+      "case_id": "validation_01",
+      "page": "100249416_00002_2",
+      "book": "100249416",
+      "original": "data/val/100249416/100249416_00002_2.jpg",
+      "source_sha256": "31f4689eae8f8bc1c944000095d8850950bccafbae6816041b1ee46b113cd8fc",
+      "ROI": [
+        1570,
+        2480,
+        390,
+        380
+      ],
+      "name": "朱印と墨の交差",
+      "role": "validation",
+      "category": "seal_black_contact",
+      "prior_history": "Original screened only in this session; project-wide prior usage not excluded",
+      "pixel_GT": false
+    },
+    {
+      "case_id": "validation_02",
+      "page": "100249416_00002_2",
+      "book": "100249416",
+      "original": "data/val/100249416/100249416_00002_2.jpg",
+      "source_sha256": "31f4689eae8f8bc1c944000095d8850950bccafbae6816041b1ee46b113cd8fc",
+      "ROI": [
+        1580,
+        1575,
+        390,
+        470
+      ],
+      "name": "茶色の場と墨印",
+      "role": "validation",
+      "category": "brown_negative",
+      "prior_history": "Original screened only in this session; project-wide prior usage not excluded",
+      "pixel_GT": false
+    },
+    {
+      "case_id": "validation_03",
+      "page": "200017458_00003_2",
+      "book": "200017458",
+      "original": "data/test/200017458/200017458_00003_2.jpg",
+      "source_sha256": "dba458ff40c3944e93ccbda866a6683c4cdb6cc312576ec66dddfd5d9a0f5ac1",
+      "ROI": [
+        1830,
+        130,
+        280,
+        380
+      ],
+      "name": "赤褐色の朱印と紙の斑点",
+      "role": "validation",
+      "category": "seal",
+      "prior_history": "Original screened only in this session; project-wide prior usage not excluded",
+      "pixel_GT": false
+    },
+    {
+      "case_id": "validation_04",
+      "page": "200017458_00003_2",
+      "book": "200017458",
+      "original": "data/test/200017458/200017458_00003_2.jpg",
+      "source_sha256": "dba458ff40c3944e93ccbda866a6683c4cdb6cc312576ec66dddfd5d9a0f5ac1",
+      "ROI": [
+        1590,
+        180,
+        240,
+        300
+      ],
+      "name": "朱印横の茶色の紙・斑点",
+      "role": "validation",
+      "category": "brown_negative",
+      "prior_history": "Original screened only in this session; project-wide prior usage not excluded",
+      "pixel_GT": false
+    },
+    {
+      "case_id": "validation_05",
+      "page": "200015779_00089_2",
+      "book": "200015779",
+      "original": "data/train/200015779/200015779_00089_2.jpg",
+      "source_sha256": "cadc58d69497812b2a99065e399202d818255d759998b55e177def6b0b68a9d2",
+      "ROI": [
+        1730,
+        2700,
+        300,
+        400
+      ],
+      "name": "細い朱印と墨の近接",
+      "role": "validation",
+      "category": "seal",
+      "prior_history": "Original screened only in this session; project-wide prior usage not excluded",
+      "pixel_GT": false
+    },
+    {
+      "case_id": "supplemental_known_book_06",
+      "page": "200010454_00012_1",
+      "book": "200010454",
+      "original": "data/test/200010454/200010454_00012_1.jpg",
+      "source_sha256": "44b26e75550a5011ce39b71197c1e7e2bd8e576a166241a95ce9afff4a26d259",
+      "ROI": [
+        1060,
+        500,
+        250,
+        260
+      ],
+      "name": "細い朱の傍線",
+      "role": "supplemental_known_book",
+      "category": "red_line",
+      "prior_history": "Original screened only in this session; project-wide prior usage not excluded",
+      "pixel_GT": false
+    },
+    {
+      "case_id": "supplemental_known_book_07",
+      "page": "200010454_00012_1",
+      "book": "200010454",
+      "original": "data/test/200010454/200010454_00012_1.jpg",
+      "source_sha256": "44b26e75550a5011ce39b71197c1e7e2bd8e576a166241a95ce9afff4a26d259",
+      "ROI": [
+        1490,
+        680,
+        220,
+        260
+      ],
+      "name": "赤褐色の句点と墨",
+      "role": "supplemental_known_book",
+      "category": "red_punctuation",
+      "prior_history": "Original screened only in this session; project-wide prior usage not excluded",
+      "pixel_GT": false
+    },
+    {
+      "case_id": "supplemental_known_book_08",
+      "page": "200010454_00006_2",
+      "book": "200010454",
+      "original": "data/test/200010454/200010454_00006_2.jpg",
+      "source_sha256": "065fb6a6055e9ec24dbb47e690c9672bf5506679ab5cad60924e79c330e2c3e7",
+      "ROI": [
+        1440,
+        620,
+        250,
+        270
+      ],
+      "name": "薄い朱の句点・小線",
+      "role": "supplemental_known_book",
+      "category": "red_punctuation",
+      "prior_history": "Original screened only in this session; project-wide prior usage not excluded",
+      "pixel_GT": false
+    },
+    {
+      "case_id": "supplemental_known_book_09",
+      "page": "200010454_00006_2",
+      "book": "200010454",
+      "original": "data/test/200010454/200010454_00006_2.jpg",
+      "source_sha256": "065fb6a6055e9ec24dbb47e690c9672bf5506679ab5cad60924e79c330e2c3e7",
+      "ROI": [
+        1660,
+        370,
+        100,
+        500
+      ],
+      "name": "朱近傍の茶色の折り目",
+      "role": "supplemental_known_book",
+      "category": "brown_negative",
+      "prior_history": "Original screened only in this session; project-wide prior usage not excluded",
+      "pixel_GT": false
+    },
+    {
+      "case_id": "supplemental_known_book_10",
+      "page": "200010454_00002_2",
+      "book": "200010454",
+      "original": "data/test/200010454/200010454_00002_2.jpg",
+      "source_sha256": "177776f90fc08b12e2f59a37773ef433556f43ebe47c503c2d676595a08a60d1",
+      "ROI": [
+        1655,
+        1810,
+        75,
+        195
+      ],
+      "name": "茶色の折り目・過去の誤保護診断",
+      "role": "supplemental_known_book",
+      "category": "brown_negative",
+      "prior_history": "Original screened only in this session; project-wide prior usage not excluded",
+      "pixel_GT": false
+    }
+  ],
+  "development_books": [
+    "100249371",
+    "100249376",
+    "100249537",
+    "200006663",
+    "200020019",
+    "200021086",
+    "200021763",
+    "200025191"
+  ],
+  "validation_books": [
+    "100249416",
+    "200015779",
+    "200017458",
+    "200021637"
+  ],
+  "scope": "RGB mark/stain separation, not pigment identification or reconstructed text",
+  "validation": "Local fixed-configuration book-separated diagnostic; not globally unseen external test",
+  "selection": "Only original images; no new method masks or restoration outputs yet",
+  "rule": "Do not use validation books for background synthesis, fitting or parameter selection; changes after inspection are exploratory",
+  "main_generalization_limit": "Validation positives are seals, not independent red handwriting books",
+  "no_full_pixel_GT": true
+}

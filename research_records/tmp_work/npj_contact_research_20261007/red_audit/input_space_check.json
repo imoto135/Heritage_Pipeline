@@ -1,0 +1,32 @@
+{
+  "records": [
+    {
+      "id": "N02",
+      "raw": 0,
+      "raw_source_sha256": "d8fe32dc777814394c58baacccfdea957e2ab0fe9c63c667b98fbdf35bcfba63",
+      "ACE": 0,
+      "ACE_source_sha256": "bae541f802031996fa4feabe7a6edaec8e921656823854157ca976fc75ecf4b6",
+      "classifier_input": 0,
+      "classifier_input_source_sha256": "da821a3d640cd17ad8946913694c2aa5203c648d8d9183d37bb25fdb6e695eb3"
+    },
+    {
+      "id": "N03",
+      "raw": 0,
+      "raw_source_sha256": "75e5e7ff2f2ccd07ef5033dffe8595632ffeebc6b8e3473e94b14de1868099e7",
+      "ACE": 3,
+      "ACE_source_sha256": "0c733c138f6307eee1197ec9db98b515fe8cce1c226b88671f274046c310652b",
+      "classifier_input": 3,
+      "classifier_input_source_sha256": "97eb563b1fb26d93b1ad642b5c6299f67d2d1c65b291c1ae15c6cf4b5df4ab29"
+    },
+    {
+      "id": "F41",
+      "raw": 350,
+      "raw_source_sha256": "1202997f573d6dcdc461fda9941fa0889311ee31c34842f4b49c0c38d037847c",
+      "ACE": 798,
+      "ACE_source_sha256": "0a13694180d4c320aa8a8e74f7c949e0b269c0f858cbc923e9ae64023302af50",
+      "classifier_input": 798,
+      "classifier_input_source_sha256": "6817b4a569c976d779cf753177c5a907b2d8bfd1b4500f969389908eb5bff7fd"
+    }
+  ],
+  "note": "absolute rule tested separately on raw and exact stored classifier input; this is not a CSC regeneration experiment"
+}

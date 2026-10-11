@@ -1,0 +1,37 @@
+{
+  "method": "stain",
+  "device": "cuda:0",
+  "settings": {
+    "native_resolution": true,
+    "resize": false,
+    "tile": 512,
+    "halo": 64,
+    "core": 384,
+    "padding": "reflect101 raw model input+prompt on frame boundary",
+    "blend": "disjoint cores, halo discarded",
+    "precision": "float32",
+    "tf32": false,
+    "model_architecture_changed": false,
+    "weights_changed": false,
+    "input": "aligned reference original only, not saved npj or masks",
+    "output": "raw external method comparison, not adopted or pasted onto saved npj",
+    "pixel_GT": false,
+    "decoding": {
+      "stain": "first return element, clamp [0,1], RGB to BGR, round*255",
+      "docres": "softmax first 2 channels, argmax=1 is white background as author code"
+    },
+    "provenance": {
+      "stain": "Author GitHub release Weights/StainDoc.pth, not mark/seal weights",
+      "docres": "Community mirror DaVinciCode/doctra-docres-main, hash agrees with second mirror; original OneDrive requires auth; author-copy identity not independently verified"
+    }
+  },
+  "dependencies": {
+    "tmp_work/npj_literature_models_20261002/repos/StainRestorer/models/StainRestorer.py": "d12181917d63a80bda21fa6a938baad561748b3b086478761eab0a67d5dba11a",
+    "tmp_work/npj_literature_models_20261002/weights/StainDoc.pth": "7cdbd674367535d4f429ef077030b930da2a460012fe8fc44d995ead2f7418ee"
+  },
+  "source_sha256": "6381d3845145f7c6c3f224ae74ed52b03c54c897909010b42fb9a1fdf3e2e8b2",
+  "selection_sha256": "dbb7ef227313b1930b07e287c92386e3446f0b62a30a283ef187d353eaabfacb",
+  "created": 1791366610.9123995,
+  "changes": "new frozen real cases; stain native tiles and 256px resized whole-frame both reported",
+  "official_benchmark_reproduction": false
+}

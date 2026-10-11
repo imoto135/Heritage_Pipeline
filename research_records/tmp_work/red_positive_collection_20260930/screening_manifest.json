@@ -1,0 +1,35 @@
+{
+  "purpose": "Collect original-image candidates; no method outputs or manual pixel labels used",
+  "settings": {
+    "original_roots": [
+      "data/train",
+      "data/val",
+      "data/test"
+    ],
+    "decode": "OpenCV IMREAD_REDUCED_COLOR_4; triage only",
+    "loose_red": "HSV H<=22 or >=168, S>=35, V>=20, R>=1.12*G and R>=1.12*B",
+    "saturated_red": "loose AND S>=75 AND R>=1.25*G AND R>=1.25*B",
+    "dark_red": "loose AND V<140",
+    "ranking_region": "inner 5%..95%, not a paper mask",
+    "per_book": "up to 2 saturated and 2 loose/dark candidates, separating sorted page indices by max(2,N//20)",
+    "caveat": "Color-based purposive screening, not a representative or unbiased benchmark. Faint thin red may be missed."
+  },
+  "source_sha256": "fa3bacaff91cb96fe9bf99f2fb60c12125ea221a7eb70a20d363ef329d4b1f0b",
+  "prior_manifest_sha256": "aee81173acc492fe09bf29acf6e4b8b78411bfb1816532f7949d368bb426c3b2",
+  "excluded_development_book_ids": [
+    "200003803",
+    "200010454",
+    "200017197",
+    "200017197_00008_0",
+    "200018243",
+    "200019865",
+    "200021063",
+    "200021071",
+    "200021660",
+    "200021851",
+    "200021869",
+    "200022050",
+    "hnsd00000"
+  ],
+  "opencv": "4.13.0"
+}

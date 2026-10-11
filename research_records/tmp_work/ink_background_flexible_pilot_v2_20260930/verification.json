@@ -1,0 +1,17 @@
+{
+  "status": "passed",
+  "pages": 3,
+  "diagnostic_rectangles": 5,
+  "original_geometry_pigment_unchanged": true,
+  "existing_v1_scores_exact": true,
+  "finite_nonnegative_estimates": true,
+  "numerical_checks": {
+    "non_Gaussian_positive_density_recovered": true,
+    "arbitrary_color_background_can_explain_same_signal": true,
+    "withheld_intensities_excluded": true
+  },
+  "dense_edit_mask_created": false,
+  "pixel_GT": false,
+  "neural_training": false,
+  "independent_accuracy_test": false
+}

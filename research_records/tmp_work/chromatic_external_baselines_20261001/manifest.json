@@ -1,0 +1,24 @@
+{
+  "source_sha256": "c549c43a699768461533ddbf0c10244eae96c5cfaafe1b93da66528be6722c81",
+  "dependencies": {
+    "scripts/benchmark/prepare_chromatic_external_baselines.py": "c549c43a699768461533ddbf0c10244eae96c5cfaafe1b93da66528be6722c81",
+    "tmp_work/chromatic_core_rim_mask_pilot_20261001/manifest.json": "fd09c8e78c42fe9c54b230dbdbe2fd6616517a531028cd387a801738a19a3792",
+    "tmp_work/chromatic_core_rim_mask_pilot_20261001/complete.json": "5648b658180551df6f5a994142f2f43acb3d8632bde139ea9ea54b1a7d53310c",
+    "tmp_work/full_upper_strong_restoration_v2_20261001/manifest.json": "03ed393f2419f325056a0d1d2db8ec0ff21c50c9a6c47812f8e919e5f5fbfafd",
+    "tmp_work/full_upper_strong_restoration_v2_20261001/complete.json": "900d9cad1697a15e22bf7e58d7eea9bf5a29e91be1e84f45454a3879b1415ad5",
+    "scripts/benchmark/probe_paper_boundary_pair_gate_v2.py": "8cfbe50a192ad12e0254a9bcff31271f357717fa88845df7b78820fc511580fe",
+    "scripts/benchmark/probe_paper_rim_lowfrequency_v2.py": "9d1dc0c515f79f86ab502b1a9dea03ea16fc0b42e670b602f5032fe3df0289c5",
+    "scripts/benchmark/probe_paper_seam_texture.py": "cd5bd2fd01175321c7c7e04b02cc25774a69c168e913dd57e7f5fdbaa9975003",
+    "scripts/benchmark/probe_known_paper_harmonic_fill_v2.py": "42869e62cd44ebb3a8454e7af3daf050baf280e408141b5624f65a4a0de38f95",
+    "data/split_dataset/train/200021712/200021712_00082_1.jpg": "79ec47dac035351a4cfcb0efaf6cb6ef75524238deb20cbe1f4cdbe5586336e1",
+    "tmp_work/known_paper_harmonic_fill_pilot_v2_20261001/reference_pages/200021712_00082_1/paper.png": "ea423ded5b25bf54cba065b6c05ca1e37dcd968b72143199a771eabeabb8be44"
+  },
+  "settings": {
+    "baseline": "same frozen full_upper short mask; pure-paper only, original elsewhere",
+    "additional_ROIs": 4,
+    "selected_after_mask_outputs": true,
+    "pixel_GT": false,
+    "minimum_boundary_pairs": 16,
+    "new_DDRM": false
+  }
+}

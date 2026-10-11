@@ -1,0 +1,22 @@
+{
+  "name": "partial_dense_native",
+  "page": "external_Syr341_224",
+  "book": "Syr341",
+  "role": "external_qualitative_only",
+  "source_sha256": "937dd7f19ce0ef67c4df61f2ad5bcca494e1406021b53b2d8abdab7b361190ba",
+  "resource_sha256": "43f5476ebf795e7f5fde10dc1e870e872eab6e381489cb0a96361dc5838d537c",
+  "protocol_sha256": "4f876d008f2cede2f0f845d7bd6ef94e25e216525e6609d75b2dc914dca4c397",
+  "script_sha256": "d1afa94d1dbccb16e01303d1866e9b247e8dd4b87543cf4eb9c3cbda92268280",
+  "native_inference_source_sha256": "04be92bef36d40cbb29da1ed410ea580e5112be110b1056d3d44e6d67531e903",
+  "threshold": 0.5,
+  "mark_pixels": 499557,
+  "seconds": 1.7784422090007865,
+  "not_for_training": true,
+  "no_pixel_or_reading_GT": true,
+  "outputs": {
+    "mark_mask.png": "5ab420d1897d44558171d5cd2e51eb880354d417fdc0924a0261ecc39377688d",
+    "mark_probability_preview.png": "0fca0a0620a38f180b2b74a8b404c675858f5120a406edbdf33424ea09852527",
+    "stain_probability_preview.png": "b23757b20634220364d1d2ff88ef560a777f3a968d0e2f9af0ba688f5939bbc8",
+    "stain_mask.png": "7fdab95d6f4711b9d69fa628af2f41525d5ffae7d6fce207878d001c1bb7d082"
+  }
+}

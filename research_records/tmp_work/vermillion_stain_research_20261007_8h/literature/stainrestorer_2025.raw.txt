@@ -1,0 +1,1102 @@
+High-Fidelity Document Stain Removal via A Large-Scale Real-World Dataset
+and A Memory-Augmented Transformer
+Mingxian Li1*
+, Hao Sun1*
+, Yingtie Lei 2*
+,
+Xiaofeng Zhang 3
+, Yihang Dong 4
+, Yilin Zhou1
+, Zimeng Li 5
+, Xuhang Chen 1,2†
+1
+School of Computer Science and Engineering, Huizhou University
+2
+Faculty of Science and Technology, University of Macau
+3
+School of Electronic Information and Electrical Engineering, Shanghai Jiao Tong University
+4
+Shenzhen Institute of Advanced Technology, Chinese Academy of Sciences
+5
+School of Electronic and Communication Engineering, Shenzhen Polytechnic University
+https://github.com/CXH-Research/StainRestorer
+Abstract
+Document images are often degraded by various stains,
+significantly impacting their readability and hindering
+downstream applications such as document digitization and
+analysis. The absence of a comprehensive stained document
+dataset has limited the effectiveness of existing document
+enhancement methods in removing stains while preserving
+fine-grained details. To address this challenge, we construct
+StainDoc, the first large-scale, high-resolution (2145 ×
+2245) dataset specifically designed for document stain re-
+moval. StainDoc comprises over 5,000 pairs of stained
+and clean document images across multiple scenes. This
+dataset encompasses a diverse range of stain types, severi-
+ties, and document backgrounds, facilitating robust training
+and evaluation of document stain removal algorithms. Fur-
+thermore, we propose StainRestorer, a Transformer-based
+document stain removal approach. StainRestorer employs a
+memory-augmented Transformer architecture that captures
+hierarchical stain representations at part, instance, and se-
+mantic levels via the DocMemory module. The Stain Re-
+moval Transformer (SRTransformer) leverages these fea-
+ture representations through a dual attention mechanism:
+an enhanced spatial attention with an expanded receptive
+field, and a channel attention captures channel-wise fea-
+ture importance. This combination enables precise stain
+removal while preserving document content integrity. Ex-
+tensive experiments demonstrate StainRestorer’s superior
+performance over state-of-the-art methods on the Stain-
+Doc dataset and its variants StainDoc Mark and Stain-
+Doc Seal, establishing a new benchmark for document stain
+removal. Our work highlights the potential of memory-
+*Equal contribution.
+†Corresponding author.
+augmented Transformers for this task and contributes a
+valuable dataset to advance future research.
+1. Introduction
+Document contamination by stains significantly impairs
+readability and visual quality, hindering research and appli-
+cations such as Optical Character Recognition (OCR) [1,2].
+Eliminating these contaminants enhances document usabil-
+ity and broadens their application scope, particularly in
+fields like archaeology [3]. However, traditional document
+enhancement methods face considerable challenges when
+applied to stained documents, often lacking precision in
+handling fine-grained information crucial for accurate stain
+identification and removal [4–7]. These approaches rely
+on predefined image features or rules and perform poorly
+when confronted with complex stain residues, especially
+when stains overlap with text or image edges [8]. Moreover,
+they often fail to preserve intricate document details, such
+as fonts, images, and various graphical elements, during the
+stain removal process [9].
+In recent years, deep neural networks have achieved
+great success in various visual tasks [10–20]. Recent ad-
+vancements in deep learning have also introduced promis-
+ing solutions to document enhancement [21–24], enabling
+the learning of complex document features from large
+datasets and the removal of degradation while preserv-
+ing document details and integrity. For instance, DocD-
+iff [25] effectively manages complex document details
+through its high-frequency residual refinement module,
+while Transformer-based models [26–40] leverage self-
+attention mechanisms to achieve notable results in tasks
+such as geometric and illumination correction. However,
+these approaches also face limitations, primarily the re-
+1
+arXiv:2410.22922v1
+[cs.CV]
+30
+Oct
+2024
+quirement for substantial high-quality training data and the
+potential struggle with certain stain types, such as ink and
+tea stains [41–43].
+To address these shortcomings, we propose a compre-
+hensive approach that includes the construction of a large-
+scale, high-resolution dataset specifically designed for doc-
+ument stain removal and the development of StainRestorer,
+a Transformer-based model that effectively removes stains
+while preserving fine-grained document information. The
+StainDoc dataset encompasses various document types and
+stains, ensuring robust model performance across diverse
+scenarios. StainRestorer introduces a memory module to
+enhance the model’s feature representation capabilities and
+its ability to handle complex stains through hierarchical
+feature extraction and semantic memorization mechanisms.
+The Stain Removal Transformer (SRTransformer), another
+key component of the StainRestorer architecture, leverages
+rich, hierarchical stain representations from the DocMem-
+ory module to perform precise stain removal. It employs
+an enhanced spatial attention mechanism to better capture
+stain patterns across the document, coupled with a chan-
+nel attention mechanism that focuses on channel-wise re-
+lationships to emphasize crucial features for stain identifi-
+cation and removal. This dual-attention approach enables
+SRTransformer to effectively remove stains while preserv-
+ing the integrity of the underlying document content.
+Our contributions can be summarized as follows:
+1. We introduce StainDoc, the first large-scale, high-
+resolution (2145 × 2245) dataset specifically designed
+for document stain removal. This dataset comprises
+over 5,000 pairs of stained and clean document images
+across multiple scenes, encompassing a diverse range
+of stain types, severities, and document backgrounds,
+filling a critical gap in the field of document enhance-
+ment.
+2. We propose the DocMemory module, which captures
+hierarchical stain representations at part, instance, and
+semantic levels by employing a series of Memory
+Units to extract and analyze deep features at various
+levels of granularity within the document.
+3. We propose the Stain Removal Transformer (SRTrans-
+former), which enhances the model’s spatial mapping
+ability for precise stain removal, effectively distin-
+guishing between stain artifacts and genuine document
+details, leading to high-quality stain removal while
+preserving document content integrity.
+The remainder of this paper is structured as fol-
+lows: Sec. 2 reviews related work and identifies research
+gaps. Sec. 3 introduces the StainDoc dataset, detailing its
+construction and unique features. Sec. 4 presents our pro-
+posed StainRestorer methodology. Sec. 5 evaluates Stain-
+Restorer’s performance against state-of-the-art methods.
+Finally, Sec. 6 concludes the paper.
+2. Related Work
+2.1. Document Enhancement
+Recent advancements in document enhancement have
+addressed various image degradation issues. DeepOtsu [44]
+introduced an iterative deep learning framework for en-
+hancement and binarization. DocDiff [25] presented the
+first diffusion-based framework for deblurring, denoising,
+and watermark removal. DocProj [45] focused on correct-
+ing geometric and illumination distortions.
+GAN-based approaches have shown promise, with
+GAN-HTR [46] integrating text recognition, DE-GAN [47]
+restoring severely degraded images, and UDOC-GAN [48]
+addressing illumination correction using unpaired data.
+Other notable contributions include GCDRNet [49] for
+improving camera-captured documents, DocNLC [50] for
+handling multiple degradation types, and Text-DIAE [51]
+for joint text recognition and image enhancement.
+Despite these advancements, the removal of stains in
+documents remains largely unaddressed. Our work aims
+to fill this gap by constructing a new dataset for docu-
+ment image enhancement, including stained documents,
+and proposing a new method for document stain removal.
+2.2. Vision Transformer
+Vision Transformers have revolutionized many image
+processing tasks [52–59]. Dosovitskiy et al. pioneered
+Transformer’s application to image recognition [60]. The
+Swin Transformer [61] introduced a hierarchical structure
+and shifted window approach, later adapted for image
+restoration in SwinIR [62].
+Uformer [63] and Restormer [64] further advanced
+Transformer-based image restoration, focusing on efficient
+processing of high-resolution images.
+In document enhancement field, DocTr [26] and its
+improved version [65] addressed geometric and lighting
+distortions. DocEnTr [27] employed self-attention and
+patch-based processing for document enhancement, while
+DocRes [28] introduced dynamic task-specific prompts for
+unified document restoration.
+Given the demonstrated effectiveness of Vision Trans-
+formers in various image processing tasks, we have incor-
+porated this architecture into our proposed method for doc-
+ument stain removal.
+3. StainDoc Dataset
+To address the critical gap in document stain removal
+research, we introduce StainDoc, the first comprehensive
+dataset specifically designed for this task. This dataset
+comprises over 5,000 pairs of stained and clean document
+2
+(a) (b) (c)
+Figure 1. Dataset construction process: (a) Stain application and
+document preparation, (b) Photography under controlled condi-
+tions, (c) Post-processing and standardization.
+images, enabling the development and evaluation of well-
+trained models for precise stain removal and restoration of
+clear, clean original documents.
+Fig. 1 illustrates the dataset construction process. We
+collected around 300 documents with multilingual texts and
+figures. We simulated common staining factors to replicate
+real-world scenarios, such as tea, red ink, and blue ink, ap-
+plying varying degrees of stains to each document. Subse-
+quently, we captured the documents with different levels of
+degradation under consistent lighting conditions. We then
+standardized the classification of documents based on stain
+type and severity. Finally, we screened, cropped, and pre-
+processed the documents.
+To ensure dataset consistency, we utilized standard A4
+paper as the document base throughout. We corrected color
+temperature deviations by setting the white balance, miti-
+gating color casts that occur under specific light sources.
+Manual focus and ISO value adjustments were employed
+during photography to maintain consistency in image cap-
+ture. We selected common staining agents encountered in
+daily life, specifically red ink, blue ink, black tea, and green
+tea. These stains can be broadly categorized into two types:
+• Liquid beverage stains: Tea brewed from green and
+black tea leaves, characterized by yellow-brown and
+red-brown colors. These stains contain components
+like tea polyphenols, causing varying degrees of stain-
+ing and penetration on the document surface.
+• Ink stains: Including red and blue ink, which have
+bright colors and strong permeability, easily forming
+spots or lines on documents.
+By selecting these common staining agents, our dataset
+closely aligns with real-world application scenarios. Addi-
+tionally, our dataset encompasses shooting effects from var-
+ious mobile phone models, including OPPO A52, HUAWEI
+nova 6, Redmi Note 13Pro+, iPhone 11 Pro Max, and VIVO
+Z5x. The camera aspect ratio was set to 4:3 to ensure clarity
+and uniform processing. In the final stage of dataset forma-
+tion, we conducted rigorous screening to ensure dataset in-
+(a) (b)
+Figure 2. A example image pair from the Stain5K dataset: (a) is
+stained document image and (b) is clean original document image.
+More dataset samples are available in the supplementary material.
+tegrity and quality. We eliminated samples with poor shoot-
+ing quality (e.g., blurry images, low contrast, and signifi-
+cant detail loss) and filtered out data with extremely high
+content similarity to maintain diversity. After cropping out-
+of-boundary areas, we derived a total of 5,060 image pairs
+with a mean resolution of 2145 × 2245. A example image
+pair is shown in Fig. 2.
+4. Methodology
+This section details the architecture and training method-
+ology of StainRestorer. StainRestorer integrates a memory-
+augmented module (DocMemory) with a Stain Removal
+Transformer (SRTransformer) to effectively address the
+challenges of real-world document stain removal.
+4.1. Overview
+StainRestorer, illustrated in Fig. 3, distinguishes itself
+through its hierarchical approach to stain representation
+and removal. The model first leverages the DocMemory
+module to capture diverse stain representations at multi-
+ple levels: part, instance, and semantic. This hierarchical
+representation facilitates a comprehensive understanding of
+the stain characteristics. Subsequently, the SRTransformer
+module, inspired by Restormer [66], utilizes these rich rep-
+resentations to perform accurate stain removal. By com-
+bining the hierarchical representation learning of DocMem-
+ory with the powerful spatial mapping capabilities of SR-
+Transformer, StainRestorer achieves high-quality document
+stain removal, effectively preserving the underlying docu-
+ment content.
+3
+Feature Refinement
+3×3 Conv
+3×3 Conv
+3×3 Conv
+Sigmoid
+Output
+Projection
+SRTransformer
+R
+Input Projection
+SRTransformer
+×2
+U-net
+Encoder
+SRTransformer
+SRTransformer
+×2
+SRTransformer
+1 -
+𝜎 𝑤
+2
+Sigmoid
+w
+𝜎
+𝑤
+DocMemory
+ProtoMix
+U-net
+Decoder
+StainRestorer
+Stained Image
+SRTransformer
+Reshape
+Element-Wise Subtraction
+Matrix Multiplication
+Element-Wise Addition
+Element-Wise Division
+Downsampling Operation
+Upsampling Operation
+MHDCA
+OCA
+SRTransformer
+3×3 Conv
+Multi-Head Depthwise Channel
+Attention
+Overlapping Cross-Attention
+Convolution Network with 3×3
+Kernal Size
+Stain Removal Transformer
+R
+Clean Image
+DocMemory Unit
+Linear
+Softmax
+λ
+ε
+Sparsity-inducing
+ReLu abs
+Norm
+Linear
+SRTransformer
+SRTransformer
+Layer Norm
+OCA
+Layer Norm
+OCA
+FFN
+Layer Norm
+MHDCA
+Layer Norm
+MHDCA
+FFN
+SRTransformer
+ypart
+yins
+ysem
+÷
+÷
+Semantic Memory
+Unit
+Instance
+Memory Unit
+Part
+Memory Unit
+Figure 3. The overall architecture of the proposed StainRestorer. It consists of a DocMemory module for hierarchical stain representation
+and a Stain Removal Transformer (SRTransformer) for accurate stain removal. The DocMemory module captures part-level, instance-level,
+and semantic-level stain features, which are then fused using the ProtoMix strategy. The SRTransformer leverages these rich representations
+to perform precise stain removal while preserving document content.
+4.2. DocMemory Module
+The DocMemory module serves as the foundation of
+StainRestorer, responsible for extracting and analyzing
+deep features at various levels of granularity within the
+document. This module employs a three-level hierarchical
+structure:
+• Part-Level: Captures fine-grained details and local pat-
+terns within the stain.
+• Instance-Level: Aggregates information from part-
+level features to represent individual stain instances.
+• Semantic-Level: Extracts high-level semantic infor-
+mation and relationships between different stain in-
+stances.
+This hierarchical design enables StainRestorer to progres-
+sively refine its understanding of the document’s content
+and the characteristics of the stains present.
+The DocMemory module achieves this hierarchical rep-
+resentation through a series of stacked Memory Units. Each
+unit operates as a library of learned visual prototypes, anal-
+ogous to a visual dictionary. These prototypes represent
+characteristic visual patterns within the document. The core
+4
+objective of each Memory Unit is to identify the prototypes
+that resonate most strongly with the input features, effec-
+tively quantifying the presence of specific visual patterns at
+a particular level of granularity.
+Formally, the memory bank within each unit is repre-
+sented by a matrix M ∈ RN×C
+, where N denotes the
+number of memory items (prototypes) and C represents the
+fixed feature dimension. The number of prototypes, N, is
+a hyperparameter adjustable based on the complexity of the
+task and the dataset. The relevance of each prototype to a
+given input feature fi is determined by calculating a simi-
+larity score using cosine similarity:
+sij =
+exp(d(fi, mj))
+PM
+j=1 exp(d(fi, mj))
+,
+d (fi, mj) =
+fim⊤
+j
+∥fi∥ ∥mj∥
+,
+(1)
+where mj represents the j-th prototype in the memory
+bank. The resulting attention weight sij quantifies the rele-
+vance of the j-th prototype to the input feature vector fi.
+To further enhance the efficiency and discriminative ca-
+pability of the memory access, a sparsity-inducing mech-
+anism is introduced. This mechanism operates on the at-
+tention weights, promoting a selective focus on the most
+informative prototypes by suppressing activations below a
+certain threshold.
+The final output of a Memory Unit is a weighted sum of
+the prototypes:
+y = Memory(f, M) =
+K
+X
+j=1
+sijmj. (2)
+The hierarchical nature of DocMemory is reflected in the
+way higher-level prototypes are derived. Each higher-
+level prototype summarizes information from its lower-
+level counterparts. Specifically:
+ypart = Mpart(f, Mpart),
+yins = Mins(ypart, Mins),
+ysem = Mpart(yins, Msem).
+(3)
+This hierarchical workflow ensures that the final represen-
+tation captures both local details and global context.
+Finally, to leverage the complementary information em-
+bedded within these distinct feature hierarchies, a learnable
+mixing mechanism called ProtoMix dynamically combines
+the part-level, instance-level, and semantic-level features.
+This allows the model to adaptively emphasize different
+levels of representation based on the specific task require-
+ments:
+ymix = σ(w) · ysem +
+1 − σ(w)
+2
+· yins +
+1 − σ(w)
+2
+· ypart,
+(4)
+where σ(w) represents the sigmoid function applied to the
+learnable weight parameter w. This mixing strategy em-
+powers the model to effectively capture both fine-grained
+details and high-level semantic information, leading to a
+more holistic and informative document representation.
+4.3. Stain Removal Transformer (SRTransformer)
+Inspired by the effectiveness of Restormer [66] in image
+restoration tasks, StainRestorer employs a modified Trans-
+former architecture named Stain Removal Transformer
+(SRTransformer). This module is specifically designed to
+enhance the model’s spatial mapping ability for precise
+stain removal.
+SRTransformer incorporates two complementary atten-
+tion mechanisms. Multi-Head Depthwise Channel Atten-
+tion (MHDCA) focuses on channel-wise relationships by
+applying 1 × 1 convolution and 3 × 3 depthwise convolu-
+tions to generate query (Q), key (K), and value (V ) tensors,
+which are then split into multiple heads, normalized, and
+used to compute attention weights with a learnable temper-
+ature parameter. The output is reshaped and passed through
+a 1 × 1 convolution, emphasizing crucial channels for stain
+removal. Overlapping Cross-Attention (OCA) [67]: En-
+hances spatial attention by expanding the receptive field
+for key (K) and value (V ) computations. This enables
+each query (Q) to access a broader context, improving the
+model’s ability to capture long-range dependencies and spa-
+tial relationships relevant to stain removal.
+The SRTransformer operates within a U-net encoder-
+decoder structure, as shown in Fig. 3. It takes the output
+of DocMemory’s ProtoMix module, ymix, and projects it
+into a higher-dimensional embedding space to enhance its
+representational capacity, resulting in Fin. The workflow of
+SRTransformer can be represented as follows:
+Fc = Fin + MHDCA(LayerNorm(Fin)),
+Fcout
+= Ft + FFN(LayerNorm(Ft)),
+Fs = Fcout
++ OCA(LayerNorm(Ftout
+)),
+Fsout
+= Fs + FFN(LayerNorm(Fs)),
+(5)
+where Fc and Fcout
+denote the transitional feature and the
+resultant output from the MHDCA respectively. Fs and
+Fsout represent the intermediate feature and the final out-
+put of the OCA. MHDCA symbolizes the Multi-Head
+Depthwise Channel Attention operation, while OCA rep-
+resents the function of the Overlapping Cross-Attention.
+LayerNorm is used to indicate the Layer Normalization
+process. FFN stands for the Feed-Forward Network com-
+ponent of the architecture.
+Through this process, SRTransformer refines the repre-
+sentation to distinguish between stain artifacts and genuine
+document details, leading to effective stain removal while
+preserving the integrity of the document content.
+5
+(a) Input (b) illtrtemplate (c) DocNLC (d) GCDRNet (e) DEGAN (f) UDoc-GAN (g) Ours (h) Target
+Figure 4. Qualitative comparison of stain removal performance across different models. The first row presents results on the StainDoc
+dataset, the second row on the StainDoc Mark dataset, and the third row on the StainDoc Seal dataset.
+4.4. Loss Function
+StainRestorer is trained using a composite loss function
+that balances pixel-wise accuracy and the preservation of
+structural information. This is achieved by combining the
+Mean Squared Error (MSE) loss LMSE and the Structural
+Similarity Index Measure (SSIM) loss LSSIM .
+The LMSE measures the average squared difference be-
+tween the restored image (ˆ
+I) and the target image (I):
+LMSE(ˆ
+I, I) =
+1
+N
+N
+X
+i=1
+(ˆ
+I(i) − I(i))2
+, (6)
+where N represents the total number of pixels in the images.
+While LMSE effectively captures pixel-level differ-
+ences, it does not fully account for perceived visual quality,
+particularly concerning structural information. To address
+this, the LSSIM is used, which compares images based on
+luminance, contrast, and structure. The LSSIM is calcu-
+lated locally over sliding windows and then averaged:
+LSSIM (ˆ
+I, I) = 1−
+(2µˆ
+IµI + C1)(2σˆ
+II + C2)
+(µ2
+ˆ
+I
++ µ2
+I + C1)(σ2
+ˆ
+I
++ σ2
+I + C2)
+, (7)
+where µˆ
+I and µI are the mean pixel values of the restored
+image and the target image, respectively. σˆ
+I and σI are the
+standard deviations of the restored image and the target im-
+age, respectively. σˆ
+II is the covariance between the restored
+image and the target image. C1 and C2 are constants added
+to stabilize the division.
+Finally, the total training loss function is a weighted sum
+of the MSE and SSIM losses:
+Ltotal = LMSE(ˆ
+I, I) + α · LSSIM (ˆ
+I, I), (8)
+where α is a weighting factor controlling the relative impor-
+tance of the SSIM loss. Empirically, α is set to 0.2.
+5. Experiment
+5.1. Datasets and Evaluation Metrics
+To assess the efficacy of document stain removal tech-
+niques, we utilize the StainDoc dataset. We partition the
+dataset, employing 4,502 image pairs for training and re-
+serving the remaining 558 pairs for testing.
+To enhance the diversity of stain types within our eval-
+uation, we introduce two supplementary datasets Stain-
+Doc Seal and StainDoc Mark for seals and marks removal.
+6
+Input W/o both W/o SRTransformer W/o DocMemory Full model Target
+Figure 5. Qualitative analysis of model predictions with different configurations on various datasets. Each row illustrates the impact of ab-
+lating specific model components on the generated output. The first row corresponds to the StainDoc dataset, the second to StainDoc Mark,
+and the third to StainDoc Seal.
+These datasets are generated leveraging the ground truth im-
+ages from StainDoc as a foundation. Following the method-
+ology outlined by Yang et al. [25], we generate these images
+with synthetic seals and printed font marks. This process
+uses 1,597 seal samples and 525 distinct font variations en-
+compassing multilingual and alphanumeric characters. The
+training and testing splits are identical to those used for
+StainDoc.
+StainDoc presents significant challenges due to its real-
+world complexities, featuring diverse stain patterns with ir-
+regular shapes, varying intensities, and non-uniform dis-
+tributions. The overlap of stains with document content
+and the presence of multiple stain types further complicate
+the removal task. In contrast, StainDoc Seal and Stain-
+Doc Mark are comparatively easier to process, with con-
+trolled stain patterns, predictable shapes, and uniform stain
+types. Their synthetic nature results in less variability, mak-
+ing them more manageable for stain removal.
+We evaluate the performance of our proposed StainRe-
+storer model using 4 widely adopted image quality assess-
+ment metrics: PSNR (Peak Signal-to-Noise Ratio), SSIM
+(Structural Similarity Index Measure) [68], MAE (Mean
+Absolute Error) and LPIPS (Learned Perceptual Image
+Patch Similarity) [69].
+5.2. Implementation Details
+All experiments are conducted by the PyTorch frame-
+work and are executed on 2 NVIDIA V100 GPUs. During
+training, we employ a batch size of 4 and an initial learning
+rate of 2 × 10−4
+. The AdamW optimizer [70], with default
+parameters, is utilized for parameter updates. To facilitate
+dynamic learning rate adjustment, we incorporate a Cosine
+Annealing Learning Rate Scheduler [71].
+Training images are resized to a resolution of 256 × 256
+pixels, while testing is conducted at a higher resolution of
+1024 × 1024 pixels. To augment the training data and en-
+hance model robustness, we apply random cropping, flip-
+ping, rotation, and mixup techniques.
+7
+5.3. Comparisons with State-of-the-arts
+Table 1. Quantitative comparison of different methods on the
+StainDoc dataset, StainDoc Mark, and StainDoc Seal. The best
+results are highlighted in bold, and the second-best results are un-
+derlined.
+Method
+StainDoc StainDoc Mark StainDoc Seal
+PSNR ↑ SSIM ↑ MAE ↓ LPIPS ↓ PSNR ↑ SSIM ↑ MAE ↓ LPIPS ↓ PSNR ↑ SSIM ↑ MAE ↓ LPIPS ↓
+Input 18.372 0.757 17.59 0.194 22.198 0.703 11.277 0.389 24.875 0.904 4.852 0.143
+DocTr++ [65] 14.012 0.43 32.057 0.692 14.927 0.348 29.097 0.767 16.861 0.518 18.634 0.534
+DocEnTR [27] 15.173 0.514 34.955 0.84 16.095 0.545 29.643 0.775 17.424 0.558 20.126 0.686
+TextDIAE [51] 15.953 0.541 24.836 0.656 16.253 0.497 24.397 0.703 16.863 0.558 20.918 0.622
+Kligler [4] 16.285 0.713 26.313 0.234 18.255 0.631 22.611 0.429 20.219 0.852 16.323 0.194
+DocDiff [25] 16.662 0.607 25.609 0.359 17.646 0.658 23.842 0.435 12.891 0.458 44.894 0.673
+illtrtemplate [72] 17.374 0.616 16.919 0.391 17.832 0.593 20.844 0.601 17.919 0.61 17.246 0.521
+GAN HTR [46] 17.377 0.724 23.261 0.374 24.809 0.848 12.321 0.191 10.583 0.672 60.194 0.514
+DocTr [26] 17.87 0.597 20.812 0.601 16.866 0.613 16.736 0.38 16.879 0.613 16.734 0.383
+DeepOtsu [44] 20.747 0.767 16.278 0.25 22.803 0.829 9.468 0.238 22.187 0.863 14.296 0.214
+DocProj [45] 22.127 0.781 12.996 0.227 21.048 0.702 16.435 0.432 27.052 0.901 6.604 0.113
+DocNLC [50] 22.45 0.781 11.378 0.232 22.031 0.72 13.866 0.407 27.854 0.912 5.569 0.097
+DocRes [28] 22.612 0.792 11.378 0.198 23.159 0.751 11.667 0.343 27.696 0.908 5.646 0.098
+GCDRNet [49] 22.619 0.802 11.077 0.187 26.194 0.893 6.629 0.121 23.675 0.86 12.141 0.184
+DE-GAN [47] 22.62 0.819 11.209 0.154 23.421 0.842 8.947 0.213 22.123 0.844 12.774 0.202
+UDoc-GAN [48] 22.834 0.803 10.608 0.189 25.94 0.88 6.888 0.142 26.391 0.881 8.399 0.142
+Ours 23.372 0.822 9.265 0.085 34.191 0.955 2.786 0.067 33.298 0.968 2.441 0.024
+We compare the performance of the proposed StainRe-
+storer against several state-of-the-art document enhance-
+ment and image restoration methods on the StainDoc, Stain-
+Doc Mark and Stain Seal datasets.
+Table 1 presents the quantitative results of our com-
+parison. StainRestorer consistently outperforms the other
+methods across all evaluation metrics. Notably, StainRe-
+storer achieves state-of-the results in terms of PSNR, SSIM,
+and LPIPS, indicating its superior ability to restore im-
+age fidelity and perceptual quality. The MAE results fur-
+ther demonstrate StainRestorer’s effectiveness in minimiz-
+ing pixel-level errors during the stain removal process.
+These results highlight the benefits of StainRestorer’s
+hierarchical feature representation and memory-augmented
+architecture. By capturing stain characteristics at multiple
+levels of granularity and leveraging the spatial mapping ca-
+pabilities of the SRTransformer, StainRestorer can effec-
+tively remove stains while preserving the underlying doc-
+ument content.
+Fig. 4 provides a qualitative comparison of the stain re-
+moval results. StainRestorer generates visually cleaner and
+more legible outputs compared to the other methods. It suc-
+cessfully removes various types of stains, including ink and
+beverage stains, while maintaining the integrity of the text
+and graphical elements. In contrast, the other methods ei-
+ther fail to completely eliminate the stains or introduce ar-
+tifacts that degrade the visual quality of the restored docu-
+ments.
+Additional mean opinion scores and visual results are
+provided in the supplementary material.
+5.4. Ablation Studies
+We conduct ablation studies to evaluate key components
+of StainRestorer. Specifically, we evaluate the effectiveness
+of the DocMemory module and its hierarchical structure, as
+well as the contribution of the SRTransformer.
+Table 2 and Fig. 5 present the results. Removing the
+Table 2. Ablation study on the StainDoc dataset, StainDoc Mark,
+and StainDoc Seal. The best results are highlighted in bold.
+Module StainDoc StainDoc Mark StainDoc Seal
+DocMemory SRTransformer PSNR ↑ SSIM ↑ MAE ↓ LPIPS ↓ PSNR ↑ SSIM ↑ MAE ↓ LPIPS ↓ PSNR ↑ SSIM ↑ MAE ↓ LPIPS ↓
+✗ ✗ 23.019 0.808 10.578 0.107 31.185 0.922 4.393 0.117 31.623 0.955 3.005 0.051
+✓ ✗ 23.106 0.799 9.766 0.123 31.493 0.914 4.323 0.121 32.303 0.961 2.72 0.04
+✗ ✓ 23.304 0.818 9.618 0.099 31.806 0.923 4.004 0.122 32.789 0.965 2.576 0.03
+✓ ✓ 23.372 0.822 9.265 0.085 34.191 0.955 2.786 0.067 33.298 0.968 2.441 0.024
+DocMemory module leads to a notable performance drop
+across all metrics, highlighting its importance in capturing
+multi-level stain representations. Replacing the hierarchi-
+cal structure of DocMemory with a single-level representa-
+tion also results in degraded performance, emphasizing the
+benefit of progressively refining the understanding of stain
+characteristics.
+The SRTransformer also proves crucial. Replacing
+it with another state-of-the-art Vision Transformer mod-
+ule [28, 64] significantly impacts the restoration quality, as
+evidenced by the lower PSNR, SSIM, and LPIPS scores.
+This demonstrates the effectiveness of SRTransformer’s
+spatial mapping and attention mechanisms in precise stain
+removal while preserving document content.
+These studies validate StainRestorer’s design choices,
+emphasizing the synergistic contribution of the DocMem-
+ory module’s hierarchical structure and the SRTransformer
+in achieving state-of-the-art performance for document
+stain removal.
+6. Conclusion
+This paper introduces StainRestorer, a deep learning
+model for high-fidelity document stain removal, and Stain-
+Doc, the first comprehensive dataset for this task compris-
+ing over 5,000 pairs of stained and clean document images
+with diverse stain types, severities, and backgrounds. Stain-
+Restorer leverages a novel hierarchical memory-augmented
+module (DocMemory) to capture multi-level stain represen-
+tations and a Stain Removal Transformer (SRTransformer)
+to perform precise stain removal while preserving document
+content. Extensive experiments on StainDoc demonstrate
+StainRestorer’s superior performance compared to exist-
+ing document enhancement and image restoration methods.
+This work provides a valuable resource and foundation for
+future research in document stain removal, with potential
+applications in digital archiving and document analysis.
+References
+[1] Shunji Mori, Ching Y Suen, and Kazuhiko Yamamoto. His-
+torical review of ocr research and development. Proceedings
+of the IEEE, 1992. 1
+[2] Maya R Gupta, Nathaniel P Jacobson, and Eric K Garcia.
+Ocr binarization and image pre-processing for searching his-
+torical documents. Pattern Recognition, 2007. 1
+8
+[3] Francesco Lombardi and Simone Marinai. Deep learning
+for historical document analysis and recognition—a survey.
+Journal of Imaging, 2020. 1
+[4] Netanel Kligler, Sagi Katz, and Ayellet Tal. Document en-
+hancement using visibility detection. In 2018 IEEE Con-
+ference on Computer Vision and Pattern Recognition, CVPR
+2018, 2018. 1, 8
+[5] Jaakko Sauvola and Matti Pietikäinen. Adaptive document
+image binarization. Pattern recognition, 2000. 1
+[6] Wei Xiong, Jingjing Xu, Zijie Xiong, Juan Wang, and Min
+Liu. Degraded historical document image binarization us-
+ing local features and support vector machine (svm). Optik,
+2018. 1
+[7] Rachid Hedjam, Mohamed Cheriet, and Margaret Kalac-
+ska. Constrained energy maximization and self-referencing
+method for invisible ink detection from multispectral histor-
+ical document images. In 2014 22nd International Confer-
+ence on Pattern Recognition. IEEE, 2014. 1
+[8] Gaurav Sharma. Show-through cancellation in scans of du-
+plex printed documents. IEEE Transactions on Image Pro-
+cessing, 2001. 1
+[9] Reza Farrahi Moghaddam and Mohamed Cheriet. Low qual-
+ity document image modeling and enhancement. Interna-
+tional Journal of Document Analysis and Recognition (IJ-
+DAR), 2009. 1
+[10] Chi Zhang, Hao Jiang, Weihuang Liu, Junyi Li, Shiming
+Tang, Mario Juhas, and Yang Zhang. Correction of out-of-
+focus microscopic images by deep learning. Computational
+and Structural Biotechnology Journal, 2022. 1
+[11] Weihuang Liu, Xiaodong Cun, Chi-Man Pun, Menghan Xia,
+Yong Zhang, and Jue Wang. Coordfill: Efficient high-
+resolution image inpainting via parameterized coordinate
+querying. In Proceedings of the AAAI Conference on Arti-
+ficial Intelligence, 2023. 1
+[12] Hao Jiang, Sen Li, Weihuang Liu, Hongjin Zheng, Jinghao
+Liu, and Yang Zhang. Geometry-aware cell detection with
+deep learning. Msystems, 2020. 1
+[13] Hao Jiang, Shiming Tang, Weihuang Liu, and Yang Zhang.
+Deep learning for covid-19 chest ct (computed tomography)
+image analysis: A lesson from lung cancer. Computational
+and Structural Biotechnology Journal, 2021. 1
+[14] Weihuang Liu, Mario Juhas, and Yang Zhang. Fine-grained
+breast cancer classification with bilinear convolutional neu-
+ral networks (bcnns). Frontiers in genetics, 2020. 1
+[15] Haolun Li and Chi-Man Pun. Cee-net: complementary end-
+to-end network for 3d human pose generation and estima-
+tion. In Proceedings of the AAAI Conference on Artificial
+Intelligence, 2023. 1
+[16] Shubo Yang, Haolun Li, Chi-Man Pun, Chun Du, and Hao
+Gao. Adaptive spatial-temporal graph-mixer for human mo-
+tion prediction. IEEE Signal Processing Letters, 2024. 1
+[17] Haolun Li and Chi-Man Pun. Monocular robust 3d human
+localization by global and body-parts depth awareness. IEEE
+Transactions on Circuits and Systems for Video Technology,
+2022. 1
+[18] Haitao Huang, Chi-Man Pun, Haolun Li, Mengqi Liu, Jian
+Xiong, and Hao Gao. Deformmlp: Dynamic large-scale
+receptive field mlp networks for human motion prediction.
+In ICASSP 2024-2024 IEEE International Conference on
+Acoustics, Speech and Signal Processing (ICASSP). IEEE,
+2024. 1
+[19] Haolun Li, Senlin Ge, Chuyi Gao, and Hao Gao. Few-shot
+object detection via high-and-low resolution representation.
+Computers and Electrical Engineering, 2022. 1
+[20] Zimeng Li, Sa Xiao, Cheng Wang, Haidong Li, Xiuchao
+Zhao, Caohui Duan, Qian Zhou, Qiuchen Rao, Yuan Fang,
+Junshuai Xie, Lei Shi, Fumin Guo, Chaohui Ye, and Xin
+Zhou. Encoding enhanced complex cnn for accurate and
+highly accelerated mri. IEEE Transactions on Medical Imag-
+ing, 2024. 1
+[21] Michal Hradis, Jan Kotera, Pavel Zemcı́k, and Filip Sroubek.
+Convolutional neural networks for direct text deblurring. In
+Proceedings of the British Machine Vision Conference 2015,
+BMVC 2015, 2015. 1
+[22] Ke Ma, Zhixin Shu, Xue Bai, Jue Wang, and Dimitris Sama-
+ras. Docunet: Document image unwarping via a stacked
+u-net. In 2018 IEEE Conference on Computer Vision and
+Pattern Recognition, CVPR 2018, 2018. 1
+[23] Cairong Zhao, Shuyang Feng, Brian Nlong Zhao, Zhijun
+Ding, Jun Wu, Fumin Shen, and Heng Tao Shen. Scene
+text image super-resolution via parallelly contextual atten-
+tion network. In Proceedings of the 29th ACM International
+Conference on Multimedia, 2021. 1
+[24] Mehrdad J. Gangeh, Marcin Plata, Hamid R. Motahari
+Nezhad, and Nigel P. Duffy. End-to-end unsupervised doc-
+ument image blind denoising. In 2021 IEEE/CVF Interna-
+tional Conference on Computer Vision, ICCV 2021, 2021. 1
+[25] Zongyuan Yang, Baolin Liu, Yongping Xxiong, Lan Yi,
+Guibin Wu, Xiaojun Tang, Ziqi Liu, Junjie Zhou, and Xing
+Zhang. Docdiff: Document enhancement via residual diffu-
+sion models. In Proceedings of the 31st ACM international
+conference on multimedia, 2023. 1, 2, 7, 8
+[26] Hao Feng, Yuechen Wang, Wengang Zhou, Jiajun Deng, and
+Houqiang Li. Doctr: Document image transformer for geo-
+metric unwarping and illumination correction. arXiv, 2021.
+1, 2, 8
+[27] Mohamed Ali Souibgui, Sanket Biswas, Sana Khamekhem
+Jemni, Yousri Kessentini, Alicia Fornés, Josep Lladós, and
+Umapada Pal. Docentr: An end-to-end document image en-
+hancement transformer. In 2022 26th International Confer-
+ence on Pattern Recognition (ICPR), 2022. 1, 2, 8
+[28] Jiaxin Zhang, Dezhi Peng, Chongyu Liu, Peirong Zhang,
+and Lianwen Jin. Docres: A generalist model toward uni-
+fying document image restoration tasks. In Proceedings of
+the IEEE/CVF Conference on Computer Vision and Pattern
+Recognition, 2024. 1, 2, 8
+[29] Weihuang Liu, Xi Shen, Chi-Man Pun, and Xiaodong Cun.
+Explicit visual prompting for universal foreground segmen-
+tations. arXiv, 2023. 1
+[30] Leyi Zhu, Weihuang Liu, Xinyi Chen, Zimeng Li, Xuhang
+Chen, Zhen Wang, and Chi-Man Pun. Test-time intensity
+consistency adaptation for shadow detection. arXiv, 2024. 1
+[31] Xiaohong Li, Guoheng Huang, Lianglun Cheng, Guo Zhong,
+Weihuang Liu, Xuhang Chen, and Muyan Cai. Cross-domain
+9
+visual prompting with spatial proximity knowledge distilla-
+tion for histological image classification. Journal of Biomed-
+ical Informatics, 2024. 1
+[32] Xiaofeng Zhang, Feng Chen, Cailing Wang, Ming Tao, and
+Guo-Ping Jiang. Sienet: Siamese expansion network for im-
+age extrapolation. IEEE Signal Processing Letters, 2020. 1
+[33] Xiaofeng Zhang, Yudi Zhao, Chaochen Gu, Changsheng Lu,
+and Shanying Zhu. Spa-former: An effective and lightweight
+transformer for image shadow removal. In 2023 Interna-
+tional Joint Conference on Neural Networks (IJCNN). IEEE,
+2023. 1
+[34] Xiao Feng Zhang, Chao Chen Gu, and Shan Ying Zhu. Mem-
+ory augment is all you need for image restoration. arXiv,
+2023. 1
+[35] Xiaofeng Zhang, Qihan Zhao, Hao Tang, Chaochen Gu, and
+Shanying Zhu. Enlighten-anything: When segment anything
+model meets low-light image enhancement. arXiv, 2023. 1
+[36] Zishan Xu, Xiaofeng Zhang, Wei Chen, Jueting Liu, Tingt-
+ing Xu, and Zehua Wang. Muraldiff: Diffusion for ancient
+murals restoration on large-scale pre-training. IEEE Trans-
+actions on Emerging Topics in Computational Intelligence,
+2024. 1
+[37] Xiaofeng Zhang, Zishan Xu, Hao Tang, Chaochen Gu,
+Shanying Zhu, and Xinping Guan. Shadclips: When
+parameter-efficient fine-tuning with multimodal meets
+shadow removal. 2024. 1
+[38] Xin Yan, Jiucheng Xie, Mengqi Liu, Haolun Li, and Hao
+Gao. Hierarchical local temporal network for 2d-to-3d hu-
+man pose estimation. IEEE Internet of Things Journal, 2024.
+1
+[39] Jucheng Song, Chi-Man Pun, Haolun Li, Rushi Lan,
+Jiu-Cheng Xie, and Hao Gao. Local optimization net-
+works for multi-view multi-person human posture estima-
+tion. In ICASSP 2024-2024 IEEE International Confer-
+ence on Acoustics, Speech and Signal Processing (ICASSP).
+IEEE, 2024. 1
+[40] Xin Yan, Chi-Man Pun, Haolun Li, Mengqi Liu, and Hao
+Gao. Hierarchical local temporal feature enhancing for
+transformer-based 3d human pose estimation. In 2024 IEEE
+International Conference on Multimedia and Expo (ICME).
+IEEE, 2024. 1
+[41] Ankush Gupta, Andrea Vedaldi, and Andrew Zisserman.
+Synthetic data for text localisation in natural images. In 2016
+IEEE Conference on Computer Vision and Pattern Recogni-
+tion, CVPR 2016, 2016. 2
+[42] Jean-Christophe Burie, Joseph Chazalon, Mickaël Cous-
+taty, Sébastien Eskenazi, Muhammad Muzzamil Luqman,
+Maroua Mehri, Nibal Nayef, Jean-Marc Ogier, Sophea
+Prum, and Marçal Rusiñol. Icdar2015 competition on smart-
+phone document capture and ocr (smartdoc). In 2015 13th
+International Conference on Document Analysis and Recog-
+nition (ICDAR). IEEE, 2015. 2
+[43] Hiuyi Cheng, Peirong Zhang, Sihang Wu, Jiaxin Zhang,
+Qiyuan Zhu, Zecheng Xie, Jing Li, Kai Ding, and Lianwen
+Jin. M6doc: A large-scale multi-format, multi-type, multi-
+layout, multi-language, multi-annotation category dataset
+for modern document layout analysis. In Proceedings of
+the IEEE/CVF Conference on Computer Vision and Pattern
+Recognition, 2023. 2
+[44] Sheng He and Lambert Schomaker. Deepotsu: Document
+enhancement and binarization using iterative deep learning.
+Pattern recognition, 2019. 2, 8
+[45] Xiaoyu Li, Bo Zhang, Jing Liao, and Pedro V Sander. Docu-
+ment rectification and illumination correction using a patch-
+based cnn. ACM Transactions on Graphics (TOG), 2019. 2,
+8
+[46] Sana Khamekhem Jemni, Mohamed Ali Souibgui, Yousri
+Kessentini, and Alicia Fornés. Enhance to read better: a
+multi-task adversarial network for handwritten document im-
+age enhancement. Pattern Recognition, 2022. 2, 8
+[47] Mohamed Ali Souibgui and Yousri Kessentini. De-gan: A
+conditional generative adversarial network for document en-
+hancement. IEEE Transactions on Pattern Analysis and Ma-
+chine Intelligence, 2020. 2, 8, 12
+[48] Yonghui Wang, Wengang Zhou, Zhenbo Lu, and Houqiang
+Li. Udoc-gan: Unpaired document illumination correction
+with background light prior. In Proceedings of the 30th ACM
+International Conference on Multimedia, 2022. 2, 8, 12
+[49] Jiaxin Zhang, Lingyu Liang, Kai Ding, Fengjun Guo, and
+Lianwen Jin. Appearance enhancement for camera-captured
+document images in the wild. IEEE Transactions on Artifi-
+cial Intelligence, 2023. 2, 8, 12
+[50] Ruilu Wang, Yang Xue, and Lianwen Jin. Docnlc: A docu-
+ment image enhancement framework with normalized and
+latent contrastive representation for multiple degradations.
+In Proceedings of the AAAI Conference on Artificial Intel-
+ligence, 2024. 2, 8, 12
+[51] Mohamed Ali Souibgui, Sanket Biswas, Andres Mafla,
+Ali Furkan Biten, Alicia Fornés, Yousri Kessentini, Josep
+Lladós, Lluis Gomez, and Dimosthenis Karatzas. Text-diae:
+a self-supervised degradation invariant autoencoder for text
+recognition and document enhancement. In proceedings of
+the AAAI conference on artificial intelligence, 2023. 2, 8
+[52] Weihuang Liu, Xi Shen, Chi-Man Pun, and Xiaodong Cun.
+Explicit visual prompting for low-level structure segmenta-
+tions. In Proceedings of the IEEE/CVF Conference on Com-
+puter Vision and Pattern Recognition, 2023. 2
+[53] Weihuang Liu, Xi Shen, Haolun Li, Xiuli Bi, Bo Liu, Chi-
+Man Pun, and Xiaodong Cun. Depth-aware test-time training
+for zero-shot video object segmentation. In Proceedings of
+the IEEE/CVF Conference on Computer Vision and Pattern
+Recognition, 2024. 2
+[54] Fuchen Zheng, Xuhang Chen, Weihuang Liu, Haolun Li,
+Yingtie Lei, Jiahui He, Chi-Man Pun, and Shounjun Zhou.
+Smaformer: Synergistic multi-attention transformer for
+medical image segmentation. arXiv, 2024. 2
+[55] Weihuang Liu, Xiaodong Cun, and Chi-Man Pun. Dh-gan:
+Image manipulation localization via a dual homology-aware
+generative adversarial network. Pattern Recognition, 2024.
+2
+[56] Weihuang Liu, Xi Shen, Chi-Man Pun, and Xiaodong Cun.
+Forgeryttt: Zero-shot image manipulation localization with
+test-time training. arXiv, 2024. 2
+[57] Zinuo Li, Xuhang Chen, Chi-Man Pun, and Xiaodong Cun.
+High-resolution document shadow removal via a large-scale
+10
+real-world dataset and a frequency-aware shadow erasing
+net. In 2023 IEEE/CVF International Conference on Com-
+puter Vision (ICCV), 2023. 2
+[58] Xiaojiao Guo, Xuhang Chen, Shenghong Luo, Shuqiang
+Wang, and Chi-Man Pun. Dual-hybrid attention network for
+specular highlight removal. 2024. 2
+[59] Ziyang Zhou, Yingtie Lei, Xuhang Chen, Shenghong Luo,
+Wenjun Zhang, Chi-Man Pun, and Zhen Wang. Docdeshad-
+ower: Frequency-aware transformer for document shadow
+removal. arXiv, 2023. 2
+[60] Alexey Dosovitskiy, Lucas Beyer, Alexander Kolesnikov,
+Dirk Weissenborn, Xiaohua Zhai, Thomas Unterthiner,
+Mostafa Dehghani, Matthias Minderer, Georg Heigold, Syl-
+vain Gelly, Jakob Uszkoreit, and Neil Houlsby. An image is
+worth 16x16 words: Transformers for image recognition at
+scale. In 9th International Conference on Learning Repre-
+sentations, ICLR 2021, 2021. 2
+[61] Ze Liu, Yutong Lin, Yue Cao, Han Hu, Yixuan Wei, Zheng
+Zhang, Stephen Lin, and Baining Guo. Swin transformer:
+Hierarchical vision transformer using shifted windows. In
+2021 IEEE/CVF International Conference on Computer Vi-
+sion, ICCV 2021, 2021. 2
+[62] Jingyun Liang, Jiezhang Cao, Guolei Sun, Kai Zhang,
+Luc Van Gool, and Radu Timofte. Swinir: Image restoration
+using swin transformer. In IEEE/CVF International Confer-
+ence on Computer Vision Workshops, ICCVW 2021, 2021.
+2
+[63] Zhendong Wang, Xiaodong Cun, Jianmin Bao, Wengang
+Zhou, Jianzhuang Liu, and Houqiang Li. Uformer: A general
+u-shaped transformer for image restoration. In Proceedings
+of the IEEE/CVF conference on computer vision and pattern
+recognition, 2022. 2
+[64] Syed Waqas Zamir, Aditya Arora, Salman Khan, Mu-
+nawar Hayat, Fahad Shahbaz Khan, and Ming-Hsuan Yang.
+Restormer: Efficient transformer for high-resolution image
+restoration. In Proceedings of the IEEE/CVF conference on
+computer vision and pattern recognition, 2022. 2, 8
+[65] Hao Feng, Shaokai Liu, Jiajun Deng, Wengang Zhou, and
+Houqiang Li. Deep unrestricted document image rectifica-
+tion. IEEE Transactions on Multimedia, 2023. 2, 8
+[66] Xiangyu Chen, Zheyuan Li, Yuandong Pu, Yihao Liu,
+Jiantao Zhou, Yu Qiao, and Chao Dong. A comparative study
+of image restoration networks for general backbone network
+design. arXiv, 2023. 3, 5
+[67] Xiangyu Chen, Xintao Wang, Jiantao Zhou, Yu Qiao,
+and Chao Dong. Activating more pixels in image super-
+resolution transformer. In Proceedings of the IEEE/CVF con-
+ference on computer vision and pattern recognition, 2023. 5
+[68] Zhou Wang, Alan C Bovik, Hamid R Sheikh, and Eero P Si-
+moncelli. Image quality assessment: from error visibility to
+structural similarity. IEEE transactions on image processing,
+2004. 7
+[69] Richard Zhang, Phillip Isola, Alexei A. Efros, Eli Shecht-
+man, and Oliver Wang. The unreasonable effectiveness of
+deep features as a perceptual metric. In 2018 IEEE Con-
+ference on Computer Vision and Pattern Recognition, CVPR
+2018, 2018. 7
+[70] Ilya Loshchilov and Frank Hutter. Decoupled weight decay
+regularization. In 7th International Conference on Learning
+Representations, ICLR 2019, 2019. 7
+[71] Ilya Loshchilov and Frank Hutter. SGDR: stochastic gradient
+descent with warm restarts. In 5th International Conference
+on Learning Representations, ICLR 2017, 2017. 7
+[72] Felix Hertlein and Alexander Naumann. Template-guided
+illumination correction for document images with imperfect
+geometric reconstruction. In Proceedings of the IEEE/CVF
+International Conference on Computer Vision, 2023. 8, 12
+11
+A. User Study
+While general objective image quality metrics like Nat-
+uralness Image Quality Evaluator (NIQE) offers valuable
+insights into the visual quality of images, there’s a short-
+age of subjective metrics specifically tailored to assess the
+effectiveness of document image stain removal techniques.
+To address this gap and validate the effectiveness of our
+StainRestorer in practical applications, we conducted a user
+study focusing on perceptual quality improvements. We
+compared our enhanced images against those from state-of-
+the-art techniques applied to the same degraded originals,
+emphasizing how each method visually improved upon the
+degradations.
+For comprehensive assessment, we selected five state-
+of-the-art methods detailed in the comparative experiments
+section of the main text. These methods represent a range
+of approaches to document image restoration and provide a
+robust benchmark for our proposed method. We then ran-
+domly selected 10 images from each of the three test sets
+(StainDoc, StainDoc mark, StainDoc seal), resulting in a
+total of 180 images for evaluation. These sets cover various
+degradation types, including stains, watermarks, and seals.
+The images were organized into groups, each consisting of
+one original input image with stain removal results, includ-
+ing our method and the five other methods. The methods
+were anonymized to prevent bias, and the order of the meth-
+ods within each group was randomized.
+Thirty participants (15 males and 15 females, aged 22-
+45) were recruited for the study. This group included both
+experts in image processing (10) and non-experts (20) to
+ensure a balanced evaluation. All participants reported nor-
+mal or corrected-to-normal vision and were unaware of the
+experiment’s purpose. Participants rated the six methods on
+a scale of 1 (worst) to 5 (best) for each image group based
+on the following criteria:
+1. Stain Removal Effectiveness: Assessing how well
+each method removed stains from the document im-
+age, considering the completeness and uniformity of
+stain removal.
+2. Naturalness of Background Restoration: Evaluat-
+ing how natural the restored background area appears
+compared to the surrounding regions, focusing on the
+absence of color inconsistencies, blurriness, or arti-
+facts.
+3. Texture Preservation: Assessing the consistency of
+texture and fine details in the restored area compared
+to the original texture of the document.
+The scoring scale ranged from 1 (worst) to 5 (best), al-
+lowing participants to capture a spectrum of perceptible
+quality levels in the highlight removal results:
+• 1 (Poor): Significant issues or distortions.
+• 2 (Fair): Visible flaws but some acceptable elements.
+• 3 (Average): Satisfactory overall, with most elements
+adequately processed.
+• 4 (Good): Well-processed, with only minor imperfec-
+tions.
+• 5 (Excellent): Exceptional quality.
+Participants assigned scores for each criterion indepen-
+dently, ensuring a thorough evaluation of the various aspects
+of document image restoration. We calculated the Mean
+Opinion Score (MOS) for each method by averaging the
+scores across all participants and images. Table 3 presents
+the final user study scores, demonstrating that our method
+consistently achieves the highest average score across all
+three test sets.
+Table 3. Comparison of user study scores with other five state-
+of-the-art methods. The highest-scored results are highlighted in
+bold, while the second-best are underlined for emphasis.
+Method StainDoc StainDoc mark StainDoc seal
+illtrtemplate [72] 1.20 1.13 1.17
+DocNLC [50] 3.49 2.53 3.77
+GCDRNet [49] 3.50 3.68 3.19
+DE-GAN [47] 3.53 3.27 3.38
+UDoc-GAN [48] 3.20 3.59 3.45
+Ours 4.33 4.85 4.81
+12
+

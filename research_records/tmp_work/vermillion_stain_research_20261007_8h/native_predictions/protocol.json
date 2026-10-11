@@ -1,0 +1,11 @@
+{
+  "checkpoint": "fixed 12000-step last.pth",
+  "native": true,
+  "patch": 256,
+  "overlap": 128,
+  "averaging": "Hann weight floor .03; float probabilities averaged before .5 threshold",
+  "paper": "Input-derived whole-page morphology; no known clean paper or GT",
+  "overlay": "These files are predictions only; genuine restoration separate",
+  "source_sha256": "04be92bef36d40cbb29da1ed410ea580e5112be110b1056d3d44e6d67531e903",
+  "cases_sha256": "cdfbb6e6a55e0cf138884caae04b900939430426cb0290c4f314f25b54264272"
+}

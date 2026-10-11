@@ -1,0 +1,37 @@
+{
+  "scope": "Input sensitivity to a published coefficient formula proxy; NOT MATLAB rgb2gray or canny_old runtime parity",
+  "coefficient_source": "https://www.mathworks.com/help/matlab/ref/rgb2gray.html",
+  "edge_source": "https://www.mathworks.com/help/images/ref/edge.html",
+  "rows": [
+    {
+      "case": "01",
+      "page": "200010454_00002_2",
+      "pixels": 4219160,
+      "grayscale_different": 0,
+      "grayscale_max_abs_difference": 0,
+      "local_edge_pixels": 92899,
+      "proxy_edge_pixels": 92899,
+      "edge_disagreement_pixels": 0
+    },
+    {
+      "case": "03",
+      "page": "hnsd007_042",
+      "pixels": 5397660,
+      "grayscale_different": 0,
+      "grayscale_max_abs_difference": 0,
+      "local_edge_pixels": 218242,
+      "proxy_edge_pixels": 218242,
+      "edge_disagreement_pixels": 0
+    },
+    {
+      "case": "04",
+      "page": "hnsd001_011",
+      "pixels": 5390871,
+      "grayscale_different": 0,
+      "grayscale_max_abs_difference": 0,
+      "local_edge_pixels": 188740,
+      "proxy_edge_pixels": 188740,
+      "edge_disagreement_pixels": 0
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "dependencies": {
+    "scripts/benchmark/validate_unseen_margin_masks.py": "4f6a0a0573f62cd704e2e9fdc4ee1635c9ebaaba4e3b218fa3840e814486130b",
+    "scripts/benchmark/probe_paper_rim_lowfrequency_v2.py": "9d1dc0c515f79f86ab502b1a9dea03ea16fc0b42e670b602f5032fe3df0289c5",
+    "tmp_work/unseen_margin_validation_20261001/baseline_review.json": "7baa2abd21ccdc2ee6af19299d0410eefc7736b4b7f25a38742321b415586dcd",
+    "tmp_work/unseen_margin_validation_20261001/comparison_manifest.json": "ec7c88b164023a76a09fcfa3fb13e6e1b6ffa3aa6a4675b34f53dfd375e67497",
+    "tmp_work/unseen_margin_validation_20261001/comparison_complete.json": "be598f93eadb27e74f33016a241b3e9ed6e9003cf747f334e0d76183de9f3c03",
+    "scripts/benchmark/probe_paper_margin_defects.py": "1de8589d43dc3d5899e202a7853f5e0ae1653cae8a3bfe91e5c837227f8f87d6",
+    "scripts/benchmark/probe_defect_context_preprocessing.py": "42ef25b24c73bb1c9443954e98b67fc7b1126ad8de4093aa3d4d514f21b2ed57",
+    "scripts/benchmark/probe_defect_context_anchors.py": "60b13ab23a2bd1d3c6439a8a8fe9fe20c1e2882a68d7b9c5e5f78360e37a7832",
+    "scripts/benchmark/probe_margin_top_completion.py": "7abb6287107d29e710425b94fd6024d9a218101bcaa806136d77a6a0c67b3e28"
+  },
+  "source_sha256": "4f6a0a0573f62cd704e2e9fdc4ee1635c9ebaaba4e3b218fa3840e814486130b",
+  "pages": 4,
+  "regions": 12,
+  "original_selection_first": true,
+  "fixed_rim_source": "9d1dc0c515f79f86ab502b1a9dea03ea16fc0b42e670b602f5032fe3df0289c5",
+  "parameters_tuned_after_outputs": false,
+  "pixel_GT": false,
+  "training_independence_unknown": true
+}

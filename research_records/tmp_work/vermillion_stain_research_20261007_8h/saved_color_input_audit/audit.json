@@ -1,0 +1,419 @@
+{
+  "records": [
+    {
+      "page": "100249376_00056_1",
+      "book": "100249376",
+      "original": "data/train/100249376/100249376_00056_1.jpg",
+      "old_raw_exists": true,
+      "saved_v1_exists": true,
+      "saved_v2_exists": true,
+      "decoded_original_identical": true,
+      "old_raw_sha256": "58d356496a4bc7facbf5474648d15beb1234871cec9aebed6e02375249b67b92",
+      "usable_saved_masks_for_current_image": true,
+      "saved_classifier_input": "data/split_dataset_csc_mask/train/100249376/100249376_00056_1/00_input.png",
+      "saved_classifier_input_sha256": "6d3a1efc77f1054b490d09759a3c5570b113f6b3d9b116268b822b31ddc707c7",
+      "new_ACE_sha256": "c05f030e419432ec95013e9a24fbc6a21897193a05d2626c35c1fb094d8debfb",
+      "ACE_identical": false,
+      "ACE_mean_abs_change_255": 1.3407094996070767,
+      "strict_red_pixels": {
+        "original": 18878,
+        "saved_classifier_input": 31575,
+        "CPU_ACE_seed0_n200": 32016
+      },
+      "v1": {
+        "saved_red_pixels": 48115,
+        "new_red_pixels": 56391,
+        "different_pixels": 9902,
+        "saved_mask_path": "data/split_dataset_csc_mask/train/100249376/100249376_00056_1/03_text_red.png",
+        "saved_mask_sha256": "989dedb3069539552e2d3679bf17594ba02dec22e28c988235e91fde5400e1d0"
+      },
+      "v2": {
+        "saved_red_pixels": 48155,
+        "new_red_pixels": 48759,
+        "different_pixels": 2456,
+        "saved_mask_path": "data/split_dataset_csc_mask_v2/train/100249376/100249376_00056_1/03_text_red.png",
+        "saved_mask_sha256": "4bceee5da584f0717f839b8d238ad8df70ec8c5a19c6a87abdca8f1f1dd8581a"
+      }
+    },
+    {
+      "page": "100249537_00003_2",
+      "book": "100249537",
+      "original": "data/train/100249537/100249537_00003_2.jpg",
+      "old_raw_exists": true,
+      "saved_v1_exists": true,
+      "saved_v2_exists": true,
+      "decoded_original_identical": true,
+      "old_raw_sha256": "557d28ea4800b88997e0c7da395b4171583533996508bc88088c0cb85a05ad87",
+      "usable_saved_masks_for_current_image": true,
+      "saved_classifier_input": "data/split_dataset_csc_mask/train/100249537/100249537_00003_2/00_input.png",
+      "saved_classifier_input_sha256": "e44ecfde7bfc6ba8a12a805a57620bff3e79edaf21c833aa106f15031c6e0ece",
+      "new_ACE_sha256": "e9d150bdc6ed37b4e82756511a81cd5a83d76dd07e61a23f7097600067bc0062",
+      "ACE_identical": false,
+      "ACE_mean_abs_change_255": 1.433870598399134,
+      "strict_red_pixels": {
+        "original": 20694,
+        "saved_classifier_input": 9815,
+        "CPU_ACE_seed0_n200": 9332
+      },
+      "v1": {
+        "saved_red_pixels": 80071,
+        "new_red_pixels": 161129,
+        "different_pixels": 96838,
+        "saved_mask_path": "data/split_dataset_csc_mask/train/100249537/100249537_00003_2/03_text_red.png",
+        "saved_mask_sha256": "b844808d68e3d6e1c1adef6c56ba20b4a2eb826933d2fdd75890ccd7a35b0008"
+      },
+      "v2": {
+        "saved_red_pixels": 16968,
+        "new_red_pixels": 17229,
+        "different_pixels": 3359,
+        "saved_mask_path": "data/split_dataset_csc_mask_v2/train/100249537/100249537_00003_2/03_text_red.png",
+        "saved_mask_sha256": "b2bc9c058abb4dde84e2c84c8ec4e0497a75960061d06a08f3912a3f35a43693"
+      }
+    },
+    {
+      "page": "200006663_00002_2",
+      "book": "200006663",
+      "original": "data/train/200006663/200006663_00002_2.jpg",
+      "old_raw_exists": false,
+      "saved_v1_exists": false,
+      "saved_v2_exists": false
+    },
+    {
+      "page": "200020019_00002_2",
+      "book": "200020019",
+      "original": "data/train/200020019/200020019_00002_2.jpg",
+      "old_raw_exists": true,
+      "saved_v1_exists": true,
+      "saved_v2_exists": true,
+      "decoded_original_identical": true,
+      "old_raw_sha256": "5824181ca480ec7aa37251d7087fa3dc7ed0431d1bdbcc4b9123a491ba8bf9cb",
+      "usable_saved_masks_for_current_image": true,
+      "saved_classifier_input": "data/split_dataset_csc_mask/train/200020019/200020019_00002_2/00_input.png",
+      "saved_classifier_input_sha256": "24b3e3b814e595395244fa95150ceabc3d865d22d881ed2ba9dc30e93c58df4a",
+      "new_ACE_sha256": "f37197d54bd6a914006b42cc2274835af1319d2d6638934568bbef70c335a90b",
+      "ACE_identical": false,
+      "ACE_mean_abs_change_255": 1.4640049957063033,
+      "strict_red_pixels": {
+        "original": 53538,
+        "saved_classifier_input": 100587,
+        "CPU_ACE_seed0_n200": 99930
+      },
+      "v1": {
+        "saved_red_pixels": 78988,
+        "new_red_pixels": 135484,
+        "different_pixels": 109710,
+        "saved_mask_path": "data/split_dataset_csc_mask/train/200020019/200020019_00002_2/03_text_red.png",
+        "saved_mask_sha256": "47f9edfcc74ea2a22be85960013d62a5182ab341aff0377a9be864c0b63e7a11"
+      },
+      "v2": {
+        "saved_red_pixels": 135882,
+        "new_red_pixels": 130340,
+        "different_pixels": 11608,
+        "saved_mask_path": "data/split_dataset_csc_mask_v2/train/200020019/200020019_00002_2/03_text_red.png",
+        "saved_mask_sha256": "fbc61dfaf8e5e5476db97c85163519b7d3eeaa1cba3c6c0ab3b33ccb2adde2b9"
+      }
+    },
+    {
+      "page": "200020019_00082_2",
+      "book": "200020019",
+      "original": "data/train/200020019/200020019_00082_2.jpg",
+      "old_raw_exists": true,
+      "saved_v1_exists": true,
+      "saved_v2_exists": true,
+      "decoded_original_identical": true,
+      "old_raw_sha256": "1202997f573d6dcdc461fda9941fa0889311ee31c34842f4b49c0c38d037847c",
+      "usable_saved_masks_for_current_image": true,
+      "saved_classifier_input": "data/split_dataset_csc_mask/train/200020019/200020019_00082_2/00_input.png",
+      "saved_classifier_input_sha256": "6817b4a569c976d779cf753177c5a907b2d8bfd1b4500f969389908eb5bff7fd",
+      "new_ACE_sha256": "879281926391d75aa7e5a0d2e69e5e0b68671d0d86137697192be2d5a91ef530",
+      "ACE_identical": false,
+      "ACE_mean_abs_change_255": 1.1140524224769839,
+      "strict_red_pixels": {
+        "original": 5674,
+        "saved_classifier_input": 36169,
+        "CPU_ACE_seed0_n200": 32766
+      },
+      "v1": {
+        "saved_red_pixels": 95906,
+        "new_red_pixels": 97294,
+        "different_pixels": 31188,
+        "saved_mask_path": "data/split_dataset_csc_mask/train/200020019/200020019_00082_2/03_text_red.png",
+        "saved_mask_sha256": "8ede2fdeb3361d56dcde7bfc51041ebd26b5398612488bf6ffa7d308cbd9d28d"
+      },
+      "v2": {
+        "saved_red_pixels": 69255,
+        "new_red_pixels": 67384,
+        "different_pixels": 6091,
+        "saved_mask_path": "data/split_dataset_csc_mask_v2/train/200020019/200020019_00082_2/03_text_red.png",
+        "saved_mask_sha256": "58ca89f29653cb51368d52a2263d1e9028d2d5937d53b0e15267060bb61bcbef"
+      }
+    },
+    {
+      "page": "200021086_00032_2",
+      "book": "200021086",
+      "original": "data/train/200021086/200021086_00032_2.jpg",
+      "old_raw_exists": true,
+      "saved_v1_exists": true,
+      "saved_v2_exists": true,
+      "decoded_original_identical": true,
+      "old_raw_sha256": "26214bf730b542def243debc71ee34aadba790cc4773e1326fdff1aff7c45ba6",
+      "usable_saved_masks_for_current_image": true,
+      "saved_classifier_input": "data/split_dataset_csc_mask/train/200021086/200021086_00032_2/00_input.png",
+      "saved_classifier_input_sha256": "7654929178d18a7593ee7cd2b24b56778426058a2f8444d71ba3e6054f8317a3",
+      "new_ACE_sha256": "884ac2b63f61a6122030fc2b5586b7558b156a316f250c5fdbe680542d9c6e6a",
+      "ACE_identical": false,
+      "ACE_mean_abs_change_255": 0.9293583355385143,
+      "strict_red_pixels": {
+        "original": 771,
+        "saved_classifier_input": 34266,
+        "CPU_ACE_seed0_n200": 35435
+      },
+      "v1": {
+        "saved_red_pixels": 244350,
+        "new_red_pixels": 238742,
+        "different_pixels": 24534,
+        "saved_mask_path": "data/split_dataset_csc_mask/train/200021086/200021086_00032_2/03_text_red.png",
+        "saved_mask_sha256": "80ba6b421e2ce38cf809e495db1978aacbe08f0a5531a18c8f5ed3d77860bef2"
+      },
+      "v2": {
+        "saved_red_pixels": 39136,
+        "new_red_pixels": 39593,
+        "different_pixels": 3695,
+        "saved_mask_path": "data/split_dataset_csc_mask_v2/train/200021086/200021086_00032_2/03_text_red.png",
+        "saved_mask_sha256": "8686ffeabd03c0d70a3ec40c0d5e43de2dc61694ad4359ab810f8ffd7345a651"
+      }
+    },
+    {
+      "page": "200021763_00002_2",
+      "book": "200021763",
+      "original": "data/train/200021763/200021763_00002_2.jpg",
+      "old_raw_exists": true,
+      "saved_v1_exists": true,
+      "saved_v2_exists": true,
+      "decoded_original_identical": true,
+      "old_raw_sha256": "44631919294b4cde57c2cfa8f669ac2648fa855a2f204e25629c115f5b986313",
+      "usable_saved_masks_for_current_image": true,
+      "saved_classifier_input": "data/split_dataset_csc_mask/train/200021763/200021763_00002_2/00_input.png",
+      "saved_classifier_input_sha256": "3c4be32f5a9ab73d1f0859692c20174d56aedf883ff997876ba4dffe3968ec1c",
+      "new_ACE_sha256": "053bf3836728b9520f963f686269f5e6292018be53357d3290274da42bf23b96",
+      "ACE_identical": false,
+      "ACE_mean_abs_change_255": 0.9397517787574214,
+      "strict_red_pixels": {
+        "original": 999,
+        "saved_classifier_input": 65036,
+        "CPU_ACE_seed0_n200": 64309
+      },
+      "v1": {
+        "saved_red_pixels": 0,
+        "new_red_pixels": 0,
+        "different_pixels": 0,
+        "saved_mask_path": "data/split_dataset_csc_mask/train/200021763/200021763_00002_2/03_text_red.png",
+        "saved_mask_sha256": "6e47ff5b9a54ec8dc2dd07383b735ef4b6780b265dbf4a58e8b81dbc88d56b97"
+      },
+      "v2": {
+        "saved_red_pixels": 128614,
+        "new_red_pixels": 132728,
+        "different_pixels": 10162,
+        "saved_mask_path": "data/split_dataset_csc_mask_v2/train/200021763/200021763_00002_2/03_text_red.png",
+        "saved_mask_sha256": "7e61a4a0f66cce07fd39365eee864e49fdc573b50a1ab5c6258bf9b66ad6fa24"
+      }
+    },
+    {
+      "page": "200025191_00004_2",
+      "book": "200025191",
+      "original": "data/train/200025191/200025191_00004_2.jpg",
+      "old_raw_exists": true,
+      "saved_v1_exists": true,
+      "saved_v2_exists": true,
+      "decoded_original_identical": true,
+      "old_raw_sha256": "28435ed05f9d48efa60f467c628616a3e5dc294642cab424e0014146494add7a",
+      "usable_saved_masks_for_current_image": true,
+      "saved_classifier_input": "data/split_dataset_csc_mask/train/200025191/200025191_00004_2/00_input.png",
+      "saved_classifier_input_sha256": "8012373717af5f79a3a152f2ff372b61aff0fa445ba2227a4a649d17c76aee04",
+      "new_ACE_sha256": "7a6ba350edd267ccd99912617a3275d7067b7746529afa4651b29272fae4d7b5",
+      "ACE_identical": false,
+      "ACE_mean_abs_change_255": 1.204846051290995,
+      "strict_red_pixels": {
+        "original": 4661,
+        "saved_classifier_input": 29672,
+        "CPU_ACE_seed0_n200": 26671
+      },
+      "v1": {
+        "saved_red_pixels": 45354,
+        "new_red_pixels": 40809,
+        "different_pixels": 8589,
+        "saved_mask_path": "data/split_dataset_csc_mask/train/200025191/200025191_00004_2/03_text_red.png",
+        "saved_mask_sha256": "a93d3789fb9ab622968df0e98c90edb8f97d176e9e9880bdac4f39e987eb3b8e"
+      },
+      "v2": {
+        "saved_red_pixels": 38802,
+        "new_red_pixels": 39188,
+        "different_pixels": 2402,
+        "saved_mask_path": "data/split_dataset_csc_mask_v2/train/200025191/200025191_00004_2/03_text_red.png",
+        "saved_mask_sha256": "84bf8bead501cd363ffc8a19ae6d2c067846962b9973bfbcb0a0baceb263e483"
+      }
+    },
+    {
+      "page": "100249371_00002_1",
+      "book": "100249371",
+      "original": "data/val/100249371/100249371_00002_1.jpg",
+      "old_raw_exists": true,
+      "saved_v1_exists": true,
+      "saved_v2_exists": true,
+      "decoded_original_identical": true,
+      "old_raw_sha256": "fd32440af0d2cd93de4b9b7ac820cbc90d84e2bed0e7b23e3796d0b0f4861ff6",
+      "usable_saved_masks_for_current_image": true,
+      "saved_classifier_input": "data/split_dataset_csc_mask/val/100249371/100249371_00002_1/00_input.png",
+      "saved_classifier_input_sha256": "edc70629946eed1d12e17c917d1b36e5f95f2ee0a4fe4606b2324ddc9a3d145e",
+      "new_ACE_sha256": "6e3a38f9fc5881b66c2676e751f296cf5bd78bb70e4b7d09dd4d396c0b5d5ca3",
+      "ACE_identical": false,
+      "ACE_mean_abs_change_255": 1.6145077146183904,
+      "strict_red_pixels": {
+        "original": 11595,
+        "saved_classifier_input": 13221,
+        "CPU_ACE_seed0_n200": 11583
+      },
+      "v1": {
+        "saved_red_pixels": 129623,
+        "new_red_pixels": 242588,
+        "different_pixels": 160635,
+        "saved_mask_path": "data/split_dataset_csc_mask/val/100249371/100249371_00002_1/03_text_red.png",
+        "saved_mask_sha256": "949983989382fe8bc792adf99b42b1e69e2835686d7ec2dfec9da4ff70f7c777"
+      },
+      "v2": {
+        "saved_red_pixels": 32387,
+        "new_red_pixels": 32434,
+        "different_pixels": 1163,
+        "saved_mask_path": "data/split_dataset_csc_mask_v2/val/100249371/100249371_00002_1/03_text_red.png",
+        "saved_mask_sha256": "2e750a3e856a718e8e9d270302d7aaffd0b0edd501c1c5852c66fa7e7c168c52"
+      }
+    },
+    {
+      "page": "200021637_00003_2",
+      "book": "200021637",
+      "original": "data/val/200021637/200021637_00003_2.jpg",
+      "old_raw_exists": true,
+      "saved_v1_exists": true,
+      "saved_v2_exists": true,
+      "decoded_original_identical": true,
+      "old_raw_sha256": "8f1529dc441b3546249cb1931261d9401423923ae606b5bc7539b3f5b652d944",
+      "usable_saved_masks_for_current_image": true,
+      "saved_classifier_input": "data/split_dataset_csc_mask/val/200021637/200021637_00003_2/00_input.png",
+      "saved_classifier_input_sha256": "f92f70a05ffc090faecefb453e4b56950413283de09765cb578323ab0dec504b",
+      "new_ACE_sha256": "8ba790506a417a1571ef626e0951fd9599f5fbf9b6341be995d38e794e1af9e3",
+      "ACE_identical": false,
+      "ACE_mean_abs_change_255": 1.4725721726781773,
+      "strict_red_pixels": {
+        "original": 4374,
+        "saved_classifier_input": 25665,
+        "CPU_ACE_seed0_n200": 26024
+      },
+      "v1": {
+        "saved_red_pixels": 49419,
+        "new_red_pixels": 49023,
+        "different_pixels": 3374,
+        "saved_mask_path": "data/split_dataset_csc_mask/val/200021637/200021637_00003_2/03_text_red.png",
+        "saved_mask_sha256": "20e8a4ef42a911b3c1a99640aebcd27e2e18f6683247b93369b27ff55c3b7e39"
+      },
+      "v2": {
+        "saved_red_pixels": 37297,
+        "new_red_pixels": 37254,
+        "different_pixels": 2279,
+        "saved_mask_path": "data/split_dataset_csc_mask_v2/val/200021637/200021637_00003_2/03_text_red.png",
+        "saved_mask_sha256": "430406b2fe339ca92b2bced85130cd0779a412c5b3db48cb274af876b01429c5"
+      }
+    },
+    {
+      "page": "100249416_00002_2",
+      "book": "100249416",
+      "original": "data/val/100249416/100249416_00002_2.jpg",
+      "old_raw_exists": true,
+      "saved_v1_exists": true,
+      "saved_v2_exists": true,
+      "decoded_original_identical": true,
+      "old_raw_sha256": "31f4689eae8f8bc1c944000095d8850950bccafbae6816041b1ee46b113cd8fc",
+      "usable_saved_masks_for_current_image": true,
+      "saved_classifier_input": "data/split_dataset_csc_mask/val/100249416/100249416_00002_2/00_input.png",
+      "saved_classifier_input_sha256": "918840b1930c1076bea5582b1eb2ced0cad31c0bbf419c83285cbd0ec6e4986f",
+      "new_ACE_sha256": "60ae4b0a5c218ba57217eaafa6ea86c92d1f39827a0362c09b14df88030af48d",
+      "ACE_identical": false,
+      "ACE_mean_abs_change_255": 1.4322474026210505,
+      "strict_red_pixels": {
+        "original": 13942,
+        "saved_classifier_input": 20842,
+        "CPU_ACE_seed0_n200": 20976
+      },
+      "v1": {
+        "saved_red_pixels": 75311,
+        "new_red_pixels": 74198,
+        "different_pixels": 7645,
+        "saved_mask_path": "data/split_dataset_csc_mask/val/100249416/100249416_00002_2/03_text_red.png",
+        "saved_mask_sha256": "6b81af15442b49c3e39c04501f546b5fac586640f7cc3ab3ddf70a2e6e1bdfac"
+      },
+      "v2": {
+        "saved_red_pixels": 46449,
+        "new_red_pixels": 37152,
+        "different_pixels": 12469,
+        "saved_mask_path": "data/split_dataset_csc_mask_v2/val/100249416/100249416_00002_2/03_text_red.png",
+        "saved_mask_sha256": "2ff25d7480923d4df06610bcfeeee3d7cc74faf569b417df779fa19c17ab1a65"
+      }
+    },
+    {
+      "page": "200017458_00003_2",
+      "book": "200017458",
+      "original": "data/test/200017458/200017458_00003_2.jpg",
+      "old_raw_exists": true,
+      "saved_v1_exists": true,
+      "saved_v2_exists": true,
+      "decoded_original_identical": true,
+      "old_raw_sha256": "dba458ff40c3944e93ccbda866a6683c4cdb6cc312576ec66dddfd5d9a0f5ac1",
+      "usable_saved_masks_for_current_image": true
+    },
+    {
+      "page": "200015779_00089_2",
+      "book": "200015779",
+      "original": "data/train/200015779/200015779_00089_2.jpg",
+      "old_raw_exists": true,
+      "saved_v1_exists": true,
+      "saved_v2_exists": true,
+      "decoded_original_identical": true,
+      "old_raw_sha256": "cadc58d69497812b2a99065e399202d818255d759998b55e177def6b0b68a9d2",
+      "usable_saved_masks_for_current_image": true
+    },
+    {
+      "page": "200010454_00012_1",
+      "book": "200010454",
+      "original": "data/test/200010454/200010454_00012_1.jpg",
+      "old_raw_exists": true,
+      "saved_v1_exists": true,
+      "saved_v2_exists": true,
+      "decoded_original_identical": true,
+      "old_raw_sha256": "44b26e75550a5011ce39b71197c1e7e2bd8e576a166241a95ce9afff4a26d259",
+      "usable_saved_masks_for_current_image": true
+    },
+    {
+      "page": "200010454_00006_2",
+      "book": "200010454",
+      "original": "data/test/200010454/200010454_00006_2.jpg",
+      "old_raw_exists": true,
+      "saved_v1_exists": true,
+      "saved_v2_exists": true,
+      "decoded_original_identical": true,
+      "old_raw_sha256": "065fb6a6055e9ec24dbb47e690c9672bf5506679ab5cad60924e79c330e2c3e7",
+      "usable_saved_masks_for_current_image": true
+    },
+    {
+      "page": "200010454_00002_2",
+      "book": "200010454",
+      "original": "data/test/200010454/200010454_00002_2.jpg",
+      "old_raw_exists": true,
+      "saved_v1_exists": true,
+      "saved_v2_exists": true,
+      "decoded_original_identical": true,
+      "old_raw_sha256": "177776f90fc08b12e2f59a37773ef433556f43ebe47c503c2d676595a08a60d1",
+      "usable_saved_masks_for_current_image": true
+    }
+  ],
+  "warning": "Generated CPU-ACE+CSC v2 and saved CSC v2 are distinct conditions; no assumption of published-mask reproduction",
+  "source_sha256": "4a183d02582843b4866a94d52281009a48084f0f919d030c8ab809720fc75786"
+}

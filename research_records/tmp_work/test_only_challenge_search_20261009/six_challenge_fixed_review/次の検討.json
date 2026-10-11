@@ -1,0 +1,38 @@
+{
+  "status": "six_challenge_review_complete",
+  "text_mask": "Fixed Howe c160",
+  "red_parameters_retuned": false,
+  "csc_background_and_degradation_directly_used_in_current_ddrm": false,
+  "priorities": [
+    {
+      "order": 1,
+      "task": "07残存像の局所分類",
+      "labels": [
+        "表文字",
+        "対応ページ由来の裏移り候補",
+        "点・傷状の像",
+        "不明"
+      ],
+      "rule": "不明な像と薄い表文字を保持し、根拠のある候補だけを除去対象にする"
+    },
+    {
+      "order": 2,
+      "task": "撮影境界と紙面外周の黒像",
+      "rule": "本文枠線・余白注記を保護し、外周由来の非文字だけを分ける"
+    },
+    {
+      "order": 3,
+      "task": "CSCの他クラスとの接続仕様",
+      "rule": "未割当を背景・劣化に変換しない。全クラス利用の評価と現在の黒＋赤入力評価を区別する"
+    },
+    {
+      "order": 4,
+      "task": "06紙面損傷",
+      "rule": "文字二値化とは別の修復課題として評価する"
+    }
+  ],
+  "optional": "04孤立点除去は追加条件。基本設定へ一律適用しない",
+  "final_test": false,
+  "report": "tmp_work/test_only_challenge_search_20261009/six_challenge_fixed_review/検討結果.md",
+  "comparison": "tmp_work/test_only_challenge_search_20261009/six_challenge_fixed_review/6課題_固定条件DDRM比較.png"
+}

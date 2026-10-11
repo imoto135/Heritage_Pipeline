@@ -1,0 +1,39 @@
+{
+  "created_utc": "2026-10-07T16:48:08.362947+00:00",
+  "source_cases": [
+    "dev_06",
+    "dev_08",
+    "dev_10"
+  ],
+  "purpose": "Development diagnostic of colored-ink support stability under digitally added brown fields; no authentic clean-paper GT",
+  "injection": "Multiplicative attenuation on gamma-encoded RGB, not verified pigment chemistry",
+  "directions": {
+    "brown": [
+      0.45,
+      0.72,
+      1.0
+    ],
+    "red_brown": [
+      0.12,
+      0.72,
+      1.0
+    ]
+  },
+  "opacity": [
+    0.1,
+    0.3
+  ],
+  "shapes": [
+    "broad_ellipses",
+    "narrow_fold"
+  ],
+  "seed": 20261017,
+  "model_selection": "Diagnostic only; do not tune final validation on these outputs",
+  "test": "Frozen tentative observed-red points remain observed ink; paper-negative regions remain no observed red after added stain",
+  "claims_excluded": [
+    "Real stain removal accuracy",
+    "Expert readability",
+    "Chemical pigment identification"
+  ],
+  "protocol_fixed_before_outputs": true
+}

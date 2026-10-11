@@ -1,0 +1,1642 @@
+[
+  {
+    "id": "dev_10_narrow_fold_brown_30",
+    "case": "dev_10",
+    "name": "docres_foreground_chroma",
+    "family": "docres_chroma",
+    "input_sha256": "e8ad105cdab54312f5bf2ac9ff8c7b4df2d2e322875d22171c6416984735c180",
+    "resources": {
+      "/home/imoto/Heritage_Pipeline/tmp_work/npj_literature_models_20261002/repos/DocRes/models/restormer_arch.py": "4a6f50552cf21c016f3c38f0302ff9c9cea07a38111c219ef9e67279e60d6915",
+      "/home/imoto/Heritage_Pipeline/tmp_work/npj_literature_models_20261002/weights/docres_mirror.pkl": "1d6a89d754fe1e58ffd1865eab0ef3f03344798d39197b2d9a77ce4fbc8c02fd"
+    },
+    "script_sha256": "e5b0b087d40c4768818e555ae7cc5533c9102382540214d00bc64b3b8a00b66b",
+    "mask_sha256": "0f33c4891bca8623345bfd54a598472d74f841ed64d4b6a8b0f28654ddc861e5",
+    "seconds": 28.94349004421383,
+    "threshold": 0.5,
+    "diagnostic": {
+      "points": {
+        "observed_red_mark": {
+          "points": 32,
+          "before": 1,
+          "after": 2,
+          "newly_selected": 1,
+          "newly_lost": 0
+        },
+        "paper_or_brown_nonmark": {
+          "points": 10,
+          "before": 0,
+          "after": 0,
+          "newly_selected": 0,
+          "newly_lost": 0
+        }
+      },
+      "selected_paper_region_added_support": [
+        {
+          "region": 0,
+          "added_support_pixels": 0,
+          "before_selected": 0,
+          "after_selected": 0,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        },
+        {
+          "region": 1,
+          "added_support_pixels": 0,
+          "before_selected": 0,
+          "after_selected": 0,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        },
+        {
+          "region": 2,
+          "added_support_pixels": 0,
+          "before_selected": 0,
+          "after_selected": 0,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        },
+        {
+          "region": 3,
+          "added_support_pixels": 0,
+          "before_selected": 0,
+          "after_selected": 0,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        }
+      ]
+    },
+    "no_real_pixel_or_reading_GT": true,
+    "original_training_points_may_have_been_seen": true,
+    "perturbation": "Frozen development diagnostic, not final test"
+  },
+  {
+    "id": "dev_06_narrow_fold_brown_30",
+    "case": "dev_06",
+    "name": "docres_foreground_chroma",
+    "family": "docres_chroma",
+    "input_sha256": "923b58007732313486de7c15b33942581431b1b37dd7e4f26f735f0e14855994",
+    "resources": {
+      "/home/imoto/Heritage_Pipeline/tmp_work/npj_literature_models_20261002/repos/DocRes/models/restormer_arch.py": "4a6f50552cf21c016f3c38f0302ff9c9cea07a38111c219ef9e67279e60d6915",
+      "/home/imoto/Heritage_Pipeline/tmp_work/npj_literature_models_20261002/weights/docres_mirror.pkl": "1d6a89d754fe1e58ffd1865eab0ef3f03344798d39197b2d9a77ce4fbc8c02fd"
+    },
+    "script_sha256": "e5b0b087d40c4768818e555ae7cc5533c9102382540214d00bc64b3b8a00b66b",
+    "mask_sha256": "fb3d2aa122e0fe9c9ff6159e63bd0ec66dafd047151da0ac7a6dd033427e1372",
+    "seconds": 12.968053866177797,
+    "threshold": 0.5,
+    "diagnostic": {
+      "points": {
+        "observed_red_mark": {
+          "points": 16,
+          "before": 0,
+          "after": 0,
+          "newly_selected": 0,
+          "newly_lost": 0
+        },
+        "paper_or_brown_nonmark": {
+          "points": 8,
+          "before": 0,
+          "after": 0,
+          "newly_selected": 0,
+          "newly_lost": 0
+        }
+      },
+      "selected_paper_region_added_support": [
+        {
+          "region": 9,
+          "added_support_pixels": 0,
+          "before_selected": 0,
+          "after_selected": 0,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        },
+        {
+          "region": 10,
+          "added_support_pixels": 0,
+          "before_selected": 0,
+          "after_selected": 0,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        },
+        {
+          "region": 11,
+          "added_support_pixels": 0,
+          "before_selected": 0,
+          "after_selected": 0,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        },
+        {
+          "region": 12,
+          "added_support_pixels": 0,
+          "before_selected": 0,
+          "after_selected": 0,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        }
+      ]
+    },
+    "no_real_pixel_or_reading_GT": true,
+    "original_training_points_may_have_been_seen": true,
+    "perturbation": "Frozen development diagnostic, not final test"
+  },
+  {
+    "id": "dev_08_broad_ellipses_brown_30",
+    "case": "dev_08",
+    "name": "docres_foreground_chroma",
+    "family": "docres_chroma",
+    "input_sha256": "43a51b8659d91bb09503838dc99ad5d041a3250bea1eca7694f235d56e02cd97",
+    "resources": {
+      "/home/imoto/Heritage_Pipeline/tmp_work/npj_literature_models_20261002/repos/DocRes/models/restormer_arch.py": "4a6f50552cf21c016f3c38f0302ff9c9cea07a38111c219ef9e67279e60d6915",
+      "/home/imoto/Heritage_Pipeline/tmp_work/npj_literature_models_20261002/weights/docres_mirror.pkl": "1d6a89d754fe1e58ffd1865eab0ef3f03344798d39197b2d9a77ce4fbc8c02fd"
+    },
+    "script_sha256": "e5b0b087d40c4768818e555ae7cc5533c9102382540214d00bc64b3b8a00b66b",
+    "mask_sha256": "28539d5a2d81a9eb8ed11ddb70c444b1d4443a894a8ed5a75af40f7736ccdfe1",
+    "seconds": 13.747541334480047,
+    "threshold": 0.5,
+    "diagnostic": {
+      "points": {
+        "observed_red_mark": {
+          "points": 18,
+          "before": 0,
+          "after": 0,
+          "newly_selected": 0,
+          "newly_lost": 0
+        },
+        "paper_or_brown_nonmark": {
+          "points": 8,
+          "before": 0,
+          "after": 0,
+          "newly_selected": 0,
+          "newly_lost": 0
+        }
+      },
+      "selected_paper_region_added_support": [
+        {
+          "region": 4,
+          "added_support_pixels": 0,
+          "before_selected": 0,
+          "after_selected": 0,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        },
+        {
+          "region": 5,
+          "added_support_pixels": 15750,
+          "before_selected": 0,
+          "after_selected": 0,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        },
+        {
+          "region": 6,
+          "added_support_pixels": 17500,
+          "before_selected": 0,
+          "after_selected": 0,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        },
+        {
+          "region": 7,
+          "added_support_pixels": 0,
+          "before_selected": 0,
+          "after_selected": 0,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        },
+        {
+          "region": 8,
+          "added_support_pixels": 10614,
+          "before_selected": 0,
+          "after_selected": 0,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        }
+      ]
+    },
+    "no_real_pixel_or_reading_GT": true,
+    "original_training_points_may_have_been_seen": true,
+    "perturbation": "Frozen development diagnostic, not final test"
+  },
+  {
+    "id": "dev_06_broad_ellipses_red_brown_30",
+    "case": "dev_06",
+    "name": "docres_foreground_chroma",
+    "family": "docres_chroma",
+    "input_sha256": "9fb43dcb94e56bda14adc28dcd6696a0d6cc7af65b927921e9951d9f3bda89c4",
+    "resources": {
+      "/home/imoto/Heritage_Pipeline/tmp_work/npj_literature_models_20261002/repos/DocRes/models/restormer_arch.py": "4a6f50552cf21c016f3c38f0302ff9c9cea07a38111c219ef9e67279e60d6915",
+      "/home/imoto/Heritage_Pipeline/tmp_work/npj_literature_models_20261002/weights/docres_mirror.pkl": "1d6a89d754fe1e58ffd1865eab0ef3f03344798d39197b2d9a77ce4fbc8c02fd"
+    },
+    "script_sha256": "e5b0b087d40c4768818e555ae7cc5533c9102382540214d00bc64b3b8a00b66b",
+    "mask_sha256": "4f6032975cacba84f20c944c17be2e7e51a706689710897de7101ea5f4c4832b",
+    "seconds": 12.531550403684378,
+    "threshold": 0.5,
+    "diagnostic": {
+      "points": {
+        "observed_red_mark": {
+          "points": 16,
+          "before": 0,
+          "after": 0,
+          "newly_selected": 0,
+          "newly_lost": 0
+        },
+        "paper_or_brown_nonmark": {
+          "points": 8,
+          "before": 0,
+          "after": 0,
+          "newly_selected": 0,
+          "newly_lost": 0
+        }
+      },
+      "selected_paper_region_added_support": [
+        {
+          "region": 9,
+          "added_support_pixels": 2832,
+          "before_selected": 0,
+          "after_selected": 0,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        },
+        {
+          "region": 10,
+          "added_support_pixels": 6800,
+          "before_selected": 0,
+          "after_selected": 0,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        },
+        {
+          "region": 11,
+          "added_support_pixels": 2222,
+          "before_selected": 0,
+          "after_selected": 0,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        },
+        {
+          "region": 12,
+          "added_support_pixels": 6729,
+          "before_selected": 0,
+          "after_selected": 0,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        }
+      ]
+    },
+    "no_real_pixel_or_reading_GT": true,
+    "original_training_points_may_have_been_seen": true,
+    "perturbation": "Frozen development diagnostic, not final test"
+  },
+  {
+    "id": "dev_08_narrow_fold_red_brown_30",
+    "case": "dev_08",
+    "name": "docres_foreground_chroma",
+    "family": "docres_chroma",
+    "input_sha256": "3a8f82cf1051dcbf2aaec7f5ea855aae3d41f2e94c563857f440eec40bf5074f",
+    "resources": {
+      "/home/imoto/Heritage_Pipeline/tmp_work/npj_literature_models_20261002/repos/DocRes/models/restormer_arch.py": "4a6f50552cf21c016f3c38f0302ff9c9cea07a38111c219ef9e67279e60d6915",
+      "/home/imoto/Heritage_Pipeline/tmp_work/npj_literature_models_20261002/weights/docres_mirror.pkl": "1d6a89d754fe1e58ffd1865eab0ef3f03344798d39197b2d9a77ce4fbc8c02fd"
+    },
+    "script_sha256": "e5b0b087d40c4768818e555ae7cc5533c9102382540214d00bc64b3b8a00b66b",
+    "mask_sha256": "2e376e6b4f25eff62dceb80b65aeda84d7c02bfeaf96d6b94219359b3daddfc1",
+    "seconds": 13.46466616820544,
+    "threshold": 0.5,
+    "diagnostic": {
+      "points": {
+        "observed_red_mark": {
+          "points": 18,
+          "before": 0,
+          "after": 0,
+          "newly_selected": 0,
+          "newly_lost": 0
+        },
+        "paper_or_brown_nonmark": {
+          "points": 8,
+          "before": 0,
+          "after": 0,
+          "newly_selected": 0,
+          "newly_lost": 0
+        }
+      },
+      "selected_paper_region_added_support": [
+        {
+          "region": 4,
+          "added_support_pixels": 0,
+          "before_selected": 0,
+          "after_selected": 0,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        },
+        {
+          "region": 5,
+          "added_support_pixels": 0,
+          "before_selected": 0,
+          "after_selected": 0,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        },
+        {
+          "region": 6,
+          "added_support_pixels": 0,
+          "before_selected": 0,
+          "after_selected": 0,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        },
+        {
+          "region": 7,
+          "added_support_pixels": 0,
+          "before_selected": 0,
+          "after_selected": 0,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        },
+        {
+          "region": 8,
+          "added_support_pixels": 2237,
+          "before_selected": 0,
+          "after_selected": 0,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        }
+      ]
+    },
+    "no_real_pixel_or_reading_GT": true,
+    "original_training_points_may_have_been_seen": true,
+    "perturbation": "Frozen development diagnostic, not final test"
+  },
+  {
+    "id": "dev_10_narrow_fold_red_brown_10",
+    "case": "dev_10",
+    "name": "docres_foreground_chroma",
+    "family": "docres_chroma",
+    "input_sha256": "6837655dc094e6935bd26d198c808780d351f4d324b2a9f7b4a34fcdbd40a594",
+    "resources": {
+      "/home/imoto/Heritage_Pipeline/tmp_work/npj_literature_models_20261002/repos/DocRes/models/restormer_arch.py": "4a6f50552cf21c016f3c38f0302ff9c9cea07a38111c219ef9e67279e60d6915",
+      "/home/imoto/Heritage_Pipeline/tmp_work/npj_literature_models_20261002/weights/docres_mirror.pkl": "1d6a89d754fe1e58ffd1865eab0ef3f03344798d39197b2d9a77ce4fbc8c02fd"
+    },
+    "script_sha256": "e5b0b087d40c4768818e555ae7cc5533c9102382540214d00bc64b3b8a00b66b",
+    "mask_sha256": "182350e811cce7e197c0d3359184da809911c95ad9e51652dfba0dc3f007e105",
+    "seconds": 38.57423632964492,
+    "threshold": 0.5,
+    "diagnostic": {
+      "points": {
+        "observed_red_mark": {
+          "points": 32,
+          "before": 1,
+          "after": 2,
+          "newly_selected": 1,
+          "newly_lost": 0
+        },
+        "paper_or_brown_nonmark": {
+          "points": 10,
+          "before": 0,
+          "after": 0,
+          "newly_selected": 0,
+          "newly_lost": 0
+        }
+      },
+      "selected_paper_region_added_support": [
+        {
+          "region": 0,
+          "added_support_pixels": 0,
+          "before_selected": 0,
+          "after_selected": 0,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        },
+        {
+          "region": 1,
+          "added_support_pixels": 0,
+          "before_selected": 0,
+          "after_selected": 0,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        },
+        {
+          "region": 2,
+          "added_support_pixels": 0,
+          "before_selected": 0,
+          "after_selected": 0,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        },
+        {
+          "region": 3,
+          "added_support_pixels": 0,
+          "before_selected": 0,
+          "after_selected": 0,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        }
+      ]
+    },
+    "no_real_pixel_or_reading_GT": true,
+    "original_training_points_may_have_been_seen": true,
+    "perturbation": "Frozen development diagnostic, not final test"
+  },
+  {
+    "id": "dev_08_broad_ellipses_red_brown_30",
+    "case": "dev_08",
+    "name": "docres_foreground_chroma",
+    "family": "docres_chroma",
+    "input_sha256": "4aa0ad3d93f79e11ef0224e8bc7f7ff8b35a21de559d69912077d3c4e0f69910",
+    "resources": {
+      "/home/imoto/Heritage_Pipeline/tmp_work/npj_literature_models_20261002/repos/DocRes/models/restormer_arch.py": "4a6f50552cf21c016f3c38f0302ff9c9cea07a38111c219ef9e67279e60d6915",
+      "/home/imoto/Heritage_Pipeline/tmp_work/npj_literature_models_20261002/weights/docres_mirror.pkl": "1d6a89d754fe1e58ffd1865eab0ef3f03344798d39197b2d9a77ce4fbc8c02fd"
+    },
+    "script_sha256": "e5b0b087d40c4768818e555ae7cc5533c9102382540214d00bc64b3b8a00b66b",
+    "mask_sha256": "7eafecfc239d511483891487fd581f7b792bad705f329ffca569d6280eed0ebc",
+    "seconds": 13.5967568596825,
+    "threshold": 0.5,
+    "diagnostic": {
+      "points": {
+        "observed_red_mark": {
+          "points": 18,
+          "before": 0,
+          "after": 0,
+          "newly_selected": 0,
+          "newly_lost": 0
+        },
+        "paper_or_brown_nonmark": {
+          "points": 8,
+          "before": 0,
+          "after": 0,
+          "newly_selected": 0,
+          "newly_lost": 0
+        }
+      },
+      "selected_paper_region_added_support": [
+        {
+          "region": 4,
+          "added_support_pixels": 0,
+          "before_selected": 0,
+          "after_selected": 0,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        },
+        {
+          "region": 5,
+          "added_support_pixels": 15750,
+          "before_selected": 0,
+          "after_selected": 0,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        },
+        {
+          "region": 6,
+          "added_support_pixels": 17500,
+          "before_selected": 0,
+          "after_selected": 0,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        },
+        {
+          "region": 7,
+          "added_support_pixels": 0,
+          "before_selected": 0,
+          "after_selected": 0,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        },
+        {
+          "region": 8,
+          "added_support_pixels": 10614,
+          "before_selected": 0,
+          "after_selected": 0,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        }
+      ]
+    },
+    "no_real_pixel_or_reading_GT": true,
+    "original_training_points_may_have_been_seen": true,
+    "perturbation": "Frozen development diagnostic, not final test"
+  },
+  {
+    "id": "dev_10_broad_ellipses_brown_30",
+    "case": "dev_10",
+    "name": "docres_foreground_chroma",
+    "family": "docres_chroma",
+    "input_sha256": "60c72af8923b19e25a2bc03d551530c6adae0ed33a819c03da276c9af02e6743",
+    "resources": {
+      "/home/imoto/Heritage_Pipeline/tmp_work/npj_literature_models_20261002/repos/DocRes/models/restormer_arch.py": "4a6f50552cf21c016f3c38f0302ff9c9cea07a38111c219ef9e67279e60d6915",
+      "/home/imoto/Heritage_Pipeline/tmp_work/npj_literature_models_20261002/weights/docres_mirror.pkl": "1d6a89d754fe1e58ffd1865eab0ef3f03344798d39197b2d9a77ce4fbc8c02fd"
+    },
+    "script_sha256": "e5b0b087d40c4768818e555ae7cc5533c9102382540214d00bc64b3b8a00b66b",
+    "mask_sha256": "96ef9da71e9140f324c7a64130e80f128295dd8bd9624caefd18cb83ed036b7d",
+    "seconds": 28.90018813405186,
+    "threshold": 0.5,
+    "diagnostic": {
+      "points": {
+        "observed_red_mark": {
+          "points": 32,
+          "before": 1,
+          "after": 5,
+          "newly_selected": 4,
+          "newly_lost": 0
+        },
+        "paper_or_brown_nonmark": {
+          "points": 10,
+          "before": 0,
+          "after": 0,
+          "newly_selected": 0,
+          "newly_lost": 0
+        }
+      },
+      "selected_paper_region_added_support": [
+        {
+          "region": 0,
+          "added_support_pixels": 14172,
+          "before_selected": 0,
+          "after_selected": 0,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        },
+        {
+          "region": 1,
+          "added_support_pixels": 18597,
+          "before_selected": 0,
+          "after_selected": 0,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        },
+        {
+          "region": 2,
+          "added_support_pixels": 5600,
+          "before_selected": 0,
+          "after_selected": 0,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        },
+        {
+          "region": 3,
+          "added_support_pixels": 10500,
+          "before_selected": 0,
+          "after_selected": 0,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        }
+      ]
+    },
+    "no_real_pixel_or_reading_GT": true,
+    "original_training_points_may_have_been_seen": true,
+    "perturbation": "Frozen development diagnostic, not final test"
+  },
+  {
+    "id": "dev_06_narrow_fold_brown_10",
+    "case": "dev_06",
+    "name": "docres_foreground_chroma",
+    "family": "docres_chroma",
+    "input_sha256": "763b2ba87a933a28f59b07fa29cc6e52be39332a11e94c638c5c1bb36c36f6e7",
+    "resources": {
+      "/home/imoto/Heritage_Pipeline/tmp_work/npj_literature_models_20261002/repos/DocRes/models/restormer_arch.py": "4a6f50552cf21c016f3c38f0302ff9c9cea07a38111c219ef9e67279e60d6915",
+      "/home/imoto/Heritage_Pipeline/tmp_work/npj_literature_models_20261002/weights/docres_mirror.pkl": "1d6a89d754fe1e58ffd1865eab0ef3f03344798d39197b2d9a77ce4fbc8c02fd"
+    },
+    "script_sha256": "e5b0b087d40c4768818e555ae7cc5533c9102382540214d00bc64b3b8a00b66b",
+    "mask_sha256": "8fe2e19c254e94d8791a2ebc77e9bb49272c9ce888ce293721eb5d6dd273ae71",
+    "seconds": 12.8095111399889,
+    "threshold": 0.5,
+    "diagnostic": {
+      "points": {
+        "observed_red_mark": {
+          "points": 16,
+          "before": 0,
+          "after": 0,
+          "newly_selected": 0,
+          "newly_lost": 0
+        },
+        "paper_or_brown_nonmark": {
+          "points": 8,
+          "before": 0,
+          "after": 0,
+          "newly_selected": 0,
+          "newly_lost": 0
+        }
+      },
+      "selected_paper_region_added_support": [
+        {
+          "region": 9,
+          "added_support_pixels": 0,
+          "before_selected": 0,
+          "after_selected": 0,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        },
+        {
+          "region": 10,
+          "added_support_pixels": 0,
+          "before_selected": 0,
+          "after_selected": 0,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        },
+        {
+          "region": 11,
+          "added_support_pixels": 0,
+          "before_selected": 0,
+          "after_selected": 0,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        },
+        {
+          "region": 12,
+          "added_support_pixels": 0,
+          "before_selected": 0,
+          "after_selected": 0,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        }
+      ]
+    },
+    "no_real_pixel_or_reading_GT": true,
+    "original_training_points_may_have_been_seen": true,
+    "perturbation": "Frozen development diagnostic, not final test"
+  },
+  {
+    "id": "dev_10_broad_ellipses_brown_10",
+    "case": "dev_10",
+    "name": "docres_foreground_chroma",
+    "family": "docres_chroma",
+    "input_sha256": "e2c5218029072696fa7fd1c4b127222ae71b8fa7c798e1e8eb763efe59db37a5",
+    "resources": {
+      "/home/imoto/Heritage_Pipeline/tmp_work/npj_literature_models_20261002/repos/DocRes/models/restormer_arch.py": "4a6f50552cf21c016f3c38f0302ff9c9cea07a38111c219ef9e67279e60d6915",
+      "/home/imoto/Heritage_Pipeline/tmp_work/npj_literature_models_20261002/weights/docres_mirror.pkl": "1d6a89d754fe1e58ffd1865eab0ef3f03344798d39197b2d9a77ce4fbc8c02fd"
+    },
+    "script_sha256": "e5b0b087d40c4768818e555ae7cc5533c9102382540214d00bc64b3b8a00b66b",
+    "mask_sha256": "148793fe98f7e8e6ae07cc65289c40eed3e6b9a97376dc19dab02f3fb6dee4fa",
+    "seconds": 33.76606554724276,
+    "threshold": 0.5,
+    "diagnostic": {
+      "points": {
+        "observed_red_mark": {
+          "points": 32,
+          "before": 1,
+          "after": 3,
+          "newly_selected": 2,
+          "newly_lost": 0
+        },
+        "paper_or_brown_nonmark": {
+          "points": 10,
+          "before": 0,
+          "after": 0,
+          "newly_selected": 0,
+          "newly_lost": 0
+        }
+      },
+      "selected_paper_region_added_support": [
+        {
+          "region": 0,
+          "added_support_pixels": 14172,
+          "before_selected": 0,
+          "after_selected": 0,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        },
+        {
+          "region": 1,
+          "added_support_pixels": 18597,
+          "before_selected": 0,
+          "after_selected": 0,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        },
+        {
+          "region": 2,
+          "added_support_pixels": 5600,
+          "before_selected": 0,
+          "after_selected": 0,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        },
+        {
+          "region": 3,
+          "added_support_pixels": 10500,
+          "before_selected": 0,
+          "after_selected": 0,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        }
+      ]
+    },
+    "no_real_pixel_or_reading_GT": true,
+    "original_training_points_may_have_been_seen": true,
+    "perturbation": "Frozen development diagnostic, not final test"
+  },
+  {
+    "id": "dev_10_narrow_fold_brown_10",
+    "case": "dev_10",
+    "name": "docres_foreground_chroma",
+    "family": "docres_chroma",
+    "input_sha256": "f8cfeaa5b532829257e3d6bdb09745a1e63bf9b5eaeecfef2599928373c8ee5c",
+    "resources": {
+      "/home/imoto/Heritage_Pipeline/tmp_work/npj_literature_models_20261002/repos/DocRes/models/restormer_arch.py": "4a6f50552cf21c016f3c38f0302ff9c9cea07a38111c219ef9e67279e60d6915",
+      "/home/imoto/Heritage_Pipeline/tmp_work/npj_literature_models_20261002/weights/docres_mirror.pkl": "1d6a89d754fe1e58ffd1865eab0ef3f03344798d39197b2d9a77ce4fbc8c02fd"
+    },
+    "script_sha256": "e5b0b087d40c4768818e555ae7cc5533c9102382540214d00bc64b3b8a00b66b",
+    "mask_sha256": "b57e1918051833f2c5cfec83ca3af9f79e05253bf62cff96b062485e66416000",
+    "seconds": 28.98103168886155,
+    "threshold": 0.5,
+    "diagnostic": {
+      "points": {
+        "observed_red_mark": {
+          "points": 32,
+          "before": 1,
+          "after": 2,
+          "newly_selected": 1,
+          "newly_lost": 0
+        },
+        "paper_or_brown_nonmark": {
+          "points": 10,
+          "before": 0,
+          "after": 0,
+          "newly_selected": 0,
+          "newly_lost": 0
+        }
+      },
+      "selected_paper_region_added_support": [
+        {
+          "region": 0,
+          "added_support_pixels": 0,
+          "before_selected": 0,
+          "after_selected": 0,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        },
+        {
+          "region": 1,
+          "added_support_pixels": 0,
+          "before_selected": 0,
+          "after_selected": 0,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        },
+        {
+          "region": 2,
+          "added_support_pixels": 0,
+          "before_selected": 0,
+          "after_selected": 0,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        },
+        {
+          "region": 3,
+          "added_support_pixels": 0,
+          "before_selected": 0,
+          "after_selected": 0,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        }
+      ]
+    },
+    "no_real_pixel_or_reading_GT": true,
+    "original_training_points_may_have_been_seen": true,
+    "perturbation": "Frozen development diagnostic, not final test"
+  },
+  {
+    "id": "dev_10_broad_ellipses_red_brown_10",
+    "case": "dev_10",
+    "name": "docres_foreground_chroma",
+    "family": "docres_chroma",
+    "input_sha256": "512091d5e593874e4fd7e316e288189ec9bd02521e141eb29e326076e759837e",
+    "resources": {
+      "/home/imoto/Heritage_Pipeline/tmp_work/npj_literature_models_20261002/repos/DocRes/models/restormer_arch.py": "4a6f50552cf21c016f3c38f0302ff9c9cea07a38111c219ef9e67279e60d6915",
+      "/home/imoto/Heritage_Pipeline/tmp_work/npj_literature_models_20261002/weights/docres_mirror.pkl": "1d6a89d754fe1e58ffd1865eab0ef3f03344798d39197b2d9a77ce4fbc8c02fd"
+    },
+    "script_sha256": "e5b0b087d40c4768818e555ae7cc5533c9102382540214d00bc64b3b8a00b66b",
+    "mask_sha256": "64d6c4eaf3df563d2a4635d9ec0d02271721c5ddf6066a3c5b5392d27aa989a5",
+    "seconds": 28.813870714977384,
+    "threshold": 0.5,
+    "diagnostic": {
+      "points": {
+        "observed_red_mark": {
+          "points": 32,
+          "before": 1,
+          "after": 2,
+          "newly_selected": 1,
+          "newly_lost": 0
+        },
+        "paper_or_brown_nonmark": {
+          "points": 10,
+          "before": 0,
+          "after": 0,
+          "newly_selected": 0,
+          "newly_lost": 0
+        }
+      },
+      "selected_paper_region_added_support": [
+        {
+          "region": 0,
+          "added_support_pixels": 14172,
+          "before_selected": 0,
+          "after_selected": 0,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        },
+        {
+          "region": 1,
+          "added_support_pixels": 18597,
+          "before_selected": 0,
+          "after_selected": 0,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        },
+        {
+          "region": 2,
+          "added_support_pixels": 5600,
+          "before_selected": 0,
+          "after_selected": 0,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        },
+        {
+          "region": 3,
+          "added_support_pixels": 10500,
+          "before_selected": 0,
+          "after_selected": 0,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        }
+      ]
+    },
+    "no_real_pixel_or_reading_GT": true,
+    "original_training_points_may_have_been_seen": true,
+    "perturbation": "Frozen development diagnostic, not final test"
+  },
+  {
+    "id": "dev_06_broad_ellipses_brown_30",
+    "case": "dev_06",
+    "name": "docres_foreground_chroma",
+    "family": "docres_chroma",
+    "input_sha256": "8cbade62c431916ffa9fa037dfab07cbfd905f56f7836d18df1aea778d750ed9",
+    "resources": {
+      "/home/imoto/Heritage_Pipeline/tmp_work/npj_literature_models_20261002/repos/DocRes/models/restormer_arch.py": "4a6f50552cf21c016f3c38f0302ff9c9cea07a38111c219ef9e67279e60d6915",
+      "/home/imoto/Heritage_Pipeline/tmp_work/npj_literature_models_20261002/weights/docres_mirror.pkl": "1d6a89d754fe1e58ffd1865eab0ef3f03344798d39197b2d9a77ce4fbc8c02fd"
+    },
+    "script_sha256": "e5b0b087d40c4768818e555ae7cc5533c9102382540214d00bc64b3b8a00b66b",
+    "mask_sha256": "d2e8776316a4d518f6574305e3f21f12dfe84c8cf7bc25462fb7ffa78908d21b",
+    "seconds": 13.65014023333788,
+    "threshold": 0.5,
+    "diagnostic": {
+      "points": {
+        "observed_red_mark": {
+          "points": 16,
+          "before": 0,
+          "after": 0,
+          "newly_selected": 0,
+          "newly_lost": 0
+        },
+        "paper_or_brown_nonmark": {
+          "points": 8,
+          "before": 0,
+          "after": 0,
+          "newly_selected": 0,
+          "newly_lost": 0
+        }
+      },
+      "selected_paper_region_added_support": [
+        {
+          "region": 9,
+          "added_support_pixels": 2832,
+          "before_selected": 0,
+          "after_selected": 0,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        },
+        {
+          "region": 10,
+          "added_support_pixels": 6800,
+          "before_selected": 0,
+          "after_selected": 0,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        },
+        {
+          "region": 11,
+          "added_support_pixels": 2222,
+          "before_selected": 0,
+          "after_selected": 0,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        },
+        {
+          "region": 12,
+          "added_support_pixels": 6729,
+          "before_selected": 0,
+          "after_selected": 0,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        }
+      ]
+    },
+    "no_real_pixel_or_reading_GT": true,
+    "original_training_points_may_have_been_seen": true,
+    "perturbation": "Frozen development diagnostic, not final test"
+  },
+  {
+    "id": "dev_08_narrow_fold_red_brown_10",
+    "case": "dev_08",
+    "name": "docres_foreground_chroma",
+    "family": "docres_chroma",
+    "input_sha256": "9e75c50d5a2b3782f4a384878d33cf1879a02f22b26f9981b14b9767277c256a",
+    "resources": {
+      "/home/imoto/Heritage_Pipeline/tmp_work/npj_literature_models_20261002/repos/DocRes/models/restormer_arch.py": "4a6f50552cf21c016f3c38f0302ff9c9cea07a38111c219ef9e67279e60d6915",
+      "/home/imoto/Heritage_Pipeline/tmp_work/npj_literature_models_20261002/weights/docres_mirror.pkl": "1d6a89d754fe1e58ffd1865eab0ef3f03344798d39197b2d9a77ce4fbc8c02fd"
+    },
+    "script_sha256": "e5b0b087d40c4768818e555ae7cc5533c9102382540214d00bc64b3b8a00b66b",
+    "mask_sha256": "2e376e6b4f25eff62dceb80b65aeda84d7c02bfeaf96d6b94219359b3daddfc1",
+    "seconds": 13.715155401267111,
+    "threshold": 0.5,
+    "diagnostic": {
+      "points": {
+        "observed_red_mark": {
+          "points": 18,
+          "before": 0,
+          "after": 0,
+          "newly_selected": 0,
+          "newly_lost": 0
+        },
+        "paper_or_brown_nonmark": {
+          "points": 8,
+          "before": 0,
+          "after": 0,
+          "newly_selected": 0,
+          "newly_lost": 0
+        }
+      },
+      "selected_paper_region_added_support": [
+        {
+          "region": 4,
+          "added_support_pixels": 0,
+          "before_selected": 0,
+          "after_selected": 0,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        },
+        {
+          "region": 5,
+          "added_support_pixels": 0,
+          "before_selected": 0,
+          "after_selected": 0,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        },
+        {
+          "region": 6,
+          "added_support_pixels": 0,
+          "before_selected": 0,
+          "after_selected": 0,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        },
+        {
+          "region": 7,
+          "added_support_pixels": 0,
+          "before_selected": 0,
+          "after_selected": 0,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        },
+        {
+          "region": 8,
+          "added_support_pixels": 2237,
+          "before_selected": 0,
+          "after_selected": 0,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        }
+      ]
+    },
+    "no_real_pixel_or_reading_GT": true,
+    "original_training_points_may_have_been_seen": true,
+    "perturbation": "Frozen development diagnostic, not final test"
+  },
+  {
+    "id": "dev_08_narrow_fold_brown_30",
+    "case": "dev_08",
+    "name": "docres_foreground_chroma",
+    "family": "docres_chroma",
+    "input_sha256": "30c8fd46177c3b5c646d251109e64f5e57e3b85821e79ffc82e0710caf380695",
+    "resources": {
+      "/home/imoto/Heritage_Pipeline/tmp_work/npj_literature_models_20261002/repos/DocRes/models/restormer_arch.py": "4a6f50552cf21c016f3c38f0302ff9c9cea07a38111c219ef9e67279e60d6915",
+      "/home/imoto/Heritage_Pipeline/tmp_work/npj_literature_models_20261002/weights/docres_mirror.pkl": "1d6a89d754fe1e58ffd1865eab0ef3f03344798d39197b2d9a77ce4fbc8c02fd"
+    },
+    "script_sha256": "e5b0b087d40c4768818e555ae7cc5533c9102382540214d00bc64b3b8a00b66b",
+    "mask_sha256": "2e376e6b4f25eff62dceb80b65aeda84d7c02bfeaf96d6b94219359b3daddfc1",
+    "seconds": 14.698969232849777,
+    "threshold": 0.5,
+    "diagnostic": {
+      "points": {
+        "observed_red_mark": {
+          "points": 18,
+          "before": 0,
+          "after": 0,
+          "newly_selected": 0,
+          "newly_lost": 0
+        },
+        "paper_or_brown_nonmark": {
+          "points": 8,
+          "before": 0,
+          "after": 0,
+          "newly_selected": 0,
+          "newly_lost": 0
+        }
+      },
+      "selected_paper_region_added_support": [
+        {
+          "region": 4,
+          "added_support_pixels": 0,
+          "before_selected": 0,
+          "after_selected": 0,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        },
+        {
+          "region": 5,
+          "added_support_pixels": 0,
+          "before_selected": 0,
+          "after_selected": 0,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        },
+        {
+          "region": 6,
+          "added_support_pixels": 0,
+          "before_selected": 0,
+          "after_selected": 0,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        },
+        {
+          "region": 7,
+          "added_support_pixels": 0,
+          "before_selected": 0,
+          "after_selected": 0,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        },
+        {
+          "region": 8,
+          "added_support_pixels": 2237,
+          "before_selected": 0,
+          "after_selected": 0,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        }
+      ]
+    },
+    "no_real_pixel_or_reading_GT": true,
+    "original_training_points_may_have_been_seen": true,
+    "perturbation": "Frozen development diagnostic, not final test"
+  },
+  {
+    "id": "dev_08_broad_ellipses_brown_10",
+    "case": "dev_08",
+    "name": "docres_foreground_chroma",
+    "family": "docres_chroma",
+    "input_sha256": "2b45675ce3044d88559e567d1bd0693ce0703c27bfe752ee21c558ca17b22594",
+    "resources": {
+      "/home/imoto/Heritage_Pipeline/tmp_work/npj_literature_models_20261002/repos/DocRes/models/restormer_arch.py": "4a6f50552cf21c016f3c38f0302ff9c9cea07a38111c219ef9e67279e60d6915",
+      "/home/imoto/Heritage_Pipeline/tmp_work/npj_literature_models_20261002/weights/docres_mirror.pkl": "1d6a89d754fe1e58ffd1865eab0ef3f03344798d39197b2d9a77ce4fbc8c02fd"
+    },
+    "script_sha256": "e5b0b087d40c4768818e555ae7cc5533c9102382540214d00bc64b3b8a00b66b",
+    "mask_sha256": "e392b2597c006d88db8bb90e633b86de0e0a81df9c13cad461a8f68185f613f3",
+    "seconds": 15.97156139370054,
+    "threshold": 0.5,
+    "diagnostic": {
+      "points": {
+        "observed_red_mark": {
+          "points": 18,
+          "before": 0,
+          "after": 0,
+          "newly_selected": 0,
+          "newly_lost": 0
+        },
+        "paper_or_brown_nonmark": {
+          "points": 8,
+          "before": 0,
+          "after": 0,
+          "newly_selected": 0,
+          "newly_lost": 0
+        }
+      },
+      "selected_paper_region_added_support": [
+        {
+          "region": 4,
+          "added_support_pixels": 0,
+          "before_selected": 0,
+          "after_selected": 0,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        },
+        {
+          "region": 5,
+          "added_support_pixels": 15750,
+          "before_selected": 0,
+          "after_selected": 0,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        },
+        {
+          "region": 6,
+          "added_support_pixels": 17500,
+          "before_selected": 0,
+          "after_selected": 0,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        },
+        {
+          "region": 7,
+          "added_support_pixels": 0,
+          "before_selected": 0,
+          "after_selected": 0,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        },
+        {
+          "region": 8,
+          "added_support_pixels": 10614,
+          "before_selected": 0,
+          "after_selected": 0,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        }
+      ]
+    },
+    "no_real_pixel_or_reading_GT": true,
+    "original_training_points_may_have_been_seen": true,
+    "perturbation": "Frozen development diagnostic, not final test"
+  },
+  {
+    "id": "dev_06_narrow_fold_red_brown_10",
+    "case": "dev_06",
+    "name": "docres_foreground_chroma",
+    "family": "docres_chroma",
+    "input_sha256": "ea6eae59045bff13da4aa576143b902cebe6660800c6d3bcd750c025b64aaba3",
+    "resources": {
+      "/home/imoto/Heritage_Pipeline/tmp_work/npj_literature_models_20261002/repos/DocRes/models/restormer_arch.py": "4a6f50552cf21c016f3c38f0302ff9c9cea07a38111c219ef9e67279e60d6915",
+      "/home/imoto/Heritage_Pipeline/tmp_work/npj_literature_models_20261002/weights/docres_mirror.pkl": "1d6a89d754fe1e58ffd1865eab0ef3f03344798d39197b2d9a77ce4fbc8c02fd"
+    },
+    "script_sha256": "e5b0b087d40c4768818e555ae7cc5533c9102382540214d00bc64b3b8a00b66b",
+    "mask_sha256": "b6d7838f37498b97f14115c6fbc9946b30570969c9f1d710b9353a117b9727f5",
+    "seconds": 12.837614658288658,
+    "threshold": 0.5,
+    "diagnostic": {
+      "points": {
+        "observed_red_mark": {
+          "points": 16,
+          "before": 0,
+          "after": 0,
+          "newly_selected": 0,
+          "newly_lost": 0
+        },
+        "paper_or_brown_nonmark": {
+          "points": 8,
+          "before": 0,
+          "after": 0,
+          "newly_selected": 0,
+          "newly_lost": 0
+        }
+      },
+      "selected_paper_region_added_support": [
+        {
+          "region": 9,
+          "added_support_pixels": 0,
+          "before_selected": 0,
+          "after_selected": 0,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        },
+        {
+          "region": 10,
+          "added_support_pixels": 0,
+          "before_selected": 0,
+          "after_selected": 0,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        },
+        {
+          "region": 11,
+          "added_support_pixels": 0,
+          "before_selected": 0,
+          "after_selected": 0,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        },
+        {
+          "region": 12,
+          "added_support_pixels": 0,
+          "before_selected": 0,
+          "after_selected": 0,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        }
+      ]
+    },
+    "no_real_pixel_or_reading_GT": true,
+    "original_training_points_may_have_been_seen": true,
+    "perturbation": "Frozen development diagnostic, not final test"
+  },
+  {
+    "id": "dev_08_broad_ellipses_red_brown_10",
+    "case": "dev_08",
+    "name": "docres_foreground_chroma",
+    "family": "docres_chroma",
+    "input_sha256": "267b8d0980870c91d5814ff33658b4829c2839f705b25f3a528c3a24e9b7b9a6",
+    "resources": {
+      "/home/imoto/Heritage_Pipeline/tmp_work/npj_literature_models_20261002/repos/DocRes/models/restormer_arch.py": "4a6f50552cf21c016f3c38f0302ff9c9cea07a38111c219ef9e67279e60d6915",
+      "/home/imoto/Heritage_Pipeline/tmp_work/npj_literature_models_20261002/weights/docres_mirror.pkl": "1d6a89d754fe1e58ffd1865eab0ef3f03344798d39197b2d9a77ce4fbc8c02fd"
+    },
+    "script_sha256": "e5b0b087d40c4768818e555ae7cc5533c9102382540214d00bc64b3b8a00b66b",
+    "mask_sha256": "c844df777002bb6639c1327169f54852cacda7dc92f6d22a34dff85d0eb8ef36",
+    "seconds": 13.509166326373816,
+    "threshold": 0.5,
+    "diagnostic": {
+      "points": {
+        "observed_red_mark": {
+          "points": 18,
+          "before": 0,
+          "after": 0,
+          "newly_selected": 0,
+          "newly_lost": 0
+        },
+        "paper_or_brown_nonmark": {
+          "points": 8,
+          "before": 0,
+          "after": 0,
+          "newly_selected": 0,
+          "newly_lost": 0
+        }
+      },
+      "selected_paper_region_added_support": [
+        {
+          "region": 4,
+          "added_support_pixels": 0,
+          "before_selected": 0,
+          "after_selected": 0,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        },
+        {
+          "region": 5,
+          "added_support_pixels": 15750,
+          "before_selected": 0,
+          "after_selected": 0,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        },
+        {
+          "region": 6,
+          "added_support_pixels": 17500,
+          "before_selected": 0,
+          "after_selected": 0,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        },
+        {
+          "region": 7,
+          "added_support_pixels": 0,
+          "before_selected": 0,
+          "after_selected": 0,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        },
+        {
+          "region": 8,
+          "added_support_pixels": 10614,
+          "before_selected": 0,
+          "after_selected": 0,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        }
+      ]
+    },
+    "no_real_pixel_or_reading_GT": true,
+    "original_training_points_may_have_been_seen": true,
+    "perturbation": "Frozen development diagnostic, not final test"
+  },
+  {
+    "id": "dev_06_narrow_fold_red_brown_30",
+    "case": "dev_06",
+    "name": "docres_foreground_chroma",
+    "family": "docres_chroma",
+    "input_sha256": "4dce49cb09316a1b46f7bb63814cab419f2132aa5c8bdce76a743e85dd0d625d",
+    "resources": {
+      "/home/imoto/Heritage_Pipeline/tmp_work/npj_literature_models_20261002/repos/DocRes/models/restormer_arch.py": "4a6f50552cf21c016f3c38f0302ff9c9cea07a38111c219ef9e67279e60d6915",
+      "/home/imoto/Heritage_Pipeline/tmp_work/npj_literature_models_20261002/weights/docres_mirror.pkl": "1d6a89d754fe1e58ffd1865eab0ef3f03344798d39197b2d9a77ce4fbc8c02fd"
+    },
+    "script_sha256": "e5b0b087d40c4768818e555ae7cc5533c9102382540214d00bc64b3b8a00b66b",
+    "mask_sha256": "1af03bc6ffa7da908bb1b589d41ca0df95fe255806edd527c95bfc1fee50f93e",
+    "seconds": 12.841273264028132,
+    "threshold": 0.5,
+    "diagnostic": {
+      "points": {
+        "observed_red_mark": {
+          "points": 16,
+          "before": 0,
+          "after": 0,
+          "newly_selected": 0,
+          "newly_lost": 0
+        },
+        "paper_or_brown_nonmark": {
+          "points": 8,
+          "before": 0,
+          "after": 0,
+          "newly_selected": 0,
+          "newly_lost": 0
+        }
+      },
+      "selected_paper_region_added_support": [
+        {
+          "region": 9,
+          "added_support_pixels": 0,
+          "before_selected": 0,
+          "after_selected": 0,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        },
+        {
+          "region": 10,
+          "added_support_pixels": 0,
+          "before_selected": 0,
+          "after_selected": 0,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        },
+        {
+          "region": 11,
+          "added_support_pixels": 0,
+          "before_selected": 0,
+          "after_selected": 0,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        },
+        {
+          "region": 12,
+          "added_support_pixels": 0,
+          "before_selected": 0,
+          "after_selected": 0,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        }
+      ]
+    },
+    "no_real_pixel_or_reading_GT": true,
+    "original_training_points_may_have_been_seen": true,
+    "perturbation": "Frozen development diagnostic, not final test"
+  },
+  {
+    "id": "dev_10_broad_ellipses_red_brown_30",
+    "case": "dev_10",
+    "name": "docres_foreground_chroma",
+    "family": "docres_chroma",
+    "input_sha256": "31b2aedfa07aad403a325a6cb2611a9d0c016d62be75fe59e108ace398f1ae1b",
+    "resources": {
+      "/home/imoto/Heritage_Pipeline/tmp_work/npj_literature_models_20261002/repos/DocRes/models/restormer_arch.py": "4a6f50552cf21c016f3c38f0302ff9c9cea07a38111c219ef9e67279e60d6915",
+      "/home/imoto/Heritage_Pipeline/tmp_work/npj_literature_models_20261002/weights/docres_mirror.pkl": "1d6a89d754fe1e58ffd1865eab0ef3f03344798d39197b2d9a77ce4fbc8c02fd"
+    },
+    "script_sha256": "e5b0b087d40c4768818e555ae7cc5533c9102382540214d00bc64b3b8a00b66b",
+    "mask_sha256": "62ee416059536ee7d6189593d4f3cd69f6d75dd65fa11d00898406e62c5a511d",
+    "seconds": 29.34759483858943,
+    "threshold": 0.5,
+    "diagnostic": {
+      "points": {
+        "observed_red_mark": {
+          "points": 32,
+          "before": 1,
+          "after": 5,
+          "newly_selected": 4,
+          "newly_lost": 0
+        },
+        "paper_or_brown_nonmark": {
+          "points": 10,
+          "before": 0,
+          "after": 0,
+          "newly_selected": 0,
+          "newly_lost": 0
+        }
+      },
+      "selected_paper_region_added_support": [
+        {
+          "region": 0,
+          "added_support_pixels": 14172,
+          "before_selected": 0,
+          "after_selected": 0,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        },
+        {
+          "region": 1,
+          "added_support_pixels": 18597,
+          "before_selected": 0,
+          "after_selected": 0,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        },
+        {
+          "region": 2,
+          "added_support_pixels": 5600,
+          "before_selected": 0,
+          "after_selected": 0,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        },
+        {
+          "region": 3,
+          "added_support_pixels": 10500,
+          "before_selected": 0,
+          "after_selected": 0,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        }
+      ]
+    },
+    "no_real_pixel_or_reading_GT": true,
+    "original_training_points_may_have_been_seen": true,
+    "perturbation": "Frozen development diagnostic, not final test"
+  },
+  {
+    "id": "dev_06_broad_ellipses_red_brown_10",
+    "case": "dev_06",
+    "name": "docres_foreground_chroma",
+    "family": "docres_chroma",
+    "input_sha256": "fed76c246ae5715638c760ec0f4b20d4039e0e2112fb1f6191e3e614a5125e67",
+    "resources": {
+      "/home/imoto/Heritage_Pipeline/tmp_work/npj_literature_models_20261002/repos/DocRes/models/restormer_arch.py": "4a6f50552cf21c016f3c38f0302ff9c9cea07a38111c219ef9e67279e60d6915",
+      "/home/imoto/Heritage_Pipeline/tmp_work/npj_literature_models_20261002/weights/docres_mirror.pkl": "1d6a89d754fe1e58ffd1865eab0ef3f03344798d39197b2d9a77ce4fbc8c02fd"
+    },
+    "script_sha256": "e5b0b087d40c4768818e555ae7cc5533c9102382540214d00bc64b3b8a00b66b",
+    "mask_sha256": "3709c61df44a153ee44e999afd0ab4aee72cac095600e81150f4b1a0edfeace0",
+    "seconds": 12.813694120384753,
+    "threshold": 0.5,
+    "diagnostic": {
+      "points": {
+        "observed_red_mark": {
+          "points": 16,
+          "before": 0,
+          "after": 0,
+          "newly_selected": 0,
+          "newly_lost": 0
+        },
+        "paper_or_brown_nonmark": {
+          "points": 8,
+          "before": 0,
+          "after": 0,
+          "newly_selected": 0,
+          "newly_lost": 0
+        }
+      },
+      "selected_paper_region_added_support": [
+        {
+          "region": 9,
+          "added_support_pixels": 2832,
+          "before_selected": 0,
+          "after_selected": 0,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        },
+        {
+          "region": 10,
+          "added_support_pixels": 6800,
+          "before_selected": 0,
+          "after_selected": 0,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        },
+        {
+          "region": 11,
+          "added_support_pixels": 2222,
+          "before_selected": 0,
+          "after_selected": 0,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        },
+        {
+          "region": 12,
+          "added_support_pixels": 6729,
+          "before_selected": 0,
+          "after_selected": 0,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        }
+      ]
+    },
+    "no_real_pixel_or_reading_GT": true,
+    "original_training_points_may_have_been_seen": true,
+    "perturbation": "Frozen development diagnostic, not final test"
+  },
+  {
+    "id": "dev_10_narrow_fold_red_brown_30",
+    "case": "dev_10",
+    "name": "docres_foreground_chroma",
+    "family": "docres_chroma",
+    "input_sha256": "c208ff7241ace62a8608fd5bd49b95704260d465bdd1b8359538450c1e8f99d0",
+    "resources": {
+      "/home/imoto/Heritage_Pipeline/tmp_work/npj_literature_models_20261002/repos/DocRes/models/restormer_arch.py": "4a6f50552cf21c016f3c38f0302ff9c9cea07a38111c219ef9e67279e60d6915",
+      "/home/imoto/Heritage_Pipeline/tmp_work/npj_literature_models_20261002/weights/docres_mirror.pkl": "1d6a89d754fe1e58ffd1865eab0ef3f03344798d39197b2d9a77ce4fbc8c02fd"
+    },
+    "script_sha256": "e5b0b087d40c4768818e555ae7cc5533c9102382540214d00bc64b3b8a00b66b",
+    "mask_sha256": "e8f648eedba2a90d72cd30feb4d69c2833571a0ac96ac80db7e7b7fea9cb8808",
+    "seconds": 33.77029606234282,
+    "threshold": 0.5,
+    "diagnostic": {
+      "points": {
+        "observed_red_mark": {
+          "points": 32,
+          "before": 1,
+          "after": 2,
+          "newly_selected": 1,
+          "newly_lost": 0
+        },
+        "paper_or_brown_nonmark": {
+          "points": 10,
+          "before": 0,
+          "after": 0,
+          "newly_selected": 0,
+          "newly_lost": 0
+        }
+      },
+      "selected_paper_region_added_support": [
+        {
+          "region": 0,
+          "added_support_pixels": 0,
+          "before_selected": 0,
+          "after_selected": 0,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        },
+        {
+          "region": 1,
+          "added_support_pixels": 0,
+          "before_selected": 0,
+          "after_selected": 0,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        },
+        {
+          "region": 2,
+          "added_support_pixels": 0,
+          "before_selected": 0,
+          "after_selected": 0,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        },
+        {
+          "region": 3,
+          "added_support_pixels": 0,
+          "before_selected": 0,
+          "after_selected": 0,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        }
+      ]
+    },
+    "no_real_pixel_or_reading_GT": true,
+    "original_training_points_may_have_been_seen": true,
+    "perturbation": "Frozen development diagnostic, not final test"
+  },
+  {
+    "id": "dev_06_broad_ellipses_brown_10",
+    "case": "dev_06",
+    "name": "docres_foreground_chroma",
+    "family": "docres_chroma",
+    "input_sha256": "2f1041ab7be01857ec019cf4f85dd467a9e8b88b042db2861013a8fb8d557c26",
+    "resources": {
+      "/home/imoto/Heritage_Pipeline/tmp_work/npj_literature_models_20261002/repos/DocRes/models/restormer_arch.py": "4a6f50552cf21c016f3c38f0302ff9c9cea07a38111c219ef9e67279e60d6915",
+      "/home/imoto/Heritage_Pipeline/tmp_work/npj_literature_models_20261002/weights/docres_mirror.pkl": "1d6a89d754fe1e58ffd1865eab0ef3f03344798d39197b2d9a77ce4fbc8c02fd"
+    },
+    "script_sha256": "e5b0b087d40c4768818e555ae7cc5533c9102382540214d00bc64b3b8a00b66b",
+    "mask_sha256": "f53a64b990ebbbd1a71ebebe4feb00a097687bc7db131d55d25e59c67ef97e8c",
+    "seconds": 17.030930323526263,
+    "threshold": 0.5,
+    "diagnostic": {
+      "points": {
+        "observed_red_mark": {
+          "points": 16,
+          "before": 0,
+          "after": 0,
+          "newly_selected": 0,
+          "newly_lost": 0
+        },
+        "paper_or_brown_nonmark": {
+          "points": 8,
+          "before": 0,
+          "after": 0,
+          "newly_selected": 0,
+          "newly_lost": 0
+        }
+      },
+      "selected_paper_region_added_support": [
+        {
+          "region": 9,
+          "added_support_pixels": 2832,
+          "before_selected": 0,
+          "after_selected": 0,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        },
+        {
+          "region": 10,
+          "added_support_pixels": 6800,
+          "before_selected": 0,
+          "after_selected": 0,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        },
+        {
+          "region": 11,
+          "added_support_pixels": 2222,
+          "before_selected": 0,
+          "after_selected": 0,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        },
+        {
+          "region": 12,
+          "added_support_pixels": 6729,
+          "before_selected": 0,
+          "after_selected": 0,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        }
+      ]
+    },
+    "no_real_pixel_or_reading_GT": true,
+    "original_training_points_may_have_been_seen": true,
+    "perturbation": "Frozen development diagnostic, not final test"
+  },
+  {
+    "id": "dev_08_narrow_fold_brown_10",
+    "case": "dev_08",
+    "name": "docres_foreground_chroma",
+    "family": "docres_chroma",
+    "input_sha256": "ab7541752a02d5b518c0db47249b14fad9463a5a5cf2107e26c05c481299b707",
+    "resources": {
+      "/home/imoto/Heritage_Pipeline/tmp_work/npj_literature_models_20261002/repos/DocRes/models/restormer_arch.py": "4a6f50552cf21c016f3c38f0302ff9c9cea07a38111c219ef9e67279e60d6915",
+      "/home/imoto/Heritage_Pipeline/tmp_work/npj_literature_models_20261002/weights/docres_mirror.pkl": "1d6a89d754fe1e58ffd1865eab0ef3f03344798d39197b2d9a77ce4fbc8c02fd"
+    },
+    "script_sha256": "e5b0b087d40c4768818e555ae7cc5533c9102382540214d00bc64b3b8a00b66b",
+    "mask_sha256": "2e376e6b4f25eff62dceb80b65aeda84d7c02bfeaf96d6b94219359b3daddfc1",
+    "seconds": 13.821242147125304,
+    "threshold": 0.5,
+    "diagnostic": {
+      "points": {
+        "observed_red_mark": {
+          "points": 18,
+          "before": 0,
+          "after": 0,
+          "newly_selected": 0,
+          "newly_lost": 0
+        },
+        "paper_or_brown_nonmark": {
+          "points": 8,
+          "before": 0,
+          "after": 0,
+          "newly_selected": 0,
+          "newly_lost": 0
+        }
+      },
+      "selected_paper_region_added_support": [
+        {
+          "region": 4,
+          "added_support_pixels": 0,
+          "before_selected": 0,
+          "after_selected": 0,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        },
+        {
+          "region": 5,
+          "added_support_pixels": 0,
+          "before_selected": 0,
+          "after_selected": 0,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        },
+        {
+          "region": 6,
+          "added_support_pixels": 0,
+          "before_selected": 0,
+          "after_selected": 0,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        },
+        {
+          "region": 7,
+          "added_support_pixels": 0,
+          "before_selected": 0,
+          "after_selected": 0,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        },
+        {
+          "region": 8,
+          "added_support_pixels": 2237,
+          "before_selected": 0,
+          "after_selected": 0,
+          "interpretation": "Known added field inside tentative no-visible-red rectangle, not authentic stain-pixel GT"
+        }
+      ]
+    },
+    "no_real_pixel_or_reading_GT": true,
+    "original_training_points_may_have_been_seen": true,
+    "perturbation": "Frozen development diagnostic, not final test"
+  }
+]

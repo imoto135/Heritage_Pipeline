@@ -1,0 +1,25 @@
+{
+  "reason": "Recovered accidentally overwritten first-two numeric aggregate with unchanged models/data; existing PNGs exactly reproduced",
+  "checks": [
+    {
+      "name": "relative_pointwise",
+      "condition": "standard_overlapping_colors",
+      "preview_exactly_identical": true
+    },
+    {
+      "name": "relative_pointwise",
+      "condition": "stress_folds_dots",
+      "preview_exactly_identical": true
+    },
+    {
+      "name": "relative_overlap",
+      "condition": "standard_overlapping_colors",
+      "preview_exactly_identical": true
+    },
+    {
+      "name": "relative_overlap",
+      "condition": "stress_folds_dots",
+      "preview_exactly_identical": true
+    }
+  ]
+}

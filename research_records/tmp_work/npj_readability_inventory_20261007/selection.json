@@ -1,0 +1,700 @@
+{
+  "candidates": [
+    {
+      "id": "S01",
+      "frame": "manual_control_hnsd007_042",
+      "roi_xywh": [
+        300,
+        150,
+        320,
+        400
+      ],
+      "title": "本文に重なるシミが黒い塊になる",
+      "priority": "高",
+      "category": "接触汚れ",
+      "observation": "原画像では茶色い範囲の下に筆画が見える。出力ではその範囲が黒く埋まり、上の枠線と本文につながる。",
+      "reading": "字の内部や隣接する筆画の区切りが見えにくくなる。今回、汚れ処理の目的に最も直接対応する候補。",
+      "action": "原画像も参照し、シミと筆画を分離して局所修復する。正常な列と枠線を保護する。",
+      "caveat": "2026-10-04の通常黒文字マスクによるcrop対照。完成した改善例ではない。NPJ出力だけの塊除去では、下の文字まで消す危険がある。",
+      "page": "hnsd007_042",
+      "page_xywh": [
+        900,
+        250,
+        320,
+        400
+      ],
+      "source": {
+        "original": "data/split_dataset/train/hnsd00000/hnsd007_042.jpg",
+        "input": "tmp_work/npj_manual_stain_oracle_20261004/input/hnsd007_042.png",
+        "output": "tmp_work/npj_manual_stain_oracle_20261004/output/hnsd007_042/result/hnsd007_042.png",
+        "origin_xywh": [
+          600,
+          100,
+          768,
+          768
+        ],
+        "kind": "凍結コードの新規crop対照",
+        "version": "通常黒文字マスク・後処理前",
+        "sha256": {
+          "original": "68315f7e551cb29695d9e830f09826eef92809409d4e9242290c5ed14f393afc",
+          "input": "4682b1a2f04d379232da879de4a4135fd328fe98d45e19604cb5d2948749aaee",
+          "output": "207ca789f862ac839cc2a783d6975fc9c181f929a39642d602436efcdfe0e51a"
+        }
+      },
+      "native": {
+        "original": "native/S01/original.png",
+        "npj": "native/S01/npj.png"
+      },
+      "comparison": "comparisons/S01.png"
+    },
+    {
+      "id": "S02",
+      "frame": "crop_hnsd",
+      "roi_xywh": [
+        0,
+        270,
+        540,
+        330
+      ],
+      "title": "下部の粒状像が本文・枠線と接触する",
+      "priority": "中",
+      "category": "接触汚れ候補",
+      "observation": "下部の濃淡が、出力では粒状の黒い塊になり、枠線と本文下端に接触する。",
+      "reading": "枠線に近い字の輪郭が背景側の黒い像と区別しづらい。ただし大半は枠外で、S01より本文への影響が局所的。",
+      "action": "本文に接触する範囲だけを候補にする。枠外の汚れ除去と本文の改善を別々に評価する。",
+      "caveat": "比較には2026-10-02の原画像そのままのcrop対照を使う。旧保存入力は濃淡が異なるが、今回表示する対照出力と旧出力は全画素一致。濃淡の材質は未確定。",
+      "page": "hnsd001_011",
+      "page_xywh": [
+        80,
+        2550,
+        540,
+        330
+      ],
+      "source": {
+        "original": "data/split_dataset/train/hnsd00000/hnsd001_011.jpg",
+        "input": "tmp_work/npj_dirt_control_20261002/input/hnsd_raw_control.png",
+        "output": "tmp_work/npj_dirt_control_20261002/output/hnsd_raw_control/result/hnsd_raw_control.png",
+        "origin_xywh": [
+          80,
+          2280,
+          620,
+          620
+        ],
+        "kind": "2026-10-02・原画像入力crop対照",
+        "version": "凍結ローカルv2・既存CSC v1マスク",
+        "sha256": {
+          "original": "22017c0af65c5f43560ff05cfcc15c6ed8f56b72e60a04a732d9c31b72f05731",
+          "input": "45d4bfc4e6064f2b460710398a74e26ebbbb0db821cce9d64d8bca3c47abb2b9",
+          "output": "bf94b1b785f7da331ee3a16fdef635e2552ad03c018f9c1f44dd0cdb6a9d252c"
+        }
+      },
+      "native": {
+        "original": "native/S02/original.png",
+        "npj": "native/S02/npj.png"
+      },
+      "comparison": "comparisons/S02.png"
+    },
+    {
+      "id": "L01",
+      "frame": "known_200010454_v2",
+      "roi_xywh": [
+        1230,
+        500,
+        280,
+        650
+      ],
+      "title": "薄い長い曲線が点線状になる",
+      "priority": "高",
+      "category": "筆画欠損",
+      "observation": "薄い本文列の長い曲線と輪郭が、出力では点線状・断片状になる。隣の濃い列は比較的よく残る。",
+      "reading": "字形や連続した筆運びを追う手掛かりが減る。孤立シミよりも読解に関わる問題候補。",
+      "action": "原画像に見える筆画の保持・復元を評価する。汚れを消すだけでは回復しない。",
+      "caveat": "実保存のCSC v2全ページ版。同ページの別保存版を独立した文書とは数えない。筆画の正解と読解効果は未注釈。",
+      "page": "200010454_00002_2",
+      "page_xywh": [
+        1230,
+        500,
+        280,
+        650
+      ],
+      "source": {
+        "original": "data/split_dataset/test/200010454/200010454_00002_2.jpg",
+        "input": "tmp_work/speed_test_single/input/200010454_00002_2.jpg",
+        "output": "tmp_work/speed_test_single/ddrm_out/200010454_00002_2/result/200010454_00002_2.png",
+        "origin_xywh": null,
+        "kind": "実保存・全ページ",
+        "version": "保存npj：CSC v2・同ページ追加対照",
+        "sha256": {
+          "original": "177776f90fc08b12e2f59a37773ef433556f43ebe47c503c2d676595a08a60d1",
+          "input": "177776f90fc08b12e2f59a37773ef433556f43ebe47c503c2d676595a08a60d1",
+          "output": "aa24528eefe3c11f1849e7212ff0ea5b3f0a7c1298c7bb8f17888ec0b26bc29e"
+        }
+      },
+      "native": {
+        "original": "native/L01/original.png",
+        "npj": "native/L01/npj.png"
+      },
+      "comparison": "comparisons/L01.png"
+    },
+    {
+      "id": "L02",
+      "frame": "page_200019865",
+      "roi_xywh": [
+        1750,
+        2490,
+        280,
+        550
+      ],
+      "title": "下部の細い線に切れ目ができる",
+      "priority": "中",
+      "category": "局所的な筆画欠損",
+      "observation": "左の細い縦方向の線の下端付近に、原画像との比較で切れ目が見える。右の濃い列は概ね明瞭。",
+      "reading": "線のつながりを追いにくい候補。ただし広範囲の文字消失ではなく、読解への影響は小さい可能性がある。",
+      "action": "小さな切れ目の接続補完の対照にする。大きな筆画欠損とは別の難易度で評価する。",
+      "caveat": "ddrm_visual_checkの全ページ保存出力。実入力と原画像は一致。特定の文字の誤読は確認していない。",
+      "page": "200019865_00003_1",
+      "page_xywh": [
+        1750,
+        2490,
+        280,
+        550
+      ],
+      "source": {
+        "original": "data/test/200019865/200019865_00003_1.jpg",
+        "input": "tmp_work/ddrm_visual_check/input_200019865_00003_1/200019865_00003_1.jpg",
+        "output": "tmp_work/ddrm_visual_check/output_200019865_00003_1/200019865_00003_1/result/200019865_00003_1.png",
+        "origin_xywh": null,
+        "kind": "実保存・全ページ",
+        "version": "保存npj：ddrm_visual_check既存版",
+        "sha256": {
+          "original": "31b993f91a1ce6d4db18f435513a2c7d9b9169b9a5b42e1e16c59ec6516dae16",
+          "input": "31b993f91a1ce6d4db18f435513a2c7d9b9169b9a5b42e1e16c59ec6516dae16",
+          "output": "77bd3ecf29b5dc3197d283aecf734a522305f97f0451e102d7879c4de25a86c3"
+        }
+      },
+      "native": {
+        "original": "native/L02/original.png",
+        "npj": "native/L02/npj.png"
+      },
+      "comparison": "comparisons/L02.png"
+    },
+    {
+      "id": "L03",
+      "frame": "saved_200018243_00002_2",
+      "roi_xywh": [
+        350,
+        800,
+        350,
+        700
+      ],
+      "title": "本文の大きな輪郭が途中で欠ける",
+      "priority": "高",
+      "category": "筆画欠損",
+      "observation": "左側の本文に見える大きな曲線が途中で失われ、その下の小さな字形も黒い断片へ変わる。右側の濃い本文は残る。",
+      "reading": "字形の輪郭と文字列の連続性が崩れ、原画像で追えていた形を追いにくくなる。",
+      "action": "正常な濃い本文を保護し、薄い表の筆画と背景の灰色像を原画像上で分けて評価する。",
+      "caveat": "ローカルv2・外部紙面参照の全ページ保存出力。灰色像をすべて表の筆画として復元することは正解とは限らない。",
+      "page": "200018243_00002_2",
+      "page_xywh": [
+        350,
+        800,
+        350,
+        700
+      ],
+      "source": {
+        "original": "data/split_dataset/test/200018243/200018243_00002_2.jpg",
+        "input": "tmp_work/bt_200018243_00002_2/input/200018243_00002_2.jpg",
+        "output": "tmp_work/bt_200018243_00002_2/ddrm_extref_out/200018243_00002_2/result/200018243_00002_2.png",
+        "origin_xywh": null,
+        "kind": "実保存・全ページ",
+        "version": "ローカルv2・外部紙面参照",
+        "sha256": {
+          "original": "684376939bc90652649c7529994f6c374b6ad0199b2c3eab61e3e701888a2d10",
+          "input": "684376939bc90652649c7529994f6c374b6ad0199b2c3eab61e3e701888a2d10",
+          "output": "06939893f07c1bd341ec0b177fa894674b87d52883bf1a474678561ee4ebe9e7"
+        }
+      },
+      "native": {
+        "original": "native/L03/original.png",
+        "npj": "native/L03/npj.png"
+      },
+      "comparison": "comparisons/L03.png"
+    },
+    {
+      "id": "L04",
+      "frame": "new_warm_faint_writing",
+      "roi_xywh": [
+        480,
+        0,
+        270,
+        650
+      ],
+      "title": "薄い本文と小さな添え書きが断片化する",
+      "priority": "高",
+      "category": "筆画欠損",
+      "observation": "原画像の縦の本文と小さな添え書きに見える線が、出力では部分的に途切れる。大きな字形の内部にも欠けがある。",
+      "reading": "本文の形だけでなく、隣の小さい文字を追う手掛かりも減る。",
+      "action": "本文と小さい文字の保持を一緒に確認する。原画像から確かめられる線を対象にする。",
+      "caveat": "2026-10-04に凍結ローカルコードで実行したcrop対照。歴史的保存版・全ページ段階後の出力ではない。",
+      "page": "200021925_00004_1",
+      "page_xywh": [
+        1080,
+        550,
+        270,
+        650
+      ],
+      "source": {
+        "original": "data/train/200021925/200021925_00004_1.jpg",
+        "input": "tmp_work/npj_dirt_new_book_20261004/native/new_warm_faint_writing/original.png",
+        "output": "tmp_work/npj_dirt_new_book_20261004/native/new_warm_faint_writing/baseline.png",
+        "origin_xywh": [
+          600,
+          550,
+          768,
+          768
+        ],
+        "kind": "凍結コードの新規crop対照",
+        "version": "New frozen-code crop control; not historical output or whole-page DDRM",
+        "sha256": {
+          "original": "61a09a7bff44908c8e4524e7b58dad02e5011d0bd8ec78259c4b544e9f0972b0",
+          "input": "b9eb5b255272c0ee794493c5daff26846e406a8ff2b606426dc981977e4a131b",
+          "output": "8c7cefd76e0953f7d1ee0e9f964cdb21aebe573a5997bb163984128056b895a0"
+        }
+      },
+      "native": {
+        "original": "native/L04/original.png",
+        "npj": "native/L04/npj.png"
+      },
+      "comparison": "comparisons/L04.png"
+    },
+    {
+      "id": "L05a",
+      "frame": "new_warm_upper_loss",
+      "roi_xywh": [
+        390,
+        290,
+        360,
+        450
+      ],
+      "title": "複数の本文文字が広く欠ける・上部",
+      "priority": "高",
+      "category": "広範囲の筆画欠損",
+      "observation": "原画像で見える複数の本文の輪郭・線が、出力では大きく欠け、点や断片に変わる。",
+      "reading": "1か所の切れ目ではなく、複数の字形を追う情報が失われる。今回の中でも目視の差が大きい候補。",
+      "action": "薄い本文の保持・復元の主要評価例にする。近傍の残った字形も変更しすぎない。",
+      "caveat": "2026-10-04のcrop対照。L05bと同じページであり、独立した2ページではない。このROIは紙欠損の穴埋めを評価していない。",
+      "page": "200021925_00007_1",
+      "page_xywh": [
+        890,
+        290,
+        360,
+        450
+      ],
+      "source": {
+        "original": "data/train/200021925/200021925_00007_1.jpg",
+        "input": "tmp_work/npj_dirt_new_book_20261004/native/new_warm_upper_loss/original.png",
+        "output": "tmp_work/npj_dirt_new_book_20261004/native/new_warm_upper_loss/baseline.png",
+        "origin_xywh": [
+          500,
+          0,
+          768,
+          768
+        ],
+        "kind": "凍結コードの新規crop対照",
+        "version": "New frozen-code crop control; not historical output or whole-page DDRM",
+        "sha256": {
+          "original": "836f9c418cc5b5f3e1844e9024d1b676c3a6de19d56ccd1c6832ce6017654a8b",
+          "input": "9c9d165fa5f5b4df93f1d1bc80a59fc6576986075b74b77eb1a8d6ad87b45306",
+          "output": "12b10516c95f03df44d10393ce1a76a0d260c36449c14b0a68597a0a34ceb51a"
+        }
+      },
+      "native": {
+        "original": "native/L05a/original.png",
+        "npj": "native/L05a/npj.png"
+      },
+      "comparison": "comparisons/L05a.png"
+    },
+    {
+      "id": "L05b",
+      "frame": "new_warm_lower_loss",
+      "roi_xywh": [
+        0,
+        120,
+        480,
+        450
+      ],
+      "title": "複数の本文文字が広く欠ける・下部",
+      "priority": "高",
+      "category": "広範囲の筆画欠損",
+      "observation": "左側の本文の輪郭と小さい文字が出力で断片化する。原画像の紙面に残っている線を比較している。",
+      "reading": "字の内部と小さい文字を追いにくくなる。上部とは異なる場所でも同種の損失が見える。",
+      "action": "同ページ内の追加ROIとして、筆画を保持する処理の局所的な偏りを確認する。",
+      "caveat": "L05aと同じページの別crop。紙が物理的に失われている部分を、汚れ除去で復元できる例には数えない。",
+      "page": "200021925_00007_1",
+      "page_xywh": [
+        1050,
+        1291,
+        480,
+        450
+      ],
+      "source": {
+        "original": "data/train/200021925/200021925_00007_1.jpg",
+        "input": "tmp_work/npj_dirt_new_book_20261004/native/new_warm_lower_loss/original.png",
+        "output": "tmp_work/npj_dirt_new_book_20261004/native/new_warm_lower_loss/baseline.png",
+        "origin_xywh": [
+          1050,
+          1171,
+          768,
+          768
+        ],
+        "kind": "凍結コードの新規crop対照",
+        "version": "New frozen-code crop control; not historical output or whole-page DDRM",
+        "sha256": {
+          "original": "836f9c418cc5b5f3e1844e9024d1b676c3a6de19d56ccd1c6832ce6017654a8b",
+          "input": "e485685b2833cd8afe92f68d475b6c5c30b084ec6ad35663d6c0fdad42a98842",
+          "output": "3d6a7f79db971fb58ff2c20564ec33b81036f5f4b5b5dfeae0bc0f9f8beb93af"
+        }
+      },
+      "native": {
+        "original": "native/L05b/original.png",
+        "npj": "native/L05b/npj.png"
+      },
+      "comparison": "comparisons/L05b.png"
+    },
+    {
+      "id": "N01",
+      "frame": "old_full_page",
+      "roi_xywh": [
+        760,
+        1870,
+        220,
+        480
+      ],
+      "title": "主線の周囲に黒い点・断片が残る",
+      "priority": "中",
+      "category": "残留像・材質未確定",
+      "observation": "主線の近くにあった灰色像は大きく減るが、出力には黒い点・断片が残り、一部は主線に近接する。",
+      "reading": "点・短い線を表の文字の一部と取り違える可能性がある。実際の読解妨害の程度は未確認。",
+      "action": "表の筆画、裏写り、紙の像を確認してから局所除去する。自動で全ての小点を消さない。",
+      "caveat": "v1trueという名前の全ページ保存出力。残留像の材質は目視だけでは確定できない。",
+      "page": "200018243_00003_2",
+      "page_xywh": [
+        760,
+        1870,
+        220,
+        480
+      ],
+      "source": {
+        "original": "data/split_dataset/test/200018243/200018243_00003_2.jpg",
+        "input": "tmp_work/full_page_compare/input/200018243_00003_2.jpg",
+        "output": "tmp_work/full_page_compare/ddrm_v1true_out/200018243_00003_2/result/200018243_00003_2.png",
+        "origin_xywh": [
+          0,
+          0,
+          2073,
+          3203
+        ],
+        "kind": "実保存・全ページ",
+        "version": "保存npj：v1true・ページ出力",
+        "sha256": {
+          "original": "f1c8c26fea64d9511c462b9776198eadbf3481793b0e4ed397e9ba58aca45e6d",
+          "input": "f1c8c26fea64d9511c462b9776198eadbf3481793b0e4ed397e9ba58aca45e6d",
+          "output": "e8dfd431b073d2e43702955ed5cd565e70f90b7d58f92e47e756eb0d4c0c3acc"
+        }
+      },
+      "native": {
+        "original": "native/N01/original.png",
+        "npj": "native/N01/npj.png"
+      },
+      "comparison": "comparisons/N01.png"
+    },
+    {
+      "id": "N02",
+      "frame": "unseen_lower_binding_mark",
+      "roi_xywh": [
+        360,
+        0,
+        370,
+        400
+      ],
+      "title": "本文の周囲の黒い粒状像が残る",
+      "priority": "中",
+      "category": "残留像・材質未確定",
+      "observation": "原画像に既にある黒い粒状像が本文の周囲と輪郭近くにあり、出力でも残っている。",
+      "reading": "筆画と周辺の細かい像の区別がしづらい候補。新たな悪化ではなく、読みづらさが残る例。",
+      "action": "本文近傍の粒状像の分離を試す候補。太い本文を保護し、判別できる粒状像だけを対象にする。",
+      "caveat": "2026-10-04のcrop対照。粒状像が汚れ・印刷のかすれ・別の線のどれかは未確定。綴じ側の黒い帯だけの除去は主目的にしない。",
+      "page": "200003967_00043_1",
+      "page_xywh": [
+        1545,
+        2187,
+        370,
+        400
+      ],
+      "source": {
+        "original": "data/split_dataset/train/200003967/200003967_00043_1.jpg",
+        "input": "tmp_work/npj_dirt_unseen_books_20261004/native/unseen_lower_binding_mark/original.png",
+        "output": "tmp_work/npj_dirt_unseen_books_20261004/native/unseen_lower_binding_mark/baseline.png",
+        "origin_xywh": [
+          1185,
+          2187,
+          768,
+          768
+        ],
+        "kind": "凍結コードの新規crop対照",
+        "version": "Fresh frozen-code crop control, not a historical saved page",
+        "sha256": {
+          "original": "32de18d0c167336c8cb4a4e8e214516029b6542de1f4053a1189f083c8ff41fb",
+          "input": "731369cdfb4367b28ab0c935764a5610c32e44a61e8d31648409e4629eed778f",
+          "output": "64357ea5f0cc7022b7951d3c1776ccc08ba962eb03c1583219da412c32540bdf"
+        }
+      },
+      "native": {
+        "original": "native/N02/original.png",
+        "npj": "native/N02/npj.png"
+      },
+      "comparison": "comparisons/N02.png"
+    },
+    {
+      "id": "R01",
+      "frame": "seal_control",
+      "roi_xywh": [
+        200,
+        50,
+        330,
+        400
+      ],
+      "title": "薄い朱印がほぼ見えなくなる",
+      "priority": "補足",
+      "category": "朱印の保持",
+      "observation": "原画像では矩形の朱印と印面の線が見えるが、このcrop対照の出力ではほぼ見えない。",
+      "reading": "印面・来歴情報の確認には関係するが、本文の汚れ除去とは評価対象が異なる。",
+      "action": "朱の保持を確認する補助例として記録する。本文の読解改善の主評価には混ぜない。",
+      "caveat": "2026-10-04のcrop対照。このページの薄い朱印についての所見であり、旧報告の別ページの赤黒重なり対照とは異なる。",
+      "page": "200021644_00003_2",
+      "page_xywh": [
+        1435,
+        50,
+        330,
+        400
+      ],
+      "source": {
+        "original": "data/split_dataset/train/200021644/200021644_00003_2.jpg",
+        "input": "tmp_work/npj_dirt_transfer_20261004/native/seal_control/original.png",
+        "output": "tmp_work/npj_dirt_transfer_20261004/native/seal_control/baseline.png",
+        "origin_xywh": [
+          1235,
+          0,
+          768,
+          768
+        ],
+        "kind": "凍結コードの新規crop対照",
+        "version": "Fresh frozen-code crop control, not a historical saved page",
+        "sha256": {
+          "original": "7990fd2d1a2e05e94b5aa4c5ab13dd7dc733ab048bd1e0275ce26e06f584426c",
+          "input": "e450394ecd392e5287d2903b3d7df167c137efb9b1fef2e5667f874c60a83859",
+          "output": "ab7a9cf6be23e0e37115a2b3588a49cbf7ed66e63b559b58eaf12f07b389158e"
+        }
+      },
+      "native": {
+        "original": "native/R01/original.png",
+        "npj": "native/R01/npj.png"
+      },
+      "comparison": "comparisons/R01.png"
+    }
+  ],
+  "controls": [
+    {
+      "id": "C01",
+      "frame": "manual_control_hnsd001_011",
+      "roi_xywh": [
+        40,
+        100,
+        310,
+        310
+      ],
+      "title": "孤立シミ：除去の読解価値は低優先",
+      "priority": "低",
+      "category": "対照",
+      "observation": "シミは黒く残るが、近くの本文の筆画と離れている。",
+      "reading": "孤立シミを消して見た目が整っても、文字が読みやすくなるかは別に確認する必要がある。",
+      "action": "外観改善の対照にする。接触汚れと区別する。",
+      "caveat": "手動マスクの成功例と同じページの処理前出力。",
+      "page": "hnsd001_011",
+      "page_xywh": [
+        376,
+        496,
+        310,
+        310
+      ],
+      "source": {
+        "original": "data/split_dataset/train/hnsd00000/hnsd001_011.jpg",
+        "input": "tmp_work/npj_manual_stain_oracle_20261004/hnsd001_input/hnsd001_011.png",
+        "output": "tmp_work/npj_manual_stain_oracle_20261004/hnsd001_output/hnsd001_011/result/hnsd001_011.png",
+        "origin_xywh": [
+          336,
+          396,
+          528,
+          528
+        ],
+        "kind": "凍結コードの新規crop対照",
+        "version": "通常黒文字マスク・後処理前",
+        "sha256": {
+          "original": "22017c0af65c5f43560ff05cfcc15c6ed8f56b72e60a04a732d9c31b72f05731",
+          "input": "e9500ca03a603d1ae696748581239c08f840112601f86e3c9a87ae2366938ba2",
+          "output": "d23d4fa76718472ee63a43a9d513d4601c7155ed735fed4a31f7be74be84427d"
+        }
+      },
+      "native": {
+        "original": "native/C01/original.png",
+        "npj": "native/C01/npj.png"
+      },
+      "comparison": "comparisons/C01.png"
+    },
+    {
+      "id": "C02",
+      "frame": "new_gray_binding_mark",
+      "roi_xywh": [
+        310,
+        0,
+        440,
+        730
+      ],
+      "title": "綴じ側の帯：本文の外側",
+      "priority": "低",
+      "category": "対照",
+      "observation": "綴じ側の黒い縦帯は残るが、本文の主要部分から枠線で隔てられている。",
+      "reading": "本文の読解改善の根拠としては弱い。",
+      "action": "位置が本文と接触しない対照として保持する。",
+      "caveat": "2026-10-04のcrop対照。帯の材質は未確定。",
+      "page": "200004148_00062_1",
+      "page_xywh": [
+        1410,
+        2050,
+        440,
+        730
+      ],
+      "source": {
+        "original": "data/split_dataset/train/200004148/200004148_00062_1.jpg",
+        "input": "tmp_work/npj_dirt_new_book_20261004/native/new_gray_binding_mark/original.png",
+        "output": "tmp_work/npj_dirt_new_book_20261004/native/new_gray_binding_mark/baseline.png",
+        "origin_xywh": [
+          1100,
+          2050,
+          768,
+          768
+        ],
+        "kind": "凍結コードの新規crop対照",
+        "version": "New frozen-code crop control; not historical output or whole-page DDRM",
+        "sha256": {
+          "original": "da91d62d48a3b23633c37a55391d15638fd14184c2abe7d4c53d250c53acb718",
+          "input": "e183dc89f291a71fba0545750bda4d78341e34d51381603f405826317831bc2e",
+          "output": "adba3ab5158b9fb9af6c0d09fbfa86eb30197613463c6cae774cbbc27f47d93a"
+        }
+      },
+      "native": {
+        "original": "native/C02/original.png",
+        "npj": "native/C02/npj.png"
+      },
+      "comparison": "comparisons/C02.png"
+    },
+    {
+      "id": "C03",
+      "frame": "fresh_printed_text",
+      "roi_xywh": [
+        190,
+        80,
+        460,
+        580
+      ],
+      "title": "濃い本文：形が概ね残る",
+      "priority": "対照",
+      "category": "対照",
+      "observation": "出力でも濃い本文の主要な形を追える。",
+      "reading": "局所改善を追加するときに、読める部分を崩さないことを確認する対照。",
+      "action": "新処理でこのような本文を変更しすぎないことを評価する。",
+      "caveat": "細部の完全一致や専門家による読解確認を意味しない。",
+      "page": "200008003_00004_2",
+      "page_xywh": [
+        1040,
+        2480,
+        460,
+        580
+      ],
+      "source": {
+        "original": "data/split_dataset/test/200008003/200008003_00004_2.jpg",
+        "input": "tmp_work/npj_dirt_transfer_20261004/native/fresh_printed_text/original.png",
+        "output": "tmp_work/npj_dirt_transfer_20261004/native/fresh_printed_text/baseline.png",
+        "origin_xywh": [
+          850,
+          2400,
+          768,
+          768
+        ],
+        "kind": "凍結コードの新規crop対照",
+        "version": "Fresh frozen-code crop control, not a historical saved page",
+        "sha256": {
+          "original": "39fe3aa26d74c3ae5379c88293b6cb9479f4b995fd15a8dbb7976f8851adae8b",
+          "input": "22205aa254209499b99dcabf16f00b2bcc3b8f861d0586b4793874f09f27edff",
+          "output": "43060972e0100fee8268d98ddbb0fd603d0545bf1f84800983b105ea55aaf950"
+        }
+      },
+      "native": {
+        "original": "native/C03/original.png",
+        "npj": "native/C03/npj.png"
+      },
+      "comparison": "comparisons/C03.png"
+    },
+    {
+      "id": "C04",
+      "frame": "known_200010454_v2",
+      "roi_xywh": [
+        660,
+        80,
+        370,
+        380
+      ],
+      "title": "版の違い：全ページ版で既に減ったシミ",
+      "priority": "低",
+      "category": "対照",
+      "observation": "旧切り出し版では残っていた茶色い斑点が、CSC v2全ページ保存版では大きく減る。",
+      "reading": "この全ページ出力への追加除去の必要性は低い。",
+      "action": "版を固定し、既に除去できたものを改善対象として数えない。",
+      "caveat": "旧cropと全ページでは推論範囲・参照背景等も異なる。差を特定の1要因の効果とはしない。",
+      "page": "200010454_00002_2",
+      "page_xywh": [
+        660,
+        80,
+        370,
+        380
+      ],
+      "source": {
+        "original": "data/split_dataset/test/200010454/200010454_00002_2.jpg",
+        "input": "tmp_work/speed_test_single/input/200010454_00002_2.jpg",
+        "output": "tmp_work/speed_test_single/ddrm_out/200010454_00002_2/result/200010454_00002_2.png",
+        "origin_xywh": null,
+        "kind": "実保存・全ページ",
+        "version": "保存npj：CSC v2・同ページ追加対照",
+        "sha256": {
+          "original": "177776f90fc08b12e2f59a37773ef433556f43ebe47c503c2d676595a08a60d1",
+          "input": "177776f90fc08b12e2f59a37773ef433556f43ebe47c503c2d676595a08a60d1",
+          "output": "aa24528eefe3c11f1849e7212ff0ea5b3f0a7c1298c7bb8f17888ec0b26bc29e"
+        }
+      },
+      "native": {
+        "original": "native/C04/original.png",
+        "npj": "native/C04/npj.png"
+      },
+      "comparison": "comparisons/C04.png"
+    }
+  ],
+  "figures": [
+    "figures/01_汚れ関連の読みにくさ.png",
+    "figures/02_筆画欠損の読みにくさ.png",
+    "figures/03_低優先と正常対照.png"
+  ],
+  "scanned_frames": 21,
+  "unique_pages": 17,
+  "roi_coordinate_convention": "top-left x,y,width,height; page coordinates refer to original file pixels",
+  "note": "Visual candidates, not reading/transcription ground truth. No new inference in this task."
+}

@@ -1,0 +1,252 @@
+{
+  "cases": [
+    {
+      "id": "page_200019865",
+      "page": "200019865_00003_1",
+      "input": "tmp_work/ddrm_visual_check/input_200019865_00003_1/200019865_00003_1.jpg",
+      "reference_original": "data/test/200019865/200019865_00003_1.jpg",
+      "reference_xywh": null,
+      "saved_npj": "tmp_work/ddrm_visual_check/output_200019865_00003_1/200019865_00003_1/result/200019865_00003_1.png",
+      "baseline_label": "保存npj：ddrm_visual_check既存版",
+      "log": "tmp_work/ddrm_visual_check/run.log",
+      "selection_reason": "New page for this postprocessor; slender warm marks and text controls",
+      "illustration_page": false,
+      "rois": [
+        {
+          "id": "01_upper_slender_marks",
+          "title": "上余白の細い暖色跡",
+          "xywh": [
+            1270,
+            250,
+            550,
+            400
+          ],
+          "role": "damage_candidate_material_unconfirmed"
+        },
+        {
+          "id": "02_left_margin_marks",
+          "title": "左余白の線状跡",
+          "xywh": [
+            20,
+            850,
+            450,
+            900
+          ],
+          "role": "damage_candidate_material_unconfirmed"
+        },
+        {
+          "id": "03_faint_text_control",
+          "title": "薄い文字の対照",
+          "xywh": [
+            1200,
+            1050,
+            650,
+            650
+          ],
+          "role": "text_control"
+        }
+      ],
+      "input_shape": [
+        3191,
+        2113,
+        3
+      ],
+      "reference_input_exact": true,
+      "reference_input_mae": 0.0,
+      "reference_input_max_difference": 0
+    },
+    {
+      "id": "page_200017197",
+      "page": "200017197_00008_1",
+      "input": "tmp_work/trial_run/input/200017197_00008_1.png",
+      "reference_original": "data/makura_kiridashi/200017197_00008_1.png",
+      "reference_xywh": null,
+      "saved_npj": "tmp_work/trial_run/ddrm_out/200017197_00008_1/result/200017197_00008_1.png",
+      "baseline_label": "保存npj：trial_run既存版",
+      "log": "tmp_work/trial_run/ddrm_log.txt",
+      "selection_reason": "New page for this postprocessor; warm paper pattern is not labelled dirt",
+      "illustration_page": false,
+      "rois": [
+        {
+          "id": "04_warm_paper_pattern",
+          "title": "暖色の紙模様・汚れと断定しない",
+          "xywh": [
+            100,
+            30,
+            650,
+            380
+          ],
+          "role": "paper_pattern_control"
+        },
+        {
+          "id": "05_pattern_text_control",
+          "title": "紙模様上の文字対照",
+          "xywh": [
+            1100,
+            1400,
+            550,
+            600
+          ],
+          "role": "text_and_pattern_control"
+        },
+        {
+          "id": "06_lower_thin_text",
+          "title": "下部の細い筆画と紙模様",
+          "xywh": [
+            150,
+            2400,
+            700,
+            600
+          ],
+          "role": "text_and_pattern_control"
+        }
+      ],
+      "input_shape": [
+        3212,
+        2387,
+        3
+      ],
+      "reference_input_exact": false,
+      "reference_input_mae": 0.5696914830104883,
+      "reference_input_max_difference": 30
+    },
+    {
+      "id": "known_200010454_v2",
+      "page": "200010454_00002_2",
+      "input": "tmp_work/speed_test_single/input/200010454_00002_2.jpg",
+      "reference_original": "data/split_dataset/test/200010454/200010454_00002_2.jpg",
+      "reference_xywh": null,
+      "saved_npj": "tmp_work/speed_test_single/ddrm_out/200010454_00002_2/result/200010454_00002_2.png",
+      "baseline_label": "保存npj：CSC v2・同ページ追加対照",
+      "log": "tmp_work/speed_test_single/ddrm_run.log",
+      "selection_reason": "Known page and different saved version; seal negative control, not independent page",
+      "illustration_page": false,
+      "v6_cache": "tmp_work/warm_ink_hold_v6_20260930/200010454_00002_2",
+      "rois": [
+        {
+          "id": "07_red_seal_control",
+          "title": "朱印の対照・既知ページの別保存版",
+          "xywh": [
+            1330,
+            1800,
+            430,
+            550
+          ],
+          "role": "red_seal_control"
+        },
+        {
+          "id": "08_known_brown_stain",
+          "title": "既知の茶色い斑点・別保存版",
+          "xywh": [
+            730,
+            230,
+            180,
+            140
+          ],
+          "role": "known_damage_candidate"
+        },
+        {
+          "id": "09_known_dense_text",
+          "title": "既知の濃い筆画・別保存版",
+          "xywh": [
+            555,
+            335,
+            175,
+            160
+          ],
+          "role": "known_text_control"
+        }
+      ],
+      "input_shape": [
+        2365,
+        1784,
+        3
+      ],
+      "reference_input_exact": true,
+      "reference_input_mae": 0.0,
+      "reference_input_max_difference": 0
+    },
+    {
+      "id": "crop_hnsd",
+      "page": "hnsd001_011_crop",
+      "input": "tmp_work/mask_ablation_hnsd/input/hnsd001_011_crop.png",
+      "reference_original": "data/split_dataset/train/hnsd00000/hnsd001_011.jpg",
+      "reference_xywh": [
+        80,
+        2280,
+        620,
+        620
+      ],
+      "saved_npj": "tmp_work/mask_ablation_hnsd/output_v1/hnsd001_011_crop/result/hnsd001_011_crop.png",
+      "baseline_label": "保存npj：旧v1・濃淡の異なる保存入力",
+      "selection_reason": "Different saved input frame; clear dirt-like black mass intersects rule/text; reference pixels differ",
+      "illustration_page": false,
+      "rois": [
+        {
+          "id": "10_rule_crossing_dark_mass",
+          "title": "枠線に接する濃い塊",
+          "xywh": [
+            170,
+            300,
+            350,
+            210
+          ],
+          "role": "residual_damage_positive_candidate"
+        },
+        {
+          "id": "11_crop_text_control",
+          "title": "濃い文字と枠線の対照",
+          "xywh": [
+            30,
+            50,
+            160,
+            260
+          ],
+          "role": "text_rule_control"
+        },
+        {
+          "id": "12_crop_lower_paper",
+          "title": "下端の紙面対照",
+          "xywh": [
+            0,
+            520,
+            620,
+            100
+          ],
+          "role": "paper_control"
+        }
+      ],
+      "input_shape": [
+        620,
+        620,
+        3
+      ],
+      "reference_input_exact": false,
+      "reference_input_mae": 26.908911723898715,
+      "reference_input_max_difference": 88
+    }
+  ],
+  "dependencies": {
+    "tmp_work/ddrm_visual_check/input_200019865_00003_1/200019865_00003_1.jpg": "31b993f91a1ce6d4db18f435513a2c7d9b9169b9a5b42e1e16c59ec6516dae16",
+    "tmp_work/ddrm_visual_check/output_200019865_00003_1/200019865_00003_1/result/200019865_00003_1.png": "77bd3ecf29b5dc3197d283aecf734a522305f97f0451e102d7879c4de25a86c3",
+    "data/test/200019865/200019865_00003_1.jpg": "31b993f91a1ce6d4db18f435513a2c7d9b9169b9a5b42e1e16c59ec6516dae16",
+    "tmp_work/ddrm_visual_check/run.log": "3413232e03b51ba7ab1567ce3b24ddf9aedcd1f2573cd6f80756e512033dd185",
+    "tmp_work/trial_run/input/200017197_00008_1.png": "00e8c9071a3770ca50a53932bbb93b58000821c161e56fdc692b1db8bcc02766",
+    "tmp_work/trial_run/ddrm_out/200017197_00008_1/result/200017197_00008_1.png": "1c9fbc278ae0b9297184b0afd3dfd472c897ff3bf205719be2d6bf21c0272c26",
+    "data/makura_kiridashi/200017197_00008_1.png": "20dd67d30763e04ecadfebfcd58e28f751fcaaad82c81488ea96d343cba95955",
+    "tmp_work/trial_run/ddrm_log.txt": "148c18b62b4cdc116328fec59755472c3fdd26e64d73b412193a6a5dcc721eb9",
+    "tmp_work/speed_test_single/input/200010454_00002_2.jpg": "177776f90fc08b12e2f59a37773ef433556f43ebe47c503c2d676595a08a60d1",
+    "tmp_work/speed_test_single/ddrm_out/200010454_00002_2/result/200010454_00002_2.png": "aa24528eefe3c11f1849e7212ff0ea5b3f0a7c1298c7bb8f17888ec0b26bc29e",
+    "data/split_dataset/test/200010454/200010454_00002_2.jpg": "177776f90fc08b12e2f59a37773ef433556f43ebe47c503c2d676595a08a60d1",
+    "tmp_work/speed_test_single/ddrm_run.log": "6396303a506ab3a3ecd2283c99f9afd63a6f331e73517d4ce79bbf2dc9623626",
+    "tmp_work/mask_ablation_hnsd/input/hnsd001_011_crop.png": "78e46d451a970f81c45ea11aaa4c7185b0921df01db1a3ebd0963055643a09d4",
+    "tmp_work/mask_ablation_hnsd/output_v1/hnsd001_011_crop/result/hnsd001_011_crop.png": "bf94b1b785f7da331ee3a16fdef635e2552ad03c018f9c1f44dd0cdb6a9d252c",
+    "data/split_dataset/train/hnsd00000/hnsd001_011.jpg": "22017c0af65c5f43560ff05cfcc15c6ed8f56b72e60a04a732d9c31b72f05731"
+  },
+  "selection_before_v6_or_postprocessing": true,
+  "selection_basis": "Stored inputs and actual saved npj outputs inspected, not new candidate outputs",
+  "independent_unseen_books": false,
+  "pixel_GT": false,
+  "illustration_pages_excluded": true,
+  "postprocess": "Frozen paper-only; no stroke gap filling"
+}

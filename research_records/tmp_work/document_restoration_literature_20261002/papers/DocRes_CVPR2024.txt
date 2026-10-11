@@ -1,0 +1,702 @@
+                           This CVPR paper is the Open Access version, provided by the Computer Vision Foundation.
+                                        Except for this watermark, it is identical to the accepted version;
+                                  the final published version of the proceedings is available on IEEE Xplore.
+
+
+
+
+              DocRes: A Generalist Model Toward Unifying Document Image
+                                   Restoration Tasks
+
+                Jiaxin Zhang1,2 , Dezhi Peng1 , Chongyu Liu1 , Peirong Zhang1 , Lianwen Jin1,2, *
+                                            1
+                                            South China University of Technology
+                              2
+                                  INTSIG-SCUT Joint Lab on Document Analysis and Recognition
+
+
+
+                           Abstract
+
+    Document image restoration is a crucial aspect of Doc-
+ument AI systems, as the quality of document images sig-
+nificantly influences the overall performance. Prevailing                                              DocRes
+methods address distinct restoration tasks independently,
+leading to intricate systems and the incapability to harness
+the potential synergies of multi-task learning. To overcome
+this challenge, we propose DocRes, a generalist model
+that unifies five document image restoration tasks includ-                                             Appearance
+                                                                            Dewarping   Deshadowing                 Deblurring   Binarization
+                                                                                                      enhancement
+ing dewarping, deshadowing, appearance enhancement,
+deblurring, and binarization. To instruct DocRes to per-
+                                                                   Figure 1. DocRes is a generalist model that unifies five document
+form various restoration tasks, we propose a novel visual
+                                                                   image restoration tasks, including tasks of dewarping, deshadow-
+prompt approach called Dynamic Task-Specific Prompt                ing, appearance enhancement, deblurring, and binarization.
+(DTSPrompt). The DTSPrompt for different tasks com-
+prises distinct prior features, which are additional char-
+acteristics extracted from the input image. Beyond its role        ments, as underscored in recent studies [5, 9, 23, 59, 70].
+as a cue for task-specific execution, DTSPrompt can also              The restoration of document images, addressing ob-
+serve as supplementary information to enhance the model’s          jectives like flattening documents, shadow removal, clean
+performance. Moreover, DTSPrompt is more flexible than             appearance restoration, deblurring, or text segmentation,
+prior visual prompt approaches as it can be seamlessly ap-         holds both academic and practical significance. Existing ap-
+plied and adapted to inputs with high and variable res-            proaches [5, 9, 33, 59, 62] typically treat these restoration
+olutions. Experimental results demonstrate that DocRes             tasks separately, relying on models specifically designed for
+achieves competitive or superior performance compared to           each task. While effective in achieving commendable per-
+existing state-of-the-art task-specific models. This under-        formance, this paradigm results in a system that requires
+scores the potential of DocRes across a broader spectrum of        the design of multiple models and extensive maintenance.
+document image restoration tasks. The source code is pub-          Moreover, it fails to leverage the potential synergies of
+licly available at https://github.com/ZZZHANG-                     multi-task learning.
+jx/DocRes.                                                            To tackle this problem, motivated by recent pioneering
+                                                                   works [3, 24, 30, 38, 57, 58] that unify various vision tasks,
+                                                                   we seek to explore a generalist model for document image
+1. Introduction                                                    restoration. As illustrated in Fig. 1, our proposed DocRes
+                                                                   seeks to unify five document image restoration tasks: de-
+Photographed or scanned document images frequently man-
+                                                                   warping, deshadowing, appearance enhancement, deblur-
+ifest various forms of degradation, encompassing geometric
+                                                                   ring, and binarization. To empower such a generalist model
+distortion, shadows, bleed-through, stains, and more. These
+                                                                   to perform specific tasks and generate desired outputs, it
+degradations pose substantial challenges for existing doc-
+                                                                   is often crucial to convey instructional information to the
+ument analysis and recognition systems, and also signifi-
+                                                                   model. Existing visual generalist models accomplish this
+cantly compromise the visual appeal and legibility of docu-
+                                                                   by drawing inspiration from advancements in Natural Lan-
+  * Corresponding author                                           guage Processing (NLP) and leveraging prompt learning
+
+
+
+                                                               15654
+techniques. Notably, studies like [3, 52, 57] transform the       achieves competitive or even superior performance on vari-
+vision task into an NLP one by discretizing continuous vi-        ous benchmarks compared to existing well-established and
+sion output and using discrete tokens as prompts. However,        carefully designed task-specific methods.
+the autoregressive decoding paradigm they employ is inher-           In summary, our contributions are as follows:
+ently less effective for low-level tasks.
+                                                                  • To the best of our knowledge, we are the first to explore
+    In the realm of unifying image-to-image tasks, recent           generalist models for unifying restoration of document
+methods [1, 29, 32, 58] have suggested vision-centric               images, which serves as a pioneering effort in this field.
+prompts, known as visual prompts, which exhibit promis-           • We propose a simple yet highly effective visual prompt
+ing potential across various vision tasks, including image          approach termed DTSPrompt, which extracts different
+restoration. Among them, approaches like [1, 29, 58] pro-           prior features from the input image to create prompts. It
+pose using a pair of input/output samples as a visual prompt        can guide the model to distinguish different tasks, pro-
+to guide the model to perform the corresponding task.               vide supplementary information to improve performance
+Nevertheless, these methods exhibit reduced efficiency as           and accommodate both high and variable resolutions.
+they necessitate an additional pair of samples during in-         • Empowered by DTSPrompt, our DocRes achieves com-
+ference, making them less suitable for low-level tasks in-          petitive or even better performance compared to task-
+volving high-resolution images. ProRes [32] introduces a            specific methods across various benchmarks.
+more straightforward visual prompt method, wherein a ma-
+trix composed of learnable parameters, matching the input’s
+shape, is assigned for each task and added to the input as a
+                                                                  2. Related works
+visual prompt. However, the training process of ProRes is         2.1. Document Image Restoration
+intricate, which requires initializing each visual prompt by
+pre-training on task-specific models. Additionally, some of       Dewarping [5, 10, 11, 33, 68] addresses the elimination of
+the above visual prompt methods rely on Mask Image Mod-           geometric distortions such as curves and crumples, which
+eling (MIM) and require the ViT [8] framework. However,           not only hinder OCR engine performance [4, 56, 70] but
+ViT typically demands that input images during testing and        also degrade document readability. Deshadowing [25, 26,
+training have the same resolution, and due to memory con-         71] focuses on removing shadows, a common occurrence
+straints, ViT struggles with high-resolution images. This         in photographed document images, to produce shadow-free
+makes it challenging for these methods to adapt to low-level      documents. Appearance enhancement, also known as illu-
+tasks, which typically involve patch training, whole-image        mination correction [6, 59, 70], goes beyond specific ap-
+testing, as well as variable and high-resolution inputs.          pearance degradations, striving to restore a clean appear-
+                                                                  ance akin to digital-born PDFs. This is valuable as it signif-
+    Recognizing the limitations of the aforementioned
+                                                                  icantly enhances document readability and aesthetics. De-
+prompt methods, we introduce a new visual prompt for
+                                                                  blurring [14, 50, 61] aims to eliminate blurriness and restore
+DocRes called the Dynamic Task-Specific Prompt (DT-
+                                                                  a clear image. Binarization [62] involves segmenting fore-
+SPrompt). The inspiration behind DTSPrompt is rooted
+                                                                  ground text from document images, a critical task for appli-
+in prevalent practices observed in existing document im-
+                                                                  cations primarily focused on text content, usually obscured
+age restoration endeavors, where certain prior features ex-
+                                                                  by stains, artifacts, black margins, or weak contrast.
+tracted from the input image are typically employed to en-
+hance model’s performance, such as background images for              Existing approaches [5, 26, 59, 62, 68, 70, 71] typically
+shadow removal [26, 71] and text content masks for dewarp-        treat these restoration tasks independently, resulting in a
+ing [11, 17, 68]. Specifically, the DTSPrompt for different       complex document image restoration system and the inabil-
+tasks comprises distinct prior features based on the charac-      ity to harness the potential synergies among tasks. While
+teristics of each task, where prior features we adopted in-       recent efforts [50, 51, 61] aim to tackle several tasks with
+clude document segmentation masks, binarization results,          a unified network architecture, they still require individual
+gradient maps, and so on. DTSPrompt can not only serve            training and separate models for each task.
+as an effective cue for the model to determine which task
+to perform but also function as supplementary informa-            2.2. All-in-one image restoration
+tion to enhance the performance for the corresponding task.       Unlike the domain of document image restoration that lacks
+DTSPrompt can be seamlessly applied to various existing           unification, recent studies [24, 29, 32, 54, 58, 67] have made
+restoration networks, rather than limited to ViT. This en-        pioneering strides in developing generalist models for natu-
+ables DocRes to handle high and variable resolutions en-          ral scene image restoration. They encompass tasks such as
+countered in document restoration.                                weather effect removal, low-light image enhancement, de-
+    Experiments demonstrate that, without additional com-         noising, and deblurring. Existing multi-task generalist mod-
+plex network designs, DocRes, as a generalist model,              els can be broadly classified into two categories based on
+
+
+
+                                                               15655
+whether the task is explicitly specified for the model during         generate task-specific DTSPrompts, which are composed of
+inference: task-agnostic and task-oriented.                           various prior features extracted from the input image. Such
+    Task-agnostic. Task-agnostic methods [21, 22, 39, 54,             DTSPrompts are instrumental in guiding the restoration net-
+67] do not require users to specify the task type, but they           work to execute distinct tasks while simultaneously enhanc-
+are less flexible and cannot handle a broader range of tasks,         ing overall performance. In the following sections, we first
+typically being confined to specific domains like weather             provide a detailed exploration of the process involved in ob-
+effect removal. This arises because some tasks share simi-            taining various prior features to construct the DTSPrompt
+lar inputs but demand distinct outputs, leading to ambiguity          for each task. Then we introduce our prompt fusion ap-
+in the learning process. The task-agnostic setup proves in-           proach and the selection of the restoration network.
+appropriate for unifying document image restoration since
+                                                                      3.1. Dynamic task-specific prompt
+tasks like dewarping, deshadowing, and appearance en-
+hancement share similar inputs but demand distinct outputs.           Prevailing visual generalist models [29, 32, 52, 57, 58] de-
+    Task-oriented. To achieve a task-oriented generalist              termine prompts solely based on the task, and are indepen-
+model, explicit task information needs to be introduced.              dent of the input image:
+Some approaches [3, 24, 30, 57, 58] discretize the con-
+                                                                                                               \centering \label {common_prompt} { Prompt }=f(\text { task }).                                  (1)
+tinuous vision output, use discrete tokens as task prompts,
+and use the Transformer decoder for autoregressive predic-            In contrast, our DTSPrompt dynamically adapts to the input
+tion. These methods are more suited for visual understand-            image Is ∈ Rh×w×3 :
+ing tasks, such as detection, captioning, and visual question                   \centering \label {common_prompt} { DTSPrompt }=G\left (I_{s}, \text { task }\right ) \in \mathbb {R}^{h \times w \times 3}.    (2)
+answering but are inappropriate for low-level tasks involv-
+ing high-resolution outputs. More recently, there have been           Here, G represents our DTSPrompt generator (depicted in
+methods proposing vision-centric prompts [1, 29, 32, 58]              Fig. 2), which is responsible for extracting prior features
+for unification purposes, known as visual prompts, show-              from Is based on the specified task. In the following, we
+ing promising potential in various vision tasks, including            provide a detailed explanation of how the DTSPrompt for
+image restoration. Among them, [1, 29, 58] use an in-                 each task is constructed. Visual results of DTSPrompts for
+put/output sample of a specific task as a prompt, resembling          each task are presented in Fig. 3.
+the paradigm used in inpainting tasks where surrounding                   Dewarping. Existing document dewarping methods [11,
+pixel information is learned to fill in missing pixel positions.      17, 23] often use text line masks or text block masks to as-
+Nevertheless, the additional input leads to inefficiency and          sist the dewarping model, making it more attentive to the
+limitation of image resolution. ProRes [32] employs learn-            dewarping of regions with meaningful content. Document
+able parameters with the same shape of the input image as a           mask [9, 11, 23, 68] is commonly employed to enhance the
+visual prompt and adds it pixel-wise to the input. While ef-          model’s understanding of document boundaries and reduce
+fectively guiding the model, the prompt for each task needs           the learning difficulty by decoupling the margin removal
+to be trained on task-specific models for initialization, re-         and content rectification processes. Here, we choose the
+sulting in a complex training pipeline.                               simplest document mask as our prior feature for the dewarp-
+    Moreover, all these visual prompt methods mentioned               ing task. This mask, denoted as Pm (Is ) ∈ Rh×w , is ob-
+above are limited to the ViT [8] framework, making them               tained by directly using an existing document segmentation
+unable to adapt to the variable resolutions in restoration            model proposed in [68] (noted that any other existing docu-
+tasks. The quadratic computational complexity also re-                ment segmentation models [9, 11] can also be employed).
+stricts the input resolution. For example, the input resolu-              Furthermore, considering that predicting the backward
+tion for ProRes [32] and Painter [58] is limited to 448×448,          map in dewarping task is inherently a problem related to
+which is insufficient for document images with resolu-                coordinate positions, inspired by [5, 27], we introduce the
+tions commonly exceeding 1K. While block-wise process-                x-coordinate and y-coordinate as additional prior features,
+ing could be employed, many document image restoration                denoted as Pcx ∈ Rh×w and Pcy ∈ Rh×w , respectively.
+tasks heavily depend on global information, such as de-               They represent the coordinate values of the pixel at (i, j),
+shadowing and binarization, making this strategy unfeasi-             i.e., Pcx (i, j) = i and Pcy (i, j) = j, which enable bet-
+ble. In contrast, our DTSPrompt method is not confined                ter perception of positional information. The DTSPrompt
+to the ViT framework and can be applied to various more               for dewarping task is obtained by concatenating these prior
+flexible restoration networks to form our DocRes model.               features along the channel dimension:
+                                                                                 \centering G\left (I_{s},``dewarp"\right )=\left [P_{m}\left (I_{s}\right ), P_{c x}, P_{c y}\right ].                         (3)
+3. Methodology
+                                                                         Deshadowing. For the deshadowing task, the docu-
+As depicted in Fig. 2, the input document image undergoes             ment background is commonly considered as a prior fea-
+an initial processing step by the DTSPrompt generator to              ture to enhance performance [26, 28, 71]. Here, we adopt
+
+
+
+                                                                   15656
+                                               Appearance
+                                     Deshadowing         Deblurring
+                                Dewarping                        Binariza�on
+
+
+                                                       DTSPrompt Generator
+                                                                                                                                                    Restora�on Network
+
+
+
+
+                                                                DTSPrompt
+
+
+Figure 2. The overall pipeline for DocRes. The document image to be restored, denoted as Is , is initially fed into the DTSPrompt generator,
+which extracts specific prior features based on the task to form the DTSPrompt. Alongside Is , DTSPrompt is input into the restoration
+network. It serves not only as a guidance for the restoration network on the particular task to be performed but also functions as auxiliary
+information derived from Is to improve performance.
+
+
+                                                , task                                                            Appearance enhancement. Current methods [6, 59, 70]
+        Dewarping     Deshadowing           Appearance             Deblurring          Binarization
+                                                                                                               commonly adopt background light, shadow map, or white-
+                                                                                                               balance kernel as prior features to facilitate appearance en-
+                                                                                                               hancement based on the concept of intrinsic images. How-
+                                                                                                               ever, accurately obtaining these prior features is challenging
+                                                                                                               and usually requires an extra model for training and predict-
+                          DTSPrompt Generator
+                                                                                                               ing. For simplicity, we leverage the discrepancy between
+                                                                                                               the original image and the document background Pbg (Is )
+                                                                                                               as our prior feature for this task, which can serve as initial
+                                                                                                               enhancement guidance for the model:
+
+                                                                                                                                      \centering P_{diff}(I_s)=255-abs(I_s-P_{bg}(I_s)),                                                                            (5)
+
+
+                                                                                                                                         \centering G\left (I_{s},``appearance"\right )=P_{diff}\left (I_{s}\right ).                                               (6)
+
+                                                                                                                  Deblurring. The gradient distribution is a prior fea-
+                                                                                                               ture widely used in traditional optimization-based deblur-
+                                                                                                               ring methods [20], which is typically employed as regular-
+                                                                                                               ization information to constrain the solution space of the
+                                             DTSPrompt                                                         optimization function. Here, we use the gradient map of the
+                                                                                                               input image Pg (Is ) ∈ Rh×w as an additional input, aiming
+Figure 3. The DTSPrompt for different tasks is composed of dis-                                                for the model to implicitly learn gradient prior information,
+tinct prior features. Most of these prior features are extracted from                                          rather than utilizing a gradient distribution prior to constrain
+the input image, making them dynamic. Zoom in for the best view.                                               the solution space of the output. The DTSPrompt for the de-
+                                                                                                               blurring task is expressed as
+the document background with shadows as our prior fea-
+ture. To obtain this background from the document image,                                                              \centering G\left (I_{s},``deblur"\right )=\left [P_{g}\left (I_{s}\right ), P_{g}\left (I_{s}\right ), P_{g}\left (I_{s}\right )\right ].    (7)
+we initially employ dilation operations to eliminate the tex-
+tual content within the document. Subsequently, we use                                                            Binarization. Integrating prior features as supplemen-
+a median filter to smooth out artifacts introduced due to                                                      tary for performance enhancement is widely adopted in bi-
+incomplete removal. We represent this whole process as                                                         narization task [16, 53, 62], and the effectiveness has been
+Pbg (Is ) ∈ Rh×w×3 . The DTSPrompt for the deshadowing                                                         extensively demonstrated. For this task, we employ the
+task is thus formulated as                                                                                     Sauvola binarization algorithm [49] to yield the initial bi-
+                                                                                                               narization outcome and threshold map as our prior features,
+                 \centering G\left (I_{s},``deshadow"\right )=P_{bg}\left (I_{s}\right ).             (4)      which is denoted as Pb (Is ) ∈ Rh×w and Pt (Is ) ∈ Rh×w ,
+
+
+
+                                                                                                            15657
+respectively. Furthermore, we also incorporate gradient in-                                                                                                   than some dewarping models [9, 33, 68], which can result
+formation as an additional prior feature for this task. The                                                                                                   in better alignment and thus provide a more accurate evalu-
+DTSPrompt for binarization task is formulated as                                                                                                              ation. We denote the aligned dataset as DocUNet*.
+                                                                                                                                                                  Deblurring. The Text Deblur Dataset (TDD) [14] con-
+     \centering G\left (I_{s},``binarize"\right )=\left [P_{b}\left (I_{s}\right ), P_{t}\left (I_{s}\right ), P_{g}\left (I_{s}\right )\right ].    (8)      sists of 66K training samples, from which we randomly se-
+                                                                                                                                                              lect 40K samples to train our model. The 1.6K testing sam-
+3.2. Prompt fusion and restoration network                                                                                                                    ples from TDD form the testing set of this task.
+Exploring how to integrate the acquired prompt information                                                                                                        Binarization. We use DIBCO’18 [46] as our testing
+into the network holds significant merit. A well-conceived                                                                                                    set. Following [61, 62], the remaining years of (H)-DIBCO
+fusion method has the potential to substantially enhance                                                                                                      datasets [12, 37, 40–45, 47] are used as the training data,
+overall performance. However, the primary focus of this                                                                                                       and images from Noisy Office dataset [66], Synchromedia
+paper lies in evaluating the efficacy and potentials associ-                                                                                                  Multispectral dataset [13], Persian Heritage Image Bina-
+ated with DTSPrompt, rather than delving into the intrica-                                                                                                    rization dataset [36] and Bickley Diary dataset [7] are also
+cies of designing a complex network structure. In line with                                                                                                   used for training.
+this objective, we adopt a straightforward fusion approach
+to seamlessly incorporate DTSPrompt into the restoration                                                                                                      4.2. Evaluation metrics
+network. Specifically, we opt for concatenating DTSPrompt
+                                                                                                                                                              Deshadowing, appearance enhancement, and deblurring
+and Is along the channel dimension to construct a new input
+                                                                                                                                                              tasks adopt the commonly used PSNR and SSIM as eval-
+∈ Rh×w×6 for the restoration network.
+                                                                                                                                                              uation metrics. The evaluation of dewarping incorporates
+    Due to the simplicity of DTSPrompt, we have the flexi-
+                                                                                                                                                              multi-scale structural similarity (MS-SSIM) [60], local dis-
+bility to choose from various restoration networks. In this
+                                                                                                                                                              tortion (LD) [64] and align distortion (AD) [34]. MS-SSIM
+case, we opt for the off-the-shelf Restormer [65] without
+                                                                                                                                                              builds upon the traditional SSIM by considering multiple
+modifications to form our DocRes. With such a restoration
+                                                                                                                                                              scales. LD evaluates dewarping performance by utilizing
+network, DocRes can support inputs of up to 1600 × 1600
+                                                                                                                                                              the offset between the dewarped result and the flat ground
+and adapt to inputs with variable resolutions. It’s note-
+                                                                                                                                                              truth. AD, an enhancement of LD, refines the evaluation by
+worthy that other restoration networks can be employed in-
+                                                                                                                                                              excluding offset noise in low-textured regions and mitigat-
+terchangeably since DTSPrompt does not require specific
+                                                                                                                                                              ing the impact of global transformations. the parameters for
+modules within the network.
+                                                                                                                                                              MS-SSIM, LD, and AD align with those established in prior
+                                                                                                                                                              works [5, 11, 23, 33]. For the binarization task, we employ
+4. Experiments                                                                                                                                                PSNR, F-measure (FM), and pseudo F-measure (pFM) as
+4.1. Datasets                                                                                                                                                 our evaluation metrics.
+
+Dewarping. We adopt the Doc3D [5] dataset and the                                                                                                             4.3. Implementation details
+DIR300 benchmark [11] for the training and testing, respec-
+tively. Doc3D is a synthetic dataset comprising 100K sam-                                                                                                     We train our model on 8 NVIDIA A6000 GPUs for 100,000
+ples, which includes geometrically distorted document im-                                                                                                     steps with a global batch size of 80. AdamW with a weight
+ages and corresponding backward maps. DIR300 is a real-                                                                                                       decay of 5 × 10−4 is adopted. We use the cosine learning
+world benchmark with 300 geometrically distorted images                                                                                                       rate scheduler with 2 × 10−4 as the maximum learning rate.
+and corresponding flat ground-truths.                                                                                                                            Before commencing such unified training, the model un-
+    Deshadowing. The training set for this task consists of                                                                                                   dergoes a pre-training phase exclusively on the dewarping
+14,200 synthetic images from FSDSRD [35] and 4,371 real                                                                                                       task for 50,000 steps to initialize the model. This is for
+images from the training set of RDD [71]. We use Jung’s                                                                                                       a more stable training purpose, as dewraping significantly
+dataset [18] (87 images), Kligler’s dataset [19] (300 images)                                                                                                 differs from other tasks: while it involves coordinates re-
+and OSR [55] (237 images) to form our testing set.                                                                                                            gression, other tasks entail regression of image content.
+    Appearance enhancement. The training set for this task                                                                                                       During the unified training process, the sampling weight
+contains 90K synthetic images from the Doc3DShade [6]                                                                                                         for dewarping, deshadowing, appearance enhancement, de-
+dataset and 450 real-world images from the RealDAE [70]                                                                                                       blurring, and binarization are all set to 0.2. Apart from the
+training set. 150 images from the testing set of RealDAE                                                                                                      binarization task, which employs the standard cross-entropy
+and 130 images from DocUNet [33] are used for evalua-                                                                                                         loss for its output, all other tasks are supervised using the
+tion. As introduced in [5, 9], the degraded images in Do-                                                                                                     L1 loss. Images of deshadowing, appearance enhancement,
+cUNet should be aligned to the flat ground truths before the                                                                                                  deblurring, and binarization tasks are randomly cropped as
+evaluation of this task. Following [70], we achieve align-                                                                                                    patches with a size of 256×256, while images of dewarping
+ment by using the document alignment model [69] rather                                                                                                        task are resized to 256 × 256 during training.
+
+
+
+                                                                                                                                                           15658
+Table 1. Quantitative comparison results between our all-in-one generalist DocRes model and existing task-specific state-of-the-art models
+on 5 tasks. From top to bottom, the tasks include dewarping, deshadowing, appearance enhancement, deblurring, and binarization. Best
+results are shown in bold.
+
+                                     DocGeo [11]   Li et al. [23]    BGSNet [71]    DocShadow [25]   UDoc-GAN [59]   GCDRNet [70]   GDB [62]   DE-GAN [50]   DocDiff [61]   DocRes
+  Metrics        Datasets
+                                      ECCV’22       ICCV’23           CVPR’23          ICCV’23          MM’22          TAI’23        PR’24      TPAMI’20       MM’23        (ours)
+ MSSSIM↑                               0.6380         0.6070                                                                                                                0.6264
+   AD↓         DIR300 [11]              0.242          0.244                 -            -                -              -            -            -             -          0.241
+   LD↓                                   6.40           7.68                                                                                                                 6.83
+                                                                       0.9480           0.9088                                                                              0.9005
+             Kligler et al. [19]          -              -                                                 -              -            -            -             -
+                                                                       29.17             25.12                                                                               27.14
+  SSIM↑                                                                0.9040           0.9005                                                                              0.9089
+              Jung et al. [18]            -              -                                                 -              -            -            -             -
+  PSNR↑                                                                17.34             21.05                                                                               23.02
+                                                                       0.9388           0.9023                                                                              0.9370
+                 OSR [55]                 -              -                                                 -              -            -            -             -
+                                                                       22.64             18.25                                                                               21.64
+                                                                                                         0.6833         0.7658                                              0.7598
+             DocUNet* [33]                -              -                   -            -                                            -            -             -
+  SSIM↑                                                                                                   14.29          17.09                                               17.60
+  PSNR↑                                                                                                  0.7558         0.9423                                              0.9219
+              RealDAE [70]                -              -                   -            -                                            -            -             -
+                                                                                                          16.43          24.42                                               24.65
+  SSIM↑                                                                                                                                          0.9226        0.9559       0.9723
+                 TDD [14]                 -              -                   -            -                -              -            -
+  PSNR↑                                                                                                                                           22.24         24.00        27.35
+   FM↑                                                                                                                               91.09        77.59         88.11        89.82
+   pFM↑      DIBCO’18 [46]                -              -                   -            -                -              -          94.57        85.74         90.43        94.33
+  PSNR↑                                                                                                                              19.92        16.16         17.92        19.35
+
+
+
+Table 2. Quantitative results of the ablation experiments. Best                                      both of which aim to unify multiple tasks within a single
+results are shown in bold.                                                                           network structure but still necessitate separate training for
+                                        Task
+                                                                                                     each task, resulting in the need for multiple models.
+                                                                     Unified
+                                       specific
+                                                                                   Baseline
+                                                                                                         Results across multiple benchmark datasets for the five
+   Metrics          Datasets                                    Baseline
+                                       Baseline    Baseline
+                                                               +Fix prompt
+                                                                                 +DTSPrompt          tasks are presented in Table 1. It can be seen that DocRes
+                                                                                  (DocRes)
+  MSSSIM↑                               0.6185     0.5943           0.6030          0.6264           not only competes with existing task-specific SOTA mod-
+    AD↓          DIR300 [11]            0.263       0.333            0.302          0.241            els but also surpasses them in several instances. DocRes
+    LD↓                                  7.18       8.26             7.77            6.83
+               Kilgler et al. [19]
+                                        0.8879     0.8238           0.8977          0.9005           achieves new records in certain metrics for benchmark
+                                        27.41       11.95            27.08          27.14
+   SSIM↑                                0.9025     0.8573           0.9031          0.9089
+                                                                                                     datasets related to dewarping, deshadowing, deblurring, and
+                Jung et al. [18]
+   PSNR↑                                23.18       18.01            22.42          23.02            appearance enhancement tasks. Even for binarization tasks,
+                                        0.9259     0.8634           0.9285          0.9370
+                   OSR [55]
+                                        20.12       12.35            19.47          21.64            where the dedicated SOTA model GDB still holds the top
+                                        0.7621     0.7620           0.7635          0.7598           position, DocRes exhibits performance closely trailing be-
+                DocUNet* [33]
+   SSIM↑                                17.43       17.30            17.28          17.60
+   PSNR↑         RealDAE [70]
+                                        0.9204     0.9050           0.9200          0.9219           hind it. In contrast to existing unified-structure methods like
+                                        24.21       21.75            24.32          24.65
+   SSIM↑                                0.9811     0.9639           0.9690          0.9723           DE-GAN and DocDiff, which still require separate training
+                   TDD [14]
+   PSNR↑                                28.95       25.85            26.64          27.35            for each task, DocRes demonstrates significant advantages.
+    FM↑                                 76.57       74.33            77.15          89.82
+    pFM↑        DIBCO’18 [46]           79.51       76.15            81.18          94.33            Visualized results on these benchmarks from DocRes are
+   PSNR↑                                14.64       14.47            15.28          19.35
+                                                                                                     showcased in Fig. 4.
+                                                                                                         While there remains room for improvement compared to
+                                                                                                     some of these well-designed specialized models, it’s impor-
+4.4. Results                                                                                         tant to underscore that our primary objective in this paper
+Comparisons with SOTA task-specific models. We con-                                                  is not to achieve SOTA performance on every task. Instead,
+duct a comprehensive comparison between our proposed                                                 the focus is on evaluating the efficacy and potential of the
+DocRes and existing meticulously designed task-specific                                              unified DocRes approach. Further research, for example,
+methods. Specifically, for the dewarping task, we bench-                                             can explore more sophisticated prompt fusion mechanisms
+mark DocRes against the current state-of-the-art method,                                             to achieve SOTA performance in each task.
+DocGeo [11], and the recent model by Li et al. [23]. In the                                              Ablation studies. In this subsection, we conduct abla-
+deshadowing domain, we compare DocRes with the latest                                                tion studies to evaluate the effectiveness of our DTSPrompt.
+SOTA models, namely BGSNet [71] (utilizing the model                                                 Restormer [65] is treated as our baseline model. We first
+trained on the RDD dataset provided by the authors) and                                              individually train it on each task, obtaining task-specific re-
+DocShadow [25] (based on the model trained on the SD7K                                               sults shown in the third column of Table 2. As a state-of-
+dataset provided by the authors). For appearance enhance-                                            the-art image restoration network, Restormer demonstrates
+ment, we assess DocRes against UDoc-GAN [59] and GC-                                                 proficiency across various tasks when trained in isolation.
+DRNet [70]. The binarization task involves a comparison                                              However, when training it in a unified model setting (the
+with the current SOTA method, GDB [62]. Additionally, we                                             fourth column of Table 2), we see a significant performance
+contrast our approach with DocDiff [61] and DE-GAN [50],                                             decline across almost all benchmarks. This decline is at-
+
+
+
+                                                                                                 15659
+                                             DTSPrompt                                                          DTSPrompt
+       Dewarpiing
+       Deshadowing
+        Appearance
+         Deblurring
+        Binarization   Input                                             Predict       GT           Input                             Predict   GT
+
+
+
+
+Figure 4. Visualizations showcasing inputs, DTSPrompt, and restoration results from DocRes, and ground truths across various tasks,
+including dewarping, deshadowing, appearance enhancement, deblurring, and binarization. Zoom in for the best view.
+
+
+                                                                                               where the concatenated result of the fixed prompt and the
+                                                                                               input image are fed into the restoration network.
+                                                                                                   Such a simple fixed prompt approach achieves competi-
+                                                                                               tive performance compared to task-specific settings in ap-
+                                                                                               pearance enhancement and deshadowing tasks. There is
+                                                                                               even a noticeable improvement in the binarization task,
+                                                                                               which could be attributed to multi-task learning helping
+                                                                                               mitigate the generalization issue caused by the scarcity of
+               Input           Deshadowing    Appearance   Dewarping   Final results           training data for the binarization task. However, for tasks
+                                             enhancement
+                                                                                               like dewarping and deblurring, the fixed prompt method still
+Figure 5. For the same input, we employ different DTSPrompts to                                experiences significant performance declines, highlighting
+validate the controllability of DocRes. The results in the last col-                           the challenges of creating an excellent generalist model.
+umn indicate that using DocRes enables the complete restoration                                    Our DTSPrompt excels in dewarping, deshadowing,
+process for photographed documents, achieving the desired final                                deblurring, and binarization tasks compared to the fixed
+results for users. Zoom in for the best view.                                                  prompt approach. Particularly, there are significant im-
+                                                                                               provements in the dewarping and binarization tasks. From
+                                                                                               an overall perspective across all tasks, DTSPrompt achieves
+tributed to the similarity in input across tasks, coupled with                                 superior results compared to the task-specific setting, by
+distinct output requirements, leading to confusion in the                                      using only a single model without the need for additional
+model’s learning process.                                                                      training parameters or structural modifications.
+    Additionally, we explore the effectiveness of fixed                                            Control ability. In this subsection, we explore the con-
+prompts. A fixed prompt for each task is a h × w × 3 ma-                                       trol ability of DTSPrompt. Our focus is on observing how
+trix, with constant values determined solely by the task and                                   well DocRes can perform the correct restoration task when
+remaining constant regardless of the input image. For exam-                                    different DTSPrompts are employed for the same input im-
+ple, the fixed prompt for the dewarping task is a h × w × 3                                    age. Specifically, we consider three tasks related to the
+matrix filled with zeros, while for the deshadowing task,                                      photographed scene: dewarping, deshadowing, and appear-
+it is filled with ones. We adopt the same fusion approach,                                     ance enhancement. The visualization results in the first four
+
+
+
+                                                                                            15660
+                                                                          Input          DE-GAN         DocDiff        DocRes
+
+
+
+                                                                    Figure 7. Visualization results when applying models (DE-
+                                                                    GAN [50], DocDiff [61] and our DocRes) to perform the deblur-
+                                                                    ring task on photographed documents, which were merely trained
+                                                                    on clean document blurring data. Zoom in for the best view.
+
+             Input         DE-GAN           DocRes
+
+                                                                    5. Discussions and conclusions
+Figure 6. Visualization results when applying models (DE-
+GAN [50] and our DocRes) to perform binarization on pho-            This paper presents DocRes, a generalist model designed
+tographed documents, which were merely trained on scanned an-       for unifying document image restoration tasks, including
+cient document binarization data. Zoom in for the best view.        dewarping, deshadowing, appearance enhancement, deblur-
+                                                                    ring, and binarization. The key innovation of DocRes is
+                                                                    the incorporation of Dynamic Task-Specific Prompt (DT-
+columns of Fig. 5 show that DocRes can accurately perform           SPrompt), which leverages prior features to construct vi-
+the corresponding tasks. In addition, we also demonstrate           sual prompts, acting not only as a guiding cue for spe-
+in the last column that a single DocRes model can complete          cific tasks but also supplying additional information to en-
+the entire enhancement process of photographed document             hance restoration performance. It can be seamlessly ap-
+images and obtain the final results desired by the user.            plied to existing restoration networks, resulting in a gen-
+    Generalization. An essential trait of a generalist model        eralist model that can accommodate input with high or vari-
+lies in its ability to harness synergies among multi-task data      able resolutions. With the support of DTSPrompt, DocRes
+to improve overall generalization. In this context, we delve        achieves performance levels matching or surpassing SOTA
+into the generalization capability of DocRes through visu-          task-specific models, without the need for extra training pa-
+alizations. As outlined in Section 4.1, the training data           rameters or complex architectural designs. We also illus-
+for the binarization task in DocRes primarily consists of           trate DocRes’s controllability in performing different tasks
+scanned documents, particularly ancient ones, presenting            when presented with the same input image and its capacity
+a considerable gap from the photographed modern docu-               to generalize to out-of-domain data.
+ments [2]. Here, we aim to apply DocRes to binarize pho-                Notably, the DTSPrompt is not confined to the specific
+tographed documents, introducing unseen noises like blur-           tasks explored in this paper. It can be potentially extended
+riness, shadows, low-light conditions, and reflections that         to incorporate more diverse prior features [15, 31, 48, 63],
+are not present in the binarization training set. As shown          such as DCT coefficients, SIFT, JPEG noise, and resam-
+in Fig. 6, DocRes consistently demonstrates excellent per-          pling artifacts, to accommodate a broader range of image
+formance on such out-of-domain data. In contrast, DE-               restoration tasks. Additionally, it is worth investigating
+GAN’s [50] performance significantly deteriorates in the            prompt fusion mechanisms for better integrating the DT-
+presence of shadow and low-light interference.                      SPrompt. In summary, this paper successfully attempts
+    Moreover, we extend the evaluation to the deblurring            to develop a unified multi-task model for document image
+task for photographed document images. Notably, the train-          restoration, inspiring future research of generalist or foun-
+ing data for the deblurring task in DocRes consists exclu-          dation models for pixel-level image processing tasks.
+sively of clean document images. As illustrated in Fig. 7,
+DocRes exhibits superior deblurring performance on pho-
+                                                                    Acknowledgement
+tographed document images compared to DE-GAN [50]
+and DocDiff [61], both of which were also trained exclu-            This paper is supported in part by National Natural Sci-
+sively on the TDD dataset for the deblurring task.                  ence Foundation of China (Grant No.: 61936003), Na-
+    We attribute DocRes’s robust out-of-domain generaliza-          tional Natural Science Foundation of China AIGC 2024
+tion capability to its learning of patterns associated with         Special Project (Grand App. No.: 6244100044), Na-
+photographed noise through tasks like dewarping, deshad-            tional Key Research and Development Program of China
+owing, and appearance enhancement.                                  (2022YFC3301703)
+
+
+
+                                                                 15661
+References                                                              [15] Fangjun Huang, Jiwu Huang, and Yun Qing Shi. Detecting
+                                                                             double JPEG compression with the same quantization ma-
+ [1] Amir Bar, Yossi Gandelsman, Trevor Darrell, Amir Glober-                trix. IEEE TIFS, 5(4):848–856, 2010. 8
+     son, and Alexei Efros. Visual prompting via image inpaint-
+                                                                        [16] Fuxi Jia, Cunzhao Shi, Kun He, Chunheng Wang, and Bai-
+     ing. NeurIPS, 35:25005–25017, 2022. 2, 3
+                                                                             hua Xiao. Degraded document image binarization using
+ [2] Rodrigo Bernardino, Rafael Dueire Lins, and Ricardo                     structural symmetry of strokes. Pattern Recognition, 74:
+     da Silva Barboza. A quality, size and time assessment of                225–240, 2018. 4
+     the binarization of documents photographed by smartphones.
+                                                                        [17] Xiangwei Jiang, Rujiao Long, Nan Xue, Zhibo Yang, Cong
+     Journal of Imaging, 9(2):41, 2023. 8
+                                                                             Yao, and Gui-Song Xia. Revisiting document image dewarp-
+ [3] Ting Chen, Saurabh Saxena, Lala Li, Tsung-Yi Lin, David J               ing by grid regularization. In CVPR, pages 4543–4552, 2022.
+     Fleet, and Geoffrey E Hinton. A unified sequence interface              2, 3
+     for vision tasks. NeurIPS, 35:31333–31346, 2022. 1, 2, 3           [18] Seungjun Jung, Muhammad Abul Hasan, and Changick
+ [4] Hiuyi Cheng, Peirong Zhang, Sihang Wu, Jiaxin Zhang,                    Kim. Water-filling: An efficient algorithm for digitized doc-
+     Qiyuan Zhu, Zecheng Xie, Jing Li, Kai Ding, and Lianwen                 ument shadow removal. In ACCV, pages 398–414, 2018. 5,
+     Jin. M6Doc: A large-scale multi-format, multi-type, multi-              6
+     layout, multi-language, multi-annotation category dataset for      [19] Netanel Kligler, Sagi Katz, and Ayellet Tal. Document en-
+     modern document layout analysis. In CVPR, pages 15138–                  hancement using visibility detection. In CVPR, pages 2374–
+     15147, 2023. 2                                                          2382, 2018. 5, 6
+ [5] Sagnik Das, Ke Ma, Zhixin Shu, Dimitris Samaras, and Roy           [20] Jaihyun Koh, Jangho Lee, and Sungroh Yoon. Single-image
+     Shilkrot. DewarpNet: Single-image document unwarping                    deblurring with neural networks: A comparative survey.
+     with stacked 3D and 2D regression networks. In ICCV, pages              Computer Vision and Image Understanding, 203:103134,
+     131–140, 2019. 1, 2, 3, 5                                               2021. 4
+ [6] S Das, H Ma Sial, R Baldrich, M Vanrell, and D Samaras.            [21] Ashutosh Kulkarni, Prashant W Patil, Subrahmanyam Mu-
+     Intrinsic decomposition of document images in-the-wild. In              rala, and Sunil Gupta. Unified multi-weather visibility
+     BMVC, 2020. 2, 4, 5                                                     restoration. IEEE TMM, 2022. 3
+ [7] Fanbo Deng, Zheng Wu, Zheng Lu, and Michael S Brown.               [22] Boyun Li, Xiao Liu, Peng Hu, Zhongqin Wu, Jiancheng Lv,
+     Binarizationshop: a user-assisted software suite for convert-           and Xi Peng. All-in-one image restoration for unknown cor-
+     ing old documents to black-and-white. In JCDL, pages 255–               ruption. In CVPR, pages 17452–17462, 2022. 3
+     258, 2010. 5                                                       [23] Heng Li, Xiangping Wu, Qingcai Chen, and Qianjin Xiang.
+ [8] Alexey Dosovitskiy, Lucas Beyer, Alexander Kolesnikov,                  Foreground and text-lines aware document image rectifica-
+     Dirk Weissenborn, Xiaohua Zhai, Thomas Unterthiner,                     tion. In CVPR, pages 19574–19583, 2023. 1, 3, 5, 6
+     Mostafa Dehghani, Matthias Minderer, Georg Heigold, Syl-           [24] Ruoteng Li, Robby T Tan, and Loong-Fah Cheong. All
+     vain Gelly, et al. An image is worth 16x16 words: Trans-                in one bad weather removal using architectural search. In
+     formers for image recognition at scale. In ICLR, 2020. 2,               CVPR, pages 3175–3185, 2020. 1, 2, 3
+     3                                                                  [25] Zinuo Li, Xuhang Chen, Chi-Man Pun, and Xiaodong Cun.
+ [9] Hao Feng, Yuechen Wang, Wengang Zhou, Jiajun Deng, and                  High-resolution document shadow removal via a large-scale
+     Houqiang Li. DocTr: Document image transformer for geo-                 real-world dataset and a frequency-aware shadow erasing
+     metric unwarping and illumination correction. In ACM MM,                net. In CVPR, pages 12449–12458, 2023. 2, 6
+     pages 273–281, 2021. 1, 3, 5                                       [26] Yun-Hsuan Lin, Wen-Chin Chen, and Yung-Yu Chuang.
+[10] Hao Feng, Wengang Zhou, Jiajun Deng, Qi Tian, and                       Bedsr-net: A deep shadow removal network from a single
+     Houqiang Li.        Docscanner: Robust document image                   document image. In CVPR, pages 12905–12914, 2020. 2, 3
+     rectification with progressive learning.     arXiv preprint        [27] Rosanne Liu, Joel Lehman, Piero Molino, Felipe Pet-
+     arXiv:2110.14968, 2021. 2                                               roski Such, Eric Frank, Alex Sergeev, and Jason Yosinski.
+[11] Hao Feng, Wengang Zhou, Jiajun Deng, Yuechen Wang, and                  An intriguing failing of convolutional neural networks and
+     Houqiang Li. Geometric representation learning for docu-                the coordconv solution. NeurIPS, 31, 2018. 3
+     ment image rectification. In ECCV, pages 475–492, 2022. 2,         [28] Wenjie Liu, Bingshu Wang, Jiangbin Zheng, and Wenmin
+     3, 5, 6                                                                 Wang. Shadow removal of text document images using
+[12] Basilis Gatos, Konstantinos Ntirogiannis, and Ioannis                   background estimation and adaptive text enhancement. In
+     Pratikakis. ICDAR 2009 document image binarization con-                 ICASSP, pages 1–5, 2023. 3
+     test (DIBCO 2009). In ICDAR, pages 1375–1382, 2009. 5              [29] Yihao Liu, Xiangyu Chen, Xianzheng Ma, Xintao Wang,
+[13] Rachid Hedjam, Hossein Ziaei Nafchi, Reza Farrahi                       Jiantao Zhou, Yu Qiao, and Chao Dong. Unifying image
+     Moghaddam, Margaret Kalacska, and Mohamed Cheriet. IC-                  processing as visual prompting question answering. arXiv
+     DAR 2015 contest on multispectral text extraction. In IC-               preprint arXiv:2310.10513, 2023. 2, 3
+     DAR, pages 1181–1185, 2015. 5                                      [30] Jiasen Lu, Christopher Clark, Rowan Zellers, Roozbeh Mot-
+[14] Michal Hradiš, Jan Kotera, Pavel Zemcık, and Filip Šroubek.           taghi, and Aniruddha Kembhavi. Unified-IO: A unified
+     Convolutional neural networks for direct text deblurring. In            model for vision, language, and multi-modal tasks. In ICLR,
+     BMVC, 2015. 2, 5, 6                                                     2022. 1, 3
+
+
+
+
+                                                                     15662
+[31] Weiqi Luo, Jiwu Huang, and Guoping Qiu. JPEG error anal-               document image binarization (H-DIBCO 2018). In ICFHR,
+     ysis and its applications to digital image forensics. IEEE             2018. 5, 6
+     TIFS, 5(3):480–491, 2010. 8                                       [47] Ioannis Pratikakis, Konstantinos Zagoris, Xenofon Kara-
+[32] Jiaqi Ma, Tianheng Cheng, Guoli Wang, Qian Zhang,                      giannis, Lazaros Tsochatzidis, Tanmoy Mondal, and Isabelle
+     Xinggang Wang, and Lefei Zhang. Prores: Exploring                      Marthot-Santaniello. ICDAR 2019 competition on document
+     degradation-aware visual prompt for universal image restora-           image binarization (DIBCO 2019). In ICDAR, 2019. 5
+     tion. arXiv preprint arXiv:2306.13653, 2023. 2, 3                 [48] Chenfan Qu, Chongyu Liu, Yuliang Liu, Xinhong Chen,
+[33] Ke Ma, Zhixin Shu, Xue Bai, Jue Wang, and Dimitris Sama-               Dezhi Peng, Fengjun Guo, and Lianwen Jin. Towards robust
+     ras. DocUNet: Document image unwarping via a stacked                   tampered text detection in document image: New dataset and
+     U-Net. In CVPR, pages 4700–4709, 2018. 1, 2, 5, 6                      new solution. In CVPR, pages 5937–5946, 2023. 8
+[34] Ke Ma, Sagnik Das, Zhixin Shu, and Dimitris Samaras.              [49] Jaakko Sauvola and Matti Pietikäinen. Adaptive document
+     Learning from documents in the wild to improve document                image binarization. Pattern recognition, 33(2):225–236,
+     unwarping. In ACM SIGGRAPH, pages 1–9, 2022. 5                         2000. 4
+[35] Yuhi Matsuo, Naofumi Akimoto, and Yoshimitsu Aoki. Doc-           [50] Mohamed Ali Souibgui and Yousri Kessentini. DE-GAN:
+     ument shadow removal with foreground detection learning                A conditional generative adversarial network for document
+     from fully synthetic images. In ICIP, pages 1656–1660,                 enhancement. IEEE TPAMI, 44(3):1180–1191, 2020. 2, 6, 8
+     2022. 5                                                           [51] Mohamed Ali Souibgui, Sanket Biswas, Andres Mafla,
+[36] Hossein Ziaei Nafchi, Seyed Morteza Ayatollahi, Reza Far-              Ali Furkan Biten, Alicia Fornés, Yousri Kessentini, Josep
+     rahi Moghaddam, and Mohamed Cheriet.               An effi-            Lladós, Lluis Gomez, and Dimosthenis Karatzas. Text-
+     cient ground truthing tool for binarization of historical              DIAE: a self-supervised degradation invariant autoencoder
+     manuscripts. In ICDAR, pages 807–811, 2013. 5                          for text recognition and document enhancement. In AAAI,
+[37] Konstantinos Ntirogiannis, Basilis Gatos, and Ioannis                  pages 2330–2338, 2023. 2
+     Pratikakis. ICFHR 2014 competition on handwritten docu-           [52] Zineng Tang, Ziyi Yang, Guoxin Wang, Yuwei Fang, Yang
+     ment image binarization (H-DIBCO 2014). In ICFHR, pages                Liu, Chenguang Zhu, Michael Zeng, Cha Zhang, and Mohit
+     809–813, 2014. 5                                                       Bansal. Unifying vision, text, and layout for universal doc-
+[38] Dezhi Peng, Zhenhua Yang, Jiaxin Zhang, Chongyu Liu,                   ument processing. In CVPR, pages 19254–19264, 2023. 2,
+     Yongxin Shi, Kai Ding, Fengjun Guo, and Lianwen Jin.                   3
+     UPOCR: Towards unified pixel-level ocr interface. arXiv           [53] Chris Tensmeyer and Tony Martinez. Document image bina-
+     preprint arXiv:2312.02694, 2023. 1                                     rization with fully convolutional neural networks. In ICDAR,
+[39] Vaishnav Potlapalli, Syed Waqas Zamir, Salman Khan, and                pages 99–104, 2017. 4
+     Fahad Shahbaz Khan. PromptIR: Prompting for all-in-one            [54] Jeya Maria Jose Valanarasu, Rajeev Yasarla, and Vishal M
+     blind image restoration. arXiv preprint arXiv:2306.13090,              Patel. TransWeather: Transformer-based restoration of im-
+     2023. 3                                                                ages degraded by adverse weather conditions. In CVPR,
+[40] Ioannis Pratikakis, Basilis Gatos, and Konstantinos                    pages 2353–2363, 2022. 2, 3
+     Ntirogiannis. H-DIBCO 2010-handwritten document image             [55] Bingshu Wang and CL Philip Chen. Local water-filling algo-
+     binarization competition. In ICFHR, pages 727–732, 2010.               rithm for shadow detection and removal of document images.
+     5                                                                      Sensors, 20(23):6929, 2020. 5, 6
+[41] Ioannis Pratikakis, Basilios Gatos, and Konstantinos              [56] Hongyi Wang, Yang Xue, Jiaxin Zhang, and Lianwen Jin.
+     Ntirogiannis. ICDAR 2011 document image binarization                   Scene table structure recognition with segmentation collabo-
+     contest (DIBCO 2011). In ICDAR, 2011.                                  ration and alignment. Pattern Recognition Letters, 165:146–
+[42] Ioannis Pratikakis, Basilis Gatos, and Konstantinos                    153, 2023. 2
+     Ntirogiannis. ICFHR 2012 competition on handwritten               [57] Peng Wang, An Yang, Rui Men, Junyang Lin, Shuai Bai,
+     document image binarization (H-DIBCO 2012). In ICFHR,                  Zhikang Li, Jianxin Ma, Chang Zhou, Jingren Zhou, and
+     pages 817–822, 2012.                                                   Hongxia Yang. OFA: Unifying architectures, tasks, and
+[43] Ioannis Pratikakis, Basilis Gatos, and Konstantinos                    modalities through a simple sequence-to-sequence learning
+     Ntirogiannis. ICDAR 2013 document image binarization                   framework. In ICML, pages 23318–23340, 2022. 1, 2, 3
+     contest (DIBCO 2013). In ICDAR, pages 1471–1476, 2013.            [58] Xinlong Wang, Wen Wang, Yue Cao, Chunhua Shen, and
+[44] Ioannis Pratikakis, Konstantinos Zagoris, George Barlas, and           Tiejun Huang. Images speak in images: A generalist painter
+     Basilis Gatos. ICFHR 2016 handwritten document image bi-               for in-context visual learning. In CVPR, pages 6830–6839,
+     narization contest (H-DIBCO 2016). In ICFHR, pages 619–                2023. 1, 2, 3
+     623, 2016.                                                        [59] Yonghui Wang, Wengang Zhou, Zhenbo Lu, and Houqiang
+[45] Ioannis Pratikakis, Konstantinos Zagoris, George Barlas, and           Li. UDoc-GAN: Unpaired document illumination correction
+     Basilis Gatos. ICDAR2017 competition on document image                 with background light prior. In ACM MM, pages 5074–5082,
+     binarization (DIBCO 2017). In ICDAR, pages 1395–1403,                  2022. 1, 2, 4, 6
+     2017. 5                                                           [60] Zhou Wang, Eero P Simoncelli, and Alan C Bovik. Multi-
+[46] Ioannis Pratikakis, Konstantinos Zagori, Panagiotis Kaddas,            scale structural similarity for image quality assessment. In
+     and Basilis Gatos. ICFHR 2018 competition on handwritten               ACSSC, pages 1398–1402, 2003. 5
+
+
+
+
+                                                                    15663
+[61] Zongyuan Yang, Baolin Liu, Yongping Xxiong, Lan Yi,
+     Guibin Wu, Xiaojun Tang, Ziqi Liu, Junjie Zhou, and Xing
+     Zhang. DocDiff: Document enhancement via residual diffu-
+     sion models. In ACM MM, pages 2795–2806, 2023. 2, 5, 6,
+     8
+[62] Zongyuan Yang, Baolin Liu, Yongping Xiong, and Guibin
+     Wu. GDB: Gated convolutions-based document binarization.
+     Pattern Recognition, 146:109989, 2024. 1, 2, 4, 5, 6
+[63] Jaeyoung Yoo, Sang-ho Lee, and Nojun Kwak. Image
+     restoration by estimating frequency distribution of local
+     patches. In CVPR, pages 6684–6692, 2018. 8
+[64] Shaodi You, Yasuyuki Matsushita, Sudipta Sinha, Yusuke
+     Bou, and Katsushi Ikeuchi. Multiview rectification of folded
+     documents. IEEE TPAMI, 40(2):505–511, 2017. 5
+[65] Syed Waqas Zamir, Aditya Arora, Salman Khan, Mu-
+     nawar Hayat, Fahad Shahbaz Khan, and Ming-Hsuan Yang.
+     Restormer: Efficient transformer for high-resolution image
+     restoration. In CVPR, pages 5728–5739, 2022. 5, 6
+[66] Francisco Zamora-Martı́nez, Salvador Espaa Boquera, and
+     Marı́a José Castro Bleda. Behaviour-based clustering of neu-
+     ral networks applied to document enhancement. In IWANN,
+     2007. 5
+[67] Cheng Zhang, Yu Zhu, Qingsen Yan, Jinqiu Sun, and Yan-
+     ning Zhang. All-in-one multi-degradation image restoration
+     network via hierarchical degradation representation. In ACM
+     MM, pages 2285–2293, 2023. 2, 3
+[68] Jiaxin Zhang, Canjie Luo, Lianwen Jin, Fengjun Guo, and
+     Kai Ding. Marior: Margin removal and iterative content rec-
+     tification for document dewarping in the wild. In ACM MM,
+     pages 2805–2815, 2022. 2, 3, 5
+[69] Jiaxin Zhang, Bangdong Chen, Hiuyi Cheng, Lianwen Jin,
+     Fengjun Guo, and Kai Ding. DocAligner: Annotating real-
+     world photographic document images by simply taking pic-
+     tures. arXiv preprint arXiv:2306.05749, 2023. 5
+[70] Jiaxin Zhang, Lingyu Liang, Kai Ding, Fengjun Guo, and
+     Lianwen Jin. Appearance enhancement for camera-captured
+     document images in the wild. IEEE Transactions on Artifi-
+     cial Intelligence, 2023. 1, 2, 4, 5, 6
+[71] Ling Zhang, Yinghao He, Qing Zhang, Zheng Liu, Xiaolong
+     Zhang, and Chunxia Xiao. Document image shadow removal
+     guided by color-aware background. In CVPR, pages 1818–
+     1827, 2023. 2, 3, 5, 6
+
+
+
+
+                                                                     15664
+

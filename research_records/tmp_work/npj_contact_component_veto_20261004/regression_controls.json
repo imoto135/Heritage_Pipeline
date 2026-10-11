@@ -1,0 +1,115 @@
+{
+  "controls": [
+    {
+      "id": "new_new_warm_lower_loss",
+      "component": 1,
+      "filename": "new_new_warm_lower_loss_component_01.png",
+      "changed_in_bbox": {
+        "protect_component_veto": 0,
+        "protect_hold_component_veto": 0
+      }
+    },
+    {
+      "id": "new_new_warm_faint_writing",
+      "component": 1,
+      "filename": "new_new_warm_faint_writing_component_01.png",
+      "changed_in_bbox": {
+        "protect_component_veto": 22,
+        "protect_hold_component_veto": 22
+      }
+    },
+    {
+      "id": "new_new_warm_faint_writing",
+      "component": 2,
+      "filename": "new_new_warm_faint_writing_component_02.png",
+      "changed_in_bbox": {
+        "protect_component_veto": 0,
+        "protect_hold_component_veto": 0
+      }
+    }
+  ],
+  "pixel_GT": false,
+  "source_components": [
+    {
+      "id": "new_warm_lower_loss",
+      "component": 1,
+      "bbox": [
+        650,
+        446,
+        10,
+        9
+      ],
+      "changed_pixels": 37,
+      "display_xywh": [
+        615,
+        411,
+        80,
+        79
+      ],
+      "filename": "new_warm_lower_loss_all_change_01.png",
+      "original_Lab_median": [
+        58.795166015625,
+        6.46875,
+        7.234375
+      ],
+      "original_ridge_guard_overlap": 0,
+      "warm_anchored_guard_overlap": 0,
+      "fixed_v6_protect_or_hold_overlap": 25,
+      "full_csc_black_overlap": 15
+    },
+    {
+      "id": "new_warm_faint_writing",
+      "component": 1,
+      "bbox": [
+        12,
+        548,
+        2,
+        21
+      ],
+      "changed_pixels": 22,
+      "display_xywh": [
+        0,
+        513,
+        49,
+        91
+      ],
+      "filename": "new_warm_faint_writing_all_change_01.png",
+      "original_Lab_median": [
+        88.6016845703125,
+        3.265625,
+        6.1328125
+      ],
+      "original_ridge_guard_overlap": 0,
+      "warm_anchored_guard_overlap": 0,
+      "fixed_v6_protect_or_hold_overlap": 0,
+      "full_csc_black_overlap": 0
+    },
+    {
+      "id": "new_warm_faint_writing",
+      "component": 2,
+      "bbox": [
+        50,
+        751,
+        10,
+        11
+      ],
+      "changed_pixels": 52,
+      "display_xywh": [
+        15,
+        716,
+        80,
+        52
+      ],
+      "filename": "new_warm_faint_writing_all_change_02.png",
+      "original_Lab_median": [
+        54.0313720703125,
+        9.6875,
+        8.25
+      ],
+      "original_ridge_guard_overlap": 0,
+      "warm_anchored_guard_overlap": 0,
+      "fixed_v6_protect_or_hold_overlap": 45,
+      "full_csc_black_overlap": 29
+    }
+  ]
+}
